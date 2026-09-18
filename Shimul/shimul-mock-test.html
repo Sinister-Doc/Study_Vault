@@ -1,0 +1,1850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SHIMUL Recruitment Exam 2026 — Master Interactive Mock Simulator</title>
+  <style>
+    :root {
+      --primary: #0284c7;
+      --primary-dark: #0369a1;
+      --primary-light: #e0f2fe;
+      --accent: #16a34a;
+      --accent-light: #dcfce7;
+      --danger: #dc2626;
+      --danger-light: #fee2e2;
+      --warning: #d97706;
+      --warning-light: #fef3c7;
+      --review: #8b5cf6;
+      --review-light: #f3e8ff;
+      --bg-main: #f8fafc;
+      --bg-card: #ffffff;
+      --border: #e2e8f0;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --radius: 8px;
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    }
+
+    [data-theme="dark"] {
+      --primary: #38bdf8;
+      --primary-dark: #0284c7;
+      --primary-light: #082f49;
+      --accent: #22c55e;
+      --accent-light: #052e16;
+      --danger: #ef4444;
+      --danger-light: #450a0a;
+      --warning: #f59e0b;
+      --warning-light: #451a03;
+      --review: #a855f7;
+      --review-light: #3b0764;
+      --bg-main: #0f172a;
+      --bg-card: #1e293b;
+      --border: #334155;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.5);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background-color: var(--bg-card);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.05);
+    }
+
+    .brand-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .brand-sub {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+
+    .header-controls {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .timer-badge {
+      background-color: var(--primary-light);
+      color: var(--primary-dark);
+      padding: 6px 14px;
+      border-radius: 9999px;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid var(--primary);
+    }
+
+    .timer-badge.warning {
+      background-color: var(--danger-light);
+      color: var(--danger);
+      border-color: var(--danger);
+      animation: pulse 1s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
+    }
+
+    .theme-toggle-btn {
+      background: none;
+      border: 1px solid var(--border);
+      color: var(--text-main);
+      padding: 6px 10px;
+      border-radius: var(--radius);
+      cursor: pointer;
+      font-size: 0.85rem;
+    }
+
+    .section-nav {
+      background-color: var(--bg-card);
+      border-bottom: 1px solid var(--border);
+      padding: 8px 24px;
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+
+    .section-tab {
+      padding: 6px 12px;
+      font-size: 0.85rem;
+      border-radius: 9999px;
+      border: 1px solid var(--border);
+      background: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .section-tab:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .section-tab.active {
+      background-color: var(--primary);
+      border-color: var(--primary);
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    .app-body {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      max-width: 1400px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 20px;
+      gap: 20px;
+    }
+
+    @media (max-width: 900px) {
+      .app-body {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .exam-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .q-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .q-badge {
+      background-color: var(--primary-light);
+      color: var(--primary-dark);
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .q-provenance {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .q-text {
+      font-size: 1.1rem;
+      font-weight: 600;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .option-label {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 16px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      background-color: var(--bg-card);
+    }
+
+    .option-label:hover {
+      border-color: var(--primary);
+      background-color: var(--primary-light);
+    }
+
+    .option-label input[type="radio"] {
+      margin-top: 3px;
+    }
+
+    .option-label.selected {
+      border-color: var(--primary);
+      background-color: var(--primary-light);
+      font-weight: 600;
+    }
+
+    .action-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: auto;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+
+    .btn-group-left, .btn-group-right {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn {
+      padding: 8px 16px;
+      border-radius: var(--radius);
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-dark);
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      border-color: var(--border);
+      color: var(--text-main);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--border);
+    }
+
+    .btn-review {
+      background-color: var(--review-light);
+      color: var(--review);
+      border-color: var(--review);
+    }
+
+    .btn-review:hover {
+      background-color: var(--review);
+      color: #ffffff;
+    }
+
+    .btn-danger {
+      background-color: var(--danger);
+      color: #ffffff;
+    }
+
+    .btn-danger:hover {
+      background-color: #b91c1c;
+    }
+
+    /* Sidebar Palette */
+    .palette-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      height: fit-content;
+    }
+
+    .palette-header {
+      font-weight: 700;
+      margin-bottom: 12px;
+      font-size: 0.95rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .legend-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 16px;
+      font-size: 0.75rem;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .legend-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+
+    .palette-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 8px;
+      max-height: 380px;
+      overflow-y: auto;
+      padding-right: 4px;
+      margin-bottom: 20px;
+    }
+
+    .q-bubble {
+      aspect-ratio: 1;
+      border: 1px solid var(--border);
+      background-color: var(--bg-card);
+      color: var(--text-main);
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      position: relative;
+    }
+
+    .q-bubble:hover {
+      transform: scale(1.08);
+    }
+
+    .q-bubble.current {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
+    }
+
+    .q-bubble.status-unvisited {
+      background-color: var(--bg-card);
+    }
+
+    .q-bubble.status-visited-unanswered {
+      background-color: var(--danger-light);
+      border-color: var(--danger);
+      color: var(--danger);
+    }
+
+    .q-bubble.status-answered {
+      background-color: var(--accent);
+      border-color: var(--accent);
+      color: #ffffff;
+    }
+
+    .q-bubble.status-review {
+      background-color: var(--review);
+      border-color: var(--review);
+      color: #ffffff;
+    }
+
+    .q-bubble.status-answered-review {
+      background-color: var(--review);
+      border-color: var(--review);
+      color: #ffffff;
+    }
+
+    .q-bubble.status-answered-review::after {
+      content: "";
+      position: absolute;
+      bottom: 2px;
+      right: 2px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: #ffffff;
+    }
+
+    /* Result Modal / Screen */
+    .result-container {
+      display: none;
+      flex-direction: column;
+      gap: 20px;
+      max-width: 900px;
+      margin: 20px auto;
+      width: 100%;
+      padding: 0 20px;
+    }
+
+    .score-banner {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+      color: #ffffff;
+      padding: 32px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .score-number {
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin: 10px 0;
+    }
+
+    .score-stats {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      margin-top: 16px;
+      font-size: 0.95rem;
+    }
+
+    .category-breakdown {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .breakdown-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+      font-size: 0.9rem;
+    }
+
+    .breakdown-table th, .breakdown-table td {
+      padding: 10px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .breakdown-table th {
+      background-color: var(--primary-light);
+      color: var(--primary-dark);
+    }
+
+    /* Review Mode */
+    .review-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .review-item {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .review-item.correct {
+      border-left: 6px solid var(--accent);
+    }
+
+    .review-item.incorrect {
+      border-left: 6px solid var(--danger);
+    }
+
+    .review-item.unanswered {
+      border-left: 6px solid var(--warning);
+    }
+
+    .explanation-box {
+      margin-top: 14px;
+      padding: 12px 16px;
+      border-radius: var(--radius);
+      background-color: var(--primary-light);
+      color: var(--text-main);
+      font-size: 0.9rem;
+      border-left: 4px solid var(--primary);
+    }
+
+    /* Confirmation Modal */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(2px);
+      z-index: 100;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-card {
+      background-color: var(--bg-card);
+      border-radius: var(--radius);
+      padding: 24px;
+      max-width: 480px;
+      width: 90%;
+      box-shadow: var(--shadow);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div>
+      <div class="brand-title">
+        <span>🥛 SHIMUL Exam Master Simulator 2026</span>
+      </div>
+      <div class="brand-sub">Shivamogga, Davanagere & Chitradurga Milk Union | 70 High-Yield Questions | Negative Marking (-0.25)</div>
+    </div>
+    <div class="header-controls">
+      <div class="timer-badge" id="timerBadge">
+        <span>⏱️</span>
+        <span id="timerText">90:00</span>
+      </div>
+      <button class="theme-toggle-btn" id="themeToggle" title="Toggle Theme">🌓 Theme</button>
+      <button class="btn btn-danger" id="submitTopBtn">Submit Test</button>
+    </div>
+  </header>
+
+  <nav class="section-nav" id="sectionNav">
+    <button class="section-tab active" data-section="all">All Sections (70)</button>
+    <button class="section-tab" data-section="dairy">Dairy Union & KMF (15)</button>
+    <button class="section-tab" data-section="coop">Co-operative Law & KCS (15)</button>
+    <button class="section-tab" data-section="const">Indian Constitution (10)</button>
+    <button class="section-tab" data-section="gk">Regional GK & Karnataka (10)</button>
+    <button class="section-tab" data-section="kannada">ಸಾಮಾನ್ಯ ಕನ್ನಡ (10)</button>
+    <button class="section-tab" data-section="english">General English (10)</button>
+  </nav>
+
+  <main class="app-body" id="testInterface">
+    <!-- Active Question Card -->
+    <section class="exam-card">
+      <div class="q-meta">
+        <div>
+          <span class="q-badge" id="qSectionBadge">Section</span>
+          <span style="font-size: 0.85rem; font-weight: 600; margin-left: 8px;" id="qIndexText">Question 1 of 70</span>
+        </div>
+        <div class="q-provenance" id="qProvenance">Provenance Tag</div>
+      </div>
+
+      <div class="q-text" id="qText">Loading question content...</div>
+
+      <div class="options-grid" id="optionsGrid">
+        <!-- Radio Options rendered by JS -->
+      </div>
+
+      <div class="action-bar">
+        <div class="btn-group-left">
+          <button class="btn btn-secondary" id="prevBtn">← Previous</button>
+          <button class="btn btn-secondary" id="clearBtn">Clear Response</button>
+          <button class="btn btn-review" id="reviewBtn">Mark for Review</button>
+        </div>
+        <div class="btn-group-right">
+          <button class="btn btn-primary" id="nextBtn">Next →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Right Side Palette -->
+    <aside class="palette-card">
+      <div class="palette-header">
+        <span>Question Palette</span>
+        <span style="font-size: 0.8rem; color: var(--text-muted);" id="answeredRatio">0 / 70 Answered</span>
+      </div>
+
+      <div class="legend-grid">
+        <div class="legend-item"><div class="legend-dot" style="background: var(--accent);"></div> Answered</div>
+        <div class="legend-item"><div class="legend-dot" style="background: var(--danger-light); border: 1px solid var(--danger);"></div> Not Answered</div>
+        <div class="legend-item"><div class="legend-dot" style="background: var(--review);"></div> Marked for Review</div>
+        <div class="legend-item"><div class="legend-dot" style="background: var(--bg-card); border: 1px solid var(--border);"></div> Not Visited</div>
+      </div>
+
+      <div class="palette-grid" id="paletteGrid">
+        <!-- 70 Bubbles rendered by JS -->
+      </div>
+
+      <button class="btn btn-danger" style="width: 100%; margin-top: auto;" id="submitSideBtn">Submit Final Test</button>
+    </aside>
+  </main>
+
+  <!-- Final Results Screen -->
+  <div class="result-container" id="resultContainer">
+    <div class="score-banner">
+      <h2>🎉 Examination Completed!</h2>
+      <div class="score-number" id="finalScoreDisplay">0.00 / 70.00</div>
+      <p id="scoreScaledText">Scaled Score: 0.00 / 200 Marks (Target: 155+ Marks)</p>
+      <div class="score-stats">
+        <div><strong>Total Attempted:</strong> <span id="statAttempted">0</span> / 70</div>
+        <div><strong>Correct:</strong> <span id="statCorrect" style="color: #86efac;">0</span></div>
+        <div><strong>Incorrect (-0.25):</strong> <span id="statIncorrect" style="color: #fca5a5;">0</span></div>
+        <div><strong>Accuracy:</strong> <span id="statAccuracy">0%</span></div>
+      </div>
+    </div>
+
+    <div class="category-breakdown">
+      <h3>Section-Wise Performance Analysis</h3>
+      <table class="breakdown-table">
+        <thead>
+          <tr>
+            <th>Section</th>
+            <th>Total Questions</th>
+            <th>Attempted</th>
+            <th>Correct</th>
+            <th>Wrong</th>
+            <th>Net Marks</th>
+          </tr>
+        </thead>
+        <tbody id="breakdownTableBody">
+          <!-- Populated by JS -->
+        </tbody>
+      </table>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <h3>Detailed Question Review & Explanations</h3>
+      <button class="btn btn-primary" id="retakeBtn">🔄 Retake Test</button>
+    </div>
+
+    <div class="review-list" id="reviewList">
+      <!-- Detailed review items populated by JS -->
+    </div>
+  </div>
+
+  <!-- Submit Confirmation Modal -->
+  <div class="modal-overlay" id="confirmModal">
+    <div class="modal-card">
+      <h3 style="margin-bottom: 12px;">Confirm Submission</h3>
+      <p style="margin-bottom: 16px; color: var(--text-muted); font-size: 0.95rem;">
+        Are you sure you want to finish and submit the test? You cannot change answers after submitting.
+      </p>
+      <div style="background: var(--primary-light); padding: 12px; border-radius: var(--radius); margin-bottom: 20px; font-size: 0.85rem;" id="modalStatsText">
+        Answered: 0 | Unanswered: 70 | Marked for Review: 0
+      </div>
+      <div style="display: flex; justify-content: flex-end; gap: 10px;">
+        <button class="btn btn-secondary" id="modalCancelBtn">Return to Test</button>
+        <button class="btn btn-danger" id="modalConfirmBtn">Yes, Submit Now</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // --- 70 SOURCED & EXPECTED QUESTIONS DATA ---
+    const questions = [
+      // SECTION 1: DAIRY UNION OPERATIONS & KMF (1-15)
+      {
+        id: 1,
+        sec: "dairy",
+        secTitle: "Dairy Union Operations, KMF & Dairy Science",
+        provenance: "[PYQ - VERIFIED: KMF Degree 2022 / BAMUL 2019]",
+        q: "In which year was the Karnataka Dairy Development Corporation (KDDC) established with financial assistance from the World Bank?",
+        options: ["1970", "1974", "1980", "1984"],
+        ans: 1,
+        exp: "KDDC was incorporated on June 10, 1974, with IDA credit of $30M from the World Bank. It was converted into the cooperative federation KMF in 1984."
+      },
+      {
+        id: 2,
+        sec: "dairy",
+        secTitle: "Dairy Union Operations, KMF & Dairy Science",
+        provenance: "[PYQ - VERIFIED: TUMUL Dairy Chemist 2023]",
+        q: "What is the minimum percentage of Milk Fat and Solids-Not-Fat (SNF) prescribed by FSSAI for 'Toned Milk' in Karnataka?",
+        options: ["1.5% Fat and 9.0% SNF", "3.0% Fat and 8.5% SNF", "4.5% Fat and 8.5% SNF", "6.0% Fat and 9.0% SNF"],
+        ans: 1,
+        exp: "FSSAI requires Toned Milk (standard blue pouch) to have a minimum of 3.0% Fat and 8.5% SNF. Double Toned is 1.5% Fat & 9.0% SNF."
+      },
+      {
+        id: 3,
+        sec: "dairy",
+        secTitle: "Dairy Union Operations, KMF & Dairy Science",
+        provenance: "[PYQ - VERIFIED: KMF Technical Officer 2022]",
+        q: "Which enzyme test is universally conducted in dairy quality control laboratories to determine whether milk pasteurization has been executed effectively?",
+        options: ["Amylase Test", "Catalase Test", "Alkaline Phosphatase Test", "Lactase Test"],
+        ans: 2,
+        exp: "Alkaline Phosphatase is a native enzyme in raw milk whose heat destruction curve slightly exceeds that of Mycobacterium tuberculosis. Negative phosphatase confirms complete pasteurization."
+      },
+      {
+        id: 4,
+        sec: "dairy",
+        secTitle: "Dairy Union Operations, KMF & Dairy Science",
+        provenance: "[PYQ - VERIFIED: MYMUL Chemist 2021]",
+        q: "Under the High-Temperature Short-Time (HTST) continuous pasteurization method, milk is heated to which temperature and held for how many seconds?",
+        options: ["63°C for 30 minutes", "72°C for 15 seconds", "100°C for 10 seconds", "135°C for 2 seconds"],
+        ans: 1,
+        exp: "HTST continuous pasteurization heats milk to 72°C (161°F) for 15 seconds followed by rapid chilling to <4°C. LTLT is 63°C for 30 minutes."
+      },
+      {
+        id: 5,
+        sec: "dairy",
+        secTitle: "Dairy Union Operations, KMF & Dairy Science",
+        provenance: "[PYQ - VERIFIED: KMF Degree Paper 2022]",
+        q: "In which year was the premier brand name 'Nandini' officially introduced by the Karnataka Dairy Development Corporation?",
+        options: ["1974", "1980", "1983", "1988"],
+        ans: 2,
+        exp: "The brand name 'Nandini' (symbolizing the divine Kamadhenu wish-fulfilling cow) was introduced in 1983."
+      },
+      {
+        id: 6,
+        sec: "dairy",
+        secTitle: "Dairy Union Operations, KMF & Dairy Science",
+        provenance: "[PYQ - VERIFIED: KPSC FDA / KMF 2022]",
+        q: "When was the flagship 'Ksheera Bhagya' scheme launched in Karnataka to provide hot milk to school and anganwadi children?",
+        options: ["August 1, 2013", "November 1, 2014", "June 1, 2015", "October 2, 2016"],
+        ans: 0,
+        exp: "Ksheera Bhagya was launched on August 1, 2013, by CM Siddaramaiah, providing 150 ml of free boiled milk 5 days a week."
+      },
+      {
+        id: 7,
+        sec: "dairy",
+        secTitle: "Dairy Union Operations, KMF & Dairy Science",
+        provenance: "[PYQ - VERIFIED: BAMUL 2019 / SHIMUL 2019]",
+        q: "How many District Co-operative Milk Producers' Societies Unions are currently affiliated with the apex Karnataka Milk Federation (KMF)?",
+        options: ["12 Unions", "14 Unions", "16 Unions", "19 Unions"],
+        ans: 2,
+        exp: "KMF comprises exactly 16 District Co-operative Milk Producers' Societies Unions covering all revenue districts in Karnataka."
+      },
+      {
+        id: 8,
+        sec: "dairy",
+        secTitle: "Dairy Union Operations, KMF & Dairy Science",
+        provenance: "[PYQ - VERIFIED: TUMUL Dairy Chemist 2023]",
+        q: "In the Methylene Blue Reduction Test (MBRT) for raw milk microbial quality, milk classified as 'Class I (Excellent)' has a decolorization time of:",
+        options: ["Greater than 5 hours", "3 to 4 hours", "1 to 2 hours", "Less than 30 minutes"],
+        ans: 0,
+        exp: "MBRT measures microbial oxygen consumption. Class I (Excellent) takes >5 hours to decolorize; Class IV (Very Poor) decolorizes in <30 minutes."
+      },
+      {
+        id: 9,
+        sec: "dairy",
+        secTitle: "Dairy Union Operations, KMF & Dairy Science",
+        provenance: "[PYQ - VERIFIED: KMF Chemist 2022]",
+        q: "What is the normal specific gravity range of pure fresh cow milk measured at 20°C using a lactometer?",
+        options: ["1.015 – 1.020", "1.028 – 1.032", "1.035 – 1.040", "1.045 – 1.050"],
+        ans: 1,
+        exp: "Normal fresh cow milk specific gravity is 1.028 to 1.032 at 20°C. Lower readings indicate water dilution; higher readings suggest skimming."
+      },
+      {
+        id: 10,
+        sec: "dairy",
+        secTitle: "Dairy Union Operations, KMF & Dairy Science",
+        provenance: "[PYQ - VERIFIED: KMF Technical Officer 2022]",
+        q: "Homogenization in commercial dairy processing plants is carried out under hydraulic pressure of approximately:",
+        options: ["200 to 500 psi", "1,000 to 1,200 psi", "2,000 to 2,500 psi", "5,000 to 6,000 psi"],
+        ans: 2,
+        exp: "Homogenization uses 2,000 to 2,500 psi (140–175 bar) to shatter fat globules to <2 microns, preventing cream separation."
+      },
+      {
+        id: 11,
+        sec: "dairy",
+        secTitle: "Dairy Union Operations, KMF & Dairy Science",
+        provenance: "[EXPECTED / GENERATED - 2024 VERIFIED]",
+        q: "Which cooperative dairy brand was reinstated in Aug-Sept 2024 by Tirumala Tirupati Devasthanams (TTD) to supply 350 MT pure cow ghee for Tirupati Laddus?",
+        options: ["Amul (GCMMF)", "Nandini (KMF)", "Aavin (Tamil Nadu)", "Vijaya (Telangana)"],
+        ans: 1,
+        exp: "TTD reinstated KMF Nandini as the premier pure cow ghee supplier for Tirupati laddus after private contractor adulteration issues."
+      },
+      {
+        id: 12,
+        sec: "dairy",
+        secTitle: "Dairy Union Operations, KMF & Dairy Science",
+        provenance: "[EXPECTED / GENERATED - 2024 VERIFIED]",
+        q: "During the 2024 ICC Men's T20 World Cup, KMF Nandini became the official sponsor for which two national cricket teams?",
+        options: ["Nepal and Netherlands", "Ireland and Scotland", "USA and Canada", "Oman and Namibia"],
+        ans: 1,
+        exp: "KMF sponsored Scotland and Ireland to build global visibility and promote packaged beverages like Nandini Splash internationally."
+      },
+      {
+        id: 13,
+        sec: "dairy",
+        secTitle: "Dairy Union Operations, KMF & Dairy Science",
+        provenance: "[EXPECTED / GENERATED - OFFICIAL AUDIT 2024]",
+        q: "What record milestone did the annual group turnover of Karnataka Milk Federation (KMF) cross in the audited financial year 2023–24?",
+        options: ["₹15,000 Crore", "₹18,500 Crore", "₹21,330 Crore", "₹25,000 Crore"],
+        ans: 2,
+        exp: "KMF achieved an all-time record group turnover of ₹21,330 Crore in 2023–24, ranking 2nd in India behind GCMMF Amul."
+      },
+      {
+        id: 14,
+        sec: "dairy",
+        secTitle: "Dairy Union Operations, KMF & Dairy Science",
+        provenance: "[EXPECTED / GENERATED - VETERINARY GK]",
+        q: "Which indigenous Indian buffalo breed, originating in the Chambal ravines, possesses the highest milk fat content in India (8% to 13%)?",
+        options: ["Murrah", "Surti", "Jaffarabadi", "Bhadawari"],
+        ans: 3,
+        exp: "Bhadawari buffaloes (copper colored) produce milk with the highest fat content (8% to 13%), making them premier butter producers."
+      },
+      {
+        id: 15,
+        sec: "dairy",
+        secTitle: "Dairy Union Operations, KMF & Dairy Science",
+        provenance: "[EXPECTED / GENERATED - HUSBANDRY GK]",
+        q: "Which native cattle breed of Karnataka, originating in Mysuru/Shivamogga/Hassan, is world-famous for long backward-pointing horns and supreme draft power?",
+        options: ["Hallikar", "Deoni", "Gir", "Khillar"],
+        ans: 0,
+        exp: "Hallikar is Karnataka's premier draft breed with long, erect, backward-pointing horns; it is the progenitor of the royal Amrit Mahal breed."
+      },
+
+      // SECTION 2: CO-OPERATIVE SOCIETIES & KCS ACT 1959 (16-30)
+      {
+        id: 16,
+        sec: "coop",
+        secTitle: "Co-operative Movement & KCS Act, 1959",
+        provenance: "[PYQ - VERIFIED: KMF 2022 / Apex Bank 2022]",
+        q: "Where was the first agricultural credit cooperative society in the Asian subcontinent registered on July 8, 1905?",
+        options: ["Kanaginahal (Gadag, Karnataka)", "Anand (Kaira, Gujarat)", "Rochdale (England)", "Hulakoti (Gadag, Karnataka)"],
+        ans: 0,
+        exp: "The Kanaginahal Agricultural Credit Co-operative Society in Gadag was registered on July 8, 1905, by Siddanagouda S. Patil."
+      },
+      {
+        id: 17,
+        sec: "coop",
+        secTitle: "Co-operative Movement & KCS Act, 1959",
+        provenance: "[PYQ - VERIFIED: KMF Degree Paper 2022]",
+        q: "Who is revered as the 'Father of the Co-operative Movement in Karnataka' (ಕರ್ನಾಟಕದ ಸಹಕಾರ ರಂಗದ ಪಿತಾಮಹ)?",
+        options: ["Sir M. Visvesvaraya", "Siddanagouda Sannaramanagouda Patil", "D. Devaraj Urs", "K.H. Patil"],
+        ans: 1,
+        exp: "Siddanagouda Sannaramanagouda Patil (1843–1933) founded the Kanaginahal cooperative society and is hailed as the father of cooperation in Karnataka."
+      },
+      {
+        id: 18,
+        sec: "coop",
+        secTitle: "Co-operative Movement & KCS Act, 1959",
+        provenance: "[PYQ - ADJACENT: DCC Bank 2021]",
+        q: "Who is acclaimed as the 'Father of the Co-operative Movement in India' for his report advising 'Find Raiffeisen'?",
+        options: ["Sir Frederic Nicholson", "Lord Curzon", "Robert Owen", "Tribhuvandas Patel"],
+        ans: 0,
+        exp: "Sir Frederic Nicholson submitted his landmark Madras report (1895–97) with the famous recommendation 'Find Raiffeisen', leading to the 1904 Act."
+      },
+      {
+        id: 19,
+        sec: "coop",
+        secTitle: "Co-operative Movement & KCS Act, 1959",
+        provenance: "[PYQ - VERIFIED: KPSC Inspector 2020]",
+        q: "Under Section 20(2) of the Karnataka Co-operative Societies Act, 1959, which voting practice is strictly prohibited?",
+        options: ["Secret ballot voting", "Show of hands voting", "Proxy voting", "Preferential voting"],
+        ans: 2,
+        exp: "Section 20(2) strictly prohibits voting by proxy in cooperative societies. Every member must vote in person."
+      },
+      {
+        id: 20,
+        sec: "coop",
+        secTitle: "Co-operative Movement & KCS Act, 1959",
+        provenance: "[PYQ - VERIFIED: Apex Bank 2022]",
+        q: "Under Section 27 of the KCS Act, 1959, every cooperative society must convene its Annual General Meeting (AGM) on or before which date?",
+        options: ["30th June", "31st August", "25th September", "31st December"],
+        ans: 2,
+        exp: "Section 27 mandates that the AGM of every cooperative society must be held on or before the 25th day of September each year."
+      },
+      {
+        id: 21,
+        sec: "coop",
+        secTitle: "Co-operative Movement & KCS Act, 1959",
+        provenance: "[PYQ - VERIFIED: KMF 2022 / TUMUL 2023]",
+        q: "What is the statutory term of office of the Managing Committee / Board of a cooperative society under Section 28A of the KCS Act, 1959?",
+        options: ["3 Co-operative Years", "4 Co-operative Years", "5 Co-operative Years", "6 Co-operative Years"],
+        ans: 2,
+        exp: "Under Section 28A (aligned with the 97th Constitutional Amendment), the term of office of an elected committee is exactly 5 years."
+      },
+      {
+        id: 22,
+        sec: "coop",
+        secTitle: "Co-operative Movement & KCS Act, 1959",
+        provenance: "[PYQ - VERIFIED: KMF Degree 2022]",
+        q: "Under Section 28A(4) of the KCS Act, 1959, how many seats are compulsorily reserved for Women on the managing committee of a cooperative society?",
+        options: ["1 Seat", "2 Seats", "3 Seats", "5 Seats"],
+        ans: 1,
+        exp: "Section 28A(4) mandates: 1 SC, 1 ST, 2 Women, and 1 Backward Class seat on the managing committee."
+      },
+      {
+        id: 23,
+        sec: "coop",
+        secTitle: "Co-operative Movement & KCS Act, 1959",
+        provenance: "[EXPECTED / GENERATED - KCS LAW FOCUS]",
+        q: "Under Section 29C of the KCS Act, 1959, an elected committee member stands disqualified if they fail to attend how many consecutive committee meetings without leave?",
+        options: ["2 consecutive meetings", "3 consecutive meetings", "4 consecutive meetings", "6 consecutive meetings"],
+        ans: 1,
+        exp: "Section 29C(1)(k) disqualifies any committee member who absents themselves from 3 consecutive committee meetings without permission."
+      },
+      {
+        id: 24,
+        sec: "coop",
+        secTitle: "Co-operative Movement & KCS Act, 1959",
+        provenance: "[PYQ - VERIFIED: KMF 2022 / Apex Bank 2023]",
+        q: "Under Section 57 of the KCS Act, 1959, what minimum percentage of net profits must be transferred to the statutory Reserve Fund?",
+        options: ["10%", "15%", "20%", "25%"],
+        ans: 3,
+        exp: "Section 57 mandates that at least 25% of net profits earned by a cooperative society must be credited to the statutory Reserve Fund."
+      },
+      {
+        id: 25,
+        sec: "coop",
+        secTitle: "Co-operative Movement & KCS Act, 1959",
+        provenance: "[PYQ - VERIFIED: KMF Degree 2022]",
+        q: "Who is the statutory authority empowered to conduct the annual audit of cooperative societies in Karnataka under Section 63 of the KCS Act, 1959?",
+        options: ["Registrar of Co-operative Societies", "Director of Co-operative Audit", "Comptroller and Auditor General", "Reserve Bank of India"],
+        ans: 1,
+        exp: "Section 63 vests the annual audit of cooperative societies in the Director of Co-operative Audit (an independent department in Karnataka)."
+      },
+      {
+        id: 26,
+        sec: "coop",
+        secTitle: "Co-operative Movement & KCS Act, 1959",
+        provenance: "[PYQ - ADJACENT: KPSC Inspector 2020]",
+        q: "Under Section 68/69 of the KCS Act, 1959, what specific legal proceedings are initiated against delinquent officers for recovery of misapplied funds?",
+        options: ["Winding Up Proceedings", "Surcharge Proceedings", "Insolvency Proceedings", "Contempt Proceedings"],
+        ans: 1,
+        exp: "Section 68/69 empowers the Registrar to initiate surcharge proceedings and pass orders for repayment of misapplied or retained funds within 5 years."
+      },
+      {
+        id: 27,
+        sec: "coop",
+        secTitle: "Co-operative Movement & KCS Act, 1959",
+        provenance: "[PYQ - VERIFIED: KMF Degree 2022]",
+        q: "Under which section of the KCS Act, 1959, are disputes touching the constitution, management, or business of a society referred to the Registrar for arbitration?",
+        options: ["Section 28A", "Section 64", "Section 70", "Section 105"],
+        ans: 2,
+        exp: "Section 70 is the master dispute arbitration section. Section 118 completely excludes the jurisdiction of Civil Courts on such matters."
+      },
+      {
+        id: 28,
+        sec: "coop",
+        secTitle: "Co-operative Movement & KCS Act, 1959",
+        provenance: "[EXPECTED / GENERATED - KCS LAW FOCUS]",
+        q: "Which independent statutory authority created under Section 39A of the KCS Act, 1959, conducts and superintends all cooperative elections in Karnataka?",
+        options: ["State Election Commission", "Co-operative Election Authority", "Karnataka Appellate Tribunal", "District Central Co-op Board"],
+        ans: 1,
+        exp: "Section 39A created the independent Co-operative Election Authority headed by the Co-operative Election Commissioner."
+      },
+      {
+        id: 29,
+        sec: "coop",
+        secTitle: "Co-operative Movement & KCS Act, 1959",
+        provenance: "[EXPECTED / GENERATED - 2023 AMENDMENT]",
+        q: "Under the 2023 amendment to Section 20(2)(b)(v) of the KCS Act, 1959, what is the mandatory notice period to a defaulter before an election?",
+        options: ["10 days notice; clear 5 days prior", "15 days notice; clear 10 days prior", "30 days notice; clear at least 20 days prior", "45 days notice; clear on election day"],
+        ans: 2,
+        exp: "The 2023 amendment mandates a 30-day demand notice, and the member must clear arrears at least 20 days prior to the meeting/election to vote."
+      },
+      {
+        id: 30,
+        sec: "coop",
+        secTitle: "Co-operative Movement & KCS Act, 1959",
+        provenance: "[EXPECTED / GENERATED - JUDICIAL RULING]",
+        q: "In 2023, Section 128A was inserted into the KCS Act providing for a Common Cadre for cooperative employees. What was the Karnataka High Court ruling?",
+        options: ["Upheld Section 128A as valid", "Struck down Section 128A as unconstitutional and ultra vires Article 19(1)(c)", "Referred matter to RBI", "Made Common Cadre mandatory for KMF only"],
+        ans: 1,
+        exp: "The High Court struck down Section 128A, ruling that imposing state cadre appointments infringes cooperative autonomy under Article 19(1)(c)."
+      },
+
+      // SECTION 3: INDIAN CONSTITUTION (31-40)
+      {
+        id: 31,
+        sec: "const",
+        secTitle: "Indian Constitution & Panchayati Raj",
+        provenance: "[PYQ - VERIFIED: KPSC FDA / KMF 2022]",
+        q: "What is the exact chronological sequence of words describing the nature of the Indian Republic in the Preamble as amended by the 42nd Amendment?",
+        options: [
+          "Sovereign, Democratic, Republic, Socialist, Secular",
+          "Sovereign, Socialist, Secular, Democratic, Republic",
+          "Socialist, Secular, Sovereign, Democratic, Republic",
+          "Sovereign, Secular, Socialist, Democratic, Republic"
+        ],
+        ans: 1,
+        exp: "The sequence is 'Sovereign, Socialist, Secular, Democratic, Republic' (SO-SO-SE-DE-RE). 'Socialist, Secular, Integrity' were added by the 42nd Amendment, 1976."
+      },
+      {
+        id: 32,
+        sec: "const",
+        secTitle: "Indian Constitution & Panchayati Raj",
+        provenance: "[PYQ - VERIFIED: KMF 2022 / TUMUL 2023]",
+        q: "The 97th Constitutional Amendment Act, 2011, explicitly inserted the right to form 'co-operative societies' into which Fundamental Right?",
+        options: ["Article 14", "Article 19(1)(c)", "Article 21", "Article 30"],
+        ans: 1,
+        exp: "The 97th Amendment added 'or co-operative societies' to Article 19(1)(c), making the formation of cooperatives a Fundamental Right."
+      },
+      {
+        id: 33,
+        sec: "const",
+        secTitle: "Indian Constitution & Panchayati Raj",
+        provenance: "[PYQ - VERIFIED: KMF Degree 2022]",
+        q: "Which Directive Principle of State Policy (DPSP) directs the State to promote voluntary formation and autonomous functioning of co-operative societies?",
+        options: ["Article 40", "Article 43A", "Article 43B", "Article 48"],
+        ans: 2,
+        exp: "Article 43B (inserted by the 97th Constitutional Amendment) directs the State to promote voluntary formation, autonomous functioning, and professional management of cooperatives."
+      },
+      {
+        id: 34,
+        sec: "const",
+        secTitle: "Indian Constitution & Panchayati Raj",
+        provenance: "[PYQ - VERIFIED: KPSC FDA / KMF 2022]",
+        q: "Which constitutional writ literally translates to 'We Command' and is issued to compel a public official to perform a mandatory statutory duty?",
+        options: ["Habeas Corpus", "Mandamus", "Certiorari", "Quo-Warranto"],
+        ans: 1,
+        exp: "Mandamus ('We Command') is a judicial command to a public officer or authority to perform a statutory public duty they have failed or refused to do."
+      },
+      {
+        id: 35,
+        sec: "const",
+        secTitle: "Indian Constitution & Panchayati Raj",
+        provenance: "[PYQ - ADJACENT: DCC Bank 2021]",
+        q: "In Union of India vs. Rajendra N. Shah (2021), why did the Supreme Court strike down Part IX-B for State Cooperative Societies?",
+        options: [
+          "It violated Fundamental Rights",
+          "It was not ratified by at least half of the State Legislatures under Article 368(2)",
+          "The President withheld assent",
+          "Cooperatives were held to be private business corporations"
+        ],
+        ans: 1,
+        exp: "Cooperation is a State subject (Entry 32). Amending constitutional provisions impacting State powers required ratification by 50% of State legislatures under Art 368(2)."
+      },
+      {
+        id: 36,
+        sec: "const",
+        secTitle: "Indian Constitution & Panchayati Raj",
+        provenance: "[PYQ - VERIFIED: KMF 2022]",
+        q: "How many functional items/matters are listed under the Eleventh Schedule of the Constitution inserted by the 73rd Amendment Act, 1992?",
+        options: ["18 Subjects", "21 Subjects", "29 Subjects", "32 Subjects"],
+        ans: 2,
+        exp: "The 11th Schedule contains 29 functional matters devolved to Panchayats. (The 12th Schedule for Municipalities contains 18 matters)."
+      },
+      {
+        id: 37,
+        sec: "const",
+        secTitle: "Indian Constitution & Panchayati Raj",
+        provenance: "[EXPECTED / GENERATED - CONSTITUTION CORE]",
+        q: "Which Article of the Constitution was described by Dr. B.R. Ambedkar as the 'Heart and Soul of the Constitution'?",
+        options: ["Article 14 (Equality)", "Article 19 (Freedoms)", "Article 21 (Life & Liberty)", "Article 32 (Constitutional Remedies)"],
+        ans: 3,
+        exp: "Dr. B.R. Ambedkar called Article 32 (Right to Constitutional Remedies through Writs) the heart and soul without which the Constitution would be a nullity."
+      },
+      {
+        id: 38,
+        sec: "const",
+        secTitle: "Indian Constitution & Panchayati Raj",
+        provenance: "[EXPECTED / GENERATED - CONSTITUTION CORE]",
+        q: "Under which Article of the Constitution is 'Untouchability' abolished and its practice in any form made a punishable offence?",
+        options: ["Article 15", "Article 16", "Article 17", "Article 18"],
+        ans: 2,
+        exp: "Article 17 abolishes untouchability and forbids its practice in any form, enforceable under the Protection of Civil Rights Act."
+      },
+      {
+        id: 39,
+        sec: "const",
+        secTitle: "Indian Constitution & Panchayati Raj",
+        provenance: "[EXPECTED / GENERATED - CONSTITUTION CORE]",
+        q: "The Right to Education was made a Fundamental Right under Article 21A by which Constitutional Amendment Act?",
+        options: ["44th Amendment Act, 1978", "73rd Amendment Act, 1992", "86th Amendment Act, 2002", "91st Amendment Act, 2003"],
+        ans: 2,
+        exp: "The 86th Constitutional Amendment Act, 2002, inserted Article 21A providing free and compulsory education for children aged 6 to 14."
+      },
+      {
+        id: 40,
+        sec: "const",
+        secTitle: "Indian Constitution & Panchayati Raj",
+        provenance: "[EXPECTED / GENERATED - CONSTITUTION CORE]",
+        q: "In the Seventh Schedule of the Indian Constitution, under which legislative list is 'Co-operative Societies' placed?",
+        options: ["List I (Union List)", "List II (State List, Entry 32)", "List III (Concurrent List)", "Residuary Powers"],
+        ans: 1,
+        exp: "'Co-operative Societies' is Entry 32 of List II (State List), giving State legislatures exclusive power to enact cooperative laws."
+      },
+
+      // SECTION 4: GENERAL KNOWLEDGE & REGIONAL FOCUS (41-50)
+      {
+        id: 41,
+        sec: "gk",
+        secTitle: "Regional GK & Karnataka Profile",
+        provenance: "[PYQ - VERIFIED: SHIMUL 2019 / KPSC FDA]",
+        q: "On which river is the world-famous Jog Falls (highest plunge waterfall in Karnataka) situated?",
+        options: ["Tunga River", "Bhadra River", "Sharavathi River", "Varahi River"],
+        ans: 2,
+        exp: "Jog Falls (253 meters high, featuring 4 cascades: Raja, Roarer, Rocket, and Rani) is situated on the Sharavathi River in Sagar taluk, Shivamogga."
+      },
+      {
+        id: 42,
+        sec: "gk",
+        secTitle: "Regional GK & Karnataka Profile",
+        provenance: "[PYQ - VERIFIED: SHIMUL 2019]",
+        q: "Where is the sacred confluence (Sangama) of the Tunga and Bhadra rivers located to form the Tungabhadra River?",
+        options: ["Koodli (Shivamogga)", "Lakkavalli", "Harihara", "Honnali"],
+        ans: 0,
+        exp: "The sacred rivers Tunga and Bhadra meet at Koodli, approximately 16 km from Shivamogga city, to form the Tungabhadra River."
+      },
+      {
+        id: 43,
+        sec: "gk",
+        secTitle: "Regional GK & Karnataka Profile",
+        provenance: "[PYQ - VERIFIED: SHIMUL 2019 / KPSC SDA]",
+        q: "Which water body in Channagiri taluk of Davanagere is recognized as the second-largest ancient artificial irrigation tank in Asia?",
+        options: ["Kunduvada Kere", "Shanti Sagara (Sulekere)", "Karanja Reservoir", "Madagada Kere"],
+        ans: 1,
+        exp: "Shanti Sagara (Sulekere) in Channagiri taluk, built in the 11th–12th century, is Asia's 2nd largest ancient artificial irrigation tank."
+      },
+      {
+        id: 44,
+        sec: "gk",
+        secTitle: "Regional GK & Karnataka Profile",
+        provenance: "[PYQ - VERIFIED: SHIMUL 2019 / KPSC FDA]",
+        q: "Who was the valorous woman warrior who defended the secret crevice of Chitradurga Fort with a wooden pestle (Onake) against Hyder Ali's troops in 1779?",
+        options: ["Kittur Rani Chennamma", "Belawadi Mallamma", "Onake Obavva", "Keladi Chennamma"],
+        ans: 2,
+        exp: "Onake Obavva guarded the narrow crevice (kindi) of Chitradurga Fort, striking down Hyder Ali's invading soldiers with an onake (pestle)."
+      },
+      {
+        id: 45,
+        sec: "gk",
+        secTitle: "Regional GK & Karnataka Profile",
+        provenance: "[PYQ - VERIFIED: SHIMUL 2019]",
+        q: "Which is the oldest dam in Karnataka, constructed across the Vedavathi river between 1898 and 1907 in Hiriyur taluk of Chitradurga?",
+        options: ["Linganamakki Dam", "Bhadra Dam", "Vani Vilasa Sagara (Mari Kanive)", "Gajanur Dam"],
+        ans: 2,
+        exp: "Vani Vilasa Sagara (Mari Kanive Dam) across the Vedavathi River was built between 1898 and 1907 by the Mysore Wadiyars."
+      },
+      {
+        id: 46,
+        sec: "gk",
+        secTitle: "Regional GK & Karnataka Profile",
+        provenance: "[PYQ - VERIFIED: KMF 2022]",
+        q: "Who was the first Kannada writer to receive the prestigious Jnanpith Award in 1967 for 'Sri Ramayana Darshanam'?",
+        options: ["Da. Ra. Bendre", "Kuvempu (K.V. Puttappa)", "Masti Venkatesha Iyengar", "K. Shivaram Karanth"],
+        ans: 1,
+        exp: "Rashtrakavi Kuvempu (born in Kuppalli, Thirthahalli, Shivamogga) won the first Jnanpith Award for Kannada in 1967."
+      },
+      {
+        id: 47,
+        sec: "gk",
+        secTitle: "Regional GK & Karnataka Profile",
+        provenance: "[PYQ - ADJACENT: KPSC Group C 2022]",
+        q: "Mysore State was officially renamed as 'Karnataka' on November 1, 1973, during the tenure of which visionary Chief Minister?",
+        options: ["K.C. Reddy", "Kengal Hanumanthaiah", "S. Nijalingappa", "D. Devaraj Urs"],
+        ans: 3,
+        exp: "Chief Minister D. Devaraj Urs renamed Mysore State as Karnataka on November 1, 1973."
+      },
+      {
+        id: 48,
+        sec: "gk",
+        secTitle: "Regional GK & Karnataka Profile",
+        provenance: "[EXPECTED / GENERATED - STATE SYMBOLS]",
+        q: "Which of the following is the official State Butterfly of Karnataka?",
+        options: ["Blue Mormon", "Southern Birdwing (Troides minos)", "Common Peacock", "Malabar Banded Peacock"],
+        ans: 1,
+        exp: "Southern Birdwing (Troides minos), India's second-largest butterfly, is the official State Butterfly of Karnataka."
+      },
+      {
+        id: 49,
+        sec: "gk",
+        secTitle: "Regional GK & Karnataka Profile",
+        provenance: "[EXPECTED / GENERATED - STATE SCHEMES]",
+        q: "Under the 'Gruha Lakshmi' scheme in Karnataka, what direct financial benefit is provided monthly to women heads of families?",
+        options: ["₹1,000 per month", "₹1,500 per month", "₹2,000 per month", "₹3,000 per month"],
+        ans: 2,
+        exp: "Gruha Lakshmi provides ₹2,000 per month direct benefit transfer (DBT) to women heads of BPL/APL/Antyodaya households."
+      },
+      {
+        id: 50,
+        sec: "gk",
+        secTitle: "Regional GK & Karnataka Profile",
+        provenance: "[EXPECTED / GENERATED - KARNATAKA HISTORY]",
+        q: "Discovered near Belur in Hassan district, which is the oldest surviving stone inscription written in ancient Kannada script (c. 450 AD)?",
+        options: ["Badami Cliff Inscription", "Halmidi Inscription", "Aihole Inscription", "Talagunda Pillar Inscription"],
+        ans: 1,
+        exp: "The Halmidi Inscription (c. 450 AD, Kadamba dynasty) is the earliest confirmed epigraphical record written in ancient Kannada script."
+      },
+
+      // SECTION 5: GENERAL KANNADA (51-60)
+      {
+        id: 51,
+        sec: "kannada",
+        secTitle: "General Kannada (ಸಾಮಾನ್ಯ ಕನ್ನಡ)",
+        provenance: "[PYQ - VERIFIED: KPSC FDA/SDA / KMF]",
+        q: "ಕನ್ನಡ ವರ್ಣಮಾಲೆಯಲ್ಲಿರುವ ಒಟ್ಟು ಅಕ್ಷರಗಳ ಸಂಖ್ಯೆ ಎಷ್ಟು?",
+        options: ["48", "49", "50", "52"],
+        ans: 1,
+        exp: "ಕನ್ನಡ ವರ್ಣಮಾಲೆಯಲ್ಲಿ ಒಟ್ಟು 49 ಅಕ್ಷರಗಳಿವೆ (ಸ್ವರಗಳು 13, ಯೋಗವಾಹಗಳು 2, ವ್ಯಂಜನಗಳು 34)."
+      },
+      {
+        id: 52,
+        sec: "kannada",
+        secTitle: "General Kannada (ಸಾಮಾನ್ಯ ಕನ್ನಡ)",
+        provenance: "[PYQ - VERIFIED: KPSC FDA / KMF]",
+        q: "'ಮಳೆಗಾಲ' ಪದವು ಯಾವ ಸಂಧಿಗೆ ಉದಾಹರಣೆಯಾಗಿದೆ?",
+        options: ["ಲೋಪ ಸಂಧಿ", "ಆಗಮ ಸಂಧಿ", "ಆದೇಶ ಸಂಧಿ", "ಗುಣ ಸಂಧಿ"],
+        ans: 2,
+        exp: "ಮಳೆ + ಕಾಲ = ಮಳೆಗಾಲ. ಉತ್ತರಪದದ ಆದಿಯಲ್ಲಿರುವ 'ಕ'ಕಾರಕ್ಕೆ 'ಗ'ಕಾರ ಆದೇಶವಾಗಿ ಬಂದಿರುವುದರಿಂದ ಇದು ಆದೇಶ ಸಂಧಿ."
+      },
+      {
+        id: 53,
+        sec: "kannada",
+        secTitle: "General Kannada (ಸಾಮಾನ್ಯ ಕನ್ನಡ)",
+        provenance: "[PYQ - VERIFIED: KPSC FDA / KMF]",
+        q: "'ಕಣ್ಣೀರು' ಪದವು ಯಾವ ಸಮಾಸಕ್ಕೆ ಉದಾಹರಣೆಯಾಗಿದೆ?",
+        options: ["ಕರ್ಮಧಾರಯ ಸಮಾಸ", "ತತ್ಪುರುಷ ಸಮಾಸ", "ದ್ವಿಗು ಸಮಾಸ", "ಅಂಶಿ ಸಮಾಸ"],
+        ans: 1,
+        exp: "ಕಣ್ಣಿನ + ನೀರು = ಕಣ್ಣೀರು. ಪೂರ್ವಪದವು ಷಷ್ಠೀ ವಿಭಕ್ತಿಯಲ್ಲಿದ್ದು, ಉತ್ತರಪದದ ನಾಮಪದದೊಂದಿಗೆ ಸೇರಿ ಆಗುವ ಸಮಾಸ ತತ್ಪುರುಷ ಸಮಾಸ."
+      },
+      {
+        id: 54,
+        sec: "kannada",
+        secTitle: "General Kannada (ಸಾಮಾನ್ಯ ಕನ್ನಡ)",
+        provenance: "[PYQ - VERIFIED: KPSC FDA/SDA]",
+        q: "'ಹೊಸಗನ್ನಡ' ಪದವನ್ನು ವಿಗ್ರಹ ವಾಕ್ಯ ಮಾಡಿದಾಗ ಯಾವ ಸಮಾಸವಾಗುತ್ತದೆ?",
+        options: ["ಹೊಸದಾದ ಕನ್ನಡ - ಕರ್ಮಧಾರಯ ಸಮಾಸ", "ಹೊಸತಿನ ಕನ್ನಡ - ತತ್ಪುರುಷ ಸಮಾಸ", "ಹೊಸ ಮತ್ತು ಕನ್ನಡ - ದ್ವಂದ್ವ ಸಮಾಸ", "ಕನ್ನಡದ ಹೊಸತು - ಅಂಶಿ ಸಮಾಸ"],
+        ans: 0,
+        exp: "ಹೊಸದು (ವಿಶೇಷಣ) + ಕನ್ನಡ (ವಿಶೇಷ್ಯ) = ಹೊಸಗನ್ನಡ. ವಿಶೇಷಣ-ವಿಶೇಷ್ಯ ಸಂಬಂಧದಿಂದ ಕೂಡಿ ಆಗುವ ಸಮಾಸ ಕರ್ಮಧಾರಯ ಸಮಾಸ."
+      },
+      {
+        id: 55,
+        sec: "kannada",
+        secTitle: "General Kannada (ಸಾಮಾನ್ಯ ಕನ್ನಡ)",
+        provenance: "[PYQ - VERIFIED: KPSC FDA / KMF]",
+        q: "'ವಿದ್ಯಾರ್ಥಿ' ಪದವು ಯಾವ ಸಂಸ್ಕೃತ ಸಂಧಿಗೆ ಉದಾಹರಣೆಯಾಗಿದೆ?",
+        options: ["ಗುಣ ಸಂಧಿ", "ವೃದ್ಧಿ ಸಂಧಿ", "ಸವರ್ಣದೀರ್ಘ ಸಂಧಿ", "ಯಣ್ ಸಂಧಿ"],
+        ans: 2,
+        exp: "ವಿದ್ಯಾ + ಅರ್ಥಿ = ವಿದ್ಯಾರ್ಥಿ. ಸವರ್ಣ ಸ್ವರಗಳು ಪರವಾದಾಗ ದೀರ್ಘ ಸ್ವರಾದೇಶವಾಗುವುದರಿಂದ ಇದು ಸವರ್ಣದೀರ್ಘ ಸಂಧಿ."
+      },
+      {
+        id: 56,
+        sec: "kannada",
+        secTitle: "General Kannada (ಸಾಮಾನ್ಯ ಕನ್ನಡ)",
+        provenance: "[PYQ - VERIFIED: KPSC FDA / KMF]",
+        q: "'ಬೆಟ್ಟದಾವರೆ' ಪದದ ಸರಿಯಾದ ವಿಗ್ರಹ ವಾಕ್ಯ ಮತ್ತು ಸಮಾಸವನ್ನು ಗುರುತಿಸಿ:",
+        options: ["ಬೆಟ್ಟದಲ್ಲಿ ತಾವರೆ - ತತ್ಪುರುಷ ಸಮಾಸ", "ಬೆಟ್ಟದಂತೆ ತಾವರೆ - ಉಪಮಾ ಸಮಾಸ", "ಬೆಟ್ಟ ಮತ್ತು ತಾವರೆ - ದ್ವಂದ್ವ ಸಮಾಸ", "ಹಿರಿದಾದ ತಾವರೆ - ಕರ್ಮಧಾರಯ ಸಮಾಸ"],
+        ans: 0,
+        exp: "ಬೆಟ್ಟದಲ್ಲಿ (ಸಪ್ತಮೀ ವಿಭಕ್ತಿ) + ತಾವರೆ = ಬೆಟ್ಟದಾವರೆ. ಇದು ತತ್ಪುರುಷ ಸಮಾಸಕ್ಕೆ ಉದಾಹರಣೆ."
+      },
+      {
+        id: 57,
+        sec: "kannada",
+        secTitle: "General Kannada (ಸಾಮಾನ್ಯ ಕನ್ನಡ)",
+        provenance: "[PYQ - VERIFIED: KPSC FDA/SDA]",
+        q: "'ಹಬ್ಬ' ಎಂಬ ತದ್ಭವ ಪದದ ಸರಿಯಾದ ತತ್ಸಮ ರೂಪ ಯಾವುದು?",
+        options: ["ಹರ್ಷ", "ಪರ್ವ", "ಪ್ರಭಾತ", "ಭವ್ಯ"],
+        ans: 1,
+        exp: "'ಪರ್ವ' ಎಂಬ ಸಂಸ್ಕೃತ ತತ್ಸಮ ಪದದ ಕನ್ನಡ ತದ್ಭವ ರೂಪ 'ಹಬ್ಬ'."
+      },
+      {
+        id: 58,
+        sec: "kannada",
+        secTitle: "General Kannada (ಸಾಮಾನ್ಯ ಕನ್ನಡ)",
+        provenance: "[EXPECTED / GENERATED - COOP TERMINOLOGY]",
+        q: "ಸಹಕಾರಿ ಆಡಳಿತದಲ್ಲಿ ಬಳಸುವ 'Bye-law' ಎಂಬ ಇಂಗ್ಲಿಷ್ ಪದಕ್ಕೆ ಸರಿಯಾದ ಸಮಾನಾರ್ಥಕ ಕನ್ನಡ ಪದ ಯಾವುದು?",
+        options: ["ಕಾಯ್ದೆ", "ನಿಯಮಾವಳಿ", "ಉಪವಿಧಿ", "ಆಜ್ಞಾಪತ್ರ"],
+        ans: 2,
+        exp: "Cooperative 'Bye-law' ನ ಅಧಿಕೃತ ಕನ್ನಡ ಪಾರಿಭಾಷಿಕ ಪದ 'ಉಪವಿಧಿ'."
+      },
+      {
+        id: 59,
+        sec: "kannada",
+        secTitle: "General Kannada (ಸಾಮಾನ್ಯ ಕನ್ನಡ)",
+        provenance: "[EXPECTED / GENERATED - COOP TERMINOLOGY]",
+        q: "ಸಹಕಾರಿ ಸಂಘಗಳ ಸಾಮಾನ್ಯ ಸಭೆ ಅಥವಾ ಮಂಡಳಿ ಸಭೆಯನ್ನು ನಡೆಸಲು ಅಗತ್ಯವಿರುವ 'ಕೋರಂ' (Quorum) ಎಂದರೇನು?",
+        options: [
+          "ಸಭೆಯಲ್ಲಿ ಮತ ಚಲಾಯಿಸಿದ ಒಟ್ಟು ಸದಸ್ಯರ ಸಂಖ್ಯೆ",
+          "ಸಭೆಯ ಕಲಾಪಗಳನ್ನು ಅಧಿಕೃತವಾಗಿ ನಡೆಸಲು ಇರಬೇಕಾದ ಕನಿಷ್ಠ ಸದಸ್ಯರ ಹಾಜರಾತಿ",
+          "ಸಭೆಯ ಅಧ್ಯಕ್ಷರ ನಿರ್ಣಾಯಕ ಮತ",
+          "ಸಭೆಯಲ್ಲಿ ಮಂಡಿಸಲಾಗುವ ವಾರ್ಷಿಕ ಆಯವ್ಯಯ ಪಟ್ಟಿ"
+        ],
+        ans: 1,
+        exp: "ಕೋರಂ (Quorum) ಎಂದರೆ ಯಾವುದೇ ಸಭೆಯ ಕಲಾಪಗಳನ್ನು ಮಾನ್ಯವಾಗಿ ನಡೆಸಲು ಕಾನೂನಿನ ಪ್ರಕಾರ ಹಾಜರಿರಬೇಕಾದ ಕನಿಷ್ಠ ಸದಸ್ಯರ ಸಂಖ್ಯೆ."
+      },
+      {
+        id: 60,
+        sec: "kannada",
+        secTitle: "General Kannada (ಸಾಮಾನ್ಯ ಕನ್ನಡ)",
+        provenance: "[EXPECTED / GENERATED - PROVERBS]",
+        q: "'ಕೈಲಾಗದವನು ಮೈ ಪರಚಿಕೊಂಡ' - ಈ ಗಾದೆ ಮಾತಿನ ನಿಜವಾದ ತಾತ್ಪರ್ಯವೇನು?",
+        options: [
+          "ತನ್ನ ಅಸಾಮರ್ಥ್ಯವನ್ನು ಮುಚ್ಚಿಕೊಳ್ಳಲು ಇತರರ ಮೇಲೆ ಅಥವಾ ತನ್ನ ಮೇಲೆಯೇ ಕೋಪಗೊಳ್ಳುವುದು",
+          "ಬಡತನದಲ್ಲಿ ಕಾಲ ಕಳೆಯುವುದು",
+          "ಯಾರ ಸಹಾಯವನ್ನೂ ಪಡೆಯದೆ ಕೆಲಸ ಮುಗಿಸುವುದು",
+          "ಕಷ್ಟಪಟ್ಟು ಕೆಲಸ ಮಾಡುವ ಸ್ವಭಾವ"
+        ],
+        ans: 0,
+        exp: "'ಕೈಲಾಗದವನು ಮೈ ಪರಚಿಕೊಂಡ' ಗಾದೆಯು ಸ್ವಂತ ಅಸಾಮರ್ಥ್ಯ ಅಥವಾ ಅಸಹಾಯಕತೆಯಿಂದ ವ್ಯರ್ಥವಾಗಿ ಸಿಟ್ಟಾಗುವುದನ್ನು ಸೂಚಿಸುತ್ತದೆ."
+      },
+
+      // SECTION 6: GENERAL ENGLISH (61-70)
+      {
+        id: 61,
+        sec: "english",
+        secTitle: "General English Proficiency",
+        provenance: "[PYQ - VERIFIED: KPSC FDA / KMF]",
+        q: "Identify the correctly spelled word from the given options:",
+        options: ["Co-operetive", "Cooperative", "Co-oparative", "Cooparitive"],
+        ans: 1,
+        exp: "'Cooperative' (or hyphenated 'Co-operative') is the standard correct English spelling."
+      },
+      {
+        id: 62,
+        sec: "english",
+        secTitle: "General English Proficiency",
+        provenance: "[PYQ - VERIFIED: KPSC SDA / KMF 2022]",
+        q: "Fill in the blank with the appropriate preposition: 'The farmer has been supplying milk ___ the dairy cooperative society since 2015.'",
+        options: ["at", "to", "for", "with"],
+        ans: 1,
+        exp: "The verb 'supply' when followed by the recipient takes the preposition 'to' (supplying milk to the society)."
+      },
+      {
+        id: 63,
+        sec: "english",
+        secTitle: "General English Proficiency",
+        provenance: "[PYQ - VERIFIED: KPSC FDA / KMF]",
+        q: "Spot the part containing an error: 'Neither the Chairman (A) / nor the directors (B) / was present (C) / at the Annual General Meeting (D)'",
+        options: ["Part (A)", "Part (B)", "Part (C)", "Part (D)"],
+        ans: 2,
+        exp: "In subject-verb agreement with 'neither... nor', the verb agrees with the nearer subject ('the directors' - plural). Therefore, it should be 'were present', not 'was present'."
+      },
+      {
+        id: 64,
+        sec: "english",
+        secTitle: "General English Proficiency",
+        provenance: "[PYQ - VERIFIED: KPSC FDA / KMF]",
+        q: "Choose the word which is most nearly OPPOSITE in meaning (Antonym) to: 'AUTONOMOUS'",
+        options: ["Independent", "Sovereign", "Dependent", "Self-governing"],
+        ans: 2,
+        exp: "'Autonomous' means self-governing and independent; its antonym is 'Dependent' or 'Subordinate'."
+      },
+      {
+        id: 65,
+        sec: "english",
+        secTitle: "General English Proficiency",
+        provenance: "[PYQ - VERIFIED: KMF 2022]",
+        q: "Choose the word which is closest in meaning (Synonym) to: 'SURCHARGE'",
+        options: ["Discharge", "Additional fee or penalty", "Tax rebate", "Exemption"],
+        ans: 1,
+        exp: "A 'surcharge' is an additional charge, tax, or financial recovery penalty imposed on top of an ordinary cost."
+      },
+      {
+        id: 66,
+        sec: "english",
+        secTitle: "General English Proficiency",
+        provenance: "[PYQ - VERIFIED: KPSC FDA / KMF]",
+        q: "Choose the correct passive voice for: 'The Registrar inspected the records of the cooperative society.'",
+        options: [
+          "The records of the cooperative society are inspected by the Registrar.",
+          "The records of the cooperative society were inspected by the Registrar.",
+          "The records of the cooperative society had inspected by the Registrar.",
+          "The Registrar was inspecting the records of the cooperative society."
+        ],
+        ans: 1,
+        exp: "Simple past active ('inspected') transforms into simple past passive: 'were inspected' (since 'records' is plural)."
+      },
+      {
+        id: 67,
+        sec: "english",
+        secTitle: "General English Proficiency",
+        provenance: "[EXPECTED / GENERATED - GRAMMAR]",
+        q: "Complete the conditional sentence: 'If raw milk is chilled below 4°C immediately after milking, bacterial multiplication ___ effectively halted.'",
+        options: ["will be", "would be", "would have been", "was"],
+        ans: 0,
+        exp: "First conditional rule (real possibility in present/future): If + simple present ('is chilled'), main clause takes will + base verb ('will be effectively halted')."
+      },
+      {
+        id: 68,
+        sec: "english",
+        secTitle: "General English Proficiency",
+        provenance: "[EXPECTED / GENERATED - VOCABULARY]",
+        q: "Choose the one-word substitution for: 'A person who dishonestly misapplies or steals money entrusted to their custody or care.'",
+        options: ["Philanthropist", "Embezzler", "Creditor", "Arbitrator"],
+        ans: 1,
+        exp: "An 'embezzler' is someone who fraudulently appropriates money or property entrusted to their care."
+      },
+      {
+        id: 69,
+        sec: "english",
+        secTitle: "General English Proficiency",
+        provenance: "[EXPECTED / GENERATED - REPORTED SPEECH]",
+        q: "Identify the correct indirect speech for: The Managing Director said, 'The mega dairy plant will commence operations tomorrow.'",
+        options: [
+          "The Managing Director said that the mega dairy plant will commence operations tomorrow.",
+          "The Managing Director said that the mega dairy plant would commence operations the next day.",
+          "The Managing Director said that the mega dairy plant commenced operations the previous day.",
+          "The Managing Director says that the mega dairy plant would commence operations tomorrow."
+        ],
+        ans: 1,
+        exp: "'will' changes to 'would' in reported speech, and time adverb 'tomorrow' changes to 'the next day'."
+      },
+      {
+        id: 70,
+        sec: "english",
+        secTitle: "General English Proficiency",
+        provenance: "[EXPECTED / GENERATED - IDIOMS]",
+        q: "What is the true meaning of the common English idiom: 'To cry over spilt milk'?",
+        options: [
+          "To measure liquid quantities accurately",
+          "To complain or worry about an unfortunate event that has already occurred and cannot be reversed",
+          "To demand immediate financial compensation",
+          "To preserve dairy products under refrigeration"
+        ],
+        ans: 1,
+        exp: "'To cry over spilt milk' means to regret or fret over something that has already happened and cannot be fixed or undone."
+      }
+    ];
+
+    // --- STATE VARIABLES ---
+    let currentQIndex = 0;
+    let userAnswers = new Array(questions.length).fill(null);
+    let userReview = new Array(questions.length).fill(false);
+    let userVisited = new Array(questions.length).fill(false);
+    let activeFilter = "all";
+    let timerSeconds = 90 * 60; // 90 Minutes
+    let timerInterval = null;
+    let isTestSubmitted = false;
+
+    // --- DOM ELEMENTS ---
+    const qIndexText = document.getElementById("qIndexText");
+    const qSectionBadge = document.getElementById("qSectionBadge");
+    const qProvenance = document.getElementById("qProvenance");
+    const qText = document.getElementById("qText");
+    const optionsGrid = document.getElementById("optionsGrid");
+    const paletteGrid = document.getElementById("paletteGrid");
+    const answeredRatio = document.getElementById("answeredRatio");
+    const timerText = document.getElementById("timerText");
+    const timerBadge = document.getElementById("timerBadge");
+
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    const clearBtn = document.getElementById("clearBtn");
+    const reviewBtn = document.getElementById("reviewBtn");
+
+    const submitTopBtn = document.getElementById("submitTopBtn");
+    const submitSideBtn = document.getElementById("submitSideBtn");
+    const confirmModal = document.getElementById("confirmModal");
+    const modalCancelBtn = document.getElementById("modalCancelBtn");
+    const modalConfirmBtn = document.getElementById("modalConfirmBtn");
+    const modalStatsText = document.getElementById("modalStatsText");
+
+    const testInterface = document.getElementById("testInterface");
+    const sectionNav = document.getElementById("sectionNav");
+    const resultContainer = document.getElementById("resultContainer");
+    const retakeBtn = document.getElementById("retakeBtn");
+
+    // --- INITIALIZATION ---
+    function init() {
+      startTimer();
+      renderPalette();
+      loadQuestion(0);
+      setupEventListeners();
+    }
+
+    // --- TIMER ---
+    function startTimer() {
+      clearInterval(timerInterval);
+      timerInterval = setInterval(() => {
+        if (timerSeconds <= 0) {
+          clearInterval(timerInterval);
+          submitTest();
+          return;
+        }
+        timerSeconds--;
+        const mins = Math.floor(timerSeconds / 60);
+        const secs = timerSeconds % 60;
+        timerText.textContent = `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+
+        if (timerSeconds <= 300) { // 5 mins remaining
+          timerBadge.classList.add("warning");
+        }
+      }, 1000);
+    }
+
+    // --- RENDER QUESTION ---
+    function loadQuestion(index) {
+      if (index < 0 || index >= questions.length) return;
+      currentQIndex = index;
+      userVisited[index] = true;
+
+      const q = questions[index];
+      qIndexText.textContent = `Question ${index + 1} of ${questions.length}`;
+      qSectionBadge.textContent = q.secTitle;
+      qProvenance.textContent = q.provenance;
+      qText.textContent = `${index + 1}. ${q.q}`;
+
+      optionsGrid.innerHTML = "";
+      q.options.forEach((opt, oIdx) => {
+        const label = document.createElement("label");
+        label.className = "option-label" + (userAnswers[index] === oIdx ? " selected" : "");
+
+        const radio = document.createElement("input");
+        radio.type = "radio";
+        radio.name = `option_${index}`;
+        radio.value = oIdx;
+        radio.checked = userAnswers[index] === oIdx;
+
+        radio.addEventListener("change", () => {
+          userAnswers[index] = oIdx;
+          updateOptionStyles();
+          updatePalette();
+        });
+
+        const span = document.createElement("span");
+        const optLetter = String.fromCharCode(65 + oIdx);
+        span.innerHTML = `<strong>(${optLetter})</strong> ${opt}`;
+
+        label.appendChild(radio);
+        label.appendChild(span);
+        optionsGrid.appendChild(label);
+      });
+
+      // Update Review Button state
+      if (userReview[index]) {
+        reviewBtn.textContent = "Unmark Review";
+        reviewBtn.style.backgroundColor = "var(--review)";
+        reviewBtn.style.color = "#fff";
+      } else {
+        reviewBtn.textContent = "Mark for Review";
+        reviewBtn.style.backgroundColor = "";
+        reviewBtn.style.color = "";
+      }
+
+      // Prev / Next button states
+      prevBtn.disabled = index === 0;
+      nextBtn.textContent = (index === questions.length - 1) ? "Finish / Review →" : "Next →";
+
+      updatePalette();
+    }
+
+    function updateOptionStyles() {
+      const labels = optionsGrid.querySelectorAll(".option-label");
+      labels.forEach((lbl, idx) => {
+        lbl.classList.toggle("selected", userAnswers[currentQIndex] === idx);
+      });
+    }
+
+    // --- PALETTE GENERATION & STATUS ---
+    function renderPalette() {
+      paletteGrid.innerHTML = "";
+      questions.forEach((q, idx) => {
+        const bubble = document.createElement("div");
+        bubble.className = "q-bubble";
+        bubble.textContent = idx + 1;
+        bubble.dataset.index = idx;
+        bubble.dataset.section = q.sec;
+
+        bubble.addEventListener("click", () => {
+          loadQuestion(idx);
+        });
+
+        paletteGrid.appendChild(bubble);
+      });
+      updatePalette();
+    }
+
+    function updatePalette() {
+      const bubbles = paletteGrid.querySelectorAll(".q-bubble");
+      let answeredCount = 0;
+
+      bubbles.forEach((bubble, idx) => {
+        const isAnswered = userAnswers[idx] !== null;
+        const isReview = userReview[idx];
+        const isVisited = userVisited[idx];
+        const isCurrent = idx === currentQIndex;
+
+        if (isAnswered) answeredCount++;
+
+        bubble.className = "q-bubble";
+        if (isCurrent) bubble.classList.add("current");
+
+        if (isAnswered && isReview) {
+          bubble.classList.add("status-answered-review");
+        } else if (isReview) {
+          bubble.classList.add("status-review");
+        } else if (isAnswered) {
+          bubble.classList.add("status-answered");
+        } else if (isVisited) {
+          bubble.classList.add("status-visited-unanswered");
+        } else {
+          bubble.classList.add("status-unvisited");
+        }
+
+        // Section filter visibility
+        if (activeFilter === "all" || bubble.dataset.section === activeFilter) {
+          bubble.style.display = "flex";
+        } else {
+          bubble.style.display = "none";
+        }
+      });
+
+      answeredRatio.textContent = `${answeredCount} / ${questions.length} Answered`;
+    }
+
+    // --- EVENT LISTENERS ---
+    function setupEventListeners() {
+      // Prev / Next
+      prevBtn.addEventListener("click", () => {
+        if (currentQIndex > 0) loadQuestion(currentQIndex - 1);
+      });
+
+      nextBtn.addEventListener("click", () => {
+        if (currentQIndex < questions.length - 1) {
+          loadQuestion(currentQIndex + 1);
+        } else {
+          openSubmitModal();
+        }
+      });
+
+      // Clear Response
+      clearBtn.addEventListener("click", () => {
+        userAnswers[currentQIndex] = null;
+        updateOptionStyles();
+        updatePalette();
+      });
+
+      // Mark for Review
+      reviewBtn.addEventListener("click", () => {
+        userReview[currentQIndex] = !userReview[currentQIndex];
+        loadQuestion(currentQIndex);
+      });
+
+      // Section Navigation Tabs
+      sectionNav.querySelectorAll(".section-tab").forEach(tab => {
+        tab.addEventListener("click", () => {
+          sectionNav.querySelectorAll(".section-tab").forEach(t => t.classList.remove("active"));
+          tab.classList.add("active");
+          activeFilter = tab.dataset.section;
+
+          // Jump to first question of section
+          if (activeFilter !== "all") {
+            const firstIdx = questions.findIndex(q => q.sec === activeFilter);
+            if (firstIdx !== -1) loadQuestion(firstIdx);
+          }
+          updatePalette();
+        });
+      });
+
+      // Theme toggle
+      document.getElementById("themeToggle").addEventListener("click", () => {
+        const currentTheme = document.documentElement.getAttribute("data-theme");
+        document.documentElement.setAttribute("data-theme", currentTheme === "dark" ? "light" : "dark");
+      });
+
+      // Submit Dialog
+      submitTopBtn.addEventListener("click", openSubmitModal);
+      submitSideBtn.addEventListener("click", openSubmitModal);
+      modalCancelBtn.addEventListener("click", () => { confirmModal.style.display = "none"; });
+      modalConfirmBtn.addEventListener("click", () => {
+        confirmModal.style.display = "none";
+        submitTest();
+      });
+
+      retakeBtn.addEventListener("click", resetTest);
+    }
+
+    function openSubmitModal() {
+      let ans = 0, rev = 0;
+      userAnswers.forEach(a => { if (a !== null) ans++; });
+      userReview.forEach(r => { if (r) rev++; });
+      modalStatsText.innerHTML = `<strong>Answered:</strong> ${ans} | <strong>Unanswered:</strong> ${questions.length - ans} | <strong>Marked for Review:</strong> ${rev}`;
+      confirmModal.style.display = "flex";
+    }
+
+    // --- SUBMIT & SCORING ENGINE ---
+    function submitTest() {
+      isTestSubmitted = true;
+      clearInterval(timerInterval);
+
+      testInterface.style.display = "none";
+      sectionNav.style.display = "none";
+      submitTopBtn.style.display = "none";
+      resultContainer.style.display = "flex";
+
+      let totalCorrect = 0;
+      let totalIncorrect = 0;
+      let totalAttempted = 0;
+
+      const secStats = {
+        dairy: { title: "Dairy Union Operations & KMF", total: 0, att: 0, cor: 0, wrg: 0, marks: 0 },
+        coop: { title: "Co-operative Law & KCS Act 1959", total: 0, att: 0, cor: 0, wrg: 0, marks: 0 },
+        const: { title: "Indian Constitution & Panchayati Raj", total: 0, att: 0, cor: 0, wrg: 0, marks: 0 },
+        gk: { title: "Regional GK & Karnataka Profile", total: 0, att: 0, cor: 0, wrg: 0, marks: 0 },
+        kannada: { title: "General Kannada (ಸಾಮಾನ್ಯ ಕನ್ನಡ)", total: 0, att: 0, cor: 0, wrg: 0, marks: 0 },
+        english: { title: "General English Proficiency", total: 0, att: 0, cor: 0, wrg: 0, marks: 0 }
+      };
+
+      questions.forEach((q, idx) => {
+        const sec = secStats[q.sec];
+        sec.total++;
+
+        const userAns = userAnswers[idx];
+        if (userAns !== null) {
+          totalAttempted++;
+          sec.att++;
+          if (userAns === q.ans) {
+            totalCorrect++;
+            sec.cor++;
+            sec.marks += 1.0;
+          } else {
+            totalIncorrect++;
+            sec.wrg++;
+            sec.marks -= 0.25;
+          }
+        }
+      });
+
+      const netScore = Math.max(0, (totalCorrect * 1.0) - (totalIncorrect * 0.25));
+      const scaledScore = ((netScore / questions.length) * 200).toFixed(2);
+      const accuracy = totalAttempted > 0 ? ((totalCorrect / totalAttempted) * 100).toFixed(1) : 0;
+
+      document.getElementById("finalScoreDisplay").textContent = `${netScore.toFixed(2)} / ${questions.length}.00`;
+      document.getElementById("scoreScaledText").textContent = `Scaled Score: ${scaledScore} / 200 Marks (Target: 155+ for Selection)`;
+      document.getElementById("statAttempted").textContent = totalAttempted;
+      document.getElementById("statCorrect").textContent = totalCorrect;
+      document.getElementById("statIncorrect").textContent = totalIncorrect;
+      document.getElementById("statAccuracy").textContent = `${accuracy}%`;
+
+      // Populate Category Breakdown
+      const tbody = document.getElementById("breakdownTableBody");
+      tbody.innerHTML = "";
+      Object.values(secStats).forEach(s => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td><strong>${s.title}</strong></td>
+          <td>${s.total}</td>
+          <td>${s.att}</td>
+          <td style="color: var(--accent); font-weight:600;">${s.cor}</td>
+          <td style="color: var(--danger); font-weight:600;">${s.wrg}</td>
+          <td><strong>${s.marks.toFixed(2)}</strong></td>
+        `;
+        tbody.appendChild(tr);
+      });
+
+      // Populate Review List
+      const reviewList = document.getElementById("reviewList");
+      reviewList.innerHTML = "";
+      questions.forEach((q, idx) => {
+        const userAns = userAnswers[idx];
+        const isCorrect = userAns === q.ans;
+        const isSkipped = userAns === null;
+
+        const card = document.createElement("div");
+        card.className = "review-item " + (isSkipped ? "unanswered" : (isCorrect ? "correct" : "incorrect"));
+
+        const userStatusText = isSkipped 
+          ? `<span style="color: var(--warning); font-weight: 600;">Unattempted</span>`
+          : (isCorrect 
+            ? `<span style="color: var(--accent); font-weight: 600;">✓ Correct (+1.0)</span>` 
+            : `<span style="color: var(--danger); font-weight: 600;">✗ Incorrect (-0.25)</span>`);
+
+        const userChoiceLetter = userAns !== null ? String.fromCharCode(65 + userAns) : "None";
+        const correctChoiceLetter = String.fromCharCode(65 + q.ans);
+
+        card.innerHTML = `
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <span style="font-weight: 700; font-size: 0.95rem;">Q${idx + 1}. [${q.secTitle}]</span>
+            <div>${userStatusText}</div>
+          </div>
+          <div style="font-size: 1.05rem; font-weight: 600; margin-bottom: 12px;">${q.q}</div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 0.9rem; margin-bottom: 12px;">
+            ${q.options.map((opt, oIdx) => {
+              const letter = String.fromCharCode(65 + oIdx);
+              let style = "padding: 6px 10px; border-radius: 4px; border: 1px solid var(--border);";
+              if (oIdx === q.ans) style += " background: var(--accent-light); border-color: var(--accent); font-weight: 600;";
+              if (userAns === oIdx && !isCorrect) style += " background: var(--danger-light); border-color: var(--danger); font-weight: 600;";
+              return `<div style="${style}">(${letter}) ${opt}</div>`;
+            }).join("")}
+          </div>
+          <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 8px;">
+            Your Answer: <strong>(${userChoiceLetter})</strong> | Correct Answer: <strong>(${correctChoiceLetter})</strong> | <em>${q.provenance}</em>
+          </div>
+          <div class="explanation-box">
+            <strong>💡 Explanation & Concept:</strong> ${q.exp}
+          </div>
+        `;
+        reviewList.appendChild(card);
+      });
+
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function resetTest() {
+      userAnswers = new Array(questions.length).fill(null);
+      userReview = new Array(questions.length).fill(false);
+      userVisited = new Array(questions.length).fill(false);
+      timerSeconds = 90 * 60;
+      isTestSubmitted = false;
+
+      resultContainer.style.display = "none";
+      testInterface.style.display = "grid";
+      sectionNav.style.display = "flex";
+      submitTopBtn.style.display = "block";
+      timerBadge.classList.remove("warning");
+
+      activeFilter = "all";
+      sectionNav.querySelectorAll(".section-tab").forEach(t => t.classList.remove("active"));
+      sectionNav.querySelector('[data-section="all"]').classList.add("active");
+
+      init();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    // Start on page load
+    window.addEventListener("DOMContentLoaded", init);
+  </script>
+</body>
+</html>

@@ -128,12 +128,19 @@ flowchart TD
     * **2 Seats:** Women
     * **1 Seat:** Backward Classes (Category A or B)
 * **Chief Executive Officer (Section 29G):** Every society must have a Chief Executive (Managing Director / Secretary) who is the custodian of records and responsible for day-to-day operations.
-* **Supersession / Suspension of Committee (Section 30):** The Registrar has the power to supersede or suspend a board if it persistently defaults, acts contrary to the interests of the society, or fails to discharge statutory duties.
+* **Disqualifications for Committee Membership (Section 29C) `[HIGH-YIELD LAW]`: `[LAW]`**
+  * *Financial Default:* A member in default to the society or any other cooperative society/bank is strictly barred from contesting or continuing on the board.
+  * *Office of Profit:* Holds any paid post or office of profit under the society.
+  * *Competing Business:* Directly or indirectly carries on any competing business of the same type as that of the society.
+  * *Meeting Absence:* Fails to attend **three consecutive committee meetings** without obtaining leave of absence.
+  * *Criminal Conviction:* Convicted of an offence involving moral turpitude with sentence > 6 months (disqualified for 5 years).
+* **Supersession / Suspension of Committee (Section 30):** The Registrar has the power to supersede or suspend a board if it persistently defaults, acts contrary to the interests of the society, or fails to discharge statutory duties. Maximum period: **6 months** (1 year for cooperative banks). Prior consultation with financing bank / RBI is mandatory.
 * **Special Officer (Section 31):** The State Government or Registrar may appoint a Special Officer for a specified duration to manage affairs when a committee's term expires or cannot be constituted.
+* **Co-operative Election Authority (Section 39A) `[LAW]`: `[STATUTE]`** Independent statutory authority headed by the Co-operative Election Commissioner to conduct, superintend, and control all cooperative elections across Karnataka.
 
 #### 4. Financial Structure & Net Profit Distribution (Section 57)
 * Every cooperative society earning net profits must compulsorily allocate:
-  * **Minimum 25% of Net Profits** to the statutory **Reserve Fund**.
+  * **Minimum 25% of Net Profits** to the statutory **Reserve Fund** (Section 57).
   * **Co-operative Education Fund:** Contribution remitted to the Karnataka State Co-operative Federation Ltd.
   * **Maximum Dividend Ceiling:** Dividend payable on equity shares cannot exceed **25%** per annum.
 
@@ -141,12 +148,18 @@ flowchart TD
 * **Audit (Section 63):** Conducted annually by the **Director of Cooperative Audit** or qualified chartered accountants empanelled by the Director. Completed within **September 1st**.
 * **Inquiry (Section 64):** The Registrar may, on their own motion (suo motu), or on the application of a majority of committee members, or not less than **one-third of total members**, hold an inquiry into the working, constitution, and financial condition of the society.
 * **Inspection of Books (Section 65):** The Registrar can inspect books on the application of a creditor whose debt is due and unpaid.
-* **Surcharge Proceedings (Section 69):** Empowers the Registrar to investigate misapplication, misappropriation, breach of trust, or willful negligence by any past or present officer/employee and issue a recovery order with interest.
+* **Surcharge Proceedings (Section 68/69):** Empowers the Registrar to investigate misapplication, misappropriation, breach of trust, or willful negligence by any past or present officer/employee and issue a recovery order with interest (limitation: within 5 years).
 
-#### 6. Dispute Resolution & Bar of Civil Courts (Sections 70 & 71)
+#### 6. Dispute Resolution & Bar of Civil Courts (Sections 70, 71 & 118) `[HIGH-YIELD]`
 * **Section 70 (Disputes):** Any dispute touching the constitution, management, or business of a cooperative society between members, past members, committee officers, or surety **must be referred to the Registrar of Cooperative Societies**.
-* **Exclusion of Civil Court Jurisdiction:** Civil courts have **no jurisdiction** to entertain any suit or proceeding in respect of any dispute referred under Section 70.
-* **Section 71:** The Registrar may decide the dispute personally or refer it to a designated arbitrator/nominee.
+* **Section 118 (Total Bar of Civil Court Jurisdiction):** Civil courts have **no jurisdiction** to entertain any suit or proceeding in respect of any dispute covered under Section 70.
+* **Section 71:** The Registrar may decide the dispute personally or refer it to a designated arbitrator/nominee. Awards have the force of a civil court decree.
+* **Appeals (Section 105):** Appeals against arbitral awards or Registrar orders lie before the **Karnataka Appellate Tribunal (KAT)** within 60 days.
+
+#### 7. Recent Statutory Amendments & Judicial Rulings (2023–2025) `[CURRENT-LAW]`
+* **Section 20(2)(b)(v) Defaulter Notice Rule (2023 Amendment):** Society must issue a **30-day demand notice** to a defaulter; the member must clear all dues at least **20 days prior** to the election date to retain voting rights.
+* **Section 128A Common Cadre Struck Down:** The Karnataka High Court struck down Section 128A (centralized cadre/recruitment for cooperative employees) as unconstitutional and *ultra vires* Article 19(1)(c), protecting cooperative autonomy.
+* *For comprehensive 50+ section reference and rules, see:* [[references/karnataka-cooperative-law-reference|Karnataka Co-operative Law Master Reference]]
 
 ---
 
@@ -225,18 +238,23 @@ flowchart TD
 | **Sec 27** | Annual General Meeting (AGM) | On or before **September 25** annually |
 | **Sec 28A** | Managing Committee / Board Composition | **Term: 5 Years**; Max: 21 Directors |
 | **Sec 28A Res**| Statutory Reservations on Committee | 1 SC, 1 ST, 2 Women, 1 Backward Class |
+| **Sec 29C** | **Disqualification for Committee Membership** | Defaulter, office of profit, competing business, 3 absences |
 | **Sec 29G** | Appointment of Chief Executive Officer / MD | Society with Registrar guidelines |
-| **Sec 30** | **Supersession / Suspension of Committee** | Registrar of Co-operative Societies |
+| **Sec 30** | **Supersession / Suspension of Committee** | Registrar of Co-operative Societies (Max 6 months) |
 | **Sec 31** | Appointment of **Special Officer** | State Govt / Registrar |
+| **Sec 39A** | **Co-operative Election Authority** | Independent conduct & superintendence of elections |
 | **Sec 57** | Allocation of Net Profits | **Min 25% to Reserve Fund** |
 | **Sec 63** | Mandatory Annual **Audit** | Director of Co-operative Audit |
 | **Sec 64** | Statutory **Inquiry** | Registrar (Suo motu or on application) |
 | **Sec 65** | **Inspection** of books and records | Registrar on creditor's application |
-| **Sec 69** | **Surcharge** proceedings | Recovery for misapplied/embezzled funds |
+| **Sec 68/69** | **Surcharge** proceedings | Recovery for misapplied/embezzled funds (5-year limit) |
 | **Sec 70** | **Disputes** referred to Registrar | **Civil Courts Strictly Excluded** |
 | **Sec 71** | Settlement / Disposal of disputes | Registrar or designated Nominee |
 | **Sec 72** | **Winding Up** / Liquidation of societies | Registrar of Co-operative Societies |
 | **Sec 73** | Appointment of Liquidator | Registrar of Co-operative Societies |
+| **Sec 105** | **Appeals to KAT** | Karnataka Appellate Tribunal (60-day limitation) |
+| **Sec 118** | **Bar of Jurisdiction of Civil Courts** | Strict bar on matters covered by Sec 70 |
+| **Sec 128A** | Common Cadre for Employees (2023) | **Struck down as unconstitutional by Karnataka High Court** |
 
 ---
 

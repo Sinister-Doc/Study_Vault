@@ -120,7 +120,7 @@ flowchart TD
     
     Check -->|Unlawful Detention / Confinement| W1["<b>Habeas Corpus</b><br/><i>'To have the body of'</i><br/>Produces detained person in court"]
     Check -->|Public Official Fails to Do Duty| W2["<b>Mandamus</b><br/><i>'We Command'</i><br/>Commands execution of statutory duty"]
-    Check -->|Court Acting Beyond Jurisdiction (Pending)| W3["<b>Prohibition</b><br/><i>'To forbid'</i><br/>Stops ongoing trial in lower tribunal"]
+    Check -->|Trial Pending Beyond Jurisdiction| W3["<b>Prohibition</b><br/><i>'To forbid'</i><br/>Stops ongoing trial in lower tribunal"]
     Check -->|Quashing an Illegal Order Already Passed| W4["<b>Certiorari</b><br/><i>'To be certified'</i><br/>Overturns lower court order violating law"]
     Check -->|Usurping a Public Office Illegally| W5["<b>Quo-Warranto</b><br/><i>'By what authority'</i><br/>Ousts person holding public office unlawfully"]
 
@@ -173,7 +173,7 @@ flowchart TD
 
     Gov --> Zilla --> Taluk --> Gram
     
-    Sub1["<b>Mandatory Provisions</b><br/>• 3-Tier structure (in states > 20 Lakh population)<br/>• Minimum 33% Women Reservation (Karnataka: 50%!)<br/>• State Finance Commission (Art 243-I)<br/>• State Election Commission (Art 243-K)"]
+    Sub1["<b>Mandatory Provisions</b><br/>• 3-Tier structure (in states exceeding 20 Lakh population)<br/>• Minimum 33% Women Reservation (Karnataka: 50%!)<br/>• State Finance Commission (Art 243-I)<br/>• State Election Commission (Art 243-K)"]
 
     Gov -.-> Sub1
 

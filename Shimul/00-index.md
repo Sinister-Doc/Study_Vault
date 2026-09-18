@@ -96,37 +96,56 @@ flowchart TD
         Sub4["general-knowledge.md<br/>Regional Tri-District, Rivers, Symbols"]
     end
 
-    subgraph Drill["Active Recall Engines"]
-        T1["pyq-bank.md<br/>35 Verified Sourced MCQs"]
+    subgraph Drill["Active Recall Engines & Tools"]
+        T1["pyq-bank.md<br/>Verified Sourced MCQs"]
         T2["quiz-bank.md<br/>Spaced-Repetition Q&A + MCQs"]
+        T3["shimul-mock-test.html<br/>Interactive Browser Exam Simulator"]
+    end
+
+    subgraph Ref["Specialized Reference Modules (references/)"]
+        R1["kmf-shimul-current-affairs.md<br/>2024-2026 Chronology & Leadership"]
+        R2["karnataka-cooperative-law-reference.md<br/>KCS Act 50+ Sections & Rules"]
+        R3["dairy-data-and-statistics.md<br/>Quantitative Metrics & 16 Unions"]
+        R4["dairy-gk-quick-reference.md<br/>Breeds, Milk Chemistry & Tests"]
     end
 
     Home --> Plan
     Home --> Subjects
+    Home --> Ref
     Home --> Drill
     
     Subjects -.-> Drill
     Plan -.-> Subjects
+    Ref -.-> Drill
 
     style Home fill:#e0f2fe,stroke:#0369a1,stroke-width:2px
     style Plan fill:#fef3c7,stroke:#b45309,stroke-width:2px
     style Subjects fill:#dcfce7,stroke:#15803d,stroke-width:2px
+    style Ref fill:#fef9c3,stroke:#ca8a04,stroke-width:2px
     style Drill fill:#f3e8ff,stroke:#7e22ce,stroke-width:2px
 ```
 
 ### Blueprint & Planning
 * [[01-exam-overview|01. Exam Overview & Official Pattern]] — Complete breakdown of 194 vacancies across 17 cadres, marking scheme, bilingual structure, full section-wise syllabus, and confidence & gaps analysis.
 * [[02-study-plan|02. Day-by-Day 10-Day Study Plan]] — Hour-by-hour operational calendar from September 18 to September 27, 2026, incorporating conceptual learning, revision blocks, and exam-day execution strategy.
+* [[change-log|Vault Upgrade Change Log]] — Verification audit, provenance tracking, and chronological record of all enhancements.
 
 ### Core Subject Knowledge Modules
-* [[subjects/dairy-union-kmf|Dairy Union Functioning, KMF Structure & Dairy Technology]] — Comprehensive coverage of the Anand 3-tier pattern, KMF history (KDDC 1974 → KMF 1984), SHIMUL profile (Machenahalli, Davanagere, Chitradurga), FSSAI standards (Toned, Double Toned, Full Cream), pasteurization (LTLT, HTST, UHT), Alkaline Phosphatase testing, *Ksheera Bhagya*, and memory aids.
-* [[subjects/cooperative-societies|Co-operative Societies: Movement, Principles & KCS Act, 1959]] — Detailed breakdown of Rochdale Pioneers (1844), 7 ICA Principles, Frederic Nicholson's Report, Kanaginahal 1905 heritage (Siddanagouda Patil), KCS Act 1959 Master Sections (Sec 20, 27, 28A, 57, 63, 64, 69, 70), Constitutional 97th Amendment, and the landmark Supreme Court 2021 *Rajendra N. Shah* judgment.
-* [[subjects/indian-constitution|Indian Constitution: Core Framework, Panchayati Raj & Co-op Jurisprudence]] — Preamble keywords, Fundamental Rights (Articles 12–35), 5 Constitutional Writs (Habeas Corpus to Quo-Warranto), DPSP (Article 40, Article 43B), Fundamental Duties (51A), 73rd Amendment (Panchayati Raj 29 subjects), and Master Constitutional Articles table.
+* [[subjects/dairy-union-kmf|Dairy Union Functioning, KMF Structure & Dairy Technology]] — Comprehensive coverage of the Anand 3-tier pattern, KMF history (KDDC 1974 → KMF 1984), SHIMUL profile (Machenahalli, Davanagere, Chitradurga), FSSAI standards, pasteurization, testing, *Ksheera Bhagya*, and memory aids.
+* [[subjects/cooperative-societies|Co-operative Societies: Movement, Principles & KCS Act, 1959]] — Detailed breakdown of Rochdale Pioneers (1844), 7 ICA Principles, Frederic Nicholson's Report, Kanaginahal 1905 heritage (Siddanagouda Patil), KCS Act 1959 Master Sections (Sec 20, 28A, 29C, 30, 39A, 57, 63, 64, 68, 70, 118), Constitutional 97th Amendment, and recent amendments.
+* [[subjects/indian-constitution|Indian Constitution: Core Framework, Panchayati Raj & Co-op Jurisprudence]] — Preamble keywords, Fundamental Rights (Articles 12–35), 5 Constitutional Writs, DPSP (Article 40, Article 43B), Fundamental Duties (51A), 73rd Amendment, and Master Constitutional Articles table.
 * [[subjects/general-knowledge|General Knowledge: Karnataka Profile, Regional Focus (SHIMUL Area) & Current Affairs]] — Physiography, river systems, Tri-District regional focus (Shivamogga, Davanagere, Chitradurga; Jog Falls, Koodli, Shanti Sagara, Onake Obavva, Vani Vilasa Sagara), state symbols, 8 Jnanpith awardees, and the *Panch Guarantee* welfare schemes.
 
+### Dedicated Deep-Reference Modules (`references/`)
+* [[references/kmf-shimul-current-affairs|KMF & SHIMUL Current Affairs (2024–2026)]] — Chronological event log (Tirupati pure ghee contract resumption, ICC T20 World Cup team sponsorship, New Delhi entry, June 2024 +50ml/₹2 price formula, leadership roster, mega dairies).
+* [[references/karnataka-cooperative-law-reference|Karnataka Co-operative Law Master Reference]] — 50+ section-by-section breakdown of KCS Act 1959, KCS Rules 1960, Section 29C disqualifications, Section 39A Election Authority, Section 70 arbitration vs Civil Court bar (Sec 118), and 2023–2025 amendments.
+* [[references/dairy-data-and-statistics|Dairy Data, Quantitative Statistics & Financial Reference]] — Official metrics: KMF ₹21,330 Cr turnover, 82.9–95 LLPD procurement, 1.2–1.3 Cr L/day summer peak, 16 milk unions roster, SHIMUL 1.7L farmer base, and cheat tables.
+* [[references/dairy-gk-quick-reference|Dairy Science, Breeds & Platform Testing Reference]] — Native cattle (Hallikar, Amrit Mahal, Deoni), exotic breeds (HF, Jersey), buffalo breeds (Murrah, Surti, Bhadawari), milk chemistry, platform testing (Gerber, MBRT, Phosphatase, COB), and animal diseases.
+
 ### Testing & Active Recall Engines
-* [[pyq-bank|Previous Year Question Bank (PYQ Bank)]] — 35 authentic, verified, and sourced MCQs from past KMF, BAMUL, TUMUL, MYMUL, and SHIMUL exams, plus adjacent Karnataka cooperative examinations, complete with correct answers and detailed explanations.
-* [[quiz-bank|Interactive Flashcard & Quiz Bank]] — 30+ flashcard Q&A pairs and MCQ questions with distractors derived directly from the subject notes, tagged by difficulty and subject, topped with autonomous agent instructions for interactive spaced-repetition quizzing.
+* [[pyq-bank|Previous Year Question Bank (PYQ Bank)]] — Authentic, verified, and sourced MCQs from past KMF, BAMUL, TUMUL, MYMUL, and SHIMUL exams, tagged with provenance.
+* [[quiz-bank|Interactive Flashcard & Quiz Bank]] — Spaced-repetition Q&A pairs and MCQs derived directly from the subject notes, tagged by difficulty and subject.
+* `shimul-mock-test.html` — Full-fledged interactive browser-based exam simulator featuring real-time countdown timer, auto-submission, section filters, instant scoring by category, question palette navigation, and detailed answer explanations with provenance tags.
 
 ---
 

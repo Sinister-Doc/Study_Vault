@@ -84,21 +84,24 @@ flowchart TD
 * **Evening Session (19:30 – 21:30):**
   * Practice: Solve [[pyq-bank#1-2-co-operative-movement--karnataka-co-operative-societies-act-1959|PYQ Bank Q11 to Q18]].
   * Flashcard drill: [[quiz-bank#section-2-co-operative-societies--karnataka-co-operative-societies-act-1959|Quiz Bank Q-CS-01 to Q-CS-04]].
+  * Cross-reference: Read high-yield sections in [[references/karnataka-cooperative-law-reference|Karnataka Co-operative Law Master Reference]].
 
 ---
 
 ### Day 2: Saturday, September 19, 2026 — KCS Act Enforcement, Disputes & Constitutional 97th Amdt
 * **Target Subject:** [[subjects/cooperative-societies|Co-operative Societies]] + [[subjects/indian-constitution|Constitution Overlap]]
 * **Morning Session (08:00 – 11:00):**
-  * Master the regulatory and enforcement sections: Section 57 (Net profit allocation, 25% Reserve Fund), Section 63 (Audit by Director of Cooperative Audit), Section 64 (Inquiry by Registrar), Section 65 (Inspection), Section 69 (Surcharge).
-  * Deeply understand **Section 70 (Disputes referable to Registrar)** and the total exclusion of Civil Courts.
+  * Master the regulatory and enforcement sections: Section 57 (Net profit allocation, 25% Reserve Fund), Section 63 (Audit by Director of Cooperative Audit), Section 64 (Inquiry by Registrar), Section 65 (Inspection), Section 68/69 (Surcharge).
+  * Deeply understand **Section 70 (Disputes referable to Registrar)**, Section 118 (Civil Court bar), Section 105 (KAT appeals), and Section 29C (Disqualifications).
 * **Afternoon Session (14:00 – 16:30):**
   * 97th Constitutional Amendment Act, 2011: Art 19(1)(c), Art 43B, Part IX-B.
   * Supreme Court 2021 Ruling: *Union of India vs. Rajendra N. Shah* (struck down Part IX-B for State societies, upheld for Multi-State cooperatives).
   * Union Ministry of Cooperation (July 6, 2021, Amit Shah, *"Sahakar Se Samriddhi"*).
+  * 2023 Amendment: Defaulter 30-day notice rule; High Court strike-down of Section 128A Common Cadre.
 * **Evening Session (19:30 – 21:30):**
   * Practice: Solve [[pyq-bank#part-2-adjacent-karnataka-co-operative-exam-questions|PYQ Bank Q29 to Q35]].
   * Flashcard drill: [[quiz-bank#section-2-co-operative-societies--karnataka-co-operative-societies-act-1959|Quiz Bank Q-CS-05 to Q-CS-08 & MCQs]].
+  * Review: [[references/karnataka-cooperative-law-reference|Karnataka Co-operative Law Reference]].
 
 ---
 
@@ -111,8 +114,9 @@ flowchart TD
 * **Afternoon Session (14:00 – 16:30):**
   * Karnataka Dairy Evolution: KDDC (1974), Nandini brand (1983), KMF (1984).
   * Memorize the 16 District Cooperative Milk Unions in Karnataka.
-  * **SHIMUL Profile:** Headquarters at Machenahalli (Shivamogga), Davanagere Dairy, Chitradurga chilling center, takeover on Aug 1, 1991.
-  * Dairy Schemes: *Ksheera Bhagya* (Aug 1, 2013, 150ml milk 5 days/wk), *Ksheera Dhare* (farmer subsidy DBT), *Pashu Sanjeevini* (1962).
+  * **SHIMUL Profile & Leadership:** President H.S. Vidyadhar, MD S.G. Shekar, Machenahalli Mega Dairy (4 LLPD) & Powder Plant (30 MT/day).
+  * Current Affairs & Numbers: KMF ₹21,330 Cr turnover, Tirupati Ghee contract, T20 World Cup, Delhi entry, +50ml/₹2 price formula.
+  * Deep-read: [[references/kmf-shimul-current-affairs|KMF & SHIMUL Current Affairs]] and [[references/dairy-data-and-statistics|Dairy Data & Statistics]].
 * **Evening Session (19:30 – 21:30):**
   * Practice: Solve [[pyq-bank#1-1-dairy-union-operations-kmf--dairy-technology|PYQ Bank Q1, Q5, Q6, Q7, Q8]].
   * Flashcard drill: [[quiz-bank#section-1-dairy-union-functioning-kmf--dairy-science|Quiz Bank Q-DU-01, Q-DU-02, Q-DU-07, Q-DU-08]].
@@ -123,11 +127,14 @@ flowchart TD
 * **Target Subject:** [[subjects/dairy-union-kmf|Dairy Science & Quality Standards]] (FSSAI & Lab Testing)
 * **Morning Session (08:00 – 11:00):**
   * Milk Chemistry: Water, Fat, SNF, Casein protein, Lactose sugar, pH (6.6–6.8), specific gravity (1.028–1.032).
-  * FSSAI Milk Composition Standards: Memorize the table for Toned (3.0% / 8.5%), Double Toned (1.5% / 9.0%), Standardised (4.5% / 8.5%), Full Cream (6.0% / 9.0%).
+  * Bovine Breeds: Hallikar, Amrit Mahal, Deoni, Khillar; Gir, Sahiwal; HF, Jersey; Murrah, Surti, Bhadawari (fat up to 13%).
+  * FSSAI Milk Composition Standards: Toned (3.0% / 8.5%), Double Toned (1.5% / 9.0%), Standardised (4.5% / 8.5%), Full Cream (6.0% / 9.0%).
 * **Afternoon Session (14:00 – 16:30):**
   * Processing: Chilling (< 4°C), Homogenization (2,000–2,500 psi).
   * Pasteurization methods: LTLT (63°C, 30 min), HTST (72°C, 15 sec), UHT (135–150°C, 1–2 sec).
-  * Laboratory Tests: Alkaline Phosphatase Test (pasteurization indicator), Gerber Test (fat%), Lactometer (specific gravity/adulteration), MBRT (bacterial load), Clot-on-Boiling (COB).
+  * Laboratory Tests: Alkaline Phosphatase Test (pasteurization indicator), Gerber Test (fat%), Lactometer (Richmond formula), MBRT, COB, alcohol test.
+  * Veterinary Pathology: Anthrax (no post-mortem), Brucellosis (zoonotic abortion), FMD, Mastitis, LSD.
+  * Deep-read: [[references/dairy-gk-quick-reference|Dairy Science, Breeds & Testing Quick Reference]].
 * **Evening Session (19:30 – 21:30):**
   * Practice: Solve [[pyq-bank#1-1-dairy-union-operations-kmf--dairy-technology|PYQ Bank Q2, Q3, Q4, Q9, Q10]].
   * Flashcard drill: [[quiz-bank#section-1-dairy-union-functioning-kmf--dairy-science|Quiz Bank Q-DU-03 to Q-DU-06 & MCQs]].
@@ -200,10 +207,13 @@ flowchart TD
 
 ### Day 9: Saturday, September 26, 2026 — Full Spaced Repetition Drill & Mock Test
 * **Target:** Rapid active retrieval, error elimination, exam psychology.
-* **Morning Session (08:30 – 10:30): FULL LENGTH MOCK DRILL**
-  * Run through all 35 PYQs + 25 Quiz Bank items consecutively. Track incorrect answers on paper.
-* **Afternoon Session (11:30 – 14:00): Error Analysis & Gap Filling**
-  * For every missed question, go back to the exact subject note subsection and write down the reason for the error.
+* **Morning Session (08:30 – 10:30): FULL LENGTH TIMED MOCK SIMULATION**
+  * Open `shimul-mock-test.html` in any web browser.
+  * Attempt the full-length interactive computer-based simulation under strict 120-minute timed conditions.
+  * Test covers all 6 sections (Dairy, Cooperative Law, Constitution, GK, Kannada, English) with negative marking (-0.25).
+* **Afternoon Session (11:30 – 14:00): Instant Error Analysis & Category Breakdown**
+  * Use the simulator's Category Breakdown and Review Mode to inspect explanations for all incorrect or unattempted questions.
+  * Cross-reference weak areas with the specialized notes in `references/`.
 * **Evening Session (16:00 – 18:00): Final Flashcard Sprint**
   * Have an AI agent or study partner quiz you across all flashcards in [[quiz-bank|quiz-bank.md]].
 * **Night Session (19:30 – 21:00): Exam Logistics & Mental Cool-Down**

@@ -172,6 +172,15 @@ Karnataka holds the prestigious distinction of having the second-highest number 
 * **Interest-Free Crop Loans (ಶೂನ್ಯ ಬಡ್ಡಿದರ ಬೆಳೆ ಸಾಲ):**
   * Short-term agricultural crop loans up to **₹5,00,000 (5 Lakhs)** disbursed at **0% interest** through Primary Agricultural Credit Societies (PACS) and District Central Cooperative (DCC) Banks.
 
+#### Karnataka Indigenous Cattle Breeds & Dairy Profile `[CULTURE & HUSBANDRY]`
+* **Hallikar:** Originating in Mysuru/Hassan/Shivamogga; prominent backward horns; premier draft breed of Karnataka and forefather of Amrit Mahal.
+* **Amrit Mahal:** Royal draft cattle bred by Mysore Maharajas for rapid military cannon/artillery transport; fiery temperament and steel-grey coat.
+* **Deoni:** Dual-purpose cattle from Bidar district; resembles Gujarat's Gir breed with drooping ears and convex forehead.
+* **Khillar:** North Karnataka (Vijayapura/Belagavi) draft breed, highly drought-resilient.
+* **Dairy Rank Contrast:** Karnataka is **8th–9th in raw milk production** nationally (~13.9 MT) but **2nd in organized cooperative milk procurement** (after Gujarat/Amul).
+* *For deep animal husbandry, platform testing & chemistry, see:* [[references/dairy-gk-quick-reference|Dairy Science, Breeds & Testing Quick Reference]]
+* *For recent events (Tirupati Ghee, T20 World Cup, Delhi launch), see:* [[references/kmf-shimul-current-affairs|KMF & SHIMUL Current Affairs Reference]]
+
 ---
 
 ## 3. Key Facts & Lists to Memorize

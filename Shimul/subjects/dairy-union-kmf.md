@@ -101,17 +101,30 @@ flowchart TD
 1. **1974 (KDDC):** The Government of Karnataka launched the Karnataka Dairy Development Project with financial assistance from the World Bank (IDA credit of $30 million). To execute this, the **Karnataka Dairy Development Corporation (KDDC)** was incorporated on **June 10, 1974**. This marked the formal adoption of the Anand pattern in South India.
 2. **1983 (Brand Nandini):** The brand name **"Nandini"** (symbolizing the divine wish-fulfilling cow) was introduced for liquid milk and milk products.
 3. **1984 (KMF Restructuring):** KDDC was converted into a full-fledged three-tier cooperative apex structure under the Karnataka Co-operative Societies Act, renamed as the **Karnataka Co-operative Milk Producers' Federation Limited (KMF)**.
-4. **Current Status:** KMF is the **second-largest dairy cooperative in India** (surpassed only by Amul/GCMMF in Gujarat) and ranks first in South India. Daily milk procurement exceeds 85 to 90 lakh kilograms per day during peak flush seasons.
+4. **Current Status `[OFFICIAL & CURRENT]`: `[CURRENT-2026]`** KMF is the **second-largest dairy cooperative in India** (surpassed only by Amul/GCMMF in Gujarat) and ranks **first in South India**. While Karnataka ranks **8th–9th nationally in raw milk production** (~13.90 MT), it ranks **#2 in organized cooperative procurement** (85–95 LLPD normal, reaching peak flush of **1.20–1.30 Crore Litres/day** in summer 2026). KMF group turnover reached an all-time record of **₹21,330 Crore** in 2023–24.
+
+#### Current Leadership Roster `[OFFICIAL - VERIFIED]`
+* **KMF Apex:** Managing Director: **B. Shivaswamy, KAS**; Chairman tenure commenced June 2023 under **L.B.P. Bheema Naik** / administrative oversight under **T.H.M. Kumar, IAS**.
+* **SHIMUL:** President: **H. S. Vidyadhar** (elected August 2024); Vice-President: **Chethan S. Nadiger**; Managing Director: **S. G. Shekar**.
+
+#### High-Yield Current Affairs Summary (2024–2026) `[CURRENT]`
+* **Tirupati Laddu Ghee Reinstatement (Aug–Sept 2024):** Following adulteration scandals in private vendor contracts, Tirumala Tirupati Devasthanams (TTD) reinstated KMF Nandini as the sole supplier of 350 MT pure Agmark Special Grade cow ghee.
+* **ICC T20 World Cup Sponsorship (May–June 2024):** KMF Nandini sponsored the national cricket teams of **Scotland** and **Ireland** at the ICC Men's T20 World Cup, launching whey drink *Nandini Splash* globally.
+* **Milk Volume & Price Adjustment (June 2024):** Introduced a proportionate **+50 ml extra volume with a +₹2.00 price increase** across packet sizes (500ml $\to$ 550ml at ₹24; 1000ml $\to$ 1050ml at ₹44) to distribute flush surplus to consumers while protecting farmer realizations.
+* **New Delhi & NCR Expansion:** Direct entry of Nandini liquid milk and curd into the national capital market competing with Amul and Mother Dairy.
+* *For complete details, see dedicated module:* [[references/kmf-shimul-current-affairs|KMF & SHIMUL Current Affairs Reference]]
 
 #### SHIMUL Specifics (Shivamogga, Davanagere & Chitradurga District Milk Union)
 * **Inception:** Registered under the Karnataka Co-operative Societies Act, 1959. Officially began operations on **March 16, 1988**.
 * **Operation Flood-III Handover:** On **August 1, 1991**, the Government of Karnataka formally transferred the Shivamogga Main Dairy and chilling facilities to the elected Milk Union.
 * **Administrative Head Office & Mother Dairy:** **Machenahalli**, Nidige Post, Shivamogga – 577222.
-* **Key Dairy Plants:**
-  * *Shivamogga Dairy (Machenahalli):* Primary processing, packing, and product manufacturing hub.
-  * *Davanagere Dairy:* Major processing plant servicing Davanagere urban and rural consumers.
-* **Chilling Centers & BMC Network:**
-  * Strategically located at Chitradurga, Honnali, Anandapura, Tadagani, Challakere, Hosadurga, and Sagar to rapidly chill milk procured from over 1,000+ active primary DCS units.
+* **Operational Scope:** 3 Districts (Shivamogga, Davanagere, Chitradurga); ~1,000+ active primary DCS (~240+ Women DCS); ~1.7 Lakh pouring members; daily procurement ~6.5–7.8 LLPD.
+* **Key Dairy Plants & Infrastructure:**
+  * *Shivamogga Mega Dairy (Machenahalli):* 4.0 LLPD capacity (expandable to 6.0 LLPD).
+  * *Powder Plant:* 30 MT/day Skimmed Milk Powder drying plant at Machenahalli.
+  * *Shikaripura Cattle Feed Plant:* Dedicated animal nutrition manufacturing unit.
+  * *Davanagere Dairy & Chilling Centers:* Honnali, Anandapura, Chitradurga, Hosadurga, Sagara.
+* *For complete quantitative data, see:* [[references/dairy-data-and-statistics|Dairy Data & Statistics Reference]]
 
 ---
 
@@ -124,12 +137,12 @@ flowchart TD
     BMC --> Trans["4. Insulated Road Milk Tankers<br/>Transport to Shivamogga/Davanagere Dairy"]
     Trans --> Plant["5. Dairy Reception Dock (RMRD)<br/>• Platform Tests: COB, Alcohol, Acidity<br/>• MBRT Microbial Test"]
     Plant --> Stand["6. Standardization & Clarification<br/>Blending skim/cream to exact FSSAI Fat & SNF ratios"]
-    Stand --> Homo["7. Homogenization<br/>2,000 to 2,500 psi (breaks fat to < 2 microns)"]
-    Homo --> Past["8. HTST Pasteurization<br/>72°C for 15 seconds, followed by chilling to < 4°C"]
+    Stand --> Homo["7. Homogenization<br/>2,000 to 2,500 psi (breaks fat to below 2 microns)"]
+    Homo --> Past["8. HTST Pasteurization<br/>72°C for 15 seconds, followed by chilling below 4°C"]
     Past --> QC{"9. Quality Check<br/>Alkaline Phosphatase Test"}
-    QC -->|Phosphatase Negative / Passed| Pack["10. Aseptic Automatic Pouch Packaging<br/>(Nandini Toned, Standardised, Double Toned)"]
-    QC -->|Phosphatase Positive / Failed| Reject["Rejected / Diverted to By-products / Reprocessed"]
-    Pack --> Cold["11. Cold Storage (< 4°C) & Insulated Delivery"]
+    QC -->|Phosphatase Negative: Passed| Pack["10. Aseptic Automatic Pouch Packaging<br/>(Nandini Toned, Standardised, Double Toned)"]
+    QC -->|Phosphatase Positive: Failed| Reject["Rejected / Diverted to By-products / Reprocessed"]
+    Pack --> Cold["11. Cold Storage (Below 4°C) & Insulated Delivery"]
     Cold --> Cons["12. Consumer Retail / Nandini Milk Parlours"]
 
     style F fill:#f5f5f5,stroke:#757575,stroke-width:1px
@@ -212,18 +225,6 @@ flowchart TD
 15. **HAVMUL** (Haveri)
 16. **CHIKMUL** (Chikkamagaluru — newly separated unit)
 
-### Quick Dairy Physical & Thermal Parameters Table
-
-| Parameter | Standard Value | Operational Context |
-| :--- | :--- | :--- |
-| **Normal Specific Gravity of Milk** | **1.028 – 1.032 at 20°C** | Detected using Quevenne Lactometer |
-| **Freezing Point of Pure Cow Milk** | **-0.540°C to -0.555°C** | Cryoscope test to detect added water |
-| **Acidity of Fresh Milk** | **0.14% to 0.16%** | Lactic acid equivalent (pH: 6.6 – 6.8) |
-| **LTLT Pasteurization Temp & Time** | **63°C for 30 minutes** | Batch holder method |
-| **HTST Pasteurization Temp & Time** | **72°C (71.7°C) for 15 seconds** | Continuous plate heat exchanger |
-| **UHT Sterilization Temp & Time** | **135°C – 150°C for 1 – 2 seconds** | Aseptic cartons (GoodLife) |
-| **Homogenization Pressure** | **2,000 to 2,500 psi (140 to 175 bar)** | Reduces fat globules to < 2 microns |
-
 ### Key Historical Milestones
 * **1946:** Amul (Kaira Union) established at Anand.
 * **1965:** NDDB established at Anand (Dr. Verghese Kurien).
@@ -236,6 +237,37 @@ flowchart TD
 * **2013 (August 1):** *Ksheera Bhagya* scheme launched.
 * **June 1:** World Milk Day (FAO).
 * **November 26:** National Milk Day (Dr. Verghese Kurien’s birth anniversary).
+
+### Quick Dairy Physical & Thermal Parameters Table
+
+| Parameter | Standard Value | Operational Context |
+| :--- | :--- | :--- |
+| **Normal Specific Gravity of Milk** | **1.028 – 1.032 at 20°C** | Detected using Quevenne Lactometer |
+| **Freezing Point of Pure Cow Milk** | **-0.540°C to -0.555°C** | Cryoscope test to detect added water |
+| **Acidity of Fresh Milk** | **0.14% to 0.16%** | Lactic acid equivalent (pH: 6.6 – 6.8) |
+| **LTLT Pasteurization Temp & Time** | **63°C for 30 minutes** | Batch holder method |
+| **HTST Pasteurization Temp & Time** | **72°C (71.7°C) for 15 seconds** | Continuous plate heat exchanger |
+| **UHT Sterilization Temp & Time** | **135°C – 150°C for 1 – 2 seconds** | Aseptic cartons (GoodLife) |
+| **Homogenization Pressure** | **2,000 to 2,500 psi (140 to 175 bar)** | Reduces fat globules to < 2 microns |
+
+### Major Bovine Breeds for Dairy Examinations `[VERIFIED]`
+| Category | Breed | Origin / Tract | Key Exam Identifier |
+| :--- | :--- | :--- | :--- |
+| **Karnataka Native Cattle** | **Hallikar** | Mysuru / Shivamogga / Hassan | Long backward horns, premier South Indian draft breed |
+| | **Amrit Mahal** | Hassan / Chikkamagaluru | Supreme royal draft power, Mysore artillery transport |
+| | **Deoni** | Bidar | Dual-purpose, convex forehead, speckled white/black |
+| | **Khillar** | Vijayapura / Belagavi | Grey-white, drought-hardy, fast trotting |
+| **Indian Dairy Cattle** | **Gir** | Gujarat (Saurashtra) | Convex forehead, pendulous ears, top indigenous milch |
+| | **Sahiwal** | Punjab / Haryana | Loose skin ("Lola"), sweetest milk (highest lactose) |
+| **Exotic Dairy Cattle** | **Holstein Friesian (HF)** | Netherlands | Black & white piebald, **highest milk volume**, low fat (3.5%) |
+| | **Jersey** | Island of Jersey (UK) | Fawn color, compact, **high fat (5.0%)**, heat adaptable |
+| **Buffalo Breeds** | **Murrah** | Haryana | Jet black, tightly curled horns, **"Black Gold"**, top milch |
+| | **Surti** | Gujarat | Sickle-shaped horns, white chevrons on neck, high fat |
+| | **Jaffarabadi** | Gujarat | Heaviest buffalo, drooped horns with hook |
+| | **Bhadawari** | UP / MP (Chambal) | Copper coat, **highest fat content (up to 13%)** |
+| | **Pandharpuri** | Maharashtra / North Karnataka | Very long flat sword-shaped horns (up to 45-50 inches) |
+
+*For in-depth milk chemistry, adulteration tests, and diseases, see:* [[references/dairy-gk-quick-reference|Dairy Science, Breeds & Testing Reference]]
 
 ---
 
@@ -264,24 +296,24 @@ flowchart TD
 
 ```mermaid
 flowchart TD
-    Sample["Raw Milk Sample at Dairy Dock"] --> T1{"Acidity Test (COB / Alcohol)"}
-    T1 -->|Curdles / Acidic (>0.18%)| Sour["Reject for Liquid Milk / Use for Ghee/Casein"]
-    T1 -->|Stable (<0.16%)| T2{"Lactometer Test (CLR)"}
+    Sample["Raw Milk Sample at Dairy Dock"] --> T1{"Acidity Test: COB or Alcohol"}
+    T1 -->|Curdles or High Acidity| Sour["Reject for Liquid Milk / Divert to Byproducts"]
+    T1 -->|Normal Acidity| T2{"Lactometer Test: CLR"}
     
-    T2 -->|CLR < 1.028| Diluted["Adulterated with Water / Penalty to DCS"]
-    T2 -->|CLR 1.028 - 1.032| Normal["Normal Specific Gravity"]
+    T2 -->|CLR Below 1.028| Diluted["Adulterated with Water / Penalty to DCS"]
+    T2 -->|CLR 1.028 to 1.032| Normal["Normal Specific Gravity"]
     
-    Normal --> T3["Gerber Fat% Test"]
+    Normal --> T3["Gerber Fat Percentage Test"]
     T3 --> T4["MBRT Microbial Quality Test"]
     
-    T4 -->|Decolorizes in < 30 Mins| Poor["Very Poor Quality Milk"]
-    T4 -->|Decolorizes in > 5 Hours| Excellent["Excellent Microbial Grade -> Processing"]
+    T4 -->|Decolorizes Under 30 Mins| Poor["Very Poor Quality Milk"]
+    T4 -->|Decolorizes Over 5 Hours| Excellent["Excellent Microbial Grade: Processing Approved"]
     
-    Excellent --> PastProc["HTST Pasteurization (72°C / 15s)"]
+    Excellent --> PastProc["HTST Pasteurization: 72C for 15s"]
     PastProc --> T5{"Alkaline Phosphatase Test"}
     
-    T5 -->|Positive (Enzyme Active)| FailPast["Pasteurization Incomplete / Danger"]
-    T5 -->|Negative (Enzyme Destroyed)| SafePast["Safe Standard Nandini Milk -> Packaging"]
+    T5 -->|Positive: Enzyme Active| FailPast["Pasteurization Incomplete: Rejected"]
+    T5 -->|Negative: Enzyme Inactivated| SafePast["Safe Standard Nandini Milk: Packaging"]
 
     style Sample fill:#f8fafc,stroke:#475569,stroke-width:2px
     style Sour fill:#fee2e2,stroke:#dc2626,stroke-width:2px

@@ -31,7 +31,8 @@ flowchart TD
 | **Section 2: Co-operative Societies** | 8 | 2 | 10 | Kanaginahal 1905, Sec 20, 27, 28A, 64, 70, 97th Amdt |
 | **Section 3: Indian Constitution** | 6 | 2 | 8 | Preamble, Art 19(1)(c), Art 32 & Writs, Art 43B, 73rd Amdt |
 | **Section 4: General Knowledge** | 7 | 2 | 9 | Jog Falls, Sulekere, Obavva, Vani Vilasa, Jnanpith, Schemes |
-| **Total Interactive Question Bank** | **29** | **8** | **37** | **Flashcard Q&A + Standard 4-Option MCQs** |
+| **Section 5: High-Yield Updates** | 7 | 3 | 10 | Tirupati Ghee, T20 World Cup, ₹21,330 Cr, Sec 29C, Sec 128A |
+| **Total Interactive Question Bank** | **36** | **11** | **47** | **Flashcard Q&A + Standard 4-Option MCQs** |
 
 ---
 
@@ -493,7 +494,7 @@ flowchart TD
 * **Distractor Rationale:** Gruha Jyothi is 200 units free power; Shakti is free bus travel; Yuva Nidhi is youth unemployment allowance.
 
 #### MCQ-GK-02
-* **Subject:** General Knowledge | **Difficulty:** Easy | **Origin:** PYQ-Derived
+* **Subject:** General Knowledge | **Difficulty:** Easy | **Origin:** `[PYQ - VERIFIED]`
 * **Question:** In which taluk of Shivamogga is the famous Gudavi Bird Sanctuary located?
   * (A) Sagar Taluk
   * (B) Soraba Taluk
@@ -501,3 +502,114 @@ flowchart TD
   * (D) Bhadravathi Taluk
 * **Correct Answer:** **(B) Soraba Taluk**
 * **Distractor Rationale:** Sagar has Jog Falls; Thirthahalli has Kuppalli/Kavishaila; Soraba hosts the Gudavi Bird Sanctuary.
+
+---
+
+## Section 5: High-Yield 2024–2026 Updates & Legal Rules (Expected/Generated)
+
+### Flashcard Q&A Pairs
+
+#### Q-EXP-01
+* **Subject:** Current Affairs & KMF | **Difficulty:** Medium | **Origin:** `[EXPECTED / GENERATED]`
+* **Question:** What was the significance of the Tirupati Laddu Ghee contract resumption in August–September 2024 for KMF Nandini?
+* **Answer:**
+  * Following widespread quality scandals and adulteration findings in private ghee supplies, Tirumala Tirupati Devasthanams (TTD) cancelled private tenders and reinstated **KMF Nandini as the exclusive supplier of 350 MT pure Agmark Special Grade cow ghee** for preparing the sacred Tirupati Laddus.
+* **Key Concept:** Certified purity and brand integrity of KMF Nandini.
+
+---
+
+#### Q-EXP-02
+* **Subject:** Current Affairs & KMF | **Difficulty:** Easy | **Origin:** `[EXPECTED / GENERATED]`
+* **Question:** Which international sports sponsorship brought KMF Nandini global visibility in May–June 2024?
+* **Answer:**
+  * KMF Nandini was the official sponsor for the **Scotland** and **Ireland** national men's cricket teams during the **2024 ICC Men's T20 World Cup** in the USA and West Indies.
+* **Key Concept:** Global brand expansion and international promotion of *Nandini Splash* and dairy beverages.
+
+---
+
+#### Q-EXP-03
+* **Subject:** Quantitative Data & KMF | **Difficulty:** Medium | **Origin:** `[EXPECTED / GENERATED]`
+* **Question:** State KMF's audited group turnover for FY 2023–24 and its normal vs peak daily milk procurement figures.
+* **Answer:**
+  * **Turnover (2023–24):** **₹21,330 Crore** (All-time record).
+  * **Normal Daily Procurement:** **82.9 to 95 Lakh Litres/Day (LLPD)**.
+  * **Peak Flush Procurement (Summer 2026):** **1.20 to 1.30 Crore Litres/Day (120–130 LLPD)**.
+* **Key Concept:** Scale of KMF as India's 2nd largest dairy cooperative.
+
+---
+
+#### Q-EXP-04
+* **Subject:** KCS Act 1959 | **Difficulty:** Hard | **Origin:** `[EXPECTED / GENERATED]`
+* **Question:** Under Section 29C of the KCS Act, 1959, what are the primary grounds for disqualification of a committee member?
+* **Answer:**
+  1. **Financial Default:** Defaulting on loans or dues to any cooperative society/bank.
+  2. **Office of Profit:** Holding paid employment under the society.
+  3. **Competing Business:** Engaging directly/indirectly in business identical to the society.
+  4. **Meeting Absence:** Failing to attend **3 consecutive committee meetings** without permission.
+  5. **Criminal Conviction:** Moral turpitude conviction > 6 months (barred for 5 years).
+* **Key Concept:** Statutory governance integrity under Section 29C.
+
+---
+
+#### Q-EXP-05
+* **Subject:** KCS Act 1959 Amendments | **Difficulty:** Hard | **Origin:** `[EXPECTED / GENERATED]`
+* **Question:** Explain the 2023 amendment to Section 20(2)(b)(v) regarding defaulter notice and voting eligibility.
+* **Answer:**
+  * A society must issue a specific registered demand notice giving **not less than 30 days** to the defaulting member to clear arrears.
+  * To exercise voting rights in a general meeting or committee election, the member must clear all dues at least **20 days prior** to the election date.
+* **Key Concept:** Statutory procedural fairness prior to vote disenfranchisement.
+
+---
+
+#### Q-EXP-06
+* **Subject:** Co-op Legal Jurisprudence | **Difficulty:** Hard | **Origin:** `[EXPECTED / GENERATED]`
+* **Question:** Why did the High Court of Karnataka strike down Section 128A (Common Cadre for Cooperative Employees) inserted by the 2023 Amendment?
+* **Answer:**
+  * The High Court held Section 128A **unconstitutional and *ultra vires* Article 19(1)(c)**. Primary cooperative societies are autonomous, member-owned bodies; centralized state-run transfers and recruitment violate the democratic autonomy of cooperatives.
+* **Key Concept:** Cooperative autonomy protected by Article 19(1)(c).
+
+---
+
+#### Q-EXP-07
+* **Subject:** Bovine Breeds & Husbandry | **Difficulty:** Medium | **Origin:** `[EXPECTED / GENERATED]`
+* **Question:** Match these 4 bovine breeds with their key exam identifiers: (1) Hallikar, (2) Amrit Mahal, (3) Murrah, (4) Bhadawari.
+* **Answer:**
+  1. **Hallikar:** Premier South Indian draft breed with long erect backward horns.
+  2. **Amrit Mahal:** Mysore royal army artillery transport breed developed by Maharajas.
+  3. **Murrah:** "Black Gold" of Haryana; tightly curled spiral horns; top milch buffalo.
+  4. **Bhadawari:** Copper-colored Chambal ravine buffalo with highest fat content (8%–13%).
+* **Key Concept:** Distinctive breed characteristics in veterinary GK.
+
+---
+
+### Multiple Choice Questions (with Distractors)
+
+#### MCQ-EXP-01
+* **Subject:** Dairy Statistics | **Difficulty:** Medium | **Origin:** `[EXPECTED / GENERATED]`
+* **Question:** What is Karnataka's rank in India in total raw milk production versus its rank in organized cooperative milk procurement?
+  * (A) 1st in production, 1st in cooperative procurement
+  * (B) 2nd in production, 2nd in cooperative procurement
+  * (C) 8th–9th in production, 2nd in cooperative procurement
+  * (D) 5th in production, 8th in cooperative procurement
+* **Correct Answer:** **(C) 8th–9th in production, 2nd in cooperative procurement**
+* **Distractor Rationale:** Total milk production is led by UP and Rajasthan (~13.9 MT for Karnataka, 8th-9th); cooperative procurement is led by Gujarat (Amul) with Karnataka (KMF) in 2nd position.
+
+#### MCQ-EXP-02
+* **Subject:** Dairy Current Affairs | **Difficulty:** Easy | **Origin:** `[EXPECTED / GENERATED]`
+* **Question:** What was the retail formula implemented in June 2024 by KMF and the Government of Karnataka to handle surplus milk procurement?
+  * (A) Reduced packet volume by 50 ml to cut costs
+  * (B) Increased packet volume by 50 ml with a proportionate ₹2.00 price increase
+  * (C) Imposed a ₹5.00 flat surcharge on all dairy products
+  * (D) Kept price and volume identical while reducing procurement price to farmers
+* **Correct Answer:** **(B) Increased packet volume by 50 ml with a proportionate ₹2.00 price increase**
+* **Distractor Rationale:** 500ml was increased to 550ml (₹24) and 1000ml to 1050ml (₹44) to directly benefit consumers with surplus milk without lowering farmer payout.
+
+#### MCQ-EXP-03
+* **Subject:** KCS Act 1959 | **Difficulty:** Medium | **Origin:** `[EXPECTED / GENERATED]`
+* **Question:** Which section of the Karnataka Co-operative Societies Act, 1959, strictly bars the jurisdiction of Civil Courts on matters referable to the Registrar under Section 70?
+  * (A) Section 28A
+  * (B) Section 39A
+  * (C) Section 71
+  * (D) Section 118
+* **Correct Answer:** **(D) Section 118**
+* **Distractor Rationale:** Section 28A is Committee management; Section 39A is Election Authority; Section 71 is Settlement of disputes; Section 118 is Bar of Civil Court jurisdiction.
