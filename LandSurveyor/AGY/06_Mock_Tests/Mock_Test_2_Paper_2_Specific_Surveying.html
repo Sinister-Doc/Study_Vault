@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mock Test 02 — KEA Land Surveyor 2026</title>
+<style>
+  :root {
+    --primary: #1e3a8a;
+    --primary-light: #3b82f6;
+    --accent: #059669;
+    --danger: #dc2626;
+    --warning: #d97706;
+    --bg: #f8fafc;
+    --card: #ffffff;
+    --text: #1e293b;
+    --text-muted: #64748b;
+    --border: #e2e8f0;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  body { background: var(--bg); color: var(--text); display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
+  header { background: var(--primary); color: white; padding: 12px 24px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+  header h1 { font-size: 1.15rem; font-weight: 600; }
+  .badge { background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 9999px; font-size: 0.8rem; margin-left: 8px; }
+  .timer-box { background: #0f172a; padding: 6px 16px; border-radius: 6px; font-family: monospace; font-size: 1.25rem; font-weight: 700; color: #38bdf8; display: flex; align-items: center; gap: 8px; }
+  .timer-box.warning { color: #f87171; animation: pulse 1s infinite; }
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+  
+  .main-container { display: flex; flex: 1; overflow: hidden; }
+  .question-pane { flex: 1; padding: 24px 32px; overflow-y: auto; display: flex; flex-direction: column; }
+  .sidebar { width: 340px; background: var(--card); border-left: 1px solid var(--border); display: flex; flex-direction: column; }
+  
+  .q-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+  .q-number { font-size: 1.1rem; font-weight: 700; color: var(--primary); }
+  .q-meta { display: flex; gap: 8px; font-size: 0.8rem; }
+  .q-tag { background: #eff6ff; color: #1d4ed8; padding: 2px 8px; border-radius: 4px; font-weight: 600; border: 1px solid #bfdbfe; }
+  .q-marks { background: #f0fdf4; color: #15803d; padding: 2px 8px; border-radius: 4px; font-weight: 600; }
+  
+  .q-text { font-size: 1.05rem; line-height: 1.6; margin-bottom: 24px; font-weight: 500; }
+  .options-grid { display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
+  .option-label { display: flex; align-items: flex-start; gap: 12px; padding: 12px 16px; border: 1.5px solid var(--border); border-radius: 8px; cursor: pointer; transition: all 0.2s; background: white; }
+  .option-label:hover { border-color: var(--primary-light); background: #f8fafc; }
+  .option-label.selected { border-color: var(--primary); background: #eff6ff; font-weight: 600; }
+  .option-radio { margin-top: 4px; accent-color: var(--primary); }
+  
+  .action-bar { margin-top: auto; display: flex; justify-content: space-between; align-items: center; padding-top: 16px; border-top: 1px solid var(--border); }
+  .btn { padding: 10px 18px; border-radius: 6px; font-weight: 600; cursor: pointer; border: none; font-size: 0.9rem; transition: background 0.2s; }
+  .btn-primary { background: var(--primary); color: white; }
+  .btn-primary:hover { background: #1e40af; }
+  .btn-outline { background: white; border: 1px solid var(--border); color: var(--text); }
+  .btn-outline:hover { background: #f1f5f9; }
+  .btn-warning { background: #fef3c7; color: #b45309; border: 1px solid #fde68a; }
+  .btn-warning:hover { background: #fde68a; }
+  .btn-success { background: var(--accent); color: white; }
+  .btn-success:hover { background: #047857; }
+  
+  /* Sidebar */
+  .palette-header { padding: 16px; border-bottom: 1px solid var(--border); font-weight: 700; font-size: 0.95rem; }
+  .legend { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 12px 16px; border-bottom: 1px solid var(--border); font-size: 0.75rem; background: #fafafa; }
+  .legend-item { display: flex; align-items: center; gap: 6px; }
+  .dot { width: 12px; height: 12px; border-radius: 3px; }
+  .dot-answered { background: var(--accent); }
+  .dot-review { background: var(--warning); }
+  .dot-unanswered { background: #cbd5e1; }
+  .dot-current { border: 2px solid var(--primary); background: white; }
+  
+  .palette-grid { flex: 1; padding: 16px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; overflow-y: auto; align-content: start; }
+  .palette-btn { height: 38px; border-radius: 6px; border: 1px solid var(--border); font-weight: 700; font-size: 0.85rem; cursor: pointer; background: white; }
+  .palette-btn.current { border: 2px solid var(--primary); font-weight: 800; }
+  .palette-btn.answered { background: var(--accent); color: white; border-color: var(--accent); }
+  .palette-btn.review { background: var(--warning); color: white; border-color: var(--warning); }
+  .palette-btn.answered-review { background: #8b5cf6; color: white; border-color: #8b5cf6; }
+  
+  .sidebar-footer { padding: 16px; border-top: 1px solid var(--border); }
+  .btn-submit { width: 100%; padding: 12px; font-size: 1rem; }
+  
+  /* Result Modal */
+  .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); display: none; justify-content: center; align-items: center; z-index: 100; }
+  .modal { background: white; border-radius: 12px; width: 90%; max-width: 800px; max-height: 90vh; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.2); }
+  .modal-header { background: var(--primary); color: white; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; }
+  .modal-body { padding: 24px; overflow-y: auto; }
+  .score-card { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; text-align: center; }
+  .score-tile { padding: 16px; border-radius: 8px; background: var(--bg); border: 1px solid var(--border); }
+  .score-tile h3 { font-size: 1.8rem; font-weight: 800; color: var(--primary); }
+  .score-tile p { font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; }
+  
+  .review-section { margin-top: 24px; }
+  .review-item { border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin-bottom: 12px; background: #fafafa; }
+  .review-item.correct { border-left: 4px solid var(--accent); }
+  .review-item.wrong { border-left: 4px solid var(--danger); }
+  .review-item.unanswered { border-left: 4px solid #94a3b8; }
+  .exp-box { margin-top: 8px; padding: 10px; background: #eff6ff; border-radius: 6px; font-size: 0.85rem; color: #1e3a8a; }
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <h1>Mock Test 02 <span class="badge">KEA Land Surveyor 2026</span></h1>
+    <div style="font-size: 0.8rem; opacity: 0.85; margin-top: 2px;">Paper-II: Technical Surveying (Specific Paper) | Total Marks: 100 | Negative: -0.25</div>
+  </div>
+  <div class="timer-box" id="timerBox">
+    <span>⏱️</span> <span id="timerDisplay">00:00:00</span>
+  </div>
+</header>
+
+<div class="main-container">
+  <main class="question-pane">
+    <div class="q-header">
+      <div class="q-number" id="qNumberDisplay">Question 1 of 0</div>
+      <div class="q-meta">
+        <span class="q-tag" id="qSubjectTag">Subject</span>
+        <span class="q-tag" style="background:#fef3c7; color:#92400e; border-color:#fde68a;" id="qSourceTag">Source</span>
+        <span class="q-marks">+1.0 / -0.25</span>
+      </div>
+    </div>
+    
+    <div class="q-text" id="qTextDisplay">Loading question...</div>
+    
+    <div class="options-grid" id="optionsContainer"></div>
+    
+    <div class="action-bar">
+      <div style="display: flex; gap: 8px;">
+        <button class="btn btn-warning" id="btnReview" onclick="toggleReview()">⭐ Mark for Review</button>
+        <button class="btn btn-outline" id="btnClear" onclick="clearCurrentResponse()">Clear Response</button>
+      </div>
+      <div style="display: flex; gap: 8px;">
+        <button class="btn btn-outline" id="btnPrev" onclick="navigateQuestion(-1)">← Previous</button>
+        <button class="btn btn-primary" id="btnNext" onclick="navigateQuestion(1)">Save & Next →</button>
+      </div>
+    </div>
+  </main>
+  
+  <aside class="sidebar">
+    <div class="palette-header">Question Navigation Palette</div>
+    <div class="legend">
+      <div class="legend-item"><div class="dot dot-answered"></div> Answered</div>
+      <div class="legend-item"><div class="dot dot-review"></div> Marked for Review</div>
+      <div class="legend-item"><div class="dot" style="background:#8b5cf6;"></div> Ans & Review</div>
+      <div class="legend-item"><div class="dot dot-unanswered"></div> Not Answered</div>
+    </div>
+    <div class="palette-grid" id="paletteGrid"></div>
+    <div class="sidebar-footer">
+      <button class="btn btn-success btn-submit" onclick="submitExam(false)">Submit Examination</button>
+    </div>
+  </aside>
+</div>
+
+<!-- Results Modal -->
+<div class="modal-overlay" id="resultModal">
+  <div class="modal">
+    <div class="modal-header">
+      <h2>Examination Result & Scorecard</h2>
+      <button onclick="closeModal()" style="background:none; border:none; color:white; font-size:1.5rem; cursor:pointer;">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div class="score-card">
+        <div class="score-tile">
+          <h3 id="resScore">0.00</h3>
+          <p>Total Net Marks</p>
+        </div>
+        <div class="score-tile">
+          <h3 id="resAccuracy" style="color:var(--accent);">0%</h3>
+          <p>Accuracy</p>
+        </div>
+        <div class="score-tile">
+          <h3 id="resCorrect" style="color:var(--accent);">0</h3>
+          <p>Correct (x 1.0)</p>
+        </div>
+        <div class="score-tile">
+          <h3 id="resWrong" style="color:var(--danger);">0</h3>
+          <p>Wrong (-0.25)</p>
+        </div>
+      </div>
+      
+      <div id="subjectBreakdownContainer" style="margin-bottom: 24px;"></div>
+      
+      <h3 style="margin-bottom: 12px;">Detailed Question Review & Explanations</h3>
+      <div class="review-section" id="reviewQuestionsContainer"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+const QUESTIONS = [{"text": "A standard Gunter's Chain has a total length of ______ and consists of ______ links.", "options": ["100 ft, 100 links", "66 ft, 100 links", "33 ft, 16 links", "20 m, 100 links"], "correct": 1, "subject": "Chain Surveying", "tag": "KEA Land Surveyor PYQ", "explanation": "A Gunter's chain is 66 feet long and divided into 100 links (0.66 ft or 7.92 inches per link). 10 square chains equal 1 Acre."}, {"text": "A 20-meter metric chain was found to be 10 cm too long after chaining a distance of 2,000 m. What is the true distance?", "options": ["1,990 m", "2,000 m", "2,010 m", "2,020 m"], "correct": 2, "subject": "Chain Surveying", "tag": "KEA Land Surveyor PYQ", "explanation": "True Distance = (L' / L) * Measured Distance = (20.10 / 20.00) * 2000 = 1.005 * 2000 = 2,010 m."}, {"text": "In tape measurements, the correction for sag is ALWAYS:", "options": ["Positive (Additive)", "Negative (Subtractive)", "Zero", "Dependent on temperature"], "correct": 1, "subject": "Chain Surveying", "tag": "KEA PYQ", "explanation": "Sag correction Cs = - (W^2 * L) / (24 * P^2). Because the curved catenary arc between supports is longer than the chord, sag correction is always negative."}, {"text": "In an optical square, the angle between the index glass and the horizon glass is fixed at:", "options": ["30°", "45°", "60°", "90°"], "correct": 1, "subject": "Chain Surveying", "tag": "KEA PYQ", "explanation": "By the principle of double reflection, the angle of deflection is twice the angle between reflecting mirrors. Hence, 2 * 45° = 90°."}, {"text": "In a Prismatic Compass, the zero degree (0°) mark on the graduated circle is located at the:", "options": ["North end", "South end", "East end", "West end"], "correct": 1, "subject": "Compass Surveying", "tag": "KEA Land Surveyor PYQ", "explanation": "In a Prismatic Compass, 0° is located at the South end so that when looking through the prism at North, the 0° mark is read directly."}, {"text": "The fore bearing of a survey line AB is 215° 30'. Its back bearing is:", "options": ["35° 30'", "125° 30'", "305° 30'", "215° 30'"], "correct": 0, "subject": "Compass Surveying", "tag": "KEA PYQ", "explanation": "Since FB > 180°, Back Bearing = FB - 180° = 215° 30' - 180° = 35° 30'."}, {"text": "The dip of a freely suspended magnetic needle at the Earth's magnetic equator is:", "options": ["0°", "45°", "90°", "180°"], "correct": 0, "subject": "Compass Surveying", "tag": "Expected", "explanation": "At the magnetic equator, the magnetic lines of force run parallel to the Earth's surface, so dip is 0°. At magnetic poles, dip is 90°."}, {"text": "Lines joining points on the Earth's surface possessing equal magnetic declination are known as:", "options": ["Agonic lines", "Isogonic lines", "Isoclinic lines", "Aclinic lines"], "correct": 1, "subject": "Compass Surveying", "tag": "KEA PYQ", "explanation": "Isogonic lines connect points of equal declination. Agonic lines connect points of zero declination."}, {"text": "The combined correction for curvature and refraction for a sight distance of 2 km is:", "options": ["-0.0673 m", "-0.1346 m", "-0.2692 m", "-0.3140 m"], "correct": 2, "subject": "Levelling", "tag": "KEA Land Surveyor PYQ", "explanation": "Combined correction C = - 0.0673 * d^2 meters = - 0.0673 * (2)^2 = - 0.0673 * 4 = - 0.2692 m."}, {"text": "In reciprocal levelling between two stations on opposite banks of a river, which of the following errors is NOT eliminated?", "options": ["Error due to Earth's curvature", "Error due to atmospheric refraction", "Collimation error of the telescope", "Error due to parallax and staff tilt"], "correct": 3, "subject": "Levelling", "tag": "Expected", "explanation": "Reciprocal levelling balances and cancels curvature, refraction, and collimation errors, but cannot eliminate parallax or unsteady staff handling."}, {"text": "Contour lines of different elevations can cross each other only in the case of a:", "options": ["Vertical cliff", "Overhanging cliff", "Steep valley", "Ridge line"], "correct": 1, "subject": "Contouring", "tag": "KEA PYQ", "explanation": "Contours never cross except at an overhanging cliff or an underground cave/tunnel."}, {"text": "Which method of plane tabling is most suitable for surveying inaccessible points across a river without measuring linear distances to the points?", "options": ["Radiation", "Intersection", "Traversing", "Resection"], "correct": 1, "subject": "Plane Table Surveying", "tag": "KEA PYQ", "explanation": "Intersection requires measuring only the base line between two setups; all other points are fixed by intersecting sightlines."}, {"text": "The size of an engineering theodolite is specified by the:", "options": ["Length of the telescope", "Diameter of the objective lens", "Diameter of the lower graduated horizontal circle", "Height of the tripod"], "correct": 2, "subject": "Theodolite", "tag": "KEA Land Surveyor PYQ", "explanation": "A theodolite is sized by the diameter of its graduated lower horizontal circle (typically 10 cm to 12 cm for field surveys)."}, {"text": "An anallatic lens fitted in a tacheometer makes:", "options": ["Multiplying constant zero", "Additive constant zero", "Multiplying constant 1000", "Focal length infinite"], "correct": 1, "subject": "Tacheometry", "tag": "KEA PYQ", "explanation": "An anallatic lens (invented by Porro) shifts the vertex of the measuring angle to the instrument center, making additive constant c = (f + d) = 0."}, {"text": "Bowditch's rule (Compass Rule) for adjusting a closed traverse is applied under the assumption that:", "options": ["Angular measurements are more precise than linear measurements", "Linear and angular measurements are of equal precision", "Linear measurements are more precise than angular measurements", "Closing error is purely systematic"], "correct": 1, "subject": "Traversing", "tag": "KEA PYQ", "explanation": "Bowditch's rule distributes error proportionally to line length under the assumption that linear and angular measurements have equal precision."}, {"text": "For a 30-meter standard arc, the radius of curvature R in terms of degree of curve D is approximately:", "options": ["R = 1718.9 / D", "R = 1145.9 / D", "R = 572.9 / D", "R = 2000 / D"], "correct": 0, "subject": "Curves", "tag": "KEA Land Surveyor PYQ", "explanation": "R = (30 * 180) / (pi * D) = 1718.9 / D meters (or 1145.9 / D for a 20 m arc)."}, {"text": "Which electronic surveying instrument utilizes microwaves for measuring distances up to 100 km?", "options": ["Geodimeter", "Tellurometer", "Distomat", "Total Station"], "correct": 1, "subject": "EDM & Total Station", "tag": "Expected", "explanation": "Tellurometer uses high-frequency radio microwaves; Geodimeter uses visible light; Distomat uses infrared radiation."}, {"text": "How many satellites are minimum required to determine the 3D position (X, Y, Z) and receiver clock bias in a GPS receiver?", "options": ["3 satellites", "4 satellites", "5 satellites", "6 satellites"], "correct": 1, "subject": "GPS & Remote Sensing", "tag": "KEA Land Surveyor PYQ", "explanation": "4 satellites are needed to resolve 4 mathematical unknowns: latitude (X), longitude (Y), ellipsoidal height (Z), and receiver clock bias (t)."}, {"text": "Under the Karnataka Land Revenue Rules, uncultivable land classified as 'Kharab B':", "options": ["Belongs to the farmer for farmyard use", "Vests in the Government and is reserved for public utility", "Can be sold with private title deed", "Is assessed for double tax"], "correct": 1, "subject": "Karnataka Land Records", "tag": "KEA Land Surveyor PYQ", "explanation": "Kharab B land is state property reserved for roads, tanks, graveyards, or gomala, and can never be alienated or assigned to private individuals."}, {"text": "The mandatory pre-mutation survey sketch prepared under the Mojini system prior to agricultural land registration in Karnataka is known as:", "options": ["Akarband sketch", "Tippan copy", "11E Sketch", "Form 9"], "correct": 2, "subject": "Karnataka Land Records", "tag": "KEA Land Surveyor PYQ", "explanation": "Under Section 131(c) of the Karnataka Land Revenue Act, a 11E Sketch generated via Mojini v3 is legally mandatory prior to registration."}];
+const DURATION_SECONDS = 120 * 60;
+const NEG_MARK = 0.25;
+
+let currentIndex = 0;
+let timeRemaining = DURATION_SECONDS;
+let timerInterval = null;
+let userAnswers = new Array(QUESTIONS.length).fill(null);
+let reviewFlags = new Array(QUESTIONS.length).fill(false);
+let examSubmitted = false;
+
+function init() {
+  renderPalette();
+  loadQuestion(0);
+  startTimer();
+}
+
+function startTimer() {
+  const timerDisplay = document.getElementById("timerDisplay");
+  const timerBox = document.getElementById("timerBox");
+  
+  timerInterval = setInterval(() => {
+    if (timeRemaining <= 0) {
+      clearInterval(timerInterval);
+      submitExam(true);
+      return;
+    }
+    timeRemaining--;
+    
+    const h = String(Math.floor(timeRemaining / 3600)).padStart(2, '0');
+    const m = String(Math.floor((timeRemaining % 3600) / 60)).padStart(2, '0');
+    const s = String(timeRemaining % 60).padStart(2, '0');
+    timerDisplay.textContent = `${h}:${m}:${s}`;
+    
+    if (timeRemaining < 300) {
+      timerBox.classList.add("warning");
+    }
+  }, 1000);
+}
+
+function renderPalette() {
+  const grid = document.getElementById("paletteGrid");
+  grid.innerHTML = "";
+  
+  QUESTIONS.forEach((q, idx) => {
+    const btn = document.createElement("button");
+    btn.className = "palette-btn";
+    btn.textContent = idx + 1;
+    btn.id = `palette-btn-${idx}`;
+    btn.onclick = () => loadQuestion(idx);
+    grid.appendChild(btn);
+  });
+  updatePaletteState();
+}
+
+function updatePaletteState() {
+  QUESTIONS.forEach((q, idx) => {
+    const btn = document.getElementById(`palette-btn-${idx}`);
+    btn.className = "palette-btn";
+    
+    const hasAns = userAnswers[idx] !== null;
+    const isRev = reviewFlags[idx];
+    
+    if (hasAns && isRev) {
+      btn.classList.add("answered-review");
+    } else if (hasAns) {
+      btn.classList.add("answered");
+    } else if (isRev) {
+      btn.classList.add("review");
+    }
+    
+    if (idx === currentIndex) {
+      btn.classList.add("current");
+    }
+  });
+}
+
+function loadQuestion(idx) {
+  currentIndex = idx;
+  const q = QUESTIONS[idx];
+  
+  document.getElementById("qNumberDisplay").textContent = `Question ${idx + 1} of ${QUESTIONS.length}`;
+  document.getElementById("qSubjectTag").textContent = q.subject || "General";
+  document.getElementById("qSourceTag").textContent = q.tag || "Expected";
+  document.getElementById("qTextDisplay").innerHTML = q.text;
+  
+  const container = document.getElementById("optionsContainer");
+  container.innerHTML = "";
+  
+  q.options.forEach((opt, optIdx) => {
+    const label = document.createElement("label");
+    label.className = "option-label";
+    if (userAnswers[idx] === optIdx) label.classList.add("selected");
+    
+    const radio = document.createElement("input");
+    radio.type = "radio";
+    radio.name = "opt";
+    radio.className = "option-radio";
+    radio.checked = userAnswers[idx] === optIdx;
+    radio.onchange = () => selectOption(optIdx);
+    
+    const textSpan = document.createElement("span");
+    textSpan.innerHTML = `<strong>${String.fromCharCode(65 + optIdx)}.</strong> ${opt}`;
+    
+    label.appendChild(radio);
+    label.appendChild(textSpan);
+    container.appendChild(label);
+  });
+  
+  document.getElementById("btnPrev").disabled = idx === 0;
+  document.getElementById("btnNext").textContent = idx === QUESTIONS.length - 1 ? "Save & Summary" : "Save & Next →";
+  
+  const revBtn = document.getElementById("btnReview");
+  revBtn.style.background = reviewFlags[idx] ? "#f59e0b" : "#fef3c7";
+  revBtn.style.color = reviewFlags[idx] ? "white" : "#b45309";
+  
+  updatePaletteState();
+}
+
+function selectOption(optIdx) {
+  userAnswers[currentIndex] = optIdx;
+  loadQuestion(currentIndex);
+}
+
+function clearCurrentResponse() {
+  userAnswers[currentIndex] = null;
+  loadQuestion(currentIndex);
+}
+
+function toggleReview() {
+  reviewFlags[currentIndex] = !reviewFlags[currentIndex];
+  loadQuestion(currentIndex);
+}
+
+function navigateQuestion(delta) {
+  const nextIdx = currentIndex + delta;
+  if (nextIdx >= 0 && nextIdx < QUESTIONS.length) {
+    loadQuestion(nextIdx);
+  }
+}
+
+function submitExam(auto = false) {
+  if (!auto) {
+    const answeredCount = userAnswers.filter(a => a !== null).length;
+    const confirmMsg = `You have answered ${answeredCount} out of ${QUESTIONS.length} questions.\nAre you sure you want to finish the exam?`;
+    if (!confirm(confirmMsg)) return;
+  }
+  
+  examSubmitted = true;
+  clearInterval(timerInterval);
+  calculateResults();
+}
+
+function calculateResults() {
+  let correct = 0;
+  let wrong = 0;
+  let unans = 0;
+  let subjectStats = {};
+  
+  QUESTIONS.forEach((q, idx) => {
+    const subj = q.subject || "General";
+    if (!subjectStats[subj]) subjectStats[subj] = { total: 0, correct: 0, wrong: 0, unans: 0 };
+    subjectStats[subj].total++;
+    
+    const ans = userAnswers[idx];
+    if (ans === null) {
+      unans++;
+      subjectStats[subj].unans++;
+    } else if (ans === q.correct) {
+      correct++;
+      subjectStats[subj].correct++;
+    } else {
+      wrong++;
+      subjectStats[subj].wrong++;
+    }
+  });
+  
+  const netScore = Math.max(0, (correct * 1.0) - (wrong * NEG_MARK));
+  const accuracy = (correct + wrong > 0) ? Math.round((correct / (correct + wrong)) * 100) : 0;
+  
+  document.getElementById("resScore").textContent = netScore.toFixed(2);
+  document.getElementById("resAccuracy").textContent = `${accuracy}%`;
+  document.getElementById("resCorrect").textContent = correct;
+  document.getElementById("resWrong").textContent = wrong;
+  
+  // Subject breakdown table
+  let subHtml = `<table style="width:100%; border-collapse:collapse; font-size:0.85rem; margin-top:8px;">
+    <thead>
+      <tr style="background:#f1f5f9; text-align:left;">
+        <th style="padding:8px; border:1px solid #cbd5e1;">Subject</th>
+        <th style="padding:8px; border:1px solid #cbd5e1;">Total</th>
+        <th style="padding:8px; border:1px solid #cbd5e1;">Correct</th>
+        <th style="padding:8px; border:1px solid #cbd5e1;">Wrong</th>
+        <th style="padding:8px; border:1px solid #cbd5e1;">Score</th>
+      </tr>
+    </thead>
+    <tbody>`;
+  for (let s in subjectStats) {
+    const st = subjectStats[s];
+    const sScore = (st.correct * 1.0 - st.wrong * NEG_MARK).toFixed(2);
+    subHtml += `<tr>
+      <td style="padding:8px; border:1px solid #cbd5e1; font-weight:600;">${s}</td>
+      <td style="padding:8px; border:1px solid #cbd5e1;">${st.total}</td>
+      <td style="padding:8px; border:1px solid #cbd5e1; color:var(--accent); font-weight:600;">${st.correct}</td>
+      <td style="padding:8px; border:1px solid #cbd5e1; color:var(--danger); font-weight:600;">${st.wrong}</td>
+      <td style="padding:8px; border:1px solid #cbd5e1; font-weight:700;">${sScore}</td>
+    </tr>`;
+  }
+  subHtml += "</tbody></table>";
+  document.getElementById("subjectBreakdownContainer").innerHTML = subHtml;
+  
+  // Review answers
+  const revCont = document.getElementById("reviewQuestionsContainer");
+  revCont.innerHTML = "";
+  
+  QUESTIONS.forEach((q, idx) => {
+    const ans = userAnswers[idx];
+    const isCorrect = ans === q.correct;
+    const isUnans = ans === null;
+    
+    const div = document.createElement("div");
+    div.className = `review-item ${isCorrect ? 'correct' : (isUnans ? 'unanswered' : 'wrong')}`;
+    
+    let statusText = isCorrect ? '✅ Correct' : (isUnans ? '⚪ Not Attempted' : '❌ Incorrect');
+    let userPick = ans !== null ? `${String.fromCharCode(65 + ans)}: ${q.options[ans]}` : "None";
+    let correctPick = `${String.fromCharCode(65 + q.correct)}: ${q.options[q.correct]}`;
+    
+    div.innerHTML = `
+      <div style="display:flex; justify-content:space-between; margin-bottom:6px;">
+        <strong>Q${idx + 1}. [${q.subject}]</strong>
+        <span style="font-weight:700;">${statusText}</span>
+      </div>
+      <p style="margin-bottom:8px;">${q.text}</p>
+      <div style="font-size:0.85rem; margin-bottom:4px;"><strong>Your Answer:</strong> ${userPick}</div>
+      <div style="font-size:0.85rem; color:#15803d; font-weight:600;"><strong>Correct Answer:</strong> ${correctPick}</div>
+      <div class="exp-box"><strong>Explanation:</strong> ${q.explanation || 'Refer to official syllabus and standard notes.'}</div>
+    `;
+    revCont.appendChild(div);
+  });
+  
+  document.getElementById("resultModal").style.display = "flex";
+}
+
+function closeModal() {
+  document.getElementById("resultModal").style.display = "none";
+}
+
+window.onload = init;
+</script>
+</body>
+</html>

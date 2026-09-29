@@ -1,0 +1,38 @@
+# Verified YouTube Study Coursework & Video Repository — KEA Land Surveyor 2026
+
+> [!IMPORTANT] Verified Coursework Integrity
+> - Total Videos Verified: **18 Curated Videos**
+> - **Strict Inclusion Standard:** Coursework lectures, problem-solving marathons, technical demonstrations, and PYQ analysis only. Zero notification/application fluff.
+> - Every single link has been tested and verified accessible.
+
+---
+
+## Curated Video Directory
+
+| No. | Lecture Title | Channel | Duration | Core Topic Covered | Why Chosen & High-Yield Value | Video Link | Transcript |
+| :---: | :--- | :--- | :---: | :--- | :--- | :---: | :---: |
+| 1 | **Modern Methods of Surveying - Land Surveyor/ಭೂಮಾಪಕರು -  PAPER-2 - Specific Paper -  Marathon -  MCQs - ** | Puneeth Forum | 202m 6s | Modern Surveying Methods (GPS/GIS) | Direct coverage of Paper 2 Modern Surveying (GPS, GIS, Remote Sensing) which carries 15-20 marks. | [Watch on YouTube](https://www.youtube.com/watch?v=CtWtGWRARgo) | [[CtWtGWRARgo_transcript]] |
+| 2 | **🔴 LIVE  -  KEA Land Surveyor 2026  -  Modern Methods of Surveying PYQ Analysis  -  Paper 2** | Statecraft IAS Academy and Bharath Gowda Classes | 51m 11s | Modern Surveying Methods (GPS/GIS) | Direct coverage of Paper 2 Modern Surveying (GPS, GIS, Remote Sensing) which carries 15-20 marks. | [Watch on YouTube](https://www.youtube.com/watch?v=6z4jEP0nsI8) | [[6z4jEP0nsI8_transcript]] |
+| 3 | **Geography  - Land Surveyor/ಭೂಮಾಪಕರು Post -  PAPER -2 Specific Paper (ನಿರ್ದಿಷ್ಟ ಪತ್ರಿಕೆ) -  Marathon -  MCQs - ** | Puneeth Forum | 246m 31s | Physical Geography & Mapping | Exhaustive marathon coverage of Karnataka physical geography and coordinate systems. | [Watch on YouTube](https://www.youtube.com/watch?v=F-HjYn5Hwps) | [[F-HjYn5Hwps_transcript]] |
+| 4 | **Modern Methods of Surveying  -  Paper II  -  KEA Land Surveyor 2026  -  Complete Concept Class 1** | Statecraft IAS Academy and Bharath Gowda Classes | 58m 20s | Modern Surveying Methods (GPS/GIS) | Direct coverage of Paper 2 Modern Surveying (GPS, GIS, Remote Sensing) which carries 15-20 marks. | [Watch on YouTube](https://www.youtube.com/watch?v=30Va79yyDlg) | [[30Va79yyDlg_transcript]] |
+| 5 | **KEA Land Surveyor 2026  -  GPS  -  Modern Methods of Surveying  -  Paper II  -  Bharath Sir** | Statecraft IAS Academy and Bharath Gowda Classes | 19m 2s | Modern Surveying Methods (GPS/GIS) | Direct coverage of Paper 2 Modern Surveying (GPS, GIS, Remote Sensing) which carries 15-20 marks. | [Watch on YouTube](https://www.youtube.com/watch?v=zqhnZRRdzV0) | [[zqhnZRRdzV0_transcript]] |
+| 6 | **Land Surveyor Paper-2 Preparation 2026 Chapter- 9 GRAVITATION Physics Specific KEA EXAM Questions** | Jnana Bodhi | 24m 13s | Applied Physics & Gravitation | Covers specific Paper 2 Physics questions on gravitation, mass, and mechanics. | [Watch on YouTube](https://www.youtube.com/watch?v=WQKncTcmp_o) | [[WQKncTcmp_o_transcript]] |
+| 7 | ** -  -  MOST IMPORTANT SURVEYING MCQ  -  -  CLASS -4  -  -  CHAIN SURVEYING MCQ QUESTIONS  -  - ** | CIVIL WITH SUDHEER | 43m 50s | Chain Surveying & Corrections | High-yield MCQs on metric chain lengths, tallies, and tape correction numericals. | [Watch on YouTube](https://www.youtube.com/watch?v=qtb1HTru9gg) | [[qtb1HTru9gg_transcript]] |
+| 8 | **150 most important surveying MCQs for competitive exams with answers  - civil engineering popular 100** | Padala channel | 16m 1s | Competitive Exam PYQ & Drill | Comprehensive MCQ drilling and previous year paper trend analysis. | [Watch on YouTube](https://www.youtube.com/watch?v=YPlJKrXRuF8) | [[YPlJKrXRuF8_transcript]] |
+| 9 | **Surveying Top 200 Most Expected Questions 🔥 -  Surveying MCQ  -  Civil Engineering JE/Draftsman/Surveyor** |  Namaste Draftsman  | 69m 26s | Competitive Exam PYQ & Drill | Comprehensive MCQ drilling and previous year paper trend analysis. | [Watch on YouTube](https://www.youtube.com/watch?v=I3q-h6ZAxSU) | [[I3q-h6ZAxSU_transcript]] |
+| 10 | **Surveying and Levelling 100MCQ  -  Civil Engineering MCQ  -  Overseer  -  Tracer  -  KWA  -  SSC JE** | CIVIL WINNER 4 CIVIL ENGINEERING | 24m 5s | Levelling & Contouring | Covers RL calculations, Rise & Fall checks, and contour map reading. | [Watch on YouTube](https://www.youtube.com/watch?v=ab9v65CSx4s) | [[ab9v65CSx4s_transcript]] |
+| 11 | **Land Surveyor Modern Methods of Surveying  -  Syllabus Decoding & Important MCQs  -  Ashwamedha IAS** | Ashwamedha IAS (Sudharshan N R) | 16m 50s | Modern Surveying Methods (GPS/GIS) | Direct coverage of Paper 2 Modern Surveying (GPS, GIS, Remote Sensing) which carries 15-20 marks. | [Watch on YouTube](https://www.youtube.com/watch?v=5LNZHRkD2Ys) | [[5LNZHRkD2Ys_transcript]] |
+| 12 | **Bearing in Surveying/Geomatics, Whole Circle Bearing and Reduced Bearing System** | CIVIL Solved | 5m 21s | Compass Traversing & Bearings | Step-by-step mathematical breakdown of WCB to Reduced Bearing and local attraction. | [Watch on YouTube](https://www.youtube.com/watch?v=Ujs0b7jqtTM) | [[Ujs0b7jqtTM_transcript]] |
+| 13 | **Conversion of  Whole Circle Bearing - Quadrantal Bearing # Conversion of  Quadrantal Bearing - WCB** | Civil Samajh | 8m 20s | Compass Traversing & Bearings | Step-by-step mathematical breakdown of WCB to Reduced Bearing and local attraction. | [Watch on YouTube](https://www.youtube.com/watch?v=30eMoB3VTIQ) | [[30eMoB3VTIQ_transcript]] |
+| 14 | **Compass Surveying - Problem No 3 ( Included Angles & Error Correction of a Closed Traverse )** | Stan Academy | 14m 13s | Compass Traversing & Bearings | Step-by-step mathematical breakdown of WCB to Reduced Bearing and local attraction. | [Watch on YouTube](https://www.youtube.com/watch?v=G8asq0xv2zw) | [[G8asq0xv2zw_transcript]] |
+| 15 | **What is Bearing WCB and QB in Compass Surveying / Whole Circle Bearing and Quadrantal Bearing.** | Civil Solution Study | 15m 33s | Compass Traversing & Bearings | Step-by-step mathematical breakdown of WCB to Reduced Bearing and local attraction. | [Watch on YouTube](https://www.youtube.com/watch?v=JJzpPXCTdQE) | [[JJzpPXCTdQE_transcript]] |
+| 16 | **Part 7 ! Compass survey ! Conversion W.C.B  to Q.B ! Whole circle bearing ! Quadrantal bearing** | NARAYANA COACHING CLASSES | 12m 40s | Compass Traversing & Bearings | Step-by-step mathematical breakdown of WCB to Reduced Bearing and local attraction. | [Watch on YouTube](https://www.youtube.com/watch?v=Bzn1d-erpB4) | [[Bzn1d-erpB4_transcript]] |
+| 17 | **SSC JE & RRB JE 2024  -  Surveying  -  Concept of Bearing in Compass Survey  -  Civil Engineering** | Engineers Wallah AE JE | 58m 7s | Compass Traversing & Bearings | Step-by-step mathematical breakdown of WCB to Reduced Bearing and local attraction. | [Watch on YouTube](https://www.youtube.com/watch?v=-uI_4cM6gig) | [[-uI_4cM6gig_transcript]] |
+| 18 | **SURVEYOR , DRAUGHTSMAN UNIT 4 தட்டி தூக்கலாம் வாங்க -  LEVELLING AND CONTOURING  -  TNPSC SURVEYOR#VIDEO** | IK ENGINEERING ACADEMY TRICHY | 76m 5s | Levelling & Contouring | Covers RL calculations, Rise & Fall checks, and contour map reading. | [Watch on YouTube](https://www.youtube.com/watch?v=Sd85JUII_GE) | [[Sd85JUII_GE_transcript]] |
+
+---
+
+## How to Use These Videos for Rapid 2–3 Day Revision
+1. **Speed Multiplier:** Watch conceptual and marathon videos at **1.5x or 1.75x speed** with your notebook open for rapid retention.
+2. **Transcript Cross-Referencing:** Open the corresponding `[[transcript_note]]` inside `05_Resources/YouTube_Transcripts/` to review key formulas and statements without re-watching entire streams.
+3. **Focus on Gaps:** Prioritize videos covering your weakest areas (e.g., Modern Surveying for Land Surveyor candidates, or Computer Knowledge/Kannada Grammar for VAO candidates).

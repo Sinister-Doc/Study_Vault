@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mock Test 2 — KEA Karnataka Land Surveyor 2026 Mock Test</title>
+<style>
+:root{
+  --bg:#0f1720; --panel:#16202b; --panel2:#1d2937; --line:#2b3a4b;
+  --txt:#e6eef7; --muted:#93a4b8; --accent:#3b82f6; --accent2:#2563eb;
+  --green:#22c55e; --red:#ef4444; --amber:#f59e0b; --violet:#8b5cf6; --grey:#64748b;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--txt);
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;font-size:15px;line-height:1.5}
+button{font:inherit;cursor:pointer}
+.hidden{display:none !important}
+
+/* Welcome */
+#welcome{max-width:760px;margin:6vh auto;background:var(--panel);border:1px solid var(--line);
+  border-radius:14px;padding:32px 34px;box-shadow:0 20px 50px rgba(0,0,0,.4)}
+#welcome h1{margin:0 0 6px;font-size:24px}
+#welcome .sub{color:var(--muted);margin-bottom:22px}
+.specs{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0 24px}
+.spec{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:14px}
+.spec .k{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+.spec .v{font-size:20px;font-weight:700;margin-top:4px}
+.neg{color:var(--amber)}
+.sec-table{width:100%;border-collapse:collapse;margin:8px 0 22px}
+.sec-table th,.sec-table td{border:1px solid var(--line);padding:8px 10px;text-align:left;font-size:14px}
+.sec-table th{background:var(--panel2);color:var(--muted);font-weight:600}
+.btn{background:var(--accent);color:#fff;border:0;border-radius:9px;padding:12px 22px;font-weight:600}
+.btn:hover{background:var(--accent2)}
+.btn.ghost{background:transparent;border:1px solid var(--line);color:var(--txt)}
+.btn.ghost:hover{background:var(--panel2)}
+.note{color:var(--muted);font-size:13px;margin-top:14px}
+
+/* Shell */
+#shell{display:none;min-height:100vh;flex-direction:column}
+#shell.on{display:flex}
+header{position:sticky;top:0;z-index:20;background:var(--panel);border-bottom:1px solid var(--line);
+  padding:10px 16px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.brand{font-weight:700}
+.brand small{display:block;font-weight:400;color:var(--muted);font-size:12px}
+#timer{margin-left:auto;font-variant-numeric:tabular-nums;font-size:22px;font-weight:700;
+  background:var(--panel2);border:1px solid var(--line);border-radius:9px;padding:6px 14px}
+#timer.warn{color:#fff;background:#b91c1c;border-color:#b91c1c}
+main{flex:1;display:flex;gap:16px;padding:16px;align-items:flex-start;flex-wrap:wrap}
+.qcol{flex:1 1 560px;min-width:320px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px}
+.side{flex:0 0 300px;display:flex;flex-direction:column;gap:14px;min-width:260px}
+
+/* Tabs */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.tab{background:var(--panel2);border:1px solid var(--line);color:var(--muted);border-radius:8px;
+  padding:7px 13px;font-size:13px}
+.tab.active{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600}
+
+/* Progress */
+.bar{height:8px;background:var(--panel2);border-radius:99px;overflow:hidden;border:1px solid var(--line)}
+.bar > i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--green));transition:width .25s}
+.pmeta{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-top:6px}
+
+/* Question */
+.qhead{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap}
+.qno{font-size:13px;color:var(--muted)}
+.tag{font-size:11px;border-radius:99px;padding:2px 9px;border:1px solid var(--line);color:var(--muted)}
+.tag.expected{background:rgba(59,130,246,.15);border-color:#2f5ea8;color:#9ec2ff}
+.tag.pyq{background:rgba(139,92,246,.15);border-color:#6d4bb0;color:#c4b0ff}
+.qtext{font-size:17px;font-weight:600;margin:8px 0 16px}
+.opt{display:flex;gap:11px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;
+  padding:11px 13px;margin-bottom:9px;background:var(--panel2);cursor:pointer}
+.opt:hover{border-color:var(--accent)}
+.opt.sel{border-color:var(--accent);background:rgba(59,130,246,.12)}
+.opt .k{flex:0 0 24px;height:24px;border-radius:6px;background:var(--bg);border:1px solid var(--line);
+  display:grid;place-items:center;font-size:12px;font-weight:700}
+.opt.sel .k{background:var(--accent);border-color:var(--accent);color:#fff}
+.qfoot{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:16px;flex-wrap:wrap}
+.review-lbl{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted)}
+.nav-btns{display:flex;gap:8px;flex-wrap:wrap}
+
+/* Palette */
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px}
+.card h3{margin:0 0 10px;font-size:14px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+.pal{display:grid;grid-template-columns:repeat(auto-fill,minmax(38px,1fr));gap:7px;max-height:290px;overflow:auto}
+.pal button{border:1px solid var(--line);border-radius:7px;padding:7px 0;font-size:12px;font-weight:600;
+  background:var(--panel2);color:var(--txt)}
+.pal button.cur{outline:2px solid var(--accent);outline-offset:1px}
+.pal button.not-visited{background:var(--panel2);color:var(--muted)}
+.pal button.unanswered{background:rgba(239,68,68,.22);border-color:#9b3b3b;color:#ffc9c9}
+.pal button.attempted{background:rgba(34,197,94,.22);border-color:#3c8a5a;color:#c6f3d5}
+.pal button.marked{background:rgba(139,92,246,.25);border-color:#6d4bb0;color:#d9ccff}
+.legend{display:grid;gap:7px;font-size:13px}
+.legend div{display:flex;align-items:center;gap:9px}
+.sw{width:16px;height:16px;border-radius:5px;border:1px solid var(--line);display:inline-block}
+.sumline{display:flex;justify-content:space-between;font-size:13px;margin:5px 0;color:var(--muted)}
+.sumline b{color:var(--txt)}
+
+/* Result */
+#result{max-width:900px;margin:0 auto;padding:22px;width:100%}
+.big{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:26px;text-align:center;margin-bottom:18px}
+.big .score{font-size:52px;font-weight:800;line-height:1}
+.big .of{color:var(--muted);font-size:16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-bottom:18px}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:14px;text-align:center}
+.stat .v{font-size:24px;font-weight:700}
+.stat .k{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+table.brk{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);
+  border-radius:11px;overflow:hidden;margin-bottom:18px}
+table.brk th,table.brk td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;font-size:14px}
+table.brk th{background:var(--panel2);color:var(--muted);font-size:12px;text-transform:uppercase}
+tbody tr:last-child td{border-bottom:0}
+.pos{color:var(--green)}.negv{color:var(--red)}.wr{color:var(--amber)}
+
+/* Review */
+.rev{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px;margin-bottom:12px}
+.rev .top{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:8px}
+.rev .qt{font-weight:600;font-size:16px;margin-bottom:10px}
+.rev .o{border:1px solid var(--line);border-radius:8px;padding:9px 12px;margin-bottom:7px;font-size:14px}
+.rev .o.correct{border-color:var(--green);background:rgba(34,197,94,.1)}
+.rev .o.wrong{border-color:var(--red);background:rgba(239,68,68,.1)}
+.rev .exp{font-size:13px;color:var(--muted);border-left:3px solid var(--accent);padding-left:11px;margin-top:10px}
+.pill{font-size:11px;padding:2px 9px;border-radius:99px;font-weight:700}
+.pill.ok{background:rgba(34,197,94,.18);color:#9ff0bd}
+.pill.no{background:rgba(239,68,68,.18);color:#ffb4b4}
+.pill.sk{background:rgba(245,158,11,.18);color:#ffd89b}
+.actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:20px 0}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.65);display:grid;place-items:center;z-index:50;padding:18px}
+.modal .box{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:24px;max-width:460px;width:100%}
+.modal h3{margin:0 0 10px}
+.modal p{color:var(--muted);margin:0 0 18px}
+@media print{header,.side,.actions,.tabs{display:none}body{background:#fff;color:#000}}
+</style>
+</head>
+<body>
+
+<!-- ============ WELCOME ============ -->
+<section id="welcome">
+  <h1>Mock Test 2 — Mock Test</h1>
+  <div class="sub">KEA Karnataka Land Surveyor 2026 &middot; Full-length 100-question paper (offline, self-contained)</div>
+
+  <div class="specs">
+    <div class="spec"><div class="k">Questions</div><div class="v">100 MCQs</div></div>
+    <div class="spec"><div class="k">Total Marks</div><div class="v">100</div></div>
+    <div class="spec"><div class="k">Duration</div><div class="v">120 minutes</div></div>
+    <div class="spec"><div class="k">Negative Marking</div><div class="v neg">0.25 / wrong</div></div>
+  </div>
+
+  <table class="sec-table">
+    <thead><tr><th>Section</th><th>Questions</th><th>Marks</th></tr></thead>
+    <tbody>
+      <tr><td>Section I — Surveying &amp; Land Measurement</td><td>45</td><td>45</td></tr>
+      <tr><td>Section II — General Knowledge</td><td>30</td><td>30</td></tr>
+      <tr><td>Section III — Mental Ability</td><td>25</td><td>25</td></tr>
+      <tr><td><b>Total</b></td><td><b>100</b></td><td><b>100</b></td></tr>
+    </tbody>
+  </table>
+
+  <button class="btn" id="startBtn">Start Test</button>
+  <div class="note">
+    Each question carries 1 mark. 0.25 mark is deducted for every wrong answer; unattempted questions carry no penalty.
+    The timer counts down from <b>120:00</b> and the paper auto-submits at <b>00:00:00</b>.
+    Progress is saved in your browser, so you may reload without losing answers.
+  </div>
+</section>
+
+<!-- ============ EXAM SHELL ============ -->
+<section id="shell">
+  <header>
+    <div class="brand">Mock Test 2<small>KEA Karnataka Land Surveyor 2026</small></div>
+    <div id="timer">120:00:00</div>
+  </header>
+
+  <main>
+    <div class="qcol">
+      <div class="tabs" id="tabs"></div>
+      <div class="bar"><i id="barFill"></i></div>
+      <div class="pmeta"><span id="barLbl">Attempted 0 / 100</span><span id="barPct">0%</span></div>
+      <div id="qbox" style="margin-top:18px"></div>
+    </div>
+
+    <aside class="side">
+      <div class="card">
+        <h3>Question Palette</h3>
+        <div class="pal" id="palette"></div>
+      </div>
+      <div class="card">
+        <h3>Legend</h3>
+        <div class="legend">
+          <div><span class="sw" style="background:var(--panel2);border-color:var(--line)"></span> Not visited</div>
+          <div><span class="sw" style="background:rgba(239,68,68,.35);border-color:#9b3b3b"></span> Not answered</div>
+          <div><span class="sw" style="background:rgba(34,197,94,.35);border-color:#3c8a5a"></span> Attempted</div>
+          <div><span class="sw" style="background:rgba(139,92,246,.4);border-color:#6d4bb0"></span> Marked for review</div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Progress</h3>
+        <div class="sumline"><span>Answered</span><b id="sAns">0</b></div>
+        <div class="sumline"><span>Marked</span><b id="sMark">0</b></div>
+        <div class="sumline"><span>Not answered</span><b id="sUn">100</b></div>
+        <button class="btn" id="submitBtn" style="width:100%;margin-top:12px">Submit Test</button>
+      </div>
+    </aside>
+  </main>
+</section>
+
+<!-- ============ RESULT ============ -->
+<section id="result" class="hidden"></section>
+
+<script>
+/* ---------- DATA ---------- */
+const QUESTIONS = [{"q":"Dip of the magnetic needle is maximum at:","opts":["Magnetic equator","Magnetic poles (90°)","Bangalore","Greenwich"],"ans":1,"exp":"Dip = 90° at magnetic poles, 0° at magnetic equator.","label":"expected","id":1},{"q":"RTC (Pahani) is prescribed as:","opts":["Form I","Form VI","Form VII","Form VIII"],"ans":1,"exp":"RTC = Form VI; its copy (Bhatha) is issued to the holder.","label":"expected","id":2},{"q":"Contours point (V-shape) upstream when crossing a:","opts":["Ridge","Valley/stream","Saddle","Cliff"],"ans":1,"exp":"Contours V-point downhill on ridges, uphill (upstream) in valleys.","label":"expected","id":3},{"q":"Temporary adjustments of a dumpy level include:","opts":["Axis alignment, collimation test","Levelling up, focusing, elimination of parallax","Centering, levelling, focusing","Two-peg test only"],"ans":1,"exp":"Permanent adjustments are a separate list.","label":"expected","id":4},{"q":"The record that shows soil classification, land use, area of each survey number and water sources is:","opts":["Khata","RTC (Pahani)","Tanakh / A-Book","Immovable Property Register"],"ans":2,"exp":"Tanakh/A-Book holds area, classification and water sources.","label":"expected","id":5},{"q":"A well-conditioned triangle has no angle less than:","opts":["45°","60°","30°","90°"],"ans":2,"exp":"Angles should lie between 30° and 120° for accurate intersection.","label":"expected","id":6},{"q":"The error due to earth's curvature in levelling over 1 km is approximately:","opts":["0.0078 m","0.0785 m","0.785 m","0.0112 m"],"ans":1,"exp":"Curvature = 0.0785 K² m; combined with refraction = 0.0673 K² m.","label":"expected","id":7},{"q":"Representative Fraction (RF) is:","opts":["Map distance / ground distance (same units)","Ground distance / map distance","Map area / ground area","A fixed constant"],"ans":0,"exp":"RF is a unit-less ratio of map distance to ground distance.","label":"expected","id":8},{"q":"The R.L. of a benchmark is 100.000 m. B.S. = 1.560 m, F.S. = 2.340 m. The R.L. of the station is:","opts":["100.780 m","99.220 m","98.880 m","103.900 m"],"ans":1,"exp":"100.000 + 1.560 − 2.340 = 99.220 m.","label":"PYQ-style","id":9},{"q":"The square (grid) method of contouring is best for:","opts":["Strip ground","Small, flat, open areas","Hilly terrain","River beds"],"ans":1,"exp":"Grid of 5–30 m squares for flat open ground.","label":"expected","id":10},{"q":"Error due to an incorrect chain length is:","opts":["Compensating","Cumulative","Mistake","Accidental"],"ans":1,"exp":"Wrong chain length always acts in one direction.","label":"expected","id":11},{"q":"HI in levelling equals:","opts":["RL of BS point + BS","RL of BS point − BS","RL of FS point + FS","ΣBS − ΣFS"],"ans":0,"exp":"Height of instrument = RL of the backsight point + backsight reading.","label":"expected","id":12},{"q":"Which error is treated by taking the mean of repeated readings?","opts":["Systematic","Accidental","Blunder","Cumulative"],"ans":1,"exp":"Accidental/random errors reduce by averaging.","label":"expected","id":13},{"q":"The arithmetic check ΣBS − ΣFS = last RL − first RL holds for:","opts":["Rise & fall only","HI method only","Both methods","Neither"],"ans":2,"exp":"Rise & fall additionally gives ΣRise − ΣFall.","label":"expected","id":14},{"q":"A closed traverse self-checks because:","opts":["Σ latitude = Σ departure = 0","Σ interior angles = 360°","It needs no bearings","It has no closing error"],"ans":0,"exp":"ΣLat and ΣDep must vanish for a closed traverse.","label":"expected","id":15},{"q":"The instrument used to push the chain through hedges is the:","opts":["Offset rod","Ranging rod","Cross staff","Arrows"],"ans":0,"exp":"Offset rod (3 m, hook at top) sets short offsets and clears hedges.","label":"expected","id":16},{"q":"Local attraction is caused by:","opts":["Steel structures and electric lines","Temperature","Slope","Humidity only"],"ans":0,"exp":"Iron/steel, magnetic rocks, vehicles and power lines deflect the needle.","label":"expected","id":17},{"q":"Fore bearing and back bearing of a line differ by exactly 180° when:","opts":["Local attraction is present","No local attraction exists","The line runs north","At the magnetic pole"],"ans":1,"exp":"Fundamental compass-check rule.","label":"expected","id":18},{"q":"1 guntha is approximately:","opts":["10 m²","99.17 m²","1000 m²","40 m²"],"ans":1,"exp":"1 guntha ≈ 108.9 sq yd ≈ 99.17 m².","label":"expected","id":19},{"q":"The BB of a line whose FB is N 40° W is:","opts":["N 40° W","S 40° E","S 40° W","N 50° E"],"ans":1,"exp":"Same number, letters interchanged.","label":"expected","id":20},{"q":"The instrument whose line of sight stays horizontal automatically is the:","opts":["Dumpy level","Tilting level","Automatic level","Water level"],"ans":2,"exp":"Auto level uses a compensator (hanging prism), range ±30′.","label":"expected","id":21},{"q":"The correct order of Karnataka land-administration hierarchy from below is:","opts":["Village → Taluk → Hobli → District","Village → Hobli → Taluk → District","Hobli → Village → District → Taluk","Taluk → Hobli → Village → District"],"ans":1,"exp":"Village → Hobli → Taluk → District.","label":"expected","id":22},{"q":"The length of Gunter's chain is:","opts":["20 m","66 ft","100 ft","30 m"],"ans":1,"exp":"Gunter's chain = 66 ft with 100 links (20.1168 m).","label":"PYQ-style","id":23},{"q":"\"Hissa\" denotes:","opts":["A village","A portion of a sub-division","A water source","A revenue officer"],"ans":1,"exp":"Hissa is a portion of a phodi (sub-division).","label":"expected","id":24},{"q":"Reciprocal levelling eliminates the effect of:","opts":["Curvature only","Refraction only","Collimation, curvature and refraction","Local attraction"],"ans":2,"exp":"Standard reason for using reciprocal levelling across obstacles.","label":"expected","id":25},{"q":"Magnetic declination is the angle between:","opts":["Magnetic meridian and true meridian","Geographical meridians of two places","True bearing and azimuth","Needle and horizontal plane"],"ans":0,"exp":"Needle–horizontal-plane angle is dip, a frequent distractor.","label":"expected","id":26},{"q":"Gale's traverse table is used for:","opts":["Contour interpolation","Latitudes, departures, corrections and area of a traverse","Staff reading","Magnetic declination"],"ans":1,"exp":"Standard traverse computation sheet.","label":"expected","id":27},{"q":"The GPS constellation has approximately:","opts":["12 satellites in 3 planes","24+ satellites in 6 planes","36 satellites in 9 planes","7 satellites in 1 plane"],"ans":1,"exp":"24+ satellites, 6 orbital planes, ~20,200 km, 12-hour period.","label":"expected","id":28},{"q":"The instrument used to set out a right angle on a chain line is:","opts":["Ranging rod","Arrows","Optical square","Plumb bob"],"ans":2,"exp":"Cross staff / optical square set 90° offsets.","label":"expected","id":29},{"q":"Minimum number of GPS satellites for a 3-D position fix:","opts":["3","4","5","24"],"ans":1,"exp":"Four unknowns: X, Y, Z and receiver clock bias.","label":"PYQ-style","id":30},{"q":"Offsets in chain surveying are measured:","opts":["Along the chain line","Perpendicular to the chain line","At 45°","Any convenient angle"],"ans":1,"exp":"Perpendicular offsets (ordinates) are the normal method.","label":"expected","id":31},{"q":"The correct order of temporary adjustments of a theodolite is:","opts":["Focussing, levelling, centring","Centring, levelling, focussing","Levelling, centring, focussing","Any order"],"ans":1,"exp":"Centre → Level → Focus (CLF).","label":"PYQ-style","id":32},{"q":"Entries in the record of rights are:","opts":["Conclusive proof of title","Presumed correct until set aside","Never presumed","Valid only after registration"],"ans":1,"exp":"Section 148 presumes records correct; mutation ≠ title.","label":"expected","id":33},{"q":"A 20 m chain is actually 20.05 m. A line recorded as 300 m is actually:","opts":["299.25 m","300.05 m","300.75 m","301.50 m"],"ans":2,"exp":"True length = 300 × (20.05/20) = 300.75 m.","label":"expected","id":34},{"q":"Two verniers A and B on a theodolite cancel:","opts":["Collimation error","Eccentricity of the graduated circle","Refraction","Parallax"],"ans":1,"exp":"Two diametrically opposite verniers cancel eccentricity.","label":"expected","id":35},{"q":"Plane surveying is valid up to a distance of about:","opts":["19.2 km","192 km","1920 km","100 km"],"ans":1,"exp":"Curvature is neglected up to ~192 km in plane surveying.","label":"expected","id":36},{"q":"In QB form, the back bearing of N 30° E is:","opts":["N 30° W","S 30° W","S 30° E","N 60° E"],"ans":1,"exp":"Same numerical value, letters interchanged.","label":"expected","id":37},{"q":"1 acre is approximately:","opts":["4046.86 m²","1000 m²","10,000 m²","100 m²"],"ans":0,"exp":"1 acre = 4046.86 m² = 40 guntha.","label":"expected","id":38},{"q":"A staff held upside down under a bridge gives a reading that is:","opts":["Ignored","Treated as negative","Doubled","Added to HI"],"ans":1,"exp":"Inverted staff readings are booked negative.","label":"expected","id":39},{"q":"Arrows supplied with a metric chain number:","opts":["5","10","20","100"],"ans":1,"exp":"Ten arrows accompany each chain.","label":"expected","id":40},{"q":"Simpson's rule requires the number of ordinates to be:","opts":["Any number","Odd","Even","A multiple of 6"],"ans":1,"exp":"Simpson's rule needs an odd number of ordinates.","label":"expected","id":41},{"q":"Prismatic compass graduations run:","opts":["0–360 clockwise, 0 at N","0–360 anticlockwise, 0 at S","0–90 in four quadrants","0–400 gon clockwise"],"ans":1,"exp":"Prismatic compass reads WCB directly, 0° at south, anticlockwise.","label":"expected","id":42},{"q":"In the Bowditch (compass) rule, corrections to latitude and departure are proportional to:","opts":["The length of the side","The bearing of the side","The angle at the station","The coordinates"],"ans":0,"exp":"Bowditch ∝ side length; transit rule ∝ latitude/departure.","label":"expected","id":43},{"q":"With local attraction at A, FB = 120° and observed BB = 298° (should be 300°). The error is:","opts":["+2° at A","−2° at A","+2° at B","None"],"ans":1,"exp":"Observed BB is 2° less than expected → −2° at A.","label":"expected","id":44},{"q":"Contours that form closed loops with lower values inside represent:","opts":["A hill","A depression/pond","A ridge","A saddle"],"ans":1,"exp":"Standard contour-interpretation question.","label":"expected","id":45},{"q":"Karnataka's total geographical area is about:","opts":["1,91,791 km²","3,07,713 km²","88,752 km²","1,30,058 km²"],"ans":0,"exp":"~1,91,791 km², 7th largest state.","label":"expected","id":46},{"q":"Right to Property is now a:","opts":["Fundamental Right","Legal right (Art 300A)","DPSP","Fundamental Duty"],"ans":1,"exp":"Deleted as FR by 44th Amendment (1978); now Art 300A.","label":"expected","id":47},{"q":"Ohm's law states:","opts":["V = I/R","V = IR","I = VR","R = VI"],"ans":1,"exp":"V = IR.","label":"expected","id":48},{"q":"'Agumbe', known as the Cherrapunji of the South, is in which district?","opts":["Kodagu","Shivamogga","Chikkamagaluru","Uttara Kannada"],"ans":1,"exp":"Agumbe, Shivamogga district — record rainfall.","label":"expected","id":49},{"q":"The Quit India Movement was launched on:","opts":["8 August 1942","12 March 1930","26 January 1930","15 August 1947"],"ans":0,"exp":"Quit India = 8 August 1942.","label":"expected","id":50},{"q":"Who was the Chairman of the Drafting Committee of the Constitution?","opts":["Dr. Rajendra Prasad","Dr. B.R. Ambedkar","Jawaharlal Nehru","Sardar Patel"],"ans":1,"exp":"Ambedkar chaired the Drafting Committee.","label":"expected","id":51},{"q":"The Rashtrakuta capital was:","opts":["Badami","Manyakheta (Malkhed)","Hampi","Halebidu"],"ans":1,"exp":"Manyakheta was the Rashtrakuta capital.","label":"expected","id":52},{"q":"Karnataka's online land-services delivery portal is called:","opts":["Bhoomi","Nemili","Khata","Seva Sindhu"],"ans":0,"exp":"Bhoomi portal delivers RTC, mutation and survey extracts.","label":"expected","id":53},{"q":"The pH of human blood is approximately:","opts":["6.0","7.4","8.4","5.6"],"ans":1,"exp":"Blood pH ≈ 7.4 (slightly alkaline).","label":"expected","id":54},{"q":"Badami (Vatapi) was the capital of which dynasty?","opts":["Kadambas","Rashtrakutas","Chalukyas of Badami","Hoysalas"],"ans":2,"exp":"Banavasi (Kadamba), Manyakheta (Rashtrakuta), Halebidu (Hoysala).","label":"expected","id":55},{"q":"The G20 presidency in 2026 is held by: [verify]","opts":["South Africa","United States","China","Japan"],"ans":1,"exp":"USA holds the 2026 G20 presidency — verify the venue.","label":"expected","id":56},{"q":"The word 'Socialist' was added to the Preamble by which amendment?","opts":["1st","42nd","44th","73rd"],"ans":1,"exp":"42nd Amendment (1976) added Socialist, Secular and Integrity.","label":"expected","id":57},{"q":"Gruha Lakshmi scheme of Karnataka provides:","opts":["Free bus travel","₹2,000/month to woman head of family","Free electricity","₹3,000 to unemployed youth"],"ans":1,"exp":"₹2,000/month to the woman head of the family.","label":"expected","id":58},{"q":"How many Fundamental Rights are guaranteed by the Constitution?","opts":["Five","Six","Seven","Eight"],"ans":1,"exp":"Six FRs (Right to Property removed by 44th Amendment).","label":"expected","id":59},{"q":"The Basic Structure doctrine was laid down in:","opts":["Golaknath","Kesavananda Bharati (1973)","Minerva Mills","Berubari"],"ans":1,"exp":"Kesavananda Bharati v. State of Kerala (1973).","label":"expected","id":60},{"q":"Which land-revenue system was applied in most of Karnataka under British rule?","opts":["Zamindari","Ryotwari","Mahalwari","Iqtai"],"ans":1,"exp":"Ryotwari (Munro) → today's Pahani/RTC.","label":"expected","id":61},{"q":"The 'Father of the Indian Constitution' is:","opts":["Nehru","B.R. Ambedkar","Rajendra Prasad","Sardar Patel"],"ans":1,"exp":"Ambedkar, as Drafting Committee chairman.","label":"expected","id":62},{"q":"Reservation of seats for women in Panchayats is at least:","opts":["1/4","1/3 (50% in Karnataka)","1/2","30%"],"ans":1,"exp":"73rd Amendment: at least 1/3; Karnataka raised to 50%.","label":"expected","id":63},{"q":"The repo rate is:","opts":["Banks' lending rate to customers","Rate at which RBI lends to commercial banks","Savings rate","CRR rate"],"ans":1,"exp":"Repo = RBI's short-term lending rate to banks.","label":"expected","id":64},{"q":"India holds the chairmanship of BRICS in the year: [verify]","opts":["2024","2025","2026","2027"],"ans":2,"exp":"India assumed the 2026 BRICS chair — verify before the exam.","label":"expected","id":65},{"q":"SVAMITVA scheme uses which technology to map abadi land?","opts":["Satellite radar","Drones","Total station only","Chain survey"],"ans":1,"exp":"SVAMITVA uses drones to map inhabited rural areas.","label":"expected","id":66},{"q":"Who defeated Harsha at the Narmada?","opts":["Pulakeshin I","Pulakeshin II","Vikramaditya VI","Dantidurga"],"ans":1,"exp":"Pulakeshin II defeated Harsha c. 634 CE.","label":"expected","id":67},{"q":"Halmidi inscription, the earliest known Old Kannada inscription, belongs to the:","opts":["Kadambas","Chalukyas","Hoysalas","Rashtrakutas"],"ans":0,"exp":"Kadambas of Banavasi, c. 450 CE.","label":"expected","id":68},{"q":"Fundamental Duties (Art 51A) were added by which amendment?","opts":["42nd (1976)","44th","86th","24th"],"ans":0,"exp":"42nd Amendment added 10 duties; 86th added the 11th.","label":"expected","id":69},{"q":"Amoghavarsha I wrote which earliest Kannada work?","opts":["Amuktamalyada","Kavirajamarga","Vikramarjuna Vijaya","Pampa Bharata"],"ans":1,"exp":"Kavirajamarga — earliest Kannada poetics; Krishnadevaraya wrote Amuktamalyada.","label":"expected","id":70},{"q":"Who is the constitutional head of a state?","opts":["Chief Minister","Governor","Chief Justice of High Court","Speaker"],"ans":1,"exp":"Governor is the constitutional head; CM heads the real executive.","label":"expected","id":71},{"q":"Deficiency of vitamin D causes:","opts":["Scurvy","Beriberi","Rickets","Night blindness"],"ans":2,"exp":"Vitamin D deficiency → rickets.","label":"expected","id":72},{"q":"The normal human body temperature is about:","opts":["35°C","37°C","39°C","40°C"],"ans":1,"exp":"37°C / 98.6°F.","label":"expected","id":73},{"q":"Which gas is most abundant in the Earth's atmosphere?","opts":["Oxygen","Nitrogen","Carbon dioxide","Argon"],"ans":1,"exp":"Nitrogen ≈ 78% of the atmosphere.","label":"expected","id":74},{"q":"The Bhadra and Tunga rivers meet at:","opts":["Kudal Sangamam near Hampi","Shivanasamudra","KRS","Talakaveri"],"ans":0,"exp":"Tunga + Bhadra meet at Kudal Sangamam to form Tungabhadra.","label":"expected","id":75},{"q":"If today is Monday, what day will it be after 100 days?","opts":["Monday","Tuesday","Wednesday","Thursday"],"ans":2,"exp":"100 mod 7 = 2 → Monday + 2 = Wednesday.","label":"expected","id":76},{"q":"Series: 4, 9, 19, 39, 79, ?","opts":["139","149","159","169"],"ans":2,"exp":"Rule ×2 + 1 → 79 × 2 + 1 = 159.","label":"expected","id":77},{"q":"If South-East becomes North and North-East becomes West, what does West become?","opts":["North-East","South-East","North-West","South-West"],"ans":1,"exp":"The mapping rotates bearings by 135° anticlockwise → West (270°) becomes South-East (135°).","label":"expected","id":78},{"q":"Number series: 2, 5, 10, 17, 26, ?","opts":["35","36","37","38"],"ans":2,"exp":"Pattern n² + 1 → 6² + 1 = 37.","label":"expected","id":79},{"q":"The next term in the series Z, X, V, T, ? is:","opts":["R","S","Q","P"],"ans":0,"exp":"Each step −2 letters → R.","label":"expected","id":80},{"q":"In a row of 20 children, Ravi is 7th from the left. His position from the right is:","opts":["13th","14th","15th","12th"],"ans":1,"exp":"20 − 7 + 1 = 14th from the right.","label":"expected","id":81},{"q":"If EARTH is coded as FBSUI, how is MOON coded?","opts":["NPPO","NPOP","MPPO","NOPN"],"ans":0,"exp":"Each letter +1: M→N, O→P, O→P, N→O.","label":"expected","id":82},{"q":"Statements: All men are mortal. Socrates is a man. Conclusion: Socrates is mortal.","opts":["Follows","Does not follow","Partially follows","Cannot say"],"ans":0,"exp":"Valid syllogism — the classic deductive inference.","label":"expected","id":83},{"q":"A train 120 m long runs at 54 km/h. Time to pass a pole is:","opts":["6 s","8 s","10 s","12 s"],"ans":1,"exp":"54 km/h = 15 m/s; 120/15 = 8 s.","label":"expected","id":84},{"q":"Choose the Venn set for 'Officers, Executives, Graduates':","opts":["Three mutually overlapping circles","Nested circles","Two disjoint inside one","Three separate circles"],"ans":0,"exp":"A person may be any combination → three intersecting circles.","label":"expected","id":85},{"q":"A sum is divided between A, B and C in ratio 2 : 3 : 5. If C gets ₹400 more than B, what does A get?","opts":["₹200","₹400","₹600","₹800"],"ans":1,"exp":"2 parts = ₹400 ⇒ 1 part = ₹200 ⇒ A = 2 × 200 = ₹400.","label":"expected","id":86},{"q":"A can do a work in 10 days, B in 15 days. Together they finish it in:","opts":["5 days","6 days","7 days","8 days"],"ans":1,"exp":"1/10 + 1/15 = 1/6 → 6 days.","label":"expected","id":87},{"q":"Complete the series: 1, 4, 9, 16, 25, ?","opts":["30","36","42","49"],"ans":1,"exp":"Squares of natural numbers → 6² = 36.","label":"expected","id":88},{"q":"A man walks 5 km north, turns right and walks 3 km, then turns right and walks 5 km. How far is he from the start and in which direction?","opts":["3 km, East","3 km, West","8 km, East","5 km, South"],"ans":0,"exp":"North 5 and South 5 cancel; net displacement 3 km East.","label":"expected","id":89},{"q":"Which Venn diagram best represents 'District, Taluk, Village'?","opts":["Nested (concentric) circles","Three overlapping circles","Two disjoint in one","Three separate circles"],"ans":0,"exp":"Village ⊂ Taluk ⊂ District → nested circles.","label":"expected","id":90},{"q":"If A:B = 2:3 and B:C = 4:5, then A:C is:","opts":["8:15","2:5","3:5","8:5"],"ans":0,"exp":"A:B:C = 8:12:15 ⇒ A:C = 8:15.","label":"expected","id":91},{"q":"Number of triangles in a figure formed by a square with both diagonals drawn:","opts":["4","6","8","10"],"ans":2,"exp":"The diagonals create 8 small/combined triangles.","label":"expected","id":92},{"q":"A 25% increase followed by a 25% decrease results in:","opts":["No change","6.25% decrease","6.25% increase","5% decrease"],"ans":1,"exp":"1.25 × 0.75 = 0.9375 → 6.25% net decrease.","label":"expected","id":93},{"q":"If 5 pens cost ₹80, what do 8 pens cost?","opts":["₹112","₹120","₹128","₹136"],"ans":2,"exp":"1 pen = ₹16 → 8 × 16 = ₹128.","label":"expected","id":94},{"q":"Find the missing number: 2, 6, 12, 20, 30, ?","opts":["40","42","44","46"],"ans":1,"exp":"Differences +4, +6, +8, +10, +12 → 42.","label":"expected","id":95},{"q":"Statements: All roses are flowers. Some flowers fade quickly. Conclusions: (I) Some roses fade quickly. (II) Some flowers are roses.","opts":["Only I follows","Only II follows","Both follow","Neither follows"],"ans":1,"exp":"(I) is the classic invalid inference; (II) follows by conversion.","label":"expected","id":96},{"q":"The angle between the hands of a clock at 3:30 is:","opts":["60°","75°","90°","105°"],"ans":1,"exp":"Hour hand 105°, minute hand 180° → 75°.","label":"expected","id":97},{"q":"Which conclusion follows: 'Some doctors are women. All women are soft.'?","opts":["All doctors are soft","Some doctors are soft","No doctor is soft","All women are doctors"],"ans":1,"exp":"Some doctors (women) are soft → some doctors are soft.","label":"expected","id":98},{"q":"A sum doubles in 8 years at simple interest. The annual rate is:","opts":["10%","12.5%","15%","8%"],"ans":1,"exp":"SI = P in 8 years ⇒ R = 100/8 = 12.5%.","label":"expected","id":99},{"q":"If in a certain code 'MADRAS' = 'NBESBT', then 'BOMBAY' =","opts":["CPNCBZ","CPNBBZ","DPOCBZ","CQOCBZ"],"ans":0,"exp":"Each letter +1 → BOMBAY → CPNCBZ.","label":"expected","id":100}];
+const TOTAL_SECONDS = 120 * 60;
+const NEG = 0.25;
+
+const SECTIONS = [
+  {key:"survey", name:"Surveying"},
+  {key:"gk", name:"General Knowledge"},
+  {key:"mental", name:"Mental Ability"}
+];
+QUESTIONS.forEach((q,i)=>{
+  q.section = i < 45 ? "survey" : (i < 75 ? "gk" : "mental");
+});
+
+/* ---------- STATE ---------- */
+const KEY = "Mock Test 2_state";
+const WELCOMED = "Mock Test 2_welcomed";
+let state = load() || {answers:{}, marked:{}, visited:{}, cur:0, left:TOTAL_SECONDS, started:false, done:false};
+let tick = null;
+
+function load(){
+  try{
+    const raw = localStorage.getItem(KEY);
+    return raw ? JSON.parse(raw) : null;
+  }catch(e){ return null; }
+}
+function save(){
+  try{ localStorage.setItem(KEY, JSON.stringify(state)); }catch(e){}
+}
+function fmt(sec){
+  const h = Math.floor(sec/3600), m = Math.floor((sec%3600)/60), s = sec%60;
+  const p = n => String(n).padStart(2,"0");
+  return p(h)+":"+p(m)+":"+p(s);
+}
+
+/* ---------- WELCOME ---------- */
+const $ = id => document.getElementById(id);
+$("startBtn").onclick = () => {
+  state.started = true;
+  try{ localStorage.setItem(WELCOMED,"1"); }catch(e){}
+  enterExam();
+};
+if(state.started || state.left < TOTAL_SECONDS){
+  try{
+    if(localStorage.getItem(WELCOMED)==="1") enterExam();
+  }catch(e){}
+}
+
+function enterExam(){
+  $("welcome").classList.add("hidden");
+  $("shell").classList.add("on");
+  if(state.done){ showResult(); return; }
+  buildTabs();
+  render();
+  startTimer();
+}
+
+/* ---------- TABS ---------- */
+function buildTabs(){
+  const wrap = $("tabs");
+  wrap.innerHTML = "";
+  SECTIONS.forEach(sec=>{
+    const b = document.createElement("button");
+    b.className = "tab";
+    b.textContent = sec.name + " (" + QUESTIONS.filter(q=>q.section===sec.key).length + ")";
+    b.onclick = ()=>{
+      const idx = QUESTIONS.findIndex((q,i)=> q.section===sec.key && !isAnswered(q.id) && i>=first(sec.key));
+      const target = QUESTIONS.findIndex(q=> q.section===sec.key);
+      state.cur = (idx>=0 ? idx : target);
+      render();
+    };
+    wrap.appendChild(b);
+  });
+  const b = document.createElement("button");
+  b.className = "tab";
+  b.textContent = "All Questions (100)";
+  b.onclick = ()=>{ state.cur = 0; render(); };
+  wrap.appendChild(b);
+}
+function first(key){ return QUESTIONS.findIndex(q=>q.section===key); }
+function isAnswered(id){ return state.answers[id] !== undefined; }
+
+/* ---------- RENDER ---------- */
+function render(){
+  const q = QUESTIONS[state.cur];
+  state.visited[q.id] = true;
+  const box = $("qbox");
+  const opts = q.opts.map((o,i)=>{
+    const sel = state.answers[q.id]===i;
+    return '<div class="opt'+(sel?' sel':'')+'" data-i="'+i+'">'+
+      '<span class="k">'+String.fromCharCode(65+i)+'</span><span>'+esc(o)+'</span></div>';
+  }).join("");
+  const label = q.label === "PYQ-style" ? "PYQ-style" : "expected";
+  const cls = q.label === "PYQ-style" ? "pyq" : "expected";
+  box.innerHTML =
+    '<div class="qhead">'+
+      '<span class="qno">Question '+q.id+' of 100 &middot; '+sectionName(q.section)+'</span>'+
+      '<span class="tag '+cls+'">'+label+'</span>'+
+    '</div>'+
+    '<div class="qtext">'+esc(q.q)+'</div>'+
+    '<div id="opts">'+opts+'</div>'+
+    '<div class="qfoot">'+
+      '<label class="review-lbl"><input type="checkbox" id="markChk" '+(state.marked[q.id]?'checked':'')+'> Mark for review</label>'+
+      '<div class="nav-btns">'+
+        '<button class="btn ghost" id="prevBtn">Previous</button>'+
+        '<button class="btn ghost" id="clearBtn">Clear</button>'+
+        '<button class="btn" id="nextBtn">Save &amp; Next</button>'+
+      '</div>'+
+    '</div>';
+
+  box.querySelectorAll(".opt").forEach(el=>{
+    el.onclick = ()=>{
+      state.answers[q.id] = Number(el.dataset.i);
+      save(); render(); updateMeta(); palette();
+    };
+  });
+  $("markChk").onchange = e => {
+    if(e.target.checked) state.marked[q.id]=true; else delete state.marked[q.id];
+    save(); palette(); updateMeta();
+  };
+  $("prevBtn").onclick = ()=>{ state.cur = Math.max(0, state.cur-1); save(); render(); scrollTop(); };
+  $("nextBtn").onclick = ()=>{ state.cur = Math.min(QUESTIONS.length-1, state.cur+1); save(); render(); scrollTop(); palette(); };
+  $("clearBtn").onclick = ()=>{ delete state.answers[q.id]; save(); render(); updateMeta(); palette(); };
+
+  // highlight active tab
+  [...document.querySelectorAll(".tab")].forEach(t=>t.classList.remove("active"));
+  updateMeta();
+  palette();
+  scrollTop();
+}
+function scrollTop(){ try{ window.scrollTo({top:0,behavior:"smooth"}); }catch(e){ window.scrollTo(0,0); } }
+function sectionName(k){ return (SECTIONS.find(s=>s.key===k)||{}).name || k; }
+
+function updateMeta(){
+  const ans = QUESTIONS.filter(q=>isAnswered(q.id)).length;
+  const mark = Object.keys(state.marked).length;
+  const pct = Math.round(ans/QUESTIONS.length*100);
+  $("barFill").style.width = pct+"%";
+  $("barLbl").textContent = "Attempted "+ans+" / 100";
+  $("barPct").textContent = pct+"%";
+  $("sAns").textContent = ans;
+  $("sMark").textContent = mark;
+  $("sUn").textContent = QUESTIONS.length - ans;
+}
+
+/* ---------- PALETTE ---------- */
+function palette(){
+  const pal = $("palette");
+  pal.innerHTML = "";
+  QUESTIONS.forEach((q,i)=>{
+    const b = document.createElement("button");
+    let cls = "not-visited";
+    if(state.marked[q.id]) cls = "marked";
+    else if(isAnswered(q.id)) cls = "attempted";
+    else if(state.visited[q.id]) cls = "unanswered";
+    b.className = cls + (i===state.cur ? " cur" : "");
+    b.textContent = q.id;
+    b.onclick = ()=>{ state.cur = i; save(); render(); };
+    pal.appendChild(b);
+  });
+}
+
+/* ---------- TIMER ---------- */
+function startTimer(){
+  if(tick) clearInterval(tick);
+  paintTimer();
+  tick = setInterval(()=>{
+    state.left--;
+    if(state.left % 5 === 0) save();
+    paintTimer();
+    if(state.left <= 0){ clearInterval(tick); autoSubmit(); }
+  }, 1000);
+}
+function paintTimer(){
+  const t = $("timer");
+  t.textContent = fmt(Math.max(0,state.left));
+  if(state.left <= 300) t.classList.add("warn"); else t.classList.remove("warn");
+}
+
+/* ---------- SUBMIT ---------- */
+$("submitBtn").onclick = ()=>{
+  const ans = QUESTIONS.filter(q=>isAnswered(q.id)).length;
+  showModal(
+    "Submit the test?",
+    "You have answered "+ans+" of 100 questions. "+(100-ans)+" remain unanswered. This cannot be undone.",
+    ()=>{ finish(); }
+  );
+};
+function autoSubmit(){
+  state.timedOut = true;
+  finish();
+}
+function finish(){
+  state.done = true;
+  if(tick) clearInterval(tick);
+  save();
+  showResult();
+}
+
+function showModal(title, msg, onYes){
+  const m = document.createElement("div");
+  m.className="modal";
+  m.innerHTML = '<div class="box"><h3>'+esc(title)+'</h3><p>'+esc(msg)+'</p>'+
+    '<div style="display:flex;gap:10px;justify-content:flex-end">'+
+    '<button class="btn ghost" id="mNo">Cancel</button>'+
+    '<button class="btn" id="mYes">Submit</button></div></div>';
+  document.body.appendChild(m);
+  const close = ()=> m.remove();
+  const y = m.querySelector("#mYes"); if(y) y.onclick = ()=>{ close(); onYes(); };
+  const n = m.querySelector("#mNo"); if(n) n.onclick = close;
+}
+
+/* ---------- RESULT ---------- */
+function showResult(){
+  const rows = SECTIONS.map(sec=>{
+    const qs = QUESTIONS.filter(q=>q.section===sec.key);
+    let right=0, wrong=0, skip=0;
+    qs.forEach(q=>{
+      if(!isAnswered(q.id)) skip++;
+      else if(state.answers[q.id]===q.ans) right++;
+      else wrong++;
+    });
+    const marks = right - wrong*NEG;
+    return {name:sec.name, total:qs.length, right, wrong, skip, marks};
+  });
+  const right = rows.reduce((a,r)=>a+r.right,0);
+  const wrong = rows.reduce((a,r)=>a+r.wrong,0);
+  const skip  = rows.reduce((a,r)=>a+r.skip,0);
+  const score = (right - wrong*NEG).toFixed(2);
+  const pct = ((score/100)*100).toFixed(1);
+
+  const brk = rows.map(r=>
+    '<tr><td>'+r.name+'</td><td>'+r.total+'</td><td class="pos">'+r.right+'</td>'+
+    '<td class="negv">'+r.wrong+'</td><td class="wr">'+r.skip+'</td>'+
+    '<td><b>'+r.marks.toFixed(2)+'</b></td></tr>').join("");
+
+  $("shell").classList.remove("on");
+  const box = $("result");
+  box.classList.remove("hidden");
+  const banner = state.timedOut
+    ? '<div style="background:#b91c1c;color:#fff;border-radius:10px;padding:12px 16px;margin-bottom:16px;font-weight:600">Time is over — the paper was submitted automatically at 00:00:00.</div>'
+    : '';
+  box.innerHTML =
+    banner+
+    '<div class="big">'+
+      '<div class="of">Your Score</div>'+
+      '<div class="score">'+score+'</div>'+
+      '<div class="of">out of 100 &middot; '+pct+'%</div>'+
+    '</div>'+
+    '<div class="grid">'+
+      '<div class="stat"><div class="v pos">'+right+'</div><div class="k">Correct</div></div>'+
+      '<div class="stat"><div class="v negv">'+wrong+'</div><div class="k">Wrong</div></div>'+
+      '<div class="stat"><div class="v wr">'+skip+'</div><div class="k">Unattempted</div></div>'+
+      '<div class="stat"><div class="v">'+(wrong*NEG).toFixed(2)+'</div><div class="k">Penalty</div></div>'+
+    '</div>'+
+    '<table class="brk"><thead><tr><th>Section</th><th>Qs</th><th>Correct</th><th>Wrong</th><th>Skipped</th><th>Marks</th></tr></thead>'+
+    '<tbody>'+brk+'</tbody></table>'+
+    '<div class="actions">'+
+      '<button class="btn" id="revBtn">Review Answers</button>'+
+      '<button class="btn ghost" id="retakeBtn">Retake Test</button>'+
+    '</div>'+
+    '<div id="review"></div>';
+
+  $("revBtn").onclick = ()=> renderReview();
+  $("retakeBtn").onclick = ()=>{
+    try{ localStorage.removeItem(KEY); localStorage.removeItem(WELCOMED); }catch(e){}
+    location.reload();
+  };
+  window.scrollTo(0,0);
+}
+
+function renderReview(){
+  const wrap = $("review");
+  if(wrap.dataset.on === "1"){ wrap.innerHTML=""; wrap.dataset.on="0"; return; }
+  wrap.dataset.on = "1";
+  const parts = SECTIONS.map(sec=>{
+    const qs = QUESTIONS.filter(q=>q.section===sec.key);
+    const body = qs.map(q=>{
+      const picked = state.answers[q.id];
+      let pill, cls;
+      if(picked===undefined){ pill='<span class="pill sk">Skipped</span>'; }
+      else if(picked===q.ans){ pill='<span class="pill ok">Correct</span>'; }
+      else { pill='<span class="pill no">Wrong</span>'; }
+      const opts = q.opts.map((o,i)=>{
+        let c = "";
+        if(i===q.ans) c=" correct";
+        else if(i===picked) c=" wrong";
+        return '<div class="o'+c+'"><b>'+String.fromCharCode(65+i)+'.</b> '+esc(o)+
+          (i===q.ans?' <span style="color:var(--green);font-size:12px">&larr; correct</span>':'')+
+          (i===picked && i!==q.ans?' <span style="color:var(--red);font-size:12px">&larr; your answer</span>':'')+
+        '</div>';
+      }).join("");
+      return '<div class="rev">'+
+        '<div class="top"><span class="qno">Q'+q.id+' &middot; '+esc(sec.name)+'</span>'+pill+'</div>'+
+        '<div class="qt">'+esc(q.q)+'</div>'+opts+
+        '<div class="exp"><b>Explanation:</b> '+esc(q.exp)+'</div>'+
+      '</div>';
+    }).join("");
+    return '<h2 style="margin:26px 0 12px">'+esc(sec.name)+' ('+qs.length+' questions)</h2>'+body;
+  }).join("");
+  wrap.innerHTML = parts;
+  wrap.scrollIntoView({behavior:"smooth"});
+}
+
+/* ---------- UTIL ---------- */
+function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
+
+/* keyboard nav */
+document.addEventListener("keydown", e=>{
+  if(!$("shell").classList.contains("on")) return;
+  if(e.key==="ArrowRight") $("nextBtn") && $("nextBtn").click();
+  if(e.key==="ArrowLeft")  $("prevBtn") && $("prevBtn").click();
+  if(["1","2","3","4"].includes(e.key)){
+    const opts = document.querySelectorAll("#opts .opt");
+    if(opts[Number(e.key)-1]) opts[Number(e.key)-1].click();
+  }
+  if(["a","b","c","d"].includes(e.key.toLowerCase())){
+    const i = e.key.toLowerCase().charCodeAt(0)-97;
+    const opts = document.querySelectorAll("#opts .opt");
+    if(opts[i]) opts[i].click();
+  }
+});
+</script>
+</body>
+</html>
