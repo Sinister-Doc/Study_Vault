@@ -82,6 +82,6 @@ Karnataka: **191,791 km² — 7th largest state**, lat. 11.5°–18°N, long. 74
 > [!tip] Quick Revision Box
 > - **India = 6 physical divisions; 82°30′E = Mirzapur; Tropic of Cancer = 8 states ("Great Rains Make Clouds, Just Wait Till May").**
 > - **Karnataka = Karavali (5%) – Malnad (15%) – Bayaluseeme (63%); Mullayanagiri 1,925 m.**
-> - **Krishna basin ~60% of state; Almatti + Narayanpur + TBD (Hospet, 1953). Kaveri: Talakaveri → KRS (1932) → Shivanasamudra (1902).**
+> - **Krishna basin ~60% of state; Almatti + Narayanpur + Tungabhadra (Hospet, 1953). Kaveri: Talakaveri → KRS (1932) → Shivanasamudra (1902).**
 > - **Regur = cotton; laterite = coast; SW monsoon = bulk of rain; Agumbe rainiest; Bidar/Raichur driest.**
 > - Related: [[06_History]] | [[08_Polity]] | [[09_Economy_Science]] | [[04_Current_Affairs_GK/Current_Affairs_2026]]

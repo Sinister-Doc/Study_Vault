@@ -24,7 +24,7 @@ priority: Medium
 | Item | Karnataka facts |
 |---|---|
 | Top crops | **Ragi** (finger millet, southern districts — largest producer in India), **jowar**, tur (Kalaburagi = "Tur bowl"), sugarcane (Belagavi), **coffee (Kodagu/Chikkamagaluru = top producer in India)**, areca, silk (Kolar/Ramnagara — top in India for mulberry silk), sunflower |
-| Irrigation | Canals (Tungabhadra, Upper Krishna, Kabini, Harangi, Hemavathi), tanks; **net irrigated area ~30%+ of sown area**; major dams: **TBD (Hospet), Almatti, KRS, Narayanpur, Linganamakki (Sharavathi, hydro), Supa (Kali)** |
+| Irrigation | Canals (Tungabhadra, Upper Krishna, Kabini, Harangi, Hemavathi), tanks; **net irrigated area ~30%+ of sown area**; major dams: **Tungabhadra (Hospet), Almatti, KRS, Narayanpur, Linganamakki (Sharavathi, hydro), Supa (Kali)** |
 | Green Revolution | HYV seeds + fertiliser + irrigation; Punjab/Haryana/Western UP first; criticism: regional + crop (wheat/rice) imbalance; **Evergreen Revolution** (ecological) by Swaminathan |
 | State economy | Services-led (Bengaluru IT); **Staple? — GSDP rank ~3rd–4th**; **Mysuru (ಮೈಸೂರು) silk**, Dharwad cotton, Kolar gold (KGF closed 2001, Bharat Gold Mines) |
 
@@ -68,6 +68,6 @@ The map tells you **how to split prep time**: Physics rewards formula clarity (F
 
 > [!tip] Quick Revision Box
 > - **GDP (domestic) → +abroad = GNP → −depreciation = NNP; CPI 2012 / WPI 2011–12; RBI repo via 6-member MPC, 4% target; NITI Aayog replaced Planning Commission (2015).**
-> - **Kharif–rice/July; Rabi–wheat/Oct; Zaid–summer. Karnataka: ragi, jowar, tur, coffee, silk top; ~30% irrigated (TBD, Almatti, KRS, Kabini).**
+> - **Kharif–rice/July; Rabi–wheat/Oct; Zaid–summer. Karnataka: ragi, jowar, tur, coffee, silk top; ~30% irrigated (Tungabhadra, Almatti, KRS, Kabini).**
 > - **Physics: g = 9.8; V = IR; 1 HP = 746 W; 220 V/50 Hz India. Chemistry: pH 7 neutral; NaHCO₃/Na₂CO₃/CaSO₄·½H₂O/CaOCl₂; K-Na-Ca-Mg; brass = Cu+Zn, bronze = Cu+Sn. Biology: 206 bones; O− donor, AB+ recipient; A/B1/C/D/E/K deficiencies; 37°C; blood pH 7.4.**
 > - Related: [[06_History]] | [[07_Geography]] | [[08_Polity]] | [[04_Current_Affairs_GK/Current_Affairs_2026]]
