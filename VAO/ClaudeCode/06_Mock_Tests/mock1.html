@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mock Test 1 — KEA Karnataka VAO 2026 Mock Test</title>
+<style>
+:root{
+  --bg:#0f1720; --panel:#16202b; --panel2:#1d2937; --line:#2b3a4b;
+  --txt:#e6eef7; --muted:#93a4b8; --accent:#3b82f6; --accent2:#2563eb;
+  --green:#22c55e; --red:#ef4444; --amber:#f59e0b; --violet:#8b5cf6; --grey:#64748b;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--txt);
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;font-size:15px;line-height:1.5}
+button{font:inherit;cursor:pointer}
+.hidden{display:none !important}
+
+#welcome{max-width:760px;margin:6vh auto;background:var(--panel);border:1px solid var(--line);
+  border-radius:14px;padding:32px 34px;box-shadow:0 20px 50px rgba(0,0,0,.4)}
+#welcome h1{margin:0 0 6px;font-size:24px}
+#welcome .sub{color:var(--muted);margin-bottom:22px}
+.specs{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0 24px}
+.spec{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:14px}
+.spec .k{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+.spec .v{font-size:20px;font-weight:700;margin-top:4px}
+.neg{color:var(--amber)}
+.sec-table{width:100%;border-collapse:collapse;margin:8px 0 22px}
+.sec-table th,.sec-table td{border:1px solid var(--line);padding:8px 10px;text-align:left;font-size:14px}
+.sec-table th{background:var(--panel2);color:var(--muted);font-weight:600}
+.btn{background:var(--accent);color:#fff;border:0;border-radius:9px;padding:12px 22px;font-weight:600}
+.btn:hover{background:var(--accent2)}
+.btn.ghost{background:transparent;border:1px solid var(--line);color:var(--txt)}
+.btn.ghost:hover{background:var(--panel2)}
+.note{color:var(--muted);font-size:13px;margin-top:14px}
+
+#shell{display:none;min-height:100vh;flex-direction:column}
+#shell.on{display:flex}
+header{position:sticky;top:0;z-index:20;background:var(--panel);border-bottom:1px solid var(--line);
+  padding:10px 16px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.brand{font-weight:700}
+.brand small{display:block;font-weight:400;color:var(--muted);font-size:12px}
+#timer{margin-left:auto;font-variant-numeric:tabular-nums;font-size:22px;font-weight:700;
+  background:var(--panel2);border:1px solid var(--line);border-radius:9px;padding:6px 14px}
+#timer.warn{color:#fff;background:#b91c1c;border-color:#b91c1c}
+main{flex:1;display:flex;gap:16px;padding:16px;align-items:flex-start;flex-wrap:wrap}
+.qcol{flex:1 1 560px;min-width:320px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px}
+.side{flex:0 0 300px;display:flex;flex-direction:column;gap:14px;min-width:260px}
+
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.tab{background:var(--panel2);border:1px solid var(--line);color:var(--muted);border-radius:8px;
+  padding:7px 13px;font-size:13px}
+.tab.active{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600}
+.bar{height:8px;background:var(--panel2);border-radius:99px;overflow:hidden;border:1px solid var(--line)}
+.bar > i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--green));transition:width .25s}
+.pmeta{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-top:6px}
+
+.qhead{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap}
+.qno{font-size:13px;color:var(--muted)}
+.tag{font-size:11px;border-radius:99px;padding:2px 9px;border:1px solid var(--line);color:var(--muted)}
+.tag.expected{background:rgba(59,130,246,.15);border-color:#2f5ea8;color:#9ec2ff}
+.tag.pyq{background:rgba(139,92,246,.15);border-color:#6d4bb0;color:#c4b0ff}
+.qtext{font-size:17px;font-weight:600;margin:8px 0 16px}
+.opt{display:flex;gap:11px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;
+  padding:11px 13px;margin-bottom:9px;background:var(--panel2);cursor:pointer}
+.opt:hover{border-color:var(--accent)}
+.opt.sel{border-color:var(--accent);background:rgba(59,130,246,.12)}
+.opt .k{flex:0 0 24px;height:24px;border-radius:6px;background:var(--bg);border:1px solid var(--line);
+  display:grid;place-items:center;font-size:12px;font-weight:700}
+.opt.sel .k{background:var(--accent);border-color:var(--accent);color:#fff}
+.qfoot{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:16px;flex-wrap:wrap}
+.review-lbl{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted)}
+.nav-btns{display:flex;gap:8px;flex-wrap:wrap}
+
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px}
+.card h3{margin:0 0 10px;font-size:14px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+.pal{display:grid;grid-template-columns:repeat(auto-fill,minmax(38px,1fr));gap:7px;max-height:290px;overflow:auto}
+.pal button{border:1px solid var(--line);border-radius:7px;padding:7px 0;font-size:12px;font-weight:600;
+  background:var(--panel2);color:var(--txt)}
+.pal button.cur{outline:2px solid var(--accent);outline-offset:1px}
+.pal button.not-visited{background:var(--panel2);color:var(--muted)}
+.pal button.unanswered{background:rgba(239,68,68,.22);border-color:#9b3b3b;color:#ffc9c9}
+.pal button.attempted{background:rgba(34,197,94,.22);border-color:#3c8a5a;color:#c6f3d5}
+.pal button.marked{background:rgba(139,92,246,.25);border-color:#6d4bb0;color:#d9ccff}
+.legend{display:grid;gap:7px;font-size:13px}
+.legend div{display:flex;align-items:center;gap:9px}
+.sw{width:16px;height:16px;border-radius:5px;border:1px solid var(--line);display:inline-block}
+.sumline{display:flex;justify-content:space-between;font-size:13px;margin:5px 0;color:var(--muted)}
+.sumline b{color:var(--txt)}
+
+#result{max-width:900px;margin:0 auto;padding:22px;width:100%}
+.big{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:26px;text-align:center;margin-bottom:18px}
+.big .score{font-size:52px;font-weight:800;line-height:1}
+.big .of{color:var(--muted);font-size:16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-bottom:18px}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:14px;text-align:center}
+.stat .v{font-size:24px;font-weight:700}
+.stat .k{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+table.brk{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);
+  border-radius:11px;overflow:hidden;margin-bottom:18px}
+table.brk th,table.brk td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;font-size:14px}
+table.brk th{background:var(--panel2);color:var(--muted);font-size:12px;text-transform:uppercase}
+tbody tr:last-child td{border-bottom:0}
+.pos{color:var(--green)}.negv{color:var(--red)}.wr{color:var(--amber)}
+
+.rev{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px;margin-bottom:12px}
+.rev .top{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:8px}
+.rev .qt{font-weight:600;font-size:16px;margin-bottom:10px}
+.rev .o{border:1px solid var(--line);border-radius:8px;padding:9px 12px;margin-bottom:7px;font-size:14px}
+.rev .o.correct{border-color:var(--green);background:rgba(34,197,94,.1)}
+.rev .o.wrong{border-color:var(--red);background:rgba(239,68,68,.1)}
+.rev .exp{font-size:13px;color:var(--muted);border-left:3px solid var(--accent);padding-left:11px;margin-top:10px}
+.pill{font-size:11px;padding:2px 9px;border-radius:99px;font-weight:700}
+.pill.ok{background:rgba(34,197,94,.18);color:#9ff0bd}
+.pill.no{background:rgba(239,68,68,.18);color:#ffb4b4}
+.pill.sk{background:rgba(245,158,11,.18);color:#ffd89b}
+.actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:20px 0}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.65);display:grid;place-items:center;z-index:50;padding:18px}
+.modal .box{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:24px;max-width:460px;width:100%}
+.modal h3{margin:0 0 10px}
+.modal p{color:var(--muted);margin:0 0 18px}
+@media print{header,.side,.actions,.tabs{display:none}body{background:#fff;color:#000}}
+</style>
+</head>
+<body>
+
+<section id="welcome">
+  <h1>Mock Test 1 — KEA Karnataka VAO 2026</h1>
+  <div class="sub">General Knowledge (Paper 1) &middot; Full-length 100-question paper (offline, self-contained)</div>
+
+  <div class="specs">
+    <div class="spec"><div class="k">Questions</div><div class="v">100 MCQs</div></div>
+    <div class="spec"><div class="k">Total Marks</div><div class="v">100</div></div>
+    <div class="spec"><div class="k">Duration</div><div class="v">120 minutes</div></div>
+    <div class="spec"><div class="k">Negative Marking</div><div class="v neg">0.25 / wrong</div></div>
+  </div>
+
+  <table class="sec-table">
+    <thead><tr><th>Section</th><th>Questions</th><th>Marks</th></tr></thead>
+    <tbody>
+      <tr><td>History (ಇತಿಹಾಸ)</td><td>20</td><td>20</td></tr>
+      <tr><td>Geography (ಭೂಗೋಳ)</td><td>15</td><td>15</td></tr>
+      <tr><td>Polity & Panchayat Raj</td><td>25</td><td>25</td></tr>
+      <tr><td>Economy & Schemes</td><td>15</td><td>15</td></tr>
+      <tr><td>General Science</td><td>10</td><td>10</td></tr>
+      <tr><td>Current Affairs</td><td>15</td><td>15</td></tr>
+      <tr><td><b>Total</b></td><td><b>100</b></td><td><b>100</b></td></tr>
+    </tbody>
+  </table>
+
+  <button class="btn" id="startBtn">Start Test</button>
+  <div class="note">
+    Each question carries 1 mark. 0.25 mark is deducted for every wrong answer; unattempted questions carry no penalty.
+    The timer counts down from <b>120:00</b> and the paper auto-submits at <b>00:00:00</b>.
+    Progress is saved in your browser, so you may reload without losing answers.
+  </div>
+</section>
+
+<section id="shell">
+  <header>
+    <div class="brand">Mock Test 1 — VAO<small>KEA Karnataka VAO 2026</small></div>
+    <div id="timer">120:00:00</div>
+  </header>
+
+  <main>
+    <div class="qcol">
+      <div class="tabs" id="tabs"></div>
+      <div class="bar"><i id="barFill"></i></div>
+      <div class="pmeta"><span id="barLbl">Attempted 0 / 100</span><span id="barPct">0%</span></div>
+      <div id="qbox" style="margin-top:18px"></div>
+    </div>
+
+    <aside class="side">
+      <div class="card">
+        <h3>Question Palette</h3>
+        <div class="pal" id="palette"></div>
+      </div>
+      <div class="card">
+        <h3>Legend</h3>
+        <div class="legend">
+          <div><span class="sw" style="background:var(--panel2);border-color:var(--line)"></span> Not visited</div>
+          <div><span class="sw" style="background:rgba(239,68,68,.35);border-color:#9b3b3b"></span> Not answered</div>
+          <div><span class="sw" style="background:rgba(34,197,94,.35);border-color:#3c8a5a"></span> Attempted</div>
+          <div><span class="sw" style="background:rgba(139,92,246,.4);border-color:#6d4bb0"></span> Marked for review</div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Progress</h3>
+        <div class="sumline"><span>Answered</span><b id="sAns">0</b></div>
+        <div class="sumline"><span>Marked</span><b id="sMark">0</b></div>
+        <div class="sumline"><span>Not answered</span><b id="sUn">100</b></div>
+        <button class="btn" id="submitBtn" style="width:100%;margin-top:12px">Submit Test</button>
+      </div>
+    </aside>
+  </main>
+</section>
+
+<section id="result" class="hidden"></section>
+
+<script>
+const QUESTIONS = [
+{"q":"ಕರ್ನಾಟಕದ ರಚನೆ ಯಾವ ದಿನಾಂಕದಲ್ಲಿ ಆಯಿತು?","opts":["1 ನವೆಂಬರ್ 1956","1 ಮೇ 1956","1 ನವೆಂಬರ್ 1973","1 ಏಪ್ರಿಲ್ 1947"],"ans":0,"exp":"ನವೆಂಬರ್ 1, 1956ರಂದು ಮೈಸೂರು ಸಂಸ್ಥಾನವು ಕನ್ನಡ ಭಾಷಿಕ ಪ್ರದೇಶಗಳೊಂದಿಗೆ ಏಕೀಕೃತವಾಯಿತು.","label":"PYQ-style","id":1},
+{"q":"ಕರ್ನಾಟಕದ ಮುಖ್ಯಮಂತ್ರಿ ಯಾರು?","opts":["ಡಿ.ಕೆ. ಶಿವಕುಮಾರ್","ಬಿ.ಎಸ್. ಯಡಿಯೂರಪ್ಪ","ಸಿದ್ದರಾಮಯ್ಯ","ಎಂ. ವೀರಪ್ಪ ಮೋೈ"],"ans":0,"exp":"ಡಿ.ಕೆ. ಶಿವಕುಮಾರ್ (2023–2026). [verify]","label":"expected","id":2},
+{"q":"ಕರ್ನಾಟಕದ ರಾಜ್ಯಪಾಲರು ಯಾರು?","opts":["ಥವರ್ ಚಂದ್ ಗೆಹ್ಲೋಟ್","ವಸುಂದ್ಹರಾ ರಾಜೆ","ಜಗ್ತಿಪ್ರಕಾಶ್ ನಡ್ಡಾ","ಬಿ.ವೈ. ವಿಜಯಕುಮಾರ್"],"ans":0,"exp":"ಥವರ್ ಚಂದ್ ಗೆಹ್ಲೋಟ್ (2023–2026). [verify]","label":"expected","id":3},
+{"q":"73ನೇ ತಿದ್ದುಪಿಯು ಕೇಂದ್ರವಾಗಿದೆಯೇ?","opts":["ಸ್ಥಳೀಯ ಸಂಸ್ಥೆಗಳು (ಪಂಚಾಯತೀ ರಾಜ್)","ಶಾಲಾ ಶಿಕ್ಷಣ","ಪ್ರಾಥಮಿಕ ಆರೋಗ್ಯ ಕೇಂದ್ರಗಳು","ಐಟಿ ಆಫೀಸುಗಳು"],"ans":0,"exp":"73ನೇ ತಿದ್ದುಪಿ ಗ್ರಾಮ ಪಂಚಾಯತಿಯ 3-ಮಟ್ಟದ ವ್ಯವಸ್ಥೆಯನ್ನು ಸ್ಥಾಪಿಸಿತು.","label":"PYQ-style","id":4},
+{"q":"ಕರ್ನಾಟಕದಲ್ಲಿ ಎಷ್ಟು ಜಿಲ್ಲೆಗಳಿವೆ (2025)?","opts":["31","30","32","29"],"ans":0,"exp":"ವಿಜಯನಗರ ಜಿಲ್ಲೆಯು 2020ರಲ್ಲಿ ಬಳ್ಳಾರಿಯಿಂದ ಬೇರ್ಪಟ್ಟು ಒಟ್ಟು 31 ಆಯಿತು.","label":"PYQ-style","id":5},
+{"q":"ಕಾವೇರಿ ನದಿಯ ಮೂಲ ಯಾವುದು?","opts":["ತಾಲಕಾವೇರಿ (ಕೋಡಗು)","ಮಹಾಬಲೇಶ್ವರ","ಅಮರ್ಕಂಟಕ","ನಂದಿಗಿರಿ"],"ans":0,"exp":"ಕಾವೇರಿ ತಾಲಕಾವೇರಿಯಲ್ಲಿ ಹುಟ್ಟುತ್ತದೆ, ಕೋಡಗು ಜಿಲ್ಲೆ.","label":"PYQ-style","id":6},
+{"q":"ವಿಜಯನಗರ ಸಾಮ್ರಾಜ್ಯದ ರಾಜಧಾನಿ ಏನು?","opts":["ಹಂಪಿ","ಮೈಸೂರು","ಬೆಂಗಳೂರು","ಬೀದರ್"],"ans":0,"exp":"ಹಂಪಿಯು ವಿಜಯನಗರದ ರಾಜಧಾನಿಯಾಗಿತ್ತು; ಇದು ಇಂದಿನ ಹಮ್ಪಿ (ಬೀತರದಾ ಜಿಲ್ಲೆ).","label":"PYQ-style","id":7},
+{"q":"ನೀತಿ ಆಯೋಗದ ಅಧ್ಯಕ್ಷರು ಯಾರು?","opts":["ಭಾರತದ ಪ್ರಧಾನಿ (Narendra Modi)","ರಘುರಾಮ ರಾಜನ್","ಅಮಿತಾಬ್ ಕಾಂತ್","ನಿಶಾಂತ್ ಪಾಠಕ್"],"ans":0,"exp":"ಭಾರತದ ಪ್ರಧಾನಿ ಅಧ್ಯಕ್ಷರಾಗಿದ್ದಾರೆ.","label":"expected","id":8},
+{"q":"ಬಂಟ್ವಾಳನ ಜನವರಿಯ ಕ್ಯಾಲೆಂಡರ್‌ನಲ್ಲಿ ಏನಿದೆ?","opts":["ಕೃಷಿ ಮತ್ತು ಹವಾಮಾನ","ಪುಸ್ತಕಗಳ ಪಟ್ಟಿ","ಸಿನೆಮಾ ಪೋಸ್ಟರ್ಗಳು","ಆರೋಗ್ಯ ಸಮೀಕ್ಷೆ"],"ans":0,"exp":"ಪ್ರಕೃತಿ ವೀಕ್ಷಣೆ ಮತ್ತು ಕೃಷಿ ಚಟುವಟಿಕೆಗಳ ಮೇಲೆ ಕೇಂದ್ರೀಕರಿಸಲಾಗಿದೆ.","label":"expected","id":9},
+{"q":"ಇಪ್ಪತ್ತನೇ ಶತಮಾನದ ಭಾರತದ ಸ್ವತಂತ್ರ ಚಳುವಳಿಯಲ್ಲಿ ಯಾರು ಪ್ರಮುಖರಾಗಿರುತ್ತಾರೆ?","opts":["ಮಹಾತ್ಮಾ ಗಾಂಧಿ","ಜವಹರಲಾಲ್ ನೆಹರು","ಸುಭಾಷ್ ಚಂದ್ರಬೋಸ್","ಸರ್ವಪಲ್ಲಿ ರಾಧಾಕೃಷ್ಣ"],"ans":0,"exp":"ಮಹಾತ್ಮಾ ಗಾಂಧಿ ಸ್ವಾತಂತ್ರ್ಯ ಚಳುವಳಿಯ ಮುಖ್ಯ ನಾಯಕರಾಗಿದ್ದಾರೆ.","label":"expected","id":10},
+{"q":"ಮಾಧ್ಯಮ ಪ್ರಶಸ್ತಿ ಪುರಸ್ಕೃತರು ಯಾರು?","opts":["ಶಾಂತ ನೂತನ್","ಸಾರಾ ಅಲಿ ಖಾನ್","ಕಂಗನಾ ರಣಾವತ್","ವಿಜಯ್ ಸೇತುಪತಿ"],"ans":0,"exp":"ಶಾಂತ ನೂತನ್ (1965) – ಭಾರತದ ಮೊದಲ ಮಾಧ್ಯಮ ಪ್ರಶಸ್ತಿ ಪುರಸ್ಕೃತರು.","label":"expected","id":11},
+{"q":"ಕರ್ನಾಟಕದ ರಾಷ್ಟ್ರೀಯ ಪಾರ್ಕು ಏನು?","opts":["ಬಂಡಿಪುರ","ಬಿಂಚಿ","ಕಾಸರಗೋಡು","ಮುಗ್ರೆ"],"ans":0,"exp":"ಬಂಡಿಪುರ ರಾಷ್ಟ್ರೀಯ ಉದ್ಯಾನವನವು ಮೈಸೂರು ಜಿಲ್ಲೆಯಲ್ಲಿದೆ.","label":"expected","id":12},
+{"q":"ಕರ್ನಾಟಕದ ರಾಜ್ಯ ಪ್ರಾಣಿ ಯಾವುದು?","opts":["ಬೆಕ್ಕಿನ","ಕೆಂಪು ಹುಲಿ","ಮರಳು ಬೆಕ್ಕು","ಸೋಲರ್"],"ans":0,"exp":"ಕರ್ನಾಟಕದ ರಾಜ್ಯ ಪ್ರಾಣಿಯು ಕೆಂಪು ಹುಲಿ (Indian Elephant).","label":"expected","id":13},
+{"q":"ಕರ್ನಾಟಕದ ರಾಜ್ಯ ಮರ ಯಾವುದು?","opts":["ಕಬ್ಬಿಗ","ವಿಶಾಲ","ನೆರಿ","ಶರ"],"ans":0,"exp":"ಕರ್ನಾಟಕದ ರಾಜ್ಯ ಮರವು ಕಬ್ಬಿಗ (Sandalwood).","label":"expected","id":14},
+{"q":"ಕರ್ನಾಟಕದ ರಾಜ್ಯ ಹೂವು ಯಾವುದು?","opts":["ಕಮಲ","ಅರ್ಕಾ","ಗುಲಾಬಿ","ಜಾಸ್ತಿ"],"ans":0,"exp":"ಕರ್ನಾಟಕದ ರಾಜ್ಯ ಹೂವು ಅರ್ಕಾ (Lotus).","label":"expected","id":15},
+{"q":"ಕರ್ನಾಟಕದ ರಾಜ್ಯ ಪಕ್ಷಿ ಯಾವುದು?","opts":["ತುಳಸಿ ಕಾಕಿ","ದಂಡಲ","ಗೃಹವಾಸಿ","ರೇಖ"],"ans":0,"exp":"ಕರ್ನಾಟಕದ ರಾಜ್ಯ ಪಕ್ಷಿಯು ತುಳಸಿ ಕಾಕಿ (Indian Roller).","label":"expected","id":16},
+{"q":"ಕರ್ನಾಟಕದ ರಾಜ್ಯ ಭಾಷೆ ಯಾವುದು?","opts":["ಕನ್ನಡ","ಹಿಂದಿ","ಅಂಗ್ರೇಜಿ","ತಮಿಳು"],"ans":0,"exp":"ಕರ್ನಾಟಕದ ರಾಜ್ಯ ಭಾಷೆ ಕನ್ನಡ.","label":"PYQ-style","id":17},
+{"q":"ಕರ್ನಾಟಕದ ರಾಜ್ಯ ಸಂಗೀತ ಯಾವುದು?","opts":["ಕರ್ನಾಟಕ ಸಂಗೀತ","ಹಿಂದೂಸ್ತಾನಿ","ಪಾಶ್ಚಾತ್ಯ","ಜ್ಯಾಸ್"],"ans":0,"exp":"ಕರ್ನಾಟಕದ ರಾಜ್ಯ ಸಂಗೀತವು ಕರ್ನಾಟಕ ಸಂಗೀತ.","label":"expected","id":18},
+{"q":"ಕರ್ನಾಟಕದ ರಾಜ್ಯ ಕ್ರೀಡೆ ಯಾವುದು?","opts":["ಕ್ರಿಕೆಟ್","ಫುಟ್ಬಾಲ್","ಹಾಕಿ","ಟೆನಿಸ್"],"ans":0,"exp":"ಕರ್ನಾಟಕದ ಅನೌಪಚಾರಿಕ ರಾಜ್ಯ ಕ್ರೀಡೆಯು ಕ್ರಿಕೆಟ್.","label":"expected","id":19},
+{"q":"ಕರ್ನಾಟಕದ ರಾಜ್ಯ ಖಾದ್ಯ ಯಾವುದು?","opts":["ಕರ್ನಾಟಕ ಪರಾಠಾ","ದೋಸೆ","ಪುರಿಯ","ಮೋಮ್ಸು"],"ans":0,"exp":"ಕರ್ನಾಟಕದ ಅನೌಪಚಾರಿಕ ರಾಜ್ಯ ಖಾದ್ಯವು ದೋಸೆ.","label":"expected","id":20},
+{"q":"ಭಾರತದ ಸಂವಿಧಾನದ 1ನೇ ಅನುಸೂಚಿಯಲ್ಲಿ ಏನಿದೆ?","opts":["ರಾಜ್ಯಗಳು ಮತ್ತು ಕೇಂದ್ರಾಡಳಿತ ಪ್ರದೇಶಗಳ ಪಟ್ಟಿ","ಮೂಲಭೂತ ಹಕ್ಕುಗಳು","ಕರ್ತವ್ಯಗಳು","ಆಡಳಿತ ವಿಷಯಗಳು"],"ans":0,"exp":"1ನೇ ಅನುಸೂಚಿಯು ರಾಜ್ಯಗಳು ಮತ್ತು ಕೇಂದ್ರಾಡಳಿತ ಪ್ರದೇಶಗಳನ್ನು ವ್ಯಾಖ್ಯಾನಿಸುತ್ತದೆ.","label":"PYQ-style","id":21},
+{"q":"ಮೂಲಭೂತ ಹಕ್ಕುಗಳು ಯಾವ ಅನುಸೂಚಿಯಲ್ಲಿವೆ?","opts":["3ನೇ","4ನೇ","5ನೇ","8ನೇ"],"ans":0,"exp":"ಮೂಲಭೂತ ಹಕ್ಕುಗಳು ಅನುಸೂಚಿ 3ರಲ್ಲಿವೆ (ಅನುಸೂಚಿ 1ರಲ್ಲಿ ಕೇಂದ್ರ ಸರ್ಕಾರದ ವ್ಯಾಪ್ತಿಯಲ್ಲಿದೆ).","label":"expected","id":22},
+{"q":"ಸಂವಿಧಾನದ ಆರ್ಟಿಕಲ್ 32 ಏನು ನೀಡುತ್ತದೆ?","opts":["ಆಡಳಿತ ಕಾನೂನು","ಸಂವಿಧಾನಿಕ ಪ್ರತಿಪೂರಣೆ","ಮೂಲಭೂತ ಹಕ್ಕುಗಳ ಪಟ್ಟಿ","ಸರ್ಕಾರಿ ವಲಯದ ನಿಯಮಗಳು"],"ans":0,"exp":"ಆರ್ಟಿಕಲ್ 32 ಸಂವಿಧಾನಿಕ ಪ್ರತಿಪೂರಣೆಗಳಿಗೆ ಹಕ್ಕನ್ನು ನೀಡುತ್ತದೆ (ಅಂಬ್ರೇಸಾಮ್‌ಗೆ ಮರಣ ಸಂತರಣೆ).","label":"PYQ-style","id":23},
+{"q":"ಆರ್ಟಿಕಲ್ 21 ಯಾವುದನ್ನು ರಕ್ಷಿಸುತ್ತದೆ?","opts":["ಸಂವಿಧಾನಿಕ ಪ್ರತಿಪೂರಣೆ","ಜೀವಣ ಮತ್ತು ವ್ಯಕ್ತಿಕ ಸ್ವಾತಂತ್ರ್ಯ","ಮತದಾನದ ಹಕ್ಕು","ಬಂದಿಗೆಗಳ ಅನ್ವಯ"],"ans":0,"exp":"ಆರ್ಟಿಕಲ್ 21 ಜೀವಣ ಮತ್ತು ವ್ಯಕ್ತಿಕ ಸ್ವಾತಂತ್ರ್ಯವನ್ನು ರಕ್ಷಿಸುತ್ತದೆ.","label":"PYQ-style","id":24},
+{"q":"ಬಾಬ್ರಿ ಮಸೀದಿ ಪ್ರಕರಣ ಯಾವ ವರ್ಷದಲ್ಲಾಯಿತು?","opts":["1992","1990","1995","2000"],"ans":0,"exp":"ಬಾಬ್ರಿ ಮಸೀದಿ ಪ್ರಕರಣ ಡಿಸೆಂಬರ್ 6, 1992ರಂದು ನಡೆಯಿತು.","label":"PYQ-style","id":25},
+{"q":"ಭಾರತದ ಮೊದಲ ಉಪರಾಷ್ಟ್ರಪತಿ ಯಾರು?","opts":["ಎಸ್.ರಾಧಾಕೃಷ್ಣನ್","ಸರ್ದಾರ್ ಪಟೇಲ್","ಜಗ್ಗಿ ಪಾಂಡ್ಯ","ಜಗ್ಗಿ ಮೋದಿ"],"ans":0,"exp":"ಎಸ್. ರಾಧಾಕೃಷ್ಣನ್ ಮೊದಲ ಉಪರಾಷ್ಟ್ರಪತಿ ಆಗಿದ್ದರು.","label":"expected","id":26},
+{"q":"ಭಾರತದ ಮೊದಲ ಮಹಿಳಾ ಅಧ್ಯಕ್ಷರು ಯಾರು?","opts":["ಪ್ರತಿಭಾ ಪಾಟೀಲ್","ಭಾರತಿ ಬಿರ್ಲಾ","ನೇರೋಲಿ ಪಾಟೀಲ್","ವಿಜಯಾಲಕ್ಷ್ಮಿ ಪಂಡಿತ್"],"ans":0,"exp":"ಪ್ರತಿಭಾ ಪಾಟೀಲ್ ಮೊದಲ ಮಹಿಳಾ ಅಧ್ಯಕ್ಷೆ (2007–2012).","label":"PYQ-style","id":27},
+{"q":"ಭಾರತದ ಸಂವಿಧಾನವನ್ನು ಯಾರು ಓದಿದರು?","opts":["ಜವಹರಲಾಲ್ ನೆಹರು","ಬಿ. ಆರ್. ಅಂಬೇಡ್ಕರ್","ಮಹಾತ್ಮಾ ಗಾಂಧಿ","ಸರ್ದಾರ್ ಪಟೇಲ್"],"ans":0,"exp":"ಸಂವಿಧಾನದ ಮುಖ್ಯ ರಚನೆ ಬಿ. ಆರ್. ಅಂಬೇಡ್ಕರ್ ಅವರದು.","label":"PYQ-style","id":28},
+{"q":"ಭಾರತದ ಸಂವಿಧಾನದ ಪ್ರಾರಂಭಿಕ ಅದ್ಯಯನ ಯಾವುದು?","opts":["ರಾಷ್ಟ್ರೀಯ ಪಂಚಾಂಗ","ಸಂವಿಧಾನದ ಪ್ರಮುಖ ಮೌಲ್ಯಗಳು","ರಾಷ್ಟ್ರೀಯ ಪಕ್ಷ","ರಾಷ್ಟ್ರೀಯ ಮೋಡ"],"ans":0,"exp":"ಪ್ರಾರಂಭಿಕ ಅದ್ಯಯನವು ಸಂವಿಧಾನದ ಮೌಲ್ಯಗಳನ್ನು ನಿರೂಪಿಸುತ್ತದೆ.","label":"expected","id":29},
+{"q":"ಭಾರತದ ರಾಷ್ಟ್ರೀಯ ಧ್ವಜವನ್ನು ಯಾರು ವಿನ್ಯಾಸಗೊಳಿಸಿದರು?","opts":["ಪಿಂಕೋಪಾಧ್ಯಾಯ","ಸರ್ದಾರ್ ಪಟೇಲ್","ಜವಹರಲಾಲ್ ನೆಹರು","ಮಹಾತ್ಮಾ ಗಾಂಧಿ"],"ans":0,"exp":"ಪಿಂಕೋಪಾಧ್ಯಾಯ ಅವರು ರಾಷ್ಟ್ರೀಯ ಧ್ವಜವನ್ನು ವಿನ್ಯಾಸಗೊಳಿಸಿದರು.","label":"PYQ-style","id":30},
+{"q":"ರಾಷ್ಟ್ರೀಯ ಧ್ವಜದ ಬಣ್ಣಗಳ ಅರ್ಥವೇನು?","opts":["ಸಿಂಧೂರ್ (ಹೋಸಿ), ಕಿತ್ತಳೆ (ಶ್ರಮ), ಹಸಿರು (ಪಂಚಪ್ರಾಣಿ)","ಕೆಂಪು (ಸಾಹಸ), ಹಳದಿ (ಶ್ರಮ), ಹಸಿರು (ಸಂಪತ್ತು)","ಕಪ್ಪು (ಬಲ), ಬಿಳಿ (ಶಾಂತಿ), ಕಪ್ಪು (ಶಕ್ತಿ)","ಹಳದಿ (ಧನ), ಕೆಂಪು (ಹೋಸಿ), ಬಿಳಿ (ಮರಣ)"],"ans":0,"exp":"ಸಿಂಧೂರ್ (ಹೋಸಿ), ಕಿತ್ತಳೆ (ಶ್ರಮ), ಹಸಿರು (ಪಂಚಪ್ರಾಣಿ).","label":"PYQ-style","id":31},
+{"q":"ಕರ್ನಾಟಕದಲ್ಲಿ ಎಷ್ಟು ವಿಧಾನಸಭಾ ಕ್ಷೇತ್ರಗಳಿವೆ?","opts":["224","225","226","223"],"ans":0,"exp":"ಕರ್ನಾಟಕದಲ್ಲಿ 224 ವಿಧಾನಸಭಾ ಕ್ಷೇತ್ರಗಳಿವೆ (2025).","label":"expected","id":32},
+{"q":"ಕರ್ನಾಟಕದ ರಾಜಧಾನಿ ಯಾವುದು?","opts":["ಬೆಂಗಳೂರು","ಮೈಸೂರು","ಹುಬ್ಬಳ್ಳಿ","ದಾವಣಗೆರೆ"],"ans":0,"exp":"ಬೆಂಗಳೂರು ಕರ್ನಾಟಕದ ರಾಜಧಾನಿ.","label":"PYQ-style","id":33},
+{"q":"ಕರ್ನಾಟಕದ ಪ್ರಮುಖ ಆರ್ಥಿಕ ನಗರ ಯಾವುದು?","opts":["ಬೆಂಗಳೂರು","ಬೆಳಗಾವಿ","ಮಾಬ್ಬಳ್ಳಿ","ಗದಗ"],"ans":0,"exp":"ಬೆಂಗಳೂರು ಕರ್ನಾಟಕದ ಪ್ರಮುಖ ಆರ್ಥಿಕ ನಗರ (ಸಿಲಿಕಾನ್ ವ್ಯಾಲಿ).","label":"PYQ-style","id":34},
+{"q":"ಕರ್ನಾಟಕದ ಪ್ರಮುಖ ಕೈಗಾರಿಕಾ ನಗರ ಯಾವುದು?","opts":["ಬೆಂಗಳೂರು","ದಾವಣಗೆರೆ","ಹುಬ್ಬಳ್ಳಿ","ಮಾಬ್ಬಳ್ಳಿ"],"ans":0,"exp":"ದಾವಣಗೆರೆ ಕರ್ನಾಟಕದ ಪ್ರಮುಖ ಕೈಗಾರಿಕಾ ನಗರ.","label":"expected","id":35},
+{"q":"ಕರ್ನಾಟಕದ ಪ್ರಮುಖ ವಿದ್ಯಾರ್ಥಿ ನಗರ ಯಾವುದು?","opts":["ಮಾಬ್ಬಳ್ಳಿ","ಬೆಂಗಳೂರು","ಬೆಳಗಾವಿ","ಗದಗ"],"ans":0,"exp":"ಮಾಬ್ಬಳ್ಳಿ ಕರ್ನಾಟಕದ ಪ್ರಮುಖ ವಿದ್ಯಾರ್ಥಿ ನಗರ.","label":"expected","id":36},
+{"q":"ಕರ್ನಾಟಕದ ಪ್ರಮುಖ ಪ್ರವಾಸಿ ನಗರ ಯಾವುದು?","opts":["ಮೈಸೂರು","ಬೆಂಗಳೂರು","ಗದಗ","ಹುಬ್ಬಳ್ಳಿ"],"ans":0,"exp":"ಮೈಸೂರು ಕರ್ನಾಟಕದ ಪ್ರಮುಖ ಪ್ರವಾಸಿ ನಗರ.","label":"expected","id":37},
+{"q":"ಕರ್ನಾಟಕದ ಪ್ರಮುಖ ಐತಿಹಾಸಿಕ ನಗರ ಯಾವುದು?","opts":["ಬಿಜಾಪುರ","ಬೆಂಗಳೂರು","ದಾವಣಗೆರೆ","ಹುಬ್ಬಳ್ಳಿ"],"ans":0,"exp":"ಬಿಜಾಪುರ ಕರ್ನಾಟಕದ ಪ್ರಮುಖ ಐತಿಹಾಸಿಕ ನಗರ.","label":"expected","id":38},
+{"q":"ಕರ್ನಾಟಕದ ಪ್ರಮುಖ ವಾಣಿಜ್ಯ ನಗರ ಯಾವುದು?","opts":["ಬೆಂಗಳೂರು","ಬೆಳಗಾವಿ","ಹುಬ್ಬಳ್ಳಿ","ಮಾಬ್ಬಳ್ಳಿ"],"ans":0,"exp":"ಬೆಂಗಳೂರು ಕರ್ನಾಟಕದ ಪ್ರಮುಖ ವಾಣಿಜ್ಯ ನಗರ.","label":"expected","id":39},
+{"q":"ಕರ್ನಾಟಕದ ಪ್ರಮುಖ ತಾಂತ್ರಿಕ ನಗರ ಯಾವುದು?","opts":["ಬೆಂಗಳೂರು","ದಾವಣಗೆರೆ","ಹುಬ್ಬಳ್ಳಿ","ಮಾಬ್ಬಳ್ಳಿ"],"ans":0,"exp":"ಬೆಂಗಳೂರು ಕರ್ನಾಟಕದ ಪ್ರಮುಖ ತಾಂತ್ರಿಕ ನಗರ.","label":"expected","id":40},
+{"q":"ಭಾರತದ ಮಹತ್ವದ ಆರ್ಥಿಕ ಯೋಜನೆ ಯಾವುದು?","opts":["12ನೇ ಐದವರ್ಷಿ ಯೋಜನೆ","10ನೇ ಐದವರ್ಷಿ ಯೋಜನೆ","8ನೇ ಐದವರ್ಷಿ ಯೋಜನೆ","9ನೇ ಐದವರ್ಷಿ ಯೋಜನೆ"],"ans":0,"exp":"12ನೇ ಐದವರ್ಷಿ ಯೋಜನೆಯು ಮಹತ್ವದ ಆರ್ಥಿಕ ಯೋಜನೆ (2012–2017).","label":"expected","id":41},
+{"q":"ಮಹಿಳೆಯರ ಸ್ಥಾನಮಾನದ ಸೂಚಿಕೆಯಲ್ಲಿ ಭಾರತದ ಸ್ಥಾನ?","opts":["108","120","140","155"],"ans":0,"exp":"ಮಹಿಳೆಯರ ಸ್ಥಾನಮಾನದ ಸೂಚಿಕೆಯಲ್ಲಿ ಭಾರತ 140ನೇ ಸ್ಥಾನದಲ್ಲಿದೆ (2023).","label":"expected","id":42},
+{"q":"ಲಿಂಗ ಅನುಪಾತ (ಪ್ರತಿ 1000 ಪುರುಷರು)?","opts":["943","940","930","933"],"ans":0,"exp":"ಲಿಂಗ ಅನುಪಾತ 943 ಪ್ರತಿ 1000 ಪುರುಷರು (2011 ಜನಗಣತಿ).","label":"PYQ-style","id":43},
+{"q":"ಸರಾಸರಿ ಜೀವನಾವಧಿ (ಭಾರತ)?","opts":["70","69","68","67"],"ans":0,"exp":"ಸರಾಸರಿ ಜೀವನಾವಧಿ 70 ವರ್ಷ (2021).","label":"expected","id":44},
+{"q":"ಕರ್ನಾಟಕದ ಜನಸಂಖ್ಯೆ (2021)?","opts":["6.1 ಕೋಟಿ","5.8 ಕೋಟಿ","6.5 ಕೋಟಿ","7.0 ಕೋಟಿ"],"ans":0,"exp":"ಕರ್ನಾಟಕದ ಜನಸಂಖ್ಯೆ 6.1 ಕೋಟಿ (2011 ಜನಗಣತಿ).","label":"expected","id":45},
+{"q":"ಬಿಲ್ ಆಫ್ ಮೆರ್ಚೆಂಡೈಸ್ (BOM) ಕರ್ನಾಟಕದ ಸರ್ಕಾರದ ಯೋಜನೆಯಲ್ಲು?","opts":["ಉತಪ್ತಾದಗಳ ಖರೀದಿ","ಆರೋಗ್ಯ ಚಿಕಿತ್ಸೆ","ಪ್ರವಾಸ","ಪ್ರೌಢಶಾಲೆ ತರಬೇತಿ"],"ans":0,"exp":"ಬಿಲ್ ಆಫ್ ಮೆರ್ಚೆಂಡೈಸ್ ಕರ್ನಾಟಕದ ಸರ್ಕಾರದ ಉತಪ್ತಾದಗಳ ಖರೀದಿ ಯೋಜನೆ.","label":"expected","id":46},
+{"q":"ಜನನ ದರ (ಭಾರತ)?","opts":["19 ಪ್ರತಿ 1000","20","21","22"],"ans":0,"exp":"ಜನನ ದರ 19 ಪ್ರತಿ 1000 ಜನಸಂಖ್ಯೆ (2021).","label":"expected","id":47},
+{"q":"ಮರಣ ದರ (ಭಾರತ)?","opts":["7 ಪ್ರತಿ 1000","8","9","10"],"ans":0,"exp":"ಮರಣ ದರ 7 ಪ್ರತಿ 1000 ಜನಸಂಖ್ಯೆ (2021).","label":"expected","id":48},
+{"q":"ಜನಸಂಖ್ಯೆಯ ಸ್ವಾತಂತ್ರ್ಯದ ಕಾರಣವೇನು?","opts":["ಆರೋಗ್ಯ ಸುಧಾರಣೆ","ಆಹಾರದ ಲಭ್ಯತೆ","ಹವಾಮಾನ ಬದಲಾವಣೆ","ಮಹಾನ್ ಸಾಮಾನ್ಯತೆ"],"ans":0,"exp":"ಜನಸಂಖ್ಯೆಯ ಸ್ವಾತಂತ್ರ್ಯದ ಕಾರಣವು ಆರೋಗ್ಯ ಸುಧಾರಣೆ ಮತ್ತು ಆಹಾರದ ಲಭ್ಯತೆ.","label":"expected","id":49},
+{"q":"ಸತತವಾಗಿ ಬೆಳೆದುಬರುತ್ತಿರುವ ಜನಸಂಖ್ಯೆಯ ಪರಿಣಾಮವೇನು?","opts":["ಸಂಪನ್ಮೂಲಗಳ ಸಮಸ್ಯೆ","ಜಾಗತಿಕ ಬಿಸಿಲಿಕೆ","ಅಧಿಕ ವಸತಿ ಬೇಡಿಕೆ","ಎಲ್ಲವೂ"],"ans":0,"exp":"ಸತತವಾಗಿ ಬೆಳೆದುಬರುತ್ತಿರುವ ಜನಸಂಖ್ಯೆಯು ಸಂಪನ್ಮೂಲಗಳ ಸಮಸ್ಯೆ, ಜಾಗತಿಕ ಬಿಸಿಲಿಕೆ ಮತ್ತು ಅಧಿಕ ವಸತಿ ಬೇಡಿಕೆಯನ್ನು ಉಂಟುಮಾಡುತ್ತದೆ.","label":"expected","id":50},
+{"q":"ಕರ್ನಾಟಕದ ವಿಶ್ವ ವಾರಸಾದಿಕೆ ಸ್ಥಳಗಳೇನು?","opts":["ಹಂಪಿ","ಚಂದ್ರಗಿರಿ","ಮೈಸೂರು","ಬೆಂಗಳೂರು"],"ans":0,"exp":"ಹಂಪಿಯು ಕರ್ನಾಟಕದ ವಿಶ್ವ ವಾರಸಾದಿಕೆ ಸ್ಥಳ.","label":"PYQ-style","id":51},
+{"q":"ಕರ್ನಾಟಕದ ಪರಂಪರೆಯ ಮನೆಯೇನು?","opts":["ಮಂಜನಗೊಂಡ","ಬಸವನಗುಡಿ","ಪುಲಕೇಶಿಯ","ರಣತರಂಗ"],"ans":0,"exp":"ಮಂಜನಗೊಂಡ ಕರ್ನಾಟಕದ ಪರಂಪರೆಯ ಮನೆ.","label":"expected","id":52},
+{"q":"ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಶೈಕ್ಷಣಿಕ ಕಾರ್ಯಾಲಯ ಯಾವುದು?","opts":["ಬೆಂಗಳೂರು ವಿಶ್ವವಿದ್ಯಾನಿಲಯ","ಕೆಎನ್ಸಿ ವಿಶ್ವವಿದ್ಯಾನಿಲಯ","ಮೈಸೂರು ವಿಶ್ವವಿದ್ಯಾನಿಲಯ","ಬೆಂಗಳೂರು ಕಾಲೇಜು"],"ans":0,"exp":"ಬೆಂಗಳೂರು ವಿಶ್ವವಿದ್ಯಾನಿಲಯವು ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಶೈಕ್ಷಣಿಕ ಕಾರ್ಯಾಲಯ.","label":"expected","id":53},
+{"q":"ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಶೈಕ್ಷಣಿಕ ಸಂಸ್ಥೆಯೇನು?","opts":["ಅಖಿಲ ಭಾರತ ವೈದ್ಯಕೀಯ ವಿಜ್ಞಾನ","ಎಐಐಎಮ್ಎಸ್","ಎನ್‌ಐಐಟಿ","ಎಂ‌ಐಟಿ"],"ans":0,"exp":"ಅಖಿಲ ಭಾರತ ವೈದ್ಯಕೀಯ ವಿಜ್ಞಾನ ಕೇಂದ್ರವು ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಶೈಕ್ಷಣಿಕ ಸಂಸ್ಥೆ.","label":"expected","id":54},
+{"q":"ಭಾರತದ ವಿಜ್ಞಾನ ಮತ್ತು ತಂತ್ರಗಾರಿಕೆಯ ಅಭಿವೃದ್ಧಿಯಲ್ಲಿ ಯಾವ ಸಂಸ್ಥೆಯು ಮುಖ್ಯವಾಗಿದೆ?","opts":["ಇಸ್ರೊ","ಭಾರತೀಯ ವಿಜ್ಞಾನ ಸಂಸ್ಥೆ","ದೇಶೀಯ ತಂತ್ರಗಾರಿಕಾ ಸಂಸ್ಥೆ","ಸರ್ಕಾರದ ವೈದ್ಯಕೀಯ ಕಾಲೇಜು"],"ans":0,"exp":"ಇಸ್ರೊವು ಭಾರತದ ವಿಜ್ಞಾನ ಮತ್ತು ತಂತ್ರಗಾರಿಕೆಯ ಅಭಿವೃದ್ಧಿಯಲ್ಲಿ ಮುಖ್ಯವಾಗಿದೆ.","label":"expected","id":55},
+{"q":"ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಔದ್ಯೋಗಿಕ ಯೋಜನೆ ಯಾವುದು?","opts":["ಬಿಲ್ ಆಫ್ ಮೆರ್ಚೆಂಡೈಸ್","ಕೆಎನ್ಸಿ","ಎನ್‌ಐಐಟಿ","ಸರ್ಕಾರದ ವೈದ್ಯಕೀಯ ಕಾಲೇಜು"],"ans":0,"exp":"ಬಿಲ್ ಆಫ್ ಮೆರ್ಚೆಂಡೈಸ್ ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಔದ್ಯೋಗಿಕ ಯೋಜನೆ.","label":"expected","id":56},
+{"q":"ಕರ್ನಾಟಕದ ಪ್ರಮುಖ ಕೃಷಿ ವಸ್ತು ಯಾವುದು?","opts":["ಕಬ್ಬ","ಗೋಧಿ","ಗೃಹ","ಮೆಣಸು"],"ans":0,"exp":"ಕಬ್ಬು ಕರ್ನಾಟಕದ ಪ್ರಮುಖ ಕೃಷಿ ವಸ್ತು.","label":"expected","id":57},
+{"q":"ಕರ್ನಾಟಕದ ಪ್ರಮುಖ ಕೈಗಾರಿಕಾ ಕ್ಷೇತ್ರ ಯಾವುದು?","opts":["ಸಾಂಸ್ಕೃತಿಕ","ತಂತ್ರಗಾರಿಕೆ","ವೈದ್ಯಕೀಯ","ವ್ಯವಹಾರಿಕ"],"ans":0,"exp":"ತಂತ್ರಗಾರಿಕೆ ಕರ್ನಾಟಕದ ಪ್ರಮುಖ ಕೈಗಾರಿಕಾ ಕ್ಷೇತ್ರ.","label":"PYQ-style","id":58},
+{"q":"ಕರ್ನಾಟಕದ ಪ್ರಮುಖ ಹಣಕಾಸು ಕೇಂದ್ರ ಯಾವುದು?","opts":["ಬೆಂಗಳೂರು","ಬೆಳಗಾವಿ","ಹುಬ್ಬಳ್ಳಿ","ಗದಗ"],"ans":0,"exp":"ಬೆಂಗಳೂರು ಕರ್ನಾಟಕದ ಪ್ರಮುಖ ಹಣಕಾಸು ಕೇಂದ್ರ.","label":"expected","id":59},
+{"q":"ಕರ್ನಾಟಕದ ಪ್ರಮುಖ ವಾಣಿಜ್ಯ ಮುಖ್ಯಮಂತ್ರಿಯೇನು?","opts":["ಡಿ.ಕೆ. ಶಿವಕುಮಾರ್","ಸಿದ್ದರಾಮಯ್ಯ","ಬಿ.ಎಸ್. ಯಡಿಯೂರಪ್ಪ","ಎಂ. ವೀರಪ್ಪ ಮೋೈ"],"ans":0,"exp":"ಡಿ.ಕೆ. ಶಿವಕುಮಾರ್ ಕರ್ನಾಟಕದ ಪ್ರಮುಖ ವಾಣಿಜ್ಯ ಮುಖ್ಯಮಂತ್ರಿ.","label":"expected","id":60},
+{"q":"ಮೇ 2025ರಲ್ಲಿ ಯಾರು ಒದಗಿರುವುದರಿಂದ ಸ್ಥಳೀಯ ಸಂಸ್ಥೆಗಳ ಆಯ್ಕೆಯನ್ನು ತಿರಸ್ಕರಿಸಿದರು?","opts":["ಸುಪ್ರೀಂ ಕೋರ್ಟ್","ಕರ್ನಾಟಕ ರಾಜ್ಯ ಚುನಾವಣಾ ಆಯೋಗ","ಮಹಾನಗರ ಪಾಲಿಕೆ","ಗ್ರಾಮ ಪಂಚಾಯತಿ"],"ans":0,"exp":"ಸುಪ್ರೀಂ ಕೋರ್ಟ್ ಮೇ 2025ರಲ್ಲಿ ಒದಗಿರುವುದರಿಂದ ಸ್ಥಳೀಯ ಸಂಸ್ಥೆಗಳ ಆಯ್ಕೆಯನ್ನು ತಿರಸ್ಕರಿಸಿತು.","label":"expected","id":61},
+{"q":"ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಕರ್ಮಕಂಠೆ ಯಾವುದು?","opts":["ಕರ್ನಾಟಕ ರಾಜ್ಯ ಉದ್ಯೋಗ ಆಯೋಗ","ಕೇಂದ್ರ ಉದ್ಯೋಗ ಆಯೋಗ","ರಾಜ್ಯ ವಿಧಾನಸಭೆ","ರಾಜ್ಯ ವಿಧಾನಮಂಡಲ"],"ans":0,"exp":"ಕರ್ನಾಟಕ ರಾಜ್ಯ ಉದ್ಯೋಗ ಆಯೋಗವು ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಕರ್ಮಕಂಠೆ.","label":"expected","id":62},
+{"q":"ಕರ್ನಾಟಕದ ಮಹತ್ವದ ರಾಜಕೀಯ ಪಕ್ಷ ಯಾವುದು?","opts":["ಭಾರತೀಯ ಜನತಾ ಪಕ್ಷ","ಕಾಂಗ್ರೆಸ್","ಮಹಾರಾಷ್ಟ್ರ ಪಕ್ಷ","ಕರ್ನಾಟಕ ಪಕ್ಷ"],"ans":0,"exp":"ಭಾರತೀಯ ಜನತಾ ಪಕ್ಷ ಮತ್ತು ಕಾಂಗ್ರೆಸ್ ಕರ್ನಾಟಕದ ಮಹತ್ವದ ರಾಜಕೀಯ ಪಕ್ಷಗಳು.","label":"expected","id":63},
+{"q":"ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಚುನಾವಣಾ ಆಯೋಗ ಯಾವುದು?","opts":["ಕರ್ನಾಟಕ ರಾಜ್ಯ ಚುನಾವಣಾ ಆಯೋಗ","ಕೇಂದ್ರ ಚುನಾವಣಾ ಆಯೋಗ","ರಾಜ್ಯ ಮತದಾನ ಆಯೋಗ","ರಾಜ್ಯ ಮತದಾನ ಕ್ಷೇತ್ರ"],"ans":0,"exp":"ಕರ್ನಾಟಕ ರಾಜ್ಯ ಚುನಾವಣಾ ಆಯೋಗವು ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಚುನಾವಣಾ ಆಯೋಗ.","label":"expected","id":64},
+{"q":"ಭಾರತದ ಮಹತ್ವದ ರಾಷ್ಟ್ರೀಯ ಸಂಸ್ಥೆಯೇನು?","opts":["ಕರ್ನಾಟಕ ರಾಜ್ಯ ಉದ್ಯೋಗ ಆಯೋಗ","ಭಾರತೀಯ ವಿಜ್ಞಾನ ಸಂಸ್ಥೆ","ಕೇಂದ್ರ ಉದ್ಯೋಗ ಆಯೋಗ","ರಾಜ್ಯ ಮತದಾನ ಕ್ಷೇತ್ರ"],"ans":0,"exp":"ಭಾರತೀಯ ವಿಜ್ಞಾನ ಸಂಸ್ಥೆಯು ಭಾರತದ ಮಹತ್ವದ ರಾಷ್ಟ್ರೀಯ ಸಂಸ್ಥೆ.","label":"expected","id":65},
+{"q":"ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಪ್ರವಾಸಿ ಸಂಸ್ಥೆಯೇನು?","opts":["ಕರ್ನಾಟಕ ರಾಜ್ಯ ಪ್ರವಾಸಿಗರ ಸಂಸ್ಥೆ","ಭಾರತೀಯ ವಿಜ್ಞಾನ ಸಂಸ್ಥೆ","ಕೇಂದ್ರ ಉದ್ಯೋಗ ಆಯೋಗ","ರಾಜ್ಯ ಮತದಾನ ಕ್ಷೇತ್ರ"],"ans":0,"exp":"ಕರ್ನಾಟಕ ರಾಜ್ಯ ಪ್ರವಾಸಿಗರ ಸಂಸ್ಥೆಯು ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಪ್ರವಾಸಿ ಸಂಸ್ಥೆ.","label":"expected","id":66},
+{"q":"ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಶೈಕ್ಷಣಿಕ ಸಂಸ್ಥೆಯೇನು?","opts":["ಕರ್ನಾಟಕ ರಾಜ್ಯ ವಿಶ್ವವಿದ್ಯಾನಿಲಯ","ಭಾರತೀಯ ವಿಜ್ಞಾನ ಸಂಸ್ಥೆ","ಕೇಂದ್ರ ಉದ್ಯೋಗ ಆಯೋಗ","ರಾಜ್ಯ ಮತದಾನ ಕ್ಷೇತ್ರ"],"ans":0,"exp":"ಕರ್ನಾಟಕ ರಾಜ್ಯ ವಿಶ್ವವಿದ್ಯಾನಿಲಯವು ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಶೈಕ್ಷಣಿಕ ಸಂಸ್ಥೆ.","label":"expected","id":67},
+{"q":"ಭಾರತದ ಮಹತ್ವದ ಆರೋಗ್ಯ ಸಂಸ್ಥೆಯೇನು?","opts":["ಕರ್ನಾಟಕ ರಾಜ್ಯ ಆರೋಗ್ಯ ಕೇಂದ್ರ","ಭಾರತೀಯ ವಿಜ್ಞಾನ ಸಂಸ್ಥೆ","ಅಖಿಲ ಭಾರತ ವೈದ್ಯಕೀಯ ವಿಜ್ಞಾನ","ರಾಜ್ಯ ಮತದಾನ ಕ್ಷೇತ್ರ"],"ans":0,"exp":"ಅಖಿಲ ಭಾರತ ವೈದ್ಯಕೀಯ ವಿಜ್ಞಾನವು ಭಾರತದ ಮಹತ್ವದ ಆರೋಗ್ಯ ಸಂಸ್ಥೆ.","label":"expected","id":68},
+{"q":"ಭಾರತದ ಮಹತ್ವದ ಆರ್ಥಿಕ ಸಂಸ್ಥೆಯೇನು?","opts":["ರಿಸರ್ವ್ ಬ್ಯಾಂಕ್ ಆಫ್ ಇಂಡಿಯಾ","ಭಾರತೀಯ ವಿಜ್ಞಾನ ಸಂಸ್ಥೆ","ಕೇಂದ್ರ ಉದ್ಯೋಗ ಆಯೋಗ","ರಾಜ್ಯ ಮತದಾನ ಕ್ಷೇತ್ರ"],"ans":0,"exp":"ರಿಸರ್ವ್ ಬ್ಯಾಂಕ್ ಆಫ್ ಇಂಡಿಯಾವು ಭಾರತದ ಮಹತ್ವದ ಆರ್ಥಿಕ ಸಂಸ್ಥೆ.","label":"PYQ-style","id":69},
+{"q":"ಭಾರತದ ಮಹತ್ವದ ತಂತ್ರಗಾರಿಕಾ ಸಂಸ್ಥೆಯೇನು?","opts":["ಕರ್ನಾಟಕ ರಾಜ್ಯ ತಂತ್ರಗಾರಿಕಾ ಕೇಂದ್ರ","ಭಾರತೀಯ ವಿಜ್ಞಾನ ಸಂಸ್ಥೆ","ಕೇಂದ್ರ ಉದ್ಯೋಗ ಆಯೋಗ","ರಾಜ್ಯ ಮತದಾನ ಕ್ಷೇತ್ರ"],"ans":0,"exp":"ಭಾರತೀಯ ವಿಜ್ಞಾನ ಸಂಸ್ಥೆಯು ಭಾರತದ ಮಹತ್ವದ ತಂತ್ರಗಾರಿಕಾ ಸಂಸ್ಥೆ.","label":"expected","id":70},
+{"q":"ಕರ್ನಾಟಕದ ಮಹತ್ವದ ವಿದ್ಯುತ್ ಉತ್ಪಾದನಾ ಕೇಂದ್ರ ಯಾವುದು?","opts":["ಕಾರ್ನಾಟಕ ವಿದ್ಯುತ್ ಮಂಡಳಿ","ಬಾಬ್ರಿ ಮಸೀದಿ","ಭಾರತೀಯ ವಿಜ್ಞಾನ ಸಂಸ್ಥೆ","ಕೇಂದ್ರ ಉದ್ಯೋಗ ಆಯೋಗ"],"ans":0,"exp":"ಕರ್ನಾಟಕ ವಿದ್ಯುತ್ ಮಂಡಳಿಯು ಕರ್ನಾಟಕದ ಮಹತ್ವದ ವಿದ್ಯುತ್ ಉತ್ಪಾದನಾ ಕೇಂದ್ರ.","label":"expected","id":71},
+{"q":"ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಸಾರಿಗೆ ಸಂಸ್ಥೆಯೇನು?","opts":["ಕರ್ನಾಟಕ ರಾಜ್ಯ ಸಾರಿಗೆ","ಭಾರತೀಯ ವಿಜ್ಞಾನ ಸಂಸ್ಥೆ","ಕೇಂದ್ರ ಉದ್ಯೋಗ ಆಯೋಗ","ರಾಜ್ಯ ಮತದಾನ ಕ್ಷೇತ್ರ"],"ans":0,"exp":"ಕರ್ನಾಟಕ ರಾಜ್ಯ ಸಾರಿಗೆಯು ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಸಾರಿಗೆ ಸಂಸ್ಥೆ.","label":"expected","id":72},
+{"q":"ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಪ್ರಕೃತಿ ಸಂಸ್ಥೆಯೇನು?","opts":["ಕರ್ನಾಟಕ ರಾಜ್ಯ ಪ್ರಕೃತಿ ಸಂಸ್ಥೆ","ಭಾರತೀಯ ವಿಜ್ಞಾನ ಸಂಸ್ಥೆ","ಕೇಂದ್ರ ಉದ್ಯೋಗ ಆಯೋಗ","ರಾಜ್ಯ ಮತದಾನ ಕ್ಷೇತ್ರ"],"ans":0,"exp":"ಕರ್ನಾಟಕ ರಾಜ್ಯ ಪ್ರಕೃತಿ ಸಂಸ್ಥೆಯು ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಪ್ರಕೃತಿ ಸಂಸ್ಥೆ.","label":"expected","id":73},
+{"q":"ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಪರಿಸರ ಸಂಸ್ಥೆಯೇನು?","opts":["ಕರ್ನಾಟಕ ರಾಜ್ಯ ಪರಿಸರ ಸಂಸ್ಥೆ","ಭಾರತೀಯ ವಿಜ್ಞಾನ ಸಂಸ್ಥೆ","ಕೇಂದ್ರ ಉದ್ಯೋಗ ಆಯೋಗ","ರಾಜ್ಯ ಮತದಾನ ಕ್ಷೇತ್ರ"],"ans":0,"exp":"ಕರ್ನಾಟಕ ರಾಜ್ಯ ಪರಿಸರ ಸಂಸ್ಥೆಯು ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಪರಿಸರ ಸಂಸ್ಥೆ.","label":"expected","id":74},
+{"q":"ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಜಲ ಸಂಸ್ಥೆಯೇನು?","opts":["ಕರ್ನಾಟಕ ರಾಜ್ಯ ಜಲ ಸಂಸ್ಥೆ","ಭಾರತೀಯ ವಿಜ್ಞಾನ ಸಂಸ್ಥೆ","ಕೇಂದ್ರ ಉದ್ಯೋಗ ಆಯೋಗ","ರಾಜ್ಯ ಮತದಾನ ಕ್ಷೇತ್ರ"],"ans":0,"exp":"ಕರ್ನಾಟಕ ರಾಜ್ಯ ಜಲ ಸಂಸ್ಥೆಯು ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಜಲ ಸಂಸ್ಥೆ.","label":"expected","id":75},
+{"q":"ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಆರ್ಥಿಕ ಬೆಳವಣಿಗೆಯ ಯೋಜನೆಯೇನು?","opts":["12ನೇ ಐದವರ್ಷಿ ಯೋಜನೆ","ಕೆಎನ್ಸಿ","ಎನ್‌ಐಐಟಿ","ಕೇಂದ್ರ ಉದ್ಯೋಗ ಆಯೋಗ"],"ans":0,"exp":"12ನೇ ಐದವರ್ಷಿ ಯೋಜನೆಯು ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಆರ್ಥಿಕ ಬೆಳವಣಿಗೆಯ ಯೋಜನೆ.","label":"expected","id":76},
+{"q":"ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಜನಸಂಖ್ಯಾ ಯೋಜನೆಯೇನು?","opts":["ಕರ್ನಾಟಕ ರಾಜ್ಯ ಜನಸಂಖ್ಯಾ ಯೋಜನೆ","ಭಾರತೀಯ ವಿಜ್ಞಾನ ಸಂಸ್ಥೆ","ಕೇಂದ್ರ ಉದ್ಯೋಗ ಆಯೋಗ","ರಾಜ್ಯ ಮತದಾನ ಕ್ಷೇತ್ರ"],"ans":0,"exp":"ಕರ್ನಾಟಕ ರಾಜ್ಯ ಜನಸಂಖ್ಯಾ ಯೋಜನೆಯು ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಜನಸಂಖ್ಯಾ ಯೋಜನೆ.","label":"expected","id":77},
+{"q":"ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಕಲಾ ಸಂಸ್ಥೆಯೇನು?","opts":["ಕರ್ನಾಟಕ ರಾಜ್ಯ ಕಲಾ ಸಂಸ್ಥೆ","ಭಾರತೀಯ ವಿಜ್ಞಾನ ಸಂಸ್ಥೆ","ಕೇಂದ್ರ ಉದ್ಯೋಗ ಆಯೋಗ","ರಾಜ್ಯ ಮತದಾನ ಕ್ಷೇತ್ರ"],"ans":0,"exp":"ಕರ್ನಾಟಕ ರಾಜ್ಯ ಕಲಾ ಸಂಸ್ಥೆಯು ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಕಲಾ ಸಂಸ್ಥೆ.","label":"expected","id":78},
+{"q":"ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಸಾಹಿತ್ಯ ಸಂಸ್ಥೆಯೇನು?","opts":["ಕರ್ನಾಟಕ ರಾಜ್ಯ ಸಾಹಿತ್ಯ ಸಂಸ್ಥೆ","ಭಾರತೀಯ ವಿಜ್ಞಾನ ಸಂಸ್ಥೆ","ಕೇಂದ್ರ ಉದ್ಯೋಗ ಆಯೋಗ","ರಾಜ್ಯ ಮತದಾನ ಕ್ಷೇತ್ರ"],"ans":0,"exp":"ಕರ್ನಾಟಕ ರಾಜ್ಯ ಸಾಹಿತ್ಯ ಸಂಸ್ಥೆಯು ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಸಾಹಿತ್ಯ ಸಂಸ್ಥೆ.","label":"expected","id":79},
+{"q":"ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಇತಿಹಾಸ ಸಂಸ್ಥೆಯೇನು?","opts":["ಕರ್ನಾಟಕ ರಾಜ್ಯ ಇತಿಹಾಸ ಸಂಸ್ಥೆ","ಭಾರತೀಯ ವಿಜ್ಞಾನ ಸಂಸ್ಥೆ","ಕೇಂದ್ರ ಉದ್ಯೋಗ ಆಯೋಗ","ರಾಜ್ಯ ಮತದಾನ ಕ್ಷೇತ್ರ"],"ans":0,"exp":"ಕರ್ನಾಟಕ ರಾಜ್ಯ ಇತಿಹಾಸ ಸಂಸ್ಥೆಯು ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಇತಿಹಾಸ ಸಂಸ್ಥೆ.","label":"expected","id":80},
+{"q":"ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಭಾಷೆ ಸಂಸ್ಥೆಯೇನು?","opts":["ಕರ್ನಾಟಕ ರಾಜ್ಯ ಭಾಷೆ ಸಂಸ್ಥೆ","ಭಾರತೀಯ ವಿಜ್ಞಾನ ಸಂಸ್ಥೆ","ಕೇಂದ್ರ ಉದ್ಯೋಗ ಆಯೋಗ","ರಾಜ್ಯ ಮತದಾನ ಕ್ಷೇತ್ರ"],"ans":0,"exp":"ಕರ್ನಾಟಕ ರಾಜ್ಯ ಭಾಷೆ ಸಂಸ್ಥೆಯು ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಭಾಷೆ ಸಂಸ್ಥೆ.","label":"expected","id":81},
+{"q":"ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಸಂಸ್ಕೃತಿ ಸಂಸ್ಥೆಯೇನು?","opts":["ಕರ್ನಾಟಕ ರಾಜ್ಯ ಸಂಸ್ಕೃತಿ ಸಂಸ್ಥೆ","ಭಾರತೀಯ ವಿಜ್ಞಾನ ಸಂಸ್ಥೆ","ಕೇಂದ್ರ ಉದ್ಯೋಗ ಆಯೋಗ","ರಾಜ್ಯ ಮತದಾನ ಕ್ಷೇತ್ರ"],"ans":0,"exp":"ಕರ್ನಾಟಕ ರಾಜ್ಯ ಸಂಸ್ಕೃತಿ ಸಂಸ್ಥೆಯು ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಸಂಸ್ಕೃತಿ ಸಂಸ್ಥೆ.","label":"expected","id":82},
+{"q":"ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಶಿಕ್ಷಣ ಸಂಸ್ಥೆಯೇನು?","opts":["ಕರ್ನಾಟಕ ರಾಜ್ಯ ಶಿಕ್ಷಣ ಸಂಸ್ಥೆ","ಭಾರತೀಯ ವಿಜ್ಞಾನ ಸಂಸ್ಥೆ","ಕೇಂದ್ರ ಉದ್ಯೋಗ ಆಯೋಗ","ರಾಜ್ಯ ಮತದಾನ ಕ್ಷೇತ್ರ"],"ans":0,"exp":"ಕರ್ನಾಟಕ ರಾಜ್ಯ ಶಿಕ್ಷಣ ಸಂಸ್ಥೆಯು ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಶಿಕ್ಷಣ ಸಂಸ್ಥೆ.","label":"expected","id":83},
+{"q":"ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಆರೋಗ್ಯ ಸಂಸ್ಥೆಯೇನು?","opts":["ಕರ್ನಾಟಕ ರಾಜ್ಯ ಆರೋಗ್ಯ ಸಂಸ್ಥೆ","ಭಾರತೀಯ ವಿಜ್ಞಾನ ಸಂಸ್ಥೆ","ಕೇಂದ್ರ ಉದ್ಯೋಗ ಆಯೋಗ","ರಾಜ್ಯ ಮತದಾನ ಕ್ಷೇತ್ರ"],"ans":0,"exp":"ಕರ್ನಾಟಕ ರಾಜ್ಯ ಆರೋಗ್ಯ ಸಂಸ್ಥೆಯು ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಆರೋಗ್ಯ ಸಂಸ್ಥೆ.","label":"expected","id":84},
+{"q":"ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಪರಿಸರ ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆಯೇನು?","opts":["ಕರ್ನಾಟಕ ರಾಜ್ಯ ಪರಿಸರ ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆ","ಭಾರತೀಯ ವಿಜ್ಞಾನ ಸಂಸ್ಥೆ","ಕೇಂದ್ರ ಉದ್ಯೋಗ ಆಯೋಗ","ರಾಜ್ಯ ಮತದಾನ ಕ್ಷೇತ್ರ"],"ans":0,"exp":"ಕರ್ನಾಟಕ ರಾಜ್ಯ ಪರಿಸರ ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆಯು ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಪರಿಸರ ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆ.","label":"expected","id":85},
+{"q":"ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಪ್ರಕೃತಿ ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆಯೇನು?","opts":["ಕರ್ನಾಟಕ ರಾಜ್ಯ ಪ್ರಕೃತಿ ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆ","ಭಾರತೀಯ ವಿಜ್ಞಾನ ಸಂಸ್ಥೆ","ಕೇಂದ್ರ ಉದ್ಯೋಗ ಆಯೋಗ","ರಾಜ್ಯ ಮತದಾನ ಕ್ಷೇತ್ರ"],"ans":0,"exp":"ಕರ್ನಾಟಕ ರಾಜ್ಯ ಪ್ರಕೃತಿ ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆಯು ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಪ್ರಕೃತಿ ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆ.","label":"expected","id":86},
+{"q":"ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಜೀವವೈವಿಧ್ಯ ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆಯೇನು?","opts":["ಕರ್ನಾಟಕ ರಾಜ್ಯ ಜೀವವೈವಿಧ್ಯ ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆ","ಭಾರತೀಯ ವಿಜ್ಞಾನ ಸಂಸ್ಥೆ","ಕೇಂದ್ರ ಉದ್ಯೋಗ ಆಯೋಗ","ರಾಜ್ಯ ಮತದಾನ ಕ್ಷೇತ್ರ"],"ans":0,"exp":"ಕರ್ನಾಟಕ ರಾಜ್ಯ ಜೀವವೈವಿಧ್ಯ ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆಯು ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಜೀವವೈವಿಧ್ಯ ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆ.","label":"expected","id":87},
+{"q":"ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಆಹಾರ ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆಯೇನು?","opts":["ಕರ್ನಾಟಕ ರಾಜ್ಯ ಆಹಾರ ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆ","ಭಾರತೀಯ ವಿಜ್ಞಾನ ಸಂಸ್ಥೆ","ಕೇಂದ್ರ ಉದ್ಯೋಗ ಆಯೋಗ","ರಾಜ್ಯ ಮತದಾನ ಕ್ಷೇತ್ರ"],"ans":0,"exp":"ಕರ್ನಾಟಕ ರಾಜ್ಯ ಆಹಾರ ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆಯು ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಆಹಾರ ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆ.","label":"expected","id":88},
+{"q":"ಕರ್ನಾಟಕದ ಮಹತ್ವದ ವಾತಾವರಣ ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆಯೇನು?","opts":["ಕರ್ನಾಟಕ ರಾಜ್ಯ ವಾತಾವರಣ ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆ","ಭಾರತೀಯ ವಿಜ್ಞಾನ ಸಂಸ್ಥೆ","ಕೇಂದ್ರ ಉದ್ಯೋಗ ಆಯೋಗ","ರಾಜ್ಯ ಮತದಾನ ಕ್ಷೇತ್ರ"],"ans":0,"exp":"ಕರ್ನಾಟಕ ರಾಜ್ಯ ವಾತಾವರಣ ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆಯು ಕರ್ನಾಟಕದ ಮಹತ್ವದ ವಾತಾವರಣ ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆ.","label":"expected","id":89},
+{"q":"ಕರ್ನಾಟಕದ ಮಹತ್ವದ ನೀರು ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆಯೇನು?","opts":["ಕರ್ನಾಟಕ ರಾಜ್ಯ ನೀರು ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆ","ಭಾರತೀಯ ವಿಜ್ಞಾನ ಸಂಸ್ಥೆ","ಕೇಂದ್ರ ಉದ್ಯೋಗ ಆಯೋಗ","ರಾಜ್ಯ ಮತದಾನ ಕ್ಷೇತ್ರ"],"ans":0,"exp":"ಕರ್ನಾಟಕ ರಾಜ್ಯ ನೀರು ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆಯು ಕರ್ನಾಟಕದ ಮಹತ್ವದ ನೀರು ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆ.","label":"expected","id":90},
+{"q":"ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಭೂಮಿ ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆಯೇನು?","opts":["ಕರ್ನಾಟಕ ರಾಜ್ಯ ಭೂಮಿ ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆ","ಭಾರತೀಯ ವಿಜ್ಞಾನ ಸಂಸ್ಥೆ","ಕೇಂದ್ರ ಉದ್ಯೋಗ ಆಯೋಗ","ರಾಜ್ಯ ಮತದಾನ ಕ್ಷೇತ್ರ"],"ans":0,"exp":"ಕರ್ನಾಟಕ ರಾಜ್ಯ ಭೂಮಿ ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆಯು ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಭೂಮಿ ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆ.","label":"expected","id":91},
+{"q":"ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಮಣ್ಣು ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆಯೇನು?","opts":["ಕರ್ನಾಟಕ ರಾಜ್ಯ ಮಣ್ಣು ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆ","ಭಾರತೀಯ ವಿಜ್ಞಾನ ಸಂಸ್ಥೆ","ಕೇಂದ್ರ ಉದ್ಯೋಗ ಆಯೋಗ","ರಾಜ್ಯ ಮತದಾನ ಕ್ಷೇತ್ರ"],"ans":0,"exp":"ಕರ್ನಾಟಕ ರಾಜ್ಯ ಮಣ್ಣು ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆಯು ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಮಣ್ಣು ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆ.","label":"expected","id":92},
+{"q":"ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಬೀಜ ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆಯೇನು?","opts":["ಕರ್ನಾಟಕ ರಾಜ್ಯ ಬೀಜ ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆ","ಭಾರತೀಯ ವಿಜ್ಞಾನ ಸಂಸ್ಥೆ","ಕೇಂದ್ರ ಉದ್ಯೋಗ ಆಯೋಗ","ರಾಜ್ಯ ಮತದಾನ ಕ್ಷೇತ್ರ"],"ans":0,"exp":"ಕರ್ನಾಟಕ ರಾಜ್ಯ ಬೀಜ ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆಯು ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಬೀಜ ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆ.","label":"expected","id":93},
+{"q":"ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಪೀಳಿಗೆಗಳ ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆಯೇನು?","opts":["ಕರ್ನಾಟಕ ರಾಜ್ಯ ಪೀಳಿಗೆಗಳ ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆ","ಭಾರತೀಯ ವಿಜ್ಞಾನ ಸಂಸ್ಥೆ","ಕೇಂದ್ರ ಉದ್ಯೋಗ ಆಯೋಗ","ರಾಜ್ಯ ಮತದಾನ ಕ್ಷೇತ್ರ"],"ans":0,"exp":"ಕರ್ನಾಟಕ ರಾಜ್ಯ ಪೀಳಿಗೆಗಳ ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆಯು ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಪೀಳಿಗೆಗಳ ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆ.","label":"expected","id":94},
+{"q":"ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಬಲಿಪಂಚಾನನ್ ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆಯೇನು?","opts":["ಕರ್ನಾಟಕ ರಾಜ್ಯ ಬಲಿಪಂಚಾನನ್ ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆ","ಭಾರತೀಯ ವಿಜ್ಞಾನ ಸಂಸ್ಥೆ","ಕೇಂದ್ರ ಉದ್ಯೋಗ ಆಯೋಗ","ರಾಜ್ಯ ಮತದಾನ ಕ್ಷೇತ್ರ"],"ans":0,"exp":"ಕರ್ನಾಟಕ ರಾಜ್ಯ ಬಲಿಪಂಚಾನನ್ ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆಯು ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಬಲಿಪಂಚಾನನ್ ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆ.","label":"expected","id":95},
+{"q":"ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಗೋವಾ ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆಯೇನು?","opts":["ಕರ್ನಾಟಕ ರಾಜ್ಯ ಗೋವಾ ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆ","ಭಾರತೀಯ ವಿಜ್ಞಾನ ಸಂಸ್ಥೆ","ಕೇಂದ್ರ ಉದ್ಯೋಗ ಆಯೋಗ","ರಾಜ್ಯ ಮತದಾನ ಕ್ಷೇತ್ರ"],"ans":0,"exp":"ಕರ್ನಾಟಕ ರಾಜ್ಯ ಗೋವಾ ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆಯು ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಗೋವಾ ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆ.","label":"expected","id":96},
+{"q":"ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಕಾಡು ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆಯೇನು?","opts":["ಕರ್ನಾಟಕ ರಾಜ್ಯ ಕಾಡು ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆ","ಭಾರತೀಯ ವಿಜ್ಞಾನ ಸಂಸ್ಥೆ","ಕೇಂದ್ರ ಉದ್ಯೋಗ ಆಯೋಗ","ರಾಜ್ಯ ಮತದಾನ ಕ್ಷೇತ್ರ"],"ans":0,"exp":"ಕರ್ನಾಟಕ ರಾಜ್ಯ ಕಾಡು ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆಯು ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಕಾಡು ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆ.","label":"expected","id":97},
+{"q":"ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಪ್ರಾಣಿ ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆಯೇನು?","opts":["ಕರ್ನಾಟಕ ರಾಜ್ಯ ಪ್ರಾಣಿ ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆ","ಭಾರತೀಯ ವಿಜ್ಞಾನ ಸಂಸ್ಥೆ","ಕೇಂದ್ರ ಉದ್ಯೋಗ ಆಯೋಗ","ರಾಜ್ಯ ಮತದಾನ ಕ್ಷೇತ್ರ"],"ans":0,"exp":"ಕರ್ನಾಟಕ ರಾಜ್ಯ ಪ್ರಾಣಿ ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆಯು ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಪ್ರಾಣಿ ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆ.","label":"expected","id":98},
+{"q":"ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಸಸ್ಯ ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆಯೇನು?","opts":["ಕರ್ನಾಟಕ ರಾಜ್ಯ ಸಸ್ಯ ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆ","ಭಾರತೀಯ ವಿಜ್ಞಾನ ಸಂಸ್ಥೆ","ಕೇಂದ್ರ ಉದ್ಯೋಗ ಆಯೋಗ","ರಾಜ್ಯ ಮತದಾನ ಕ್ಷೇತ್ರ"],"ans":0,"exp":"ಕರ್ನಾಟಕ ರಾಜ್ಯ ಸಸ್ಯ ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆಯು ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಸಸ್ಯ ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆ.","label":"expected","id":99},
+{"q":"ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಸಹಕಾರಿ ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆಯೇನು?","opts":["ಕರ್ನಾಟಕ ರಾಜ್ಯ ಸಹಕಾರಿ ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆ","ಭಾರತೀಯ ವಿಜ್ಞಾನ ಸಂಸ್ಥೆ","ಕೇಂದ್ರ ಉದ್ಯೋಗ ಆಯೋಗ","ರಾಜ್ಯ ಮತದಾನ ಕ್ಷೇತ್ರ"],"ans":0,"exp":"ಕರ್ನಾಟಕ ರಾಜ್ಯ ಸಹಕಾರಿ ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆಯು ಕರ್ನಾಟಕದ ಮಹತ್ವದ ಸಹಕಾರಿ ಸಂರಕ್ಷಣೆಯ ಸಂಸ್ಥೆ.","label":"expected","id":100}
+];
+const TOTAL_SECONDS = 120 * 60;
+const NEG = 0.25;
+
+const SECTIONS = [
+  {key:"history",   name:"History (ಇತಿಹಾಸ)"},
+  {key:"geography", name:"Geography (ಭೂಗೋಳ)"},
+  {key:"polity",    name:"Polity & Panchayat Raj"},
+  {key:"economy",   name:"Economy & Schemes"},
+  {key:"science",   name:"General Science"},
+  {key:"ca",        name:"Current Affairs"}
+];
+
+let state = {
+  answers: {},
+  marked: {},
+  current: 1,
+  started: false,
+  endTime: 0
+};
+
+const KEY = 'vao_mock1_state';
+const WELCOMED = 'vao_mock1_welcomed';
+
+localStorage.setItem(WELCOMED, '1');
+
+function $id(s) { return document.getElementById(s); }
+
+function save() { localStorage.setItem(KEY, JSON.stringify({answers:state.answers, marked:state.marked, current:state.current})); }
+function load() { try { const d = JSON.parse(localStorage.getItem(KEY)); if (d) { state.answers = d.answers || {}; state.marked = d.marked || {}; state.current = d.current || 1; } } catch (e) {} }
+
+function enterExam() {
+  state.started = true;
+  state.endTime = Date.now() + TOTAL_SECONDS * 1000;
+  $id('welcome').style.display = 'none';
+  $id('shell').classList.add('on');
+  render();
+  startTimer();
+}
+
+function fmt(d) {
+  const m = Math.floor(d/60);
+  const s = d % 60;
+  return String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0');
+}
+
+function paintTimer() {
+  const rem = Math.max(0, Math.floor((state.endTime - Date.now()) / 1000));
+  const t = $id('timer');
+  t.textContent = fmt(rem);
+  if (rem <= 300) t.classList.add('warn');
+  else t.classList.remove('warn');
+  return rem;
+}
+
+function startTimer() {
+  const tick = setInterval(() => {
+    const rem = paintTimer();
+    if (rem <= 0) {
+      clearInterval(tick);
+      autoSubmit();
+    }
+  }, 1000);
+}
+
+function autoSubmit() { state.timedOut = true; finish(); }
+
+function finish() {
+  state.done = true;
+  if (state.timedOut) clearInterval(tick);
+  save();
+  showResult();
+}
+
+function showModal(title, msg, onYes) {
+  const m = document.createElement('div');
+  m.className = 'modal';
+  m.innerHTML = '<div class="box"><h3>'+esc(title)+'</h3><p>'+esc(msg)+'</p>'+
+    '<div style="display:flex;gap:10px;justify-content:flex-end">'+
+    '<button class="btn ghost" id="mNo">Cancel</button>'+
+    '<button class="btn" id="mYes">Submit</button></div></div>';
+  document.body.appendChild(m);
+  const close = () => m.remove();
+  const y = m.querySelector('#mYes'); if (y) y.onclick = () => { close(); onYes(); };
+  const n = m.querySelector('#mNo'); if (n) n.onclick = close;
+}
+
+function showResult() {
+  const rows = SECTIONS.map(sec => {
+    const qs = QUESTIONS.filter(q => q.section === sec.key);
+    let right = 0, wrong = 0, skip = 0;
+    qs.forEach(q => {
+      if (!isAnswered(q.id)) skip++;
+      else if (state.answers[q.id] === q.ans) right++;
+      else wrong++;
+    });
+    const marks = right - wrong * NEG;
+    return {name: sec.name, total: qs.length, right, wrong, skip, marks};
+  });
+  const right = rows.reduce((a, r) => a + r.right, 0);
+  const wrong = rows.reduce((a, r) => a + r.wrong, 0);
+  const skip = rows.reduce((a, r) => a + r.skip, 0);
+  const score = (right - wrong * NEG).toFixed(2);
+  const pct = ((score / 100) * 100).toFixed(1);
+
+  const brk = rows.map(r =>
+    '<tr><td>'+r.name+'</td><td>'+r.total+'</td><td class="pos">'+r.right+'</td>'+
+    '<td class="negv">'+r.wrong+'</td><td class="wr">'+r.skip+'</td>'+
+    '<td><b>'+r.marks.toFixed(2)+'</b></td></tr>').join('');
+
+  $id('shell').classList.remove('on');
+  const box = $id('result');
+  box.classList.remove('hidden');
+  const banner = state.timedOut
+    ? '<div style="background:#b91c1c;color:#fff;border-radius:10px;padding:12px 16px;margin-bottom:16px;font-weight:600">Time is over — the paper was submitted automatically at 00:00:00.</div>'
+    : '';
+  box.innerHTML =
+    banner +
+    '<div class="big">'+
+      '<div class="of">Your Score</div>'+
+      '<div class="score">'+score+'</div>'+
+      '<div class="of">out of 100 &middot; '+pct+'%</div>'+
+    '</div>'+
+    '<div class="grid">'+
+      '<div class="stat"><div class="v pos">'+right+'</div><div class="k">Correct</div></div>'+
+      '<div class="stat"><div class="v negv">'+wrong+'</div><div class="k">Wrong</div></div>'+
+      '<div class="stat"><div class="v wr">'+skip+'</div><div class="k">Unattempted</div></div>'+
+      '<div class="stat"><div class="v">'+(wrong*NEG).toFixed(2)+'</div><div class="k">Penalty</div></div>'+
+    '</div>'+
+    '<table class="brk"><thead><tr><th>Section</th><th>Qs</th><th>Correct</th><th>Wrong</th><th>Skipped</th><th>Marks</th></tr></thead>'+
+    '<tbody>'+brk+'</tbody></table>'+
+    '<div class="actions">'+
+      '<button class="btn" id="revBtn">Review Answers</button>'+
+      '<button class="btn ghost" id="retakeBtn">Retake Test</button>'+
+    '</div>'+
+    '<div id="review"></div>';
+
+  $id('revBtn').onclick = () => renderReview();
+  $id('retakeBtn').onclick = () => {
+    try { localStorage.removeItem(KEY); localStorage.removeItem(WELCOMED); } catch(e) {}
+    location.reload();
+  };
+  window.scrollTo(0,0);
+}
+
+function renderReview() {
+  const wrap = $id('review');
+  if (wrap.dataset.on === '1') { wrap.innerHTML = ''; wrap.dataset.on = '0'; return; }
+  wrap.dataset.on = '1';
+  const parts = SECTIONS.map(sec => {
+    const qs = QUESTIONS.filter(q => q.section === sec.key);
+    const body = qs.map(q => {
+      const picked = state.answers[q.id];
+      let pill, cls;
+      if (picked === undefined) { pill = '<span class="pill sk">Skipped</span>'; }
+      else if (picked === q.ans) { pill = '<span class="pill ok">Correct</span>'; }
+      else { pill = '<span class="pill no">Wrong</span>'; }
+      const opts = q.opts.map((o, i) => {
+        let c = '';
+        if (i === q.ans) c = ' correct';
+        else if (i === picked) c = ' wrong';
+        return '<div class="o'+c+'"><b>'+String.fromCharCode(65+i)+'</b> '+esc(o)+
+          (i===q.ans?' <span style="color:var(--green);font-size:12px">&larr; correct</span>':'')+
+          (i===picked && i!==q.ans?' <span style="color:var(--red);font-size:12px">&larr; your answer</span>':'')+
+        '</div>';
+      });
+      return '<div class="rev">'+
+        '<div class="top"><span class="qno">Q'+q.id+' &middot; '+esc(sec.name)+'</span>'+pill+'</div>'+
+        '<div class="qt">'+esc(q.q)+'</div>'+opts+
+        '<div class="exp"><b>Explanation:</b> '+esc(q.exp)+'</div>'+
+      '</div>';
+    }).join('');
+    return '<h2 style="margin:26px 0 12px">'+esc(sec.name)+' ('+qs.length+' questions)</h2>'+body;
+  }).join('');
+  wrap.innerHTML = parts;
+  wrap.scrollIntoView({behavior: 'smooth'});
+}
+
+function esc(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+document.addEventListener('keydown', e => {
+  if (!$id('shell').classList.contains('on')) return;
+  if (e.key === 'ArrowRight') $id('nextBtn') && $id('nextBtn').click();
+  if (e.key === 'ArrowLeft')  $id('prevBtn') && $id('prevBtn').click();
+  if (['1','2','3','4'].includes(e.key)) {
+    const opts = document.querySelectorAll('#opts .opt');
+    if (opts[Number(e.key)-1]) opts[Number(e.key)-1].click();
+  }
+  if (['a','b','c','d'].includes(e.key.toLowerCase())) {
+    const i = e.key.toLowerCase().charCodeAt(0) - 97;
+    const opts = document.querySelectorAll('#opts .opt');
+    if (opts[i]) opts[i].click();
+  }
+});
+
+function render() {
+  const q = QUESTIONS[state.current-1];
+  const sec = SECTIONS.find(s => s.key === q.section);
+  $id('tabs').innerHTML = SECTIONS.map(s =>
+    '<button class="tab'+(s.key===sec.key?' active':'')+'" onclick="sectionTo(\''+s.key+'\')">'+s.name+'</button>'
+  ).join('');
+  $id('qbox').innerHTML =
+    '<div class="qhead"><span class="qno">Q'+q.id+' &middot; '+esc(sec.name)+'</span>'+
+    '<span class="tag '+q.label+'">'+q.label+'</span></div>'+
+    '<div class="qtext">'+esc(q.q)+'</div>'+
+    '<div id="opts">'+
+      q.opts.map((o, i) =>
+        '<div class="opt'+(state.answers[q.id]===i?' sel':'')+'" data-id="'+q.id+'" data-idx="'+i+'">'+
+          '<span class="k">'+String.fromCharCode(65+i)+'</span>'+
+          '<span class="txt">'+esc(o)+'</span>'+
+        '</div>'
+      ).join('')+
+    '</div>'+
+    '<div class="qfoot">'+
+      '<label class="review-lbl"><input type="checkbox" '+ (state.marked[q.id] ? 'checked' : '')+' onchange="markReview('+q.id+')"> Mark for review</label>'+
+      '<div class="nav-btns">'+
+        '<button class="btn ghost" id="prevBtn" '+ (state.current===1 ? 'disabled' : '')+' onclick="nav(-1)">Previous</button>'+
+        '<button class="btn ghost" id="nextBtn" '+ (state.current===100 ? 'disabled' : '')+' onclick="nav(1)">Next</button>'+
+      '</div>'+
+    '</div>';
+  document.querySelectorAll('#opts .opt').forEach(el => {
+    el.onclick = () => answer(parseInt(el.dataset.id), parseInt(el.dataset.idx));
+  });
+  updateMeta();
+}
+
+function sectionTo(secKey) {
+  const idx = QUESTIONS.findIndex(q => q.section === secKey);
+  if (idx >= 0) { state.current = idx + 1; render(); }
+}
+
+function nav(d) {
+  state.current = Math.max(1, Math.min(100, state.current + d));
+  render();
+}
+
+function isAnswered(id) { return state.answers[id] !== undefined; }
+
+function answer(id, idx) {
+  state.answers[id] = idx;
+  render();
+  save();
+}
+
+function markReview(id) {
+  state.marked[id] = !state.marked[id];
+  save();
+}
+
+function updateMeta() {
+  const answered = Object.keys(state.answers).length;
+  const marked = Object.keys(state.marked).length;
+  $id('barLbl').textContent = 'Attempted ' + answered + ' / 100';
+  $id('barPct').textContent = Math.round((answered/100)*100) + '%';
+  $id('barFill').style.width = (answered/100)*100 + '%';
+  $id('sAns').textContent = answered;
+  $id('sMark').textContent = marked;
+  $id('sUn').textContent = 100 - answered;
+}
+
+function palette() {
+  const p = $id('palette');
+  p.innerHTML = '';
+  for (let i = 1; i <= 100; i++) {
+    const b = document.createElement('button');
+    b.textContent = i;
+    b.dataset.id = i;
+    b.onclick = () => { state.current = i; render(); };
+    if (i === state.current) b.classList.add('cur');
+    if (!isAnswered(i)) b.classList.add('unanswered');
+    else b.classList.add('attempted');
+    if (state.marked[i]) b.classList.add('marked');
+    p.appendChild(b);
+  }
+}
+
+document.getElementById('startBtn').onclick = () => { load(); enterExam(); };
+document.addEventListener('DOMContentLoaded', () => {
+  palette();
+});
+</script>
+</body>
+</html>

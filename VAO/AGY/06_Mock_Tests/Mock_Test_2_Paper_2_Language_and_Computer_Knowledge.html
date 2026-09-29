@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mock Test 02 — KEA VAO 2026</title>
+<style>
+  :root {
+    --primary: #1e3a8a;
+    --primary-light: #3b82f6;
+    --accent: #059669;
+    --danger: #dc2626;
+    --warning: #d97706;
+    --bg: #f8fafc;
+    --card: #ffffff;
+    --text: #1e293b;
+    --text-muted: #64748b;
+    --border: #e2e8f0;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  body { background: var(--bg); color: var(--text); display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
+  header { background: var(--primary); color: white; padding: 12px 24px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+  header h1 { font-size: 1.15rem; font-weight: 600; }
+  .badge { background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 9999px; font-size: 0.8rem; margin-left: 8px; }
+  .timer-box { background: #0f172a; padding: 6px 16px; border-radius: 6px; font-family: monospace; font-size: 1.25rem; font-weight: 700; color: #38bdf8; display: flex; align-items: center; gap: 8px; }
+  .timer-box.warning { color: #f87171; animation: pulse 1s infinite; }
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+  
+  .main-container { display: flex; flex: 1; overflow: hidden; }
+  .question-pane { flex: 1; padding: 24px 32px; overflow-y: auto; display: flex; flex-direction: column; }
+  .sidebar { width: 340px; background: var(--card); border-left: 1px solid var(--border); display: flex; flex-direction: column; }
+  
+  .q-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+  .q-number { font-size: 1.1rem; font-weight: 700; color: var(--primary); }
+  .q-meta { display: flex; gap: 8px; font-size: 0.8rem; }
+  .q-tag { background: #eff6ff; color: #1d4ed8; padding: 2px 8px; border-radius: 4px; font-weight: 600; border: 1px solid #bfdbfe; }
+  .q-marks { background: #f0fdf4; color: #15803d; padding: 2px 8px; border-radius: 4px; font-weight: 600; }
+  
+  .q-text { font-size: 1.05rem; line-height: 1.6; margin-bottom: 24px; font-weight: 500; }
+  .options-grid { display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
+  .option-label { display: flex; align-items: flex-start; gap: 12px; padding: 12px 16px; border: 1.5px solid var(--border); border-radius: 8px; cursor: pointer; transition: all 0.2s; background: white; }
+  .option-label:hover { border-color: var(--primary-light); background: #f8fafc; }
+  .option-label.selected { border-color: var(--primary); background: #eff6ff; font-weight: 600; }
+  .option-radio { margin-top: 4px; accent-color: var(--primary); }
+  
+  .action-bar { margin-top: auto; display: flex; justify-content: space-between; align-items: center; padding-top: 16px; border-top: 1px solid var(--border); }
+  .btn { padding: 10px 18px; border-radius: 6px; font-weight: 600; cursor: pointer; border: none; font-size: 0.9rem; transition: background 0.2s; }
+  .btn-primary { background: var(--primary); color: white; }
+  .btn-primary:hover { background: #1e40af; }
+  .btn-outline { background: white; border: 1px solid var(--border); color: var(--text); }
+  .btn-outline:hover { background: #f1f5f9; }
+  .btn-warning { background: #fef3c7; color: #b45309; border: 1px solid #fde68a; }
+  .btn-warning:hover { background: #fde68a; }
+  .btn-success { background: var(--accent); color: white; }
+  .btn-success:hover { background: #047857; }
+  
+  /* Sidebar */
+  .palette-header { padding: 16px; border-bottom: 1px solid var(--border); font-weight: 700; font-size: 0.95rem; }
+  .legend { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 12px 16px; border-bottom: 1px solid var(--border); font-size: 0.75rem; background: #fafafa; }
+  .legend-item { display: flex; align-items: center; gap: 6px; }
+  .dot { width: 12px; height: 12px; border-radius: 3px; }
+  .dot-answered { background: var(--accent); }
+  .dot-review { background: var(--warning); }
+  .dot-unanswered { background: #cbd5e1; }
+  .dot-current { border: 2px solid var(--primary); background: white; }
+  
+  .palette-grid { flex: 1; padding: 16px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; overflow-y: auto; align-content: start; }
+  .palette-btn { height: 38px; border-radius: 6px; border: 1px solid var(--border); font-weight: 700; font-size: 0.85rem; cursor: pointer; background: white; }
+  .palette-btn.current { border: 2px solid var(--primary); font-weight: 800; }
+  .palette-btn.answered { background: var(--accent); color: white; border-color: var(--accent); }
+  .palette-btn.review { background: var(--warning); color: white; border-color: var(--warning); }
+  .palette-btn.answered-review { background: #8b5cf6; color: white; border-color: #8b5cf6; }
+  
+  .sidebar-footer { padding: 16px; border-top: 1px solid var(--border); }
+  .btn-submit { width: 100%; padding: 12px; font-size: 1rem; }
+  
+  /* Result Modal */
+  .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); display: none; justify-content: center; align-items: center; z-index: 100; }
+  .modal { background: white; border-radius: 12px; width: 90%; max-width: 800px; max-height: 90vh; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.2); }
+  .modal-header { background: var(--primary); color: white; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; }
+  .modal-body { padding: 24px; overflow-y: auto; }
+  .score-card { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; text-align: center; }
+  .score-tile { padding: 16px; border-radius: 8px; background: var(--bg); border: 1px solid var(--border); }
+  .score-tile h3 { font-size: 1.8rem; font-weight: 800; color: var(--primary); }
+  .score-tile p { font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; }
+  
+  .review-section { margin-top: 24px; }
+  .review-item { border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin-bottom: 12px; background: #fafafa; }
+  .review-item.correct { border-left: 4px solid var(--accent); }
+  .review-item.wrong { border-left: 4px solid var(--danger); }
+  .review-item.unanswered { border-left: 4px solid #94a3b8; }
+  .exp-box { margin-top: 8px; padding: 10px; background: #eff6ff; border-radius: 6px; font-size: 0.85rem; color: #1e3a8a; }
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <h1>Mock Test 02 <span class="badge">KEA VAO 2026</span></h1>
+    <div style="font-size: 0.8rem; opacity: 0.85; margin-top: 2px;">Paper-II: General Kannada, General English & Computer Knowledge | Total Marks: 100 | Negative: -0.25</div>
+  </div>
+  <div class="timer-box" id="timerBox">
+    <span>⏱️</span> <span id="timerDisplay">00:00:00</span>
+  </div>
+</header>
+
+<div class="main-container">
+  <main class="question-pane">
+    <div class="q-header">
+      <div class="q-number" id="qNumberDisplay">Question 1 of 0</div>
+      <div class="q-meta">
+        <span class="q-tag" id="qSubjectTag">Subject</span>
+        <span class="q-tag" style="background:#fef3c7; color:#92400e; border-color:#fde68a;" id="qSourceTag">Source</span>
+        <span class="q-marks">+1.0 / -0.25</span>
+      </div>
+    </div>
+    
+    <div class="q-text" id="qTextDisplay">Loading question...</div>
+    
+    <div class="options-grid" id="optionsContainer"></div>
+    
+    <div class="action-bar">
+      <div style="display: flex; gap: 8px;">
+        <button class="btn btn-warning" id="btnReview" onclick="toggleReview()">⭐ Mark for Review</button>
+        <button class="btn btn-outline" id="btnClear" onclick="clearCurrentResponse()">Clear Response</button>
+      </div>
+      <div style="display: flex; gap: 8px;">
+        <button class="btn btn-outline" id="btnPrev" onclick="navigateQuestion(-1)">← Previous</button>
+        <button class="btn btn-primary" id="btnNext" onclick="navigateQuestion(1)">Save & Next →</button>
+      </div>
+    </div>
+  </main>
+  
+  <aside class="sidebar">
+    <div class="palette-header">Question Navigation Palette</div>
+    <div class="legend">
+      <div class="legend-item"><div class="dot dot-answered"></div> Answered</div>
+      <div class="legend-item"><div class="dot dot-review"></div> Marked for Review</div>
+      <div class="legend-item"><div class="dot" style="background:#8b5cf6;"></div> Ans & Review</div>
+      <div class="legend-item"><div class="dot dot-unanswered"></div> Not Answered</div>
+    </div>
+    <div class="palette-grid" id="paletteGrid"></div>
+    <div class="sidebar-footer">
+      <button class="btn btn-success btn-submit" onclick="submitExam(false)">Submit Examination</button>
+    </div>
+  </aside>
+</div>
+
+<!-- Results Modal -->
+<div class="modal-overlay" id="resultModal">
+  <div class="modal">
+    <div class="modal-header">
+      <h2>Examination Result & Scorecard</h2>
+      <button onclick="closeModal()" style="background:none; border:none; color:white; font-size:1.5rem; cursor:pointer;">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div class="score-card">
+        <div class="score-tile">
+          <h3 id="resScore">0.00</h3>
+          <p>Total Net Marks</p>
+        </div>
+        <div class="score-tile">
+          <h3 id="resAccuracy" style="color:var(--accent);">0%</h3>
+          <p>Accuracy</p>
+        </div>
+        <div class="score-tile">
+          <h3 id="resCorrect" style="color:var(--accent);">0</h3>
+          <p>Correct (x 1.0)</p>
+        </div>
+        <div class="score-tile">
+          <h3 id="resWrong" style="color:var(--danger);">0</h3>
+          <p>Wrong (-0.25)</p>
+        </div>
+      </div>
+      
+      <div id="subjectBreakdownContainer" style="margin-bottom: 24px;"></div>
+      
+      <h3 style="margin-bottom: 12px;">Detailed Question Review & Explanations</h3>
+      <div class="review-section" id="reviewQuestionsContainer"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+const QUESTIONS = [{"text": "ಕನ್ನಡ ವರ್ಣಮಾಲೆಯಲ್ಲಿರುವ ಒಟ್ಟು ಅಕ್ಷರಗಳ ಸಂಖ್ಯೆ ಎಷ್ಟು?", "options": ["48", "49", "50", "52"], "correct": 1, "subject": "General Kannada", "tag": "KEA VAO PYQ", "explanation": "ಕನ್ನಡ ವರ್ಣಮಾಲೆಯಲ್ಲಿ 14 ಸ್ವರಗಳು, 34 ವ್ಯಂಜನಗಳು ಮತ್ತು 2 ಯೋಗವಾಹಗಳು (ಅಂ, ಅಃ) ಸೇರಿ ಒಟ್ಟು 49 ಅಕ್ಷರಗಳಿವೆ."}, {"text": "'ಮಳೆಗಾಲ' ಪದವು ಈ ಕೆಳಗಿನ ಯಾವ ಸಂಧಿಗೆ ಉದಾಹರಣೆಯಾಗಿದೆ?", "options": ["ಲೋಪ ಸಂಧಿ", "ಆಗಮ ಸಂಧಿ", "ಆದೇಶ ಸಂಧಿ", "ಗುಣ ಸಂಧಿ"], "correct": 2, "subject": "General Kannada", "tag": "KEA VAO PYQ", "explanation": "ಮಳೆ + ಕಾಲ = ಮಳೆಗಾಲ (ಉತ್ತರಪದದ ಆದಿಯಲ್ಲಿರುವ 'ಕ' ವ್ಯಂಜನಕ್ಕೆ 'ಗ' ಕಾರ ಬಂದಿದೆ) -> ಆದೇಶ ಸಂಧಿ."}, {"text": "'ಕೋಟ್ಯಧೀಶ' ಪದವನ್ನು ಬಿಡಿಸಿದಾಗ ಯಾವ ಸಂಧಿಯಾಗುತ್ತದೆ?", "options": ["ಸವರ್ಣದೀರ್ಘ ಸಂಧಿ", "ಗುಣ ಸಂಧಿ", "ವೃದ್ಧಿ ಸಂಧಿ", "ಯಣ್ ಸಂಧಿ"], "correct": 3, "subject": "General Kannada", "tag": "KEA PYQ", "explanation": "ಕೋಟಿ + ಅಧೀಶ = ಕೋಟ್ಯಧೀಶ (ಇ-ಕಾರದ ಮುಂದೆ ಅನ್ಯಸ್ವರ ಬಂದು ಯ್ ಕಾರ ಬಂದಿದೆ) -> ಯಣ್ ಸಂಧಿ."}, {"text": "'ಮುಕ್ಕಣ್ಣ' ಎಂಬ ಪದವು ಯಾವ ಸಮಾಸಕ್ಕೆ ಸೂಕ್ತ ಉದಾಹರಣೆಯಾಗಿದೆ?", "options": ["ತತ್ಪುರುಷ ಸಮಾಸ", "ಕರ್ಮಧಾರಯ ಸಮಾಸ", "ದ್ವಿಗು ಸಮಾಸ", "ಬಹುವ್ರೀಹಿ ಸಮಾಸ"], "correct": 3, "subject": "General Kannada", "tag": "KEA VAO PYQ", "explanation": "ಮೂರು ಕಣ್ಣುಳ್ಳವನು ಅಂದರೆ ಶಿವ (ಅನ್ಯ ಪದದ ಅರ್ಥ ಪ್ರಧಾನ) -> ಬಹುವ್ರೀಹಿ ಸಮಾಸ."}, {"text": "'ಆಶ್ಚರ್ಯ' ಎಂಬ ತತ್ಸಮ ಪದದ ಸರಿಯಾದ ತದ್ಭವ ರೂಪ ಯಾವುದು?", "options": ["ಅಚ್ಚರಿ", "ಅಚ್ಚರಿಯ", "ಅಸ್ಚರ್ಯ", "ಅಚ್ಚರ"], "correct": 0, "subject": "General Kannada", "tag": "KEA PYQ", "explanation": "ಆಶ್ಚರ್ಯ (ತತ್ಸಮ) -> ಅಚ್ಚರಿ (ತದ್ಭವ)."}, {"text": "'ಮರವನ್ನು' ಎಂಬ ಪದದಲ್ಲಿರುವ ವಿಭಕ್ತಿ ಪ್ರತ್ಯಯ ಯಾವುದು?", "options": ["ಪ್ರಥಮಾ", "ದ್ವಿತೀಯಾ", "ತೃತೀಯಾ", "ಚತುರ್ಥಿ"], "correct": 1, "subject": "General Kannada", "tag": "KEA VAO PYQ", "explanation": "ದ್ವಿತೀಯಾ ವಿಭಕ್ತಿ ಪ್ರತ್ಯಯ 'ಅನ್ನು' (ಮರ + ಅನ್ನು = ಮರವನ್ನು)."}, {"text": "Identify the grammatically correct sentence:", "options": ["He is senior than me in service.", "He is senior to me in service.", "He is more senior than me in service.", "He is senior over me in service."], "correct": 1, "subject": "General English", "tag": "KEA VAO PYQ", "explanation": "Latin comparative adjectives ending in -ior (senior, junior, superior, inferior) are always followed by the preposition 'to', never 'than'."}, {"text": "Fill in the blank: 'If he ________ harder, he would have cleared the examination.'", "options": ["worked", "had worked", "would work", "has worked"], "correct": 1, "subject": "General English", "tag": "KEA PYQ", "explanation": "Type 3 conditional: If + Past Perfect (had worked) ... would have + V3 (would have cleared)."}, {"text": "Choose the correct Passive Voice: 'The Village Administrative Officer prepared the RTC extract.'", "options": ["The RTC extract is prepared by the Village Administrative Officer.", "The RTC extract was prepared by the Village Administrative Officer.", "The RTC extract has been prepared by the Village Administrative Officer.", "The RTC extract was being prepared by the Village Administrative Officer."], "correct": 1, "subject": "General English", "tag": "Expected", "explanation": "Simple past active (prepared) converts to was/were + past participle (was prepared) in passive voice."}, {"text": "Fill in the preposition: 'The Deputy Commissioner congratulated the officer ________ his outstanding performance.'", "options": ["for", "on", "with", "about"], "correct": 1, "subject": "General English", "tag": "KEA PYQ", "explanation": "The verb 'congratulate' is idiomatically followed by 'on' (congratulated on), not 'for'."}, {"text": "What is the meaning of the idiom 'To burn the midnight oil'?", "options": ["To waste resources unnecessarily", "To work or study late into the night", "To cause an accidental fire", "To celebrate a victory"], "correct": 1, "subject": "General English", "tag": "KEA VAO PYQ", "explanation": "'Burn the midnight oil' means to work diligently late into the night."}, {"text": "In Microsoft Excel, every formula must begin with which character?", "options": ["@", "#", "=", "$"], "correct": 2, "subject": "Computer Knowledge", "tag": "KEA VAO PYQ", "explanation": "All Excel formulas and functions must begin with an equals sign (=)."}, {"text": "Which shortcut key is used in Microsoft Office applications to insert a Hyperlink?", "options": ["Ctrl + H", "Ctrl + K", "Ctrl + L", "Ctrl + P"], "correct": 1, "subject": "Computer Knowledge", "tag": "KEA PYQ", "explanation": "Ctrl + K opens the Insert Hyperlink dialog box in Word, Excel, and PowerPoint."}, {"text": "What is the key used in Microsoft PowerPoint to start a Slide Show from the beginning?", "options": ["F2", "F5", "F7", "Shift + F5"], "correct": 1, "subject": "Computer Knowledge", "tag": "KEA VAO PYQ", "explanation": "F5 launches the slide show from slide 1. Shift + F5 launches from the current active slide."}, {"text": "How many bits are there in an IPv4 address and an IPv6 address respectively?", "options": ["16 bits and 32 bits", "32 bits and 64 bits", "32 bits and 128 bits", "64 bits and 128 bits"], "correct": 2, "subject": "Computer Knowledge", "tag": "Expected", "explanation": "IPv4 is 32 bits (4 bytes), whereas IPv6 is 128 bits (16 bytes)."}, {"text": "Which network protocol is specifically used for sending outgoing email messages across the Internet?", "options": ["HTTP", "FTP", "POP3", "SMTP"], "correct": 3, "subject": "Computer Knowledge", "tag": "KEA PYQ", "explanation": "SMTP (Simple Mail Transfer Protocol) sends outgoing email. POP3 and IMAP receive incoming email."}, {"text": "One nibble corresponds to:", "options": ["2 bits", "4 bits", "8 bits", "16 bits"], "correct": 1, "subject": "Computer Knowledge", "tag": "KEA PYQ", "explanation": "1 nibble = 4 bits (half of a byte)."}, {"text": "In the e-Swathu system of Karnataka, Form 9 is issued for which category of property?", "options": ["Vacant residential plots in layouts", "Residential buildings within the Grama Thana", "Agricultural dry land", "Commercial industrial parks"], "correct": 1, "subject": "Rural Administration", "tag": "KEA VAO PYQ", "explanation": "Form 9 is the assessment extract for built-up houses inside Grama Thana. Form 11 is for vacant plots."}, {"text": "Under the Karnataka Land Revenue Act, the Record of Rights, Tenancy, and Crops (RTC) is officially designated as:", "options": ["Form 9", "Form 12", "Form 16", "Form 24"], "correct": 2, "subject": "Rural Administration", "tag": "KEA VAO PYQ", "explanation": "The RTC / Pahani is officially Form 16 under the Karnataka Land Revenue Rules."}, {"text": "What is the statutory public notice period under Section 129 of the Karnataka Land Revenue Act for entering a mutation in Form 12?", "options": ["15 days", "30 days", "45 days", "60 days"], "correct": 1, "subject": "Rural Administration", "tag": "KEA VAO PYQ", "explanation": "Section 129 mandates a 30-day public objection notice before a mutation entry can be legally certified."}];
+const DURATION_SECONDS = 120 * 60;
+const NEG_MARK = 0.25;
+
+let currentIndex = 0;
+let timeRemaining = DURATION_SECONDS;
+let timerInterval = null;
+let userAnswers = new Array(QUESTIONS.length).fill(null);
+let reviewFlags = new Array(QUESTIONS.length).fill(false);
+let examSubmitted = false;
+
+function init() {
+  renderPalette();
+  loadQuestion(0);
+  startTimer();
+}
+
+function startTimer() {
+  const timerDisplay = document.getElementById("timerDisplay");
+  const timerBox = document.getElementById("timerBox");
+  
+  timerInterval = setInterval(() => {
+    if (timeRemaining <= 0) {
+      clearInterval(timerInterval);
+      submitExam(true);
+      return;
+    }
+    timeRemaining--;
+    
+    const h = String(Math.floor(timeRemaining / 3600)).padStart(2, '0');
+    const m = String(Math.floor((timeRemaining % 3600) / 60)).padStart(2, '0');
+    const s = String(timeRemaining % 60).padStart(2, '0');
+    timerDisplay.textContent = `${h}:${m}:${s}`;
+    
+    if (timeRemaining < 300) {
+      timerBox.classList.add("warning");
+    }
+  }, 1000);
+}
+
+function renderPalette() {
+  const grid = document.getElementById("paletteGrid");
+  grid.innerHTML = "";
+  
+  QUESTIONS.forEach((q, idx) => {
+    const btn = document.createElement("button");
+    btn.className = "palette-btn";
+    btn.textContent = idx + 1;
+    btn.id = `palette-btn-${idx}`;
+    btn.onclick = () => loadQuestion(idx);
+    grid.appendChild(btn);
+  });
+  updatePaletteState();
+}
+
+function updatePaletteState() {
+  QUESTIONS.forEach((q, idx) => {
+    const btn = document.getElementById(`palette-btn-${idx}`);
+    btn.className = "palette-btn";
+    
+    const hasAns = userAnswers[idx] !== null;
+    const isRev = reviewFlags[idx];
+    
+    if (hasAns && isRev) {
+      btn.classList.add("answered-review");
+    } else if (hasAns) {
+      btn.classList.add("answered");
+    } else if (isRev) {
+      btn.classList.add("review");
+    }
+    
+    if (idx === currentIndex) {
+      btn.classList.add("current");
+    }
+  });
+}
+
+function loadQuestion(idx) {
+  currentIndex = idx;
+  const q = QUESTIONS[idx];
+  
+  document.getElementById("qNumberDisplay").textContent = `Question ${idx + 1} of ${QUESTIONS.length}`;
+  document.getElementById("qSubjectTag").textContent = q.subject || "General";
+  document.getElementById("qSourceTag").textContent = q.tag || "Expected";
+  document.getElementById("qTextDisplay").innerHTML = q.text;
+  
+  const container = document.getElementById("optionsContainer");
+  container.innerHTML = "";
+  
+  q.options.forEach((opt, optIdx) => {
+    const label = document.createElement("label");
+    label.className = "option-label";
+    if (userAnswers[idx] === optIdx) label.classList.add("selected");
+    
+    const radio = document.createElement("input");
+    radio.type = "radio";
+    radio.name = "opt";
+    radio.className = "option-radio";
+    radio.checked = userAnswers[idx] === optIdx;
+    radio.onchange = () => selectOption(optIdx);
+    
+    const textSpan = document.createElement("span");
+    textSpan.innerHTML = `<strong>${String.fromCharCode(65 + optIdx)}.</strong> ${opt}`;
+    
+    label.appendChild(radio);
+    label.appendChild(textSpan);
+    container.appendChild(label);
+  });
+  
+  document.getElementById("btnPrev").disabled = idx === 0;
+  document.getElementById("btnNext").textContent = idx === QUESTIONS.length - 1 ? "Save & Summary" : "Save & Next →";
+  
+  const revBtn = document.getElementById("btnReview");
+  revBtn.style.background = reviewFlags[idx] ? "#f59e0b" : "#fef3c7";
+  revBtn.style.color = reviewFlags[idx] ? "white" : "#b45309";
+  
+  updatePaletteState();
+}
+
+function selectOption(optIdx) {
+  userAnswers[currentIndex] = optIdx;
+  loadQuestion(currentIndex);
+}
+
+function clearCurrentResponse() {
+  userAnswers[currentIndex] = null;
+  loadQuestion(currentIndex);
+}
+
+function toggleReview() {
+  reviewFlags[currentIndex] = !reviewFlags[currentIndex];
+  loadQuestion(currentIndex);
+}
+
+function navigateQuestion(delta) {
+  const nextIdx = currentIndex + delta;
+  if (nextIdx >= 0 && nextIdx < QUESTIONS.length) {
+    loadQuestion(nextIdx);
+  }
+}
+
+function submitExam(auto = false) {
+  if (!auto) {
+    const answeredCount = userAnswers.filter(a => a !== null).length;
+    const confirmMsg = `You have answered ${answeredCount} out of ${QUESTIONS.length} questions.\nAre you sure you want to finish the exam?`;
+    if (!confirm(confirmMsg)) return;
+  }
+  
+  examSubmitted = true;
+  clearInterval(timerInterval);
+  calculateResults();
+}
+
+function calculateResults() {
+  let correct = 0;
+  let wrong = 0;
+  let unans = 0;
+  let subjectStats = {};
+  
+  QUESTIONS.forEach((q, idx) => {
+    const subj = q.subject || "General";
+    if (!subjectStats[subj]) subjectStats[subj] = { total: 0, correct: 0, wrong: 0, unans: 0 };
+    subjectStats[subj].total++;
+    
+    const ans = userAnswers[idx];
+    if (ans === null) {
+      unans++;
+      subjectStats[subj].unans++;
+    } else if (ans === q.correct) {
+      correct++;
+      subjectStats[subj].correct++;
+    } else {
+      wrong++;
+      subjectStats[subj].wrong++;
+    }
+  });
+  
+  const netScore = Math.max(0, (correct * 1.0) - (wrong * NEG_MARK));
+  const accuracy = (correct + wrong > 0) ? Math.round((correct / (correct + wrong)) * 100) : 0;
+  
+  document.getElementById("resScore").textContent = netScore.toFixed(2);
+  document.getElementById("resAccuracy").textContent = `${accuracy}%`;
+  document.getElementById("resCorrect").textContent = correct;
+  document.getElementById("resWrong").textContent = wrong;
+  
+  // Subject breakdown table
+  let subHtml = `<table style="width:100%; border-collapse:collapse; font-size:0.85rem; margin-top:8px;">
+    <thead>
+      <tr style="background:#f1f5f9; text-align:left;">
+        <th style="padding:8px; border:1px solid #cbd5e1;">Subject</th>
+        <th style="padding:8px; border:1px solid #cbd5e1;">Total</th>
+        <th style="padding:8px; border:1px solid #cbd5e1;">Correct</th>
+        <th style="padding:8px; border:1px solid #cbd5e1;">Wrong</th>
+        <th style="padding:8px; border:1px solid #cbd5e1;">Score</th>
+      </tr>
+    </thead>
+    <tbody>`;
+  for (let s in subjectStats) {
+    const st = subjectStats[s];
+    const sScore = (st.correct * 1.0 - st.wrong * NEG_MARK).toFixed(2);
+    subHtml += `<tr>
+      <td style="padding:8px; border:1px solid #cbd5e1; font-weight:600;">${s}</td>
+      <td style="padding:8px; border:1px solid #cbd5e1;">${st.total}</td>
+      <td style="padding:8px; border:1px solid #cbd5e1; color:var(--accent); font-weight:600;">${st.correct}</td>
+      <td style="padding:8px; border:1px solid #cbd5e1; color:var(--danger); font-weight:600;">${st.wrong}</td>
+      <td style="padding:8px; border:1px solid #cbd5e1; font-weight:700;">${sScore}</td>
+    </tr>`;
+  }
+  subHtml += "</tbody></table>";
+  document.getElementById("subjectBreakdownContainer").innerHTML = subHtml;
+  
+  // Review answers
+  const revCont = document.getElementById("reviewQuestionsContainer");
+  revCont.innerHTML = "";
+  
+  QUESTIONS.forEach((q, idx) => {
+    const ans = userAnswers[idx];
+    const isCorrect = ans === q.correct;
+    const isUnans = ans === null;
+    
+    const div = document.createElement("div");
+    div.className = `review-item ${isCorrect ? 'correct' : (isUnans ? 'unanswered' : 'wrong')}`;
+    
+    let statusText = isCorrect ? '✅ Correct' : (isUnans ? '⚪ Not Attempted' : '❌ Incorrect');
+    let userPick = ans !== null ? `${String.fromCharCode(65 + ans)}: ${q.options[ans]}` : "None";
+    let correctPick = `${String.fromCharCode(65 + q.correct)}: ${q.options[q.correct]}`;
+    
+    div.innerHTML = `
+      <div style="display:flex; justify-content:space-between; margin-bottom:6px;">
+        <strong>Q${idx + 1}. [${q.subject}]</strong>
+        <span style="font-weight:700;">${statusText}</span>
+      </div>
+      <p style="margin-bottom:8px;">${q.text}</p>
+      <div style="font-size:0.85rem; margin-bottom:4px;"><strong>Your Answer:</strong> ${userPick}</div>
+      <div style="font-size:0.85rem; color:#15803d; font-weight:600;"><strong>Correct Answer:</strong> ${correctPick}</div>
+      <div class="exp-box"><strong>Explanation:</strong> ${q.explanation || 'Refer to official syllabus and standard notes.'}</div>
+    `;
+    revCont.appendChild(div);
+  });
+  
+  document.getElementById("resultModal").style.display = "flex";
+}
+
+function closeModal() {
+  document.getElementById("resultModal").style.display = "none";
+}
+
+window.onload = init;
+</script>
+</body>
+</html>
