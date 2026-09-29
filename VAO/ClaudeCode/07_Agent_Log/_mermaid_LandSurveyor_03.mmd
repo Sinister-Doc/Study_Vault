@@ -1,0 +1,13 @@
+flowchart TD
+    A["1. Make reconnaissance<br/>(preliminary walk-over)"] --> B["2. Select & mark<br/>base line ( longest )"]
+    B --> C["3. Fix triangles by<br/>chain survey / ranging"]
+    C --> D["4. Draw approximate<br/>sketch, mark offsets"]
+    D --> E["5. Ranging rods on<br/>lines, chain lines"]
+    E --> F["6. Measure chain lines<br/>(forward + backward)"]
+    F --> G["7. Measure offsets<br/>(perpendicular first)"]
+    G --> H["8. Record in double-line<br/>field book"]
+    H --> I["9. Compute check-line<br/>errors"]
+    I --> J["10. Plot to scale<br/>(parallel ruler method)"]
+    J --> K{"Closing error<br/>within tolerance?"}
+    K -- "No" --> F
+    K -- "Yes" --> L["11. Finish plan,<br/>add legend & RF"]

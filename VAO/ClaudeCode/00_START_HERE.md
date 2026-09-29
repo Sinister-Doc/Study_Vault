@@ -20,7 +20,7 @@ priority: critical
 3. **Follow the plan** in [[01_Study_Plan]] — day-by-day schedule with checkboxes. Mark tasks done as you go.
 4. **Study subject notes** in [[03_Notes/01_Kannada_Grammar|03_Notes/]] (use the "60-second revision" box at the bottom of each).
 5. **Drill practice questions** in [[05_Resources/pyq_analysis]].
-6. **Run timed mock tests** in [[06_Mock_Tests/README|06_Mock_Tests/]] — simulate exam conditions.
+6. **Run timed mock tests** in [[06_Mock_Tests/mock_test_notes|06_Mock_Tests/]] — simulate exam conditions.
 7. **Check the QA verdict** in [[07_Agent_Log/qa_report]] before relying on any link or claim.
 
 > [!tip] Quick decision tree
@@ -64,17 +64,23 @@ priority: critical
 
 | # | Resource | Link | Status |
 |---|---|---|---|
-| 01 | PYQ Analysis | [[05_Resources/pyq_analysis]] | Complete — 60 expected MCQs with answers |
-| 02 | YouTube Links | [[05_Resources/YouTube_Links]] | Gap — 0 verified URLs (web search empty this session) |
-| 03 | Resources | [[05_Resources/resources]] | Verified: kea.kar.nic.in, kpsc.kar.nic.in, karnataka.gov.in (unverified this session) |
+| 01 | PYQ Analysis | [[05_Resources/pyq_analysis]] | Complete — expected MCQs with answers |
+| 02 | **Official KEA question papers** | [[05_Resources/resources]] | ✅ **Live-verified 2026-09-30** — VAO 2024 Paper 1 & Paper 2 + same-pattern GK and Kannada/English/Computer papers |
+| 03 | YouTube Links | [[05_Resources/YouTube_Links]] | See status note in the file |
+| 04 | Resources & portals | [[05_Resources/resources]] | All URLs fetched and confirmed reachable on 2026-09-30 |
 
 ### Mock Tests (`06_Mock_Tests/`)
 
-| # | Mock Test | Status |
-|---|---|---|
-| 01 | Full-length mock (100 Q) | [[06_Mock_Tests/mock1.html]] | Build in progress — see `07_Agent_Log/qa_report` |
-| 02 | Full-length mock (100 Q) | [[06_Mock_Tests/mock2.html]] | Build in progress |
-| 03 | Full-length mock (100 Q) | [[06_Mock_Tests/mock3.html]] | Build in progress |
+| # | Mock Test | Covers | Status |
+|---|---|---|---|
+| 01 | [[06_Mock_Tests/mock1.html]] | Paper 1 — General Knowledge, 100 Q | ✅ Built |
+| 02 | [[06_Mock_Tests/mock2.html]] | Paper 2 — Kannada 35 + English 35 + Computer 30 | ✅ Built |
+| 03 | [[06_Mock_Tests/mock3.html]] | Mixed revision — GK 50 + Kannada 20 + English 15 + Computer 15 | ✅ Built |
+
+> [!tip] Start with the real papers, then the mocks
+> Download **VAO 2024 Paper 1 and Paper 2** from [[05_Resources/resources]] and sit them under time
+> first — they are the only real VAO questions available. Then use the three mocks here for timed
+> practice with instant scoring and explained answers. Build notes: [[06_Mock_Tests/mock_test_notes]].
 
 ### Agent Log & QA (`07_Agent_Log/`)
 
@@ -119,12 +125,17 @@ flowchart TD
 | Subject | Paper | Weightage | Priority |
 |---|---|---|---|
 | General Knowledge (History + Geography + Polity + Economy + Science + Admin) | Paper 1 | 100 Q / 100 marks | Focus first |
-| General Kannada | Paper 2 (ಎ) | 25–30 Q | High |
-| General English | Paper 2 (ಬಿ) | 20–25 Q | High |
-| Computer Knowledge | Paper 2 (ಸಿ) | 20–22 Q | High |
+| General Kannada | Paper 2 (ಎ) | 35 (derived) | High |
+| General English | Paper 2 (ಬಿ) | 35 (derived) | High |
+| Computer Knowledge | Paper 2 (ಸಿ) | 30 (derived) | High |
 | Mental Ability | — | derived/optional | Last |
 
-*Paper 1 and Paper 2 each: 100 Q / 100 marks / 120 min / 0.25 negative / 35% minimum. Exam 04.10.2026.*
+*Paper 1 and Paper 2 each: 100 Q / 100 marks / 120 min / **0.25 deducted per wrong answer and 0.25 if no circle is shaded** / 35% minimum per paper. Exam **04.10.2026**.*
+
+> [!warning] The Paper 2 sub-split is derived, not published
+> The official notification gives Paper 2 as three subjects totalling 100 questions / 100 marks / 2
+> hours, **without** a subject-wise split. The 35/35/30 above is the standard Karnataka Government
+> "Communication" paper weighting, used here as a study guide. See [[02_Syllabus_and_Pattern]].
 
 ---
 

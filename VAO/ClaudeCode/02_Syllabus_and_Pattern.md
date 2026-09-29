@@ -49,12 +49,39 @@ This document defines the structure your entire study kit follows. All notes, mo
 
 ## Paper 2 — Specific Paper (ನಿರ್ದಿಷ್ಟ ಪತ್ರಿಕೆ): 100 Q / 100 marks
 
-| Section | Subject | Question Count (verified) |
+**What the notification actually says** (read from the rendered official page `07_Agent_Log/_pdf_pages/VAO_p06.png`, re-checked 2026-09-30):
+
+| Section | Subject | Total Questions | Total Marks | Duration |
+|---|---|---|---|---|
+| (ಎ) | General Kannada (ಸಾಮಾನ್ಯ ಕನ್ನಡ) | | | |
+| (ಬಿ) | General English (ಸಾಮಾನ್ಯ ಇಂಗ್ಲೀಷ್) | 100 | 100 | 2 ಗಂಟೆ (2 hours) |
+| (ಸಿ) | Computer Knowledge (ಕಂಪ್ಯೂಟರ್ ಜ್ಞಾನ) | | | |
+
+> [!warning] The notification does **not** publish a sub-split
+> The official table gives one row for the whole of Paper 2: three subjects, **100 questions, 100
+> marks, 2 hours**. It does **not** state how many questions or marks each of the three subjects
+> carries. Any figure you see quoted for the sub-split is derived, not published in this
+> notification.
+
+**The working assumption used throughout this kit** (mocks, study plan, priority table):
+
+| Section | Subject | Marks / Questions |
 |---|---|---|
-| (ಎ) | General Kannada (ಸಾಮಾನ್ಯ ಕನ್ನಡ) | 25–30 questions |
-| (ಬಿ) | General English (ಸಾಮಾನ್ಯ ಇಂಗ್ಲೀಷ್) | 20–25 questions |
-| (ಸಿ) | Computer Knowledge (ಕಂಪ್ಯೂಟರ್ ಜ್ಞಾನ) | 20–22 questions |
-| **Total** | **3 sections** | **100 questions** |
+| (ಎ) | General Kannada (ಸಾಮಾನ್ಯ ಕನ್ನಡ) | 35 |
+| (ಬಿ) | General English (ಸಾಮಾನ್ಯ ಇಂಗ್ಲೀಷ್) | 35 |
+| (ಸಿ) | Computer Knowledge (ಕಂಪ್ಯೂಟರ್ ಜ್ಞಾನ) | 30 |
+| **Total** | **3 sections** | **100** |
+
+> [!tip] Where 35 / 35 / 30 comes from
+> It is the mark allocation for the "Communication" Paper 2 used across Karnataka Government
+> recruitment — the same 35 General Kannada + 35 General English + 30 Computer Knowledge split
+> appears in KPSC notifications and syllabi for the same paper. It is a **derived allocation, not a
+> published one** for this notification. Treat it as a study-weighting guide. If the actual paper
+> turns out to weight the three subjects differently, the split costs you nothing except study time
+> — the total is 100 questions either way.
+>
+> The practical consequence for study time: **Computer Knowledge and English matter more than most
+> candidates assume.** Do not skip them.
 
 ### GK Sub-topics (each gets its own note section)
 

@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mock Test 3 &mdash; KEA Karnataka VAO 2026</title>
+<style>
+:root{
+  --bg:#0f1720; --panel:#16202b; --panel2:#1d2937; --line:#2b3a4b;
+  --txt:#e6eef7; --muted:#93a4b8; --accent:#3b82f6; --accent2:#2563eb;
+  --green:#22c55e; --red:#ef4444; --amber:#f59e0b; --violet:#8b5cf6; --grey:#64748b;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--txt);
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;font-size:15px;line-height:1.5}
+button{font:inherit;cursor:pointer}
+.hidden{display:none !important}
+
+/* Welcome */
+#welcome{max-width:760px;margin:6vh auto;background:var(--panel);border:1px solid var(--line);
+  border-radius:14px;padding:32px 34px;box-shadow:0 20px 50px rgba(0,0,0,.4)}
+#welcome h1{margin:0 0 6px;font-size:24px}
+#welcome .sub{color:var(--muted);margin-bottom:22px}
+.specs{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0 24px}
+.spec{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:14px}
+.spec .k{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+.spec .v{font-size:20px;font-weight:700;margin-top:4px}
+.neg{color:var(--amber)}
+.sec-table{width:100%;border-collapse:collapse;margin:8px 0 22px}
+.sec-table th,.sec-table td{border:1px solid var(--line);padding:8px 10px;text-align:left;font-size:14px}
+.sec-table th{background:var(--panel2);color:var(--muted);font-weight:600}
+.btn{background:var(--accent);color:#fff;border:0;border-radius:9px;padding:12px 22px;font-weight:600}
+.btn:hover{background:var(--accent2)}
+.btn.ghost{background:transparent;border:1px solid var(--line);color:var(--txt)}
+.btn.ghost:hover{background:var(--panel2)}
+.note{color:var(--muted);font-size:13px;margin-top:14px}
+
+/* Shell */
+#shell{display:none;min-height:100vh;flex-direction:column}
+#shell.on{display:flex}
+header{position:sticky;top:0;z-index:20;background:var(--panel);border-bottom:1px solid var(--line);
+  padding:10px 16px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.brand{font-weight:700}
+.brand small{display:block;font-weight:400;color:var(--muted);font-size:12px}
+#timer{margin-left:auto;font-variant-numeric:tabular-nums;font-size:22px;font-weight:700;
+  background:var(--panel2);border:1px solid var(--line);border-radius:9px;padding:6px 14px}
+#timer.warn{color:#fff;background:#b91c1c;border-color:#b91c1c}
+main{flex:1;display:flex;gap:16px;padding:16px;align-items:flex-start;flex-wrap:wrap}
+.qcol{flex:1 1 560px;min-width:320px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px}
+.side{flex:0 0 300px;display:flex;flex-direction:column;gap:14px;min-width:260px}
+
+/* Tabs */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.tab{background:var(--panel2);border:1px solid var(--line);color:var(--muted);border-radius:8px;
+  padding:7px 13px;font-size:13px}
+.tab.active{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600}
+
+/* Progress */
+.bar{height:8px;background:var(--panel2);border-radius:99px;overflow:hidden;border:1px solid var(--line)}
+.bar > i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--green));transition:width .25s}
+.pmeta{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-top:6px}
+
+/* Question */
+.qhead{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap}
+.qno{font-size:13px;color:var(--muted)}
+.tag{font-size:11px;border-radius:99px;padding:2px 9px;border:1px solid var(--line);color:var(--muted)}
+.tag.expected{background:rgba(59,130,246,.15);border-color:#2f5ea8;color:#9ec2ff}
+.tag.pyq{background:rgba(139,92,246,.15);border-color:#6d4bb0;color:#c4b0ff}
+.qtext{font-size:17px;font-weight:600;margin:8px 0 16px}
+.opt{display:flex;gap:11px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;
+  padding:11px 13px;margin-bottom:9px;background:var(--panel2);cursor:pointer}
+.opt:hover{border-color:var(--accent)}
+.opt.sel{border-color:var(--accent);background:rgba(59,130,246,.12)}
+.opt .k{flex:0 0 24px;height:24px;border-radius:6px;background:var(--bg);border:1px solid var(--line);
+  display:grid;place-items:center;font-size:12px;font-weight:700}
+.opt.sel .k{background:var(--accent);border-color:var(--accent);color:#fff}
+.qfoot{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:16px;flex-wrap:wrap}
+.review-lbl{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted)}
+.nav-btns{display:flex;gap:8px;flex-wrap:wrap}
+
+/* Palette */
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px}
+.card h3{margin:0 0 10px;font-size:14px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+.pal{display:grid;grid-template-columns:repeat(auto-fill,minmax(38px,1fr));gap:7px;max-height:290px;overflow:auto}
+.pal button{border:1px solid var(--line);border-radius:7px;padding:7px 0;font-size:12px;font-weight:600;
+  background:var(--panel2);color:var(--txt)}
+.pal button.cur{outline:2px solid var(--accent);outline-offset:1px}
+.pal button.not-visited{background:var(--panel2);color:var(--muted)}
+.pal button.unanswered{background:rgba(239,68,68,.22);border-color:#9b3b3b;color:#ffc9c9}
+.pal button.attempted{background:rgba(34,197,94,.22);border-color:#3c8a5a;color:#c6f3d5}
+.pal button.marked{background:rgba(139,92,246,.25);border-color:#6d4bb0;color:#d9ccff}
+.legend{display:grid;gap:7px;font-size:13px}
+.legend div{display:flex;align-items:center;gap:9px}
+.sw{width:16px;height:16px;border-radius:5px;border:1px solid var(--line);display:inline-block}
+.sumline{display:flex;justify-content:space-between;font-size:13px;margin:5px 0;color:var(--muted)}
+.sumline b{color:var(--txt)}
+
+/* Result */
+#result{max-width:900px;margin:0 auto;padding:22px;width:100%}
+.big{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:26px;text-align:center;margin-bottom:18px}
+.big .score{font-size:52px;font-weight:800;line-height:1}
+.big .of{color:var(--muted);font-size:16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-bottom:18px}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:14px;text-align:center}
+.stat .v{font-size:24px;font-weight:700}
+.stat .k{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+table.brk{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);
+  border-radius:11px;overflow:hidden;margin-bottom:18px}
+table.brk th,table.brk td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;font-size:14px}
+table.brk th{background:var(--panel2);color:var(--muted);font-size:12px;text-transform:uppercase}
+tbody tr:last-child td{border-bottom:0}
+.pos{color:var(--green)}.negv{color:var(--red)}.wr{color:var(--amber)}
+
+/* Review */
+.rev{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px;margin-bottom:12px}
+.rev .top{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:8px}
+.rev .qt{font-weight:600;font-size:16px;margin-bottom:10px}
+.rev .o{border:1px solid var(--line);border-radius:8px;padding:9px 12px;margin-bottom:7px;font-size:14px}
+.rev .o.correct{border-color:var(--green);background:rgba(34,197,94,.1)}
+.rev .o.wrong{border-color:var(--red);background:rgba(239,68,68,.1)}
+.rev .exp{font-size:13px;color:var(--muted);border-left:3px solid var(--accent);padding-left:11px;margin-top:10px}
+.pill{font-size:11px;padding:2px 9px;border-radius:99px;font-weight:700}
+.pill.ok{background:rgba(34,197,94,.18);color:#9ff0bd}
+.pill.no{background:rgba(239,68,68,.18);color:#ffb4b4}
+.pill.sk{background:rgba(245,158,11,.18);color:#ffd89b}
+.actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:20px 0}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.65);display:grid;place-items:center;z-index:50;padding:18px}
+.modal .box{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:24px;max-width:460px;width:100%}
+.modal h3{margin:0 0 10px}
+.modal p{color:var(--muted);margin:0 0 18px}
+@media print{header,.side,.actions,.tabs{display:none}body{background:#fff;color:#000}}
+</style>
+</head>
+<body>
+
+<!-- ============ WELCOME ============ -->
+<section id="welcome">
+  <h1>Mock Test 3 — Mixed Revision Paper</h1>
+  <div class="sub">KEA Karnataka VAO 2026 &middot; Mixed revision paper — GK 50 + Kannada 20 + English 15 + Computer 15 &middot; (offline, self-contained)</div>
+
+  <div class="specs">
+    <div class="spec"><div class="k">Questions</div><div class="v">100 MCQs</div></div>
+    <div class="spec"><div class="k">Total Marks</div><div class="v">100</div></div>
+    <div class="spec"><div class="k">Duration</div><div class="v">120 minutes</div></div>
+    <div class="spec"><div class="k">Negative Marking</div><div class="v neg">0.25 / wrong</div></div>
+  </div>
+
+  <table class="sec-table">
+    <thead><tr><th>Section</th><th>Questions</th><th>Marks</th></tr></thead>
+    <tbody>
+      <tr><td>General Knowledge (revision set)</td><td>50</td><td>50</td></tr>
+      <tr><td>General Kannada (revision set)</td><td>20</td><td>20</td></tr>
+      <tr><td>General English (revision set)</td><td>15</td><td>15</td></tr>
+      <tr><td>Computer Knowledge (revision set)</td><td>15</td><td>15</td></tr>
+      <tr><td><b>Total</b></td><td><b>100</b></td><td><b>100</b></td></tr>
+    </tbody>
+  </table>
+
+  <button class="btn" id="startBtn">Start Test</button>
+  <div class="note">
+    Each question carries 1 mark. <b>0.25 mark is deducted for every wrong answer</b> and, on the real OMR sheet, a further 0.25 is deducted for a question left with no circle shaded at all &mdash; so always shade the 5th (not-answered) circle for anything you skip. This offline paper scores an unattempted question as 0 so it does not train blind guessing. The timer counts down from <b>120:00</b> and the paper auto-submits at <b>00:00:00</b>. Progress is saved in your browser, so you may reload without losing answers.
+  </div>
+</section>
+
+<!-- ============ EXAM SHELL ============ -->
+<section id="shell">
+  <header>
+    <div class="brand">Mock Test 3 &mdash; Mixed Revision<small>KEA Karnataka VAO 2026</small></div>
+    <div id="timer">120:00:00</div>
+  </header>
+
+  <main>
+    <div class="qcol">
+      <div class="tabs" id="tabs"></div>
+      <div class="bar"><i id="barFill"></i></div>
+      <div class="pmeta"><span id="barLbl">Attempted 0 / 100</span><span id="barPct">0%</span></div>
+      <div id="qbox" style="margin-top:18px"></div>
+    </div>
+
+    <aside class="side">
+      <div class="card">
+        <h3>Question Palette</h3>
+        <div class="pal" id="palette"></div>
+      </div>
+      <div class="card">
+        <h3>Legend</h3>
+        <div class="legend">
+          <div><span class="sw" style="background:var(--panel2);border-color:var(--line)"></span> Not visited</div>
+          <div><span class="sw" style="background:rgba(239,68,68,.35);border-color:#9b3b3b"></span> Not answered</div>
+          <div><span class="sw" style="background:rgba(34,197,94,.35);border-color:#3c8a5a"></span> Attempted</div>
+          <div><span class="sw" style="background:rgba(139,92,246,.4);border-color:#6d4bb0"></span> Marked for review</div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Progress</h3>
+        <div class="sumline"><span>Answered</span><b id="sAns">0</b></div>
+        <div class="sumline"><span>Marked</span><b id="sMark">0</b></div>
+        <div class="sumline"><span>Not answered</span><b id="sUn">100</b></div>
+        <button class="btn" id="submitBtn" style="width:100%;margin-top:12px">Submit Test</button>
+      </div>
+    </aside>
+  </main>
+</section>
+
+<!-- ============ RESULT ============ -->
+<section id="result" class="hidden"></section>
+
+<script>
+/* ---------- DATA ---------- */
+const QUESTIONS = [{"q":"Kempegowda International Airport, Bengaluru, is named after:","opts":["Kempe Gowda I","Kempe Gowda II","Chamaraja Wodeyar","Kempe Gowda III"],"ans":1,"exp":"The airport is named for Kempe Gowda II, the founder-developer of Bengaluru.","label":"expected","id":1},{"q":"The revolt of 1857 in India is remembered as the:","opts":["First War of Independence","Sepoy Mutiny only","Indian Rebellion of 1947","Civil Disobedience"],"ans":0,"exp":"V. D. Savarkar used the phrase 'Indian War of Independence' for the 1857 revolt.","label":"expected","id":2},{"q":"The Jallianwala Bagh massacre occurred on:","opts":["13 April 1919","8 August 1942","15 August 1947","2 October 1905"],"ans":0,"exp":"13 April 1919, Baisakhi day, under General Dyer's orders in Amritsar.","label":"expected","id":3},{"q":"The Quit India movement was launched on:","opts":["8 August 1942","15 August 1947","26 January 1930","30 January 1948"],"ans":0,"exp":"8 August 1942, following the arrest of Congress leaders at the Aga Khan Palace.","label":"expected","id":4},{"q":"Rabindranath Tagore received the Nobel Prize in Literature in:","opts":["1913","1915","1921","1930"],"ans":0,"exp":"He won in 1913 for 'Gitanjali', his first English collection of poems.","label":"expected","id":5},{"q":"The Rashtrakuta ruler Krishna I is also known as:","opts":["Krishna I","Krishnaraya","Govinda II","Dhruva"],"ans":0,"exp":"Krishna I (c. 756-773 CE) is the patron of the Kailasa temple at Ellora.","label":"expected","id":6},{"q":"Which Chalukya ruler is famed for the Hoysalapura and Badami Chalukya temples?","opts":["Vikramaditya VI","Pulakeshin II","Jayasimha II","Mangalesha"],"ans":1,"exp":"Pulakeshin II is the best-known Badami Chalukya and the subject of Aihole inscription.","label":"expected","id":7},{"q":"The Vijayanagara Empire was finally defeated by the combined forces of the Deccan Sultanates in:","opts":["1520","1565","1590","1610"],"ans":1,"exp":"The Battle of Talikota (1565) ended the empire; Hampi was subsequently sacked.","label":"expected","id":8},{"q":"Bidar, which gave its name to the Bahmani kingdom, is in which Karnataka district now?","opts":["Bidar","Kalaburagi","Gulbarga","Koppal"],"ans":0,"exp":"Bidar is its own district in northern Karnataka (Kalyana-Karnataka region).","label":"expected","id":9},{"q":"Which river is also called the ' lifeline of the Deccan'?","opts":["Krishna","Godavari","Kaveri","Tungabhadra"],"ans":0,"exp":"The Krishna is often called the lifeline of the Deccan; it is a major Krishna-Godavari basin river.","label":"expected","id":10},{"q":"The Sharavathi river basin in Karnataka is linked with which hydroelectric project?","opts":["Sharavathi project","Sharavathi-Balangi","Tungabhadra project","Hemavati project"],"ans":0,"exp":"The Sharavathi project (Jog falls region) is a major Karnataka hydro scheme.","label":"expected","id":11},{"q":"Hampi village, near the ruins of Vijayanagara, is in which district?","opts":["Ballari","Vijayanagara","Koppal","Raichur"],"ans":1,"exp":"Hampi is in Vijayanagara district; the ruins spread into neighbouring Ballari.","label":"expected","id":12},{"q":"Bhadra and Tunga are the two rivers that meet near:","opts":["Bhadra reservoir","Bhadra river confluence","Honnavar","Mangaluru"],"ans":0,"exp":"The Tunga joins the Bhadra at the Bhadra dam region in the Chikkamagaluru-Shivamogga belt.","label":"expected","id":13},{"q":"Which Karnataka city is called the 'Silicon Valley of India'?","opts":["Bengaluru","Mysore","Mangaluru","Hubballi"],"ans":0,"exp":"Bengaluru's IT corridor earns it that sobriquet.","label":"expected","id":14},{"q":"The Nyamgiri hills, the site of an earlier proposed mining project, are in:","opts":["Kolar","Chikkaballapur","Mandya","Hassan"],"ans":1,"exp":"The Nyamgiri hills in Chikkaballapur district drew national attention over the proposed quarry.","label":"expected","id":15},{"q":"The Gram Sabha consists of:","opts":["All registered voters in a village","Elected members of the Gram Panchayat only","Nominated members only","The Gram Panchayat chairperson"],"ans":0,"exp":"Gram Sabha comprises all persons registered in the electoral rolls relating to a village within the Panchayat area.","label":"expected","id":16},{"q":"The State Election Commission in a state is constituted under:","opts":["Article 243K","Article 324","Article 280","Article 315"],"ans":0,"exp":"Article 243K provides for a State Election Commission, mirroring the ECI for local body polls.","label":"expected","id":17},{"q":"Separation of the judiciary from the executive in India followed the:","opts":["Government of India Act 1935","Indian Independence Act 1947","Constitution Act 1950","Chandigarh Accord"],"ans":0,"exp":"The Government of India Act 1935 provided for a separate judiciary at the provincial level.","label":"expected","id":18},{"q":"Which schedule of the Constitution lists the recognized languages?","opts":["Eighth Schedule","Ninth Schedule","Seventh Schedule","Eleventh Schedule"],"ans":0,"exp":"The Eighth Schedule lists the languages; the Ninth lists the laws protected from judicial review.","label":"expected","id":19},{"q":"The Ninth Schedule of the Constitution contains:","opts":["Recognized languages","Laws protected from judicial review","Rajya Sabha seats","Election symbols"],"ans":1,"exp":"The Ninth Schedule lists laws shielded from judicial review (42nd Amendment onward).","label":"expected","id":20},{"q":"The Indian Parliament consists of:","opts":["Lok Sabha and Rajya Sabha","Lok Sabha only","Rajya Sabha and Legislative Councils","Lok Sabha, Rajya Sabha and Planning Commission"],"ans":0,"exp":"Parliament = Lok Sabha + Rajya Sabha (and briefly, the Constituent Assembly).","label":"expected","id":21},{"q":"Karnataka's 'Mathru Jyothi' scheme is related to:","opts":["Solar lanterns to rural households lacking grid power","Street lighting","Industrial power","Solar farms"],"ans":0,"exp":"Mathru Jyothi supplies solar lanterns to households not yet electrified.","label":"expected","id":22},{"q":"Which of the following is a source of fiscal deficit?","opts":["Borrowing by the government","Tax revenue","Foreign direct investment in private sector","Cutting subsidies"],"ans":0,"exp":"Fiscal deficit = total expenditure minus total receipts excluding borrowings; borrowings create it.","label":"expected","id":23},{"q":"Gross Domestic Product measures:","opts":["Only agricultural output","The market value of all final goods and services produced in a year within the country","Total public expenditure","Net exports only"],"ans":1,"exp":"GDP is the value of final goods and services produced within a country's borders in a year.","label":"expected","id":24},{"q":"Which of these bodies formulates monetary policy in India?","opts":["The Government","The Reserve Bank of India's Monetary Policy Committee","SEBI","NITI Aayog"],"ans":1,"exp":"The MPC of the RBI formulates and implements monetary policy; the Governor has a casting vote in ties.","label":"expected","id":25},{"q":"'Operation Flood' was launched to:","opts":["Increase milk production","Restore India's dairy and milk buffer stocks","Irrigate crops","Store grain"],"ans":1,"exp":"Operation Flood (1970-84) created the world's largest milk pool through dairy cooperatives.","label":"expected","id":26},{"q":"Which scheme provides a pension to rural and urban workers in Karnataka?","opts":["PM-SYM","Atal Pension Yojana","MGNREGA","Pradhan Mantri Fasal Bima"],"ans":1,"exp":"Atal Pension Yojana (renamed PM-SYM in 2024) delivers old-age pensions to workers.","label":"expected","id":27},{"q":"Karnataka's 'Indira Gandhi Drinking Water Scheme' is under which programme?","opts":["Swachh Bharat","JJM (Jal Jeevan Mission)","PM-AJAY","DAY-NRLM"],"ans":1,"exp":"The scheme provides tap water connections under the Jal Jeevan Mission umbrella.","label":"expected","id":28},{"q":"Standalone India ranking indices include:","opts":["Only the Human Development Index","Ease of Doing Business (discontinued in 2020), GDP and others","Only the Poverty Index","Only the Literacy Index"],"ans":1,"exp":"India publishes GDP, HDI, Multidimensional Poverty, Ease of Doing Business (discontinued) and more.","label":"expected","id":29},{"q":"Photosynthesis in plants takes place in the:","opts":["Mitochondrion","Chloroplast","Nucleus","Vacuole"],"ans":1,"exp":"Chloroplasts contain chlorophyll, the site of photosynthesis.","label":"expected","id":30},{"q":"Which is the hardest natural substance?","opts":["Gold","Iron","Diamond","Quartz"],"ans":2,"exp":"Diamond tops the Mohs hardness scale at 10.","label":"expected","id":31},{"q":"Sound waves require a medium to travel. This shows that sound is:","opts":["A transverse wave","A mechanical wave","An electromagnetic wave","A longitudinal electromagnetic wave"],"ans":1,"exp":"Sound is a mechanical (mechanical longitudinal) wave needing particles to travel through.","label":"expected","id":32},{"q":"Which of these is a greenhouse gas?","opts":["Oxygen","Methane","Nitrogen","Argon"],"ans":1,"exp":"Methane is a potent greenhouse gas; so are CO2, nitrous oxide and water vapour.","label":"expected","id":33},{"q":"Water boils at sea level at:","opts":["90°C","100°C","110°C","80°C"],"ans":1,"exp":"At standard atmospheric pressure water boils at 100°C.","label":"expected","id":34},{"q":"The SI unit of force is:","opts":["Joule","Newton","Watt","Pascal"],"ans":1,"exp":"The newton (N) is the SI unit of force.","label":"expected","id":35},{"q":"Which metal is liquid at room temperature?","opts":["Lead","Mercury","Aluminium","Zinc"],"ans":1,"exp":"Mercury is liquid at ordinary room temperature.","label":"expected","id":36},{"q":"Which part of the plant absorbs water and minerals from the soil?","opts":["Stem","Roots (root hairs)","Leaves","Flowers"],"ans":1,"exp":"Root hairs in the root zone absorb water and mineral nutrients.","label":"expected","id":37},{"q":"Green plants release which gas during photosynthesis?","opts":["Carbon dioxide","Oxygen","Nitrogen","Methane"],"ans":1,"exp":"Photosynthesis releases oxygen as a by-product.","label":"expected","id":38},{"q":"The Indian scientist who won the Nobel Prize in Physics in 2023 was:","opts":["C. V. Raman","Satyendra Nath Bose","Ashoke Sen","R. Rangarajan"],"ans":0,"exp":"C. V. Raman won the Nobel Prize in Physics in 1930, the only Indian Physics laureate to date.","label":"expected","id":39},{"q":"Karnataka's Sarvajna Abhyaya is a:","opts":["School literacy programme","Land digitisation programme","Urban housing programme","Fisheries programme"],"ans":0,"exp":"Sarvajna Abhyaya is the Statewide universal school literacy programme.","label":"expected","id":40},{"q":"The Battle of Talikota (1565) was fought between Vijayanagara and:","opts":["The Deccan Sultanates","The Mughals","The Marathas","The Portuguese"],"ans":0,"exp":"A combined Deccan Sultanate force defeated Vijayanagara at Talikota (Rakshasa-Tangadi).","label":"PYQ-style","id":41},{"q":"The Chalukyas of Kalyani are also known as the:","opts":["Badami Chalukyas","Western Chalukyas","Eastern Chalukyas","Vengi Chalukyas"],"ans":1,"exp":"Chalukyas of Kalyani (Basavakalyana) = Western Chalukyas; Badami = Chalukyas of Vatapi.","label":"expected","id":42},{"q":"Which is the highest peak in Karnataka?","opts":["Kudremukh","Mullayanagiri","Baba Budangiri","Pushpagiri"],"ans":1,"exp":"Mullayanagiri (Chikkamagaluru district, Baba Budangiri range) is the highest peak in Karnataka, about 1,930 m.","label":"PYQ-style","id":43},{"q":"The Krishna basin drains approximately what share of Karnataka's area?","opts":["About 25%","About 40%","About 60%","About 80%"],"ans":2,"exp":"The Krishna and its tributaries drain roughly 60% of the state — the largest basin in Karnataka.","label":"expected","id":44},{"q":"The 74th Constitutional Amendment deals with:","opts":["Panchayati Raj","Municipalities and urban local bodies","Reservation in education","Anti-defection"],"ans":1,"exp":"73rd = Panchayati Raj (rural); 74th = Municipalities (urban).","label":"PYQ-style","id":45},{"q":"How many schedules does the Constitution of India have at present?","opts":["8","10","12","14"],"ans":2,"exp":"There are 12 schedules. The 9th and 10th were added by amendments.","label":"expected","id":46},{"q":"The term of a Karnataka Gram Panchayat is:","opts":["3 years","4 years","5 years","6 years"],"ans":2,"exp":"All three tiers of Panchayati Raj bodies have a five-year term under the 73rd Amendment.","label":"PYQ-style","id":47},{"q":"NITI Aayog replaced which body?","opts":["Finance Commission","Planning Commission","Election Commission","UGC"],"ans":1,"exp":"NITI Aayog (1 January 2015) replaced the Planning Commission.","label":"PYQ-style","id":48},{"q":"Which gas is most abundant in the Earth's atmosphere?","opts":["Oxygen","Carbon dioxide","Nitrogen","Argon"],"ans":2,"exp":"Nitrogen is about 78% of the atmosphere by volume; oxygen about 21%.","label":"expected","id":49},{"q":"Karnataka's 'Gruha Lakshmi' scheme provides financial assistance to:","opts":["School children","Women heads of households","Farmers","Auto drivers"],"ans":1,"exp":"Gruha Lakshmi gives a monthly payment to the woman head of an eligible household.","label":"PYQ-style","id":50},{"q":"'ಹೆಣ್ಣು' ಎಂಬ ಪದದ ಸರಿ ವಿಭಕ್ತಿ ರೂಪ:","opts":["ಹೆಣ್ಣನಿಂದ","ಹೆಣ್ಣಿಗೆ","ಹೆಣ್ಣನ","ಹೆಣ್ಣುವ"],"ans":1,"exp":"ದ್ವಿತೀಯಾ ವಿಭಕ್ತಿ (ಗೆ ಸರ್ವನಾಮ) — ಹೆಣ್ಣಿಗೆ.","label":"expected","id":51},{"q":"'ಕ್ಕೆ / ಗೆ / ಇಗೆ' ಪ್ರತ್ಯಯಗಳು ಯಾವ ವಿಭಕ್ತಿಗೆ ಸೇರುತ್ತವೆ?","opts":["ಪ್ರಥಮಾ","ದ್ವಿತೀಯಾ","ತೃತೀಯಾ","ಚತುರ್ಥಿ"],"ans":3,"exp":"ಚತುರ್ಥೀ (ಸಂಪ್ರದಾನ) ವಿಭಕ್ತಿಯ ಪ್ರತ್ಯಯಗಳು ಕಕ್ಕೆ / ಗೆ / ಇಗೆ.","label":"expected","id":52},{"q":"ಸರಿಯಾಗಿ ಬರೆಯಲಾದ ಪದ ಯಾವುದು?","opts":["ಅಧ್ಯಾಪಕ","ಅದ್ಯಾಪಕ","ಅಧ್ಯಾಪಕ್ಕ","ಅಧ್ಯಾಪಕಾ"],"ans":0,"exp":"'ಅಧ್ಯಾಪಕ' ಸರಿ ರೂಪ; ಉಳಿದವು ತಪ್ಪು ಕಾಗುಣಿತ/ಹೆಚ್ಚುವರಿ ಅಕ್ಷರ ರೂಪಗಳು.","label":"expected","id":53},{"q":"'ಕ್ಷ' ಎಂಬ ಪದ ಯಾವ ಅಕ್ಷರಗಳ ಸಂಯೋಗ?","opts":["ಕ + ಷ","ಕ್ + ಷ","ಕ + ಶ","ಕ್ + ಶ"],"ans":1,"exp":"ಕ್ + ಷ = ಕ್ಷ — ವಿರಾಮಕ್ಷರದ ಸಂಯೋಗ.","label":"PYQ-style","id":54},{"q":"'ಜ್ಞ' ಎಂಬ ಪದ ಯಾವ ಅಕ್ಷರಗಳ ಸಂಯೋಗ?","opts":["ಜ + ಞ","ಜ್ + ಞ","ಜ + ಞ್","ಜ್ + ಞ್"],"ans":1,"exp":"ಜ್ + ಞ = ಜ್ಞ — ಉತ್ತರ ಇದ್ದಾಗ ಮುಂದಿನ ಅಕ್ಷರಕ್ಕೆ ವಿರಾಮಕ್ಷರ.","label":"expected","id":55},{"q":"'ಟ್ಟ' ಎಂಬ ಪದದಲ್ಲಿ ಎರಡೂ ಟ ಗಳಿಗೆ ಏನಾಗುತ್ತದೆ?","opts":["ವಿರಾಮಕ್ಷರ","ಅಕ್ಷರಕ್ಷರ","ಒತ್ತಕ್ಷರ","ಯಣಕ್ಷರ"],"ans":0,"exp":"ಉತ್ತರ ಇದ್ದಾಗ ಮುಂದಿನ ಅಕ್ಷರಕ್ಕೆ ವಿರಾಮಕ್ಷರ ಹಾಕಬೇಕು.","label":"expected","id":56},{"q":"'ಮರ + ಆಟ' — ಸಂಧಿ ಮಾಡಿದ ಸರಿ ರೂಪ ಯಾವುದು?","opts":["ಮರಾಟ","ಮರಟ","ಮರಾಟಾ","ಮರಯಾಟ"],"ans":0,"exp":"ಅ + ಆ = ಆ ಆಗುವುದು ಸವರ್ಣದೀರ್ಘ ಸಂಧಿ; ಆದ್ದರಿಂದ 'ಮರಾಟ'.","label":"expected","id":57},{"q":"'ದೇವ + ಆಲಯ = ದೇವಾಲಯ' — ಇದು ಯಾವ ಸಂಧಿ?","opts":["ಸವರ್ಣದೀರ್ಘ ಸಂಧಿ","ಗುಣ ಸಂಧಿ","ಯಣ್ ಸಂಧಿ","ವೃದ್ಧಿ ಸಂಧಿ"],"ans":0,"exp":"ಅ + ಆ = ಆ ಆದ್ದರಿಂದ ಸವರ್ಣದೀರ್ಘ ಸಂಧಿ.","label":"PYQ-style","id":58},{"q":"'ತಾಯಿತಂದೆ' ಎಂಬ ಪದ ಯಾವ ಸಮಾಸ?","opts":["ದ್ವಂದ್ವ ಸಮಾಸ","ಬಹುವ್ರೀಹಿ ಸಮಾಸ","ತತ್ಪುರುಷ ಸಮಾಸ","ಕರ್ಮಧಾರಯ ಸಮಾಸ"],"ans":0,"exp":"ಎರಡೂ ಪದಗಳಿಗೆ ಸಮಾನ ಪ್ರಾಧಾನ್ಯ ಇರುವುದರಿಂದ ದ್ವಂದ್ವ ಸಮಾಸ.","label":"PYQ-style","id":59},{"q":"'ನೀಲಕಮಲ' ಎಂಬ ಪದ ಯಾವ ಸಮಾಸ?","opts":["ಕರ್ಮಧಾರಯ ಸಮಾಸ","ದ್ವಂದ್ವ ಸಮಾಸ","ದ್ವಿಗು ಸಮಾಸ","ಅವ್ಯಯೀಭಾವ ಸಮಾಸ"],"ans":0,"exp":"ವಿಶೇಷಣ + ವಿಶೇಷ್ಯ ರೂಪ — ನೀಲವಾದ ಕಮಲ; ಇದು ಕರ್ಮಧಾರಯ ಸಮಾಸ.","label":"expected","id":60},{"q":"'ಹಸ್ತ' ಎಂಬ ತತ್ಸಮ ಪದದ ತದ್ಭವ ರೂಪ ಯಾವುದು?","opts":["ಕೈ","ಹಸ್ತಾ","ಹತ್ತಿ","ಅಸ್ತ"],"ans":0,"exp":"ಹಸ್ತ (ತತ್ಸಮ) → ಕೈ (ತದ್ಭವ).","label":"PYQ-style","id":61},{"q":"'ಆಶ್ಚರ್ಯ' ಎಂಬ ತತ್ಸಮ ಪದದ ತದ್ಭವ ರೂಪ ಯಾವುದು?","opts":["ಅಚ್ಚರಿ","ಆಶ್ಚರ್ಯೆ","ಅಸ್ಚರ್ಯ","ಆಚರಿ"],"ans":0,"exp":"ಆಶ್ಚರ್ಯ (ತತ್ಸಮ) → ಅಚ್ಚರಿ (ತದ್ಭವ).","label":"expected","id":62},{"q":"'ಗಂಗೆ' ಎಂಬ ಪದ ಯಾವ ಲಿಂಗ?","opts":["ಪುಲ್ಲಿಂಗ","ಸ್ತ್ರೀಲಿಂಗ","ನಪುಂಸಕಲಿಂಗ","ಉಭಯಲಿಂಗ"],"ans":1,"exp":"ನದಿ, ಹೆಣ್ಣು ಹೆಸರುಗಳು ಸ್ತ್ರೀಲಿಂಗ.","label":"PYQ-style","id":63},{"q":"'ಮಕ್ಕಳು' ಎಂಬ ಪದ ಯಾವ ವಚನ?","opts":["ಏಕವಚನ","ಬಹುವಚನ","ದ್ವಿವಚನ","ಸಮೂಹವಾಚಕ"],"ans":1,"exp":"'ಮಕ್ಕಳು' ಒಂದಕ್ಕಿಂತ ಹೆಚ್ಚು ಸಂಖ್ಯೆಯನ್ನು ಸೂಚಿಸುವುದರಿಂದ ಬಹುವಚನ.","label":"expected","id":64},{"q":"'ಓದುತ್ತಿದ್ದಾನೆ' ಎಂಬ ಕ್ರಿಯಾಪದ ಯಾವ ಕಾಲವನ್ನು ಸೂಚಿಸುತ್ತದೆ?","opts":["ಭೂತಕಾಲ","ವರ್ತಮಾನ ಕಾಲ","ಭವಿಷ್ಯತ್ತು ಕಾಲ","ಸಾಮಾನ್ಯ ಕಾಲ"],"ans":1,"exp":"ನಡೆಯುತ್ತಿರುವ ಕ್ರಿಯೆ — ವರ್ತಮಾನ ಕಾಲ.","label":"expected","id":65},{"q":"'ಅತಿ ಆಸೆ ಗತಿ ಕೇಡು' ಎಂಬ ಗಾದೆಯ ಸರಿ ಅರ್ಥ ಯಾವುದು?","opts":["ಅತಿಯಾದ ಆಸೆ ಅನರ್ಥಕ್ಕೆ ದಾರಿ","ಆಸೆ ಒಳ್ಳೆಯದು","ಆಸೆ ಬೇಡದಿರುವುದು ಪಾಪ","ಆಸೆ ಇದ್ದರೆ ಜಯ"],"ans":0,"exp":"ಅತಿಯಾದ ಆಸೆ ಅನರ್ಥಕ್ಕೆ ಕಾರಣ ಎಂಬುದು ಗಾದೆಯ ಅರ್ಥ.","label":"PYQ-style","id":66},{"q":"'ಸೂರ್ಯ' ಎಂಬ ಪದಕ್ಕೆ ಪರ್ಯಾಯ ಪದ ಯಾವುದು?","opts":["ಚಂದ್ರ","ಭಾಸ್ಕರ","ತಾರೆ","ಗ್ರಹ"],"ans":1,"exp":"ಸೂರ್ಯನ ಪರ್ಯಾಯ ಪದಗಳು: ಭಾಸ್ಕರ, ರವಿ, ಆದಿತ್ಯ, ದಿನಕರ.","label":"PYQ-style","id":67},{"q":"'ಜಯ' ಎಂಬ ಪದಕ್ಕೆ ವಿರುದ್ಧ ಪದ ಯಾವುದು?","opts":["ಸೋಲು","ಗೆಲುವು","ವಿಜಯ","ಯಶಸ್ಸು"],"ans":0,"exp":"ಜಯ ↔ ಸೋಲು (ಪರಾಜಯ).","label":"expected","id":68},{"q":"'ಬರಹಗಾರ' ಎಂಬ ಪದದಲ್ಲಿ ಬಳಸಿರುವ ಪ್ರತ್ಯಯ ಯಾವುದು?","opts":["ಗಾರ","ಬರಹ","ಅರ","ಹ"],"ans":0,"exp":"'ಬರಹ' ಎಂಬುದು ಪ್ರಕೃತಿ; 'ಗಾರ' ಎಂಬುದು ಪ್ರತ್ಯಯ.","label":"expected","id":69},{"q":"ಕೆಳಗಿನವುಗಳಲ್ಲಿ ಸರಿಯಾದ ಕಾಗುಣಿತದ ಪದ ಯಾವುದು?","opts":["ಪ್ರಧಾನ","ಪ್ರದಾನ","ಪ್ರಧಾನ್ನ","ಪ್ರಾದಾನ"],"ans":0,"exp":"'ಪ್ರಧಾನ' ಸರಿ ರೂಪ; ಉಳಿದವು ತಪ್ಪು ಕಾಗುಣಿತಗಳು.","label":"expected","id":70},{"q":"A person who cannot read or write is a:","opts":["Illiterate","Innocent","Ignorant","Incurable"],"ans":0,"exp":"'Illiterate' means unable to read and write.","label":"expected","id":71},{"q":"Government by the people, of the people, for the people is:","opts":["Oligarchy","Democracy","Monarchy","Aristocracy"],"ans":1,"exp":"Lincoln's definition of 'democracy'.","label":"PYQ-style","id":72},{"q":"One who studies the stars is an:","opts":["Astronomer","Astrologer","Geologist","Botanist"],"ans":0,"exp":"'Astronomer' studies celestial bodies scientifically.","label":"expected","id":73},{"q":"A word opposite in meaning to 'synonym' is:","opts":["Antonym","Acronym","Anagram","Epithet"],"ans":0,"exp":"'Antonym' is a word of opposite meaning.","label":"expected","id":74},{"q":"'To let the cat out of the bag' means:","opts":["To make a secret known","To buy something costly","To escape danger","To start a fight"],"ans":0,"exp":"The idiom means to reveal a secret inadvertently.","label":"expected","id":75},{"q":"'To burn the midnight oil' means:","opts":["To study late into the night","To waste fuel","To cook at night","To celebrate late"],"ans":0,"exp":"It means to work or study hard until late at night.","label":"expected","id":76},{"q":"'A blessing in disguise' means:","opts":["A hidden misfortune","A hidden benefit","An open threat","A rare gift"],"ans":1,"exp":"Something that seems bad at first but turns out to be good.","label":"expected","id":77},{"q":"'To beat about the bush' means:","opts":["To work hard","To avoid the main topic","To search thoroughly","To fight bravely"],"ans":1,"exp":"It means to talk around a subject without coming to the point.","label":"expected","id":78},{"q":"'To give a wide berth' means:","opts":["To move far away from someone or something","To give a gift","To steer wide","To berth a ship"],"ans":0,"exp":"It means to keep well clear of someone or something.","label":"expected","id":79},{"q":"Reading a passage and answering questions about it tests:","opts":["Vocabulary only","Comprehension","Grammar","Phonetics"],"ans":1,"exp":"Comprehension measures understanding of a given text.","label":"expected","id":80},{"q":"In a passage, the sentence that states the main idea is the:","opts":["Topic sentence","Last line","Longest line","Rhyming line"],"ans":0,"exp":"The topic sentence usually carries the central idea of a paragraph.","label":"expected","id":81},{"q":"A question asking what the author would agree with requires:","opts":["Literal reading","Inference","Recall","Vocabulary"],"ans":1,"exp":"Such questions test inferential comprehension, not literal recall.","label":"expected","id":82},{"q":"Which word is spelt correctly?","opts":["Accomodate","Accommodate","Acommodate","Accommadate"],"ans":1,"exp":"'Accommodate' has a double c and double m.","label":"expected","id":83},{"q":"Choose the correctly spelt word:","opts":["Seperate","Separate","Seperete","Separete"],"ans":1,"exp":"'Separate' takes -a- in the middle when used as a verb or adjective.","label":"expected","id":84},{"q":"Choose the correctly punctuated sentence:","opts":["\"Where are you going\" he asked.","\"Where are you going?\" he asked.","\"Where are you going? he asked.\"","Where are you going\" he asked."],"ans":1,"exp":"The question mark sits inside the quotation marks that end the question.","label":"expected","id":85},{"q":"Which of these is free to use software?","opts":["MS Office","OpenOffice","Windows OS","Photoshop"],"ans":1,"exp":"OpenOffice is open-source and free; the others are licensed products.","label":"expected","id":86},{"q":"What is 'open source' software?","opts":["Software sold at a low price","Software whose source code is publicly available","Software that runs only online","Software that is trial-only"],"ans":1,"exp":"Open-source software lets users inspect and modify the source code.","label":"expected","id":87},{"q":"Full form of 'LAN' is:","opts":["Large Area Network","Local Area Network","Long Access Network","Linked Area Network"],"ans":1,"exp":"LAN connects devices within a limited area such as one building.","label":"expected","id":88},{"q":"Full form of 'USB' is:","opts":["Universal Serial Bus","United System Bus","Universal System Bus","Unified Storage Bus"],"ans":0,"exp":"USB is the Universal Serial Bus interface standard.","label":"expected","id":89},{"q":"Full form of 'PDF' is:","opts":["Printed Document File","Portable Document Format","Public Document File","Printed Data File"],"ans":1,"exp":"PDF is the Portable Document Format.","label":"expected","id":90},{"q":"Full form of 'URL' is:","opts":["Uniform Resource Locator","Universal Reference Link","Uniform Reference Locator","Universal Resource Link"],"ans":0,"exp":"A URL is the web address of a resource.","label":"expected","id":91},{"q":"What is 'encryption' used for?","opts":["Speeding up a computer","Securing data by scrambling it","Printing","Compressing files"],"ans":1,"exp":"Encryption protects data so that only authorised users can read it.","label":"expected","id":92},{"q":"What is 'cache' in a computer?","opts":["A temporary storage for speed","A printer tray","A type of cable","A screen mode"],"ans":0,"exp":"A cache holds frequently used data to speed up access.","label":"expected","id":93},{"q":"Which file extension is associated with a spreadsheet?","opts":[".docx",".xlsx",".pptx",".mp3"],"ans":1,"exp":".xlsx is the Excel spreadsheet extension.","label":"expected","id":94},{"q":"Which file extension is associated with a word-processed document?","opts":[".docx",".xlsx",".pptx",".jpg"],"ans":0,"exp":".docx is the Word document extension.","label":"expected","id":95},{"q":"What is a 'pixel'?","opts":["The smallest element of a digital image","A type of cable","A processor unit","A sound file"],"ans":0,"exp":"A pixel is the smallest addressable unit of a raster image.","label":"expected","id":96},{"q":"What does 'GIF' format support that older formats did not?","opts":["Audio","Animation","Text","3D"],"ans":1,"exp":"GIF supports simple animation and transparency.","label":"expected","id":97},{"q":"Which of these is an input device used to capture a document image?","opts":["Scanner","Printer","Monitor","Speaker"],"ans":0,"exp":"A scanner digitises a physical document into an image file.","label":"expected","id":98},{"q":"What is 'bandwidth' in networking?","opts":["The width of the cable","The data capacity of a link","The number of users","The signal strength"],"ans":1,"exp":"Bandwidth is the maximum data a link can carry per unit time.","label":"expected","id":99},{"q":"What is 'VPN' used for?","opts":["Playing games","Creating a secure private network over the internet","Printing","Video editing"],"ans":1,"exp":"A VPN encrypts traffic to a private network.","label":"expected","id":100}];
+const TOTAL_SECONDS = 120 * 60;
+const NEG = 0.25;
+
+const SECTIONS = [
+  {key:"gk", name:"General Knowledge (revision set)"},
+  {key:"kannada", name:"General Kannada (revision set)"},
+  {key:"english", name:"General English (revision set)"},
+  {key:"computer", name:"Computer Knowledge (revision set)"}
+];
+const SECTION_BOUNDS = [0, 50, 70, 85, 100];
+QUESTIONS.forEach((q,i)=>{
+  for(let s=0;s<SECTIONS.length;s++){
+    if(i >= SECTION_BOUNDS[s] && i < SECTION_BOUNDS[s+1]){ q.section = SECTIONS[s].key; break; }
+  }
+});
+
+/* ---------- STATE ---------- */
+const KEY = "VAO mock3_state";
+const WELCOMED = "VAO mock3_welcomed";
+let state = load() || {answers:{}, marked:{}, visited:{}, cur:0, left:TOTAL_SECONDS, started:false, done:false};
+let tick = null;
+
+function load(){
+  try{
+    const raw = localStorage.getItem(KEY);
+    return raw ? JSON.parse(raw) : null;
+  }catch(e){ return null; }
+}
+function save(){
+  try{ localStorage.setItem(KEY, JSON.stringify(state)); }catch(e){}
+}
+function fmt(sec){
+  const h = Math.floor(sec/3600), m = Math.floor((sec%3600)/60), s = sec%60;
+  const p = n => String(n).padStart(2,"0");
+  return p(h)+":"+p(m)+":"+p(s);
+}
+
+/* ---------- WELCOME ---------- */
+const $ = id => document.getElementById(id);
+$("startBtn").onclick = () => {
+  state.started = true;
+  try{ localStorage.setItem(WELCOMED,"1"); }catch(e){}
+  enterExam();
+};
+if(state.started || state.left < TOTAL_SECONDS){
+  try{
+    if(localStorage.getItem(WELCOMED)==="1") enterExam();
+  }catch(e){}
+}
+
+function enterExam(){
+  $("welcome").classList.add("hidden");
+  $("shell").classList.add("on");
+  if(state.done){ showResult(); return; }
+  buildTabs();
+  render();
+  startTimer();
+}
+
+/* ---------- TABS ---------- */
+function buildTabs(){
+  const wrap = $("tabs");
+  wrap.innerHTML = "";
+  SECTIONS.forEach(sec=>{
+    const b = document.createElement("button");
+    b.className = "tab";
+    b.textContent = sec.name + " (" + QUESTIONS.filter(q=>q.section===sec.key).length + ")";
+    b.onclick = ()=>{
+      const idx = QUESTIONS.findIndex((q,i)=> q.section===sec.key && !isAnswered(q.id) && i>=first(sec.key));
+      const target = QUESTIONS.findIndex(q=> q.section===sec.key);
+      state.cur = (idx>=0 ? idx : target);
+      render();
+    };
+    wrap.appendChild(b);
+  });
+  const b = document.createElement("button");
+  b.className = "tab";
+  b.textContent = "All Questions (100)";
+  b.onclick = ()=>{ state.cur = 0; render(); };
+  wrap.appendChild(b);
+}
+function first(key){ return QUESTIONS.findIndex(q=>q.section===key); }
+function isAnswered(id){ return state.answers[id] !== undefined; }
+
+/* ---------- RENDER ---------- */
+function render(){
+  const q = QUESTIONS[state.cur];
+  state.visited[q.id] = true;
+  const box = $("qbox");
+  const opts = q.opts.map((o,i)=>{
+    const sel = state.answers[q.id]===i;
+    return '<div class="opt'+(sel?' sel':'')+'" data-i="'+i+'">'+
+      '<span class="k">'+String.fromCharCode(65+i)+'</span><span>'+esc(o)+'</span></div>';
+  }).join("");
+  const label = q.label === "PYQ-style" ? "PYQ-style" : "expected";
+  const cls = q.label === "PYQ-style" ? "pyq" : "expected";
+  box.innerHTML =
+    '<div class="qhead">'+
+      '<span class="qno">Question '+q.id+' of 100 &middot; '+sectionName(q.section)+'</span>'+
+      '<span class="tag '+cls+'">'+label+'</span>'+
+    '</div>'+
+    '<div class="qtext">'+esc(q.q)+'</div>'+
+    '<div id="opts">'+opts+'</div>'+
+    '<div class="qfoot">'+
+      '<label class="review-lbl"><input type="checkbox" id="markChk" '+(state.marked[q.id]?'checked':'')+'> Mark for review</label>'+
+      '<div class="nav-btns">'+
+        '<button class="btn ghost" id="prevBtn">Previous</button>'+
+        '<button class="btn ghost" id="clearBtn">Clear</button>'+
+        '<button class="btn" id="nextBtn">Save &amp; Next</button>'+
+      '</div>'+
+    '</div>';
+
+  box.querySelectorAll(".opt").forEach(el=>{
+    el.onclick = ()=>{
+      state.answers[q.id] = Number(el.dataset.i);
+      save(); render(); updateMeta(); palette();
+    };
+  });
+  $("markChk").onchange = e => {
+    if(e.target.checked) state.marked[q.id]=true; else delete state.marked[q.id];
+    save(); palette(); updateMeta();
+  };
+  $("prevBtn").onclick = ()=>{ state.cur = Math.max(0, state.cur-1); save(); render(); scrollTop(); };
+  $("nextBtn").onclick = ()=>{ state.cur = Math.min(QUESTIONS.length-1, state.cur+1); save(); render(); scrollTop(); palette(); };
+  $("clearBtn").onclick = ()=>{ delete state.answers[q.id]; save(); render(); updateMeta(); palette(); };
+
+  // highlight active tab
+  [...document.querySelectorAll(".tab")].forEach(t=>t.classList.remove("active"));
+  updateMeta();
+  palette();
+  scrollTop();
+}
+function scrollTop(){ try{ window.scrollTo({top:0,behavior:"smooth"}); }catch(e){ window.scrollTo(0,0); } }
+function sectionName(k){ return (SECTIONS.find(s=>s.key===k)||{}).name || k; }
+
+function updateMeta(){
+  const ans = QUESTIONS.filter(q=>isAnswered(q.id)).length;
+  const mark = Object.keys(state.marked).length;
+  const pct = Math.round(ans/QUESTIONS.length*100);
+  $("barFill").style.width = pct+"%";
+  $("barLbl").textContent = "Attempted "+ans+" / 100";
+  $("barPct").textContent = pct+"%";
+  $("sAns").textContent = ans;
+  $("sMark").textContent = mark;
+  $("sUn").textContent = QUESTIONS.length - ans;
+}
+
+/* ---------- PALETTE ---------- */
+function palette(){
+  const pal = $("palette");
+  pal.innerHTML = "";
+  QUESTIONS.forEach((q,i)=>{
+    const b = document.createElement("button");
+    let cls = "not-visited";
+    if(state.marked[q.id]) cls = "marked";
+    else if(isAnswered(q.id)) cls = "attempted";
+    else if(state.visited[q.id]) cls = "unanswered";
+    b.className = cls + (i===state.cur ? " cur" : "");
+    b.textContent = q.id;
+    b.onclick = ()=>{ state.cur = i; save(); render(); };
+    pal.appendChild(b);
+  });
+}
+
+/* ---------- TIMER ---------- */
+function startTimer(){
+  if(tick) clearInterval(tick);
+  paintTimer();
+  tick = setInterval(()=>{
+    state.left--;
+    if(state.left % 5 === 0) save();
+    paintTimer();
+    if(state.left <= 0){ clearInterval(tick); autoSubmit(); }
+  }, 1000);
+}
+function paintTimer(){
+  const t = $("timer");
+  t.textContent = fmt(Math.max(0,state.left));
+  if(state.left <= 300) t.classList.add("warn"); else t.classList.remove("warn");
+}
+
+/* ---------- SUBMIT ---------- */
+$("submitBtn").onclick = ()=>{
+  const ans = QUESTIONS.filter(q=>isAnswered(q.id)).length;
+  showModal(
+    "Submit the test?",
+    "You have answered "+ans+" of 100 questions. "+(100-ans)+" remain unanswered. This cannot be undone.",
+    ()=>{ finish(); }
+  );
+};
+function autoSubmit(){
+  state.timedOut = true;
+  finish();
+}
+function finish(){
+  state.done = true;
+  if(tick) clearInterval(tick);
+  save();
+  showResult();
+}
+
+function showModal(title, msg, onYes){
+  const m = document.createElement("div");
+  m.className="modal";
+  m.innerHTML = '<div class="box"><h3>'+esc(title)+'</h3><p>'+esc(msg)+'</p>'+
+    '<div style="display:flex;gap:10px;justify-content:flex-end">'+
+    '<button class="btn ghost" id="mNo">Cancel</button>'+
+    '<button class="btn" id="mYes">Submit</button></div></div>';
+  document.body.appendChild(m);
+  const close = ()=> m.remove();
+  const y = m.querySelector("#mYes"); if(y) y.onclick = ()=>{ close(); onYes(); };
+  const n = m.querySelector("#mNo"); if(n) n.onclick = close;
+}
+
+/* ---------- RESULT ---------- */
+function showResult(){
+  const rows = SECTIONS.map(sec=>{
+    const qs = QUESTIONS.filter(q=>q.section===sec.key);
+    let right=0, wrong=0, skip=0;
+    qs.forEach(q=>{
+      if(!isAnswered(q.id)) skip++;
+      else if(state.answers[q.id]===q.ans) right++;
+      else wrong++;
+    });
+    const marks = right - wrong*NEG;
+    return {name:sec.name, total:qs.length, right, wrong, skip, marks};
+  });
+  const right = rows.reduce((a,r)=>a+r.right,0);
+  const wrong = rows.reduce((a,r)=>a+r.wrong,0);
+  const skip  = rows.reduce((a,r)=>a+r.skip,0);
+  const score = (right - wrong*NEG).toFixed(2);
+  const pct = ((score/100)*100).toFixed(1);
+
+  const brk = rows.map(r=>
+    '<tr><td>'+r.name+'</td><td>'+r.total+'</td><td class="pos">'+r.right+'</td>'+
+    '<td class="negv">'+r.wrong+'</td><td class="wr">'+r.skip+'</td>'+
+    '<td><b>'+r.marks.toFixed(2)+'</b></td></tr>').join("");
+
+  $("shell").classList.remove("on");
+  const box = $("result");
+  box.classList.remove("hidden");
+  const banner = state.timedOut
+    ? '<div style="background:#b91c1c;color:#fff;border-radius:10px;padding:12px 16px;margin-bottom:16px;font-weight:600">Time is over — the paper was submitted automatically at 00:00:00.</div>'
+    : '';
+  box.innerHTML =
+    banner+
+    '<div class="big">'+
+      '<div class="of">Your Score</div>'+
+      '<div class="score">'+score+'</div>'+
+      '<div class="of">out of 100 &middot; '+pct+'%</div>'+
+    '</div>'+
+    '<div class="grid">'+
+      '<div class="stat"><div class="v pos">'+right+'</div><div class="k">Correct</div></div>'+
+      '<div class="stat"><div class="v negv">'+wrong+'</div><div class="k">Wrong</div></div>'+
+      '<div class="stat"><div class="v wr">'+skip+'</div><div class="k">Unattempted</div></div>'+
+      '<div class="stat"><div class="v">'+(wrong*NEG).toFixed(2)+'</div><div class="k">Penalty</div></div>'+
+    '</div>'+
+    '<table class="brk"><thead><tr><th>Section</th><th>Qs</th><th>Correct</th><th>Wrong</th><th>Skipped</th><th>Marks</th></tr></thead>'+
+    '<tbody>'+brk+'</tbody></table>'+
+    '<div class="actions">'+
+      '<button class="btn" id="revBtn">Review Answers</button>'+
+      '<button class="btn ghost" id="retakeBtn">Retake Test</button>'+
+    '</div>'+
+    '<div id="review"></div>';
+
+  $("revBtn").onclick = ()=> renderReview();
+  $("retakeBtn").onclick = ()=>{
+    try{ localStorage.removeItem(KEY); localStorage.removeItem(WELCOMED); }catch(e){}
+    location.reload();
+  };
+  window.scrollTo(0,0);
+}
+
+function renderReview(){
+  const wrap = $("review");
+  if(wrap.dataset.on === "1"){ wrap.innerHTML=""; wrap.dataset.on="0"; return; }
+  wrap.dataset.on = "1";
+  const parts = SECTIONS.map(sec=>{
+    const qs = QUESTIONS.filter(q=>q.section===sec.key);
+    const body = qs.map(q=>{
+      const picked = state.answers[q.id];
+      let pill, cls;
+      if(picked===undefined){ pill='<span class="pill sk">Skipped</span>'; }
+      else if(picked===q.ans){ pill='<span class="pill ok">Correct</span>'; }
+      else { pill='<span class="pill no">Wrong</span>'; }
+      const opts = q.opts.map((o,i)=>{
+        let c = "";
+        if(i===q.ans) c=" correct";
+        else if(i===picked) c=" wrong";
+        return '<div class="o'+c+'"><b>'+String.fromCharCode(65+i)+'.</b> '+esc(o)+
+          (i===q.ans?' <span style="color:var(--green);font-size:12px">&larr; correct</span>':'')+
+          (i===picked && i!==q.ans?' <span style="color:var(--red);font-size:12px">&larr; your answer</span>':'')+
+        '</div>';
+      }).join("");
+      return '<div class="rev">'+
+        '<div class="top"><span class="qno">Q'+q.id+' &middot; '+esc(sec.name)+'</span>'+pill+'</div>'+
+        '<div class="qt">'+esc(q.q)+'</div>'+opts+
+        '<div class="exp"><b>Explanation:</b> '+esc(q.exp)+'</div>'+
+      '</div>';
+    }).join("");
+    return '<h2 style="margin:26px 0 12px">'+esc(sec.name)+' ('+qs.length+' questions)</h2>'+body;
+  }).join("");
+  wrap.innerHTML = parts;
+  wrap.scrollIntoView({behavior:"smooth"});
+}
+
+/* ---------- UTIL ---------- */
+function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
+
+/* keyboard nav */
+document.addEventListener("keydown", e=>{
+  if(!$("shell").classList.contains("on")) return;
+  if(e.key==="ArrowRight") $("nextBtn") && $("nextBtn").click();
+  if(e.key==="ArrowLeft")  $("prevBtn") && $("prevBtn").click();
+  if(["1","2","3","4"].includes(e.key)){
+    const opts = document.querySelectorAll("#opts .opt");
+    if(opts[Number(e.key)-1]) opts[Number(e.key)-1].click();
+  }
+  if(["a","b","c","d"].includes(e.key.toLowerCase())){
+    const i = e.key.toLowerCase().charCodeAt(0)-97;
+    const opts = document.querySelectorAll("#opts .opt");
+    if(opts[i]) opts[i].click();
+  }
+});
+</script>
+</body>
+</html>

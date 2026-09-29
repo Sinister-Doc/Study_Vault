@@ -12,7 +12,7 @@ tags: [vao, current-affairs, karnataka, paper-1]
 > [!warning] Exam Focus + Source Status
 > - **Weightage:** ~10–15 Qs in Paper-I; Karnataka governance/rural items carry the highest hit rate for a VAO role.
 > - **Source status (2026-09-29):** WebSearch returned no usable results; several page fetches 404'd. Items marked ✅ were **live-verified via Wikipedia fetch on 2026-09-29**. Everything else is **compiled offline from background knowledge — verify before relying**, especially names, numbers, and 2025–26 updates.
-> - Related: [[../../03_Notes/07_Panchayat_Raj_Act_and_Rural_Administration]], [[../../03_Notes/06_Indian_Constitution_and_Polity]], [[../../03_Notes/04_Karnataka_History_and_Heritage]], [[../../03_Notes/05_Karnataka_and_Indian_Geography]], and the companion static file `GK_High_Yield.md`.
+> - Related: [[03_Notes/02_History]], [[03_Notes/03_Geography]], [[03_Notes/04_Polity]], and the companion static file [[04_Current_Affairs_GK/GK_High_Yield]].
 
 ## Weightage summary (spend time top-down)
 
@@ -75,7 +75,7 @@ tags: [vao, current-affairs, karnataka, paper-1]
 ## 4. Economy — compiled offline, verify
 
 - Union Budget 2026-27 + Karnataka Budget 2026-27 figures: **not verified today** — learn from the official budget-at-a-glance, not this file.
-- Static must-knows: RBI functions, MSP crops, DBT/Aadhaar-enabled payments, SHG–bank linkage (links to [[../../03_Notes/07_Panchayat_Raj_Act_and_Rural_Administration]]).
+- Static must-knows: RBI functions, MSP crops, DBT/Aadhaar-enabled payments, SHG–bank linkage (links to [[03_Notes/04_Polity]]).
 
 ## 5. Science/Tech — compiled offline, verify
 

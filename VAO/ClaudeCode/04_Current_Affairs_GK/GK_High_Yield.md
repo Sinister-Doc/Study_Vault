@@ -11,7 +11,7 @@ tags: [vao, gk, static-gk, karnataka, paper-1]
 
 > [!tip] Exam Focus
 > Static GK is the cheapest ~50% of Paper-I. Memorise tables below first; current-affairs deltas live in `Current_Affairs_2026.md`.
-> Related: [[../../03_Notes/04_Karnataka_History_and_Heritage]], [[../../03_Notes/05_Karnataka_and_Indian_Geography]], [[../../03_Notes/06_Indian_Constitution_and_Polity]].
+> Related: [[03_Notes/02_History]], [[03_Notes/03_Geography]], [[03_Notes/04_Polity]].
 
 ## 1. Karnataka core (✅ live-verified 2026-09-29)
 
@@ -64,7 +64,7 @@ tags: [vao, gk, static-gk, karnataka, paper-1]
 
 ## 7. Polity numbers VAO must know (verify articles)
 
-- 73rd Amendment (1992): Panchayati Raj constitutional status; 11th Schedule, 29 subjects — links to [[../../03_Notes/07_Panchayat_Raj_Act_and_Rural_Administration]].
+- 73rd Amendment (1992): Panchayati Raj constitutional status; 11th Schedule, 29 subjects — links to [[03_Notes/04_Polity]].
 - Karnataka tiers: Zilla Panchayat → Taluk Panchayat → Gram Panchayat (ಗ್ರಾಮ ಪಂಚಾಯತಿ).
 
 ## Quick-revision box

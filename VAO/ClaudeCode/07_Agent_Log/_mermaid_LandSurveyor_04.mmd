@@ -1,0 +1,13 @@
+flowchart LR
+    A["BM1 known RL<br/>(e.g. 100.000 m)"] --> B["Set level at S1<br/>(tripod + bubble)"]
+    B --> C["Take BS on BM1<br/>(e.g. 1.245)"]
+    C --> D["HI = RL(BM1) + BS"]
+    D --> E["Take IS on detail<br/>points as needed"]
+    E --> F["Take FS on CP<br/>(change point)"]
+    F --> G["RL(CP) = HI − FS"]
+    G --> H{"More points<br/>ahead?"}
+    H -- "Yes" --> I["Shift instrument<br/>to S2"]
+    I --> J["BS on the CP<br/>(same station)"]
+    J --> D
+    H -- "No" --> K["Apply arithmetic<br/>check ΣBS−ΣFS"]
+    K --> L["Book & sign RL of<br/>BM2 / end point"]

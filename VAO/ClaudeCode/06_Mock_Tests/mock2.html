@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mock Test 2 &mdash; KEA Karnataka VAO 2026</title>
+<style>
+:root{
+  --bg:#0f1720; --panel:#16202b; --panel2:#1d2937; --line:#2b3a4b;
+  --txt:#e6eef7; --muted:#93a4b8; --accent:#3b82f6; --accent2:#2563eb;
+  --green:#22c55e; --red:#ef4444; --amber:#f59e0b; --violet:#8b5cf6; --grey:#64748b;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--txt);
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;font-size:15px;line-height:1.5}
+button{font:inherit;cursor:pointer}
+.hidden{display:none !important}
+
+/* Welcome */
+#welcome{max-width:760px;margin:6vh auto;background:var(--panel);border:1px solid var(--line);
+  border-radius:14px;padding:32px 34px;box-shadow:0 20px 50px rgba(0,0,0,.4)}
+#welcome h1{margin:0 0 6px;font-size:24px}
+#welcome .sub{color:var(--muted);margin-bottom:22px}
+.specs{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0 24px}
+.spec{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:14px}
+.spec .k{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+.spec .v{font-size:20px;font-weight:700;margin-top:4px}
+.neg{color:var(--amber)}
+.sec-table{width:100%;border-collapse:collapse;margin:8px 0 22px}
+.sec-table th,.sec-table td{border:1px solid var(--line);padding:8px 10px;text-align:left;font-size:14px}
+.sec-table th{background:var(--panel2);color:var(--muted);font-weight:600}
+.btn{background:var(--accent);color:#fff;border:0;border-radius:9px;padding:12px 22px;font-weight:600}
+.btn:hover{background:var(--accent2)}
+.btn.ghost{background:transparent;border:1px solid var(--line);color:var(--txt)}
+.btn.ghost:hover{background:var(--panel2)}
+.note{color:var(--muted);font-size:13px;margin-top:14px}
+
+/* Shell */
+#shell{display:none;min-height:100vh;flex-direction:column}
+#shell.on{display:flex}
+header{position:sticky;top:0;z-index:20;background:var(--panel);border-bottom:1px solid var(--line);
+  padding:10px 16px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.brand{font-weight:700}
+.brand small{display:block;font-weight:400;color:var(--muted);font-size:12px}
+#timer{margin-left:auto;font-variant-numeric:tabular-nums;font-size:22px;font-weight:700;
+  background:var(--panel2);border:1px solid var(--line);border-radius:9px;padding:6px 14px}
+#timer.warn{color:#fff;background:#b91c1c;border-color:#b91c1c}
+main{flex:1;display:flex;gap:16px;padding:16px;align-items:flex-start;flex-wrap:wrap}
+.qcol{flex:1 1 560px;min-width:320px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px}
+.side{flex:0 0 300px;display:flex;flex-direction:column;gap:14px;min-width:260px}
+
+/* Tabs */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.tab{background:var(--panel2);border:1px solid var(--line);color:var(--muted);border-radius:8px;
+  padding:7px 13px;font-size:13px}
+.tab.active{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600}
+
+/* Progress */
+.bar{height:8px;background:var(--panel2);border-radius:99px;overflow:hidden;border:1px solid var(--line)}
+.bar > i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--green));transition:width .25s}
+.pmeta{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-top:6px}
+
+/* Question */
+.qhead{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap}
+.qno{font-size:13px;color:var(--muted)}
+.tag{font-size:11px;border-radius:99px;padding:2px 9px;border:1px solid var(--line);color:var(--muted)}
+.tag.expected{background:rgba(59,130,246,.15);border-color:#2f5ea8;color:#9ec2ff}
+.tag.pyq{background:rgba(139,92,246,.15);border-color:#6d4bb0;color:#c4b0ff}
+.qtext{font-size:17px;font-weight:600;margin:8px 0 16px}
+.opt{display:flex;gap:11px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;
+  padding:11px 13px;margin-bottom:9px;background:var(--panel2);cursor:pointer}
+.opt:hover{border-color:var(--accent)}
+.opt.sel{border-color:var(--accent);background:rgba(59,130,246,.12)}
+.opt .k{flex:0 0 24px;height:24px;border-radius:6px;background:var(--bg);border:1px solid var(--line);
+  display:grid;place-items:center;font-size:12px;font-weight:700}
+.opt.sel .k{background:var(--accent);border-color:var(--accent);color:#fff}
+.qfoot{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:16px;flex-wrap:wrap}
+.review-lbl{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted)}
+.nav-btns{display:flex;gap:8px;flex-wrap:wrap}
+
+/* Palette */
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px}
+.card h3{margin:0 0 10px;font-size:14px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+.pal{display:grid;grid-template-columns:repeat(auto-fill,minmax(38px,1fr));gap:7px;max-height:290px;overflow:auto}
+.pal button{border:1px solid var(--line);border-radius:7px;padding:7px 0;font-size:12px;font-weight:600;
+  background:var(--panel2);color:var(--txt)}
+.pal button.cur{outline:2px solid var(--accent);outline-offset:1px}
+.pal button.not-visited{background:var(--panel2);color:var(--muted)}
+.pal button.unanswered{background:rgba(239,68,68,.22);border-color:#9b3b3b;color:#ffc9c9}
+.pal button.attempted{background:rgba(34,197,94,.22);border-color:#3c8a5a;color:#c6f3d5}
+.pal button.marked{background:rgba(139,92,246,.25);border-color:#6d4bb0;color:#d9ccff}
+.legend{display:grid;gap:7px;font-size:13px}
+.legend div{display:flex;align-items:center;gap:9px}
+.sw{width:16px;height:16px;border-radius:5px;border:1px solid var(--line);display:inline-block}
+.sumline{display:flex;justify-content:space-between;font-size:13px;margin:5px 0;color:var(--muted)}
+.sumline b{color:var(--txt)}
+
+/* Result */
+#result{max-width:900px;margin:0 auto;padding:22px;width:100%}
+.big{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:26px;text-align:center;margin-bottom:18px}
+.big .score{font-size:52px;font-weight:800;line-height:1}
+.big .of{color:var(--muted);font-size:16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-bottom:18px}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:14px;text-align:center}
+.stat .v{font-size:24px;font-weight:700}
+.stat .k{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+table.brk{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);
+  border-radius:11px;overflow:hidden;margin-bottom:18px}
+table.brk th,table.brk td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;font-size:14px}
+table.brk th{background:var(--panel2);color:var(--muted);font-size:12px;text-transform:uppercase}
+tbody tr:last-child td{border-bottom:0}
+.pos{color:var(--green)}.negv{color:var(--red)}.wr{color:var(--amber)}
+
+/* Review */
+.rev{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px;margin-bottom:12px}
+.rev .top{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:8px}
+.rev .qt{font-weight:600;font-size:16px;margin-bottom:10px}
+.rev .o{border:1px solid var(--line);border-radius:8px;padding:9px 12px;margin-bottom:7px;font-size:14px}
+.rev .o.correct{border-color:var(--green);background:rgba(34,197,94,.1)}
+.rev .o.wrong{border-color:var(--red);background:rgba(239,68,68,.1)}
+.rev .exp{font-size:13px;color:var(--muted);border-left:3px solid var(--accent);padding-left:11px;margin-top:10px}
+.pill{font-size:11px;padding:2px 9px;border-radius:99px;font-weight:700}
+.pill.ok{background:rgba(34,197,94,.18);color:#9ff0bd}
+.pill.no{background:rgba(239,68,68,.18);color:#ffb4b4}
+.pill.sk{background:rgba(245,158,11,.18);color:#ffd89b}
+.actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:20px 0}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.65);display:grid;place-items:center;z-index:50;padding:18px}
+.modal .box{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:24px;max-width:460px;width:100%}
+.modal h3{margin:0 0 10px}
+.modal p{color:var(--muted);margin:0 0 18px}
+@media print{header,.side,.actions,.tabs{display:none}body{background:#fff;color:#000}}
+</style>
+</head>
+<body>
+
+<!-- ============ WELCOME ============ -->
+<section id="welcome">
+  <h1>Mock Test 2 — Paper 2: Kannada, English &amp; Computer</h1>
+  <div class="sub">KEA Karnataka VAO 2026 &middot; Paper 2 (Kannada + English + Computer Knowledge) &middot; Full-length 100-question paper (offline, self-contained)</div>
+
+  <div class="specs">
+    <div class="spec"><div class="k">Questions</div><div class="v">100 MCQs</div></div>
+    <div class="spec"><div class="k">Total Marks</div><div class="v">100</div></div>
+    <div class="spec"><div class="k">Duration</div><div class="v">120 minutes</div></div>
+    <div class="spec"><div class="k">Negative Marking</div><div class="v neg">0.25 / wrong</div></div>
+  </div>
+
+  <table class="sec-table">
+    <thead><tr><th>Section</th><th>Questions</th><th>Marks</th></tr></thead>
+    <tbody>
+      <tr><td>Paper 2 (ಎ) General Kannada</td><td>35</td><td>35</td></tr>
+      <tr><td>Paper 2 (ಬಿ) General English</td><td>35</td><td>35</td></tr>
+      <tr><td>Paper 2 (ಸಿ) Computer Knowledge</td><td>30</td><td>30</td></tr>
+      <tr><td><b>Total</b></td><td><b>100</b></td><td><b>100</b></td></tr>
+    </tbody>
+  </table>
+
+  <button class="btn" id="startBtn">Start Test</button>
+  <div class="note">
+    Each question carries 1 mark. <b>0.25 mark is deducted for every wrong answer</b> and, on the real OMR sheet, a further 0.25 is deducted for a question left with no circle shaded at all &mdash; so always shade the 5th (not-answered) circle for anything you skip. This offline paper scores an unattempted question as 0 so it does not train blind guessing. The timer counts down from <b>120:00</b> and the paper auto-submits at <b>00:00:00</b>. Progress is saved in your browser, so you may reload without losing answers.
+  </div>
+</section>
+
+<!-- ============ EXAM SHELL ============ -->
+<section id="shell">
+  <header>
+    <div class="brand">Mock Test 2 &mdash; Paper 2<small>KEA Karnataka VAO 2026</small></div>
+    <div id="timer">120:00:00</div>
+  </header>
+
+  <main>
+    <div class="qcol">
+      <div class="tabs" id="tabs"></div>
+      <div class="bar"><i id="barFill"></i></div>
+      <div class="pmeta"><span id="barLbl">Attempted 0 / 100</span><span id="barPct">0%</span></div>
+      <div id="qbox" style="margin-top:18px"></div>
+    </div>
+
+    <aside class="side">
+      <div class="card">
+        <h3>Question Palette</h3>
+        <div class="pal" id="palette"></div>
+      </div>
+      <div class="card">
+        <h3>Legend</h3>
+        <div class="legend">
+          <div><span class="sw" style="background:var(--panel2);border-color:var(--line)"></span> Not visited</div>
+          <div><span class="sw" style="background:rgba(239,68,68,.35);border-color:#9b3b3b"></span> Not answered</div>
+          <div><span class="sw" style="background:rgba(34,197,94,.35);border-color:#3c8a5a"></span> Attempted</div>
+          <div><span class="sw" style="background:rgba(139,92,246,.4);border-color:#6d4bb0"></span> Marked for review</div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Progress</h3>
+        <div class="sumline"><span>Answered</span><b id="sAns">0</b></div>
+        <div class="sumline"><span>Marked</span><b id="sMark">0</b></div>
+        <div class="sumline"><span>Not answered</span><b id="sUn">100</b></div>
+        <button class="btn" id="submitBtn" style="width:100%;margin-top:12px">Submit Test</button>
+      </div>
+    </aside>
+  </main>
+</section>
+
+<!-- ============ RESULT ============ -->
+<section id="result" class="hidden"></section>
+
+<script>
+/* ---------- DATA ---------- */
+const QUESTIONS = [{"q":"'ಅ + ಅ' ಸಂಧಿಯಲ್ಲಿ ಏನಾಗುತ್ತದೆ?","opts":["ಆ + ಅ = ಆ","ಅ + ಅ = ಆಅ","ಅ + ಅ = ಅಅ","ಅ + ಅ = ಆಧಿ"],"ans":0,"exp":"'ಅ' ಮಂತ್ರ ಅಕ್ಷರಗಳ ಸಂಯೋಗದಲ್ಲಿ ಆಗುತ್ತದೆ — ಅನುಸ್ವಾರ ತ್ವಿಷಕ್ಷ ನಿಯಮ.","label":"expected","id":1},{"q":"'ಅ + ಆ' ಸಂಧಿಯಲ್ಲಿ ಏನಾಗುತ್ತದೆ?","opts":["ಆ + ಆ = ಆ","ಅ + ಆ = ಆಾ","ಅ + ಆ = ಅಆ","ಅ + ಆ = ಅಾ"],"ans":1,"exp":"ಅಕ್ಷರಕ್ಷಯ ಅಂತ್ಯದಲ್ಲಿ ಹೆಚ್ಚಾದ ಅಕ್ಷರವನ್ನು ಆಂತ ಎಂಬ ಅವಣ್ಮಿಸಿ ಮುಂದಿನದಕ್ಕೆ ಕಡಿಮೆ ಮಾಡಲಾಗುತ್ತದೆ.","label":"expected","id":2},{"q":"'ಇ + ಅ' ಸಂಧಿಯಲ್ಲಿ ಏನಾಗುತ್ತದೆ?","opts":["ಇ + ಅ = ಇಅ","ಇ + ಅ = ಎ","ಇ + ಅ = ಇಎ","ಇ + ಅ = ಏ"],"ans":1,"exp":"'ಇ' ಅಂತ್ಯವಿರುವ ಸಂಧಿಯಲ್ಲಿ ಮುಂದಿನ ಅಕ್ಷರ ಇರುವ ಅವಣ್ಮಿಸಿ ಇ ತೆಗೆದುಹಾಕಲಾಗುತ್ತದೆ.","label":"expected","id":3},{"q":"'ಎ + ಅ' ಸಂಧಿಯಲ್ಲಿ ಏನಾಗುತ್ತದೆ?","opts":["ಎ + ಅ = ಎ","ಎ + ಅ = ಎಅ","ಎ + ಅ = ಏ","ಎ + ಅ = ಎಎ"],"ans":2,"exp":"ಹೆಚ್ಚು ಮಂತ್ರದ ಅಕ್ಷರವನ್ನು ಹೆಚ್ಚು ಮಾಡಿ ಕಡಿಮೆ ಅಕ್ಷರವನ್ನು ಹಾಕಲಾಗುತ್ತದೆ — ಎಯ್ದು ಅನ್ನು ಒಂದು ಅಕ್ಷರವಾಗಿ ಬರೆಯುತ್ತದೆ.","label":"expected","id":4},{"q":"'ಆ + ಹ' ಸಂಧಿಯಲ್ಲಿ ಏನಾಗುತ್ತದೆ?","opts":["ಆ + ಹ = ಆಹ","ಆ + ಹ = ಆೊ","ಆ + ಹ = ಹೊ","ಆ + ಹ = ಓ"],"ans":1,"exp":"ಇ ಅಕ್ಷರಕ್ಷಯ ಸಂಧಿ ಆದರೆ 'ಆ' ಅಕ್ಷರವೂ ಉಳಿಯುತ್ತದೆ — ಆ + ಹ = ಆೊ.","label":"expected","id":5},{"q":"'ಕ + ಅ' ಸಂಧಿಯಲ್ಲಿ ಏನಾಗುತ್ತದೆ?","opts":["ಕ + ಅ = ಕ","ಕ + ಅ = ಕಾ","ಕ + ಅ = ಕಕ","ಕ + ಅ = ಅ"],"ans":0,"exp":"ಮಂತ್ರ ಅಕ್ಷರ ಮುಂದೆ ಇರುವಾಗ ಮಾತ್ರ ಅಕ್ಷರಕ್ಷಯ ಸಂಧಿ ನಡೆಯುತ್ತದೆ; ಇಲ್ಲಿ ಸಂಧಿ ಇಲ್ಲ.","label":"expected","id":6},{"q":"'ಅಣ್ಣಪ್ರಜ್ಞೆ' ಎಂಬುದು ಯಾವ ಸಮಾಸ?","opts":["ತತ್ಪುರುಷ","ಬಹುವ್ರೀಹಿ","ಕರ್ಮಧಾರ","ದ್ವಿಗು"],"ans":1,"exp":"ಅಣ್ಣಪ್ರಜ್ಞೆ = ಅಣ್ಣ + ಪ್ರಜ್ಞೆ; ಪ್ರಜ್ಞೆ ಎಂಬುದು ಸ್ತ್ರೀಲಿಂಗ ಪದವಾಗಿದ್ದರೆ ಬಹುವ್ರೀಹಿ ಸಮಾಸ.","label":"expected","id":7},{"q":"'ಪ್ರಜಾಪತಿ' ಎಂಬ ಪದದಲ್ಲಿ ಯಾವ ಸಮಾಸವಿದೆ?","opts":["ತತ್ಪುರುಷ","ಕರ್ಮಧಾರ","ದ್ವಿಗು","ಬಹುವ್ರೀಹಿ"],"ans":2,"exp":"ಪ್ರಜಾ + ಅತಿ = ಪ್ರಜಾಪತಿ; ದ್ವಿಗು ಸಮಾಸ.","label":"expected","id":8},{"q":"'ರಾಜಾರ್ಪತ' ಎಂಬ ಪದವು ಯಾವ ಸಮಾಸ?","opts":["ತತ್ಪುರುಷ","ದ್ವಿಗು","ಬಹುವ್ರೀಹಿ","ಕರ್ಮಧಾರ"],"ans":2,"exp":"ರಾಜಾ + ಅರ್ಪತ; ಅರ್ಪತ ಪುಲ್ಲಿಂಗ — ಬಹುವ್ರೀಹಿ ಸಮಾಸ.","label":"expected","id":9},{"q":"'ರಾಜ್ಯಮಂತ್ರಿ' ಎಂಬ ಪದವು ಯಾವ ಸಮಾಸ?","opts":["ದ್ವಿಗು","ತತ್ಪುರುಷ","ಬಹುವ್ರೀಹಿ","ಆದಿ ಪೂರ್ವ"],"ans":1,"exp":"ರಾಜ್ಯ + ಮಂತ್ರಿ — ಎರಡೂ ಪುಲ್ಲಿಂಗ ಪದಗಳು; ತತ್ಪುರುಷ ಸಮಾಸ.","label":"expected","id":10},{"q":"'ನೀರಾವರಿ' ಎಂಬ ಪದವು ಯಾವ ಸಮಾಸ?","opts":["ತತ್ಪುರುಷ","ಕರ್ಮಧಾರ","ದ್ವಿಗು","ಭಾವಸಮಾಸ"],"ans":0,"exp":"ನೀರ + ಅವರಿ; ಅವರಿ ಪುಲ್ಲಿಂಗ — ತತ್ಪುರುಷ ಸಮಾಸ.","label":"expected","id":11},{"q":"'ವಿಶ್ವಕಾರ' ಎಂಬುದು ಯಾವ ಸಮಾಸ?","opts":["ಆದಿಪೂರ್ವ","ಕರ್ಮಧಾರ","ತತ್ಪುರುಷ","ದ್ವಿಗು"],"ans":1,"exp":"ವಿಶ್ವ + ಕಾರ = ವಿಶ್ವಕಾರ; ಕರ್ಮಧಾರ ಸಮಾಸ.","label":"PYQ-style","id":12},{"q":"ಶೇಷಾನುಪಾತ ಸಮಾಸಕ್ಕು ಉದಾಹರಣೆ:","opts":["ರಾಜಾರ್ಪತ","ಚೇರವನ್ನಿ","ಕರ್ಮಧಾರ","ಪ್ರಜಾಪತಿ"],"ans":1,"exp":"ಚೇರ + ಅನ್ನಿ = ಚೇರವನ್ನಿ; ಮುಂದಿನದನ್ನು ವ್ಯಾಪ್ತಿಸುವುದು ಶೇಷಾನುಪಾತ ಸಮಾಸ.","label":"expected","id":13},{"q":"'ರಾಮನು ಗ್ರಾಮಕ್ಕೆ ಹೋಗಿದಾನೆ' — ಇಲ್ಲಿ 'ಗ್ರಾಮಕ್ಕೆ' ಯಾವ ವಿಭಕ್ತಿ?","opts":["ಪ್ರಥಮಾ","ದ್ವಿತೀಯಾ","ತೃತೀಯಾ","ಕರ್ತಾರ್"],"ans":1,"exp":"ಗ್ರಾಮಕ್ಕೆ ಎಂಬುದು ದ್ವಿತೀಯಾ ವಿಭಕ್ತಿ (dative case) — ಗೆ ಸರ್ವನಾಮ ವಿಭಕ್ತಿ.","label":"expected","id":14},{"q":"'ರಾಮನಿಂದ ಪುಸ್ತಕ ಬಂದಿತು' — 'ರಾಮನಿಂದ' ಯಾವ ವಿಭಕ್ತಿ?","opts":["ಪ್ರಥಮಾ","ದ್ವಿತೀಯಾ","ತೃತೀಯಾ","ಸಪ್ತಮೀಯಾ"],"ans":2,"exp":"'ನಿಂದ' ಸರ್ವನಾಮ ತೃತೀಯಾ ವಿಭಕ್ತಿಯನ್ನು ಸೂಚಿಸುತ್ತದೆ.","label":"expected","id":15},{"q":"'ರಾಮನಲ್ಲಿ ಸತ್ಯ ಇದೆ' — 'ರಾಮನಲ್ಲಿ' ಯಾವ ವಿಭಕ್ತಿ?","opts":["ಸಪ್ತಮೀಯಾ","ಷಷ್ಠೀಯಾ","ಪಂಚಮೀಯಾ","ದ್ವಿತೀಯಾ"],"ans":1,"exp":"ಷಷ್ಠೀಯಾ ವಿಭಕ್ತಿ ('ಅಲ್ಲಿ') — ಸ್ಥಾನದ ಷಷ್ಠೀಯಾ ವಿಭಕ್ತಿ.","label":"expected","id":16},{"q":"'ರಾಮನೇ' ಎಂಬುದಿಗೆ ಯಾವ ವಿಭಕ್ತಿಯ ಸೂಚನೆ?","opts":["ಕರ್ತಾರ್","ಅದಿಪೂರ್ವ","ತೃತೀಯಾ","ಸಪ್ತಮೀಯಾ"],"ans":1,"exp":"ನಾಮಪದಕ್ಕೆ ಅದಿಪೂರ್ವ ವಿಭಕ್ತಿ ('ನೇ') ಬರುತ್ತದೆ — ತುಂಬಿ ಪದದ ವಿಶೇಷಣ ಕ್ರಮದಲ್ಲೇ ಉಚ್ಚರಿತ.","label":"expected","id":17},{"q":"'ಕರ್ನಾಟಕದ' ಎಂಬ ಪದದಲ್ಲಿ ಯಾವ ವಿಭಕ್ತಿಯ ಸೂಚನೆ?","opts":["ಪ್ರಥಮಾ","ಷಷ್ಠೀಯಾ","ದ್ವಿತೀಯಾ","ಸಪ್ತಮೀಯಾ"],"ans":1,"exp":"'ದ' ಷಷ್ಠೀಯಾ ವಿಭಕ್ತಿಯನ್ನು ಸೂಚಿಸುತ್ತದೆ.","label":"expected","id":18},{"q":"'ಅಯ್ಯಿತು' ಎಂಬ ಕ್ರಿಯಾಪದದಲ್ಲಿ ಯಾವ ಪ್ರತ್ಯಯ ಬಂದಿದೆ?","opts":["ಅದಿ","ಇತ್ತು","ಎಂದ","ಆಗಿ"],"ans":1,"exp":"'ಇತ್ತು' ಎಂಬ ಕಾಲಾತೀತ ಪ್ರತ್ಯಯದಿಂದ ಅಯ್ಯಿತು ಆಗಿದೆ.","label":"expected","id":19},{"q":"'ಮಾಡಿದನು' ಎಂಬ ಪದದಲ್ಲಿ 'ನು' ಯಾವ ಪ್ರತ್ಯಯ?","opts":["ಅದಿಪೂರ್ವ ಪ್ರತ್ಯಯ","ತ್ವಿಷಕ್ಷ ಪ್ರತ್ಯಯ","ಸರ್ವನಾಮ ಪ್ರತ್ಯಯ","ಕಾಲಾತೀತ ಪ್ರತ್ಯಯ"],"ans":1,"exp":"'ನು' ತ್ವಿಷಕ್ಷ ಪ್ರತ್ಯಯ — ಕರ್ತಾ ಅಥವಾ ಕರ್ಮಾರ್ಥಕ್ಕೆ ತ್ವಿಷಕ್ಷ ನೀಡುತ್ತದೆ.","label":"expected","id":20},{"q":"'ಅತ್ಯಂತ' ಎಂಬ ಪದದಲ್ಲಿ 'ಅತಿ' ಯಾವರಹ ಪ್ರತ್ಯಯ?","opts":["ವ್ಯಾಧಿಪ್ರತ್ಯಯ","ಅದಿಪೂರ್ವ ಪ್ರತ್ಯಯ","ತತ್ಪುರುಷ ಪ್ರತ್ಯಯ","ತ್ವಿಷಕ್ಷ ಪ್ರತ್ಯಯ"],"ans":0,"exp":"ಅತಿ, ಅತಿತಿ, ಪ್ರತಿ ಇವು ವ್ಯಾಧಿಪ್ರತ್ಯಯಗಳು.","label":"expected","id":21},{"q":"'ಆಗಮನ' ಎಂಬ ಪದದಲ್ಲಿ ಯಾವ ಉಪಸರ್ಗ ಬಂದಿದೆ?","opts":["ಮನ + ಅ","ಆಗ + ಮನ","ಅಗ + ಮ","ಮನ ಮಾತ್ರ"],"ans":1,"exp":"ಆಗಮನ ಎಂಬುದು ಆಗ (ಆಗಮಿಸುವ) ಮನ್ (ಮನಸ್ಸು) ಎಂಬ ಉಪಸರ್ಗದಿಂದ ರಚನೆಯಾಗಿದೆ.","label":"expected","id":22},{"q":"'ಸುಖ' ಪದಕ್ಕೆ ಪರ್ಯಾಯ ಪದ:","opts":["ದುಃಖ","ನಿನ್ಮ","ಆನಂದ","ವೇದನೆ"],"ans":2,"exp":"ಸುಖಕ್ಕೆ ಆನಂದ ಅಥವಾ ಸಂತೋಷ ಪರ್ಯಾಯವಾಗುತ್ತವೆ.","label":"expected","id":23},{"q":"'ದುಃಖ' ಪದಕ್ಕೆ ವಿರೋಧಿ ಪದ:","opts":["ಕಷ್ಟ","ಸುಖ","ದುರ್ದುಃಖ","ಕೋಪ"],"ans":1,"exp":"ದುಃಖಕ್ಕೆ ವಿರೋಧಿ ಪದ ಸುಖ.","label":"PYQ-style","id":24},{"q":"'ಆಶಾ' ಪದಕ್ಕೆ ವಿರೋಧಿ ಪದ:","opts":["ನಿರಾಶಾ","ನಮಮ್ಮ","ಭರವಸೆ","ಪ್ರತಿಭೆ"],"ans":0,"exp":"ಆಶಾಕ್ಕೆ ವಿರೋಧಿ ಪದ ನಿರಾಶಾ.","label":"expected","id":25},{"q":"'ಉತ್ತಮ' ಪದಕ್ಕೆ ವಿರೋಧಿ ಪದ:","opts":["ಸಮಸ್ತ","ಅಮುಖ","ಆದ್ಯತ್ವ","ಶ್ರೇಷ್ಠ"],"ans":1,"exp":"ಉತ್ತಮಕ್ಕೆ ವಿರೋಧಿ ಪದ ಅಮುಖ (poor).","label":"expected","id":26},{"q":"'ಜಯ' ಪದಕ್ಕೆ ವಿರೋಧಿ ಪದ:","opts":["ವಿಜಯ","ಅಪಜಯ","ಸಾಧನೆ","ಸಮಸ್ತ"],"ans":1,"exp":"ಜಯಕ್ಕೆ ವಿರೋಧಿ ಪದ ಅಪಜಯ.","label":"expected","id":27},{"q":"'ಕಣ್ಣಿನ ಮತ್ತು ಕೊಣ್ಣಿನ ಮಾಡಲು ಹಣಕಾರನ ಕರೆಯಂತೆ' ಅರ್ಥ:","opts":["ವಿಶೇಷ ಉದ್ದೇಶ","ಸಂಪರ್ಕವಿಹೀನ ಸಂಬಂಧ","ವ್ಯರ್ಥ ಸಂಬಂಧ","ನಕಲು ಮಾಡಿಕೊಳ್ಳುವಿಕೆ"],"ans":2,"exp":"ಈ ಗಾದೆಯರ್ಥವು ವ್ಯರ್ಥವಾದ ಅನುಸಂಧಾನ ಸಂಬಂಧವನ್ನು ಸೂಚಿಸುತ್ತದೆ.","label":"expected","id":28},{"q":"'ಇಡ್ಡಿ ಮೂಲಕ ನಿಂತರೆ' ಎಂಬ ಗಾದೆಯ ಅರ್ಥ:","opts":["ಒಂದು ಮೂಲಕ ಮಾತ್ರ","ಇಂದು ಮೂಲಕ","ಒಳಗೆ ಮಾತ್ರ","ಎಲ್ಲಾ ಕಡೆ"],"ans":0,"exp":"ಇಡ್ಡಿ = ಒಂದು; ಇದು ಒಂದು ಮೂಲಕ ಸೀಮಿತವಾಗಿದೆ ಎಂಬ ಅರ್ಥ.","label":"expected","id":29},{"q":"'ಅಕ್ಷರ ಹೊಂದಿಸಲು ಮಾಡಿ' ಎಂಬ ಪದಗುಚ್ಛದ ಅರ್ಥ:","opts":["ಪತ್ರ ಬರೆಯಿರಿ","ಅರ್ಹ ಕಾರ್ಯ ಮಾಡಿ","ಗೌರವ ನೀಡಿ","ದಂಡಿಸಿ"],"ans":1,"exp":"ಗೌರವಾರ್ಥಕ ಕಾರ್ಯವನ್ನು ಕೋರುವುದು ಅಕ್ಷರ ಹೊಂದಿಸುವುದು.","label":"expected","id":30},{"q":"'ಗಂಟೆ ಕಾಯಿರಿ' ಎಂಬ ಪದಗುಚ್ಛದ ಅರ್ಥ:","opts":["ಸಮಯ ಕಾಯಿರಿ","ಅನ್ಯಾಯ ಮಾಡಿ","ಹೇಮ್ಮೆ ಮಾಡಿ","ಮರೆತುಬಿಡಿ"],"ans":1,"exp":"'ಗಂಟೆ ಕಾಯಿರಿ' — ವಿಶೇಷ ಉಪಯೋಗದ ಮೂಲಕ ಅನ್ಯಾಯ ಮಾಡುವುದು.","label":"expected","id":31},{"q":"'ಅಬ್ಬಗೋಡನ' ಎಂಬ ಪದವು ಯಾವ ತತ್ಸಮ?","opts":["ಕರ್ಮಧಾರ","ತತ್ಪುರುಷ","ದ್ವಿಗು","ಬಹುವ್ರೀಹಿ"],"ans":0,"exp":"ಅಬ್ಬ + ಗೋಡನ = ಅಬ್ಬಗೋಡನ; ಕರ್ಮಧಾರ ತತ್ಸಮ.","label":"expected","id":32},{"q":"'ಚಂದ್ರಬಿಂಬ' ಎಂಬ ಪದವು ಯಾವ ತದ್ಭವ?","opts":["ಚಂದ್ರ + ಬಿಂಬ","ಚಂದ್ರ + ಇಂಬ","ಚಂ + ದ್ರಬಿಂಬ","ಚನ್ದ್ರ + ಬಿಂಬ"],"ans":0,"exp":"'ಬಿ' ಇಂದ ಪರಾಗಮ ಆಗುವ ತದ್ಭವ — ಚಂದ್ರ + ಬಿಂಬ = ಚಂದ್ರಬಿಂಬ.","label":"expected","id":33},{"q":"'ಆಗುಮಾರು' ಎಂಬ ಪದವು ಯಾವ ಉಪಸರ್ಗ?","opts":["ಆಗು + ಮಾರು","ಆ + ಗುಮಾರು","ಆಗುಮ + ಆರು","ಆಗುಮಾ + ರು"],"ans":0,"exp":"ಆಗುಮಾರು ಎಂಬುದು ಆಗು + ಮಾರು ಎಂಬ ಉಪಸರ್ಗದಿಂದ ಆಗಿದೆ.","label":"expected","id":34},{"q":"'ವೃಕ್ಷ' ಎಂಬ ಪದಕ್ಕೆ ಪುಲ್ಲಿಂಗ ರೂಪವೇನು?","opts":["ವೃಕ್ಷರು","ವೃಕ್ಷ","ವೃಕ್ಷಗಳು","ವೃಕ್ಷಮಾನ"],"ans":0,"exp":"ಹೆಚ್ಚು ಪ್ರಾಣಿಗಳ ಪುಲ್ಲಿಂಗ ಬಹುವಚನದ ರೂಪ 'ರು' ಅನ್ನು ಪಡೆಯುತ್ತದೆ — ವೃಕ್ಷರು.","label":"expected","id":35},{"q":"'She ____ to school every day.'","opts":["go","goes","going","gone"],"ans":1,"exp":"Simple present with a third-person singular subject takes -es.","label":"expected","id":36},{"q":"'They ____ television when I entered.'","opts":["watch","watched","were watching","have watched"],"ans":2,"exp":"Past continuous for the action in progress; simple past for the interrupting action.","label":"expected","id":37},{"q":"'He ____ here since 2015.'","opts":["lives","lived","has been living","is living"],"ans":2,"exp":"Present perfect continuous with 'since' for an action begun in 2015 and still continuing.","label":"expected","id":38},{"q":"'By the time the teacher arrived, the students ____ the answer.'","opts":["wrote","have written","had written","are writing"],"ans":2,"exp":"Past perfect for the earlier of the two past actions.","label":"expected","id":39},{"q":"'If I ____ a bird, I would fly.'","opts":["am","was","were","be"],"ans":2,"exp":"Second conditional uses the past form for both clauses: 'If I were' (unreal present).","label":"expected","id":40},{"q":"'She has ____ finished her homework.'","opts":["already","yet","ever","still"],"ans":0,"exp":"'Already' goes between the auxiliary 'has' and the past participle.","label":"expected","id":41},{"q":"'Neither of the boys ____ present.'","opts":["are","is","were","am"],"ans":1,"exp":"'Neither of' takes a singular verb in standard usage.","label":"expected","id":42},{"q":"'I would rather ____ at home today.'","opts":["stay","stayed","to stay","staying"],"ans":0,"exp":"'Would rather' is followed by the bare infinitive.","label":"expected","id":43},{"q":"'Each of the candidates ____ submitted the form.'","opts":["have","has","are submitting","were submitting"],"ans":1,"exp":"'Each' is singular, so the verb is 'has submitted'.","label":"expected","id":44},{"q":"'The team ____ playing well this season.'","opts":["are","is","were","have been"],"ans":1,"exp":"A collective noun used as a single unit takes a singular verb.","label":"expected","id":45},{"q":"'Mathematics ____ my favourite subject.'","opts":["are","is","were","be"],"ans":1,"exp":"'Mathematics' ends in -s but is a singular discipline noun.","label":"expected","id":46},{"q":"'The list of items ____ on the table.'","opts":["are","is","were","have been"],"ans":1,"exp":"The subject is 'list', not 'items'; a prepositional phrase does not change agreement.","label":"expected","id":47},{"q":"'She is good ____ mathematics.'","opts":["in","at","on","for"],"ans":0,"exp":"The fixed expression is 'good in' a subject.","label":"expected","id":48},{"q":"'He is married ____ a doctor.'","opts":["with","to","for","by"],"ans":1,"exp":"'Married to' is the correct preposition.","label":"expected","id":49},{"q":"'The book differs ____ the one I read.'","opts":["from","with","to","by"],"ans":0,"exp":"'Differ from' is the standard collocation.","label":"expected","id":50},{"q":"'She is afraid ____ dogs.'","opts":["from","of","for","with"],"ans":1,"exp":"'Afraid of' expresses fear.","label":"expected","id":51},{"q":"'He insisted ____ paying the bill.'","opts":["on","in","for","at"],"ans":0,"exp":"'Insist on' is followed by a gerund or noun.","label":"expected","id":52},{"q":"'____ Sun rises in the east.'","opts":["A","An","The","No article"],"ans":2,"exp":"Unique objects such as the Sun take the definite article.","label":"expected","id":53},{"q":"'She is ____ honest woman.'","opts":["a","an","the","no article"],"ans":1,"exp":"An 'honest' begins with a vowel sound, so 'an' is used.","label":"expected","id":54},{"q":"'He reached ____ Bengaluru by train.'","opts":["a","an","the","no article"],"ans":1,"exp":"A city name is used without an article when simply referring to the place.","label":"expected","id":55},{"q":"Find the error: 'Each of the students are preparing well.'","opts":["are → is","students → student","preparing → prepared","No error"],"ans":0,"exp":"Subject-verb agreement: 'Each' takes the singular 'is'.","label":"expected","id":56},{"q":"Find the error: 'She gave him a piece of advices.'","opts":["advices → advice","gave → gives","him → her","No error"],"ans":0,"exp":"'Advice' is uncountable and takes no plural -s.","label":"expected","id":57},{"q":"Find the error: 'He is superior than me.'","opts":["than → to","superior → superiorly","is → was","No error"],"ans":0,"exp":"'Superior to' is the correct fixed expression.","label":"expected","id":58},{"q":"Find the error: 'I have discussed about the matter.'","opts":["Remove 'about'","discussed → discuss","matter → matters","No error"],"ans":0,"exp":"'Discuss' is transitive and takes no preposition.","label":"expected","id":59},{"q":"Find the error: 'Neither he nor I am wrong.'","opts":["am → are","he → they","wrong → wrongly","No error"],"ans":0,"exp":"'Neither...nor' follows the verb of the nearer subject ('I' → 'are').","label":"expected","id":60},{"q":"Find the error: 'The mangoes are ripe and it is sweet.'","opts":["it → they","mangoes → mango","ripe → ripely","No error"],"ans":0,"exp":"The pronoun must match the plural antecedent 'mangoes'.","label":"expected","id":61},{"q":"Choose the synonym of 'BENEVOLENT':","opts":["Malicious","Kind-hearted","Greedy","Indifferent"],"ans":1,"exp":"'Benevolent' means well-meaning and kindly.","label":"PYQ-style","id":62},{"q":"Choose the antonym of 'DILIGENT':","opts":["Careless","Industrious","Attentive","Painstaking"],"ans":0,"exp":"'Diligent' means hardworking; its antonym is 'careless'.","label":"PYQ-style","id":63},{"q":"Choose the synonym of 'ABUNDANT':","opts":["Scarce","Plentiful","Limited","Rare"],"ans":1,"exp":"'Abundant' means existing in large quantity.","label":"expected","id":64},{"q":"Choose the antonym of 'TRANSPARENT':","opts":["Clear","Opaque","Glassy","See-through"],"ans":1,"exp":"'Transparent' means see-through; its antonym is 'opaque'.","label":"expected","id":65},{"q":"Choose the synonym of 'CANDID':","opts":["Evasive","Frank","Guarded","Indirect"],"ans":1,"exp":"'Candid' means truthful and straightforward.","label":"expected","id":66},{"q":"Choose the antonym of 'BENEVOLENT':","opts":["Generous","Malicious","Kindly","Charitable"],"ans":1,"exp":"The opposite of well-willed is 'malicious'.","label":"expected","id":67},{"q":"A person who writes dictionaries is a:","opts":["Lexicographer","Cartographer","Calligrapher","Typist"],"ans":0,"exp":"'Lexicographer' is a dictionary compiler.","label":"expected","id":68},{"q":"A life history written by the person himself is a:","opts":["Biography","Autobiography","Monograph","Bibliography"],"ans":1,"exp":"Self-written life sketch = autobiography.","label":"expected","id":69},{"q":"A place where money is coined is a:","opts":["Mint","Vault","Bank","Forge"],"ans":0,"exp":"A 'mint' is where coins are manufactured.","label":"expected","id":70},{"q":"CPU stands for:","opts":["Central Processing Unit","Computer Processing Unit","Central Program Unit","Control Processing Unit"],"ans":0,"exp":"The CPU executes instructions and is the brain of the computer.","label":"expected","id":71},{"q":"Which memory is volatile?","opts":["RAM","ROM","CD-ROM","Hard disk"],"ans":0,"exp":"RAM loses its contents when power is removed; ROM is non-volatile.","label":"PYQ-style","id":72},{"q":"ROM stands for:","opts":["Read Only Memory","Random Only Memory","Read Output Memory","Run On Memory"],"ans":0,"exp":"ROM stores firmware such as the BIOS and is non-volatile.","label":"PYQ-style","id":73},{"q":"The smallest unit of memory in a computer is:","opts":["Bit","Byte","Nibble","Word"],"ans":0,"exp":"A bit is the smallest unit (0 or 1); a byte is 8 bits.","label":"expected","id":74},{"q":"One byte equals how many bits?","opts":["4","8","16","32"],"ans":1,"exp":"1 byte = 8 bits.","label":"expected","id":75},{"q":"Which device is an output device?","opts":["Keyboard","Mouse","Printer","Scanner"],"ans":2,"exp":"A printer produces output; keyboard, mouse and scanner are input devices.","label":"expected","id":76},{"q":"Which device is an input device?","opts":["Monitor","Printer","Keyboard","Speaker"],"ans":2,"exp":"A keyboard is used to feed data into the computer.","label":"expected","id":77},{"q":"What does the operating system do?","opts":["Only prints documents","Manages hardware and software resources","Only displays graphics","Only stores data"],"ans":1,"exp":"The OS manages memory, processes and peripherals and provides a user interface.","label":"expected","id":78},{"q":"HTTP stands for:","opts":["HyperText Transfer Protocol","High Transfer Text Protocol","Hyperlink Text Transmission Protocol","Host Transfer Protocol"],"ans":0,"exp":"HTTP is the protocol used to transfer web pages.","label":"PYQ-style","id":79},{"q":"WWW stands for:","opts":["World Wide Web","World Wide Work","Wide World Web","Web World Wide"],"ans":0,"exp":"The World Wide Web is a system of interlinked hypertext documents.","label":"PYQ-style","id":80},{"q":"Which of the following is a web browser?","opts":["Linux","Chrome","Windows","Android"],"ans":1,"exp":"Chrome is a browser; Linux and Windows are operating systems, Android is a mobile OS.","label":"expected","id":81},{"q":"What does an email client do?","opts":["Prints documents","Sends and receives email","Scans images","Formats text"],"ans":1,"exp":"An email client (mail client) is used to compose, send and read email.","label":"expected","id":82},{"q":"Which of these is an operating system?","opts":["MS Word","Windows","Photoshop","Excel"],"ans":1,"exp":"Windows is an operating system; Word, Photoshop and Excel are applications.","label":"expected","id":83},{"q":"RAM is called:","opts":["Read Access Memory","Random Access Memory","Rapid Access Memory","Read And Memorise"],"ans":1,"exp":"RAM = Random Access Memory, temporary working memory.","label":"PYQ-style","id":84},{"q":"What is a 'byte' in computer terms?","opts":["A unit of storage equal to 8 bits","A type of cable","A processor","A screen"],"ans":0,"exp":"A byte is the smallest addressable unit of data, equal to 8 bits.","label":"expected","id":85},{"q":"Which storage device has the largest capacity usually?","opts":["Floppy disk","Pen drive","Hard disk","CD-ROM"],"ans":2,"exp":"Hard disks offer far more capacity than pen drives or optical media.","label":"expected","id":86},{"q":"What does 'MS Word' do?","opts":["Word processing","Calculations","Presentations","Database management"],"ans":0,"exp":"MS Word is a word processor; Excel handles calculations, PowerPoint makes presentations.","label":"expected","id":87},{"q":"What is 'firewall' in a computer?","opts":["A type of screen","A network security system","A printer","A language"],"ans":1,"exp":"A firewall monitors and controls network traffic for security.","label":"expected","id":88},{"q":"OTP stands for:","opts":["One-Time Password","Online Transaction Password","One Time Pin Code only","Open Type Program"],"ans":0,"exp":"OTP is a single-use numeric code for verification.","label":"expected","id":89},{"q":"Phishing refers to:","opts":["A type of firewall","Fraudulent attempts to steal data","A file compression method","A programming language"],"ans":1,"exp":"Phishing uses fake emails or sites to steal credentials.","label":"PYQ-style","id":90},{"q":"What is UPI?","opts":["A payment interface","A printer standard","A programming language","A type of modem"],"ans":0,"exp":"UPI (Unified Payments Interface) is India's real-time payment system.","label":"expected","id":91},{"q":"PAN card is issued for:","opts":["Voter identity","Permanent account number (tax)","Driving licence","Voter enrolment"],"ans":1,"exp":"PAN identifies a person for income-tax purposes.","label":"expected","id":92},{"q":"DigiLocker is:","opts":["A digital document storage service","A bank account","A software licence","A network cable"],"ans":0,"exp":"DigiLocker stores and verifies issued documents electronically.","label":"expected","id":93},{"q":"Aadhaar is operated by:","opts":["UIDAI","RBI","SEBI","NITI Aayog"],"ans":0,"exp":"UIDAI manages Aadhaar.","label":"expected","id":94},{"q":"What is 'malware'?","opts":["Malicious software","A type of memory","A network cable","A printer driver"],"ans":0,"exp":"Malware includes viruses, worms and trojans that harm a system.","label":"expected","id":95},{"q":"Two-factor authentication means:","opts":["Two passwords only","Using two different verification factors","Using two computers","Using two printers"],"ans":1,"exp":"It combines something you know with something you have or are.","label":"expected","id":96},{"q":"The shortcut key to copy text is:","opts":["Ctrl + X","Ctrl + C","Ctrl + V","Ctrl + P"],"ans":1,"exp":"Ctrl+C copies and Ctrl+V pastes; Ctrl+X cuts.","label":"expected","id":97},{"q":"Which is the shortcut to save a document?","opts":["Ctrl + S","Ctrl + P","Ctrl + Z","Ctrl + F"],"ans":0,"exp":"Ctrl+S saves the current file.","label":"expected","id":98},{"q":"What does 'Ctrl + Z' do?","opts":["Redo","Undo the last action","Zoom in","Close the window"],"ans":1,"exp":"Ctrl+Z undoes the most recent change.","label":"expected","id":99},{"q":"What does a 'search engine' do?","opts":["Send email","Search the web for information","Print files","Play games"],"ans":1,"exp":"Search engines index and retrieve web pages for a query.","label":"expected","id":100}];
+const TOTAL_SECONDS = 120 * 60;
+const NEG = 0.25;
+
+const SECTIONS = [
+  {key:"kannada", name:"Paper 2 (ಎ) General Kannada"},
+  {key:"english", name:"Paper 2 (ಬಿ) General English"},
+  {key:"computer", name:"Paper 2 (ಸಿ) Computer Knowledge"}
+];
+const SECTION_BOUNDS = [0, 35, 70, 100];
+QUESTIONS.forEach((q,i)=>{
+  for(let s=0;s<SECTIONS.length;s++){
+    if(i >= SECTION_BOUNDS[s] && i < SECTION_BOUNDS[s+1]){ q.section = SECTIONS[s].key; break; }
+  }
+});
+
+/* ---------- STATE ---------- */
+const KEY = "VAO mock2_state";
+const WELCOMED = "VAO mock2_welcomed";
+let state = load() || {answers:{}, marked:{}, visited:{}, cur:0, left:TOTAL_SECONDS, started:false, done:false};
+let tick = null;
+
+function load(){
+  try{
+    const raw = localStorage.getItem(KEY);
+    return raw ? JSON.parse(raw) : null;
+  }catch(e){ return null; }
+}
+function save(){
+  try{ localStorage.setItem(KEY, JSON.stringify(state)); }catch(e){}
+}
+function fmt(sec){
+  const h = Math.floor(sec/3600), m = Math.floor((sec%3600)/60), s = sec%60;
+  const p = n => String(n).padStart(2,"0");
+  return p(h)+":"+p(m)+":"+p(s);
+}
+
+/* ---------- WELCOME ---------- */
+const $ = id => document.getElementById(id);
+$("startBtn").onclick = () => {
+  state.started = true;
+  try{ localStorage.setItem(WELCOMED,"1"); }catch(e){}
+  enterExam();
+};
+if(state.started || state.left < TOTAL_SECONDS){
+  try{
+    if(localStorage.getItem(WELCOMED)==="1") enterExam();
+  }catch(e){}
+}
+
+function enterExam(){
+  $("welcome").classList.add("hidden");
+  $("shell").classList.add("on");
+  if(state.done){ showResult(); return; }
+  buildTabs();
+  render();
+  startTimer();
+}
+
+/* ---------- TABS ---------- */
+function buildTabs(){
+  const wrap = $("tabs");
+  wrap.innerHTML = "";
+  SECTIONS.forEach(sec=>{
+    const b = document.createElement("button");
+    b.className = "tab";
+    b.textContent = sec.name + " (" + QUESTIONS.filter(q=>q.section===sec.key).length + ")";
+    b.onclick = ()=>{
+      const idx = QUESTIONS.findIndex((q,i)=> q.section===sec.key && !isAnswered(q.id) && i>=first(sec.key));
+      const target = QUESTIONS.findIndex(q=> q.section===sec.key);
+      state.cur = (idx>=0 ? idx : target);
+      render();
+    };
+    wrap.appendChild(b);
+  });
+  const b = document.createElement("button");
+  b.className = "tab";
+  b.textContent = "All Questions (100)";
+  b.onclick = ()=>{ state.cur = 0; render(); };
+  wrap.appendChild(b);
+}
+function first(key){ return QUESTIONS.findIndex(q=>q.section===key); }
+function isAnswered(id){ return state.answers[id] !== undefined; }
+
+/* ---------- RENDER ---------- */
+function render(){
+  const q = QUESTIONS[state.cur];
+  state.visited[q.id] = true;
+  const box = $("qbox");
+  const opts = q.opts.map((o,i)=>{
+    const sel = state.answers[q.id]===i;
+    return '<div class="opt'+(sel?' sel':'')+'" data-i="'+i+'">'+
+      '<span class="k">'+String.fromCharCode(65+i)+'</span><span>'+esc(o)+'</span></div>';
+  }).join("");
+  const label = q.label === "PYQ-style" ? "PYQ-style" : "expected";
+  const cls = q.label === "PYQ-style" ? "pyq" : "expected";
+  box.innerHTML =
+    '<div class="qhead">'+
+      '<span class="qno">Question '+q.id+' of 100 &middot; '+sectionName(q.section)+'</span>'+
+      '<span class="tag '+cls+'">'+label+'</span>'+
+    '</div>'+
+    '<div class="qtext">'+esc(q.q)+'</div>'+
+    '<div id="opts">'+opts+'</div>'+
+    '<div class="qfoot">'+
+      '<label class="review-lbl"><input type="checkbox" id="markChk" '+(state.marked[q.id]?'checked':'')+'> Mark for review</label>'+
+      '<div class="nav-btns">'+
+        '<button class="btn ghost" id="prevBtn">Previous</button>'+
+        '<button class="btn ghost" id="clearBtn">Clear</button>'+
+        '<button class="btn" id="nextBtn">Save &amp; Next</button>'+
+      '</div>'+
+    '</div>';
+
+  box.querySelectorAll(".opt").forEach(el=>{
+    el.onclick = ()=>{
+      state.answers[q.id] = Number(el.dataset.i);
+      save(); render(); updateMeta(); palette();
+    };
+  });
+  $("markChk").onchange = e => {
+    if(e.target.checked) state.marked[q.id]=true; else delete state.marked[q.id];
+    save(); palette(); updateMeta();
+  };
+  $("prevBtn").onclick = ()=>{ state.cur = Math.max(0, state.cur-1); save(); render(); scrollTop(); };
+  $("nextBtn").onclick = ()=>{ state.cur = Math.min(QUESTIONS.length-1, state.cur+1); save(); render(); scrollTop(); palette(); };
+  $("clearBtn").onclick = ()=>{ delete state.answers[q.id]; save(); render(); updateMeta(); palette(); };
+
+  // highlight active tab
+  [...document.querySelectorAll(".tab")].forEach(t=>t.classList.remove("active"));
+  updateMeta();
+  palette();
+  scrollTop();
+}
+function scrollTop(){ try{ window.scrollTo({top:0,behavior:"smooth"}); }catch(e){ window.scrollTo(0,0); } }
+function sectionName(k){ return (SECTIONS.find(s=>s.key===k)||{}).name || k; }
+
+function updateMeta(){
+  const ans = QUESTIONS.filter(q=>isAnswered(q.id)).length;
+  const mark = Object.keys(state.marked).length;
+  const pct = Math.round(ans/QUESTIONS.length*100);
+  $("barFill").style.width = pct+"%";
+  $("barLbl").textContent = "Attempted "+ans+" / 100";
+  $("barPct").textContent = pct+"%";
+  $("sAns").textContent = ans;
+  $("sMark").textContent = mark;
+  $("sUn").textContent = QUESTIONS.length - ans;
+}
+
+/* ---------- PALETTE ---------- */
+function palette(){
+  const pal = $("palette");
+  pal.innerHTML = "";
+  QUESTIONS.forEach((q,i)=>{
+    const b = document.createElement("button");
+    let cls = "not-visited";
+    if(state.marked[q.id]) cls = "marked";
+    else if(isAnswered(q.id)) cls = "attempted";
+    else if(state.visited[q.id]) cls = "unanswered";
+    b.className = cls + (i===state.cur ? " cur" : "");
+    b.textContent = q.id;
+    b.onclick = ()=>{ state.cur = i; save(); render(); };
+    pal.appendChild(b);
+  });
+}
+
+/* ---------- TIMER ---------- */
+function startTimer(){
+  if(tick) clearInterval(tick);
+  paintTimer();
+  tick = setInterval(()=>{
+    state.left--;
+    if(state.left % 5 === 0) save();
+    paintTimer();
+    if(state.left <= 0){ clearInterval(tick); autoSubmit(); }
+  }, 1000);
+}
+function paintTimer(){
+  const t = $("timer");
+  t.textContent = fmt(Math.max(0,state.left));
+  if(state.left <= 300) t.classList.add("warn"); else t.classList.remove("warn");
+}
+
+/* ---------- SUBMIT ---------- */
+$("submitBtn").onclick = ()=>{
+  const ans = QUESTIONS.filter(q=>isAnswered(q.id)).length;
+  showModal(
+    "Submit the test?",
+    "You have answered "+ans+" of 100 questions. "+(100-ans)+" remain unanswered. This cannot be undone.",
+    ()=>{ finish(); }
+  );
+};
+function autoSubmit(){
+  state.timedOut = true;
+  finish();
+}
+function finish(){
+  state.done = true;
+  if(tick) clearInterval(tick);
+  save();
+  showResult();
+}
+
+function showModal(title, msg, onYes){
+  const m = document.createElement("div");
+  m.className="modal";
+  m.innerHTML = '<div class="box"><h3>'+esc(title)+'</h3><p>'+esc(msg)+'</p>'+
+    '<div style="display:flex;gap:10px;justify-content:flex-end">'+
+    '<button class="btn ghost" id="mNo">Cancel</button>'+
+    '<button class="btn" id="mYes">Submit</button></div></div>';
+  document.body.appendChild(m);
+  const close = ()=> m.remove();
+  const y = m.querySelector("#mYes"); if(y) y.onclick = ()=>{ close(); onYes(); };
+  const n = m.querySelector("#mNo"); if(n) n.onclick = close;
+}
+
+/* ---------- RESULT ---------- */
+function showResult(){
+  const rows = SECTIONS.map(sec=>{
+    const qs = QUESTIONS.filter(q=>q.section===sec.key);
+    let right=0, wrong=0, skip=0;
+    qs.forEach(q=>{
+      if(!isAnswered(q.id)) skip++;
+      else if(state.answers[q.id]===q.ans) right++;
+      else wrong++;
+    });
+    const marks = right - wrong*NEG;
+    return {name:sec.name, total:qs.length, right, wrong, skip, marks};
+  });
+  const right = rows.reduce((a,r)=>a+r.right,0);
+  const wrong = rows.reduce((a,r)=>a+r.wrong,0);
+  const skip  = rows.reduce((a,r)=>a+r.skip,0);
+  const score = (right - wrong*NEG).toFixed(2);
+  const pct = ((score/100)*100).toFixed(1);
+
+  const brk = rows.map(r=>
+    '<tr><td>'+r.name+'</td><td>'+r.total+'</td><td class="pos">'+r.right+'</td>'+
+    '<td class="negv">'+r.wrong+'</td><td class="wr">'+r.skip+'</td>'+
+    '<td><b>'+r.marks.toFixed(2)+'</b></td></tr>').join("");
+
+  $("shell").classList.remove("on");
+  const box = $("result");
+  box.classList.remove("hidden");
+  const banner = state.timedOut
+    ? '<div style="background:#b91c1c;color:#fff;border-radius:10px;padding:12px 16px;margin-bottom:16px;font-weight:600">Time is over — the paper was submitted automatically at 00:00:00.</div>'
+    : '';
+  box.innerHTML =
+    banner+
+    '<div class="big">'+
+      '<div class="of">Your Score</div>'+
+      '<div class="score">'+score+'</div>'+
+      '<div class="of">out of 100 &middot; '+pct+'%</div>'+
+    '</div>'+
+    '<div class="grid">'+
+      '<div class="stat"><div class="v pos">'+right+'</div><div class="k">Correct</div></div>'+
+      '<div class="stat"><div class="v negv">'+wrong+'</div><div class="k">Wrong</div></div>'+
+      '<div class="stat"><div class="v wr">'+skip+'</div><div class="k">Unattempted</div></div>'+
+      '<div class="stat"><div class="v">'+(wrong*NEG).toFixed(2)+'</div><div class="k">Penalty</div></div>'+
+    '</div>'+
+    '<table class="brk"><thead><tr><th>Section</th><th>Qs</th><th>Correct</th><th>Wrong</th><th>Skipped</th><th>Marks</th></tr></thead>'+
+    '<tbody>'+brk+'</tbody></table>'+
+    '<div class="actions">'+
+      '<button class="btn" id="revBtn">Review Answers</button>'+
+      '<button class="btn ghost" id="retakeBtn">Retake Test</button>'+
+    '</div>'+
+    '<div id="review"></div>';
+
+  $("revBtn").onclick = ()=> renderReview();
+  $("retakeBtn").onclick = ()=>{
+    try{ localStorage.removeItem(KEY); localStorage.removeItem(WELCOMED); }catch(e){}
+    location.reload();
+  };
+  window.scrollTo(0,0);
+}
+
+function renderReview(){
+  const wrap = $("review");
+  if(wrap.dataset.on === "1"){ wrap.innerHTML=""; wrap.dataset.on="0"; return; }
+  wrap.dataset.on = "1";
+  const parts = SECTIONS.map(sec=>{
+    const qs = QUESTIONS.filter(q=>q.section===sec.key);
+    const body = qs.map(q=>{
+      const picked = state.answers[q.id];
+      let pill, cls;
+      if(picked===undefined){ pill='<span class="pill sk">Skipped</span>'; }
+      else if(picked===q.ans){ pill='<span class="pill ok">Correct</span>'; }
+      else { pill='<span class="pill no">Wrong</span>'; }
+      const opts = q.opts.map((o,i)=>{
+        let c = "";
+        if(i===q.ans) c=" correct";
+        else if(i===picked) c=" wrong";
+        return '<div class="o'+c+'"><b>'+String.fromCharCode(65+i)+'.</b> '+esc(o)+
+          (i===q.ans?' <span style="color:var(--green);font-size:12px">&larr; correct</span>':'')+
+          (i===picked && i!==q.ans?' <span style="color:var(--red);font-size:12px">&larr; your answer</span>':'')+
+        '</div>';
+      }).join("");
+      return '<div class="rev">'+
+        '<div class="top"><span class="qno">Q'+q.id+' &middot; '+esc(sec.name)+'</span>'+pill+'</div>'+
+        '<div class="qt">'+esc(q.q)+'</div>'+opts+
+        '<div class="exp"><b>Explanation:</b> '+esc(q.exp)+'</div>'+
+      '</div>';
+    }).join("");
+    return '<h2 style="margin:26px 0 12px">'+esc(sec.name)+' ('+qs.length+' questions)</h2>'+body;
+  }).join("");
+  wrap.innerHTML = parts;
+  wrap.scrollIntoView({behavior:"smooth"});
+}
+
+/* ---------- UTIL ---------- */
+function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
+
+/* keyboard nav */
+document.addEventListener("keydown", e=>{
+  if(!$("shell").classList.contains("on")) return;
+  if(e.key==="ArrowRight") $("nextBtn") && $("nextBtn").click();
+  if(e.key==="ArrowLeft")  $("prevBtn") && $("prevBtn").click();
+  if(["1","2","3","4"].includes(e.key)){
+    const opts = document.querySelectorAll("#opts .opt");
+    if(opts[Number(e.key)-1]) opts[Number(e.key)-1].click();
+  }
+  if(["a","b","c","d"].includes(e.key.toLowerCase())){
+    const i = e.key.toLowerCase().charCodeAt(0)-97;
+    const opts = document.querySelectorAll("#opts .opt");
+    if(opts[i]) opts[i].click();
+  }
+});
+</script>
+</body>
+</html>

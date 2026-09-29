@@ -1,0 +1,12 @@
+flowchart TD
+    A["_bank_gk.py + _bank_gk2.py"] --> C["_build_mocks.py"]
+    B["_bank_p2.py + _bank_p2b.py"] --> C
+    T["Land Surveyor mock1.html (engine)"] --> C
+    C --> V{"validate: 100 Q, 4 options,<br/>answer index, explanation,<br/>no repeated stem"}
+    V -->|fail| X["stop, fix the bank"]
+    V -->|pass| M1["mock1.html Paper 1"]
+    V -->|pass| M2["mock2.html Paper 2"]
+    V -->|pass| M3["mock3.html mixed"]
+    M1 --> S["_smoke_test.js (jsdom)"]
+    M2 --> S
+    M3 --> S

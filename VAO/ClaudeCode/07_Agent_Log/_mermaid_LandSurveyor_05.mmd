@@ -1,0 +1,13 @@
+flowchart TD
+    A["User receiver at<br/>station P"] --> B["Pseudo-range to<br/>Sat 1: ρ1 = c(t1)"]
+    A --> C["Pseudo-range to<br/>Sat 2: ρ2"]
+    A --> D["Pseudo-range to<br/>Sat 3: ρ3"]
+    A --> E["Pseudo-range to<br/>Sat 4: ρ4"]
+    B --> F["Solve 4 equations"]
+    C --> F
+    D --> F
+    E --> F
+    F --> G["Unknowns:<br/>E, N, h + clock bias"]
+    G --> H["Apply corrections:<br/>iono, tropo, ephemeris"]
+    H --> I["Position (WGS-84 /<br/>local grid)"]
+    I --> J["Real-time option:<br/>RTK from reference station"]
