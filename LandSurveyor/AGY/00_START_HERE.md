@@ -99,8 +99,10 @@ All tests feature offline execution, countdown timer, question palette, real neg
   - `[[05_Resources/Raw_Source_Papers/Karnataka_Land_Surveyor_Paper_1_Official_2016.pdf|Official 2016 Paper-I General Studies (PDF)]]` *(~1.04 MB — Original scanned 100-Q test booklet)*
   - `[[05_Resources/Raw_Source_Papers/Karnataka_Land_Surveyor_Paper_2_Official_2016.pdf|Official 2016 Paper-II Specific Paper (PDF)]]` *(~1.02 MB — Original scanned 100-Q test booklet: Math, Physics, Geography, Cartography)*
   - *Purpose:* Serves as the primary evidence repository backing all verbatim PYQs. You can open and read these unedited PDFs directly whenever you want to cross-examine questions or check original Kannada/English phrasings.
-- **Official Source Registry:** [[05_Resources/Source_Registry|Master Source Registry & Statutory Acts]]
-- **YouTube Coursework Directory:** [[LandSurveyor/AGY/05_Resources/YouTube_Links|18 Verified Coursework Lessons & Transcripts]]
+- **YouTube Coursework Directory:** [[05_Resources/YouTube_Links|20 Verified Coursework Lessons & Transcripts Repository]]
+  - `[[05_Resources/YouTube_Transcripts/JAT-aMHzP9E_transcript|Karnataka Land Revenue Act 1964 & Revenue Courts (Legal Voice Kannada)]]` *(Revenue court hierarchy, Tahsildar to KAT, boundary/mutation dispute procedures)*
+  - `[[05_Resources/YouTube_Transcripts/ybC2c9st7Ls_transcript|Land Reforms in Karnataka 1947–2020 & 2020 Amendments (Puneeth Forum)]]` *(Inam abolition, 1961 Act, 1974 Devaraj Urs reforms, Land Tribunals, and 2020 Act repealing Sec 79A/B/C)*
+  - `[[05_Resources/YouTube_Transcripts/30Va79yyDlg_transcript|Modern Surveying Methods & Photogrammetry Class 1 (Bharath Gowda Sir)]]` *(Paper-II technical core, Aimé Laussedat, EMR spectrum, scale derivations, 3D stereomodels)*
 
 ---
 

@@ -65,11 +65,11 @@ This registry indexes all official notifications, government acts, gazette notif
 
 The dedicated directory `05_Resources/Raw_Source_Papers/` holds the unedited, original question papers from previous official recruitment cycles:
 
-| File | Conducting Body | Exam Date | Content |
-| :--- | :---: | :---: | :--- |
-| `[[05_Resources/Raw_Source_Papers/Karnataka_Land_Surveyor_Paper_1_Official_2016.pdf]]` | KPSC / SSLR | 31-01-2016 | Paper-I General Studies (100 Qs) |
-| `[[05_Resources/Raw_Source_Papers/Karnataka_Land_Surveyor_Paper_2_Official_2016.pdf]]` | KPSC / SSLR | 31-01-2016 | Paper-II Specific Paper (Mathematics, Physics, Geography, Surveying) (100 Qs) |
-| `[[05_Resources/Raw_Source_Papers/README.md]]` | AGY QA | 2026-09-30 | Catalog and syllabus mapping of raw source files |
+| File                                                                                 | Conducting Body | Exam Date  | Content                                                                       |
+| :----------------------------------------------------------------------------------- | :-------------: | :--------: | :---------------------------------------------------------------------------- |
+| [[05_Resources/Raw_Source_Papers/Karnataka_Land_Surveyor_Paper_1_Official_2016.pdf]] |   KPSC / SSLR   | 31-01-2016 | Paper-I General Studies (100 Qs)                                              |
+| [[05_Resources/Raw_Source_Papers/Karnataka_Land_Surveyor_Paper_2_Official_2016.pdf]] |   KPSC / SSLR   | 31-01-2016 | Paper-II Specific Paper (Mathematics, Physics, Geography, Surveying) (100 Qs) |
+| [[05_Resources/Raw_Source_Papers/README.md]]                                         |     AGY QA      | 2026-09-30 | Catalog and syllabus mapping of raw source files                              |
 
 ---
 
