@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Full-Length Mock Test 01 — Paper-I</title>
+<style>
+  :root {
+    --primary: #1e3a8a;
+    --primary-light: #3b82f6;
+    --accent: #059669;
+    --danger: #dc2626;
+    --warning: #d97706;
+    --bg: #f8fafc;
+    --card: #ffffff;
+    --text: #1e293b;
+    --text-muted: #64748b;
+    --border: #e2e8f0;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  body { background: var(--bg); color: var(--text); display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
+  header { background: var(--primary); color: white; padding: 12px 24px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+  header h1 { font-size: 1.15rem; font-weight: 600; }
+  .badge { background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 9999px; font-size: 0.8rem; margin-left: 8px; }
+  .timer-box { background: #0f172a; padding: 6px 16px; border-radius: 6px; font-family: monospace; font-size: 1.25rem; font-weight: 700; color: #38bdf8; display: flex; align-items: center; gap: 8px; }
+  .timer-box.warning { color: #f87171; animation: pulse 1s infinite; }
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+  
+  .main-container { display: flex; flex: 1; overflow: hidden; }
+  .question-pane { flex: 1; padding: 24px 32px; overflow-y: auto; display: flex; flex-direction: column; }
+  .sidebar { width: 340px; background: var(--card); border-left: 1px solid var(--border); display: flex; flex-direction: column; }
+  
+  .q-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+  .q-number { font-size: 1.1rem; font-weight: 700; color: var(--primary); }
+  .q-meta { display: flex; gap: 8px; font-size: 0.8rem; }
+  .q-tag { background: #eff6ff; color: #1d4ed8; padding: 2px 8px; border-radius: 4px; font-weight: 600; border: 1px solid #bfdbfe; }
+  .q-marks { background: #f0fdf4; color: #15803d; padding: 2px 8px; border-radius: 4px; font-weight: 600; }
+  
+  .q-text { font-size: 1.05rem; line-height: 1.6; margin-bottom: 24px; font-weight: 500; }
+  .options-grid { display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
+  .option-label { display: flex; align-items: flex-start; gap: 12px; padding: 12px 16px; border: 1.5px solid var(--border); border-radius: 8px; cursor: pointer; transition: all 0.2s; background: white; }
+  .option-label:hover { border-color: var(--primary-light); background: #f8fafc; }
+  .option-label.selected { border-color: var(--primary); background: #eff6ff; font-weight: 600; }
+  .option-radio { margin-top: 4px; accent-color: var(--primary); }
+  
+  .action-bar { margin-top: auto; display: flex; justify-content: space-between; align-items: center; padding-top: 16px; border-top: 1px solid var(--border); }
+  .btn { padding: 10px 18px; border-radius: 6px; font-weight: 600; cursor: pointer; border: none; font-size: 0.9rem; transition: background 0.2s; }
+  .btn-primary { background: var(--primary); color: white; }
+  .btn-primary:hover { background: #1e40af; }
+  .btn-outline { background: white; border: 1px solid var(--border); color: var(--text); }
+  .btn-outline:hover { background: #f1f5f9; }
+  .btn-warning { background: #fef3c7; color: #b45309; border: 1px solid #fde68a; }
+  .btn-warning:hover { background: #fde68a; }
+  .btn-success { background: var(--accent); color: white; }
+  .btn-success:hover { background: #047857; }
+  
+  /* Sidebar */
+  .palette-header { padding: 16px; border-bottom: 1px solid var(--border); font-weight: 700; font-size: 0.95rem; }
+  .legend { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 12px 16px; border-bottom: 1px solid var(--border); font-size: 0.75rem; background: #fafafa; }
+  .legend-item { display: flex; align-items: center; gap: 6px; }
+  .dot { width: 12px; height: 12px; border-radius: 3px; }
+  .dot-answered { background: var(--accent); }
+  .dot-review { background: var(--warning); }
+  .dot-unanswered { background: #cbd5e1; }
+  
+  .palette-grid { flex: 1; padding: 16px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; overflow-y: auto; align-content: start; }
+  .palette-btn { height: 38px; border-radius: 6px; border: 1px solid var(--border); font-weight: 700; font-size: 0.85rem; cursor: pointer; background: white; }
+  .palette-btn.current { border: 2px solid var(--primary); font-weight: 800; }
+  .palette-btn.answered { background: var(--accent); color: white; border-color: var(--accent); }
+  .palette-btn.review { background: var(--warning); color: white; border-color: var(--warning); }
+  .palette-btn.answered-review { background: #8b5cf6; color: white; border-color: #8b5cf6; }
+  
+  .sidebar-footer { padding: 16px; border-top: 1px solid var(--border); }
+  .btn-submit { width: 100%; padding: 12px; font-size: 1rem; }
+  
+  /* Result Modal */
+  .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); display: none; justify-content: center; align-items: center; z-index: 100; }
+  .modal { background: white; border-radius: 12px; width: 90%; max-width: 840px; max-height: 90vh; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.2); }
+  .modal-header { background: var(--primary); color: white; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; }
+  .modal-body { padding: 24px; overflow-y: auto; }
+  .score-card { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; text-align: center; }
+  .score-tile { padding: 16px; border-radius: 8px; background: var(--bg); border: 1px solid var(--border); }
+  .score-tile h3 { font-size: 1.8rem; font-weight: 800; color: var(--primary); }
+  .score-tile p { font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; }
+  
+  .review-section { margin-top: 24px; }
+  .review-item { border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin-bottom: 12px; background: #fafafa; }
+  .review-item.correct { border-left: 4px solid var(--accent); }
+  .review-item.wrong { border-left: 4px solid var(--danger); }
+  .review-item.unanswered { border-left: 4px solid #94a3b8; }
+  .exp-box { margin-top: 8px; padding: 10px; background: #eff6ff; border-radius: 6px; font-size: 0.85rem; color: #1e3a8a; }
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <h1>Full-Length Mock Test 01 — Paper-I <span class="badge">KEA Land Surveyor 2026</span></h1>
+    <div style="font-size: 0.8rem; opacity: 0.85; margin-top: 2px;">Paper-I: General Knowledge & Current Affairs (Official 100 Questions Simulation) | Total Marks: 100 | Negative Marking: -0.25</div>
+  </div>
+  <div class="timer-box" id="timerBox">
+    <span>⏱️</span> <span id="timerDisplay">00:00:00</span>
+  </div>
+</header>
+
+<div class="main-container">
+  <main class="question-pane">
+    <div class="q-header">
+      <div class="q-number" id="qNumberDisplay">Question 1 of 100</div>
+      <div class="q-meta">
+        <span class="q-tag" id="qSubjectTag">Subject</span>
+        <span class="q-tag" style="background:#fef3c7; color:#92400e; border-color:#fde68a;" id="qSourceTag">Source</span>
+        <span class="q-marks">+1.0 / -0.25</span>
+      </div>
+    </div>
+    
+    <div class="q-text" id="qTextDisplay">Loading question...</div>
+    
+    <div class="options-grid" id="optionsContainer"></div>
+    
+    <div class="action-bar">
+      <div style="display: flex; gap: 8px;">
+        <button class="btn btn-warning" id="btnReview" onclick="toggleReview()">⭐ Mark for Review</button>
+        <button class="btn btn-outline" id="btnClear" onclick="clearCurrentResponse()">Clear Response</button>
+      </div>
+      <div style="display: flex; gap: 8px;">
+        <button class="btn btn-outline" id="btnPrev" onclick="navigateQuestion(-1)">← Previous</button>
+        <button class="btn btn-primary" id="btnNext" onclick="navigateQuestion(1)">Save & Next →</button>
+      </div>
+    </div>
+  </main>
+  
+  <aside class="sidebar">
+    <div class="palette-header">Question Navigation Palette</div>
+    <div class="legend">
+      <div class="legend-item"><div class="dot dot-answered"></div> Answered</div>
+      <div class="legend-item"><div class="dot dot-review"></div> Marked Review</div>
+      <div class="legend-item"><div class="dot" style="background:#8b5cf6;"></div> Ans & Review</div>
+      <div class="legend-item"><div class="dot dot-unanswered"></div> Not Answered</div>
+    </div>
+    <div class="palette-grid" id="paletteGrid"></div>
+    <div class="sidebar-footer">
+      <button class="btn btn-success btn-submit" onclick="submitExam(false)">Submit Examination</button>
+    </div>
+  </aside>
+</div>
+
+<!-- Results Modal -->
+<div class="modal-overlay" id="resultModal">
+  <div class="modal">
+    <div class="modal-header">
+      <h2>Examination Result & Scorecard</h2>
+      <button onclick="closeModal()" style="background:none; border:none; color:white; font-size:1.5rem; cursor:pointer;">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div class="score-card">
+        <div class="score-tile">
+          <h3 id="resScore">0.00</h3>
+          <p>Total Net Marks</p>
+        </div>
+        <div class="score-tile">
+          <h3 id="resAccuracy" style="color:var(--accent);">0%</h3>
+          <p>Accuracy</p>
+        </div>
+        <div class="score-tile">
+          <h3 id="resCorrect" style="color:var(--accent);">0</h3>
+          <p>Correct (+1.0)</p>
+        </div>
+        <div class="score-tile">
+          <h3 id="resWrong" style="color:var(--danger);">0</h3>
+          <p>Wrong (-0.25)</p>
+        </div>
+      </div>
+      
+      <div id="subjectBreakdownContainer" style="margin-bottom: 24px;"></div>
+      
+      <h3 style="margin-bottom: 12px;">Detailed Question Review & Explanations</h3>
+      <div class="review-section" id="reviewQuestionsContainer"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+const QUESTIONS = [{"text": "The famous Halmidi inscription, regarded as the earliest recorded stone inscription in classical Kannada, belongs to which dynasty?", "options": ["Gangas of Talakad", "Kadambas of Banavasi", "Chalukyas of Badami", "Rashtrakutas of Manyakheta"], "answer": 1, "explanation": "The Halmidi inscription discovered in Belur taluk dates to c. 450 AD during the reign of King Kakusthavarma of the Kadamba dynasty.", "subject": "Karnataka History", "syllabus_ref": "P1-GK-1.3", "source": "KEA Verbatim PYQ"}, {"text": "The Aihole inscription composed by poet Ravikirti describes the victory of Pulakeshin II over which North Indian emperor?", "options": ["Samudragupta", "Harshavardhana", "Chandragupta Maurya", "Dharmapala"], "answer": 1, "explanation": "Ravikirti composed the Aihole inscription in 634 AD, detailing Badami Chalukya King Pulakeshin II's decisive victory over Emperor Harshavardhana on the banks of Narmada.", "subject": "Karnataka History", "syllabus_ref": "P1-GK-1.3", "source": "KEA Verbatim PYQ"}, {"text": "The colossal 57-foot monolithic statue of Gommateshwara at Shravanabelagola was consecrated in 981 AD by:", "options": ["Chavundaraya", "Durvinita", "Rachamalla IV", "Amoghavarsha I"], "answer": 0, "explanation": "Chavundaraya, military general and Prime Minister of Western Ganga King Rachamalla IV, commissioned the Gommateshwara monolith in 981 AD.", "subject": "Karnataka History", "syllabus_ref": "P1-GK-1.3", "source": "KEA Verbatim PYQ"}, {"text": "The famous rock-cut monolithic Kailasanatha Temple at Ellora (Cave 16) was excavated under which Rashtrakuta king?", "options": ["Dantidurga", "Krishna I", "Govinda III", "Amoghavarsha I"], "answer": 1, "explanation": "Rashtrakuta King Krishna I (756–774 AD) patronized the excavation of the world-famous monolithic Kailasanatha temple at Ellora.", "subject": "Karnataka History", "syllabus_ref": "P1-GK-1.3", "source": "KEA Verbatim PYQ"}, {"text": "The historic Vijayanagara Empire was founded in 1336 AD on the banks of which river?", "options": ["Krishna", "Tungabhadra", "Kaveri", "Malaprabha"], "answer": 1, "explanation": "Harihara I and Bukka I founded the Vijayanagara Empire on the southern banks of River Tungabhadra near Hampi.", "subject": "Karnataka History", "syllabus_ref": "P1-GK-1.3", "source": "KEA Verbatim PYQ"}, {"text": "Who was the British officer that Rani Chennamma of Kittur defeated in battle in October 1824?", "options": ["St. John Thackeray", "Thomas Munro", "Mark Cubbon", "L. Bowring"], "answer": 0, "explanation": "St. John Thackeray, the Political Agent and Collector of Dharwad, was killed in battle when attacking the Kittur fort in October 1824.", "subject": "Karnataka History", "syllabus_ref": "P1-GK-1.3", "source": "KEA Verbatim PYQ"}, {"text": "Sangolli Rayanna, the legendary military commander of Kittur, was executed by the British at which location in 1831?", "options": ["Belagavi Fort", "Nandagad", "Khanapur", "Bailhongal"], "answer": 1, "explanation": "Sangolli Rayanna was captured by betrayal and hanged by the British colonial authorities on 26 January 1831 at Nandagad.", "subject": "Karnataka History", "syllabus_ref": "P1-GK-1.3", "source": "KEA Verbatim PYQ"}, {"text": "Which freedom tragedy in Karnataka is widely known as the 'Jallianwala Bagh of Karnataka'?", "options": ["Vidurashwatha Firing (1938)", "Isur Village Uprising (1942)", "Shivapura Flag Satyagraha (1938)", "Halagali Bedas Revolt (1857)"], "answer": 0, "explanation": "On 25 April 1938, British police opened fire on unarmed freedom fighters hoisting the tricolour at Vidurashwatha in modern Chikkaballapur district, killing over 35 people.", "subject": "Karnataka History", "syllabus_ref": "P1-GK-1.3", "source": "KEA Verbatim PYQ"}, {"text": "The first village in Karnataka to declare independence during the Quit India Movement of 1942 was:", "options": ["Isur (Shivamogga)", "Shivapura (Mandya)", "Ankola (Uttara Kannada)", "Nidagundi (Vijayapura)"], "answer": 0, "explanation": "Villagers of Isur in Shikaripura taluk hoisted the tricolor and declared 'Yashuru' as free independent village in 1942, leading to the execution of 5 patriots.", "subject": "Karnataka History", "syllabus_ref": "P1-GK-1.3", "source": "KEA Verbatim PYQ"}, {"text": "The Mysore State was officially renamed as 'Karnataka' on 1st November 1973 under the tenure of which Chief Minister?", "options": ["K. Chengalaraya Reddy", "Kengal Hanumanthaiah", "D. Devaraj Urs", "S. Nijalingappa"], "answer": 2, "explanation": "Chief Minister D. Devaraj Urs officially renamed Mysore State as 'Karnataka' on 1 November 1973.", "subject": "Karnataka History", "syllabus_ref": "P1-GK-1.3", "source": "KEA Verbatim PYQ"}, {"text": "Who among the following founded the famous Bahmani Kingdom in 1347 AD with its initial capital at Kalaburagi (Gulbarga)?", "options": ["Alauddin Hasan Bahman Shah", "Firuz Shah Bahmani", "Mahmud Gawan", "Yusuf Adil Shah"], "answer": 0, "explanation": "Alauddin Hasan Bahman Shah (Hasan Gangu) founded the Bahmani Sultanate in 1347 with Kalaburagi as its original capital.", "subject": "Karnataka History", "syllabus_ref": "P1-GK-1.3", "source": "KEA Verbatim PYQ"}, {"text": "Who was the celebrated Dewan of Mysore who established the Mysore University (1916) and the Iron and Steel Works at Bhadravati?", "options": ["Sir K. Seshadri Iyer", "Sir M. Visvesvaraya", "Sir Mirza Ismail", "P.N. Krishnamurti"], "answer": 1, "explanation": "Bharat Ratna Sir M. Visvesvaraya served as Dewan of Mysore from 1912 to 1918 and founded Mysore University, KRS Dam, and Bhadravati Iron Works.", "subject": "Karnataka History", "syllabus_ref": "P1-GK-1.3", "source": "KEA Verbatim PYQ"}, {"text": "The 'Halagali Beda Revolt' of 1857 in Mudhol principality of Karnataka was fought primarily against which British act?", "options": ["Doctrine of Lapse", "Disarming Act of 1857", "Salt Tax", "Inam Commission Act"], "answer": 1, "explanation": "The Bedas of Halagali revolted valiantly in 1857 refusing to surrender their traditional hereditary firearms under the British Disarming Act.", "subject": "Karnataka History", "syllabus_ref": "P1-GK-1.3", "source": "KEA Verbatim PYQ"}, {"text": "Who presided over the historic Belgaum (Belagavi) Session of the Indian National Congress in 1924?", "options": ["Subhas Chandra Bose", "Mahatma Gandhi", "Jawaharlal Nehru", "Sardar Vallabhbhai Patel"], "answer": 1, "explanation": "The 39th session of the INC at Belgaum in December 1924 was the only Congress session ever presided over by Mahatma Gandhi.", "subject": "Karnataka History", "syllabus_ref": "P1-GK-1.3", "source": "KEA Verbatim PYQ"}, {"text": "Who composed the iconic Kannada state anthem 'Jaya Bharata Jananiya Tanujate'?", "options": ["Da. Ra. Bendre", "Kuppali Venkatappa Puttappa (Kuvempu)", "Masti Venkatesha Iyengar", "B.M. Srikantaiah"], "answer": 1, "explanation": "Rashtrakavi Kuvempu penned the poem which was officially adopted as the State Anthem of Karnataka in 2004.", "subject": "Karnataka History", "syllabus_ref": "P1-GK-1.3", "source": "KEA Verbatim PYQ"}, {"text": "What is the highest mountain peak in Karnataka?", "options": ["Kudremukh", "Mullayanagiri", "Pushpagiri", "Tadiandamol"], "answer": 1, "explanation": "Mullayanagiri in the Baba Budan Giri range of Chikkamagaluru district stands at 1,930 meters, making it the highest elevation in Karnataka.", "subject": "Karnataka Geography", "syllabus_ref": "P1-GK-1.4", "source": "KEA Verbatim PYQ"}, {"text": "The world-famous Jog Falls (Gersoppa) is formed across which river?", "options": ["Kaveri", "Sharavathi", "Kali", "Aghanashini"], "answer": 1, "explanation": "Jog Falls (253 m plunge) is formed by the Sharavathi River in Sagara taluk of Shivamogga district.", "subject": "Karnataka Geography", "syllabus_ref": "P1-GK-1.4", "source": "KEA Verbatim PYQ"}, {"text": "At which confluence do the rivers Tunga and Bhadra merge to form the Tungabhadra River?", "options": ["Kudli", "Kannambadi", "Hampi", "Koodalasangama"], "answer": 0, "explanation": "Tunga and Bhadra originate in Gangamoola (Western Ghats) and merge at Kudli in Shivamogga district to form Tungabhadra.", "subject": "Karnataka Geography", "syllabus_ref": "P1-GK-1.4", "source": "KEA Verbatim PYQ"}, {"text": "Which village in Karnataka is popularly hailed as the 'Cherrapunji of South India' due to its exceptionally high annual rainfall?", "options": ["Madikeri", "Agumbe", "Bhagamandala", "Hulikal"], "answer": 1, "explanation": "Agumbe in Thirthahalli taluk of Shivamogga district receives over 7,500 mm of annual rainfall.", "subject": "Karnataka Geography", "syllabus_ref": "P1-GK-1.4", "source": "KEA Verbatim PYQ"}, {"text": "The Almatti Dam constructed across the Krishna River forms a reservoir officially named:", "options": ["Basava Sagar", "Lal Bahadur Shastri Sagar", "Linganamakki", "Hemavati Reservoir"], "answer": 1, "explanation": "Almatti Dam forms the Lal Bahadur Shastri Sagar reservoir, while Narayanpur Dam downstream forms the Basava Sagar.", "subject": "Karnataka Geography", "syllabus_ref": "P1-GK-1.4", "source": "KEA Verbatim PYQ"}, {"text": "The Krishna Raja Sagara (KRS) Dam is constructed just below the confluence of Kaveri with which two tributary rivers?", "options": ["Hemavati and Lakshmantirtha", "Kabini and Bhavani", "Shimsha and Arkavathi", "Harangi and Yagachi"], "answer": 0, "explanation": "KRS Dam is built across Kaveri near Kannambadi where the Hemavati and Lakshmantirtha join the main river.", "subject": "Karnataka Geography", "syllabus_ref": "P1-GK-1.4", "source": "KEA Verbatim PYQ"}, {"text": "Which bird sanctuary in Karnataka is located on an island in the Kaveri river near Srirangapatna?", "options": ["Attiveri Bird Sanctuary", "Ranganathittu Bird Sanctuary", "Gudavi Bird Sanctuary", "Mandagadde Bird Sanctuary"], "answer": 1, "explanation": "Ranganathittu Bird Sanctuary in Mandya district comprises 6 islets in the Kaveri river.", "subject": "Karnataka Geography", "syllabus_ref": "P1-GK-1.4", "source": "KEA Verbatim PYQ"}, {"text": "Which national park in Karnataka is famous for its evergreen rainforests and Lion-tailed Macaques, and was declared a World Heritage Site?", "options": ["Nagarhole", "Kudremukh", "Bandipur", "Anshi (Kali)"], "answer": 1, "explanation": "Kudremukh National Park in Chikkamagaluru/Dakshina Kannada contains extensive shola-grassland ecosystems and Lion-tailed Macaques.", "subject": "Karnataka Geography", "syllabus_ref": "P1-GK-1.4", "source": "KEA Verbatim PYQ"}, {"text": "The Ten Degree Channel ($10^\\circ\\text{ N}$) separates which two island groups in the Bay of Bengal?", "options": ["Andaman and Nicobar", "Lakshadweep and Maldives", "Daman and Diu", "Rameswaram and Sri Lanka"], "answer": 0, "explanation": "The 10-degree latitude channel separates the Andaman Islands from the Nicobar Islands.", "subject": "Indian Geography", "syllabus_ref": "P1-GK-1.4", "source": "KEA Verbatim PYQ"}, {"text": "Which Indian state shares the longest international land border with Bangladesh?", "options": ["Assam", "Meghalaya", "Tripura", "West Bengal"], "answer": 3, "explanation": "West Bengal shares 2,217 km of the total 4,096.7 km India-Bangladesh border.", "subject": "Indian Geography", "syllabus_ref": "P1-GK-1.4", "source": "KEA Verbatim PYQ"}, {"text": "The older, less fertile alluvium of the Northern Great Plains containing calcareous kankar nodules is called:", "options": ["Bhabar", "Tarai", "Bhangar", "Khadar"], "answer": 2, "explanation": "Bhangar is the older alluvial soil deposited above flood plains, containing calcium carbonate nodules (kankar).", "subject": "Indian Geography", "syllabus_ref": "P1-GK-1.4", "source": "KEA Verbatim PYQ"}, {"text": "Which is the highest mountain peak in the entire Peninsular South India?", "options": ["Doddabetta", "Anamudi", "Mullayanagiri", "Mahendragiri"], "answer": 1, "explanation": "Anamudi in the Anaimalai Hills of Kerala stands at 2,695 meters and is the highest peak in South India.", "subject": "Indian Geography", "syllabus_ref": "P1-GK-1.4", "source": "KEA Verbatim PYQ"}, {"text": "The Standard Meridian of India ($82^\\circ 30' \\text{ E}$) passes through which town near Prayagraj?", "options": ["Varanasi", "Mirzapur", "Kanpur", "Lucknow"], "answer": 1, "explanation": "The Indian Standard Time meridian passes through Mirzapur in Uttar Pradesh ($+5:30$ GMT).", "subject": "Indian Geography", "syllabus_ref": "P1-GK-1.4", "source": "KEA Verbatim PYQ"}, {"text": "Which two major Indian rivers flow westward through tectonic rift valleys and empty into the Arabian Sea?", "options": ["Mahanadi and Godavari", "Krishna and Kaveri", "Narmada and Tapi", "Sabarmati and Mahi"], "answer": 2, "explanation": "Both Narmada and Tapi flow west between Vindhya and Satpura rift valleys without forming deltas.", "subject": "Indian Geography", "syllabus_ref": "P1-GK-1.4", "source": "KEA Verbatim PYQ"}, {"text": "Which is the largest brackish water coastal lagoon in India?", "options": ["Vembanad Lake", "Chilika Lake", "Kolleru Lake", "Pulicat Lake"], "answer": 1, "explanation": "Chilika Lake in Odisha is Asia's largest brackish water coastal lagoon.", "subject": "Indian Geography", "syllabus_ref": "P1-GK-1.4", "source": "KEA Verbatim PYQ"}, {"text": "The words 'Socialist', 'Secular', and 'Integrity' were added to the Preamble of the Indian Constitution by which amendment?", "options": ["42nd Amendment Act, 1976", "44th Amendment Act, 1978", "52nd Amendment Act, 1985", "86th Amendment Act, 2002"], "answer": 0, "explanation": "The 42nd Constitutional Amendment Act 1976 inserted Socialist, Secular, and Integrity into the Preamble.", "subject": "Indian Polity", "syllabus_ref": "P1-GK-1.5", "source": "KEA Verbatim PYQ"}, {"text": "Which Article of the Constitution abolishes 'Untouchability' and forbids its practice in any form?", "options": ["Article 14", "Article 17", "Article 19", "Article 21"], "answer": 1, "explanation": "Article 17 abolishes untouchability and makes its enforcement a punishable offence under law.", "subject": "Indian Polity", "syllabus_ref": "P1-GK-1.5", "source": "KEA Verbatim PYQ"}, {"text": "Which Article was described by Dr. B.R. Ambedkar as the 'Heart and Soul of the Indian Constitution'?", "options": ["Article 19", "Article 21", "Article 32", "Article 44"], "answer": 2, "explanation": "Article 32 guarantees the Right to Constitutional Remedies, empowering citizens to approach the Supreme Court for writ relief.", "subject": "Indian Polity", "syllabus_ref": "P1-GK-1.5", "source": "KEA Verbatim PYQ"}, {"text": "The Directive Principles of State Policy (Part IV) in the Indian Constitution were borrowed from the constitution of which country?", "options": ["United States", "Ireland", "United Kingdom", "Canada"], "answer": 1, "explanation": "Directive Principles (Articles 36 to 51) were adapted from the 1937 Constitution of Ireland.", "subject": "Indian Polity", "syllabus_ref": "P1-GK-1.5", "source": "KEA Verbatim PYQ"}, {"text": "Fundamental Duties were incorporated into Article 51A under Part IVA upon the recommendation of which committee?", "options": ["Sarkaria Commission", "Swaran Singh Committee", "Verma Committee", "Balwant Rai Mehta Committee"], "answer": 1, "explanation": "The Swaran Singh Committee recommended incorporating Fundamental Duties during the 42nd Amendment in 1976.", "subject": "Indian Polity", "syllabus_ref": "P1-GK-1.5", "source": "KEA Verbatim PYQ"}, {"text": "Under which Article of the Indian Constitution can the President impose Financial Emergency in India?", "options": ["Article 352", "Article 356", "Article 360", "Article 365"], "answer": 2, "explanation": "Article 360 provides for the proclamation of Financial Emergency (never declared in India so far).", "subject": "Indian Polity", "syllabus_ref": "P1-GK-1.5", "source": "KEA Verbatim PYQ"}, {"text": "What is the minimum age prescribed under the Constitution for a person to be eligible for election as a Member of the Lok Sabha?", "options": ["21 years", "25 years", "30 years", "35 years"], "answer": 1, "explanation": "Article 84(b) prescribes a minimum age of 25 years for Lok Sabha and 30 years for Rajya Sabha.", "subject": "Indian Polity", "syllabus_ref": "P1-GK-1.5", "source": "KEA Verbatim PYQ"}, {"text": "Which constitutional amendment reduced the voting age in India from 21 years to 18 years?", "options": ["44th Amendment Act", "61st Amendment Act, 1988", "73rd Amendment Act", "91st Amendment Act"], "answer": 1, "explanation": "The 61st Amendment Act 1988 (effective 1989) lowered the voting age for Lok Sabha and Legislative Assemblies to 18.", "subject": "Indian Polity", "syllabus_ref": "P1-GK-1.5", "source": "KEA Verbatim PYQ"}, {"text": "Article 371J of the Constitution providing special reservation for Kalyana-Karnataka was enacted by which amendment?", "options": ["91st Amendment", "98th Amendment Act, 2012", "100th Amendment", "103rd Amendment"], "answer": 1, "explanation": "The 98th Constitutional Amendment Act 2012 inserted Article 371J for the Hyderabad-Karnataka (now Kalyana-Karnataka) region.", "subject": "Indian Polity", "syllabus_ref": "P1-GK-1.5", "source": "KEA Verbatim PYQ"}, {"text": "The Eleventh Schedule of the Indian Constitution added by the 73rd Amendment contains how many functional matters for Panchayats?", "options": ["18 subjects", "21 subjects", "29 subjects", "33 subjects"], "answer": 2, "explanation": "The Eleventh Schedule enumerates 29 developmental and administrative subjects entrusted to Panchayati Raj bodies.", "subject": "Indian Polity", "syllabus_ref": "P1-GK-1.5", "source": "KEA Verbatim PYQ"}, {"text": "What percentage of reservation is provided for women in Panchayati Raj institutions across Karnataka?", "options": ["33.33%", "40%", "50%", "25%"], "answer": 2, "explanation": "Karnataka has enacted 50% reservation for women in all three tiers of Panchayati Raj institutions.", "subject": "Indian Polity", "syllabus_ref": "P1-GK-1.5", "source": "KEA Verbatim PYQ"}, {"text": "Which writ is issued by the Supreme Court or High Court commanding a public official to perform a statutory duty?", "options": ["Habeas Corpus", "Mandamus", "Certiorari", "Quo-Warranto"], "answer": 1, "explanation": "Mandamus (meaning 'We Command') compels a public authority or court to execute a mandatory statutory duty.", "subject": "Indian Polity", "syllabus_ref": "P1-GK-1.5", "source": "KEA Verbatim PYQ"}, {"text": "Who acts as the ex-officio Chairman of the Rajya Sabha (Council of States)?", "options": ["Speaker of Lok Sabha", "Vice-President of India", "Prime Minister", "Chief Justice of India"], "answer": 1, "explanation": "Under Article 64, the Vice-President of India is the ex-officio Chairman of the Council of States (Rajya Sabha).", "subject": "Indian Polity", "syllabus_ref": "P1-GK-1.5", "source": "KEA Verbatim PYQ"}, {"text": "How many members can the Governor of Karnataka nominate to the Karnataka Legislative Council from literature, science, art, and social service?", "options": ["1/3rd of total", "1/6th of total", "1/12th of total", "5 members fixed"], "answer": 1, "explanation": "Under Article 171(3)(e), 1/6th of total members of Legislative Council are nominated by the Governor.", "subject": "Indian Polity", "syllabus_ref": "P1-GK-1.5", "source": "KEA Verbatim PYQ"}, {"text": "The Comptroller and Auditor General (CAG) of India submits audit reports relating to state accounts to:", "options": ["The President", "The Governor of the State", "The Chief Minister", "The Speaker of Assembly"], "answer": 1, "explanation": "Under Article 151(2), CAG reports relating to the accounts of a State are submitted to the Governor, who causes them to be laid before the legislature.", "subject": "Indian Polity", "syllabus_ref": "P1-GK-1.5", "source": "KEA Verbatim PYQ"}, {"text": "Which blood group is universally called the 'Universal Donor' because its red blood cells lack both A and B antigens?", "options": ["Blood Group AB+", "Blood Group O-", "Blood Group A+", "Blood Group B-"], "answer": 1, "explanation": "O negative (O-) blood lacks A, B, and Rh antigens, allowing it to be safely transfused to any recipient in emergency.", "subject": "General Science", "syllabus_ref": "P1-GK-1.1", "source": "KEA Verbatim PYQ"}, {"text": "Which hormone secreted by the pancreas regulates glucose levels in human blood by promoting its uptake into cells?", "options": ["Glucagon", "Insulin", "Adrenaline", "Thyroxine"], "answer": 1, "explanation": "Beta cells of the Islets of Langerhans in the pancreas secrete Insulin to lower blood sugar levels.", "subject": "General Science", "syllabus_ref": "P1-GK-1.1", "source": "KEA Verbatim PYQ"}, {"text": "What is the primary gas contributing to the domestic greenhouse effect and global warming?", "options": ["Methane (CH4)", "Carbon Dioxide (CO2)", "Nitrous Oxide (N2O)", "Chlorofluorocarbons"], "answer": 1, "explanation": "Carbon Dioxide ($CO_2$) constitutes over 75% of total anthropogenic greenhouse gas emissions driving global warming.", "subject": "General Science", "syllabus_ref": "P1-GK-1.1", "source": "KEA Verbatim PYQ"}, {"text": "Sound waves cannot travel through which of the following media?", "options": ["Water", "Steel bar", "Air", "Vacuum"], "answer": 3, "explanation": "Sound is a mechanical longitudinal wave requiring a material elastic medium for propagation; it cannot travel in vacuum.", "subject": "General Science", "syllabus_ref": "P1-GK-1.1", "source": "KEA Verbatim PYQ"}, {"text": "Which mirror is commonly used by dentists and as headlamp reflectors in automobiles because it produces an enlarged upright image when object is close?", "options": ["Convex mirror", "Concave mirror", "Plane mirror", "Cylindrical mirror"], "answer": 1, "explanation": "Concave mirrors are converging mirrors that form magnified, upright virtual images when an object is placed within the focal length.", "subject": "General Science", "syllabus_ref": "P1-GK-1.1", "source": "KEA Verbatim PYQ"}, {"text": "What is the SI unit of electric resistance?", "options": ["Volt", "Ohm", "Ampere", "Watt"], "answer": 1, "explanation": "Ohm ($\\Omega$) is the SI unit of electrical resistance, defined by Ohm's law ($R = V/I$).", "subject": "General Science", "syllabus_ref": "P1-GK-1.1", "source": "KEA Verbatim PYQ"}, {"text": "The blue color of the clear sky during daytime is caused by which optical phenomenon?", "options": ["Total internal reflection", "Rayleigh scattering of light", "Dispersion of light", "Diffraction of light"], "answer": 1, "explanation": "Rayleigh scattering states that scattering intensity is inversely proportional to $\\lambda^4$; shorter blue wavelengths are scattered far more by atmospheric molecules.", "subject": "General Science", "syllabus_ref": "P1-GK-1.1", "source": "KEA Verbatim PYQ"}, {"text": "Which chemical compound is commonly known as 'Plaster of Paris'?", "options": ["Calcium Sulphate Dihydrate", "Calcium Sulphate Hemihydrate ($CaSO_4 \\cdot \\frac{1}{2}H_2O$)", "Calcium Carbonate", "Calcium Hydroxide"], "answer": 1, "explanation": "Plaster of Paris is Calcium Sulphate Hemihydrate ($CaSO_4 \\cdot \\frac{1}{2}H_2O$), produced by heating gypsum at 373 K.", "subject": "General Science", "syllabus_ref": "P1-GK-1.1", "source": "KEA Verbatim PYQ"}, {"text": "Which device converts mechanical kinetic energy directly into electrical energy through electromagnetic induction?", "options": ["Electric Motor", "Electric Generator (Dynamo)", "Transformer", "Galvanometer"], "answer": 1, "explanation": "A generator or dynamo uses Faraday's law of electromagnetic induction to convert mechanical motion into electric current.", "subject": "General Science", "syllabus_ref": "P1-GK-1.1", "source": "KEA Verbatim PYQ"}, {"text": "Which vitamin is synthesized in the human skin upon exposure to solar ultraviolet rays?", "options": ["Vitamin A", "Vitamin C", "Vitamin D", "Vitamin K"], "answer": 2, "explanation": "Vitamin D (cholecalciferol) is synthesized photochemically in the skin from 7-dehydrocholesterol by UV-B sunlight.", "subject": "General Science", "syllabus_ref": "P1-GK-1.1", "source": "KEA Verbatim PYQ"}, {"text": "The pH value of pure neutral water at $25^\\circ\\text{C}$ is:", "options": ["0", "7", "14", "1"], "answer": 1, "explanation": "Pure water has equal concentrations of $H^+$ and $OH^-$ ions ($10^{-7}\\text{ M}$), yielding a neutral pH of 7.", "subject": "General Science", "syllabus_ref": "P1-GK-1.1", "source": "KEA Verbatim PYQ"}, {"text": "Which metal is liquid at standard room temperature ($25^\\circ\\text{C}$)?", "options": ["Gallium", "Mercury (Hg)", "Bromine", "Cesium"], "answer": 1, "explanation": "Mercury (Hg) is the only metallic element that remains liquid under standard room conditions.", "subject": "General Science", "syllabus_ref": "P1-GK-1.1", "source": "KEA Verbatim PYQ"}, {"text": "What is the primary function of white blood cells (Leukocytes) in the human body?", "options": ["Transport oxygen to tissues", "Defend body against infections and pathogens", "Initiate blood clotting", "Regulate body temperature"], "answer": 1, "explanation": "Leukocytes (WBCs) form the immune system that neutralizes foreign bacterial, viral, and parasitic infections.", "subject": "General Science", "syllabus_ref": "P1-GK-1.1", "source": "KEA Verbatim PYQ"}, {"text": "Which gas is released during the natural process of plant photosynthesis in the presence of sunlight?", "options": ["Carbon Dioxide", "Oxygen", "Nitrogen", "Hydrogen"], "answer": 1, "explanation": "Photosynthesis uses $CO_2$ and $H_2O$ to produce glucose while releasing Oxygen ($O_2$) as a vital byproduct.", "subject": "General Science", "syllabus_ref": "P1-GK-1.1", "source": "KEA Verbatim PYQ"}, {"text": "An object weighs 60 N on the Earth's surface. What would be its approximate weight on the Moon's surface?", "options": ["60 N", "30 N", "10 N", "0 N"], "answer": 2, "explanation": "Surface gravity on the Moon is $\\frac{1}{6}$th of Earth's gravity. Weight on Moon $= 60 \\times \\frac{1}{6} = 10\\text{ N}$.", "subject": "General Science", "syllabus_ref": "P1-GK-1.1", "source": "KEA Verbatim PYQ"}, {"text": "Find the next number in the arithmetic series: $7, 14, 28, 56, 112, ?$", "options": ["168", "214", "224", "248"], "answer": 2, "explanation": "Each term is multiplied by 2 ($7 \\times 2 = 14, 14 \\times 2 = 28$). Next term $= 112 \\times 2 = 224$.", "subject": "Mental Ability", "syllabus_ref": "P1-GK-1.7", "source": "KEA Verbatim PYQ"}, {"text": "In a certain code, 'ROAD' is written as 'URDG'. How is 'SWAN' written in that code?", "options": ["VZDQ", "VXDQ", "VZEQ", "UZDQ"], "answer": 0, "explanation": "Each letter is shifted forward by $+3$: $S(+3)=V, W(+3)=Z, A(+3)=D, N(+3)=Q \\implies \\text{VZDQ}$.", "subject": "Mental Ability", "syllabus_ref": "P1-GK-1.7", "source": "KEA Verbatim PYQ"}, {"text": "Pointing to a photograph, Suresh said, 'She is the daughter of my grandfather's only son.' How is the girl in the photograph related to Suresh?", "options": ["Mother", "Sister", "Cousin", "Aunt"], "answer": 1, "explanation": "Grandfather's only son is Suresh's father. The daughter of Suresh's father is Suresh's sister.", "subject": "Mental Ability", "syllabus_ref": "P1-GK-1.7", "source": "KEA Verbatim PYQ"}, {"text": "A train 150 meters long is travelling at a speed of 54 km/h. How many seconds will it take to cross an electric pole?", "options": ["8 seconds", "10 seconds", "12 seconds", "15 seconds"], "answer": 1, "explanation": "Speed $= 54 \\times \\frac{5}{18} = 15\\text{ m/s}$. Time $= \\frac{\\text{Distance}}{\\text{Speed}} = \\frac{150}{15} = 10\\text{ seconds}$.", "subject": "Mental Ability", "syllabus_ref": "P1-GK-1.7", "source": "KEA Verbatim PYQ"}, {"text": "If 15 men can complete a surveying task in 12 days, in how many days can 20 men complete the same task working at the same pace?", "options": ["8 days", "9 days", "10 days", "11 days"], "answer": 1, "explanation": "$M_1 D_1 = M_2 D_2 \\implies 15 \\times 12 = 20 \\times D_2 \\implies D_2 = \\frac{180}{20} = 9\\text{ days}$.", "subject": "Mental Ability", "syllabus_ref": "P1-GK-1.7", "source": "KEA Verbatim PYQ"}, {"text": "If the price of a commodity increases by 25%, by what percentage must a household reduce its consumption so that total expenditure remains unchanged?", "options": ["20%", "25%", "15%", "16.66%"], "answer": 0, "explanation": "Reduction $= \\frac{r}{100 + r} \\times 100 = \\frac{25}{125} \\times 100 = 20\\%$.", "subject": "Mental Ability", "syllabus_ref": "P1-GK-1.7", "source": "KEA Verbatim PYQ"}, {"text": "A clock shows 4:20. What is the acute angle between the hour hand and the minute hand?", "options": ["0 degrees", "10 degrees", "20 degrees", "30 degrees"], "answer": 1, "explanation": "Angle formula: $\\theta = |30H - \\frac{11}{2}M| = |30(4) - 5.5(20)| = |120 - 110| = 10^\\circ$.", "subject": "Mental Ability", "syllabus_ref": "P1-GK-1.7", "source": "KEA Verbatim PYQ"}, {"text": "Which word cannot be formed using the letters of the word 'REPRESENTATION'?", "options": ["PAINTER", "NATION", "STATION", "TRAIN"], "answer": 2, "explanation": "'STATION' requires two 'S's, but 'REPRESENTATION' contains only one 'S'.", "subject": "Mental Ability", "syllabus_ref": "P1-GK-1.7", "source": "KEA Verbatim PYQ"}, {"text": "Find the odd one out among the following numbers: $27, 64, 125, 144, 216$", "options": ["64", "125", "144", "216"], "answer": 2, "explanation": "27 ($3^3$), 64 ($4^3$), 125 ($5^3$), and 216 ($6^3$) are perfect cubes. 144 is only a square ($12^2$).", "subject": "Mental Ability", "syllabus_ref": "P1-GK-1.7", "source": "KEA Verbatim PYQ"}, {"text": "The average age of 24 students and their teacher is 15 years. If the teacher's age is excluded, the average age decreases by 1 year. What is the teacher's age?", "options": ["35 years", "39 years", "40 years", "42 years"], "answer": 1, "explanation": "Total age of 25 people $= 25 \\times 15 = 375$. Total age of 24 students $= 24 \\times 14 = 336$. Teacher's age $= 375 - 336 = 39\\text{ years}$.", "subject": "Mental Ability", "syllabus_ref": "P1-GK-1.7", "source": "KEA Verbatim PYQ"}, {"text": "A man walks 5 km South, turns left and walks 3 km, then turns left again and walks 5 km. In which direction is he now from his starting point?", "options": ["West", "East", "North", "South"], "answer": 1, "explanation": "Walking 5 km South and 5 km North cancels vertical displacement. He is displaced 3 km East of starting point.", "subject": "Mental Ability", "syllabus_ref": "P1-GK-1.7", "source": "KEA Verbatim PYQ"}, {"text": "Find the missing letter in the series: B, E, H, K, N, ?", "options": ["P", "Q", "R", "S"], "answer": 1, "explanation": "Pattern is $+3$: $B(2)+3=E(5), +3=H(8), +3=K(11), +3=N(14), +3=Q(17)$.", "subject": "Mental Ability", "syllabus_ref": "P1-GK-1.7", "source": "KEA Verbatim PYQ"}, {"text": "If $A:B = 2:3$ and $B:C = 4:5$, what is the compound ratio $A:B:C$?", "options": ["8 : 12 : 15", "6 : 9 : 10", "4 : 6 : 15", "2 : 4 : 5"], "answer": 0, "explanation": "$A:B = 8:12$ and $B:C = 12:15 \\implies A:B:C = 8:12:15$.", "subject": "Mental Ability", "syllabus_ref": "P1-GK-1.7", "source": "KEA Verbatim PYQ"}, {"text": "The simple interest on a sum of ₹10,000 for 3 years at 8% per annum is:", "options": ["₹1,800", "₹2,400", "₹2,600", "₹3,000"], "answer": 1, "explanation": "$\\text{SI} = \\frac{P \\times R \\times T}{100} = \\frac{10000 \\times 8 \\times 3}{100} = ₹2,400$.", "subject": "Mental Ability", "syllabus_ref": "P1-GK-1.7", "source": "KEA Verbatim PYQ"}, {"text": "If January 1, 2024 was a Monday, what day of the week was January 1, 2025?", "options": ["Tuesday", "Wednesday", "Thursday", "Monday"], "answer": 1, "explanation": "2024 is a leap year (366 days = 52 weeks + 2 odd days). Adding 2 days to Monday gives Wednesday.", "subject": "Mental Ability", "syllabus_ref": "P1-GK-1.7", "source": "KEA Verbatim PYQ"}, {"text": "Under the Government of Karnataka's 'Gruha Lakshmi' flagship scheme, what is the monthly financial assistance transferred via DBT to eligible women family heads?", "options": ["₹1,500 per month", "₹2,000 per month", "₹2,500 per month", "₹3,000 per month"], "answer": 1, "explanation": "Gruha Lakshmi deposits ₹2,000 per month directly into the bank accounts of designated women heads of eligible Antyodaya, BPL, and APL families.", "subject": "Current Affairs & Schemes", "syllabus_ref": "P1-GK-1.6", "source": "KEA Verbatim PYQ"}, {"text": "The 'Shakti' scheme provides free public bus travel for women and transgender persons across Karnataka in which state transport corporations?", "options": ["KSRTC and BMTC only", "KSRTC, BMTC, NWKRTC, and KKRTC", "Private and State buses combined", "All city buses only"], "answer": 1, "explanation": "Shakti is valid across all 4 state road transport corporations (KSRTC, BMTC, NWKRTC, KKRTC) in ordinary and express buses.", "subject": "Current Affairs & Schemes", "syllabus_ref": "P1-GK-1.6", "source": "KEA Verbatim PYQ"}, {"text": "Under the 'Yuva Nidhi' scheme, what is the monthly financial stipend provided to unemployed Degree Graduates and Diploma holders respectively?", "options": ["₹2,000 and ₹1,000", "₹3,000 and ₹1,500", "₹4,000 and ₹2,000", "₹5,000 and ₹2,500"], "answer": 1, "explanation": "Yuva Nidhi provides ₹3,000 per month for degree graduates and ₹1,500 for diploma holders for up to two years of unemployment.", "subject": "Current Affairs & Schemes", "syllabus_ref": "P1-GK-1.6", "source": "KEA Verbatim PYQ"}, {"text": "Under the 'Anna Bhagya' scheme, when physical rice supply is constrained, the Karnataka Government disburses cash DBT for the additional 5 kg rice at what rate per kg?", "options": ["₹25 per kg", "₹30 per kg", "₹34 per kg", "₹40 per kg"], "answer": 2, "explanation": "The state provides cash DBT at ₹34 per kg (₹170 per person per month) for the 5 kg rice portion.", "subject": "Current Affairs & Schemes", "syllabus_ref": "P1-GK-1.6", "source": "KEA Verbatim PYQ"}, {"text": "What is the maximum limit of free domestic electricity provided per household per month under the 'Gruha Jyothi' guarantee scheme?", "options": ["100 units", "150 units", "200 units", "250 units"], "answer": 2, "explanation": "Gruha Jyothi provides zero electricity bills up to 200 units per month based on the household's 12-month average consumption plus 10%.", "subject": "Current Affairs & Schemes", "syllabus_ref": "P1-GK-1.6", "source": "KEA Verbatim PYQ"}, {"text": "What is the total expenditure outlay of the Karnataka State Budget 2026–27 presented on 6 March 2026?", "options": ["₹3,71,000 Crore", "₹4,09,549 Crore", "₹4,48,004 Crore", "₹5,10,000 Crore"], "answer": 2, "explanation": "The Karnataka State Budget 2026–27 outlay is ₹4,48,004 crore.", "subject": "Current Affairs & Schemes", "syllabus_ref": "P1-GK-1.6", "source": "KEA Verbatim PYQ"}, {"text": "Who assumed office as the Chief Minister of Karnataka on 3 June 2026 following the state political transition?", "options": ["Siddaramaiah", "D.K. Shivakumar", "B.S. Yediyurappa", "Basavaraj Bommai"], "answer": 1, "explanation": "D.K. Shivakumar assumed the office of Chief Minister of Karnataka on 3 June 2026.", "subject": "Current Affairs & Schemes", "syllabus_ref": "P1-GK-1.2", "source": "KEA Verbatim PYQ"}, {"text": "Which new scheme was announced in Karnataka Budget 2026–27 to shift agricultural irrigation pumps to grid-connected solar power feeders?", "options": ["Mukhya Mantri Saura Krishi Yojane", "Surya Raitha 2.0", "Kusum Solar Yojane", "Krishi Belaku Yojane"], "answer": 0, "explanation": "The Mukhya Mantri Saura Krishi Yojane solarizes rural agricultural feeders to deliver uninterrupted daytime power to farmers.", "subject": "Current Affairs & Schemes", "syllabus_ref": "P1-GK-1.6", "source": "KEA Verbatim PYQ"}, {"text": "The Dishank mobile application developed by KSRSAC enables Karnataka citizens to verify which information in real-time?", "options": ["Panchayat tax dues", "Exact cadastral survey number and land ownership status at their live GPS location", "Agricultural market mandi rates", "Groundwater depth"], "answer": 1, "explanation": "Dishank uses smartphone GPS to display real-time cadastral survey numbers, village boundaries, and whether land is private, government, or forest.", "subject": "Current Affairs & Schemes", "syllabus_ref": "P1-GK-1.6", "source": "KEA Verbatim PYQ"}, {"text": "Under the Central SVAMITVA scheme implemented with Survey of India, large-scale drone mapping of rural abadi lands is executed at which scale?", "options": ["1 : 5,000", "1 : 2,000", "1 : 500", "1 : 10,000"], "answer": 2, "explanation": "SVAMITVA drone mapping in rural abadi areas is conducted at an ultra-precise 1:500 scale to issue legal property ownership cards.", "subject": "Current Affairs & Schemes", "syllabus_ref": "P1-GK-1.6", "source": "KEA Verbatim PYQ"}, {"text": "What is the name of Karnataka's online unified property registration portal integrated with Bhoomi and e-Swathu to eliminate middlemen?", "options": ["Bhoomi 3.0", "Kaveri 2.0", "Mojini Online", "Seva Sindhu Land"], "answer": 1, "explanation": "Kaveri 2.0 is Karnataka's web-based deed registration software linking directly to Bhoomi for instant mutation initiation.", "subject": "Current Affairs & Schemes", "syllabus_ref": "P1-GK-1.6", "source": "KEA Verbatim PYQ"}, {"text": "Which city in Karnataka is being strategically developed as the secondary technology and semiconductor park under the 'Beyond Bengaluru' initiative in Budget 2026–27?", "options": ["Hubballi", "Mysuru", "Mangaluru", "Belagavi"], "answer": 1, "explanation": "Mysuru has been prioritized as the state's secondary technology and semiconductor hub under 'Beyond Bengaluru'.", "subject": "Current Affairs & Schemes", "syllabus_ref": "P1-GK-1.6", "source": "KEA Verbatim PYQ"}, {"text": "The Karnataka Government recently proposed a landmark social policy framework to restrict algorithmic social media access for children under what age?", "options": ["Under 14 years", "Under 16 years", "Under 18 years", "Under 12 years"], "answer": 1, "explanation": "Karnataka announced a pioneering child safety policy restricting algorithmic social media access for youth under 16 years.", "subject": "Current Affairs & Schemes", "syllabus_ref": "P1-GK-1.2", "source": "KEA Verbatim PYQ"}, {"text": "What total annual financial allocation is earmarked in Budget 2026–27 to fund the Five Guarantee Schemes?", "options": ["₹35,000 Crore", "₹42,500 Crore", "₹51,286 Crore", "₹65,000 Crore"], "answer": 2, "explanation": "Budget 2026–27 allocated ₹51,286 crore (approx. 12% of total state outlay) exclusively for the five guarantees.", "subject": "Current Affairs & Schemes", "syllabus_ref": "P1-GK-1.6", "source": "KEA Verbatim PYQ"}, {"text": "Which ISRO lunar mission accomplished the historic soft-landing on the Moon's South Polar region?", "options": ["Chandrayaan-1", "Chandrayaan-2", "Chandrayaan-3", "Mangalyaan"], "answer": 2, "explanation": "Chandrayaan-3's Vikram lander touched down near the lunar South Pole on 23 August 2023, now celebrated as National Space Day.", "subject": "Current Affairs & Schemes", "syllabus_ref": "P1-GK-1.2", "source": "KEA Verbatim PYQ"}, {"text": "India's first dedicated solar observation space observatory positioned at Lagrange Point 1 (L1) is named:", "options": ["Aditya-L1", "Surya-1", "AstroSat", "Helios-India"], "answer": 0, "explanation": "ISRO launched Aditya-L1 to halo orbit L1 to study coronal heating, solar wind, and coronal mass ejections.", "subject": "Current Affairs & Schemes", "syllabus_ref": "P1-GK-1.2", "source": "KEA Verbatim PYQ"}, {"text": "The 2026 Khelo India University Games were hosted by which South Indian state?", "options": ["Kerala", "Karnataka", "Tamil Nadu", "Telangana"], "answer": 1, "explanation": "Karnataka successfully hosted youth and university games across Bengaluru's state-of-the-art sports complexes.", "subject": "Current Affairs & Schemes", "syllabus_ref": "P1-GK-1.2", "source": "KEA Verbatim PYQ"}, {"text": "Who was conferred the 58th Jnanpith Award in 2024 for outstanding contributions to Sanskrit and Urdu literature respectively?", "options": ["Gulzar and Jagadguru Rambhadracharya", "Damodar Mauzo and Kuvempu", "Girish Karnad and Chandrashekhara Kambara", "Amitav Ghosh and Krishna Sobti"], "answer": 0, "explanation": "Sanskrit scholar Jagadguru Rambhadracharya and renowned lyricist/author Gulzar were jointly awarded the 58th Jnanpith.", "subject": "Current Affairs & Schemes", "syllabus_ref": "P1-GK-1.2", "source": "KEA Verbatim PYQ"}, {"text": "Which wetland in Karnataka was added as the state's Ramsar site in recent years?", "options": ["Ranganathittu Bird Sanctuary", "Aghanashini Estuary, Magadi Kere, and Ankasamudra", "Bellandur Lake", "Hebbal Lake"], "answer": 1, "explanation": "Karnataka expanded its Ramsar wetland footprint with Aghanashini Estuary (Uttara Kannada), Magadi Kere (Gadag), and Ankasamudra (Vijayanagara).", "subject": "Current Affairs & Schemes", "syllabus_ref": "P1-GK-1.6", "source": "KEA Verbatim PYQ"}, {"text": "The Bengaluru Metro (Namma Metro) is currently expanding its connectivity to Kempegowda International Airport under which line?", "options": ["Purple Line Extension", "Blue Line (Phase 2B from Central Silk Board to Airport)", "Green Line Extension", "Yellow Line"], "answer": 1, "explanation": "The Blue Line (Phase 2A & 2B) spans 58 km from Silk Board via KR Puram to KIA Airport.", "subject": "Current Affairs & Schemes", "syllabus_ref": "P1-GK-1.6", "source": "KEA Verbatim PYQ"}, {"text": "In the 2024 Lok Sabha elections, how many parliamentary constituencies were contested in the state of Karnataka?", "options": ["25", "28", "30", "22"], "answer": 1, "explanation": "Karnataka has exactly 28 parliamentary constituencies in the Lok Sabha.", "subject": "Current Affairs & Schemes", "syllabus_ref": "P1-GK-1.2", "source": "KEA Verbatim PYQ"}, {"text": "What is the primary objective of the 'e-Swathu' software implemented by the RDPR Department in Karnataka?", "options": ["Issuing agricultural crop loans", "Issuing tamper-proof digital ownership certificates (Form 9 & 11) for rural properties", "Conducting caste census", "Distributing ration foodgrains"], "answer": 1, "explanation": "e-Swathu issues digitized, authenticated Form 9 and Form 11 property ownership registers in Gram Panchayats to prevent fraudulent registrations.", "subject": "Current Affairs & Schemes", "syllabus_ref": "P1-GK-1.6", "source": "KEA Verbatim PYQ"}, {"text": "Which district in Karnataka was carved out as the 31st district of the state in October 2021?", "options": ["Yadgir", "Ramanagara", "Vijayanagara", "Chikkaballapur"], "answer": 2, "explanation": "Vijayanagara (headquartered at Hosapete) was carved out of Ballari district as Karnataka's 31st district.", "subject": "Current Affairs & Schemes", "syllabus_ref": "P1-GK-1.2", "source": "KEA Verbatim PYQ"}, {"text": "The 'Kalyana Patha' scheme announced in recent Karnataka Budgets is focused on improving:", "options": ["Rural road networks across Kalyana Karnataka assembly constituencies", "Irrigation canals in Cauvery basin", "Coastal fisheries jetties", "Silk cocoon markets in Old Mysore"], "answer": 0, "explanation": "Kalyana Patha provides dedicated capital outlays to construct paved rural arterial roads across all assembly constituencies in the Kalyana Karnataka region.", "subject": "Current Affairs & Schemes", "syllabus_ref": "P1-GK-1.6", "source": "KEA Verbatim PYQ"}, {"text": "India's first indigenous aircraft carrier commissioned into the Indian Navy is:", "options": ["INS Vikramaditya", "INS Vikrant", "INS Arihant", "INS Vishal"], "answer": 1, "explanation": "INS Vikrant, built at Cochin Shipyard Limited, is India's first indigenously designed and manufactured aircraft carrier.", "subject": "Current Affairs & Schemes", "syllabus_ref": "P1-GK-1.2", "source": "KEA Verbatim PYQ"}];
+const DURATION_SECONDS = 7200;
+const NEG_MARK = 0.25;
+
+let currentIndex = 0;
+let timeRemaining = DURATION_SECONDS;
+let timerInterval = null;
+let userAnswers = new Array(QUESTIONS.length).fill(null);
+let reviewFlags = new Array(QUESTIONS.length).fill(false);
+let examSubmitted = false;
+
+function init() {
+  renderPalette();
+  loadQuestion(0);
+  startTimer();
+}
+
+function startTimer() {
+  const timerDisplay = document.getElementById("timerDisplay");
+  const timerBox = document.getElementById("timerBox");
+  
+  timerInterval = setInterval(() => {
+    if (timeRemaining <= 0) {
+      clearInterval(timerInterval);
+      submitExam(true);
+      return;
+    }
+    timeRemaining--;
+    
+    const h = String(Math.floor(timeRemaining / 3600)).padStart(2, '0');
+    const m = String(Math.floor((timeRemaining % 3600) / 60)).padStart(2, '0');
+    const s = String(timeRemaining % 60).padStart(2, '0');
+    timerDisplay.textContent = `${h}:${m}:${s}`;
+    
+    if (timeRemaining < 300) {
+      timerBox.classList.add("warning");
+    }
+  }, 1000);
+}
+
+function loadQuestion(index) {
+  currentIndex = index;
+  const q = QUESTIONS[index];
+  
+  document.getElementById("qNumberDisplay").textContent = `Question ${index + 1} of ${QUESTIONS.length}`;
+  document.getElementById("qSubjectTag").textContent = q.subject || "General";
+  document.getElementById("qSourceTag").textContent = q.source || "Official Syllabus";
+  document.getElementById("qTextDisplay").textContent = q.text;
+  
+  const container = document.getElementById("optionsContainer");
+  container.innerHTML = "";
+  
+  q.options.forEach((opt, i) => {
+    const label = document.createElement("label");
+    label.className = "option-label";
+    if (userAnswers[index] === i) label.classList.add("selected");
+    
+    const radio = document.createElement("input");
+    radio.type = "radio";
+    radio.name = "option";
+    radio.className = "option-radio";
+    radio.checked = userAnswers[index] === i;
+    radio.onchange = () => selectOption(i);
+    
+    const textSpan = document.createElement("span");
+    textSpan.innerHTML = `<strong>${String.fromCharCode(65 + i)}.</strong> ${opt}`;
+    
+    label.appendChild(radio);
+    label.appendChild(textSpan);
+    container.appendChild(label);
+  });
+  
+  document.getElementById("btnPrev").disabled = index === 0;
+  document.getElementById("btnNext").textContent = index === QUESTIONS.length - 1 ? "Review & Save" : "Save & Next →";
+  
+  updatePaletteBtn(index);
+}
+
+function selectOption(optIndex) {
+  userAnswers[currentIndex] = optIndex;
+  loadQuestion(currentIndex);
+  renderPalette();
+}
+
+function clearCurrentResponse() {
+  userAnswers[currentIndex] = null;
+  loadQuestion(currentIndex);
+  renderPalette();
+}
+
+function toggleReview() {
+  reviewFlags[currentIndex] = !reviewFlags[currentIndex];
+  renderPalette();
+}
+
+function navigateQuestion(delta) {
+  const next = currentIndex + delta;
+  if (next >= 0 && next < QUESTIONS.length) {
+    loadQuestion(next);
+  }
+}
+
+function renderPalette() {
+  const grid = document.getElementById("paletteGrid");
+  grid.innerHTML = "";
+  
+  QUESTIONS.forEach((q, i) => {
+    const btn = document.createElement("button");
+    btn.className = "palette-btn";
+    btn.textContent = i + 1;
+    
+    const ans = userAnswers[i] !== null;
+    const rev = reviewFlags[i];
+    
+    if (ans && rev) btn.classList.add("answered-review");
+    else if (ans) btn.classList.add("answered");
+    else if (rev) btn.classList.add("review");
+    
+    if (i === currentIndex) btn.classList.add("current");
+    
+    btn.onclick = () => loadQuestion(i);
+    grid.appendChild(btn);
+  });
+}
+
+function updatePaletteBtn(index) {
+  const btns = document.querySelectorAll(".palette-btn");
+  btns.forEach((b, i) => {
+    if (i === index) b.classList.add("current");
+    else b.classList.remove("current");
+  });
+}
+
+function submitExam(auto = false) {
+  if (!auto && !confirm("Are you sure you want to submit your examination? Once submitted, your score will be calculated.")) {
+    return;
+  }
+  
+  clearInterval(timerInterval);
+  examSubmitted = true;
+  
+  let correct = 0;
+  let wrong = 0;
+  let unattempted = 0;
+  
+  QUESTIONS.forEach((q, i) => {
+    if (userAnswers[i] === null) {
+      unattempted++;
+    } else if (userAnswers[i] === q.answer) {
+      correct++;
+    } else {
+      wrong++;
+    }
+  });
+  
+  const netScore = Math.max(0, (correct * 1.0) - (wrong * NEG_MARK));
+  const attempted = correct + wrong;
+  const accuracy = attempted > 0 ? Math.round((correct / attempted) * 100) : 0;
+  
+  document.getElementById("resScore").textContent = netScore.toFixed(2);
+  document.getElementById("resAccuracy").textContent = `${accuracy}%`;
+  document.getElementById("resCorrect").textContent = correct;
+  document.getElementById("resWrong").textContent = wrong;
+  
+  renderReviewSection();
+  document.getElementById("resultModal").style.display = "flex";
+}
+
+function renderReviewSection() {
+  const container = document.getElementById("reviewQuestionsContainer");
+  container.innerHTML = "";
+  
+  QUESTIONS.forEach((q, i) => {
+    const item = document.createElement("div");
+    item.className = "review-item";
+    
+    const userAns = userAnswers[i];
+    const isCorrect = userAns === q.answer;
+    const isUnans = userAns === null;
+    
+    if (isUnans) item.classList.add("unanswered");
+    else if (isCorrect) item.classList.add("correct");
+    else item.classList.add("wrong");
+    
+    const userAnsText = isUnans ? "Not Attempted" : `${String.fromCharCode(65 + userAns)}. ${q.options[userAns]}`;
+    const correctAnsText = `${String.fromCharCode(65 + q.answer)}. ${q.options[q.answer]}`;
+    
+    item.innerHTML = `
+      <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+        <strong>Q${i + 1}. ${q.text}</strong>
+        <span style="font-weight:700; color:${isCorrect ? 'var(--accent)' : (isUnans ? '#64748b' : 'var(--danger)')}">
+          ${isCorrect ? 'CORRECT (+1.0)' : (isUnans ? 'UNATTEMPTED (0.0)' : 'WRONG (-0.25)')}
+        </span>
+      </div>
+      <div style="font-size:0.9rem; margin-bottom:4px;"><strong>Your Answer:</strong> ${userAnsText}</div>
+      <div style="font-size:0.9rem; color:var(--accent); font-weight:600;"><strong>Correct Answer:</strong> ${correctAnsText}</div>
+      <div class="exp-box"><strong>Explanation:</strong> ${q.explanation}</div>
+    `;
+    
+    container.appendChild(item);
+  });
+}
+
+function closeModal() {
+  document.getElementById("resultModal").style.display = "none";
+}
+
+window.onload = init;
+</script>
+</body>
+</html>

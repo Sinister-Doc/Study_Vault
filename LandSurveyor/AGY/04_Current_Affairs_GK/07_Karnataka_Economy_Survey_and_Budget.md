@@ -1,9 +1,14 @@
----
-exam: KEA Land Surveyor 2026
+---exam: KEA Land Surveyor 2026
 subject: Paper I - General Knowledge
 topic: Economy of Karnataka - Economic Survey 2025-26, GSDP, sectors, budget 2026-27, finances, resources, industries, agriculture
 priority: Tier 1 (the notified "Economy of Karnataka" heading)
 tags: [land-surveyor, general-knowledge, karnataka-economy, economic-survey, budget, paper-1]
+syllabus_refs:
+  - P1-GK-1.6
+last_verified: 2026-09-30
+sources:
+  - Karnataka Economic Survey 2025-26
+  - Karnataka Finance Department Budget 2026-27
 ---
 
 # 07. Karnataka Economy — Economic Survey 2025-26 & Budget 2026-27

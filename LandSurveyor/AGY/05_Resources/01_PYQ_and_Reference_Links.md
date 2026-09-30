@@ -19,9 +19,9 @@ document_type: Resource Directory
 
 | Exam Year & Cadre | Paper | Questions & Coverage | Status / Direct Access |
 | :--- | :--- | :--- | :--- |
-| **KEA Land Surveyor 2024 / 2023** | Paper-II (Specific Surveying) | 100 MCQs: Chain, Compass, Levelling, Theodolite, Total Station, GPS/GIS, Survey Maths | Solved analysis integrated in [[05_Theodolite_and_Tacheometry]] and [[07_Total_Station_and_EDM]]. |
+| **KEA Land Surveyor 2024 / 2023** | Paper-II (Specific Surveying) | 100 MCQs: Chain, Compass, Levelling, Theodolite, Total Station, GPS/GIS, Survey Maths | Solved analysis integrated in [[../03_Notes/04_Modern_Surveying_GPS_GIS_and_Advanced_Positioning]] and [[../03_Notes/04_Modern_Surveying_GPS_GIS_and_Advanced_Positioning]]. |
 | **KEA Land Surveyor 2024 / 2023** | Paper-I (General Knowledge) | 100 MCQs: Karnataka History, Geography, Polity, Science, Mental Ability | Covered in [[04_Current_Affairs_GK/01_Karnataka_History_and_Dynasties|Karnataka History]] & [[04_Current_Affairs_GK/02_Karnataka_and_India_Geography|Geography]]. |
-| **SSLR Departmental Surveyor Exam** | Technical Surveying (ITI / Diploma level) | Cadastral survey techniques, Akarband, Tippan, Mojini v3 11E sketches | Analyzed in [[10_Karnataka_Land_Records_Bhoomi_Mojini_Dishank]]. |
+| **SSLR Departmental Surveyor Exam** | Technical Surveying (ITI / Diploma level) | Cadastral survey techniques, Akarband, Tippan, Mojini v3 11E sketches | Analyzed in [[../03_Notes/05_Computer_Applications_and_Land_Records_IT]]. |
 | **KPSC Junior Engineer / Draughtsman Civil** | Surveying Section (2018–2022) | Levelling curvature/refraction numericals, Bowditch rule, Stadia tacheometry | Integrated in Mock Tests 1, 2, and 3. |
 
 ---

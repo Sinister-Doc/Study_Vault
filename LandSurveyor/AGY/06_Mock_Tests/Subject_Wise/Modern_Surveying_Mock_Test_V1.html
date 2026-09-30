@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Subject Mock: Modern Surveying (Version 1)</title>
+<style>
+  :root {
+    --primary: #1e3a8a;
+    --primary-light: #3b82f6;
+    --accent: #059669;
+    --danger: #dc2626;
+    --warning: #d97706;
+    --bg: #f8fafc;
+    --card: #ffffff;
+    --text: #1e293b;
+    --text-muted: #64748b;
+    --border: #e2e8f0;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  body { background: var(--bg); color: var(--text); display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
+  header { background: var(--primary); color: white; padding: 12px 24px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+  header h1 { font-size: 1.15rem; font-weight: 600; }
+  .badge { background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 9999px; font-size: 0.8rem; margin-left: 8px; }
+  .timer-box { background: #0f172a; padding: 6px 16px; border-radius: 6px; font-family: monospace; font-size: 1.25rem; font-weight: 700; color: #38bdf8; display: flex; align-items: center; gap: 8px; }
+  .timer-box.warning { color: #f87171; animation: pulse 1s infinite; }
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+  
+  .main-container { display: flex; flex: 1; overflow: hidden; }
+  .question-pane { flex: 1; padding: 24px 32px; overflow-y: auto; display: flex; flex-direction: column; }
+  .sidebar { width: 340px; background: var(--card); border-left: 1px solid var(--border); display: flex; flex-direction: column; }
+  
+  .q-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+  .q-number { font-size: 1.1rem; font-weight: 700; color: var(--primary); }
+  .q-meta { display: flex; gap: 8px; font-size: 0.8rem; }
+  .q-tag { background: #eff6ff; color: #1d4ed8; padding: 2px 8px; border-radius: 4px; font-weight: 600; border: 1px solid #bfdbfe; }
+  .q-marks { background: #f0fdf4; color: #15803d; padding: 2px 8px; border-radius: 4px; font-weight: 600; }
+  
+  .q-text { font-size: 1.05rem; line-height: 1.6; margin-bottom: 24px; font-weight: 500; }
+  .options-grid { display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
+  .option-label { display: flex; align-items: flex-start; gap: 12px; padding: 12px 16px; border: 1.5px solid var(--border); border-radius: 8px; cursor: pointer; transition: all 0.2s; background: white; }
+  .option-label:hover { border-color: var(--primary-light); background: #f8fafc; }
+  .option-label.selected { border-color: var(--primary); background: #eff6ff; font-weight: 600; }
+  .option-radio { margin-top: 4px; accent-color: var(--primary); }
+  
+  .action-bar { margin-top: auto; display: flex; justify-content: space-between; align-items: center; padding-top: 16px; border-top: 1px solid var(--border); }
+  .btn { padding: 10px 18px; border-radius: 6px; font-weight: 600; cursor: pointer; border: none; font-size: 0.9rem; transition: background 0.2s; }
+  .btn-primary { background: var(--primary); color: white; }
+  .btn-primary:hover { background: #1e40af; }
+  .btn-outline { background: white; border: 1px solid var(--border); color: var(--text); }
+  .btn-outline:hover { background: #f1f5f9; }
+  .btn-warning { background: #fef3c7; color: #b45309; border: 1px solid #fde68a; }
+  .btn-warning:hover { background: #fde68a; }
+  .btn-success { background: var(--accent); color: white; }
+  .btn-success:hover { background: #047857; }
+  
+  /* Sidebar */
+  .palette-header { padding: 16px; border-bottom: 1px solid var(--border); font-weight: 700; font-size: 0.95rem; }
+  .legend { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 12px 16px; border-bottom: 1px solid var(--border); font-size: 0.75rem; background: #fafafa; }
+  .legend-item { display: flex; align-items: center; gap: 6px; }
+  .dot { width: 12px; height: 12px; border-radius: 3px; }
+  .dot-answered { background: var(--accent); }
+  .dot-review { background: var(--warning); }
+  .dot-unanswered { background: #cbd5e1; }
+  
+  .palette-grid { flex: 1; padding: 16px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; overflow-y: auto; align-content: start; }
+  .palette-btn { height: 38px; border-radius: 6px; border: 1px solid var(--border); font-weight: 700; font-size: 0.85rem; cursor: pointer; background: white; }
+  .palette-btn.current { border: 2px solid var(--primary); font-weight: 800; }
+  .palette-btn.answered { background: var(--accent); color: white; border-color: var(--accent); }
+  .palette-btn.review { background: var(--warning); color: white; border-color: var(--warning); }
+  .palette-btn.answered-review { background: #8b5cf6; color: white; border-color: #8b5cf6; }
+  
+  .sidebar-footer { padding: 16px; border-top: 1px solid var(--border); }
+  .btn-submit { width: 100%; padding: 12px; font-size: 1rem; }
+  
+  /* Result Modal */
+  .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); display: none; justify-content: center; align-items: center; z-index: 100; }
+  .modal { background: white; border-radius: 12px; width: 90%; max-width: 840px; max-height: 90vh; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.2); }
+  .modal-header { background: var(--primary); color: white; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; }
+  .modal-body { padding: 24px; overflow-y: auto; }
+  .score-card { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; text-align: center; }
+  .score-tile { padding: 16px; border-radius: 8px; background: var(--bg); border: 1px solid var(--border); }
+  .score-tile h3 { font-size: 1.8rem; font-weight: 800; color: var(--primary); }
+  .score-tile p { font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; }
+  
+  .review-section { margin-top: 24px; }
+  .review-item { border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin-bottom: 12px; background: #fafafa; }
+  .review-item.correct { border-left: 4px solid var(--accent); }
+  .review-item.wrong { border-left: 4px solid var(--danger); }
+  .review-item.unanswered { border-left: 4px solid #94a3b8; }
+  .exp-box { margin-top: 8px; padding: 10px; background: #eff6ff; border-radius: 6px; font-size: 0.85rem; color: #1e3a8a; }
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <h1>Subject Mock: Modern Surveying (Version 1) <span class="badge">KEA Land Surveyor 2026</span></h1>
+    <div style="font-size: 0.8rem; opacity: 0.85; margin-top: 2px;">Photogrammetry, Remote Sensing, GPS/GNSS, DGPS, RTK, CORS & GIS (20 Qs) | Total Marks: 20 | Negative Marking: -0.25</div>
+  </div>
+  <div class="timer-box" id="timerBox">
+    <span>⏱️</span> <span id="timerDisplay">00:00:00</span>
+  </div>
+</header>
+
+<div class="main-container">
+  <main class="question-pane">
+    <div class="q-header">
+      <div class="q-number" id="qNumberDisplay">Question 1 of 20</div>
+      <div class="q-meta">
+        <span class="q-tag" id="qSubjectTag">Subject</span>
+        <span class="q-tag" style="background:#fef3c7; color:#92400e; border-color:#fde68a;" id="qSourceTag">Source</span>
+        <span class="q-marks">+1.0 / -0.25</span>
+      </div>
+    </div>
+    
+    <div class="q-text" id="qTextDisplay">Loading question...</div>
+    
+    <div class="options-grid" id="optionsContainer"></div>
+    
+    <div class="action-bar">
+      <div style="display: flex; gap: 8px;">
+        <button class="btn btn-warning" id="btnReview" onclick="toggleReview()">⭐ Mark for Review</button>
+        <button class="btn btn-outline" id="btnClear" onclick="clearCurrentResponse()">Clear Response</button>
+      </div>
+      <div style="display: flex; gap: 8px;">
+        <button class="btn btn-outline" id="btnPrev" onclick="navigateQuestion(-1)">← Previous</button>
+        <button class="btn btn-primary" id="btnNext" onclick="navigateQuestion(1)">Save & Next →</button>
+      </div>
+    </div>
+  </main>
+  
+  <aside class="sidebar">
+    <div class="palette-header">Question Navigation Palette</div>
+    <div class="legend">
+      <div class="legend-item"><div class="dot dot-answered"></div> Answered</div>
+      <div class="legend-item"><div class="dot dot-review"></div> Marked Review</div>
+      <div class="legend-item"><div class="dot" style="background:#8b5cf6;"></div> Ans & Review</div>
+      <div class="legend-item"><div class="dot dot-unanswered"></div> Not Answered</div>
+    </div>
+    <div class="palette-grid" id="paletteGrid"></div>
+    <div class="sidebar-footer">
+      <button class="btn btn-success btn-submit" onclick="submitExam(false)">Submit Examination</button>
+    </div>
+  </aside>
+</div>
+
+<!-- Results Modal -->
+<div class="modal-overlay" id="resultModal">
+  <div class="modal">
+    <div class="modal-header">
+      <h2>Examination Result & Scorecard</h2>
+      <button onclick="closeModal()" style="background:none; border:none; color:white; font-size:1.5rem; cursor:pointer;">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div class="score-card">
+        <div class="score-tile">
+          <h3 id="resScore">0.00</h3>
+          <p>Total Net Marks</p>
+        </div>
+        <div class="score-tile">
+          <h3 id="resAccuracy" style="color:var(--accent);">0%</h3>
+          <p>Accuracy</p>
+        </div>
+        <div class="score-tile">
+          <h3 id="resCorrect" style="color:var(--accent);">0</h3>
+          <p>Correct (+1.0)</p>
+        </div>
+        <div class="score-tile">
+          <h3 id="resWrong" style="color:var(--danger);">0</h3>
+          <p>Wrong (-0.25)</p>
+        </div>
+      </div>
+      
+      <div id="subjectBreakdownContainer" style="margin-bottom: 24px;"></div>
+      
+      <h3 style="margin-bottom: 12px;">Detailed Question Review & Explanations</h3>
+      <div class="review-section" id="reviewQuestionsContainer"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+const QUESTIONS = [{"text": "In standard aerial photogrammetry, what is the recommended forward overlap (longitudinal overlap) along the flight line?", "options": ["25%", "40%", "60%", "80%"], "answer": 2, "explanation": "Forward overlap is maintained at 60% (range 55% to 65%) to ensure stereoscopic 3D coverage of adjacent images.", "subject": "Modern Surveying", "syllabus_ref": "P2-SURV-3.1", "source": "KEA Verbatim PYQ"}, {"text": "What is the standard lateral (side) overlap maintained between adjacent parallel flight strips in aerial surveys?", "options": ["10% to 15%", "20% to 30%", "50% to 60%", "70% to 80%"], "answer": 1, "explanation": "Side overlap is maintained between 20% and 30% (standard 25%) to prevent gaps caused by aircraft drift.", "subject": "Modern Surveying", "syllabus_ref": "P2-SURV-3.1", "source": "KEA Verbatim PYQ"}, {"text": "A vertical aerial photo is taken with focal length $f = 150\\text{ mm}$ from a flying height $H = 2000\\text{ m}$ above MSL. What is the scale for flat ground at MSL?", "options": ["1 : 10,000", "1 : 13,333", "1 : 15,000", "1 : 20,000"], "answer": 1, "explanation": "$S = \\frac{f}{H} = \\frac{0.150}{2000} = \\frac{1}{13333.33} \\approx 1 : 13,333$.", "subject": "Modern Surveying", "syllabus_ref": "P2-SURV-3.1", "source": "KEA Verbatim PYQ"}, {"text": "In a truly vertical photograph, the relief displacement of an elevated ground point is always directed:", "options": ["Radially outward from the principal point / nadir", "Tangentially along flight line", "Perpendicular to flight direction", "Towards the center from edges"], "answer": 0, "explanation": "Relief displacement $d = \\frac{rh}{H}$ is always directed radially outward from the principal point.", "subject": "Modern Surveying", "syllabus_ref": "P2-SURV-3.1", "source": "KEA Verbatim PYQ"}, {"text": "The 4 or 8 precision reference marks etched on the frame corners of an aerial camera to locate the principal point are called:", "options": ["Nadir markers", "Fiducial marks", "Collimation marks", "Benchmark pins"], "answer": 1, "explanation": "Fiducial marks are index marks used to locate the principal point and calibrate film shrinkage.", "subject": "Modern Surveying", "syllabus_ref": "P2-SURV-3.1", "source": "KEA Verbatim PYQ"}, {"text": "Which of the following is classified as an Active Remote Sensing system?", "options": ["Optical Multispectral Camera", "LiDAR (Light Detection and Ranging)", "Thermal Infrared Radiometer", "Panchromatic Scanner"], "answer": 1, "explanation": "LiDAR transmits its own laser light pulses to measure distances, making it an active sensor.", "subject": "Modern Surveying", "syllabus_ref": "P2-SURV-3.2", "source": "KEA Verbatim PYQ"}, {"text": "Healthy green vegetation exhibits exceptionally high reflectance (40% to 60%) in which portion of the electromagnetic spectrum?", "options": ["Blue band", "Red band", "Near-Infrared (NIR) band", "Thermal Infrared band"], "answer": 2, "explanation": "The spongy mesophyll cellular structure of healthy leaves reflects strongly in Near-Infrared ($0.7 - 1.1\\,\\mu\\text{m}$).", "subject": "Modern Surveying", "syllabus_ref": "P2-SURV-3.2", "source": "KEA Verbatim PYQ"}, {"text": "What is the mathematical formula used to compute the Normalized Difference Vegetation Index (NDVI)?", "options": ["(NIR + Red) / (NIR - Red)", "(NIR - Red) / (NIR + Red)", "(Green - Red) / (Green + Red)", "NIR / Red"], "answer": 1, "explanation": "$\\text{NDVI} = \\frac{\\text{NIR} - \\text{Red}}{\\text{NIR} + \\text{Red}}$, ranging from $-1.0$ to $+1.0$.", "subject": "Modern Surveying", "syllabus_ref": "P2-SURV-3.2", "source": "KEA Verbatim PYQ"}, {"text": "A digital optical sensor having a 10-bit radiometric resolution can record how many discrete digital grey values?", "options": ["256", "512", "1024", "4096"], "answer": 2, "explanation": "Radiometric levels $= 2^{10} = 1024$ levels (from 0 to 1023).", "subject": "Modern Surveying", "syllabus_ref": "P2-SURV-3.2", "source": "KEA Verbatim PYQ"}, {"text": "What is the minimum number of GNSS satellites required simultaneously by a GPS receiver for a 3D position fix and clock bias correction?", "options": ["2", "3", "4", "5"], "answer": 2, "explanation": "3 satellites solve for $(X, Y, Z)$ coordinates via trilateration, while the 4th resolves receiver clock bias $\\Delta t$.", "subject": "Modern Surveying", "syllabus_ref": "P2-SURV-3.3", "source": "KEA Verbatim PYQ"}, {"text": "In satellite positioning, what does a low Position Dilution of Precision (PDOP < 3) indicate?", "options": ["Poor satellite geometry and low accuracy", "Excellent satellite geometry and high accuracy", "High ionospheric signal delay", "Receiver battery depletion"], "answer": 1, "explanation": "PDOP is inversely proportional to accuracy; values $< 3$ indicate widely dispersed satellites yielding high precision.", "subject": "Modern Surveying", "syllabus_ref": "P2-SURV-3.3", "source": "KEA Verbatim PYQ"}, {"text": "India's indigenous regional satellite navigation system NavIC (IRNSS) consists of how many operational satellites?", "options": ["4 satellites", "7 satellites", "12 satellites", "24 satellites"], "answer": 1, "explanation": "NavIC consists of 7 operational satellites: 3 in Geostationary Orbit (GEO) and 4 in Geosynchronous Orbit (GSO).", "subject": "Modern Surveying", "syllabus_ref": "P2-SURV-3.3", "source": "KEA Verbatim PYQ"}, {"text": "NavIC satellite signals operate on which primary frequency bands?", "options": ["L1 and L2 bands", "L5 and S bands", "C and Ku bands", "X and K bands"], "answer": 1, "explanation": "NavIC operates on dual frequencies: L5 band (1176.45 MHz) and S band (2492.028 MHz).", "subject": "Modern Surveying", "syllabus_ref": "P2-SURV-3.3", "source": "KEA Verbatim PYQ"}, {"text": "Which advanced positioning technique uses carrier phase measurements and NTRIP cellular data to achieve 1–2 cm real-time accuracy?", "options": ["Standard Single Point GPS", "Real-Time Kinematic (RTK)", "Barometric Altimetry", "Reconnaissance Tacheometry"], "answer": 1, "explanation": "RTK resolves carrier phase integer ambiguities in real time to provide centimeter-level accuracy.", "subject": "Modern Surveying", "syllabus_ref": "P2-SURV-3.4", "source": "KEA Verbatim PYQ"}, {"text": "What is the primary role of a Continuously Operating Reference Station (CORS) network established by Survey of India?", "options": ["Monitor weather and rainfall", "Provide permanent GNSS correction streams eliminating the need for a local base station", "Transmit television broadcasts", "Track military aircraft"], "answer": 1, "explanation": "CORS networks provide continuous RTK corrections via internet (NTRIP), allowing a single rover to survey with cm accuracy.", "subject": "Modern Surveying", "syllabus_ref": "P2-SURV-3.4", "source": "KEA Verbatim PYQ"}, {"text": "Under the SVAMITVA scheme, rural inhabited village land (Abadi) is surveyed using drones at which map scale?", "options": ["1 : 5,000", "1 : 2,000", "1 : 500", "1 : 10,000"], "answer": 2, "explanation": "SVAMITVA drone mapping in rural abadi areas is conducted at an ultra-precise 1:500 scale.", "subject": "Modern Surveying", "syllabus_ref": "P2-SURV-3.4", "source": "KEA Verbatim PYQ"}, {"text": "In GIS, boundary stones, lamp poles, and borewells are best represented by which vector data primitive?", "options": ["Point", "Polyline", "Polygon", "Raster pixel"], "answer": 0, "explanation": "Discrete zero-dimensional features having only coordinates $(x, y)$ are represented as Points.", "subject": "Modern Surveying", "syllabus_ref": "P2-SURV-3.5", "source": "KEA Verbatim PYQ"}, {"text": "In GIS, cadastral land parcels and property ownership plots are represented using which vector data type?", "options": ["Point", "Polyline", "Polygon", "TIN mesh"], "answer": 2, "explanation": "Closed two-dimensional boundaries enclosing area are represented as Polygons.", "subject": "Modern Surveying", "syllabus_ref": "P2-SURV-3.5", "source": "KEA Verbatim PYQ"}, {"text": "The state of Karnataka spans across which two Universal Transverse Mercator (UTM) projection zones?", "options": ["Zone 41N and 42N", "Zone 43N and 44N", "Zone 45N and 46N", "Zone 42N and 43N"], "answer": 1, "explanation": "Karnataka lies between $74^\\circ\\text{E}$ and $78.5^\\circ\\text{E}$, falling in UTM Zone 43N (CM 75°E) and Zone 44N (CM 81°E).", "subject": "Modern Surveying", "syllabus_ref": "P2-SURV-3.5", "source": "KEA Verbatim PYQ"}, {"text": "In the Universal Transverse Mercator (UTM) coordinate system, what False Easting value is assigned to the Central Meridian?", "options": ["0 meters", "100,000 meters", "500,000 meters", "1,000,000 meters"], "answer": 2, "explanation": "A False Easting of 500,000 meters is assigned to the central meridian of each UTM zone to avoid negative coordinates.", "subject": "Modern Surveying", "syllabus_ref": "P2-SURV-3.5", "source": "KEA Verbatim PYQ"}];
+const DURATION_SECONDS = 1440;
+const NEG_MARK = 0.25;
+
+let currentIndex = 0;
+let timeRemaining = DURATION_SECONDS;
+let timerInterval = null;
+let userAnswers = new Array(QUESTIONS.length).fill(null);
+let reviewFlags = new Array(QUESTIONS.length).fill(false);
+let examSubmitted = false;
+
+function init() {
+  renderPalette();
+  loadQuestion(0);
+  startTimer();
+}
+
+function startTimer() {
+  const timerDisplay = document.getElementById("timerDisplay");
+  const timerBox = document.getElementById("timerBox");
+  
+  timerInterval = setInterval(() => {
+    if (timeRemaining <= 0) {
+      clearInterval(timerInterval);
+      submitExam(true);
+      return;
+    }
+    timeRemaining--;
+    
+    const h = String(Math.floor(timeRemaining / 3600)).padStart(2, '0');
+    const m = String(Math.floor((timeRemaining % 3600) / 60)).padStart(2, '0');
+    const s = String(timeRemaining % 60).padStart(2, '0');
+    timerDisplay.textContent = `${h}:${m}:${s}`;
+    
+    if (timeRemaining < 300) {
+      timerBox.classList.add("warning");
+    }
+  }, 1000);
+}
+
+function loadQuestion(index) {
+  currentIndex = index;
+  const q = QUESTIONS[index];
+  
+  document.getElementById("qNumberDisplay").textContent = `Question ${index + 1} of ${QUESTIONS.length}`;
+  document.getElementById("qSubjectTag").textContent = q.subject || "General";
+  document.getElementById("qSourceTag").textContent = q.source || "Official Syllabus";
+  document.getElementById("qTextDisplay").textContent = q.text;
+  
+  const container = document.getElementById("optionsContainer");
+  container.innerHTML = "";
+  
+  q.options.forEach((opt, i) => {
+    const label = document.createElement("label");
+    label.className = "option-label";
+    if (userAnswers[index] === i) label.classList.add("selected");
+    
+    const radio = document.createElement("input");
+    radio.type = "radio";
+    radio.name = "option";
+    radio.className = "option-radio";
+    radio.checked = userAnswers[index] === i;
+    radio.onchange = () => selectOption(i);
+    
+    const textSpan = document.createElement("span");
+    textSpan.innerHTML = `<strong>${String.fromCharCode(65 + i)}.</strong> ${opt}`;
+    
+    label.appendChild(radio);
+    label.appendChild(textSpan);
+    container.appendChild(label);
+  });
+  
+  document.getElementById("btnPrev").disabled = index === 0;
+  document.getElementById("btnNext").textContent = index === QUESTIONS.length - 1 ? "Review & Save" : "Save & Next →";
+  
+  updatePaletteBtn(index);
+}
+
+function selectOption(optIndex) {
+  userAnswers[currentIndex] = optIndex;
+  loadQuestion(currentIndex);
+  renderPalette();
+}
+
+function clearCurrentResponse() {
+  userAnswers[currentIndex] = null;
+  loadQuestion(currentIndex);
+  renderPalette();
+}
+
+function toggleReview() {
+  reviewFlags[currentIndex] = !reviewFlags[currentIndex];
+  renderPalette();
+}
+
+function navigateQuestion(delta) {
+  const next = currentIndex + delta;
+  if (next >= 0 && next < QUESTIONS.length) {
+    loadQuestion(next);
+  }
+}
+
+function renderPalette() {
+  const grid = document.getElementById("paletteGrid");
+  grid.innerHTML = "";
+  
+  QUESTIONS.forEach((q, i) => {
+    const btn = document.createElement("button");
+    btn.className = "palette-btn";
+    btn.textContent = i + 1;
+    
+    const ans = userAnswers[i] !== null;
+    const rev = reviewFlags[i];
+    
+    if (ans && rev) btn.classList.add("answered-review");
+    else if (ans) btn.classList.add("answered");
+    else if (rev) btn.classList.add("review");
+    
+    if (i === currentIndex) btn.classList.add("current");
+    
+    btn.onclick = () => loadQuestion(i);
+    grid.appendChild(btn);
+  });
+}
+
+function updatePaletteBtn(index) {
+  const btns = document.querySelectorAll(".palette-btn");
+  btns.forEach((b, i) => {
+    if (i === index) b.classList.add("current");
+    else b.classList.remove("current");
+  });
+}
+
+function submitExam(auto = false) {
+  if (!auto && !confirm("Are you sure you want to submit your examination? Once submitted, your score will be calculated.")) {
+    return;
+  }
+  
+  clearInterval(timerInterval);
+  examSubmitted = true;
+  
+  let correct = 0;
+  let wrong = 0;
+  let unattempted = 0;
+  
+  QUESTIONS.forEach((q, i) => {
+    if (userAnswers[i] === null) {
+      unattempted++;
+    } else if (userAnswers[i] === q.answer) {
+      correct++;
+    } else {
+      wrong++;
+    }
+  });
+  
+  const netScore = Math.max(0, (correct * 1.0) - (wrong * NEG_MARK));
+  const attempted = correct + wrong;
+  const accuracy = attempted > 0 ? Math.round((correct / attempted) * 100) : 0;
+  
+  document.getElementById("resScore").textContent = netScore.toFixed(2);
+  document.getElementById("resAccuracy").textContent = `${accuracy}%`;
+  document.getElementById("resCorrect").textContent = correct;
+  document.getElementById("resWrong").textContent = wrong;
+  
+  renderReviewSection();
+  document.getElementById("resultModal").style.display = "flex";
+}
+
+function renderReviewSection() {
+  const container = document.getElementById("reviewQuestionsContainer");
+  container.innerHTML = "";
+  
+  QUESTIONS.forEach((q, i) => {
+    const item = document.createElement("div");
+    item.className = "review-item";
+    
+    const userAns = userAnswers[i];
+    const isCorrect = userAns === q.answer;
+    const isUnans = userAns === null;
+    
+    if (isUnans) item.classList.add("unanswered");
+    else if (isCorrect) item.classList.add("correct");
+    else item.classList.add("wrong");
+    
+    const userAnsText = isUnans ? "Not Attempted" : `${String.fromCharCode(65 + userAns)}. ${q.options[userAns]}`;
+    const correctAnsText = `${String.fromCharCode(65 + q.answer)}. ${q.options[q.answer]}`;
+    
+    item.innerHTML = `
+      <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+        <strong>Q${i + 1}. ${q.text}</strong>
+        <span style="font-weight:700; color:${isCorrect ? 'var(--accent)' : (isUnans ? '#64748b' : 'var(--danger)')}">
+          ${isCorrect ? 'CORRECT (+1.0)' : (isUnans ? 'UNATTEMPTED (0.0)' : 'WRONG (-0.25)')}
+        </span>
+      </div>
+      <div style="font-size:0.9rem; margin-bottom:4px;"><strong>Your Answer:</strong> ${userAnsText}</div>
+      <div style="font-size:0.9rem; color:var(--accent); font-weight:600;"><strong>Correct Answer:</strong> ${correctAnsText}</div>
+      <div class="exp-box"><strong>Explanation:</strong> ${q.explanation}</div>
+    `;
+    
+    container.appendChild(item);
+  });
+}
+
+function closeModal() {
+  document.getElementById("resultModal").style.display = "none";
+}
+
+window.onload = init;
+</script>
+</body>
+</html>

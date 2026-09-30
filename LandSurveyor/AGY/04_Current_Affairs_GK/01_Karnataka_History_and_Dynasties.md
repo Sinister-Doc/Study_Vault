@@ -1,5 +1,4 @@
----
-exam: KEA Land Surveyor
+---exam: KEA Land Surveyor
 subject: Paper I - General Knowledge
 topic: Karnataka History, Dynasties & Freedom Movement (ಕರ್ನಾಟಕ ಇತಿಹಾಸ & ರಾಜವಂಶಗಳು)
 priority: Tier 1 (15-18 Marks)
@@ -10,6 +9,12 @@ tags:
   - karnataka-history
   - paper-1
   - high-yield
+syllabus_refs:
+  - P1-GK-1.3
+last_verified: 2026-09-30
+sources:
+  - KEA Official Syllabus Specification
+  - Karnataka State Gazetteer & NCERT History
 ---
 
 # 01. Karnataka History, Dynasties & Heritage (ಕರ್ನಾಟಕ ಇತಿಹಾಸ)

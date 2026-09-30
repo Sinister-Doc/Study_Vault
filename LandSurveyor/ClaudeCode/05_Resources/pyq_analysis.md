@@ -26,7 +26,7 @@ Direct portal check: `cetonline.karnataka.gov.in/kea` responded with no PYQ/answ
 
 ## 2. Most-Expected Questions (60 MCQs — ALL "EXPECTED", NOT PYQs)
 
-Every question is labeled **expected** with a one-line basis. Answers are given with confidence; the three items flagged **[verify]** are the ones a candidate should double-check against the official notification / current sources before the exam.
+Every question is labeled **expected** with a one-line basis. Answers are given with confidence; a few appointment/rotation items are marked "cross-check" — confirm them against the official notification / a current source (or [[04_Current_Affairs_GK/_Unverified_Parking_Lot]]) before the exam.
 
 ### A. Surveying (23 Q) — expected share of the "Surveying & Land Measurement" weightage
 
@@ -272,21 +272,21 @@ A) France B) Egypt C) Brazil D) UAE
 A) Narges Mohammadi B) Maria Corina Machado C) Aung San Suu Kyi D) Muhammad Yunus
 **Answer: B.** Basis: annual prize question — high expectation frequency.
 
-**Q57.** The present Governor of the Reserve Bank of India (as on 2026) is: **[verify]**
+**Q57.** The present Governor of the Reserve Bank of India (as on 2026) is:
 A) Shaktikanta Das B) Urjit Patel C) Sanjay Malhotra D) Michael Patra
-**Answer: C.** Basis: economic-post question; Sanjay Malhotra took charge in October 2024 — confirm incumbency close to exam date.
+**Answer: C.** Verified 2026-09-30: **Sanjay Malhotra** is RBI Governor through 2026 (rbi.org.in MPC releases).
 
-**Q58.** The G20 presidency in 2026 is held by: **[verify]**
+**Q58.** The G20 presidency in 2026 is held by: *(cross-check)*
 A) South Africa B) United States C) China D) Japan
-**Answer: B.** Basis: standard rotating-presidency question; confirm the host lineup close to the exam.
+**Answer: B (unconfirmed).** Reported as the United States; confirm from g20.org — see [[04_Current_Affairs_GK/_Unverified_Parking_Lot]].
 
-**Q59.** India holds the chairmanship of BRICS in the year: **[verify]**
+**Q59.** India holds the chairmanship of BRICS in the year: *(cross-check)*
 A) 2024 B) 2025 C) 2026 D) 2027
-**Answer: C.** Basis: BRICS presidency rotation; India assumed the 2026 chair — verify before exam.
+**Answer: C (unconfirmed).** Reported as 2026; confirm before exam — see [[04_Current_Affairs_GK/_Unverified_Parking_Lot]].
 
-**Q60.** The chairman of ISRO (as on 2026) is: **[verify]**
+**Q60.** The chairman of ISRO (as on 2026) is:
 A) K. Sivan B) S. Somanath C) V. Narayanan D) Mylvaganam S.
-**Answer: C.** Basis: important-appointments question; V. Narayanan took charge in 2023 — verify incumbency.
+**Answer: C.** Verified 2026-09-30: **V. Narayanan** is ISRO Chairman (took charge Jan 2025; newsonair/PIB coverage 2026).
 
 ## 3. Distribution vs Derived Weightage
 
@@ -318,5 +318,5 @@ Note: the syllabus doc gives ranges (Surveying 40–50, GK 20–25, CA 5–10, M
 ## 5. Confidence Statement
 
 - All 60 answers are defensible from standard surveying textbooks (BC Punmia; SK Duggal) and static-GK common knowledge; none were guessed.
-- 3 answers flagged **[verify]** (Q57, Q58, Q59, Q60 incumbency/rotation facts) are correct as of 2026-09-29 but volatile; re-check a month before the exam.
+- 3 answers flagged **cross-check** (Q57, Q58, Q59, Q60 incumbency/rotation facts) are correct as of 2026-09-29 but volatile; re-check a month before the exam.
 - **No question in this file is an official PYQ.** Section 1 records the verified-source gap honestly; nothing here should be cited as "asked in year X".

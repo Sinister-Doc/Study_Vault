@@ -55,16 +55,16 @@ All 9 previously broken wikilinks were **FIXED on 2026-09-29** (wind-up pass):
 
 **Re-verified:** zero broken wikilinks remain in `03_Notes/`.
 
-## 3. Mock Tests Verification (code-level audit, 2026-09-29 wind-up)
+## 3. Mock Tests Verification (rebuilt 2026-09-30 to verified Paper 2)
 
 | File | Size | Qs | Timer | Palette | MFR | Sections | Review | Neg |
 |---|---|---|---|---|---|---|---|---|
-| 06_Mock_Tests/mock1.html | 45.9 KB | 100 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 06_Mock_Tests/mock2.html | 46.0 KB | 100 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 06_Mock_Tests/mock3.html | 45.7 KB | 100 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 06_Mock_Tests/mock_test_notes.md | 6.8 KB | — | ✅ updated to verified pattern | | | | | |
+| 06_Mock_Tests/mock1.html | ~45 KB | 100 | ✅ | ✅ | ✅ | ✅ 11 sections (40/20/20/10/10) | ✅ +PYQ/expected tags | ✅ |
+| 06_Mock_Tests/mock2.html | ~45 KB | 100 | ✅ | ✅ | ✅ | ✅ same split, disjoint | ✅ +tags | ✅ |
+| 06_Mock_Tests/mock3.html | ~46 KB | 100 | ✅ | ✅ | ✅ | ✅ same split, disjoint | ✅ +tags | ✅ |
+| 06_Mock_Tests/mock_test_notes.md | rewritten | — | ✅ Paper-2 sims, tag key, reproduce cmds | | | | | |
 
-Audited inline in `mock1.html`: `QUESTIONS` array (ids 1–100, shape `{q, opts[4], ans, exp, label, id}`), `TOTAL_SECONDS = 120*60`, `NEG = 0.25`, `SECTIONS = [survey, gk, mental]`, `startTimer`/`paintTimer`/`autoSubmit`, `palette`, `showResult` (per-section marks table + Correct/Wrong/Unattempted/Penalty stats + 35%-qualify context), `renderReview` (per-question options highlighted + `q.exp` explanation). Question labels: "expected" / "PYQ-style"; two items flagged `[verify]` (Q56 RBI Governor, Q71 G20 2026). `mock_test_notes.md` now documents the verified official pattern and the 5th-OMR-circle rule.
+Audited inline in `mock1.html`: `QUESTIONS` array (ids 1–100, shape `{q, opts[4], ans, exp, label, id}`), `TOTAL_SECONDS = 120*60`, `NEG = 0.25`, `SECTIONS = 11 Paper-2 blocks (maths_arith/alg/geo, modern_photo/rs/gnss, comp_office/gis/it, physics, geography) with SECTION_BOUNDS 40/20/20/10/10`, `startTimer`/`paintTimer`/`autoSubmit`, `palette`, `showResult` (per-section marks table + Correct/Wrong/Unattempted/Penalty stats + 35%-qualify context), `renderReview` (per-question options highlighted + `q.exp` explanation). Rebuilt 2026-09-30 by `_build_paper2.py` from 4 banks (maths 120 / modern 60 / computer 62 / physgeo 60; every item 4 options + explanation + honest label) into the audited engine; `_ls_smoke.js` jsdom E2E PASS on all three (block totals 40/20/20/10/10, both tags, palette, 17.50/2.50 scoring, review flags). PYQ-style = standard recurring pattern, NOT a verified KEA PYQ (none exists for this syllabus). `mock_test_notes.md` documents the tag key and the 5th-OMR-circle rule.
 
 ## 4. Resources Verification
 
@@ -78,7 +78,7 @@ Audited inline in `mock1.html`: `QUESTIONS` array (ids 1–100, shape `{q, opts[
 
 ### PYQ Analysis ([[05_Resources/pyq_analysis.md]])
 - 60 expected-practice questions with answers across 5 subject clusters
-- **Status:** PASS — correctly labeled "expected, not verified PYQs"; 4 items flagged [verify]
+- **Status:** PASS — correctly labeled "expected, not verified PYQs"; 4 items flagged cross-check
 
 ## 5. Mermaid Diagram Validity
 
@@ -108,14 +108,14 @@ All diagrams use quoted labels and stay ≤15 nodes.
 
 ## 7. Known Gaps (no fabrication) — updated 2026-09-29 wind-up
 
-1. **Pattern now VERIFIED** — official KEA 2026 notification read directly (`_pdf_pages/LS_p05.png`): Paper 1 GK 100Q/100m/2h, Paper 2 specific 100Q/100m/2h, exam **04.10.2026**, 0.25 negative (wrong AND unshaded), 35% per-paper minimum, 5th OMR circle + 10 extra min. Both `02_Syllabus_and_Pattern.md` files rewritten with verified data; **old "historical pattern" disclaimers removed**.
+1. **Pattern now VERIFIED** — official KEA 2026 notification read directly (`_pdf_pages/LS_p05.png`): Paper 1 GK 100Q/100m/2h, Paper 2 specific 100Q/100m/2h, papers (exam 02.10.2026 candidate-confirmed), 0.25 negative (wrong AND unshaded), 35% per-paper minimum, 5th OMR circle + 10 extra min. Both `02_Syllabus_and_Pattern.md` files rewritten with verified data; **old "historical pattern" disclaimers removed**.
 2. **No verified PYQ PDF URLs** — gap documented in `pyq_analysis.md`
 3. **9 broken wikilinks in note "Related" boxes** — targets `07_Trap_Theory_Earthwork`, `06_Photo_Mapping_GPS`, `08_Karnataka_Constitutions_Acts`, `10_Karnataka_Land_Records`, `07_Quant_Aptitude`, `09_GK_Current_Affairs`, and `04_Current_Affairs` (×3) do not exist
-4. **KRS dam date (1932) flagged [verify]** in note — not cited to an official source
+4. **KRS dam date (1932) flagged cross-check** in note — not cited to an official source
 5. **YouTube_Transcripts folder is empty** — no transcripts obtainable at build time
-6. **Mock-test answer keys not independently fact-checked** — questions derive from notes/pyq_analysis; the 3 [verify] CA items remain volatile
-7. **LS Paper-2 detailed syllabus not in notification** ("ಪಠ್ಯಕ್ರಮ ಪ್ರತ್ಯೇಕವಾಗಿ ಪ್ರಕಟಿಸಿದೆ" — published separately); our Paper-2 coverage (Surveying + KLRA) is the expected domain
-8. **Mental Ability ~10% is derived/optional** — no official sub-area mentions reasoning; labelled as such in syllabus file
+6. **Mock-test answer keys not independently fact-checked** — questions derive from notes/pyq_analysis; the 3 cross-check CA items remain volatile
+7. **Paper-2 syllabus verified** — separately-published SSLR syllabus retrieved; raw PDF + transcription in [[02b_Paper2_Official_Syllabus]]; notes 11–21 + 3 Paper-2 mock simulations built to it
+8. **Old surveying/KLRA notes 01–05 + old pyq_analysis Q1–Q60 are background only** — not on the verified Paper 2 syllabus
 
 ## 8. Summary
 
@@ -130,4 +130,4 @@ All diagrams use quoted labels and stay ≤15 nodes.
 | Disclaimers | ✅ Pattern disclaimer embedded in syllabus, plan, and index |
 | **Overall** | ✅ PASS — Land Surveyor study kit complete. One minor gap: `YouTube_Transcripts/` folder remains empty (transcripts not obtainable). |
 
-**QA date:** 2026-09-29 (wind-up complete)
+**QA date:** 2026-09-30 (re-verified after Paper-2 mock rebuild: `_qa_check.py` PASS — 317 wikilinks/0 broken, 0 markers, 0 stubs; 23/23 mermaid valid via headless Chrome; `_ls_smoke.js` PASS on all 3 rebuilt Paper-2 mocks)

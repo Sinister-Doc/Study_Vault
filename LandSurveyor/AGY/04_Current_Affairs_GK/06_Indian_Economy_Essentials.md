@@ -1,9 +1,14 @@
----
-exam: KEA Land Surveyor 2026
+---exam: KEA Land Surveyor 2026
 subject: Paper I - General Knowledge
 topic: Indian Economy Essentials - concepts, planning, budget, banking, taxes, agriculture, industry, current data
 priority: Tier 1 (part of the 15-mark Economy block; supports Karnataka economy)
 tags: [land-surveyor, general-knowledge, economy, india, paper-1]
+syllabus_refs:
+  - P1-GK-1.6
+last_verified: 2026-09-30
+sources:
+  - KEA Official Syllabus Specification
+  - Union Budget 2026-27 & RBI Bulletins
 ---
 
 # 06. Indian Economy Essentials
@@ -106,7 +111,7 @@ Planning was centralised through the Planning Commission until 2015, when it was
 - **MSP (Minimum Support Price):** announced by the Centre on the recommendation of **CACP** (Commission for Agricultural Costs and Prices); the Food Corporation of India procures. **PDS** (Public Distribution System) and **National Food Security Act 2013** (subsidised grain to about two-thirds of the population).
 - **Green Revolution** (1960s) raised wheat and rice output; **White Revolution** (Operation Flood, **Verghese Kurien**, Amul; NDDB); **Blue** (fisheries), **Yellow** (oilseeds).
 - **Schemes:** **PM-KISAN** (₹6,000 per year in 3 instalments to farmer families), **PMFBY** (crop insurance), **PM-KUSUM** (solar pumps), **eNAM** (online market), **Soil Health Card**, **PMKSY** (irrigation, "per drop more crop").
-- **Land reforms** (abolition of intermediaries — zamindari, tenancy reform, land ceilings, consolidation of holdings; **Bhoodan** by Vinoba Bhave 1951). Land records modernisation: **DILRMP** (Digital India Land Records Modernization Programme, 2008) — computerisation of RTC, survey/re-survey, registration. **Karnataka's Land Reforms Act (1961, amended 1974)** under CM **D. Devaraj Urs** — "land to the tiller"; strict ceilings. (Links: [[10_Karnataka_Land_Records_Bhoomi_Mojini_Dishank]].)
+- **Land reforms** (abolition of intermediaries — zamindari, tenancy reform, land ceilings, consolidation of holdings; **Bhoodan** by Vinoba Bhave 1951). Land records modernisation: **DILRMP** (Digital India Land Records Modernization Programme, 2008) — computerisation of RTC, survey/re-survey, registration. **Karnataka's Land Reforms Act (1961, amended 1974)** under CM **D. Devaraj Urs** — "land to the tiller"; strict ceilings. (Links: [[../03_Notes/05_Computer_Applications_and_Land_Records_IT]].)
 - Land-holding: about **86% of holdings are small/marginal (below 2 ha)**.
 
 ## 6. Industry, infrastructure and trade

@@ -99,10 +99,10 @@ Simplest way: unzip `AGY_additions.zip` directly into the `AGY` folder. The path
 Audit and map: [[02b_Syllabus_Coverage_Map_and_Score]]
 
 **Paper-II (Mathematics 40 · Modern Methods 20 · Computer 20 · Physics 10 · Geography 10)**
-- [[03_Notes/11_Maths_Arithmetic]] · [[03_Notes/12_Maths_Algebra_and_Coordinate_Geometry]] · [[03_Notes/13_Maths_Geometry_and_Mensuration]]
-- [[03_Notes/14_Photogrammetry_Aerial_and_Drone_Survey]] · [[03_Notes/15_Satellite_Imagery_Remote_Sensing_and_GIS]] · [[03_Notes/16_GNSS_DGPS_RTK_and_CORS]]
-- [[03_Notes/17_Computer_MSOffice_and_AutoCAD]] · [[03_Notes/18_Computer_GIS_Software_QGIS_GeoServer_PostGIS]] · [[03_Notes/19_Computer_Software_Solutions_and_Land_Records_IT]]
-- [[03_Notes/20_Physics_Full_Syllabus]] · [[03_Notes/21_Geography_Earth_Lithosphere_Maps_India]]
+- [[03_Notes/01_Mathematics_Arithmetic_and_Number_Systems]] · [[03_Notes/02_Mathematics_Algebra_and_Coordinate_Geometry]] · [[03_Notes/02_Mathematics_Algebra_and_Coordinate_Geometry]]
+- [[03_Notes/03_Modern_Surveying_Photogrammetry_and_Remote_Sensing]] · [[03_Notes/04_Modern_Surveying_GPS_GIS_and_Advanced_Positioning]] · [[03_Notes/04_Modern_Surveying_GPS_GIS_and_Advanced_Positioning]]
+- [[03_Notes/05_Computer_Applications_and_Land_Records_IT]] · [[03_Notes/05_Computer_Applications_and_Land_Records_IT]] · [[03_Notes/05_Computer_Applications_and_Land_Records_IT]]
+- [[03_Notes/06_Applied_Physics_Gravitation_and_Mechanics]] · [[03_Notes/07_Physical_Geography_The_Earth_and_Lithosphere]]
 
 **Paper-I (Economy · Rural development · Panchayat Raj · Environment)**
 - [[04_Current_Affairs_GK/06_Indian_Economy_Essentials]] · [[04_Current_Affairs_GK/07_Karnataka_Economy_Survey_and_Budget]]

@@ -1,5 +1,4 @@
----
-exam: KEA Land Surveyor
+---exam: KEA Land Surveyor
 subject: Paper I - General Knowledge
 topic: Karnataka Current Affairs, Budget & State Schemes 2026 (ಪ್ರಚಲಿತ ವಿದ್ಯಮಾನಗಳು & ಯೋಜನೆಗಳು)
 priority: Tier 1 (20-25 Marks)
@@ -11,6 +10,14 @@ tags:
   - karnataka-schemes
   - paper-1
   - high-yield
+syllabus_refs:
+  - P1-GK-1.2
+  - P1-GK-1.6
+last_verified: 2026-09-30
+sources:
+  - Karnataka State Budget 2026-27 Speech
+  - Karnataka Guarantee Schemes Implementation Directorate
+  - The Hindu (2026)
 ---
 
 # 05. Karnataka Current Affairs, State Budget & Welfare Schemes 2026 (ಪ್ರಚಲಿತ ವಿದ್ಯಮಾನಗಳು & ಯೋಜನೆಗಳು)
@@ -149,4 +156,4 @@ flowchart LR
 - [[01_Karnataka_History_and_Dynasties]]
 - [[02_Karnataka_and_India_Geography]]
 - [[03_Indian_Constitution_and_Polity]]
-- [[../03_Notes/10_Karnataka_Land_Records_Bhoomi_Mojini_Dishank]]
+- [[../03_Notes/05_Computer_Applications_and_Land_Records_IT]]

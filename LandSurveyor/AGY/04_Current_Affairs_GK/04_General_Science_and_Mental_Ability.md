@@ -1,5 +1,4 @@
----
-exam: KEA Land Surveyor
+---exam: KEA Land Surveyor
 subject: Paper I - General Knowledge
 topic: General Science & Mental Ability (ಸಾಮಾನ್ಯ ವಿಜ್ಞಾನ & ಮಾನಸಿಕ ಸಾಮರ್ಥ್ಯ)
 priority: Tier 2 (20-24 Marks combined)
@@ -11,6 +10,13 @@ tags:
   - mental-ability
   - paper-1
   - high-yield
+syllabus_refs:
+  - P1-GK-1.1
+  - P1-GK-1.7
+last_verified: 2026-09-30
+sources:
+  - KEA Official Syllabus Specification
+  - NCERT Science Standard VIII-X
 ---
 
 # 04. General Science & Mental Ability (ಸಾಮಾನ್ಯ ವಿಜ್ಞಾನ & ಮಾನಸಿಕ ಸಾಮರ್ಥ್ಯ)

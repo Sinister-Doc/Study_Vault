@@ -1,5 +1,4 @@
----
-exam: KEA Land Surveyor
+---exam: KEA Land Surveyor
 subject: Paper I - General Knowledge
 topic: Karnataka & India Geography (ಕರ್ನಾಟಕ ಮತ್ತು ಭಾರತದ ಭೂಗೋಳಶಾಸ್ತ್ರ)
 priority: Tier 1 (16-20 Marks)
@@ -10,6 +9,12 @@ tags:
   - karnataka-geography
   - paper-1
   - high-yield
+syllabus_refs:
+  - P1-GK-1.4
+last_verified: 2026-09-30
+sources:
+  - KEA Official Syllabus Specification
+  - NCERT India Physical Geography & KSRSAC Reports
 ---
 
 # 02. Karnataka & India Geography (ಭೂಗೋಳಶಾಸ್ತ್ರ)

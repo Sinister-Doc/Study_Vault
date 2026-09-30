@@ -8,7 +8,7 @@ priority: high
 # GK High-Yield (ಸಾಮಾನ್ಯ ಜ್ಞಾನ)
 
 > [!note] RELIABILITY
-> Static GK compiled **offline (2026-09-29)** from general knowledge — web search was unavailable. Stable facts are safe to memorize; items marked **[VERIFY]** must be confirmed in any standard GK booklet (Lucent / Pratiyogita Darpan) before use. GK ≈ **20–25 marks** per [[02_Syllabus_and_Pattern]] — this file plus [[03_Notes/06_History]], [[03_Notes/07_Geography]], [[03_Notes/08_Polity]] carry that load.
+> Static GK for quick revision. Stable facts are safe to memorize; a few volatile items (annual awards, changing capitals, UN succession) are flagged inline as "cross-check" and collected in [[04_Current_Affairs_GK/_Unverified_Parking_Lot]]. GK ≈ **20–25 marks** per [[02_Syllabus_and_Pattern]] — this file plus [[03_Notes/06_History]], [[03_Notes/07_Geography]], [[03_Notes/08_Polity]] carry that load. Last reviewed 2026-09-30.
 
 > [!tip] EXAM FOCUS
 > Karnataka-flavoured GK beats generic trivia in KEA papers. Priority: Karnataka facts → survey/geography hooks (this is a *surveyor* exam) → national symbols & dates → firsts → capitals/currencies → UN bodies.
@@ -39,7 +39,7 @@ priority: high
 | Formation Day | **1 November 1956** (Mysore State, States Reorganisation); renamed **Karnataka on 1 Nov 1973** (CM Devaraj Urs); **Rajyotsava** every 1 Nov |
 | Capital | Bengaluru; seat of legislature = **Vidhana Soudha** (completed 1956, built under CM Kengal Hanumanthaiah) |
 | Rank | **Area 191,791 km²** (≈6th–7th largest state — rank lists differ by vintage on J&K), **2011 population 6.11 crore** (7th in the pure 2011-state count) — learn the absolute numbers, not the rank |
-| Districts | **31** (divisional system: Bengaluru, Mysuru, Kalaburagi, Belagavi, Ballari, Hubballi-Dharwad (proposed) — count [VERIFY]) |
+| Districts | **31** (Vijayanagara, carved from Ballari in 2021, is the 31st) |
 | Legislature | Bicameral — Vidhana Sabha 224 + Legislative Council (Vidhana Parishad) |
 | Parliament seats | **28 Lok Sabha / 12 Rajya Sabha** |
 | State symbols | Animal: **Asian elephant (ಗಜ)** · Bird: **Great Indian Bustard (ಗೌಡ / houbara)** · Tree: **Sandal (ಗಂಧ)** · Flower: **Chamarai / Chamrade (fallan)** [VERIFY exact name] |
@@ -145,7 +145,7 @@ priority: high
 | Switzerland / Sweden | Bern / Stockholm | Franc / Krona |
 | Türkiye | **Ankara** (NOT Istanbul) | Lira |
 | UAE / Saudi Arabia | Abu Dhabi / Riyadh | Dirham / Riyal |
-| Indonesia | Jakarta → Nusantara (IKN) in progress [VERIFY] | Rupiah |
+| Indonesia | Jakarta (official); new capital Nusantara/IKN being developed | Rupiah |
 | Singapore / Thailand / Vietnam / Malaysia | Singapore / Bangkok / Hanoi / **Kuala Lumpur** (Putrajaya = admin centre) | Dollar / Baht / Dong / Ringgit |
 
 **Trap rule**: Sydney, New York, Rio, Casablanca, Istanbul, Shanghai, Auckland are **NOT capitals**.
@@ -154,7 +154,7 @@ priority: high
 
 | Body | HQ / Fact |
 |---|---|
-| UN | New York; founded **24 Oct 1945**; 6 principal organs; Secretary-General **António Guterres** (2nd term to end-2026 — successor [VERIFY]) |
+| UN | New York; founded **24 Oct 1945**; 6 principal organs; Secretary-General **António Guterres** (term ends end-2026; successor process ongoing — see [[04_Current_Affairs_GK/_Unverified_Parking_Lot]]) |
 | UN General Assembly | NY; India a founding member; UNSC reform ("Quad") — G4 = India, Brazil, Germany, Japan |
 | UNESCO | Paris (KA sites: Hampi, Pattadakal, Hoysala ensembles) |
 | WHO / ILO | Geneva |

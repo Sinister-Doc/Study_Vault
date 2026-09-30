@@ -1,9 +1,14 @@
----
-exam: KEA Land Surveyor 2026
+---exam: KEA Land Surveyor 2026
 subject: Paper I - General Knowledge
 topic: Rural development initiatives, Panchayat Raj institutions, rural cooperative societies, state and regional administration
 priority: Tier 1 (notified: "initiatives related to rural development, Panchayat Raj institutions and rural cooperative societies")
 tags: [land-surveyor, general-knowledge, rural-development, panchayat-raj, cooperatives, administration, paper-1]
+syllabus_refs:
+  - P1-GK-1.6
+last_verified: 2026-09-30
+sources:
+  - Karnataka Gram Swaraj and Panchayat Raj Act, 1993
+  - RDPR Department Reports
 ---
 
 # 08. Rural Development, Panchayat Raj, Cooperatives & State Administration
@@ -41,7 +46,7 @@ India experimented with three-tier (Balwant Rai Mehta) and two-tier (Ashok Mehta
 - **Panchayat Development Officer (PDO)** is the secretary/executive officer of a GP; **Secretary/Bill collector** collect taxes; **Village Accountant / Grama Lekhadhikari (VA)** is the revenue-department village officer (maintains land records; earlier "Shanbhog/Patwari"); **Revenue Inspector**, **Tahsildar** (taluk), **Assistant Commissioner** (sub-division), **Deputy Commissioner** (district), **Divisional Commissioner** (4 divisions: Bengaluru, Mysuru, Belagavi, Kalaburagi) — the **revenue administration** ladder relevant to land records.
 - **Sources of GP income:** house tax, taxes on fairs and markets, licence fees, water tax, grants from the state (**State Finance Commission**) and Centre (**Finance Commission** grants), share of land revenue and stamp duty (surcharge on stamp duty), MGNREGA/VB-G RAM G funds for works.
 - **Social audit** and **ombudsman** for rural employment schemes; **Nirmala Grama Puraskara** and **Gandhi Grama Puraskara** — state awards for best-performing / cleanest panchayats (as far as I know).
-- **Grama One** centres provide citizen services (RTC, certificates) — see [[10_Karnataka_Land_Records_Bhoomi_Mojini_Dishank]].
+- **Grama One** centres provide citizen services (RTC, certificates) — see [[../03_Notes/05_Computer_Applications_and_Land_Records_IT]].
 
 **State and regional administration (notified item f)**
 - **Governor** (**Thawar Chand Gehlot**), **Chief Minister** (**D.K. Shivakumar** since 3 June 2026; Deputy CM **G. Parameshwara**), Council of Ministers; **Chief Secretary** (head of civil service); **Vidhana Soudha** (Bengaluru; built 1956, Kengal Hanumanthaiah); **Suvarna Vidhana Soudha** (Belagavi, 2012; winter session); **High Court** at Bengaluru with benches at Dharwad and Kalaburagi; **Lokayukta** (Karnataka pioneered it, Act 1984).
@@ -61,7 +66,7 @@ India experimented with three-tier (Balwant Rai Mehta) and two-tier (Ashok Mehta
 | **DAY-NRLM** (National Rural Livelihoods Mission, 2011; "Aajeevika") | promotes **self-help groups (SHGs)** of women; in Karnataka the mission runs as **Sanjeevini – KSRLPS** |
 | **SBM-G** (Swachh Bharat Mission - Gramin, 2014) | open-defecation-free villages; toilets |
 | **Jal Jeevan Mission** (2019) | **Har Ghar Jal** — tap water to every rural household |
-| **SVAMITVA** (2020) | drone mapping of rural inhabited land ("abadi") and issuing **property cards**; a Panchayati Raj ministry scheme, with the Survey of India as technical partner — see [[14_Photogrammetry_Aerial_and_Drone_Survey]] |
+| **SVAMITVA** (2020) | drone mapping of rural inhabited land ("abadi") and issuing **property cards**; a Panchayati Raj ministry scheme, with the Survey of India as technical partner — see [[../03_Notes/03_Modern_Surveying_Photogrammetry_and_Remote_Sensing]] |
 | **PM-KISAN** | ₹6,000 per year to farmer families |
 | **NSAP** | pensions for old-age, widows, disabled (**IGNOAPS**) |
 | **Deendayal Upadhyaya Gram Jyoti Yojana** | rural electrification; **Saubhagya** (household electrification) |
@@ -146,4 +151,4 @@ India experimented with three-tier (Balwant Rai Mehta) and two-tier (Ashok Mehta
 +---------------------------------------------------------------+
 ```
 
-*Related:* [[03_Indian_Constitution_and_Polity]] · [[06_Indian_Economy_Essentials]] · [[07_Karnataka_Economy_Survey_and_Budget]] · [[10_Karnataka_Land_Records_Bhoomi_Mojini_Dishank]]
+*Related:* [[03_Indian_Constitution_and_Polity]] · [[06_Indian_Economy_Essentials]] · [[07_Karnataka_Economy_Survey_and_Budget]] · [[../03_Notes/05_Computer_Applications_and_Land_Records_IT]]

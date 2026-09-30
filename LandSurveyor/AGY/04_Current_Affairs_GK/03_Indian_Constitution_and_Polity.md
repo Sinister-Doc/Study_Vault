@@ -1,5 +1,4 @@
----
-exam: KEA Land Surveyor
+---exam: KEA Land Surveyor
 subject: Paper I - General Knowledge
 topic: Indian Constitution & Polity (ಭಾರತೀಯ ಸಂವಿಧಾನ & ರಾಜಕೀಯ ವ್ಯವಸ್ಥೆ)
 priority: Tier 1 (14-16 Marks)
@@ -11,6 +10,12 @@ tags:
   - polity
   - paper-1
   - high-yield
+syllabus_refs:
+  - P1-GK-1.5
+last_verified: 2026-09-30
+sources:
+  - KEA Official Syllabus Specification
+  - Constitution of India (Ministry of Law and Justice)
 ---
 
 # 03. Indian Constitution & Polity (ಭಾರತೀಯ ಸಂವಿಧಾನ)

@@ -1,9 +1,15 @@
----
-exam: KEA Land Surveyor 2026
+---exam: KEA Land Surveyor 2026
 subject: Paper I - General Knowledge
 topic: Environment and development issues - laws, biodiversity, climate, Karnataka's ecology and water disputes, sustainable development
 priority: Tier 2 (notified: "the environment ... and development issues")
 tags: [land-surveyor, general-knowledge, environment, development, karnataka, paper-1]
+syllabus_refs:
+  - P1-GK-1.1
+  - P1-GK-1.6
+last_verified: 2026-09-30
+sources:
+  - KEA Official Syllabus Specification
+  - Ministry of Environment, Forest and Climate Change (MoEFCC)
 ---
 
 # 09. Environment & Development Issues (India and Karnataka)
@@ -67,7 +73,7 @@ tags: [land-surveyor, general-knowledge, environment, development, karnataka, pa
 
 - **Sustainable development** (Brundtland Report 1987): meeting present needs without compromising future generations.
 - Rural issues: soil degradation, groundwater decline, farm distress, migration, waste; solutions: watershed management, organic farming, agroforestry, solar pumps (**PM-KUSUM**, **Saura Krishi**), **Swachh Bharat**, **Jal Jeevan**, **MGNREGA/VB-G RAM G** works for water conservation.
-- **Land-related environment tasks for a surveyor:** demarcation of forest/reserved land, tank and lake boundaries, encroachment mapping, use of **drone and satellite imagery** for change detection (see [[14_Photogrammetry_Aerial_and_Drone_Survey]], [[15_Satellite_Imagery_Remote_Sensing_and_GIS]]).
+- **Land-related environment tasks for a surveyor:** demarcation of forest/reserved land, tank and lake boundaries, encroachment mapping, use of **drone and satellite imagery** for change detection (see [[../03_Notes/03_Modern_Surveying_Photogrammetry_and_Remote_Sensing]], [[../03_Notes/04_Modern_Surveying_GPS_GIS_and_Advanced_Positioning]]).
 
 ---
 
