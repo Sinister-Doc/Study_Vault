@@ -1,5 +1,4 @@
----
-exam: KEA VAO (Village Administrative Officer)
+---exam: KEA VAO (Village Administrative Officer)
 subject: Paper I - General Knowledge
 topic: National & International Current Affairs 2026 (ರಾಷ್ಟ್ರೀಯ & ಅಂತರರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಮಾನಗಳು)
 priority: Tier 1 (14-16 Marks)
@@ -12,6 +11,13 @@ tags:
   - isro
   - paper-1
   - high-yield
+syllabus_refs:
+  - P1-VAO-CA-5.3
+  - P1-VAO-CA-5.4
+last_verified: 2026-09-30
+sources:
+  - KEA VAO Official Notification
+  - National News Portals & Press Information Bureau (2026)
 ---
 
 # 03. National & International Current Affairs 2026 (ಪ್ರಚಲಿತ ವಿದ್ಯಮಾನಗಳು)

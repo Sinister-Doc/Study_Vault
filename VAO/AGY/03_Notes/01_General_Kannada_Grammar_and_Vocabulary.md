@@ -1,5 +1,4 @@
----
-exam: KEA VAO (Village Administrative Officer)
+---exam: KEA VAO (Village Administrative Officer)
 subject: Paper II - General Kannada (ಸಾಮಾನ್ಯ ಕನ್ನಡ)
 topic: Kannada Grammar, Sandhi, Samasa & Vocabulary (ವ್ಯಾಕರಣ, ಸಂಧಿ, ಸಮಾಸ & ಶಬ್ದಕೋಶ)
 priority: Tier 1 (35 Marks - High Scoring)
@@ -11,6 +10,19 @@ tags:
   - samasa
   - paper-2
   - high-yield
+syllabus_refs:
+  - P2-VAO-KAN-1.1
+  - P2-VAO-KAN-1.2
+  - P2-VAO-KAN-1.3
+  - P2-VAO-KAN-1.4
+  - P2-VAO-KAN-1.5
+  - P2-VAO-KAN-1.6
+  - P2-VAO-KAN-1.7
+  - P2-VAO-KAN-1.8
+last_verified: 2026-09-30
+sources:
+  - KEA VAO Official Notification
+  - Karnataka State Secondary Board Kannada Vyakarana
 ---
 
 # 01. General Kannada Grammar & Vocabulary (ಸಾಮಾನ್ಯ ಕನ್ನಡ ವ್ಯಾಕರಣ)

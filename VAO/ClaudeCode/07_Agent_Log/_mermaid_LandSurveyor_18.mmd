@@ -1,0 +1,9 @@
+flowchart TD
+    A["Field survey<br/>(Total Station / GPS)"] --> B["Coordinates<br/>(N, E)"]
+    B --> C["Import points into<br/>AutoCAD (DXFIN)"]
+    C --> D["Draw parcels:<br/>LINE / PLINE / OFFSET"]
+    D --> E["Clean up:<br/>TRIM / EXTEND / JOIN"]
+    E --> F["Annotate:<br/>TEXT + HATCH"]
+    F --> G["Verify closed<br/>polygons + area"]
+    G --> H["Export cadastral<br/>DXF (DXFOUT)"]
+    H --> I["Share to GIS /<br/>land-records system"]

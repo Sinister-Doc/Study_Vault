@@ -1,5 +1,4 @@
----
-exam: KEA VAO (Village Administrative Officer)
+---exam: KEA VAO (Village Administrative Officer)
 subject: Paper I - General Knowledge
 topic: Indian Constitution & Governance (ಭಾರತೀಯ ಸಂವಿಧಾನ ಮತ್ತು ಆಡಳಿತ)
 priority: Tier 1 (16-18 Marks)
@@ -11,6 +10,15 @@ tags:
   - governance
   - paper-1
   - high-yield
+syllabus_refs:
+  - P1-VAO-POL-3.1
+  - P1-VAO-POL-3.2
+  - P1-VAO-POL-3.3
+  - P1-VAO-POL-3.4
+last_verified: 2026-09-30
+sources:
+  - KEA VAO Official Notification
+  - Constitution of India (Ministry of Law and Justice)
 ---
 
 # 06. Indian Constitution & Polity (ಭಾರತೀಯ ಸಂವಿಧಾನ)

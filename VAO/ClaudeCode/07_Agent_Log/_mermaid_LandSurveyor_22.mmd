@@ -1,0 +1,8 @@
+flowchart TD
+    M["Magma (molten rock)"] -->|"cools & solidifies"| I["Igneous rock"]
+    I -->|"weathering & erosion"| SED["Sediments"]
+    SED -->|"compaction & cementation"| S["Sedimentary rock"]
+    S -->|"heat & pressure"| ME["Metamorphic rock"]
+    I -->|"heat & pressure"| ME
+    ME -->|"melting"| M
+    S -->|"melting"| M

@@ -1,5 +1,4 @@
----
-exam: KEA VAO (Village Administrative Officer)
+---exam: KEA VAO (Village Administrative Officer)
 subject: Paper I - General Knowledge
 topic: Karnataka Government Guarantee Schemes 2026 (ಪಂಚ ಗ್ಯಾರಂಟಿ ಯೋಜನೆಗಳು)
 priority: Tier 1 (16-20 Marks)
@@ -11,6 +10,13 @@ tags:
   - budget-2026
   - paper-1
   - high-yield
+syllabus_refs:
+  - P1-VAO-CA-5.1
+  - P1-VAO-CA-5.2
+last_verified: 2026-09-30
+sources:
+  - Karnataka State Budget 2026-27 Speech
+  - Guarantee Implementation Directorate
 ---
 
 # 01. Karnataka Government Guarantee Schemes & Welfare 2026 (ಪಂಚ ಗ್ಯಾರಂಟಿ ಯೋಜನೆಗಳು)

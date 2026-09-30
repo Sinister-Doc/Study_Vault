@@ -1,0 +1,11 @@
+flowchart TD
+    A["Overlapping drone<br/>photos + geotags"] --> B["Feature detection<br/>& image matching"]
+    B --> C["Structure from Motion:<br/>camera poses + sparse cloud"]
+    C --> D["Add GCP coordinates<br/>(georeference & scale)"]
+    D --> E["Dense point cloud<br/>(multi-view stereo)"]
+    E --> F["Classify ground vs<br/>non-ground points"]
+    F --> G["DSM = top surface<br/>(3D mesh)"]
+    F --> H["DEM / DTM =<br/>bare earth"]
+    G --> I["Orthorectify photos<br/>using DSM"]
+    I --> J["Orthomosaic / ORI<br/>(map-accurate image)"]
+    H --> K["Contours, volumes,<br/>cadastral overlay"]

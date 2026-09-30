@@ -1,5 +1,4 @@
----
-exam: KEA VAO (Village Administrative Officer)
+---exam: KEA VAO (Village Administrative Officer)
 subject: Paper I - General Knowledge
 topic: Karnataka History, Heritage & Unification (ಕರ್ನಾಟಕ ಇತಿಹಾಸ & ಪರಂಪರೆ)
 priority: Tier 1 (18-22 Marks)
@@ -11,6 +10,15 @@ tags:
   - unification
   - paper-1
   - high-yield
+syllabus_refs:
+  - P1-VAO-HIST-1.1
+  - P1-VAO-HIST-1.2
+  - P1-VAO-HIST-1.3
+  - P1-VAO-HIST-1.4
+last_verified: 2026-09-30
+sources:
+  - KEA VAO Official Notification
+  - Karnataka State Gazetteer & NCERT History
 ---
 
 # 04. Karnataka History & Heritage (ಕರ್ನಾಟಕ ಇತಿಹಾಸ ಮತ್ತು ಪರಂಪರೆ)

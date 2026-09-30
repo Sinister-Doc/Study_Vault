@@ -1,5 +1,4 @@
----
-exam: KEA VAO (Village Administrative Officer)
+---exam: KEA VAO (Village Administrative Officer)
 subject: Paper I - General Knowledge & Administration
 topic: Panchayat Raj Act & Rural Revenue Administration (ಪಂಚಾಯತ್ ರಾಜ್ & ಕಂದಾಯ ಆಡಳಿತ)
 priority: Tier 1 (15-18 Marks - Core Domain)
@@ -11,6 +10,15 @@ tags:
   - rtc-pahani
   - paper-1
   - high-yield
+syllabus_refs:
+  - P1-VAO-RDPR-4.1
+  - P1-VAO-RDPR-4.2
+  - P1-VAO-RDPR-4.3
+  - P1-VAO-RDPR-4.4
+last_verified: 2026-09-30
+sources:
+  - Karnataka Gram Swaraj and Panchayat Raj Act, 1993
+  - Karnataka Land Revenue Act, 1964
 ---
 
 # 07. Panchayat Raj Act & Rural Revenue Administration (ಪಂಚಾಯತ್ ರಾಜ್ & ಕಂದಾಯ ಆಡಳಿತ)

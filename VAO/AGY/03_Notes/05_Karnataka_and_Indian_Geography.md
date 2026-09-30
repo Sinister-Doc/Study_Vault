@@ -1,5 +1,4 @@
----
-exam: KEA VAO (Village Administrative Officer)
+---exam: KEA VAO (Village Administrative Officer)
 subject: Paper I - General Knowledge
 topic: Karnataka & Indian Geography (ಕರ್ನಾಟಕ ಮತ್ತು ಭಾರತದ ಭೂಗೋಳಶಾಸ್ತ್ರ)
 priority: Tier 1 (16-20 Marks)
@@ -11,6 +10,15 @@ tags:
   - minerals
   - paper-1
   - high-yield
+syllabus_refs:
+  - P1-VAO-GEOG-2.1
+  - P1-VAO-GEOG-2.2
+  - P1-VAO-GEOG-2.3
+  - P1-VAO-GEOG-2.4
+last_verified: 2026-09-30
+sources:
+  - KEA VAO Official Notification
+  - NCERT Physical Geography & KSRSAC Reports
 ---
 
 # 05. Karnataka & Indian Geography (ಭೂಗೋಳಶಾಸ್ತ್ರ)

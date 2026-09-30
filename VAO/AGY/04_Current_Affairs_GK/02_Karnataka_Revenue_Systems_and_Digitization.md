@@ -1,5 +1,4 @@
----
-exam: KEA VAO (Village Administrative Officer)
+---exam: KEA VAO (Village Administrative Officer)
 subject: Paper I - General Knowledge & E-Governance
 topic: Karnataka Revenue Systems & Digital Governance (ಕಂದಾಯ ವ್ಯವಸ್ಥೆ ಮತ್ತು ಡಿಜಿಟಲೀಕರಣ)
 priority: Tier 1 (14-16 Marks - Highly Relevant to VAO Role)
@@ -12,6 +11,12 @@ tags:
   - parihara
   - paper-1
   - high-yield
+syllabus_refs:
+  - P1-VAO-RDPR-4.5
+last_verified: 2026-09-30
+sources:
+  - Karnataka SSLR Department Manuals
+  - Bhoomi & Mojini Technical Documentation
 ---
 
 # 02. Karnataka Revenue Systems & Digital Governance (ಕಂದಾಯ ವ್ಯವಸ್ಥೆ ಮತ್ತು ಡಿಜಿಟಲೀಕರಣ)

@@ -60,21 +60,29 @@ tags: [vao, current-affairs, karnataka, paper-1]
 - Karnataka Budget 2025-26 highlights, 2025–26 appointment changes, and 2025–26 Kannada Sahitya Sammelana / Rajyotsava award lists **could not be verified** (search empty). Revise from a dated monthly compilation (e.g., KPSC/KAS current-affairs magazine) instead of this file.
 - ✅ Verified anchor only: Jnanpith 2023 = Rambhadracharya (Sanskrit) + Gulzar (Urdu); 2024 = Vinod Kumar Shukla (Hindi); latest listed = 2025 = Vairamuthu (Tamil).
 
-## 2. National — compiled offline, verify
+## 2. National — appointments verified 2026-09-30
 
-| Area | What to revise (offline pointers, verify) |
+| Post | Holder |
 |---|---|
-| Census / delimitation | Any 2025–26 announcements on Census schedule; static base: last Census 2011 |
-| Missions VAO touches | MGNREGA wage/DBT, Jal Jeevan Mission, PM-KISAN (₹6,000/yr), PMAY-Gramin |
-| Polity static | President, Vice-President, CJI, CEC, CAG — memorise from a 2026 list, not from memory here |
+| President | **Droupadi Murmu** (15th) |
+| Vice-President | **C.P. Radhakrishnan** (15th; sworn 12 Sep 2025 after Dhankhar resigned 21 Jul 2025) |
+| Chief Justice of India | **Surya Kant** (53rd; from 24 Nov 2025) |
+| Lok Sabha Speaker | **Om Birla** |
+| Union Finance Minister | **Nirmala Sitharaman** (Union Budget 2026-27 presented 1 Feb 2026) |
+| RBI Governor | **Sanjay Malhotra** |
+| ISRO Chairman | **V. Narayanan** |
 
-## 3. International — compiled offline, verify (1 Q max)
+Other national pointers to revise: MGNREGA wage/DBT, Jal Jeevan Mission, PM-KISAN (₹6,000/yr), PMAY-Gramin; Census schedule (last Census 2011).
 
-- UN bodies + HQ (see `GK_High_Yield.md`); G20/SCO/BRICS summit hosts 2025–26 — **verify host/year from a current compilation**.
+## 3. International — verify host/year from a current compilation (1 Q max)
 
-## 4. Economy — compiled offline, verify
+- UN bodies + HQ (see `GK_High_Yield.md`); G20/SCO/BRICS summit hosts 2025–26 — cross-check host/year (see [[04_Current_Affairs_GK/Current_Affairs_2026]] parking guidance).
+- **Nobel Peace Prize 2025: María Corina Machado** (Venezuela) — verified.
 
-- Union Budget 2026-27 + Karnataka Budget 2026-27 figures: **not verified today** — learn from the official budget-at-a-glance, not this file.
+## 4. Economy — key figures verified 2026-09-30
+
+- **Karnataka Budget 2026-27 = ₹4,48,004 crore (₹4.48 lakh crore)**, presented by CM Siddaramaiah on 6 March 2026 (2025-26 was ₹4.09 lakh crore).
+- India is the **~6th largest economy** by nominal GDP (IMF April 2026 WEO). **GST**: two main slabs 5% & 18% + a 40% demerit rate, effective 22 Sep 2025.
 - Static must-knows: RBI functions, MSP crops, DBT/Aadhaar-enabled payments, SHG–bank linkage (links to [[03_Notes/04_Polity]]).
 
 ## 5. Science/Tech — compiled offline, verify
@@ -101,7 +109,7 @@ tags: [vao, current-affairs, karnataka, paper-1]
 |---|---|
 | Karnataka CM ✅ | D. K. Shivakumar (re-check; can change) |
 | Karnataka Governor ✅ | Thawar Chand Gehlot (re-check; can change) |
-| All India posts (President/CJI/CEC etc.) | **Not verified today — fill from a Sep-2026 list** |
+| All India posts (President/VP/CJI etc.) | **Verified above (§2):** Murmu · C.P. Radhakrishnan · Surya Kant · Om Birla · Sitharaman |
 
 ## Quick-revision box (only ✅-safe facts)
 

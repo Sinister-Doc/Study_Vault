@@ -1,0 +1,10 @@
+flowchart TD
+    A["Field mobile app<br/>(offline-first)"] -->|"HTTPS + JSON"| B["API Gateway<br/>(auth, routing)"]
+    C["Citizen web portal"] -->|"HTTPS"| B
+    B --> D["Application services<br/>(REST APIs, Java)"]
+    D --> E["Textual DB<br/>(RTC / owner data)"]
+    D --> F["Spatial DB<br/>(PostGIS parcels)"]
+    E --> G["State Data Centre<br/>(SDC)"]
+    F --> G
+    D -->|"response JSON"| B
+    B --> A

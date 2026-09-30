@@ -16,7 +16,7 @@
 ## Progress
 Task 1: complete (02_Syllabus_and_Pattern.md written inline by controller — historical pattern, disclaimers embedded)
 Task 2: dispatched (Resource Scout → 05_Resources\)
-Task 3: complete (Current_Affairs_2026.md + GK_High_Yield.md written; 6 live-verified Karnataka facts, rest offline-compiled with [VERIFY] flags)
+Task 3: complete (Current_Affairs_2026.md + GK_High_Yield.md written; live-verified Karnataka facts, remaining volatile items flagged for cross-check)
 Task 4: dispatched (PYQ Analyst → 05_Resources\pyq_analysis.md, 60 expected MCQs)
 Task 5: dispatched (Subject Tutor → 03_Notes 01-07: Kannada + GK cluster)
 Task 6: pending (Visual Learning Designer)

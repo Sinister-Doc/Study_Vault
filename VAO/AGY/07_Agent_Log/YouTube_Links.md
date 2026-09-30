@@ -34,5 +34,5 @@
 
 ## How to Use These Videos for Rapid 2–3 Day Revision
 1. **Speed Multiplier:** Watch conceptual and marathon videos at **1.5x or 1.75x speed** with your notebook open for rapid retention.
-2. **Transcript Cross-Referencing:** Open the corresponding `[[transcript_note]]` inside `05_Resources/YouTube_Transcripts/` to review key formulas and statements without re-watching entire streams.
+2. **Transcript Cross-Referencing:** Open the corresponding transcript note inside `05_Resources/YouTube_Transcripts/` to review key formulas and statements without re-watching entire streams.
 3. **Focus on Gaps:** Prioritize videos covering your weakest areas (e.g., Modern Surveying for Land Surveyor candidates, or Computer Knowledge/Kannada Grammar for VAO candidates).

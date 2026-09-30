@@ -1,0 +1,11 @@
+flowchart TD
+    U["Universal set U"] --> A["Set A"]
+    U --> B["Set B"]
+    A --> I["A ∩ B (both)"]
+    B --> I
+    A --> OA["A only = A − B"]
+    B --> OB["B only = B − A"]
+    U --> N["Neither = (A ∪ B)'"]
+    I --> UN["A ∪ B = A only + both + B only"]
+    OA --> UN
+    OB --> UN

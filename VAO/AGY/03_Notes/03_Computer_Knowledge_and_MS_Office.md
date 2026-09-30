@@ -1,5 +1,4 @@
----
-exam: KEA VAO (Village Administrative Officer)
+---exam: KEA VAO (Village Administrative Officer)
 subject: Paper II - Computer Knowledge (ಗಣಕಯಂತ್ರ ಜ್ಞಾನ)
 topic: Hardware, Operating Systems, MS Office & Cybersecurity
 priority: Tier 1 (30 Marks - High Scoring)
@@ -11,6 +10,18 @@ tags:
   - cybersecurity
   - paper-2
   - high-yield
+syllabus_refs:
+  - P2-VAO-COMP-3.1
+  - P2-VAO-COMP-3.2
+  - P2-VAO-COMP-3.3
+  - P2-VAO-COMP-3.4
+  - P2-VAO-COMP-3.5
+  - P2-VAO-COMP-3.6
+last_verified: 2026-09-30
+sources:
+  - KEA VAO Official Notification
+  - Computer Fundamentals & MS Office Standards
+  - CeG Karnataka
 ---
 
 # 03. Computer Knowledge & MS Office (ಗಣಕಯಂತ್ರ ಜ್ಞಾನ)

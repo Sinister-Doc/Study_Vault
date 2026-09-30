@@ -1,0 +1,9 @@
+flowchart TD
+    A["Scanned village map<br/>/ imagery (raster)"] --> B["Load & georeference<br/>in QGIS"]
+    B --> C["Set correct CRS<br/>(e.g., UTM / WGS-84)"]
+    C --> D["Digitize parcels<br/>(polygons + snapping)"]
+    D --> E["Attribute table:<br/>survey no., owner, area"]
+    E --> F["Spatial query &<br/>field calculator (area)"]
+    F --> G["Symbology + labels"]
+    G --> H["Print layout:<br/>legend, scale, north"]
+    H --> I["Export PDF /<br/>publish via GeoServer"]

@@ -1,5 +1,4 @@
----
-exam: KEA VAO (Village Administrative Officer)
+---exam: KEA VAO (Village Administrative Officer)
 subject: Paper II - General English
 topic: English Grammar, Syntax, Idioms & Error Spotting (ಸಾಮಾನ್ಯ ಇಂಗ್ಲಿಷ್)
 priority: Tier 1 (35 Marks - High Scoring)
@@ -11,6 +10,19 @@ tags:
   - vocabulary
   - paper-2
   - high-yield
+syllabus_refs:
+  - P2-VAO-ENG-2.1
+  - P2-VAO-ENG-2.2
+  - P2-VAO-ENG-2.3
+  - P2-VAO-ENG-2.4
+  - P2-VAO-ENG-2.5
+  - P2-VAO-ENG-2.6
+  - P2-VAO-ENG-2.7
+  - P2-VAO-ENG-2.8
+last_verified: 2026-09-30
+sources:
+  - KEA VAO Official Notification
+  - Wren and Martin High School English Grammar
 ---
 
 # 02. General English Grammar & Comprehension (ಸಾಮಾನ್ಯ ಇಂಗ್ಲಿಷ್)

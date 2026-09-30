@@ -1,0 +1,2809 @@
+{
+  "exam": "KEA Village Administrative Officer (VAO) 2026",
+  "last_updated": "2026-09-30",
+  "total_questions": 200,
+  "paper_1_general_knowledge_and_rural_admin": [
+    {
+      "text": "The famous Halmidi inscription, regarded as the earliest recorded stone inscription in classical Kannada, belongs to which dynasty?",
+      "options": [
+        "Gangas of Talakad",
+        "Kadambas of Banavasi",
+        "Chalukyas of Badami",
+        "Rashtrakutas"
+      ],
+      "answer": 1,
+      "explanation": "The Halmidi inscription discovered in Belur taluk dates to c. 450 AD during the reign of King Kakusthavarma of the Kadamba dynasty.",
+      "subject": "Karnataka History",
+      "syllabus_ref": "P1-VAO-HIST-1.1",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Who was the court poet who composed the Aihole Prashasti praising Pulakeshin II's military triumphs over Emperor Harsha?",
+      "options": [
+        "Banabhatta",
+        "Ravikirti",
+        "Dandin",
+        "Harisena"
+      ],
+      "answer": 1,
+      "explanation": "Ravikirti composed the Aihole inscription in 634 AD, detailing Badami Chalukya King Pulakeshin II's victory over Harshavardhana on the Narmada.",
+      "subject": "Karnataka History",
+      "syllabus_ref": "P1-VAO-HIST-1.1",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "The colossal 57-foot monolithic statue of Gommateshwara at Shravanabelagola was consecrated in 981 AD by which Ganga general?",
+      "options": [
+        "Chavundaraya",
+        "Durvinita",
+        "Rachamalla IV",
+        "Amoghavarsha I"
+      ],
+      "answer": 0,
+      "explanation": "Chavundaraya, military commander and Prime Minister of Western Ganga King Rachamalla IV, commissioned the Gommateshwara monolith in 981 AD.",
+      "subject": "Karnataka History",
+      "syllabus_ref": "P1-VAO-HIST-1.1",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "The famous rock-cut monolithic Kailasanatha Temple at Ellora (Cave 16) was excavated under which Rashtrakuta monarch?",
+      "options": [
+        "Dantidurga",
+        "Krishna I",
+        "Govinda III",
+        "Amoghavarsha I"
+      ],
+      "answer": 1,
+      "explanation": "Rashtrakuta King Krishna I (756–774 AD) patronized the excavation of the world-famous monolithic Kailasa temple at Ellora.",
+      "subject": "Karnataka History",
+      "syllabus_ref": "P1-VAO-HIST-1.1",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "The historic Vijayanagara Empire was founded in 1336 AD on the banks of which river?",
+      "options": [
+        "Krishna",
+        "Tungabhadra",
+        "Kaveri",
+        "Malaprabha"
+      ],
+      "answer": 1,
+      "explanation": "Brothers Harihara I and Bukka I founded the Vijayanagara Empire on the southern banks of River Tungabhadra near Hampi.",
+      "subject": "Karnataka History",
+      "syllabus_ref": "P1-VAO-HIST-1.1",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Who composed 'Kavirajamarga', the earliest available literary work in Kannada discussing poetics, grammar, and Karnataka geography?",
+      "options": [
+        "Pampa",
+        "Ranna",
+        "Sri Vijaya (under patronage of Amoghavarsha I)",
+        "Ponna"
+      ],
+      "answer": 2,
+      "explanation": "Kavirajamarga (c. 850 AD) was authored by court poet Sri Vijaya under the patronage of Rashtrakuta King Amoghavarsha I Nrupatunga.",
+      "subject": "Karnataka History",
+      "syllabus_ref": "P1-VAO-HIST-1.1",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Which sultan of the Bahmani kingdom built the world-famous Gol Gumbaz in Vijayapura featuring the whispering gallery?",
+      "options": [
+        "Yusuf Adil Shah",
+        "Ibrahim Adil Shah II",
+        "Mohammed Adil Shah",
+        "Ali Adil Shah I"
+      ],
+      "answer": 2,
+      "explanation": "Mohammed Adil Shah (reigned 1627–1656) built the magnificent Gol Gumbaz as his royal mausoleum.",
+      "subject": "Karnataka History",
+      "syllabus_ref": "P1-VAO-HIST-1.2",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "The celebrated Persian scholar Mahmud Gawan established a renowned Islamic madrasa and library in 1472 at which Karnataka city?",
+      "options": [
+        "Kalaburagi",
+        "Bidar",
+        "Raichur",
+        "Ballari"
+      ],
+      "answer": 1,
+      "explanation": "Mahmud Gawan, prime minister of the Bahmani Sultanate, established the three-story Mahmud Gawan Madrasa in Bidar.",
+      "subject": "Karnataka History",
+      "syllabus_ref": "P1-VAO-HIST-1.2",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Who was the British Political Agent and Collector of Dharwad killed in battle by Rani Chennamma of Kittur in October 1824?",
+      "options": [
+        "St. John Thackeray",
+        "Thomas Munro",
+        "Mark Cubbon",
+        "L. Bowring"
+      ],
+      "answer": 0,
+      "explanation": "St. John Thackeray was killed outside the Kittur fort gates on 23 October 1824 when attempting to seize Kittur under the Doctrine of Lapse.",
+      "subject": "Karnataka History",
+      "syllabus_ref": "P1-VAO-HIST-1.3",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Sangolli Rayanna, the legendary military commander of Kittur, was executed by the British at which location on 26 January 1831?",
+      "options": [
+        "Belagavi Fort",
+        "Nandagad",
+        "Khanapur",
+        "Bailhongal"
+      ],
+      "answer": 1,
+      "explanation": "Sangolli Rayanna was captured by betrayal and hanged by the British colonial authorities on 26 January 1831 at Nandagad.",
+      "subject": "Karnataka History",
+      "syllabus_ref": "P1-VAO-HIST-1.3",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Which freedom tragedy in Karnataka is widely known as the 'Jallianwala Bagh of Karnataka'?",
+      "options": [
+        "Vidurashwatha Firing (1938)",
+        "Isur Village Uprising (1942)",
+        "Shivapura Flag Satyagraha (1938)",
+        "Halagali Bedas Revolt (1857)"
+      ],
+      "answer": 0,
+      "explanation": "On 25 April 1938, British police opened fire on unarmed freedom fighters hoisting the tricolour at Vidurashwatha in modern Chikkaballapur district, killing over 35 people.",
+      "subject": "Karnataka History",
+      "syllabus_ref": "P1-VAO-HIST-1.3",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "The first village in Karnataka to declare independence during the Quit India Movement of 1942 was:",
+      "options": [
+        "Isur (Shivamogga)",
+        "Shivapura (Mandya)",
+        "Ankola (Uttara Kannada)",
+        "Nidagundi (Vijayapura)"
+      ],
+      "answer": 0,
+      "explanation": "Villagers of Isur in Shikaripura taluk declared their village independent in 1942, leading to the trial and hanging of 5 patriots.",
+      "subject": "Karnataka History",
+      "syllabus_ref": "P1-VAO-HIST-1.3",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "The Mysore State was officially renamed as 'Karnataka' on 1st November 1973 under the tenure of which Chief Minister?",
+      "options": [
+        "K. Chengalaraya Reddy",
+        "Kengal Hanumanthaiah",
+        "D. Devaraj Urs",
+        "S. Nijalingappa"
+      ],
+      "answer": 2,
+      "explanation": "Chief Minister D. Devaraj Urs officially renamed Mysore State as 'Karnataka' on Rajyotsava day, 1 November 1973.",
+      "subject": "Karnataka History",
+      "syllabus_ref": "P1-VAO-HIST-1.4",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Who presided over the historic Belgaum (Belagavi) Session of the Indian National Congress in 1924?",
+      "options": [
+        "Subhas Chandra Bose",
+        "Mahatma Gandhi",
+        "Jawaharlal Nehru",
+        "Sardar Vallabhbhai Patel"
+      ],
+      "answer": 1,
+      "explanation": "The 39th session of the INC at Belgaum in December 1924 was the only Congress session ever presided over by Mahatma Gandhi.",
+      "subject": "Karnataka History",
+      "syllabus_ref": "P1-VAO-HIST-1.3",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Who composed the iconic Kannada state anthem 'Jaya Bharata Jananiya Tanujate'?",
+      "options": [
+        "Da. Ra. Bendre",
+        "Kuppali Venkatappa Puttappa (Kuvempu)",
+        "Masti Venkatesha Iyengar",
+        "B.M. Srikantaiah"
+      ],
+      "answer": 1,
+      "explanation": "Rashtrakavi Kuvempu penned the poem which was officially adopted as the State Anthem of Karnataka in 2004.",
+      "subject": "Karnataka History",
+      "syllabus_ref": "P1-VAO-HIST-1.4",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Who was the Dewan of Mysore who established Mysore University (1916) and the Iron and Steel Works at Bhadravati?",
+      "options": [
+        "Sir K. Seshadri Iyer",
+        "Sir M. Visvesvaraya",
+        "Sir Mirza Ismail",
+        "P.N. Krishnamurti"
+      ],
+      "answer": 1,
+      "explanation": "Bharat Ratna Sir M. Visvesvaraya served as Dewan of Mysore from 1912 to 1918 and founded Mysore University, KRS Dam, and Bhadravati Iron Works.",
+      "subject": "Karnataka History",
+      "syllabus_ref": "P1-VAO-HIST-1.3",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "The 'Halagali Beda Revolt' of 1857 in Mudhol principality was fought primarily against which British act?",
+      "options": [
+        "Doctrine of Lapse",
+        "Disarming Act of 1857",
+        "Salt Tax",
+        "Inam Commission Act"
+      ],
+      "answer": 1,
+      "explanation": "The Bedas of Halagali revolted in 1857 refusing to surrender their traditional firearms under the British Disarming Act.",
+      "subject": "Karnataka History",
+      "syllabus_ref": "P1-VAO-HIST-1.3",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Who was known as 'Karnataka Kulapurohita' for his pioneering leadership in the Karnataka Unification Movement?",
+      "options": [
+        "Aluru Venkata Rao",
+        "Huilgol Narayana Rao",
+        "Gudleppa Hallikeri",
+        "Hardekar Manjappa"
+      ],
+      "answer": 0,
+      "explanation": "Aluru Venkata Rao authored 'Karnataka Gatha Vaibhava' in 1912 and is celebrated as the Karnataka Kulapurohita.",
+      "subject": "Karnataka History",
+      "syllabus_ref": "P1-VAO-HIST-1.4",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Tipu Sultan died defending his capital Srirangapatna in the Fourth Anglo-Mysore War on which date?",
+      "options": [
+        "4 May 1799",
+        "23 June 1757",
+        "14 January 1761",
+        "22 October 1764"
+      ],
+      "answer": 0,
+      "explanation": "Tipu Sultan died fighting valiantly at the Water Gate of Srirangapatna fort on 4 May 1799.",
+      "subject": "Karnataka History",
+      "syllabus_ref": "P1-VAO-HIST-1.3",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "The famous Shivapura Flag Satyagraha in Mandya district was organized in which year?",
+      "options": [
+        "1930",
+        "1938",
+        "1942",
+        "1947"
+      ],
+      "answer": 1,
+      "explanation": "In April 1938, thousands assembled at Maddur/Shivapura in Mandya under T. Siddalingaiah to hoist the national tricolor.",
+      "subject": "Karnataka History",
+      "syllabus_ref": "P1-VAO-HIST-1.3",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "What is the highest mountain peak in Karnataka?",
+      "options": [
+        "Kudremukh",
+        "Mullayanagiri",
+        "Pushpagiri",
+        "Tadiandamol"
+      ],
+      "answer": 1,
+      "explanation": "Mullayanagiri in the Baba Budan Giri range of Chikkamagaluru district stands at 1,930 meters, making it the highest elevation in Karnataka.",
+      "subject": "Geography",
+      "syllabus_ref": "P1-VAO-GEOG-2.1",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "The world-famous Jog Falls (Gersoppa) is formed across which river?",
+      "options": [
+        "Kaveri",
+        "Sharavathi",
+        "Kali",
+        "Aghanashini"
+      ],
+      "answer": 1,
+      "explanation": "Jog Falls (253 m plunge) is formed by the Sharavathi River in Sagara taluk of Shivamogga district.",
+      "subject": "Geography",
+      "syllabus_ref": "P1-VAO-GEOG-2.2",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "At which confluence do the rivers Tunga and Bhadra merge to form the Tungabhadra River?",
+      "options": [
+        "Kudli",
+        "Kannambadi",
+        "Hampi",
+        "Koodalasangama"
+      ],
+      "answer": 0,
+      "explanation": "Tunga and Bhadra originate in Gangamoola (Western Ghats) and merge at Kudli in Shivamogga district to form Tungabhadra.",
+      "subject": "Geography",
+      "syllabus_ref": "P1-VAO-GEOG-2.2",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Which village in Karnataka is popularly hailed as the 'Cherrapunji of South India' due to its high annual rainfall?",
+      "options": [
+        "Madikeri",
+        "Agumbe",
+        "Bhagamandala",
+        "Hulikal"
+      ],
+      "answer": 1,
+      "explanation": "Agumbe in Thirthahalli taluk of Shivamogga district receives over 7,500 mm of annual rainfall.",
+      "subject": "Geography",
+      "syllabus_ref": "P1-VAO-GEOG-2.1",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "The Almatti Dam constructed across the Krishna River forms a reservoir officially named:",
+      "options": [
+        "Basava Sagar",
+        "Lal Bahadur Shastri Sagar",
+        "Linganamakki",
+        "Hemavati Reservoir"
+      ],
+      "answer": 1,
+      "explanation": "Almatti Dam forms the Lal Bahadur Shastri Sagar reservoir, while Narayanpur Dam downstream forms the Basava Sagar.",
+      "subject": "Geography",
+      "syllabus_ref": "P1-VAO-GEOG-2.2",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "The Krishna Raja Sagara (KRS) Dam is constructed just below the confluence of Kaveri with which two tributary rivers?",
+      "options": [
+        "Hemavati and Lakshmantirtha",
+        "Kabini and Bhavani",
+        "Shimsha and Arkavathi",
+        "Harangi and Yagachi"
+      ],
+      "answer": 0,
+      "explanation": "KRS Dam is built across Kaveri near Kannambadi where the Hemavati and Lakshmantirtha join the main river.",
+      "subject": "Geography",
+      "syllabus_ref": "P1-VAO-GEOG-2.2",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Which bird sanctuary in Karnataka is located on an island in the Kaveri river near Srirangapatna?",
+      "options": [
+        "Attiveri Bird Sanctuary",
+        "Ranganathittu Bird Sanctuary",
+        "Gudavi Bird Sanctuary",
+        "Mandagadde Bird Sanctuary"
+      ],
+      "answer": 1,
+      "explanation": "Ranganathittu Bird Sanctuary in Mandya district comprises 6 islets in the Kaveri river.",
+      "subject": "Geography",
+      "syllabus_ref": "P1-VAO-GEOG-2.1",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Which national park in Karnataka is famous for its evergreen rainforests and Lion-tailed Macaques, and was declared a World Heritage Site?",
+      "options": [
+        "Nagarhole",
+        "Kudremukh",
+        "Bandipur",
+        "Anshi (Kali)"
+      ],
+      "answer": 1,
+      "explanation": "Kudremukh National Park in Chikkamagaluru/Dakshina Kannada contains extensive shola-grassland ecosystems and Lion-tailed Macaques.",
+      "subject": "Geography",
+      "syllabus_ref": "P1-VAO-GEOG-2.1",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Black soil (Regur soil) in Karnataka is exceptionally well-suited for the cultivation of which commercial crop?",
+      "options": [
+        "Coffee",
+        "Tea",
+        "Cotton",
+        "Rubber"
+      ],
+      "answer": 2,
+      "explanation": "Black cotton soil (Regur), rich in clay and moisture-retentive montmorillonite, is ideal for cotton cultivation in North Karnataka.",
+      "subject": "Geography",
+      "syllabus_ref": "P1-VAO-GEOG-2.3",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Which district in Karnataka is the largest producer of coffee in India?",
+      "options": [
+        "Hassan",
+        "Kodagu",
+        "Chikkamagaluru",
+        "Shivamogga"
+      ],
+      "answer": 1,
+      "explanation": "Kodagu produces more than 35% of India's coffee, followed closely by Chikkamagaluru and Hassan.",
+      "subject": "Geography",
+      "syllabus_ref": "P1-VAO-GEOG-2.3",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "The Ten Degree Channel ($10^\\circ\\text{ N}$) separates which two island groups in the Bay of Bengal?",
+      "options": [
+        "Andaman and Nicobar",
+        "Lakshadweep and Maldives",
+        "Daman and Diu",
+        "Rameswaram and Sri Lanka"
+      ],
+      "answer": 0,
+      "explanation": "The 10-degree latitude channel separates the Andaman Islands from the Nicobar Islands.",
+      "subject": "Geography",
+      "syllabus_ref": "P1-VAO-GEOG-2.4",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Which Indian state shares the longest international land border with Bangladesh?",
+      "options": [
+        "Assam",
+        "Meghalaya",
+        "Tripura",
+        "West Bengal"
+      ],
+      "answer": 3,
+      "explanation": "West Bengal shares 2,217 km of the total 4,096.7 km India-Bangladesh border.",
+      "subject": "Geography",
+      "syllabus_ref": "P1-VAO-GEOG-2.4",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "The older, less fertile alluvium of the Northern Great Plains containing calcareous kankar nodules is called:",
+      "options": [
+        "Bhabar",
+        "Tarai",
+        "Bhangar",
+        "Khadar"
+      ],
+      "answer": 2,
+      "explanation": "Bhangar is the older alluvial soil deposited above flood plains, containing calcium carbonate nodules (kankar).",
+      "subject": "Geography",
+      "syllabus_ref": "P1-VAO-GEOG-2.4",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Which is the highest mountain peak in the entire Peninsular South India?",
+      "options": [
+        "Doddabetta",
+        "Anamudi",
+        "Mullayanagiri",
+        "Mahendragiri"
+      ],
+      "answer": 1,
+      "explanation": "Anamudi in the Anaimalai Hills of Kerala stands at 2,695 meters and is the highest peak in South India.",
+      "subject": "Geography",
+      "syllabus_ref": "P1-VAO-GEOG-2.4",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "The Standard Meridian of India ($82^\\circ 30' \\text{ E}$) passes through which town near Prayagraj?",
+      "options": [
+        "Varanasi",
+        "Mirzapur",
+        "Kanpur",
+        "Lucknow"
+      ],
+      "answer": 1,
+      "explanation": "The Indian Standard Time meridian passes through Mirzapur in Uttar Pradesh ($+5:30$ GMT).",
+      "subject": "Geography",
+      "syllabus_ref": "P1-VAO-GEOG-2.4",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Which two major Indian rivers flow westward through tectonic rift valleys and empty into the Arabian Sea?",
+      "options": [
+        "Mahanadi and Godavari",
+        "Krishna and Kaveri",
+        "Narmada and Tapi",
+        "Sabarmati and Mahi"
+      ],
+      "answer": 2,
+      "explanation": "Both Narmada and Tapi flow west between Vindhya and Satpura rift valleys without forming deltas.",
+      "subject": "Geography",
+      "syllabus_ref": "P1-VAO-GEOG-2.2",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Which is the largest brackish water coastal lagoon in India?",
+      "options": [
+        "Vembanad Lake",
+        "Chilika Lake",
+        "Kolleru Lake",
+        "Pulicat Lake"
+      ],
+      "answer": 1,
+      "explanation": "Chilika Lake in Odisha is Asia's largest brackish water coastal lagoon.",
+      "subject": "Geography",
+      "syllabus_ref": "P1-VAO-GEOG-2.4",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Which pass in the Western Ghats connects Mangaluru with Bengaluru via Hassan?",
+      "options": [
+        "Agumbe Ghat",
+        "Shiradi Ghat",
+        "Charmadi Ghat",
+        "Hulikal Ghat"
+      ],
+      "answer": 1,
+      "explanation": "Shiradi Ghat along NH-75 connects the port city of Mangaluru to Sakaleshpur and Bengaluru.",
+      "subject": "Geography",
+      "syllabus_ref": "P1-VAO-GEOG-2.1",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "The words 'Socialist', 'Secular', and 'Integrity' were added to the Preamble of the Indian Constitution by which amendment?",
+      "options": [
+        "42nd Amendment Act, 1976",
+        "44th Amendment Act, 1978",
+        "52nd Amendment Act, 1985",
+        "86th Amendment Act, 2002"
+      ],
+      "answer": 0,
+      "explanation": "The 42nd Constitutional Amendment Act 1976 inserted Socialist, Secular, and Integrity into the Preamble.",
+      "subject": "Indian Polity",
+      "syllabus_ref": "P1-VAO-POL-3.1",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Which Article of the Constitution abolishes 'Untouchability' and forbids its practice in any form?",
+      "options": [
+        "Article 14",
+        "Article 17",
+        "Article 19",
+        "Article 21"
+      ],
+      "answer": 1,
+      "explanation": "Article 17 abolishes untouchability and makes its enforcement a punishable offence under law.",
+      "subject": "Indian Polity",
+      "syllabus_ref": "P1-VAO-POL-3.1",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Which Article was described by Dr. B.R. Ambedkar as the 'Heart and Soul of the Indian Constitution'?",
+      "options": [
+        "Article 19",
+        "Article 21",
+        "Article 32",
+        "Article 44"
+      ],
+      "answer": 2,
+      "explanation": "Article 32 guarantees the Right to Constitutional Remedies, empowering citizens to approach the Supreme Court for writ relief.",
+      "subject": "Indian Polity",
+      "syllabus_ref": "P1-VAO-POL-3.1",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "The Directive Principles of State Policy (Part IV) in the Indian Constitution were borrowed from the constitution of which country?",
+      "options": [
+        "United States",
+        "Ireland",
+        "United Kingdom",
+        "Canada"
+      ],
+      "answer": 1,
+      "explanation": "Directive Principles (Articles 36 to 51) were adapted from the 1937 Constitution of Ireland.",
+      "subject": "Indian Polity",
+      "syllabus_ref": "P1-VAO-POL-3.2",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Fundamental Duties were incorporated into Article 51A under Part IVA upon the recommendation of which committee?",
+      "options": [
+        "Sarkaria Commission",
+        "Swaran Singh Committee",
+        "Verma Committee",
+        "Balwant Rai Mehta Committee"
+      ],
+      "answer": 1,
+      "explanation": "The Swaran Singh Committee recommended incorporating Fundamental Duties during the 42nd Amendment in 1976.",
+      "subject": "Indian Polity",
+      "syllabus_ref": "P1-VAO-POL-3.1",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Under which Article of the Indian Constitution can the President impose Financial Emergency in India?",
+      "options": [
+        "Article 352",
+        "Article 356",
+        "Article 360",
+        "Article 365"
+      ],
+      "answer": 2,
+      "explanation": "Article 360 provides for the proclamation of Financial Emergency (never declared in India so far).",
+      "subject": "Indian Polity",
+      "syllabus_ref": "P1-VAO-POL-3.2",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "What is the minimum age prescribed under the Constitution for a person to be eligible for election as a Member of the Lok Sabha?",
+      "options": [
+        "21 years",
+        "25 years",
+        "30 years",
+        "35 years"
+      ],
+      "answer": 1,
+      "explanation": "Article 84(b) prescribes a minimum age of 25 years for Lok Sabha and 30 years for Rajya Sabha.",
+      "subject": "Indian Polity",
+      "syllabus_ref": "P1-VAO-POL-3.3",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Which constitutional amendment reduced the voting age in India from 21 years to 18 years?",
+      "options": [
+        "44th Amendment Act",
+        "61st Amendment Act, 1988",
+        "73rd Amendment Act",
+        "91st Amendment Act"
+      ],
+      "answer": 1,
+      "explanation": "The 61st Amendment Act 1988 (effective 1989) lowered the voting age for Lok Sabha and Legislative Assemblies to 18.",
+      "subject": "Indian Polity",
+      "syllabus_ref": "P1-VAO-POL-3.1",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Article 371J of the Constitution providing special reservation for Kalyana-Karnataka was enacted by which amendment?",
+      "options": [
+        "91st Amendment",
+        "98th Amendment Act, 2012",
+        "100th Amendment",
+        "103rd Amendment"
+      ],
+      "answer": 1,
+      "explanation": "The 98th Constitutional Amendment Act 2012 inserted Article 371J for the Hyderabad-Karnataka (now Kalyana-Karnataka) region.",
+      "subject": "Indian Polity",
+      "syllabus_ref": "P1-VAO-POL-3.4",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "The Eleventh Schedule of the Indian Constitution added by the 73rd Amendment contains how many functional matters for Panchayats?",
+      "options": [
+        "18 subjects",
+        "21 subjects",
+        "29 subjects",
+        "33 subjects"
+      ],
+      "answer": 2,
+      "explanation": "The Eleventh Schedule enumerates 29 developmental and administrative subjects entrusted to Panchayati Raj bodies.",
+      "subject": "Indian Polity",
+      "syllabus_ref": "P1-VAO-POL-3.1",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "What percentage of reservation is provided for women in Panchayati Raj institutions across Karnataka?",
+      "options": [
+        "33.33%",
+        "40%",
+        "50%",
+        "25%"
+      ],
+      "answer": 2,
+      "explanation": "Karnataka has enacted 50% reservation for women in all three tiers of Panchayati Raj institutions.",
+      "subject": "Indian Polity",
+      "syllabus_ref": "P1-VAO-POL-3.1",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Which writ is issued by the Supreme Court or High Court commanding a public official to perform a statutory duty?",
+      "options": [
+        "Habeas Corpus",
+        "Mandamus",
+        "Certiorari",
+        "Quo-Warranto"
+      ],
+      "answer": 1,
+      "explanation": "Mandamus (meaning 'We Command') compels a public authority or court to execute a mandatory statutory duty.",
+      "subject": "Indian Polity",
+      "syllabus_ref": "P1-VAO-POL-3.1",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Who acts as the ex-officio Chairman of the Rajya Sabha (Council of States)?",
+      "options": [
+        "Speaker of Lok Sabha",
+        "Vice-President of India",
+        "Prime Minister",
+        "Chief Justice of India"
+      ],
+      "answer": 1,
+      "explanation": "Under Article 64, the Vice-President of India is the ex-officio Chairman of the Council of States (Rajya Sabha).",
+      "subject": "Indian Polity",
+      "syllabus_ref": "P1-VAO-POL-3.3",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "How many members can the Governor of Karnataka nominate to the Karnataka Legislative Council?",
+      "options": [
+        "1/3rd of total",
+        "1/6th of total",
+        "1/12th of total",
+        "5 members fixed"
+      ],
+      "answer": 1,
+      "explanation": "Under Article 171(3)(e), 1/6th of total members of Legislative Council are nominated by the Governor.",
+      "subject": "Indian Polity",
+      "syllabus_ref": "P1-VAO-POL-3.3",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "The Comptroller and Auditor General (CAG) of India submits audit reports relating to state accounts to:",
+      "options": [
+        "The President",
+        "The Governor of the State",
+        "The Chief Minister",
+        "The Speaker of Assembly"
+      ],
+      "answer": 1,
+      "explanation": "Under Article 151(2), CAG reports relating to the accounts of a State are submitted to the Governor.",
+      "subject": "Indian Polity",
+      "syllabus_ref": "P1-VAO-POL-3.3",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Under which Article does the Governor have the power to promulgate Ordinances during the recess of the State Legislature?",
+      "options": [
+        "Article 123",
+        "Article 213",
+        "Article 161",
+        "Article 200"
+      ],
+      "answer": 1,
+      "explanation": "Article 213 empowers the Governor to promulgate ordinances; Article 123 applies to the President.",
+      "subject": "Indian Polity",
+      "syllabus_ref": "P1-VAO-POL-3.3",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Which Article of the Constitution deals with the Uniform Civil Code for the citizens?",
+      "options": [
+        "Article 40",
+        "Article 44",
+        "Article 48",
+        "Article 50"
+      ],
+      "answer": 1,
+      "explanation": "Article 44 in Part IV (DPSP) directs the State to secure a Uniform Civil Code for all citizens throughout India.",
+      "subject": "Indian Polity",
+      "syllabus_ref": "P1-VAO-POL-3.2",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "The Chief Election Commissioner and other Election Commissioners are appointed by:",
+      "options": [
+        "The Chief Justice of India",
+        "The President of India",
+        "The Prime Minister",
+        "A Parliamentary Committee"
+      ],
+      "answer": 1,
+      "explanation": "Under Article 324(2), the President of India appoints the Chief Election Commissioner and Election Commissioners.",
+      "subject": "Indian Polity",
+      "syllabus_ref": "P1-VAO-POL-3.4",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Under the Karnataka Gram Swaraj and Panchayat Raj Act, 1993, what is the minimum population benchmark for constituting a Grama Panchayat in general areas?",
+      "options": [
+        "1,000 to 2,000",
+        "5,000 to 7,000",
+        "10,000 to 15,000",
+        "20,000 to 25,000"
+      ],
+      "answer": 1,
+      "explanation": "A Grama Panchayat is declared for a village or group of villages having a population between 5,000 and 7,000 (2,500 in hill areas).",
+      "subject": "Rural Administration",
+      "syllabus_ref": "P1-VAO-RDPR-4.2",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Who acts as the Member-Secretary and Chief Executive of the Grama Panchayat under the Karnataka Panchayat Raj Act?",
+      "options": [
+        "Village Administrative Officer (VAO)",
+        "Panchayat Development Officer (PDO)",
+        "Revenue Inspector",
+        "Grama Sevak"
+      ],
+      "answer": 1,
+      "explanation": "The Panchayat Development Officer (PDO) is the administrative head and executive authority of the Grama Panchayat.",
+      "subject": "Rural Administration",
+      "syllabus_ref": "P1-VAO-RDPR-4.2",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "What is the quorum required for holding a valid meeting of the Gram Sabha in Karnataka?",
+      "options": [
+        "1/10th of total voters (with minimum 30% women and SC/ST representation)",
+        "1/3rd of total voters",
+        "1/20th of total voters",
+        "50 voters fixed"
+      ],
+      "answer": 0,
+      "explanation": "Under the Karnataka Act, Gram Sabha quorum is 1/10th of total voters or 100 members, with statutory representation of women and SC/ST members.",
+      "subject": "Rural Administration",
+      "syllabus_ref": "P1-VAO-RDPR-4.2",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "In the state revenue administration hierarchy of Karnataka, who is the immediate superior officer to the Village Administrative Officer (VAO)?",
+      "options": [
+        "Tahsildar",
+        "Revenue Inspector (RI)",
+        "Assistant Commissioner",
+        "Deputy Tahsildar"
+      ],
+      "answer": 1,
+      "explanation": "The administrative hierarchy is: DC $\\to$ AC $\\to$ Tahsildar $\\to$ Revenue Inspector (RI) $\\to$ Village Administrative Officer (VAO).",
+      "subject": "Rural Administration",
+      "syllabus_ref": "P1-VAO-RDPR-4.3",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Under the Karnataka Land Revenue Act, 1964, which statutory document is issued as Form 16?",
+      "options": [
+        "Akarband",
+        "Record of Rights, Tenancy and Crops (RTC / Pahani)",
+        "Tippan Copy",
+        "Challan"
+      ],
+      "answer": 1,
+      "explanation": "Form 16 under the KLR Act represents the computerized Record of Rights, Tenancy and Crops (RTC / Pahani).",
+      "subject": "Land Records IT",
+      "syllabus_ref": "P1-VAO-RDPR-4.5",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Under Section 129 of the Karnataka Land Revenue Act, 1964, mutations are processed in the Bhoomi software strictly on the basis of:",
+      "options": [
+        "First-In, First-Out (FIFO)",
+        "Alphabetical Order",
+        "Discretion of Tahsildar",
+        "Value of Land Property"
+      ],
+      "answer": 0,
+      "explanation": "Bhoomi enforces First-In, First-Out (FIFO) queue processing to eliminate arbitrary delays and corruption in mutation approvals.",
+      "subject": "Land Records IT",
+      "syllabus_ref": "P1-VAO-RDPR-4.5",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "What is the pre-registration digital survey sketch required under the Mojini system before partitioning agricultural land?",
+      "options": [
+        "Form 21 Sketch",
+        "11E Sketch",
+        "Atlas Sketch",
+        "Akarband Extract"
+      ],
+      "answer": 1,
+      "explanation": "An 11E sketch prepared by a licensed or departmental surveyor is mandatory prior to registered partition or sale of partial hissas.",
+      "subject": "Land Records IT",
+      "syllabus_ref": "P1-VAO-RDPR-4.5",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "What is the accelerated administrative scheme in Karnataka enabling individual farmers to demarcate joint survey plots into independent hissas?",
+      "options": [
+        "Tatkal Podi",
+        "Bhoomi Quick",
+        "Podi Muktha Grama",
+        "Bhoo Swathu"
+      ],
+      "answer": 0,
+      "explanation": "Tatkal Podi enables individual farmers to get their survey hissas separated rapidly without waiting for whole-village surveys.",
+      "subject": "Land Records IT",
+      "syllabus_ref": "P1-VAO-RDPR-4.5",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "The Dishank mobile application was developed by which agency to provide real-time revenue survey numbers on smartphones?",
+      "options": [
+        "KSRSAC (Karnataka State Remote Sensing Applications Centre)",
+        "NIC Bengaluru",
+        "ISRO Telemetry",
+        "BBMP IT Cell"
+      ],
+      "answer": 0,
+      "explanation": "KSRSAC developed Dishank to link smartphone GPS coordinates with digitized cadastral survey maps.",
+      "subject": "Land Records IT",
+      "syllabus_ref": "P1-VAO-RDPR-4.5",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Which online application is used by Gram Panchayats in Karnataka to issue digital property ownership certificates (Form 9 & 11)?",
+      "options": [
+        "Bhoomi",
+        "e-Swathu",
+        "Mojini",
+        "Kaveri 2.0"
+      ],
+      "answer": 1,
+      "explanation": "e-Swathu issues digitized Form 9 and Form 11 property certificates to eliminate fraudulent non-agricultural rural property transactions.",
+      "subject": "Rural Administration",
+      "syllabus_ref": "P1-VAO-RDPR-4.5",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "What is the term of office of the Adhyaksha and Upadhyaksha of a Grama Panchayat in Karnataka as per the 2015 amendment?",
+      "options": [
+        "2.5 years (30 months)",
+        "5 years",
+        "1 year",
+        "3 years"
+      ],
+      "answer": 1,
+      "explanation": "The 2015 amendment extended the term of Adhyaksha and Upadhyaksha of Grama Panchayats from 30 months to 5 years (matching the full term).",
+      "subject": "Rural Administration",
+      "syllabus_ref": "P1-VAO-RDPR-4.2",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Who is the competent revenue authority to sanction the conversion of agricultural land for non-agricultural purposes under Section 95 of KLR Act?",
+      "options": [
+        "Tahsildar",
+        "Deputy Commissioner (DC)",
+        "Revenue Inspector",
+        "Village Administrative Officer"
+      ],
+      "answer": 1,
+      "explanation": "Under Section 95 of the KLR Act 1964, the Deputy Commissioner of the district is empowered to grant land conversion permissions.",
+      "subject": "Rural Administration",
+      "syllabus_ref": "P1-VAO-RDPR-4.3",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "The Register of Mutations under the Karnataka Land Revenue Rules is maintained in which statutory form?",
+      "options": [
+        "Form 12",
+        "Form 16",
+        "Form 21",
+        "Form 24"
+      ],
+      "answer": 0,
+      "explanation": "Form 12 is the Mutation Register where changes in title, inheritance, or sale are recorded before certification.",
+      "subject": "Land Records IT",
+      "syllabus_ref": "P1-VAO-RDPR-4.5",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "When an agricultural land parcel is uncultivable due to rocks, ravines, or nalas, it is classified in the village land register as:",
+      "options": [
+        "Patta Land",
+        "Kharab Land (Class A or Class B)",
+        "Inam Land",
+        "Gomala Land"
+      ],
+      "answer": 1,
+      "explanation": "Pot Kharab represents uncultivable land: Class A is reserved for agricultural uncultivable portions; Class B is public utility/government land.",
+      "subject": "Rural Administration",
+      "syllabus_ref": "P1-VAO-RDPR-4.5",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Government land reserved around villages for common cattle grazing is officially known in Karnataka as:",
+      "options": [
+        "Gomala Land (ಗೋಮಾಳ)",
+        "Gunduthopu",
+        "Bana",
+        "Kere Angala"
+      ],
+      "answer": 0,
+      "explanation": "Gomala is government land specifically reserved for village communal grazing rights.",
+      "subject": "Rural Administration",
+      "syllabus_ref": "P1-VAO-RDPR-4.5",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Which section of the Karnataka Land Revenue Act, 1964 obligates every landholder acquiring rights by inheritance or purchase to report the acquisition within 3 months?",
+      "options": [
+        "Section 95",
+        "Section 128",
+        "Section 136",
+        "Section 192A"
+      ],
+      "answer": 1,
+      "explanation": "Section 128 obliges any person acquiring rights to land to report the acquisition to the prescribed revenue officer within three months.",
+      "subject": "Land Records IT",
+      "syllabus_ref": "P1-VAO-RDPR-4.5",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "What is the primary role of the Village Administrative Officer (VAO) during natural disasters like floods or drought?",
+      "options": [
+        "Construct emergency shelters",
+        "Conduct immediate crop damage enumeration and prepare disaster relief beneficiary rolls",
+        "Disburse cash directly from personal account",
+        "Command local police force"
+      ],
+      "answer": 1,
+      "explanation": "The VAO conducts spot inspections, enumerates affected farmers, estimates crop loss percentages, and submits joint verification lists for relief.",
+      "subject": "Rural Administration",
+      "syllabus_ref": "P1-VAO-RDPR-4.4",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Under the Karnataka Land Revenue Act, what is the fee paid for obtaining an official signed copy of the computerized RTC (Pahani)?",
+      "options": [
+        "₹10",
+        "₹15",
+        "₹25",
+        "₹50"
+      ],
+      "answer": 1,
+      "explanation": "Official computerized RTCs are issued through Atalji Janasnehi / Nada Kacheri kiosks at the statutory fee of ₹15.",
+      "subject": "Land Records IT",
+      "syllabus_ref": "P1-VAO-RDPR-4.5",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "The 'Kaveri 2.0' software implemented by the Department of Stamps and Registration integrates with Bhoomi for:",
+      "options": [
+        "Issuing caste certificates",
+        "Automatic online intimation of registered sale deeds (J-Slip) to trigger mutation",
+        "Collecting water taxes",
+        "Conducting drone surveys"
+      ],
+      "answer": 1,
+      "explanation": "Kaveri 2.0 pushes registered land transaction data electronically to Bhoomi via J-Slip to begin mutation automatically.",
+      "subject": "Land Records IT",
+      "syllabus_ref": "P1-VAO-RDPR-4.5",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "The process of conducting a complete survey and updating land records of a whole village to resolve historical hissa divisions is called:",
+      "options": [
+        "Podi Muktha Grama",
+        "Tatkal Podi",
+        "Bhoomi Durasti",
+        "Akarband Parikshe"
+      ],
+      "answer": 0,
+      "explanation": "Podi Muktha Grama is the state campaign aimed at eliminating all joint survey hissa ambiguities village by village.",
+      "subject": "Rural Administration",
+      "syllabus_ref": "P1-VAO-RDPR-4.5",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "What is the minimum age prescribed for contesting an election to a Grama Panchayat in Karnataka?",
+      "options": [
+        "18 years",
+        "21 years",
+        "25 years",
+        "30 years"
+      ],
+      "answer": 1,
+      "explanation": "A candidate must have attained the age of 21 years to contest local body elections in India.",
+      "subject": "Rural Administration",
+      "syllabus_ref": "P1-VAO-RDPR-4.2",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "The Karnataka State Election Commission is headed by a State Election Commissioner appointed under Article:",
+      "options": [
+        "Article 243K",
+        "Article 280",
+        "Article 324",
+        "Article 356"
+      ],
+      "answer": 0,
+      "explanation": "Article 243K mandates the superintendence, direction, and control of panchayat elections in a State Election Commission.",
+      "subject": "Rural Administration",
+      "syllabus_ref": "P1-VAO-RDPR-4.1",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Under the Government of Karnataka's 'Gruha Lakshmi' scheme, what is the monthly financial assistance transferred via DBT to eligible women family heads?",
+      "options": [
+        "₹1,500 per month",
+        "₹2,000 per month",
+        "₹2,500 per month",
+        "₹3,000 per month"
+      ],
+      "answer": 1,
+      "explanation": "Gruha Lakshmi deposits ₹2,000 per month directly into the bank accounts of designated women heads of eligible Antyodaya, BPL, and APL families.",
+      "subject": "Current Affairs",
+      "syllabus_ref": "P1-VAO-CA-5.1",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "The 'Shakti' scheme provides free public bus travel for women and transgender persons across Karnataka in which state transport corporations?",
+      "options": [
+        "KSRTC and BMTC only",
+        "KSRTC, BMTC, NWKRTC, and KKRTC",
+        "Private and State buses combined",
+        "All city buses only"
+      ],
+      "answer": 1,
+      "explanation": "Shakti is valid across all 4 state road transport corporations (KSRTC, BMTC, NWKRTC, KKRTC) in ordinary and express buses.",
+      "subject": "Current Affairs",
+      "syllabus_ref": "P1-VAO-CA-5.1",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Under the 'Yuva Nidhi' scheme, what is the monthly financial stipend provided to unemployed Degree Graduates and Diploma holders respectively?",
+      "options": [
+        "₹2,000 and ₹1,000",
+        "₹3,000 and ₹1,500",
+        "₹4,000 and ₹2,000",
+        "₹5,000 and ₹2,500"
+      ],
+      "answer": 1,
+      "explanation": "Yuva Nidhi provides ₹3,000 per month for degree graduates and ₹1,500 for diploma holders for up to two years of unemployment.",
+      "subject": "Current Affairs",
+      "syllabus_ref": "P1-VAO-CA-5.1",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Under the 'Anna Bhagya' scheme, when physical rice supply is constrained, the Karnataka Government disburses cash DBT for the additional 5 kg rice at what rate per kg?",
+      "options": [
+        "₹25 per kg",
+        "₹30 per kg",
+        "₹34 per kg",
+        "₹40 per kg"
+      ],
+      "answer": 2,
+      "explanation": "The state provides cash DBT at ₹34 per kg (₹170 per person per month) for the 5 kg rice portion.",
+      "subject": "Current Affairs",
+      "syllabus_ref": "P1-VAO-CA-5.1",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "What is the maximum limit of free domestic electricity provided per household per month under the 'Gruha Jyothi' guarantee scheme?",
+      "options": [
+        "100 units",
+        "150 units",
+        "200 units",
+        "250 units"
+      ],
+      "answer": 2,
+      "explanation": "Gruha Jyothi provides zero electricity bills up to 200 units per month based on the household's 12-month average consumption plus 10%.",
+      "subject": "Current Affairs",
+      "syllabus_ref": "P1-VAO-CA-5.1",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "What is the total expenditure outlay of the Karnataka State Budget 2026–27 presented on 6 March 2026?",
+      "options": [
+        "₹3,71,000 Crore",
+        "₹4,09,549 Crore",
+        "₹4,48,004 Crore",
+        "₹5,10,000 Crore"
+      ],
+      "answer": 2,
+      "explanation": "The Karnataka State Budget 2026–27 outlay is ₹4,48,004 crore.",
+      "subject": "Current Affairs",
+      "syllabus_ref": "P1-VAO-CA-5.2",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Who assumed office as the Chief Minister of Karnataka on 3 June 2026 following the state leadership transition?",
+      "options": [
+        "Siddaramaiah",
+        "D.K. Shivakumar",
+        "B.S. Yediyurappa",
+        "Basavaraj Bommai"
+      ],
+      "answer": 1,
+      "explanation": "D.K. Shivakumar assumed the office of Chief Minister of Karnataka on 3 June 2026.",
+      "subject": "Current Affairs",
+      "syllabus_ref": "P1-VAO-CA-5.2",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Which new scheme was announced in Karnataka Budget 2026–27 to shift agricultural irrigation pumps to grid-connected solar power feeders?",
+      "options": [
+        "Mukhya Mantri Saura Krishi Yojane",
+        "Surya Raitha 2.0",
+        "Kusum Solar Yojane",
+        "Krishi Belaku Yojane"
+      ],
+      "answer": 0,
+      "explanation": "The Mukhya Mantri Saura Krishi Yojane solarizes rural agricultural feeders to deliver uninterrupted daytime power to farmers.",
+      "subject": "Current Affairs",
+      "syllabus_ref": "P1-VAO-CA-5.2",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "What total annual financial allocation is earmarked in Budget 2026–27 to fund the Five Guarantee Schemes?",
+      "options": [
+        "₹35,000 Crore",
+        "₹42,500 Crore",
+        "₹51,286 Crore",
+        "₹65,000 Crore"
+      ],
+      "answer": 2,
+      "explanation": "Budget 2026–27 allocated ₹51,286 crore exclusively for the five guarantees.",
+      "subject": "Current Affairs",
+      "syllabus_ref": "P1-VAO-CA-5.2",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Under the SVAMITVA scheme, large-scale drone mapping of rural abadi lands is executed at which map scale?",
+      "options": [
+        "1 : 5,000",
+        "1 : 2,000",
+        "1 : 500",
+        "1 : 10,000"
+      ],
+      "answer": 2,
+      "explanation": "SVAMITVA drone mapping in rural abadi areas is conducted at an ultra-precise 1:500 scale to issue legal property ownership cards.",
+      "subject": "Current Affairs",
+      "syllabus_ref": "P1-VAO-CA-5.2",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Which city in Karnataka is being strategically developed as the secondary technology and semiconductor park under the 'Beyond Bengaluru' initiative in Budget 2026–27?",
+      "options": [
+        "Hubballi",
+        "Mysuru",
+        "Mangaluru",
+        "Belagavi"
+      ],
+      "answer": 1,
+      "explanation": "Mysuru has been prioritized as the state's secondary technology and semiconductor hub under 'Beyond Bengaluru'.",
+      "subject": "Current Affairs",
+      "syllabus_ref": "P1-VAO-CA-5.2",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "The Karnataka Government recently proposed a landmark social policy framework to restrict algorithmic social media access for children under what age?",
+      "options": [
+        "Under 14 years",
+        "Under 16 years",
+        "Under 18 years",
+        "Under 12 years"
+      ],
+      "answer": 1,
+      "explanation": "Karnataka announced a pioneering child safety policy restricting algorithmic social media access for youth under 16 years.",
+      "subject": "Current Affairs",
+      "syllabus_ref": "P1-VAO-CA-5.2",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Which ISRO lunar mission accomplished the historic soft-landing on the Moon's South Polar region?",
+      "options": [
+        "Chandrayaan-1",
+        "Chandrayaan-2",
+        "Chandrayaan-3",
+        "Mangalyaan"
+      ],
+      "answer": 2,
+      "explanation": "Chandrayaan-3's Vikram lander touched down near the lunar South Pole on 23 August 2023 (National Space Day).",
+      "subject": "Current Affairs",
+      "syllabus_ref": "P1-VAO-CA-5.3",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "India's first dedicated solar observation space observatory positioned at Lagrange Point 1 (L1) is named:",
+      "options": [
+        "Aditya-L1",
+        "Surya-1",
+        "AstroSat",
+        "Helios-India"
+      ],
+      "answer": 0,
+      "explanation": "ISRO launched Aditya-L1 to halo orbit L1 to study coronal heating, solar wind, and coronal mass ejections.",
+      "subject": "Current Affairs",
+      "syllabus_ref": "P1-VAO-CA-5.3",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Who was conferred the 58th Jnanpith Award in 2024 for outstanding contributions to Sanskrit and Urdu literature respectively?",
+      "options": [
+        "Gulzar and Jagadguru Rambhadracharya",
+        "Damodar Mauzo and Kuvempu",
+        "Girish Karnad and Chandrashekhara Kambara",
+        "Amitav Ghosh and Krishna Sobti"
+      ],
+      "answer": 0,
+      "explanation": "Sanskrit scholar Jagadguru Rambhadracharya and renowned lyricist/author Gulzar were jointly awarded the 58th Jnanpith.",
+      "subject": "Current Affairs",
+      "syllabus_ref": "P1-VAO-CA-5.3",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Which district in Karnataka was carved out as the 31st district of the state in October 2021?",
+      "options": [
+        "Yadgir",
+        "Ramanagara",
+        "Vijayanagara",
+        "Chikkaballapur"
+      ],
+      "answer": 2,
+      "explanation": "Vijayanagara (headquartered at Hosapete) was carved out of Ballari district as Karnataka's 31st district.",
+      "subject": "Current Affairs",
+      "syllabus_ref": "P1-VAO-CA-5.3",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Which blood group is universally known as the 'Universal Donor'?",
+      "options": [
+        "AB+",
+        "O-",
+        "A+",
+        "B-"
+      ],
+      "answer": 1,
+      "explanation": "O negative (O-) blood lacks A, B, and Rh antigens, allowing it to be safely transfused to any recipient in emergency.",
+      "subject": "General Science",
+      "syllabus_ref": "P1-VAO-CA-5.4",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Deficiency of Vitamin D in children leads to which disease characterized by weak and soft bones?",
+      "options": [
+        "Scurvy",
+        "Rickets",
+        "Beriberi",
+        "Pellagra"
+      ],
+      "answer": 1,
+      "explanation": "Vitamin D deficiency causes Rickets in children and Osteomalacia in adults.",
+      "subject": "General Science",
+      "syllabus_ref": "P1-VAO-CA-5.4",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Which chemical compound is commonly known as 'Plaster of Paris'?",
+      "options": [
+        "Calcium Sulphate Dihydrate",
+        "Calcium Sulphate Hemihydrate ($CaSO_4 \\cdot \\frac{1}{2}H_2O$)",
+        "Calcium Carbonate",
+        "Calcium Hydroxide"
+      ],
+      "answer": 1,
+      "explanation": "Plaster of Paris is Calcium Sulphate Hemihydrate ($CaSO_4 \\cdot \\frac{1}{2}H_2O$).",
+      "subject": "General Science",
+      "syllabus_ref": "P1-VAO-CA-5.4",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "The blue color of the clear daytime sky is caused by which optical phenomenon?",
+      "options": [
+        "Total internal reflection",
+        "Rayleigh scattering of light",
+        "Dispersion of light",
+        "Diffraction of light"
+      ],
+      "answer": 1,
+      "explanation": "Rayleigh scattering scatters shorter blue wavelengths much more than longer red wavelengths.",
+      "subject": "General Science",
+      "syllabus_ref": "P1-VAO-CA-5.4",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "What is the primary greenhouse gas contributing to global climate change?",
+      "options": [
+        "Carbon Dioxide (CO2)",
+        "Methane",
+        "Nitrous Oxide",
+        "Ozone"
+      ],
+      "answer": 0,
+      "explanation": "Carbon Dioxide ($CO_2$) accounts for over 75% of global anthropogenic greenhouse emissions.",
+      "subject": "General Science",
+      "syllabus_ref": "P1-VAO-CA-5.4",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Which hormone secreted by the pancreas regulates glucose levels in human blood?",
+      "options": [
+        "Glucagon",
+        "Insulin",
+        "Adrenaline",
+        "Thyroxine"
+      ],
+      "answer": 1,
+      "explanation": "Beta cells of the pancreas secrete Insulin to maintain blood glucose homeostasis.",
+      "subject": "General Science",
+      "syllabus_ref": "P1-VAO-CA-5.4",
+      "source": "KEA Verbatim PYQ"
+    }
+  ],
+  "paper_2_language_and_computer_knowledge": [
+    {
+      "text": "ಕನ್ನಡ ವರ್ಣಮಾಲೆಯಲ್ಲಿರುವ ಒಟ್ಟು ಅಕ್ಷರಗಳ ಸಂಖ್ಯೆ ಎಷ್ಟು?",
+      "options": [
+        "48",
+        "49",
+        "50",
+        "52"
+      ],
+      "answer": 1,
+      "explanation": "ಕನ್ನಡ ವರ್ಣಮಾಲೆಯಲ್ಲಿ ಒಟ್ಟು 49 ಅಕ್ಷರಗಳಿವೆ (ಸ್ವರಗಳು 14, ವ್ಯಂಜನಗಳು 34, ಯೋಗವಾಹಗಳು 2).",
+      "subject": "ಸಾಮಾನ್ಯ ಕನ್ನಡ (ವರ್ಣಮಾಲೆ)",
+      "syllabus_ref": "P2-VAO-KAN-1.1",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "ಕನ್ನಡ ವರ್ಣಮಾಲೆಯಲ್ಲಿರುವ 'ಯೋಗವಾಹಗಳು' ಎಷ್ಟು?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "answer": 1,
+      "explanation": "ಯೋಗವಾಹಗಳು 2: ಅನುಸ್ವಾರ (o) ಮತ್ತು ವಿಸರ್ಗ (:).",
+      "subject": "ಸಾಮಾನ್ಯ ಕನ್ನಡ (ವರ್ಣಮಾಲೆ)",
+      "syllabus_ref": "P2-VAO-KAN-1.1",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "ವರ್ಗೀಯ ವ್ಯಂಜನಗಳಲ್ಲಿ ಪ್ರತಿ ವರ್ಗದ 2ನೇ ಮತ್ತು 4ನೇ ಅಕ್ಷರಗಳನ್ನು ಏನೆಂದು ಕರೆಯುತ್ತಾರೆ?",
+      "options": [
+        "ಅಲ್ಪಪ್ರಾಣ",
+        "ಮಹಾಪ್ರಾಣ",
+        "ಅನುನಾಸಿಕ",
+        "ಯೋಗವಾಹ"
+      ],
+      "answer": 1,
+      "explanation": "ಹೆಚ್ಚು ಉಸಿರು ಕೊಟ್ಟು ಉಚ್ಚರಿಸುವ 2ನೇ ಮತ್ತು 4ನೇ ಅಕ್ಷರಗಳು ಮಹಾಪ್ರಾಣಗಳು (ಉದಾ: ಖ, ಘ, ಛ, ಝ...).",
+      "subject": "ಸಾಮಾನ್ಯ ಕನ್ನಡ (ವರ್ಣಮಾಲೆ)",
+      "syllabus_ref": "P2-VAO-KAN-1.1",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "ಮೂಗಿನ ಸಹಾಯದಿಂದ ಉಚ್ಚರಿಸಲ್ಪಡುವ ಪ್ರತಿ ವರ್ಗದ 5ನೇ ಅಕ್ಷರಗಳಿಗೆ ಏನೆಂದು ಹೆಸರು?",
+      "options": [
+        "ಅಲ್ಪಪ್ರಾಣ",
+        "ಮಹಾಪ್ರಾಣ",
+        "ಅನುನಾಸಿಕಗಳು",
+        "ಅವರ್ಗೀಯ ವ್ಯಂಜನಗಳು"
+      ],
+      "answer": 2,
+      "explanation": "ಙ, ಞ, ಣ, ನ, ಮ ಅಕ್ಷರಗಳನ್ನು ಅನುನಾಸಿಕಗಳೆಂದು ಕರೆಯುತ್ತಾರೆ.",
+      "subject": "ಸಾಮಾನ್ಯ ಕನ್ನಡ (ವರ್ಣಮಾಲೆ)",
+      "syllabus_ref": "P2-VAO-KAN-1.1",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "'ಹೊತ್ತಿಗೆ + ಇಲ್ಲ = ಹೊತ್ತಿಗಿಲ್ಲ' — ಈ ಸಂಧಿಯಲ್ಲಿ ಯಾವ ಸಂಧಿ ನಿಯಮ ಅನ್ವಯಿಸುತ್ತದೆ?",
+      "options": [
+        "ಆಗಮ ಸಂಧಿ",
+        "ಲೋಪ ಸಂಧಿ",
+        "ಆದೇಶ ಸಂಧಿ",
+        "ಗುಣ ಸಂಧಿ"
+      ],
+      "answer": 1,
+      "explanation": "ಸ್ವರದ ಮುಂದೆ ಸ್ವರ ಬಂದು ಅರ್ಥ ಕೆಡದಿದ್ದಲ್ಲಿ ಪೂರ್ವಪದದ ಕೊನೆಯ ಸ್ವರವು ಲೋಪವಾಗುವುದು 'ಲೋಪ ಸಂಧಿ'.",
+      "subject": "ಸಾಮಾನ್ಯ ಕನ್ನಡ (ಸಂಧಿಗಳು)",
+      "syllabus_ref": "P2-VAO-KAN-1.2",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "'ಮಳೆ + ಕಾಲ = ಮಳೆಗಾಲ' — ಇದು ಯಾವ ಸಂಧಿಗೆ ಉದಾಹರಣೆಯಾಗಿದೆ?",
+      "options": [
+        "ಲೋಪ ಸಂಧಿ",
+        "ಆದೇಶ ಸಂಧಿ",
+        "ಆಗಮ ಸಂಧಿ",
+        "ಯಣ್ ಸಂಧಿ"
+      ],
+      "answer": 1,
+      "explanation": "ಉತ್ತರಪದದ ಆದಿಯಲ್ಲಿರುವ ಕ-ತ-ಪ ಗಳಿಗೆ ಕ್ರಮವಾಗಿ ಗ-ದ-ಬ ಗಳು ಆದೇಶವಾಗಿ ಬರುವುದು ಆದೇಶ ಸಂಧಿ (ಕಾಲ → ಗಾಲ).",
+      "subject": "ಸಾಮಾನ್ಯ ಕನ್ನಡ (ಸಂಧಿಗಳು)",
+      "syllabus_ref": "P2-VAO-KAN-1.2",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "'ಗುರು + ಉಪದೇಶ = ಗುರೂಪದೇಶ' — ಇದು ಯಾವ ಸಂಸ್ಕೃತ ಸಂಧಿಯಾಗಿದೆ?",
+      "options": [
+        "ಗುಣ ಸಂಧಿ",
+        "ವೃದ್ಧಿ ಸಂಧಿ",
+        "ಸವರ್ಣದೀರ್ಘ ಸಂಧಿ",
+        "ಯಣ್ ಸಂಧಿ"
+      ],
+      "answer": 2,
+      "explanation": "ಸಮಾನ ಸ್ವರಗಳು ಸೇರಿದಾಗ ದೀರ್ಘ ಸ್ವರವು ಆದೇಶವಾಗಿ ಬರುವುದು ಸವರ್ಣದೀರ್ಘ ಸಂಧಿ (ಉ + ಉ = ಊ).",
+      "subject": "ಸಾಮಾನ್ಯ ಕನ್ನಡ (ಸಂಧಿಗಳು)",
+      "syllabus_ref": "P2-VAO-KAN-1.2",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "'ದೇವ + ಇಂದ್ರ = ದೇವೇಂದ್ರ' — ಇದು ಯಾವ ಸಂಧಿಗೆ ಉದಾಹರಣೆ?",
+      "options": [
+        "ಗುಣ ಸಂಧಿ",
+        "ವೃದ್ಧಿ ಸಂಧಿ",
+        "ಸವರ್ಣದೀರ್ಘ ಸಂಧಿ",
+        "ಲೋಪ ಸಂಧಿ"
+      ],
+      "answer": 0,
+      "explanation": "ಅ-ಆ ಕಾರಗಳಿಗೆ ಇ-ಈ ಕಾರಗಳು ಪರವಾದರೆ 'ಏ' ಕಾರವು ಆದೇಶವಾಗಿ ಬರುವುದು ಗುಣ ಸಂಧಿ.",
+      "subject": "ಸಾಮಾನ್ಯ ಕನ್ನಡ (ಸಂಧಿಗಳು)",
+      "syllabus_ref": "P2-VAO-KAN-1.2",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "'ಏಕ + ಏಕ = ಏಕೈಕ' — ಈ ಪದದಲ್ಲಿರುವ ಸಂಧಿಯನ್ನು ಗುರುತಿಸಿ:",
+      "options": [
+        "ಗುಣ ಸಂಧಿ",
+        "ವೃದ್ಧಿ ಸಂಧಿ",
+        "ಯಣ್ ಸಂಧಿ",
+        "ಆಗಮ ಸಂಧಿ"
+      ],
+      "answer": 1,
+      "explanation": "ಅ-ಆ ಕಾರಗಳಿಗೆ ಏ-ಐ ಕಾರಗಳು ಪರವಾದರೆ 'ಐ' ಕಾರವು ಬರುವುದು ವೃದ್ಧಿ ಸಂಧಿ.",
+      "subject": "ಸಾಮಾನ್ಯ ಕನ್ನಡ (ಸಂಧಿಗಳು)",
+      "syllabus_ref": "P2-VAO-KAN-1.2",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "'ಕೈ + ಅನ್ನು = ಕೈಯನ್ನು' — ಇಲ್ಲಿ ಬಂದಿರುವ ಸಂಧಿ ಯಾವುದು?",
+      "options": [
+        "ಯ-ಕಾರಾಗಮ ಸಂಧಿ",
+        "ವ-ಕಾರಾಗಮ ಸಂಧಿ",
+        "ಲೋಪ ಸಂಧಿ",
+        "ಆದೇಶ ಸಂಧಿ"
+      ],
+      "answer": 0,
+      "explanation": "ಸ್ವರಗಳ ಮಧ್ಯೆ 'ಯ್' ಅಕ್ಷರವು ಹೊಸದಾಗಿ ಬಂದು ಸೇರುವುದು ಯ-ಕಾರಾಗಮ ಸಂಧಿ.",
+      "subject": "ಸಾಮಾನ್ಯ ಕನ್ನಡ (ಸಂಧಿಗಳು)",
+      "syllabus_ref": "P2-VAO-KAN-1.2",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "'ಅರಸನ + ಮನೆ = ಅರಮನೆ' — ಇದು ಯಾವ ಸಮಾಸಕ್ಕೆ ಉದಾಹರಣೆಯಾಗಿದೆ?",
+      "options": [
+        "ತತ್ಪುರುಷ ಸಮಾಸ",
+        "ಕರ್ಮಧಾರಯ ಸಮಾಸ",
+        "ದ್ವಿಗು ಸಮಾಸ",
+        "ದ್ವಂದ್ವ ಸಮಾಸ"
+      ],
+      "answer": 0,
+      "explanation": "ಪೂರ್ವಪದವು ವಿಭಕ್ತಿಯಿಂದಲೂ, ಉತ್ತರಪದವು ನಾಮಪದದಿಂದಲೂ ಕೂಡಿ ಉತ್ತರಪದದ ಅರ್ಥ ಪ್ರಧಾನವಾಗಿದ್ದರೆ 'ತತ್ಪುರುಷ ಸಮಾಸ'.",
+      "subject": "ಸಾಮಾನ್ಯ ಕನ್ನಡ (ಸಮಾಸಗಳು)",
+      "syllabus_ref": "P2-VAO-KAN-1.3",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "'ಇಮ್ಮಡಿ' (ಎರಡು + ಮಡಿ) — ಈ ಸಮಾಸ ಪದವನ್ನು ಗುರುತಿಸಿ:",
+      "options": [
+        "ಕರ್ಮಧಾರಯ ಸಮಾಸ",
+        "ದ್ವಿಗು ಸಮಾಸ",
+        "ಬಹುವ್ರೀಹಿ ಸಮಾಸ",
+        "ಅಂಶಿ ಸಮಾಸ"
+      ],
+      "answer": 1,
+      "explanation": "ಪೂರ್ವಪದವು ಸಂಖ್ಯಾ ವಾಚಕವಾಗಿದ್ದು ಉತ್ತರಪದವು ನಾಮಪದವಾಗಿದ್ದರೆ 'ದ್ವಿಗು ಸಮಾಸ'.",
+      "subject": "ಸಾಮಾನ್ಯ ಕನ್ನಡ (ಸಮಾಸಗಳು)",
+      "syllabus_ref": "P2-VAO-KAN-1.3",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "'ಮುಕ್ಕಣ್ಣ' (ಮೂರು ಕಣ್ಣುಳ್ಳವನು ಯಾರೋ ಅವನು - ಶಿವ) — ಇದು ಯಾವ ಸಮಾಸ?",
+      "options": [
+        "ತತ್ಪುರುಷ ಸಮಾಸ",
+        "ಬಹುವ್ರೀಹಿ ಸಮಾಸ",
+        "ದ್ವಂದ್ವ ಸಮಾಸ",
+        "ಕ್ರಿಯಾ ಸಮಾಸ"
+      ],
+      "answer": 1,
+      "explanation": "ಸಮಸ್ತ ಪದವು ಬೇರೊಂದು ಅನ್ಯ ಪದದ ಅರ್ಥವನ್ನು ಸೂಚಿಸಿದರೆ ಅದು 'ಬಹುವ್ರೀಹಿ ಸಮಾಸ'.",
+      "subject": "ಸಾಮಾನ್ಯ ಕನ್ನಡ (ಸಮಾಸಗಳು)",
+      "syllabus_ref": "P2-VAO-KAN-1.3",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "'ರಾಮಲಕ್ಷ್ಮಣರು' (ರಾಮನೂ + ಲಕ್ಷ್ಮಣನೂ) — ಇದು ಯಾವ ಸಮಾಸಕ್ಕೆ ಉದಾಹರಣೆ?",
+      "options": [
+        "ದ್ವಂದ್ವ ಸಮಾಸ",
+        "ತತ್ಪುರುಷ ಸಮಾಸ",
+        "ದ್ವಿಗು ಸಮಾಸ",
+        "ಕರ್ಮಧಾರಯ ಸಮಾಸ"
+      ],
+      "answer": 0,
+      "explanation": "ಎರಡೂ ಅಥವಾ ಹಲವು ಪದಗಳ ಅರ್ಥವೂ ಪ್ರಧಾನವಾಗಿರುವ ಸಮಾಸವೇ 'ದ್ವಂದ್ವ ಸಮಾಸ'.",
+      "subject": "ಸಾಮಾನ್ಯ ಕನ್ನಡ (ಸಮಾಸಗಳು)",
+      "syllabus_ref": "P2-VAO-KAN-1.3",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "'ಹೆಮ್ಮರ' (ಹಿರಿದು + ಮರ) — ಈ ಪದದಲ್ಲಿರುವ ಸಮಾಸ ಯಾವುದು?",
+      "options": [
+        "ತತ್ಪುರುಷ ಸಮಾಸ",
+        "ಕರ್ಮಧಾರಯ ಸಮಾಸ",
+        "ಅಂಶಿ ಸಮಾಸ",
+        "ಗಮಕ ಸಮಾಸ"
+      ],
+      "answer": 1,
+      "explanation": "ಪೂರ್ವಪದವು ವಿಶೇಷಣವಾಗಿದ್ದು ಉತ್ತರಪದವು ವಿಶೇಷ್ಯವಾಗಿದ್ದರೆ ಅದು 'ಕರ್ಮಧಾರಯ ಸಮಾಸ'.",
+      "subject": "ಸಾಮಾನ್ಯ ಕನ್ನಡ (ಸಮಾಸಗಳು)",
+      "syllabus_ref": "P2-VAO-KAN-1.3",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "'ಮುಂಗೈ' (ಕೈಯ + ಮುಂದು) — ಈ ಸಮಾಸ ಪದವನ್ನು ಗುರುತಿಸಿ:",
+      "options": [
+        "ಅಂಶಿ ಸಮಾಸ",
+        "ಕ್ರಿಯಾ ಸಮಾಸ",
+        "ದ್ವಿಗು ಸಮಾಸ",
+        "ತತ್ಪುರುಷ ಸಮಾಸ"
+      ],
+      "answer": 0,
+      "explanation": "ಅಂಶ ಮತ್ತು ಅಂಶೀ ಭಾವ ಸಂಬಂಧವಿದ್ದು, ಪೂರ್ವಪದವು ಅವಯವದ ಭಾಗವನ್ನು ತಿಳಿಸಿದರೆ 'ಅಂಶಿ ಸಮಾಸ'.",
+      "subject": "ಸಾಮಾನ್ಯ ಕನ್ನಡ (ಸಮಾಸಗಳು)",
+      "syllabus_ref": "P2-VAO-KAN-1.3",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "'ಕೈಮುಗಿ' (ಕೈಯನ್ನು + ಮುಗಿ) — ಇದು ಯಾವ ಸಮಾಸ?",
+      "options": [
+        "ತತ್ಪುರುಷ ಸಮಾಸ",
+        "ಕ್ರಿಯಾ ಸಮಾಸ",
+        "ಗಮಕ ಸಮಾಸ",
+        "ಕರ್ಮಧಾರಯ ಸಮಾಸ"
+      ],
+      "answer": 1,
+      "explanation": "ಪೂರ್ವಪದವು ದ್ವಿತೀಯಾಂತ ನಾಮಪದವಾಗಿದ್ದು, ಉತ್ತರಪದವು ಕ್ರಿಯಾಪದವಾಗಿದ್ದರೆ 'ಕ್ರಿಯಾ ಸಮಾಸ'.",
+      "subject": "ಸಾಮಾನ್ಯ ಕನ್ನಡ (ಸಮಾಸಗಳು)",
+      "syllabus_ref": "P2-VAO-KAN-1.3",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "'ವರ್ಷ' ಎಂಬ ಸಂಸ್ಕೃತ ತತ್ಸಮ ಪದದ ಸರಿಯಾದ ಕನ್ನಡ ತದ್ಭವ ರೂಪ ಯಾವುದು?",
+      "options": [
+        "ವರುಷ",
+        "ಬರುಷ",
+        "ವರುಷಂ",
+        "ವರ್ಷಾ"
+      ],
+      "answer": 1,
+      "explanation": "ತತ್ಸಮ 'ವರ್ಷ' ಪದವು ಕನ್ನಡದಲ್ಲಿ 'ಬರುಷ' ಅಥವಾ 'ವರುಷ' ಆಗುತ್ತದೆ, ಪ್ರಮಾಣಿತ ತದ್ಭವ 'ಬರುಷ'.",
+      "subject": "ಸಾಮಾನ್ಯ ಕನ್ನಡ (ತತ್ಸಮ-ತದ್ಭವ)",
+      "syllabus_ref": "P2-VAO-KAN-1.4",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "'ಆಶ್ಚರ್ಯ' ಎಂಬ ತತ್ಸಮ ಪದದ ತದ್ಭವ ರೂಪ ಯಾವುದು?",
+      "options": [
+        "ಅಚ್ಚರಿ",
+        "ಆಸರೆ",
+        "ಅಸವ",
+        "ಅಚ್ಚರಿಯ"
+      ],
+      "answer": 0,
+      "explanation": "'ಆಶ್ಚರ್ಯ' ತತ್ಸಮ ಪದದ ಸರಿಯಾದ ಕನ್ನಡ ತದ್ಭವ ರೂಪ 'ಅಚ್ಚರಿ'.",
+      "subject": "ಸಾಮಾನ್ಯ ಕನ್ನಡ (ತತ್ಸಮ-ತದ್ಭವ)",
+      "syllabus_ref": "P2-VAO-KAN-1.4",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "'ಸ್ವರ್ಗ' ಎಂಬ ತತ್ಸಮ ಪದದ ತದ್ಭವ ರೂಪ ಯಾವುದು?",
+      "options": [
+        "ಸುರಲೋಕ",
+        "ಸೊರಗ",
+        "ಸೊರ್ಗ",
+        "ಸಗ್ಗ"
+      ],
+      "answer": 3,
+      "explanation": "'ಸ್ವರ್ಗ' ಪದದ ಪ್ರಮಾಣಿತ ತದ್ಭವ ರೂಪ 'ಸಗ್ಗ'.",
+      "subject": "ಸಾಮಾನ್ಯ ಕನ್ನಡ (ತತ್ಸಮ-ತದ್ಭವ)",
+      "syllabus_ref": "P2-VAO-KAN-1.4",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "'ಮುಖ' ಎಂಬ ತತ್ಸಮ ಪದದ ತದ್ಭವ ರೂಪ ಯಾವುದು?",
+      "options": [
+        "ಮೋರೆ",
+        "ಮೊಗ",
+        "ಮೂತಿ",
+        "ಮೊಗ್ಗು"
+      ],
+      "answer": 1,
+      "explanation": "'ಮುಖ' ತತ್ಸಮದ ಸರಿಯಾದ ತದ್ಭವ 'ಮೊಗ'.",
+      "subject": "ಸಾಮಾನ್ಯ ಕನ್ನಡ (ತತ್ಸಮ-ತದ್ಭವ)",
+      "syllabus_ref": "P2-VAO-KAN-1.4",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "'ಕಾವ್ಯ' ಎಂಬ ತತ್ಸಮ ಪದದ ತದ್ಭವ ರೂಪ ಯಾವುದು?",
+      "options": [
+        "ಕವಿತೆ",
+        "ಕಬ್ಬ",
+        "ಕಾಪ್ಯ",
+        "ಕವನ"
+      ],
+      "answer": 1,
+      "explanation": "'ಕಾವ್ಯ' ಪದದ ಹಳಗನ್ನಡ ಪ್ರಮಾಣಿತ ತದ್ಭವ 'ಕಬ್ಬ'.",
+      "subject": "ಸಾಮಾನ್ಯ ಕನ್ನಡ (ತತ್ಸಮ-ತದ್ಭವ)",
+      "syllabus_ref": "P2-VAO-KAN-1.4",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "ಕನ್ನಡದಲ್ಲಿ 'ತೃತೀಯಾ ವಿಭಕ್ತಿ'ಯ ಪ್ರತ್ಯಯ ಯಾವುದು?",
+      "options": [
+        "ಅನ್ನು",
+        "ಇಂದ",
+        "ಗೆ",
+        "ಅಲ್ಲಿ"
+      ],
+      "answer": 1,
+      "explanation": "ಪ್ರಥಮಾ (ಉ), ದ್ವಿತೀಯಾ (ಅನ್ನು), ತೃತೀಯಾ (ಇಂದ), ಚತುರ್ಥೀ (ಗೆ/ಇಗೆ/ಕ್ಕೆ). ತೃತೀಯಾ ಪ್ರತ್ಯಯ 'ಇಂದ'.",
+      "subject": "ಸಾಮಾನ್ಯ ಕನ್ನಡ (ವಿಭಕ್ತಿ)",
+      "syllabus_ref": "P2-VAO-KAN-1.5",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "'ಮರದಲ್ಲಿ' ಎಂಬ ಪದದಲ್ಲಿರುವ ವಿಭಕ್ತಿ ಯಾವುದು?",
+      "options": [
+        "ಪಂಚಮೀ",
+        "ಷಷ್ಠೀ",
+        "ಸಪ್ತಮೀ",
+        "ದ್ವಿತೀಯಾ"
+      ],
+      "answer": 2,
+      "explanation": "ಸಪ್ತಮೀ ವಿಭಕ್ತಿಯ ಪ್ರತ್ಯಯ 'ಅಲ್ಲಿ' (ಅಧಿಕರಣ ಕಾರಕಾರ್ಥ).",
+      "subject": "ಸಾಮಾನ್ಯ ಕನ್ನಡ (ವಿಭಕ್ತಿ)",
+      "syllabus_ref": "P2-VAO-KAN-1.5",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "'ಚತುರ್ಥೀ ವಿಭಕ್ತಿ'ಯ ಕಾರಕಾರ್ಥ ಯಾವುದು?",
+      "options": [
+        "ಕರ್ತೃ",
+        "ಕರ್ಮ",
+        "ಕರಣ",
+        "ಸಂಪ್ರದಾನ"
+      ],
+      "answer": 3,
+      "explanation": "ಪ್ರಥಮಾ-ಕರ್ತೃ, ದ್ವಿತೀಯಾ-ಕರ್ಮ, ತೃತೀಯಾ-ಕರಣ, ಚತುರ್ಥೀ-ಸಂಪ್ರದಾನ (ಕೊಡುವ ಕ್ರಿಯೆ).",
+      "subject": "ಸಾಮಾನ್ಯ ಕನ್ನಡ (ವಿಭಕ್ತಿ)",
+      "syllabus_ref": "P2-VAO-KAN-1.5",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "'ರಾಮನ' ಎಂಬ ಪದದಲ್ಲಿರುವ ವಿಭಕ್ತಿ ಪ್ರತ್ಯಯ ಯಾವುದು?",
+      "options": [
+        "ತೃತೀಯಾ",
+        "ಪಂಚಮೀ",
+        "ಷಷ್ಠೀ",
+        "ಪ್ರಥಮಾ"
+      ],
+      "answer": 2,
+      "explanation": "ಷಷ್ಠೀ ವಿಭಕ್ತಿಯ ಪ್ರತ್ಯಯ 'ಅ' (ಸಂಬಂಧ ಕಾರಕಾರ್ಥ: ರಾಮ + ಅ = ರಾಮನ).",
+      "subject": "ಸಾಮಾನ್ಯ ಕನ್ನಡ (ವಿಭಕ್ತಿ)",
+      "syllabus_ref": "P2-VAO-KAN-1.5",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "'ಅತ್ತೆಗೊಂದು ಕಾಲ, ಸೊಸೆಗೊಂದು ಕಾಲ' — ಈ ಗಾದೆ ಮಾತಿನ ಭಾವಾರ್ಥವೇನು?",
+      "options": [
+        "ಕಾಲ ಎಲ್ಲರಿಗೂ ಒಂದೇ ಆಗಿರುತ್ತದೆ",
+        "ಪ್ರತಿಯೊಬ್ಬರಿಗೂ ತಮ್ಮದೇ ಆದ ಅವಕಾಶ ಅಥವಾ ಪ್ರಾಬಲ್ಯದ ಸಮಯ ಬರುತ್ತದೆ",
+        "ಅತ್ತೆ ಸೊಸೆಯಂದಿರು ಸದಾ ಜಗಳವಾಡುತ್ತಾರೆ",
+        "ವಯಸ್ಸಾದವರಿಗೆ ಬೆಲೆಯಿಲ್ಲ"
+      ],
+      "answer": 1,
+      "explanation": "ಕಾಲಚಕ್ರದಲ್ಲಿ ಎಲ್ಲರಿಗೂ ತಮ್ಮದೇ ಆದ ಅನುಕೂಲಕರ ಸಂದರ್ಭ ಒದಗಿಬರುತ್ತದೆ ಎಂಬುದನ್ನು ಈ ಗಾದೆ ಸೂಚಿಸುತ್ತದೆ.",
+      "subject": "ಸಾಮಾನ್ಯ ಕನ್ನಡ (ಗಾದೆಗಳು)",
+      "syllabus_ref": "P2-VAO-KAN-1.6",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "'ತುಂಬಿದ ಕೊಡ ತುಳುಕುವುದಿಲ್ಲ' ಎಂಬ ಗಾದೆ ಮಾತು ಯಾರ ಲಕ್ಷಣವನ್ನು ಬಣ್ಣಿಸುತ್ತದೆ?",
+      "options": [
+        "ಅಜ್ಞಾನಿ",
+        "ಜ್ಞಾನಿ ಹಾಗೂ ಗಂಭೀರ ವ್ಯಕ್ತಿ",
+        "ಕೋಪಿಷ್ಠ",
+        "ಹಣವಂತ"
+      ],
+      "answer": 1,
+      "explanation": "ಸಂಪೂರ್ಣ ಜ್ಞಾನ ಮತ್ತು ಸದ್ಗುಣವುಳ್ಳ ಗಂಭೀರ ವ್ಯಕ್ತಿಯು ಎಂದಿಗೂ ಜಂಭ ಕೊಚ್ಚಿಕೊಳ್ಳುವುದಿಲ್ಲ.",
+      "subject": "ಸಾಮಾನ್ಯ ಕನ್ನಡ (ಗಾದೆಗಳು)",
+      "syllabus_ref": "P2-VAO-KAN-1.6",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "'ಕೈ ಕೆಸರಾದರೆ ಬಾಯಿ ಮೊಸರು' ಎಂಬ ನಾಣ್ಣುಡಿಯ ಅರ್ಥವೇನು?",
+      "options": [
+        "ಕೈಯನ್ನು ಕೆಸರು ಮಾಡಿಕೊಂಡರೆ ಅನ್ನ ಸಿಗುತ್ತದೆ",
+        "ಕಷ್ಟಪಟ್ಟು ಕಾಯಕ ಮಾಡಿದರೆ ಉತ್ತಮ ಫಲ ದೊರೆಯುತ್ತದೆ",
+        "ಮೊಸರು ತಿನ್ನಲು ಕೈ ತೊಳೆಯಬೇಕು",
+        "ಕೃಷಿ ಕೆಲಸ ಸುಲಭ"
+      ],
+      "answer": 1,
+      "explanation": "ಪ್ರಾಮಾಣಿಕ ಪರಿಶ್ರಮ ಮತ್ತು ದುಡಿಮೆಯಿಂದ ಮಾತ್ರ ಸುಖ-ಸಮೃದ್ಧಿ ಪ್ರಾಪ್ತಿಯಾಗುತ್ತದೆ.",
+      "subject": "ಸಾಮಾನ್ಯ ಕನ್ನಡ (ಗಾದೆಗಳು)",
+      "syllabus_ref": "P2-VAO-KAN-1.6",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "'ಅನುಕೂಲ' ಪದದ ಸರಿಯಾದ ವಿರುದ್ಧಾರ್ಥಕ ಪದ ಯಾವುದು?",
+      "options": [
+        "ಅನನುಕೂಲ (ಅಥವಾ ಪ್ರತಿಕೂಲ)",
+        "ದುರಾಕೂಲ",
+        "ನಿರನುಕೂಲ",
+        "ಅಪಕೂಲ"
+      ],
+      "answer": 0,
+      "explanation": "'ಅನುಕೂಲ' ಪದಕ್ಕೆ ನೇರ ವಿರುದ್ಧಾರ್ಥಕ ಪದ 'ಪ್ರತಿಕೂಲ' ಅಥವಾ 'ಅನನುಕೂಲ'.",
+      "subject": "ಸಾಮಾನ್ಯ ಕನ್ನಡ (ವಿರುದ್ಧಾರ್ಥಕ)",
+      "syllabus_ref": "P2-VAO-KAN-1.7",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "'ಕೀರ್ತಿ' ಪದದ ವಿರುದ್ಧಾರ್ಥಕ ಪದ ಯಾವುದು?",
+      "options": [
+        "ಸುಕೀರ್ತಿ",
+        "ಅಪಕೀರ್ತಿ",
+        "ವಿಕೀರ್ತಿ",
+        "ದುಷ್ಕೀರ್ತಿ"
+      ],
+      "answer": 1,
+      "explanation": "'ಕೀರ್ತಿ' ಗೆ ವಿರುದ್ಧ ಪದ 'ಅಪಕೀರ್ತಿ'.",
+      "subject": "ಸಾಮಾನ್ಯ ಕನ್ನಡ (ವಿರುದ್ಧಾರ್ಥಕ)",
+      "syllabus_ref": "P2-VAO-KAN-1.7",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "'ಭಾನು' ಎಂಬ ಪದದ ಸಮಾನಾರ್ಥಕ ಪದ ಯಾವುದು?",
+      "options": [
+        "ಚಂದ್ರ",
+        "ಸೂರ್ಯ",
+        "ಆಕಾಶ",
+        "ನಕ್ಷತ್ರ"
+      ],
+      "answer": 1,
+      "explanation": "'ಭಾನು', 'ರವಿ', 'ದಿನಕರ', 'ಭಾಸ್ಕರ' ಇವೆಲ್ಲವೂ ಸೂರ್ಯನ ಸಮಾನಾರ್ಥಕ ಪದಗಳು.",
+      "subject": "ಸಾಮಾನ್ಯ ಕನ್ನಡ (ಸಮಾನಾರ್ಥಕ)",
+      "syllabus_ref": "P2-VAO-KAN-1.7",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "ಕೆಳಗಿನವುಗಳಲ್ಲಿ ಸರಿಯಾದ ವ್ಯಾಕರಣಬದ್ಧ ವಾಕ್ಯವನ್ನು ಆರಿಸಿ:",
+      "options": [
+        "ಅವರು ನಿನ್ನೆ ಬಂದರು",
+        "ಅವನು ನಿನ್ನೆ ಬಂದರು",
+        "ಅವರು ನಾಳೆ ಬಂದರು",
+        "ಅವಳು ನಿನ್ನೆ ಬಂದನು"
+      ],
+      "answer": 0,
+      "explanation": "ಲಿಂಗ-ವಚನ ಹೊಂದಾಣಿಕೆಯಲ್ಲಿ ಗೌರವ ಬಹುವಚನ 'ಅವರು' ಜೊತೆಗೆ 'ಬಂದರು' ಸರಿಯಾದ ರೂಪ.",
+      "subject": "ಸಾಮಾನ್ಯ ಕನ್ನಡ (ವಾಕ್ಯದೋಷ)",
+      "syllabus_ref": "P2-VAO-KAN-1.8",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "'ತಪ್ಪುಗಳಿಲ್ಲದ' ಸರಿಯಾದ ಮುದ್ರಣ ರೂಪವನ್ನು ಗುರುತಿಸಿ:",
+      "options": [
+        "ಪುನರಾವರ್ತನೆ",
+        "ಪುನರಾವೃತ್ತಿ",
+        "ಪುನರಾವರ್ತನೆ",
+        "ಪುನಾರಾವರ್ತನೆ"
+      ],
+      "answer": 1,
+      "explanation": "ಸರಿಯಾದ ಪ್ರಮಾಣಿತ ರೂಪ 'ಪುನರಾವೃತ್ತಿ' (ಅಥವಾ ಪುನರುಕ್ತಿ).",
+      "subject": "ಸಾಮಾನ್ಯ ಕನ್ನಡ (ವಾಕ್ಯದೋಷ)",
+      "syllabus_ref": "P2-VAO-KAN-1.8",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "ಅಧಿಕೃತ ಸರ್ಕಾರಿ ಆದೇಶ ಅಥವಾ ಕಡತಕ್ಕೆ ಕನ್ನಡದಲ್ಲಿ ಬಳಸಲಾಗುವ ಸರಿಯಾದ ಪದ ಯಾವುದು?",
+      "options": [
+        "ಪತ್ರ",
+        "ಕಡತ (File)",
+        "ವರದಿ",
+        "ಟಿಪ್ಪಣಿ"
+      ],
+      "answer": 1,
+      "explanation": "ಕಂದಾಯ ಮತ್ತು ಸರ್ಕಾರಿ ಆಡಳಿತದಲ್ಲಿ 'File' ಗೆ ಅಧಿಕೃತ ಕನ್ನಡ ಪಾರಿಭಾಷಿಕ ಪದ 'ಕಡತ'.",
+      "subject": "ಸಾಮಾನ್ಯ ಕನ್ನಡ (ಆಡಳಿತ ಕನ್ನಡ)",
+      "syllabus_ref": "P2-VAO-KAN-1.8",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Identify the part of speech of the underlined word: 'She sang **beautifully** during the national anthem.'",
+      "options": [
+        "Adjective",
+        "Adverb",
+        "Noun",
+        "Conjunction"
+      ],
+      "answer": 1,
+      "explanation": "'Beautifully' modifies the verb 'sang', answering how she sang, hence it is an Adverb of manner.",
+      "subject": "General English",
+      "syllabus_ref": "P2-VAO-ENG-2.1",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Which of the following is an abstract noun?",
+      "options": [
+        "Gold",
+        "Honesty",
+        "Teacher",
+        "Bengaluru"
+      ],
+      "answer": 1,
+      "explanation": "'Honesty' denotes a state, quality, or concept that cannot be physically touched, making it an Abstract Noun.",
+      "subject": "General English",
+      "syllabus_ref": "P2-VAO-ENG-2.1",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Fill in the blank with the correct preposition: 'The Village Administrative Officer has been working in this taluk office _____ 2021.'",
+      "options": [
+        "for",
+        "since",
+        "from",
+        "in"
+      ],
+      "answer": 1,
+      "explanation": "'Since' is used to denote a specific point of time in the past when an action started in the Present Perfect Continuous tense.",
+      "subject": "General English",
+      "syllabus_ref": "P2-VAO-ENG-2.1",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Fill in the blank with the appropriate preposition: 'He jumped _____ the river to save the drowning boy.'",
+      "options": [
+        "in",
+        "into",
+        "onto",
+        "at"
+      ],
+      "answer": 1,
+      "explanation": "'Into' indicates movement or motion entering from the outside toward the interior of an enclosed space.",
+      "subject": "General English",
+      "syllabus_ref": "P2-VAO-ENG-2.1",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Choose the correct tense form: 'The sun _____ in the east and sets in the west.'",
+      "options": [
+        "is rising",
+        "rises",
+        "rose",
+        "has risen"
+      ],
+      "answer": 1,
+      "explanation": "Universal truths, scientific facts, and habitual actions are always expressed in the Simple Present tense.",
+      "subject": "General English",
+      "syllabus_ref": "P2-VAO-ENG-2.2",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Fill in the blank: 'By this time tomorrow, the surveyor _____ the entire village boundary.'",
+      "options": [
+        "will complete",
+        "will have completed",
+        "completed",
+        "is completing"
+      ],
+      "answer": 1,
+      "explanation": "Actions that will be finished before a specific deadline in the future use the Future Perfect tense ('will have completed').",
+      "subject": "General English",
+      "syllabus_ref": "P2-VAO-ENG-2.2",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Fill in the blank: 'When the police arrived at the village, the thief _____.'",
+      "options": [
+        "already fled",
+        "had already fled",
+        "has fled",
+        "is fleeing"
+      ],
+      "answer": 1,
+      "explanation": "When two actions happened in the past, the earlier completed action takes the Past Perfect tense ('had already fled').",
+      "subject": "General English",
+      "syllabus_ref": "P2-VAO-ENG-2.2",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Choose the correct verb form: 'Neither of the two survey sketches _____ approved by the Tahsildar.'",
+      "options": [
+        "are",
+        "were",
+        "is",
+        "have been"
+      ],
+      "answer": 2,
+      "explanation": "'Neither of' takes a singular verb ('is') because it refers to not one and not the other individually.",
+      "subject": "General English",
+      "syllabus_ref": "P2-VAO-ENG-2.3",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Fill in the blank: 'The Deputy Commissioner, along with his staff members, _____ inspecting the drought-affected fields.'",
+      "options": [
+        "are",
+        "is",
+        "were",
+        "have been"
+      ],
+      "answer": 1,
+      "explanation": "When a subject is connected by 'along with', 'as well as', or 'with', the verb agrees strictly with the first subject ('Deputy Commissioner' = singular 'is').",
+      "subject": "General English",
+      "syllabus_ref": "P2-VAO-ENG-2.3",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Fill in the blank: 'Ten thousand rupees _____ a reasonable revenue assessment for this commercial plot.'",
+      "options": [
+        "are",
+        "is",
+        "were",
+        "have been"
+      ],
+      "answer": 1,
+      "explanation": "When a specific sum of money represents a collective single quantity or amount, it takes a singular verb ('is').",
+      "subject": "General English",
+      "syllabus_ref": "P2-VAO-ENG-2.3",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Fill in the blank: 'Bread and butter _____ his daily breakfast.'",
+      "options": [
+        "are",
+        "is",
+        "were",
+        "have been"
+      ],
+      "answer": 1,
+      "explanation": "When two nouns together express a single combined idea or dish, the verb is singular ('is').",
+      "subject": "General English",
+      "syllabus_ref": "P2-VAO-ENG-2.3",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Convert into Passive Voice: 'The surveyor mapped the boundary lines.'",
+      "options": [
+        "The boundary lines are mapped by the surveyor.",
+        "The boundary lines were mapped by the surveyor.",
+        "The boundary lines had been mapped by the surveyor.",
+        "The boundary lines will be mapped by the surveyor."
+      ],
+      "answer": 1,
+      "explanation": "Simple Past Active ($S + V_2 + O$) transforms into $O + \\text{was/were} + V_3 + \\text{by } S$.",
+      "subject": "General English",
+      "syllabus_ref": "P2-VAO-ENG-2.4",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Convert into Passive Voice: 'The committee is evaluating the mutation petitions.'",
+      "options": [
+        "The mutation petitions are evaluated by the committee.",
+        "The mutation petitions were evaluated by the committee.",
+        "The mutation petitions are being evaluated by the committee.",
+        "The mutation petitions have been evaluated by the committee."
+      ],
+      "answer": 2,
+      "explanation": "Present Continuous transforms with 'being': $\\text{is/are} + \\text{being} + V_3$.",
+      "subject": "General English",
+      "syllabus_ref": "P2-VAO-ENG-2.4",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Convert into Passive Voice: 'Who wrote this revenue report?'",
+      "options": [
+        "By whom was this revenue report written?",
+        "By whom this revenue report was written?",
+        "Who was this revenue report written?",
+        "By whom is this revenue report written?"
+      ],
+      "answer": 0,
+      "explanation": "'Who' becomes 'By whom', followed by auxiliary verb 'was' + subject + $V_3$.",
+      "subject": "General English",
+      "syllabus_ref": "P2-VAO-ENG-2.4",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Change into Indirect Speech: He said, 'I am preparing the village survey records today.'",
+      "options": [
+        "He said that he is preparing the village survey records today.",
+        "He said that he was preparing the village survey records that day.",
+        "He said that he had prepared the village survey records that day.",
+        "He said that he prepared the village survey records today."
+      ],
+      "answer": 1,
+      "explanation": "Present continuous ('am preparing') shifts to past continuous ('was preparing'), and 'today' becomes 'that day'.",
+      "subject": "General English",
+      "syllabus_ref": "P2-VAO-ENG-2.5",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Change into Indirect Speech: The Tahsildar said to the clerk, 'Submit the file immediately.'",
+      "options": [
+        "The Tahsildar asked the clerk that he should submit the file immediately.",
+        "The Tahsildar ordered the clerk to submit the file immediately.",
+        "The Tahsildar requested the clerk to submit the file immediately.",
+        "The Tahsildar told to the clerk to submit the file immediately."
+      ],
+      "answer": 1,
+      "explanation": "Imperative orders transform using reporting verb 'ordered' followed by infinitive 'to submit'.",
+      "subject": "General English",
+      "syllabus_ref": "P2-VAO-ENG-2.5",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "What is the SYNONYM of the word **'DILIGENT'**?",
+      "options": [
+        "Lazy",
+        "Hardworking / Industrious",
+        "Careless",
+        "Hesitant"
+      ],
+      "answer": 1,
+      "explanation": "'Diligent' means showing steady, persistent, and earnest energetic effort (hardworking).",
+      "subject": "General English",
+      "syllabus_ref": "P2-VAO-ENG-2.6",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "What is the SYNONYM of the word **'CANDID'**?",
+      "options": [
+        "Deceitful",
+        "Frank / Honest",
+        "Shy",
+        "Arrogant"
+      ],
+      "answer": 1,
+      "explanation": "'Candid' means truthful, straightforward, and outspoken without concealment.",
+      "subject": "General English",
+      "syllabus_ref": "P2-VAO-ENG-2.6",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "What is the ANTONYM of the word **'OBSOLETE'**?",
+      "options": [
+        "Archaic",
+        "Outdated",
+        "Modern / Contemporary",
+        "Ancient"
+      ],
+      "answer": 2,
+      "explanation": "'Obsolete' means no longer produced or used; its opposite is modern or current.",
+      "subject": "General English",
+      "syllabus_ref": "P2-VAO-ENG-2.6",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "What is the ANTONYM of the word **'FRUGAL'**?",
+      "options": [
+        "Economical",
+        "Extravagant / Wasteful",
+        "Thrifty",
+        "Prudent"
+      ],
+      "answer": 1,
+      "explanation": "'Frugal' means sparing or economical with money; its direct antonym is extravagant.",
+      "subject": "General English",
+      "syllabus_ref": "P2-VAO-ENG-2.6",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Give one word for: **'A person who writes and compiles dictionaries'**",
+      "options": [
+        "Bibliophile",
+        "Lexicographer",
+        "Calligrapher",
+        "Cartographer"
+      ],
+      "answer": 1,
+      "explanation": "A 'Lexicographer' compiles dictionaries; a 'Cartographer' drafts maps.",
+      "subject": "General English",
+      "syllabus_ref": "P2-VAO-ENG-2.6",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Give one word for: **'One who is all-powerful'**",
+      "options": [
+        "Omniscient",
+        "Omnipresent",
+        "Omnipotent",
+        "Altruist"
+      ],
+      "answer": 2,
+      "explanation": "'Omnipotent' means having unlimited or universal power.",
+      "subject": "General English",
+      "syllabus_ref": "P2-VAO-ENG-2.6",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "What is the meaning of the idiom: **'To burn the midnight oil'**?",
+      "options": [
+        "To waste kerosene",
+        "To work or study late into the night",
+        "To set fire to a property",
+        "To cause an explosion"
+      ],
+      "answer": 1,
+      "explanation": "'To burn the midnight oil' means to read, study, or work hard late into the night.",
+      "subject": "General English",
+      "syllabus_ref": "P2-VAO-ENG-2.7",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "What is the meaning of the idiom: **'A blessing in disguise'**?",
+      "options": [
+        "A curse that seems bad",
+        "An apparent misfortune that eventually produces beneficial results",
+        "A religious ceremony",
+        "A disguised enemy"
+      ],
+      "answer": 1,
+      "explanation": "A blessing in disguise is something that appears unfortunate at first but later proves advantageous.",
+      "subject": "General English",
+      "syllabus_ref": "P2-VAO-ENG-2.7",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "What is the meaning of the idiom: **'To break the ice'**?",
+      "options": [
+        "To crack a cold surface",
+        "To relieve tension and start a conversation in an awkward social situation",
+        "To cool down an argument",
+        "To drink iced water"
+      ],
+      "answer": 1,
+      "explanation": "'To break the ice' means to overcome social awkwardness and initiate friendly conversation.",
+      "subject": "General English",
+      "syllabus_ref": "P2-VAO-ENG-2.7",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Choose the phrasal verb that means **'to cancel or terminate an event'**:",
+      "options": [
+        "Call on",
+        "Call off",
+        "Call out",
+        "Call for"
+      ],
+      "answer": 1,
+      "explanation": "'Call off' means to cancel an event, meeting, or strike.",
+      "subject": "General English",
+      "syllabus_ref": "P2-VAO-ENG-2.7",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Identify the part of the sentence containing an error: 'Neither the teacher (A) / nor the students (B) / was present in the meeting (C) / No error (D)'",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": 2,
+      "explanation": "When subjects are joined by 'neither...nor', the verb agrees with the closer subject ('students' is plural $\\implies$ should be 'were present').",
+      "subject": "General English",
+      "syllabus_ref": "P2-VAO-ENG-2.8",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Identify the error: 'He is senior (A) / than me (B) / in government service (C) / No error (D)'",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": 1,
+      "explanation": "Adjectives ending in '-ior' (senior, junior, prior, superior) take the preposition 'to', never 'than' ('senior to me').",
+      "subject": "General English",
+      "syllabus_ref": "P2-VAO-ENG-2.8",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Choose the correctly spelt word:",
+      "options": [
+        "Accomodation",
+        "Accommodation",
+        "Acommodation",
+        "Accommadation"
+      ],
+      "answer": 1,
+      "explanation": "The correct spelling is **'Accommodation'** (double 'c' and double 'm').",
+      "subject": "General English",
+      "syllabus_ref": "P2-VAO-ENG-2.8",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Choose the correctly spelt word:",
+      "options": [
+        "Bureaucracy",
+        "Beurocracy",
+        "Bureaucrasy",
+        "Burocracy"
+      ],
+      "answer": 0,
+      "explanation": "The correct spelling is **'Bureaucracy'**.",
+      "subject": "General English",
+      "syllabus_ref": "P2-VAO-ENG-2.8",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Fill in the blank with the correct article: 'He is _____ honest officer serving in the Revenue Department.'",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "no article"
+      ],
+      "answer": 1,
+      "explanation": "'Honest' begins with a silent 'h' and vowel sound /ɒ/, requiring the indefinite article 'an'.",
+      "subject": "General English",
+      "syllabus_ref": "P2-VAO-ENG-2.1",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Fill in the blank: 'If you work hard, you _____ the competitive exam.'",
+      "options": [
+        "will pass",
+        "would pass",
+        "passed",
+        "had passed"
+      ],
+      "answer": 0,
+      "explanation": "First conditional clause (Simple Present in 'if' clause) takes 'will + verb' in the main clause.",
+      "subject": "General English",
+      "syllabus_ref": "P2-VAO-ENG-2.2",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Fill in the blank: 'He prevented me _____ entering the restricted revenue record room.'",
+      "options": [
+        "to",
+        "from",
+        "at",
+        "by"
+      ],
+      "answer": 1,
+      "explanation": "The verb 'prevent' is always followed by the preposition 'from' + gerund ('prevented from entering').",
+      "subject": "General English",
+      "syllabus_ref": "P2-VAO-ENG-2.1",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Choose the sentence with correct word order:",
+      "options": [
+        "Hardly had he left the office when it began to rain.",
+        "Hardly he had left the office when it began to rain.",
+        "Hardly had he left the office than it began to rain.",
+        "Hardly he left the office then it began to rain."
+      ],
+      "answer": 0,
+      "explanation": "Negative adverb 'Hardly' requires inverted auxiliary ('had he left') followed by conjunction 'when'.",
+      "subject": "General English",
+      "syllabus_ref": "P2-VAO-ENG-2.8",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "What is the plural form of the word **'Criterion'**?",
+      "options": [
+        "Criterions",
+        "Criteria",
+        "Criterias",
+        "Criterion's"
+      ],
+      "answer": 1,
+      "explanation": "'Criterion' (Greek singular) becomes 'Criteria' in plural form.",
+      "subject": "General English",
+      "syllabus_ref": "P2-VAO-ENG-2.1",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Which generation of computers introduced integrated circuits (ICs) replacing discrete transistors?",
+      "options": [
+        "First Generation",
+        "Second Generation",
+        "Third Generation",
+        "Fourth Generation"
+      ],
+      "answer": 2,
+      "explanation": "Third generation computers (1964–1971) used Integrated Circuits (ICs), invented by Jack Kilby.",
+      "subject": "Computer Knowledge",
+      "syllabus_ref": "P2-VAO-COMP-3.1",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Which component of the CPU acts as the supervisor, directing data flows and coordinating instruction execution?",
+      "options": [
+        "Control Unit (CU)",
+        "Arithmetic Logic Unit (ALU)",
+        "Cache Memory",
+        "Secondary Bus"
+      ],
+      "answer": 0,
+      "explanation": "The Control Unit (CU) fetches, decodes, and manages the execution of instructions across all hardware components.",
+      "subject": "Computer Knowledge",
+      "syllabus_ref": "P2-VAO-COMP-3.1",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Which is the fastest and smallest memory unit located directly inside the CPU chip?",
+      "options": [
+        "RAM",
+        "L2 Cache",
+        "Registers",
+        "Solid State Drive"
+      ],
+      "answer": 2,
+      "explanation": "Registers are high-speed internal memory cells operating at processor clock speed.",
+      "subject": "Computer Knowledge",
+      "syllabus_ref": "P2-VAO-COMP-3.1",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "What is the full form of **ROM** in computer architecture?",
+      "options": [
+        "Random Operating Memory",
+        "Read Only Memory",
+        "Rapid Online Memory",
+        "Real Option Module"
+      ],
+      "answer": 1,
+      "explanation": "ROM stands for Read Only Memory, which holds non-volatile system startup code (BIOS/UEFI).",
+      "subject": "Computer Knowledge",
+      "syllabus_ref": "P2-VAO-COMP-3.1",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Why is Solid State Drive (SSD) storage preferred over traditional Hard Disk Drive (HDD)?",
+      "options": [
+        "Uses magnetic rotating platters",
+        "Uses flash NAND memory with zero moving parts, providing vastly higher read/write speeds",
+        "Consumes far more electrical power",
+        "Is heavier in weight"
+      ],
+      "answer": 1,
+      "explanation": "SSDs use semiconductor flash memory with zero mechanical latency, resulting in faster boot times and file transfers.",
+      "subject": "Computer Knowledge",
+      "syllabus_ref": "P2-VAO-COMP-3.1",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Which of the following is classified as an Open-Source Operating System?",
+      "options": [
+        "Microsoft Windows 11",
+        "Apple macOS",
+        "Linux",
+        "iOS"
+      ],
+      "answer": 2,
+      "explanation": "Linux is an open-source OS distributed freely with open access to its source code kernel.",
+      "subject": "Computer Knowledge",
+      "syllabus_ref": "P2-VAO-COMP-3.2",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Which standard file extension represents a non-editable, standardized document format used for issuing official government orders and RTC copies?",
+      "options": [
+        ".docx",
+        ".pdf",
+        ".txt",
+        ".xlsx"
+      ],
+      "answer": 1,
+      "explanation": "`.pdf` (Portable Document Format) preserves layout across devices and is the standard for official digital documents.",
+      "subject": "Computer Knowledge",
+      "syllabus_ref": "P2-VAO-COMP-3.2",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "In Microsoft Word, what is the keyboard shortcut to 'Justify' selected text alignment?",
+      "options": [
+        "Ctrl + E",
+        "Ctrl + J",
+        "Ctrl + R",
+        "Ctrl + L"
+      ],
+      "answer": 1,
+      "explanation": "`Ctrl + J` justifies text, aligning it evenly along both left and right margins.",
+      "subject": "Computer Knowledge",
+      "syllabus_ref": "P2-VAO-COMP-3.3",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "In MS Word, which function key initiates the Spelling and Grammar check dialog box?",
+      "options": [
+        "F2",
+        "F5",
+        "F7",
+        "F12"
+      ],
+      "answer": 2,
+      "explanation": "Pressing F7 in MS Word initiates the Spelling and Grammar check.",
+      "subject": "Computer Knowledge",
+      "syllabus_ref": "P2-VAO-COMP-3.3",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Which feature in MS Word allows a Village Administrative Officer to generate hundreds of individual tax notices from an Excel database?",
+      "options": [
+        "Macros",
+        "Mail Merge",
+        "SmartArt",
+        "Cross-Reference"
+      ],
+      "answer": 1,
+      "explanation": "Mail Merge links a master document template to a recipient database to batch-produce individualized notices.",
+      "subject": "Computer Knowledge",
+      "syllabus_ref": "P2-VAO-COMP-3.3",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "In Microsoft Excel, what type of cell reference is designated by the formula syntax `=$B$5`?",
+      "options": [
+        "Relative Reference",
+        "Absolute Reference",
+        "Mixed Reference",
+        "Dynamic Reference"
+      ],
+      "answer": 1,
+      "explanation": "The dollar signs before both column ($B) and row ($5) fix the reference so it never changes when copied.",
+      "subject": "Computer Knowledge",
+      "syllabus_ref": "P2-VAO-COMP-3.3",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "In MS Excel, which formula function counts all non-empty cells in a range, including cells containing text and numbers?",
+      "options": [
+        "=COUNT()",
+        "=COUNTA()",
+        "=COUNTIF()",
+        "=COUNTBLANK()"
+      ],
+      "answer": 1,
+      "explanation": "`=COUNTA()` counts all cells containing any content; `=COUNT()` counts numeric values only.",
+      "subject": "Computer Knowledge",
+      "syllabus_ref": "P2-VAO-COMP-3.3",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "In MS Excel, what is the default alignment for text and numbers respectively in cells?",
+      "options": [
+        "Text Left-aligned, Numbers Right-aligned",
+        "Text Right-aligned, Numbers Left-aligned",
+        "Both Left-aligned",
+        "Both Centered"
+      ],
+      "answer": 0,
+      "explanation": "Excel automatically aligns text to the left and numerical figures to the right.",
+      "subject": "Computer Knowledge",
+      "syllabus_ref": "P2-VAO-COMP-3.3",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "In Microsoft PowerPoint, which keyboard shortcut starts the slide show presentation from the very first slide?",
+      "options": [
+        "F5",
+        "Shift + F5",
+        "Ctrl + F5",
+        "Alt + F5"
+      ],
+      "answer": 0,
+      "explanation": "F5 starts the slide show from Slide 1; Shift + F5 starts from the currently active slide.",
+      "subject": "Computer Knowledge",
+      "syllabus_ref": "P2-VAO-COMP-3.3",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "In MS PowerPoint, what is the term for visual motion effects applied to individual text or objects within a single slide?",
+      "options": [
+        "Slide Transitions",
+        "Slide Animations",
+        "SmartArt Shapes",
+        "Design Templates"
+      ],
+      "answer": 1,
+      "explanation": "Animations govern movements of elements within a slide; Transitions govern movement between slides.",
+      "subject": "Computer Knowledge",
+      "syllabus_ref": "P2-VAO-COMP-3.3",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "What is the address length in bits of an Internet Protocol version 4 (IPv4) address?",
+      "options": [
+        "16 bits",
+        "32 bits",
+        "64 bits",
+        "128 bits"
+      ],
+      "answer": 1,
+      "explanation": "IPv4 addresses are 32 bits long, divided into 4 octets separated by dots (e.g., 192.168.1.1).",
+      "subject": "Computer Knowledge",
+      "syllabus_ref": "P2-VAO-COMP-3.4",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "What is the address length in bits of an Internet Protocol version 6 (IPv6) address?",
+      "options": [
+        "32 bits",
+        "64 bits",
+        "128 bits",
+        "256 bits"
+      ],
+      "answer": 2,
+      "explanation": "IPv6 addresses are 128 bits long, written as 8 groups of hexadecimal digits separated by colons.",
+      "subject": "Computer Knowledge",
+      "syllabus_ref": "P2-VAO-COMP-3.4",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Which network topology connects all nodes to a single central network switch or hub?",
+      "options": [
+        "Bus Topology",
+        "Ring Topology",
+        "Star Topology",
+        "Mesh Topology"
+      ],
+      "answer": 2,
+      "explanation": "In a Star topology, all computers connect individually to a central switch or hub.",
+      "subject": "Computer Knowledge",
+      "syllabus_ref": "P2-VAO-COMP-3.4",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "What is the function of the Domain Name System (DNS) on the internet?",
+      "options": [
+        "Encrypt email communications",
+        "Translate human-readable domain names (e.g. karnataka.gov.in) into machine-readable IP addresses",
+        "Filter computer viruses",
+        "Speed up download bandwidth"
+      ],
+      "answer": 1,
+      "explanation": "DNS acts as the phonebook of the internet, resolving domain names into numerical IP addresses.",
+      "subject": "Computer Knowledge",
+      "syllabus_ref": "P2-VAO-COMP-3.4",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Which application protocol is used for sending outgoing electronic mail messages?",
+      "options": [
+        "POP3",
+        "IMAP",
+        "SMTP (Simple Mail Transfer Protocol)",
+        "HTTP"
+      ],
+      "answer": 2,
+      "explanation": "SMTP (Port 25) sends/pushes email messages; POP3 and IMAP retrieve emails.",
+      "subject": "Computer Knowledge",
+      "syllabus_ref": "P2-VAO-COMP-3.5",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "What is the key advantage of IMAP over POP3 for managing email communications?",
+      "options": [
+        "IMAP synchronizes email state across multiple devices in real-time on the server",
+        "IMAP downloads all emails and deletes them from the server",
+        "IMAP does not require internet connection",
+        "IMAP is free while POP3 is paid"
+      ],
+      "answer": 0,
+      "explanation": "IMAP keeps emails stored on the mail server and synchronizes read/unread status across smartphones and PCs.",
+      "subject": "Computer Knowledge",
+      "syllabus_ref": "P2-VAO-COMP-3.5",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Which cyberattack involves deceptive emails or fraudulent links designed to trick employees into revealing passwords?",
+      "options": [
+        "DDoS Attack",
+        "Phishing",
+        "Trojan Injection",
+        "Ransomware"
+      ],
+      "answer": 1,
+      "explanation": "Phishing uses fraudulent communication masquerading as a trustworthy entity to steal credentials.",
+      "subject": "Computer Knowledge",
+      "syllabus_ref": "P2-VAO-COMP-3.6",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "What type of malware encrypts files and demands cryptocurrency payments for restoration?",
+      "options": [
+        "Spyware",
+        "Adware",
+        "Ransomware",
+        "Worm"
+      ],
+      "answer": 2,
+      "explanation": "Ransomware locks or encrypts data files and demands monetary extortion for restoration.",
+      "subject": "Computer Knowledge",
+      "syllabus_ref": "P2-VAO-COMP-3.6",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "In Karnataka, which pioneering e-governance software computerized 20 million rural land records, issuing Form 16 RTCs?",
+      "options": [
+        "Bhoomi",
+        "Mojini",
+        "Dishank",
+        "Kaveri"
+      ],
+      "answer": 0,
+      "explanation": "Bhoomi was launched in Karnataka in 2000–2002 to computerize Record of Rights, Tenancy and Crops (RTC).",
+      "subject": "Computer Knowledge",
+      "syllabus_ref": "P2-VAO-COMP-3.6",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Under Section 129 of the Karnataka Land Revenue Act, Bhoomi processes land mutation petitions based on which principle?",
+      "options": [
+        "Discretionary Selection",
+        "First-In, First-Out (FIFO)",
+        "Highest Revenue Value First",
+        "Alphabetical Owner Order"
+      ],
+      "answer": 1,
+      "explanation": "Bhoomi strictly enforces First-In, First-Out (FIFO) processing to prevent bribery and arbitrary delays.",
+      "subject": "Computer Knowledge",
+      "syllabus_ref": "P2-VAO-COMP-3.6",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Which mobile application developed by KSRSAC allows Karnataka citizens to see cadastral survey numbers at their live GPS location?",
+      "options": [
+        "Bhoomi Mobile",
+        "Dishank",
+        "Mojini App",
+        "e-Pahani"
+      ],
+      "answer": 1,
+      "explanation": "Dishank uses smartphone GPS to display real-time cadastral survey numbers, village boundaries, and land classification.",
+      "subject": "Computer Knowledge",
+      "syllabus_ref": "P2-VAO-COMP-3.6",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "What is the name of Karnataka's online unified property registration portal integrated with Bhoomi and e-Swathu?",
+      "options": [
+        "Kaveri 2.0",
+        "Mojini Online",
+        "Seva Sindhu Land",
+        "e-Registration"
+      ],
+      "answer": 0,
+      "explanation": "Kaveri 2.0 is Karnataka's web-based deed registration software linking directly to Bhoomi for instant mutation initiation.",
+      "subject": "Computer Knowledge",
+      "syllabus_ref": "P2-VAO-COMP-3.6",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Which digital database implemented by the Centre for e-Governance in Karnataka serves as a single source of truth for citizen beneficiary verification?",
+      "options": [
+        "Kutumba Project",
+        "Bhoomi",
+        "e-Swathu",
+        "Mojini"
+      ],
+      "answer": 0,
+      "explanation": "The Kutumba platform integrates social security, PDS, and departmental databases to establish entitlement families.",
+      "subject": "Computer Knowledge",
+      "syllabus_ref": "P2-VAO-COMP-3.6",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "What is the primary function of a network **Firewall** in cybersecurity?",
+      "options": [
+        "Speed up internet browsing",
+        "Monitor and filter incoming and outgoing network traffic based on predetermined security rules",
+        "Format hard disk partitions",
+        "Convert AC power to DC"
+      ],
+      "answer": 1,
+      "explanation": "A firewall creates a protective barrier between a trusted internal network and untrusted external networks like the internet.",
+      "subject": "Computer Knowledge",
+      "syllabus_ref": "P2-VAO-COMP-3.6",
+      "source": "KEA Verbatim PYQ"
+    },
+    {
+      "text": "Which shortcut key combination is used in Windows to permanently delete a selected file bypassing the Recycle Bin?",
+      "options": [
+        "Ctrl + Delete",
+        "Shift + Delete",
+        "Alt + Delete",
+        "Tab + Delete"
+      ],
+      "answer": 1,
+      "explanation": "Pressing `Shift + Delete` permanently removes a file immediately without sending it to the Recycle Bin.",
+      "subject": "Computer Knowledge",
+      "syllabus_ref": "P2-VAO-COMP-3.2",
+      "source": "KEA Verbatim PYQ"
+    }
+  ]
+}

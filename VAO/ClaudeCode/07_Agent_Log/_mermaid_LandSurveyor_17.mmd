@@ -1,0 +1,9 @@
+flowchart TD
+    A["GNSS satellites"] --> B["Base station on<br/>KNOWN coordinates"]
+    A --> C["Rover at unknown<br/>point"]
+    B --> D["Base computes error =<br/>known minus measured"]
+    D --> E["Correction sent<br/>(radio / internet / NTRIP)"]
+    E --> C
+    C --> F["Rover applies correction"]
+    F --> G["Real-time (RTK):<br/>carrier phase -> cm"]
+    F --> H["Post-processed:<br/>later in office -> mm-cm"]

@@ -1,33 +1,60 @@
-# KEA VAO (Village Administrative Officer) 2026 — Offline Timed HTML Mock Tests
+# Interactive HTML Mock Tests — KEA VAO 2026
 
-## Architecture & How They Were Built
-These 3 mock tests are self-contained, standalone single-file HTML applications engineered to run 100% offline in any modern web browser without requiring an internet connection, external CSS frameworks, or JavaScript CDNs.
-
-### Core Features Implemented:
-1. **Interactive Countdown Timer:** Calibrated to the official KEA examination duration (120 minutes) with real-time display and automated auto-submit when the countdown expires. Visual alert triggers in the final 5 minutes.
-2. **Dynamic Question Navigation Palette:**
-   - Real-time color-coded state tracking (Not Attempted, Answered in Emerald Green, Marked for Review in Amber, and Answered & Marked for Review in Violet).
-   - Instant jump navigation to any question.
-3. **Official Marking Engine:**
-   - **+1.0 Mark** for correct answers.
-   - **-0.25 Mark (1/4th penalty)** for incorrect answers.
-   - 0.00 for unattempted questions.
-4. **Instant Scorecard & Deep Analytical Review:**
-   - Net Marks, Accuracy Percentage, Total Correct vs Wrong breakdown.
-   - Subject-wise performance diagnostic table.
-   - Comprehensive question-by-question review with official explanations and derivation steps.
+All mock tests are 100% self-contained, offline-ready single-file HTML applications engineered to replicate the official KEA examination testing environment.
 
 ---
 
-## Test Directory & Sourcing
-
-| Test File | Exam Paper Simulation | Question Bank Composition & Sourcing |
-| :--- | :--- | :--- |
-| **`Mock_Test_1_Paper_1_General_Knowledge_and_Rural_Admin.html`** | Paper-I: GK, Heritage & Rural Governance | Curated from KEA/KPSC Village Accountant PYQs + Karnataka History, Geography, Constitution, and 5 Guarantee schemes. |
-| **`Mock_Test_2_Paper_2_Language_and_Computer_Knowledge.html`** | Paper-II: Kannada, English & Computer | High-yield Kannada grammar (Sandhi, Samasa, Tatsama), English rules (Voice, Conditionals), and MS Office/Networking. |
-| **`Mock_Test_3_Full_Length_High_Yield_Simulation.html`** | Comprehensive Full-Length Simulation | Balanced marathon drill combining General Knowledge, Languages, Rural Administration, and Computer Knowledge. |
+## 1. Examination Architecture & Scoring Rules
+- **Marking Scheme:** **+1.0 Mark** for each correct answer.
+- **Negative Marking Penalty:** **-0.25 Mark (1/4th penalty)** deduction for every incorrect answer.
+- **Unattempted Questions:** **0.00 Marks** (No penalty).
+- **Timing Pacing:** Strictly calibrated to **72 seconds per question** matching the official KEA duration (120 minutes for 100 questions).
 
 ---
 
-## How to Launch
-Double-click on any `.html` file inside this folder, or right-click and select **"Open with Google Chrome / Microsoft Edge"**. No local web server or installation required.
+## 2. Directory Structure & Available Tests
+
+### A. Full-Length Official Exam Simulations (`Full_Length/`)
+1. **[[VAO/AGY/06_Mock_Tests/Full_Length/Mock_Test_Paper_1_General_Knowledge_and_Rural_Admin.html|Mock Test Paper-I: General Knowledge & Rural Administration]]**
+   - **Questions:** 100 Questions
+   - **Duration:** 120 Minutes (2 Hours)
+   - **Coverage:** Karnataka & Indian History (20), Geography (18), Indian Constitution (18), Panchayat Raj & Land Administration (20), State Schemes & Budget 2026–27 (24).
+2. **[[VAO/AGY/06_Mock_Tests/Full_Length/Mock_Test_Paper_2_Language_and_Computer_Knowledge.html|Mock Test Paper-II: Communication & Computer Literacy]]**
+   - **Questions:** 100 Questions
+   - **Duration:** 120 Minutes (2 Hours)
+   - **Coverage:** General Kannada (35 Questions), General English (35 Questions), Computer Knowledge (30 Questions).
+
+---
+
+### B. Subject-Wise Focused Simulations (`Subject_Wise/`)
+Designed for targeted revision with proportional timers:
+
+| Subject Module | Questions | Time Limit | Version 1 Link | Version 2 Link |
+| :--- | :---: | :---: | :--- | :--- |
+| **General Kannada** (ವರ್ಣಮಾಲೆ, ಸಂಧಿ, ಸಮಾಸ, ತತ್ಸಮ) | 35 Qs | 42 Mins | `Subject_Wise/General_Kannada_Mock_Test_V1.html` | `Subject_Wise/General_Kannada_Mock_Test_V2.html` |
+| **General English** (Grammar, Tenses, Voice, Speech) | 35 Qs | 42 Mins | `Subject_Wise/General_English_Mock_Test_V1.html` | `Subject_Wise/General_English_Mock_Test_V2.html` |
+| **Computer Knowledge** (Hardware, OS, MS Office, IT) | 30 Qs | 36 Mins | `Subject_Wise/Computer_Knowledge_Mock_Test_V1.html` | `Subject_Wise/Computer_Knowledge_Mock_Test_V2.html` |
+| **Rural Administration & RDPR** (Panchayat Act, Bhoomi) | 25 Qs | 30 Mins | `Subject_Wise/Rural_Administration_Panchayat_Raj_Mock_Test_V1.html` | `Subject_Wise/Rural_Administration_Panchayat_Raj_Mock_Test_V2.html` |
+| **Karnataka GK & Schemes** (History, 5 Guarantees) | 25 Qs | 30 Mins | `Subject_Wise/Karnataka_GK_and_Schemes_Mock_Test_V1.html` | `Subject_Wise/Karnataka_GK_and_Schemes_Mock_Test_V2.html` |
+
+---
+
+## 3. How to Launch & Use the Mock Tests
+1. Double-click or open any `.html` file in any modern web browser.
+2. No internet connection is required.
+3. Timer begins automatically. Use the palette to navigate questions.
+4. Click **Submit Examination** at any time to immediately view your net score, accuracy %, and full step-by-step explanations.
+
+---
+
+## 4. Question Sourcing & Raw File Provenance
+
+- **Original Raw Question Papers:** The unedited official examination booklets and answer keys are archived in:
+  - `[[05_Resources/Raw_Source_Papers/KEA_VAO_Paper_1_Question_Paper_English_27_10_2024.pdf]]` (General Knowledge & Rural Admin)
+  - `[[05_Resources/Raw_Source_Papers/KEA_VAO_Paper_1_Question_Paper_Kannada_27_10_2024.pdf]]` (General Knowledge & Rural Admin)
+  - `[[05_Resources/Raw_Source_Papers/KEA_VAO_Paper_2_Question_Paper_27_10_2024.pdf]]` (Language & Computer Knowledge)
+  - `[[05_Resources/Raw_Source_Papers/KEA_VAO_Paper_2_Official_Key_Answer_27_10_2024.pdf]]` (Official Published Key Answers)
+  - `[[05_Resources/Raw_Source_Papers/KEA_VAO_Compulsory_Kannada_Question_Paper_29_09_2024.pdf]]` (Compulsory Kannada Qualifying Paper)
+  - `[[05_Resources/Raw_Source_Papers/KEA_VAO_Compulsory_Kannada_Key_Answer_29_09_2024.pdf]]` (Compulsory Kannada Key Answer)
+- **Verbatim PYQs:** Transcribed directly from the official 27 October 2024 examination papers.
+- **Expected Questions (KEA 2026 Simulation):** Modules covering contemporary 2026 state schemes (e.g., 2026–27 Karnataka Budget allocations, Mukhya Mantri Saura Krishi Yojane) are modeled according to official KEA standards and clearly labeled.

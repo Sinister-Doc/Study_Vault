@@ -1,0 +1,9 @@
+flowchart TD
+    M["Motion of a body"] --> Q["Is velocity changing?"]
+    Q -->|"No"| U["Uniform motion (a = 0)"]
+    Q -->|"Yes"| A["Accelerated motion"]
+    A --> EQ["Use v=u+at, s=ut+½at², v²=u²+2as"]
+    A --> GR["Special case: free fall, a = g ≈ 9.8 m/s²"]
+    U --> D["Distance = speed × time"]
+    EQ --> R["Solve for unknown (v, s, t or a)"]
+    GR --> R
