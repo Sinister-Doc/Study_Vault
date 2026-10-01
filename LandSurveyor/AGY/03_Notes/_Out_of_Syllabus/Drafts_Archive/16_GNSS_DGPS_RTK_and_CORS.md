@@ -181,4 +181,4 @@ Survey practice: keep **PDOP below about 3–4** (many specs say < 6 maximum). B
 +---------------------------------------------------------------+
 ```
 
-*Related:* [[08_GPS_GIS_and_Remote_Sensing]] · [[14_Photogrammetry_Aerial_and_Drone_Survey]] · [[07_Total_Station_and_EDM]] · [[10_Karnataka_Land_Records_Bhoomi_Mojini_Dishank]]
+*Related:* [[08_GPS_GIS_and_Remote_Sensing]] · [[LandSurveyor/AGY/03_Notes/_Out_of_Syllabus/Drafts_Archive/14_Photogrammetry_Aerial_and_Drone_Survey]] · [[07_Total_Station_and_EDM]] · [[10_Karnataka_Land_Records_Bhoomi_Mojini_Dishank]]

@@ -216,4 +216,4 @@ A matrix is a rectangular array of numbers; order $m\times n$ means $m$ rows and
 +---------------------------------------------------------------+
 ```
 
-*Related:* [[12_Maths_Algebra_and_Coordinate_Geometry]] · [[13_Maths_Geometry_and_Mensuration]]
+*Related:* [[LandSurveyor/AGY/03_Notes/_Out_of_Syllabus/Drafts_Archive/12_Maths_Algebra_and_Coordinate_Geometry]] · [[LandSurveyor/AGY/03_Notes/_Out_of_Syllabus/Drafts_Archive/13_Maths_Geometry_and_Mensuration]]

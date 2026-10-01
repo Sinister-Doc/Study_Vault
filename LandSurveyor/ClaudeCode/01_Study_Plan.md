@@ -18,19 +18,19 @@ Maths is 40% of Paper 2 — it gets the whole morning.
 
 | Time | Task |
 |---|---|
-| 06:00–07:30 | [[03_Notes/11_Maths_Arithmetic]] — squares/roots, HCF/LCM, AP/GP, nPr/nCr, statistics (work every formula) |
+| 06:00–07:30 | [[LandSurveyor/ClaudeCode/03_Notes/Paper2/11_Maths_Arithmetic]] — squares/roots, HCF/LCM, AP/GP, nPr/nCr, statistics (work every formula) |
 | 07:30–08:00 | Breakfast |
-| 08:00–10:00 | [[03_Notes/12_Maths_Algebra_and_Coordinate_Geometry]] — identities, linear/quadratic equations, factorisation, quadrants |
+| 08:00–10:00 | [[LandSurveyor/ClaudeCode/03_Notes/Paper2/12_Maths_Algebra_and_Coordinate_Geometry]] — identities, linear/quadratic equations, factorisation, quadrants |
 | 10:00–10:15 | Tea break |
-| 10:15–12:15 | [[03_Notes/13_Maths_Geometry_and_Mensuration]] — Pythagoras, similarity, circles/tangents, areas/volumes |
+| 10:15–12:15 | [[LandSurveyor/ClaudeCode/03_Notes/Paper2/13_Maths_Geometry_and_Mensuration]] — Pythagoras, similarity, circles/tangents, areas/volumes |
 | 12:15–13:30 | Lunch |
-| 13:30–14:30 | [[03_Notes/14_Photogrammetry_Aerial_and_Drone_Survey]] — scale f/H, overlaps, SfM → DEM/DSM/ORI, GCPs |
-| 14:30–15:30 | [[03_Notes/15_Satellite_Imagery_Remote_Sensing_and_GIS]] — 4 resolutions, LIDAR/SAR, rectification, GIS model |
+| 13:30–14:30 | [[LandSurveyor/ClaudeCode/03_Notes/Paper2/14_Photogrammetry_Aerial_and_Drone_Survey]] — scale f/H, overlaps, SfM → DEM/DSM/ORI, GCPs |
+| 14:30–15:30 | [[LandSurveyor/ClaudeCode/03_Notes/Paper2/15_Satellite_Imagery_Remote_Sensing_and_GIS]] — 4 resolutions, LIDAR/SAR, rectification, GIS model |
 | 15:30–15:45 | Tea break |
-| 15:45–16:45 | [[03_Notes/16_GNSS_DGPS_RTK_and_CORS]] — trilateration, 4 satellites, DGPS, RTK, CORS/NTRIP, DOP, NavIC |
-| 16:45–18:00 | [[03_Notes/17_Computer_MSOffice_and_AutoCAD]] → [[03_Notes/18_Computer_GIS_Software]] (QGIS, WMS/WFS/WCS, PostGIS) |
+| 15:45–16:45 | [[LandSurveyor/ClaudeCode/03_Notes/Paper2/16_GNSS_DGPS_RTK_and_CORS]] — trilateration, 4 satellites, DGPS, RTK, CORS/NTRIP, DOP, NavIC |
+| 16:45–18:00 | [[LandSurveyor/ClaudeCode/03_Notes/Paper2/17_Computer_MSOffice_and_AutoCAD]] → [[18_Computer_GIS_Software]] (QGIS, WMS/WFS/WCS, PostGIS) |
 | 18:00–19:00 | Dinner |
-| 19:00–20:00 | [[03_Notes/19_Computer_Software_Solutions_and_Land_Records_IT]] — SDLC, offline-first, APIs, SDC, JSON/XML/HTTPS |
+| 19:00–20:00 | [[LandSurveyor/ClaudeCode/03_Notes/Paper2/19_Computer_Software_Solutions_and_Land_Records_IT]] — SDLC, offline-first, APIs, SDC, JSON/XML/HTTPS |
 | 20:00–21:00 | Quick-revision boxes from notes 11–19 (today's notes only) |
 | 21:00–22:00 | Sleep prep — early sleep, exam in 2 days |
 
@@ -48,10 +48,10 @@ pie
 
 | Time | Task |
 |---|---|
-| 06:00–07:30 | [[03_Notes/20_Physics]] — units, magnetism/electricity, EM spectrum, laser, motion, heat scales, TIR, SONAR/Doppler |
+| 06:00–07:30 | [[20_Physics]] — units, magnetism/electricity, EM spectrum, laser, motion, heat scales, TIR, SONAR/Doppler |
 | 07:30–08:00 | Breakfast |
-| 08:00–09:00 | [[03_Notes/21_Geography_Earth_Lithosphere_Maps_India]] — rotation/revolution, latitudes, IST, layers, quakes, maps, India physical features |
-| 09:00–11:00 | Paper-1 GK sweep: [[03_Notes/06_History]] → [[03_Notes/07_Geography]] → [[03_Notes/08_Polity]] → [[03_Notes/09_Economy_Science]] (quick-revision boxes + high-yield tables only) |
+| 08:00–09:00 | [[LandSurveyor/ClaudeCode/03_Notes/Paper2/21_Geography_Earth_Lithosphere_Maps_India]] — rotation/revolution, latitudes, IST, layers, quakes, maps, India physical features |
+| 09:00–11:00 | Paper-1 GK sweep: [[06_History]] → [[07_Geography]] → [[08_Polity]] → [[09_Economy_Science]] (quick-revision boxes + high-yield tables only) |
 | 11:00–11:45 | [[04_Current_Affairs_GK/Current_Affairs_2026]] + [[04_Current_Affairs_GK/GK_High_Yield]] (verified facts only) |
 | 11:45–12:30 | Lunch |
 | 12:30–14:30 | [[06_Mock_Tests/mock1.html\|Mock Test 1]] (full 100 Q, timed) → review every wrong answer |
@@ -65,10 +65,10 @@ pie
 
 ## Checkpoint (tick as you finish)
 
-- [ ] Day 2 morning: [[03_Notes/11_Maths_Arithmetic]] + [[03_Notes/12_Maths_Algebra_and_Coordinate_Geometry]]
-- [ ] Day 2 midday: [[03_Notes/13_Maths_Geometry_and_Mensuration]] + [[03_Notes/14_Photogrammetry_Aerial_and_Drone_Survey]] + [[03_Notes/15_Satellite_Imagery_Remote_Sensing_and_GIS]] + [[03_Notes/16_GNSS_DGPS_RTK_and_CORS]]
-- [ ] Day 2 evening: [[03_Notes/17_Computer_MSOffice_and_AutoCAD]] + [[03_Notes/18_Computer_GIS_Software]] + [[03_Notes/19_Computer_Software_Solutions_and_Land_Records_IT]]
-- [ ] Day 1 morning: [[03_Notes/20_Physics]] + [[03_Notes/21_Geography_Earth_Lithosphere_Maps_India]] + GK sweep ([[03_Notes/06_History]], [[03_Notes/07_Geography]], [[03_Notes/08_Polity]], [[03_Notes/09_Economy_Science]])
+- [ ] Day 2 morning: [[LandSurveyor/ClaudeCode/03_Notes/Paper2/11_Maths_Arithmetic]] + [[LandSurveyor/ClaudeCode/03_Notes/Paper2/12_Maths_Algebra_and_Coordinate_Geometry]]
+- [ ] Day 2 midday: [[LandSurveyor/ClaudeCode/03_Notes/Paper2/13_Maths_Geometry_and_Mensuration]] + [[LandSurveyor/ClaudeCode/03_Notes/Paper2/14_Photogrammetry_Aerial_and_Drone_Survey]] + [[LandSurveyor/ClaudeCode/03_Notes/Paper2/15_Satellite_Imagery_Remote_Sensing_and_GIS]] + [[LandSurveyor/ClaudeCode/03_Notes/Paper2/16_GNSS_DGPS_RTK_and_CORS]]
+- [ ] Day 2 evening: [[LandSurveyor/ClaudeCode/03_Notes/Paper2/17_Computer_MSOffice_and_AutoCAD]] + [[18_Computer_GIS_Software]] + [[LandSurveyor/ClaudeCode/03_Notes/Paper2/19_Computer_Software_Solutions_and_Land_Records_IT]]
+- [ ] Day 1 morning: [[20_Physics]] + [[LandSurveyor/ClaudeCode/03_Notes/Paper2/21_Geography_Earth_Lithosphere_Maps_India]] + GK sweep ([[06_History]], [[07_Geography]], [[08_Polity]], [[09_Economy_Science]])
 - [ ] Day 1 midday: [[04_Current_Affairs_GK/Current_Affairs_2026]] + [[04_Current_Affairs_GK/GK_High_Yield]]
 - [ ] [[06_Mock_Tests/mock1.html\|Mock 1]]: attempted + reviewed (target ≥ 60/100; Paper 2 pass mark is 35)
 - [ ] [[06_Mock_Tests/mock2.html\|Mock 2]]: attempted + reviewed (target ≥ 65/100)

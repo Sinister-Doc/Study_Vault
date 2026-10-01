@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Computer Applications Revision Quiz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#EEF2F4; --card:#FFFFFF; --ink:#12263A; --muted:#566878; --line:#CBD5DC;
+  --accent:#0E7C86; --accent-ink:#FFFFFF; --accent-soft:#DDF0F2;
+  --good:#1E7D3A; --good-soft:#E1F3E6; --bad:#B3261E; --bad-soft:#FBE6E4;
+  --mark:#B7791F; --mark-soft:#FBF0D9;
+  --head:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --body:"IBM Plex Sans","Segoe UI",system-ui,-apple-system,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#0F1A24; --card:#17262F; --ink:#E6EEF2; --muted:#9BB0BD; --line:#2B3E4A;
+    --accent:#3DB5BF; --accent-ink:#05222A; --accent-soft:#12363C;
+    --good:#55C27A; --good-soft:#143323; --bad:#FF8A80; --bad-soft:#3B1A18;
+    --mark:#E8B84A; --mark-soft:#3A2F12;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0F1A24; --card:#17262F; --ink:#E6EEF2; --muted:#9BB0BD; --line:#2B3E4A;
+  --accent:#3DB5BF; --accent-ink:#05222A; --accent-soft:#12363C;
+  --good:#55C27A; --good-soft:#143323; --bad:#FF8A80; --bad-soft:#3B1A18;
+  --mark:#E8B84A; --mark-soft:#3A2F12;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit;cursor:pointer}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.wrap{max-width:1080px;margin:0 auto;padding:20px 16px 56px}
+h1,h2,h3{font-family:var(--head);line-height:1.15;margin:0}
+.btn{border:1.5px solid var(--ink);background:transparent;border-radius:8px;padding:10px 18px;font-weight:600}
+.btn:hover{background:var(--accent-soft)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn.primary:hover{filter:brightness(1.08)}
+.btn.danger{border-color:var(--bad);color:var(--bad)}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+.topline{display:flex;justify-content:flex-end;margin-bottom:6px}
+.topline button{border:none;background:none;color:var(--muted);font-size:14px;text-decoration:underline;padding:4px}
+
+/* Home */
+.hero{position:relative;overflow:hidden;border:1.5px solid var(--ink);border-radius:14px;background:var(--card);padding:34px 28px 30px}
+.hero svg{position:absolute;right:-60px;top:-40px;width:520px;height:420px;pointer-events:none}
+.hero svg *{fill:none;stroke:var(--line);stroke-width:1.4}
+.hero svg .idx{stroke:var(--accent);stroke-width:2;opacity:.7}
+.hero > *:not(svg){position:relative}
+.hero h1{font-size:clamp(30px,6vw,52px);font-weight:800;max-width:15ch;letter-spacing:-.02em}
+.hero p{max-width:56ch;color:var(--muted);margin:14px 0 0}
+.rules{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.rule{border:1.5px solid var(--line);border-radius:8px;padding:8px 14px;background:var(--paper);font-size:14px}
+.rule b{font-family:var(--mono);font-size:17px;display:block}
+.rule.plus b{color:var(--good)} .rule.minus b{color:var(--bad)}
+.panel{margin-top:22px;border:1.5px solid var(--line);border-radius:14px;background:var(--card);padding:22px}
+.panel h2{font-size:22px;margin-bottom:4px}
+.panel .sub{color:var(--muted);font-size:14px;margin:0 0 14px}
+.chips{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+.chip{display:flex;align-items:center;gap:10px;border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;cursor:pointer;background:var(--paper);user-select:none}
+.chip input{width:18px;height:18px;accent-color:var(--accent);flex:none}
+.chip span.n{margin-left:auto;font-family:var(--mono);font-size:13px;color:var(--muted)}
+.chip.on{border-color:var(--accent);background:var(--accent-soft)}
+.mini{display:flex;gap:14px;margin-bottom:12px}
+.mini button{border:none;background:none;color:var(--accent);font-weight:600;padding:2px 0;text-decoration:underline}
+.opts{display:flex;flex-wrap:wrap;gap:20px}
+.field label{display:block;font-size:14px;color:var(--muted);margin-bottom:4px}
+select{font:inherit;padding:9px 12px;border-radius:8px;border:1.5px solid var(--line);background:var(--paper);color:var(--ink)}
+.summary{display:flex;flex-wrap:wrap;align-items:center;gap:14px 24px;margin-top:22px;padding-top:18px;border-top:1.5px dashed var(--line)}
+.summary .big{font-family:var(--mono);font-weight:600;font-size:18px}
+.summary .grow{flex:1}
+.hist{width:100%;border-collapse:collapse;font-size:14px}
+.hist td,.hist th{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line)}
+.hist th{color:var(--muted);font-weight:500}
+
+/* Quiz */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);padding:10px 0;border-bottom:1.5px solid var(--line);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.bar .title{font-family:var(--head);font-weight:700;font-size:18px}
+.bar .grow{flex:1}
+.timer{font-family:var(--mono);font-weight:600;font-size:22px;border:1.5px solid var(--ink);border-radius:8px;padding:4px 12px;background:var(--card);min-width:112px;text-align:center}
+.timer.low{color:var(--bad);border-color:var(--bad);animation:pulse 1s steps(2) infinite}
+@keyframes pulse{50%{background:var(--bad-soft)}}
+@media (prefers-reduced-motion:reduce){.timer.low{animation:none}}
+.prog{height:6px;background:var(--line);border-radius:3px;overflow:hidden;margin-top:10px}
+.prog i{display:block;height:100%;background:var(--accent);width:0}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 290px;gap:20px;margin-top:18px;align-items:start}
+@media (max-width:820px){.layout{grid-template-columns:1fr}}
+.qcard{border:1.5px solid var(--line);border-radius:14px;background:var(--card);padding:22px}
+.qmeta{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;margin-bottom:12px;font-size:14px;color:var(--muted)}
+.qmeta .tag{border:1.5px solid var(--line);border-radius:999px;padding:2px 10px}
+.qmeta .no{font-family:var(--mono);color:var(--ink);font-weight:600}
+.qtext{font-size:20px;font-weight:500;line-height:1.4;margin:0 0 18px;max-width:62ch}
+.options{display:grid;gap:10px}
+.opt{display:flex;gap:12px;align-items:flex-start;text-align:left;width:100%;border:1.5px solid var(--line);background:var(--paper);border-radius:10px;padding:12px 14px}
+.opt:hover{border-color:var(--accent)}
+.opt .l{flex:none;width:28px;height:28px;border-radius:50%;border:1.5px solid var(--muted);display:grid;place-items:center;font-family:var(--mono);font-size:13px;font-weight:600}
+.opt.sel{border-color:var(--accent);background:var(--accent-soft)}
+.opt.sel .l{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.opt.good{border-color:var(--good);background:var(--good-soft)}
+.opt.good .l{background:var(--good);border-color:var(--good);color:var(--card)}
+.opt.bad{border-color:var(--bad);background:var(--bad-soft)}
+.opt.bad .l{background:var(--bad);border-color:var(--bad);color:var(--card)}
+.opt[disabled]{cursor:default}
+.nav{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.nav .grow{flex:1}
+.btn.mk.on{background:var(--mark-soft);border-color:var(--mark);color:var(--mark)}
+.side{border:1.5px solid var(--line);border-radius:14px;background:var(--card);padding:16px}
+.side h3{font-size:16px;margin-bottom:10px}
+.pal{display:grid;grid-template-columns:repeat(auto-fill,minmax(40px,1fr));gap:6px;max-height:340px;overflow:auto;padding:2px}
+.pb{height:38px;border-radius:7px;border:1.5px solid var(--line);background:var(--paper);font-family:var(--mono);font-size:13px;font-weight:600;position:relative}
+.pb.ans{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.pb.mk::after{content:"";position:absolute;top:3px;right:3px;width:8px;height:8px;border-radius:50%;background:var(--mark);border:1.5px solid var(--card)}
+.pb.cur{outline:3px solid var(--ink);outline-offset:1px}
+.legend{display:grid;gap:6px;margin-top:14px;font-size:13px;color:var(--muted)}
+.legend span{display:flex;align-items:center;gap:8px}
+.legend i{width:16px;height:16px;border-radius:4px;border:1.5px solid var(--line);background:var(--paper);display:inline-block}
+.legend i.a{background:var(--accent);border-color:var(--accent)}
+.legend i.m{background:var(--mark);border-color:var(--mark);border-radius:50%}
+.counts{display:flex;justify-content:space-between;font-size:14px;margin-bottom:10px;font-family:var(--mono)}
+
+/* Modal */
+.modal{position:fixed;inset:0;background:rgba(10,20,30,.6);display:grid;place-items:center;padding:20px;z-index:20}
+.modal .box{background:var(--card);border:1.5px solid var(--ink);border-radius:14px;padding:24px;max-width:420px;width:100%}
+.modal h2{font-size:22px;margin-bottom:8px}
+.modal .row{display:flex;gap:10px;margin-top:18px;justify-content:flex-end;flex-wrap:wrap}
+
+/* Results */
+.score{display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:center;border:1.5px solid var(--ink);border-radius:14px;background:var(--card);padding:26px}
+@media (max-width:640px){.score{grid-template-columns:1fr}}
+.ring{width:170px;height:170px;border-radius:50%;display:grid;place-items:center;text-align:center;border:10px solid var(--accent);font-family:var(--head)}
+.ring b{font-size:38px;font-weight:800;display:block;line-height:1}
+.ring small{font-family:var(--body);color:var(--muted);font-size:13px}
+.ring.neg{border-color:var(--bad)}
+.verdict{font-family:var(--head);font-size:26px;font-weight:700;margin-bottom:12px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px}
+.stat{border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;background:var(--paper)}
+.stat b{font-family:var(--mono);font-size:20px;display:block}
+.stat span{font-size:13px;color:var(--muted)}
+.stat.g b{color:var(--good)} .stat.r b{color:var(--bad)}
+.secs{width:100%;border-collapse:collapse;font-size:14px}
+.secs th,.secs td{text-align:left;padding:9px 8px;border-bottom:1px solid var(--line);vertical-align:middle}
+.secs th{color:var(--muted);font-weight:500}
+.secs td.num{font-family:var(--mono)}
+.meter{height:8px;border-radius:4px;background:var(--line);overflow:hidden;min-width:80px}
+.meter i{display:block;height:100%;background:var(--accent)}
+.meter i.weak{background:var(--bad)}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.filters button{border:1.5px solid var(--line);background:var(--card);border-radius:999px;padding:6px 14px;font-size:14px;font-weight:500}
+.filters button.on{background:var(--ink);color:var(--card);border-color:var(--ink)}
+.rv{border:1.5px solid var(--line);border-radius:12px;background:var(--card);padding:18px;margin-bottom:12px}
+.rv .qtext{font-size:17px;margin-bottom:12px}
+.rv .res{font-family:var(--mono);font-size:13px;font-weight:600;margin-left:auto}
+.rv .res.g{color:var(--good)} .rv .res.r{color:var(--bad)} .rv .res.s{color:var(--muted)}
+.exp{margin-top:12px;padding:10px 12px;border-left:4px solid var(--accent);background:var(--accent-soft);border-radius:0 8px 8px 0;font-size:14px}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.hide{display:none!important}
+</style>
+</head>
+<body>
+<div class="wrap" id="app"></div>
+
+<script>
+/* ---------- Question bank (answer first; options are shuffled at runtime) ---------- */
+const W="MS Word", X="MS Excel", P="MS PowerPoint", A="AutoCAD", D="2D Drafting & 3D", G="GIS & QGIS",
+      O="OGC & PostGIS", L="SDLC & Land Records", H="APIs & Web", J="Java & Tech Stack";
+const SECS=[W,X,P,A,D,G,O,L,H,J];
+
+const RAW=[
+/* ======================= MS WORD ======================= */
+[W,"MS Office, the collection of office applications by Microsoft, was introduced in:","1988","1983","1990","1995","Office 1988; Word itself first released 1983."],
+[W,"MS Word was first released in:","1983","1988","1975","1992","Word first released 1983."],
+[W,"The original name of MS Word was:","Multi-Tool Word","Multi-Task Word","Micro Word","Office Writer","Original name: Multi-Tool Word."],
+[W,"MS Word was developed by:","Charles Simonyi & Richard Brodie","Bill Gates & Paul Allen","Dan Bricklin & Bob Frankston","Steve Jobs & Steve Wozniak","Developers: Charles Simonyi & Richard Brodie."],
+[W,"Word, Excel and PowerPoint are respectively used for:","Word processing, spreadsheet, presentation","Spreadsheet, presentation, word processing","Presentation, word processing, spreadsheet","Database, spreadsheet, presentation","Word = word processing, Excel = spreadsheet, PowerPoint = presentation."],
+[W,"The modern default file extension of an MS Word document is:",".docx",".doc",".dotx",".wrd","Older format is .doc; modern is .docx."],
+[W,"Which command in Start → Run launches MS Word?","winword","msword","word.exe","wordpad","Start → Run → winword → Enter."],
+[W,"The default name of a new Word file is:","Document1.docx","Word1.docx","Book1.docx","Untitled1.doc","Book1 belongs to Excel; Presentation1 to PowerPoint."],
+[W,"Which Word component shows the document / application name?","Title Bar","Status Bar","Ribbon","Ruler","Title Bar shows the name."],
+[W,"The collection of commands in Word is called the:","Ribbon","Work Area","Scroll Bar","Zoom Slider","Ribbon = collection of commands; Tabs organise them."],
+[W,"In Word, Tabs are used to:","Organise commands","Show page information","Zoom in/out","Move through the document","Tabs organise commands."],
+[W,"The Status Bar in Word shows:","Page/document information","Margins","Insertion point","Commands","Status Bar = page/document info."],
+[W,"The area where you type and edit text is the:","Work Area","Title Bar","Ribbon","Status Bar","Work Area = typing/editing."],
+[W,"The insertion point in Word is called the:","Cursor","Scroll bar","Zoom slider","Ruler","Cursor = insertion point."],
+[W,"Scroll Bars are used to:","Move through the document","Zoom in and out","Change views","Set margins","Scroll bars move through the document."],
+[W,"The Zoom Slider is used to:","Zoom in/out","Change the font","Set indents","Insert tables","Zoom Slider = zoom in/out."],
+[W,"The Screen Split feature lets you:","View different parts of a document simultaneously","Divide a page into columns","Split a table into two","Print two copies","Screen Split = view different parts at once."],
+[W,"The horizontal ruler controls the:","Left/right margins","Top/bottom margins","Font size","Page colour","Horizontal → left/right margins."],
+[W,"The vertical ruler controls the:","Top/bottom margins","Left/right margins","Zoom level","Text colour","Vertical → top/bottom margins."],
+[W,"Which of these is NOT an indent type in Word?","Diagonal","First Line","Hanging","Negative","Indents: First Line, Hanging, Positive, Negative."],
+[W,"The Mailings tab is mainly used for:","Mail Merge","Proofing","Page Setup","Macros","Mailings → Mail Merge."],
+[W,"TOC, Footnotes, Citations and Index are found in the ___ tab.","References","Insert","Review","View","References tab."],
+[W,"Themes, Page Setup and Background are in the ___ tab.","Page Layout","Home","Review","Mailings","Page Layout tab."],
+[W,"Proofing, Comments, Tracking and Protect belong to the ___ tab.","Review","View","References","Insert","Review tab."],
+[W,"Tables, Pictures, Links, Header/Footer and Symbols are in the ___ tab.","Insert","Home","Page Layout","Mailings","Insert tab."],
+[W,"Font, Paragraph, Styles and Editing groups are found in the ___ tab.","Home","Insert","View","References","Home tab."],
+[W,"Views, Zoom, Window and Macros are found in the ___ tab.","View","Review","Home","Mailings","View tab."],
+[W,"Portrait orientation of a page is:","Vertical","Horizontal","Diagonal","Square","Portrait = vertical; Landscape = horizontal."],
+[W,"Landscape orientation of a page is:","Horizontal","Vertical","Circular","Folded","Landscape = horizontal."],
+[W,"Find & Replace is used to:","Search and substitute text","Check grammar only","Insert pictures","Change page colour","Find & Replace = search and substitute."],
+[W,"The Thesaurus in Word provides:","Synonyms","Spelling errors","Hyperlinks","Page numbers","Thesaurus → synonyms."],
+[W,"Spell Check in Word:","Finds spelling errors","Gives synonyms","Inserts bullets","Sets margins","Spell Check → finds spelling errors."],
+[W,"Bullets create a(n) ___ list, while Numbering creates a(n) ___ list.","unordered; ordered","ordered; unordered","nested; flat","hidden; visible","Bullets = unordered; Numbering = ordered."],
+[W,"OLE in MS Office stands for:","Object Linking and Embedding","Object Layout Editor","Online Linked Editing","Open Library Extension","OLE = Object Linking and Embedding."],
+[W,"Which of the following does OLE support?","Charts, equations, pictures, audio/video","Only plain text","Only tables","Only macros","OLE supports charts, equations, pictures, audio/video."],
+[W,"The default paragraph alignment in Word is:","Left","Centre","Right","Justify","Default alignment: Left."],
+[W,"AutoCorrect in Word:","Automatically corrects common typing/spelling/grammar errors","Saves the file automatically","Encrypts the document","Prints automatically","AutoCorrect fixes common errors."],
+[W,"Which is NOT a way to save a document in Word?","Ctrl + Q","File → Save","The Save button","Ctrl + S","Ctrl+S, File → Save or Save button."],
+[W,"Ctrl + ← / → in Word moves the cursor:","One word left/right","One character left/right","One paragraph","To start/end of line","Ctrl + ←/→ = word."],
+[W,"Ctrl + ↑ / ↓ in Word moves the cursor by:","One paragraph","One word","One line","One page","Ctrl + ↑/↓ = paragraph."],
+[W,"Ctrl + Home / Ctrl + End moves to:","Document beginning / end","Line beginning / end","Page top / bottom","Paragraph start / end","Beginning / end of the document."],
+[W,"Ctrl + A in Word:","Selects all","Aligns left","Opens Autocorrect","Adds a comment","Ctrl + A = Select All."],
+[W,"Ctrl + Spacebar in Word:","Clears character formatting","Inserts a non-breaking space","Selects a word","Opens spelling","Ctrl + Spacebar clears character formatting."],
+[W,"Ctrl + Y in Word is:","Redo","Undo","Copy","Cut","Ctrl+Z undo, Ctrl+Y redo."],
+[W,"Ctrl + Del deletes:","The next word","The previous word","The whole line","The paragraph","Ctrl + Del = next word."],
+[W,"Ctrl + Backspace deletes:","The previous word","The next word","The whole paragraph","The selected page","Ctrl + Backspace = previous word."],
+[W,"Which shortcut aligns text to the centre?","Ctrl + E","Ctrl + C","Ctrl + L","Ctrl + J","L = Left, E = Centre, R = Right, J = Justify."],
+[W,"Ctrl + J in Word:","Justifies the text","Left aligns","Right aligns","Centres","J = Justify."],
+[W,"Ctrl + M in Word applies:","Indent","Hanging indent","Hyperlink","Mail Merge","Ctrl+M = Indent; Ctrl+T = Hanging Indent."],
+[W,"Ctrl + T in Word applies:","Hanging Indent","Indent","Tab stop","Title style","Ctrl + T = hanging indent."],
+[W,"Ctrl + K in Word inserts a:","Hyperlink","Comment","Table","Header","Ctrl + K = Hyperlink."],
+[W,"Ctrl + D in Word opens the:","Font dialog","Date dialog","Delete dialog","Draw dialog","Ctrl + D = Font dialog."],
+[W,"Ctrl + Shift + > increases the:","Font size","Line spacing","Indent","Zoom","Ctrl+Shift+> / < = increase / decrease font."],
+[W,"Ctrl + Shift + L in Word applies:","Bullets","Left alignment","Line break","Lock","Ctrl+Shift+L = Bullets."],
+[W,"Which shortcut gives double line spacing?","Ctrl + 2","Ctrl + 1","Ctrl + 5","Ctrl + 0","1 = single, 2 = double, 5 = 1.5 spacing."],
+[W,"Ctrl + 5 in Word gives:","1.5 line spacing","Single spacing","Double spacing","6-pt paragraph spacing","Ctrl + 5 = 1.5 spacing."],
+[W,"Ctrl + 0 in Word adds:","6-pt paragraph spacing","Double spacing","No spacing","A zero margin","Ctrl + 0 = 6-pt paragraph spacing."],
+[W,"Ctrl + F in Word is used for:","Find","Format","File","Footnote","Ctrl + F = Find."],
+[W,"Print Preview in Word is shown using:","Ctrl + F2","Ctrl + P","F12","Shift + F12","Ctrl+F2 preview; Ctrl+P print."],
+[W,"Which key opens Help in Word?","F1","F4","F7","F12","F1 = Help."],
+[W,"F4 in Word:","Repeats the last action","Opens Save As","Starts Spell Check","Opens Help","F4 = Repeat."],
+[W,"F5 in Word opens:","Find / Replace / Go To","Spelling & Grammar","Save As","Thesaurus","F5 = Find/Replace/Go To."],
+[W,"Which key starts Spelling & Grammar?","F7","F5","F12","F4","F7 = Spelling & Grammar."],
+[W,"F12 in Word opens:","Save As","Print","Save","Help","F12 = Save As; Shift+F12 = Save."],
+[W,"Shift + F12 in Word:","Saves the document","Opens Save As","Prints","Opens Thesaurus","Shift + F12 = Save."],
+[W,"Shift + F3 in Word:","Changes case","Opens Thesaurus","Saves","Finds","Shift + F3 = Change Case."],
+[W,"Shift + F7 in Word opens the:","Thesaurus","Spell checker","Font dialog","Print dialog","Shift + F7 = Thesaurus."],
+[W,"Shift + Enter in Word inserts a:","Soft line break","Page break","Section break","Paragraph","Shift + Enter = soft line break."],
+[W,"Ctrl + Shift + 8 in Word:","Shows/hides the ¶ paragraph marks","Inserts a bullet","Adds a line","Zooms to 80%","Ctrl+Shift+8 = Show/Hide ¶."],
+[W,"Shift + Alt + D inserts the current:","Date","Time","Day","Document name","Shift+Alt+D = Date; Shift+Alt+T = Time."],
+[W,"Ctrl + Alt + 1 applies:","Heading 1","Single spacing","Page 1 view","Bullets","Ctrl+Alt+1/2/3 = Heading 1/2/3."],
+[W,"In Word, triple-clicking in a paragraph:","Selects the paragraph","Selects the word","Selects the line","Selects the document","Triple-click = paragraph; double-click = word."],
+[W,"In Word, double-clicking a word:","Selects the word","Selects the paragraph","Opens Find","Inserts a tab stop","Double-click word = select word."],
+[W,"Ctrl + Mouse Wheel in Word:","Zooms","Scrolls horizontally","Changes font size","Changes page","Ctrl + Mouse Wheel = Zoom."],
+[W,"Double-clicking after text on a line in Word sets a:","Tab stop","Bullet","Heading","Margin","Double-click after text → tab stop; blank line area → alignment."],
+
+/* ======================= MS EXCEL ======================= */
+[X,"A spreadsheet software is used to:","Store, calculate, analyse and manage data","Edit videos","Design 3D models","Browse the web","Spreadsheet = store, calculate, analyse, manage data."],
+[X,"The default new workbook name in Excel is:","Book1.xlsx","Sheet1.xlsx","Workbook1.docx","Document1.xlsx","Book1.xlsx; older format .xls."],
+[X,"The older Excel workbook file format is:",".xls",".xlsx",".xlt",".csvx","Older format: .xls."],
+[X,"Which of these is NOT a spreadsheet program?","Adobe Photoshop","Lotus 1-2-3","VisiCalc","Quattro Pro","Examples: Excel, Quattro Pro, VisiCalc, Lotus 1-2-3, Apple Numbers."],
+[X,"Which of these is an example of spreadsheet software?","Apple Numbers","Apple Safari","Apple Siri","Apple Pages (word processor)","Apple Numbers is a spreadsheet."],
+[X,"In Excel, the Formula Bar is used to:","Enter/edit data and formulas","Show the sheet name","Zoom the sheet","Change views","Formula Bar → enter/edit data & formulas."],
+[X,"The Name Box in Excel shows:","The active cell address","The workbook name","The sheet total","The formula result","Name Box = active cell address."],
+[X,"In Excel, rows are identified by ___ and columns by ___.","Numbers; Letters","Letters; Numbers","Colours; Numbers","Symbols; Letters","Row / Column → Numbers / Letters."],
+[X,"A cell is the:","Intersection of a row and column","Collection of worksheets","Name of a workbook","Row heading","Cell = row + column intersection."],
+[X,"A collection of cells is a ___, and one or more of them make up a ___.","Worksheet; Workbook","Workbook; Worksheet","Chart; Table","Range; Formula","Worksheet = collection of cells; Workbook = one or more worksheets."],
+[X,"Which of these is a valid cell address?","A1","1A","A-1","1:A","Cell address = Column + Row, e.g., A1."],
+[X,"Every Excel formula begins with:","=","@","#","$","Formula begins with =."],
+[X,"The cell that is currently selected in Excel is the:","Active cell","Home cell","Anchor sheet","Name cell","Active Cell = selected cell."],
+[X,"Which of these can a cell contain?","Numbers, text and formulas","Only numbers","Only text","Only formulas","Cell data: numbers, text, formulas."],
+[X,"Font, Alignment, Number, Styles and Cells groups are in the ___ tab.","Home","Insert","Data","Formulas","Home tab."],
+[X,"Tables, Charts, Pictures and Links are in the ___ tab.","Insert","Home","Data","Review","Insert tab."],
+[X,"Page Setup, Themes and Scale are in the ___ tab.","Page Layout","Home","Formulas","Data","Page Layout tab."],
+[X,"Functions, Auditing and Calculation are in the ___ tab.","Formulas","Data","Home","View","Formulas tab."],
+[X,"Sort, Filter and Data Tools are in the ___ tab.","Data","Formulas","Insert","View","Data tab."],
+[X,"Proofing and Comments are in the ___ tab, while Views, Zoom, Window and Macros are in the ___ tab.","Review; View","View; Review","Home; Data","Insert; Review","Review / View."],
+[X,"Which function performs addition in Excel?","SUM","COUNT","AVERAGE","MAX","SUM = addition."],
+[X,"Which function gives the mean of numbers?","AVERAGE","SUM","COUNT","MIN","AVERAGE = average."],
+[X,"COUNT in Excel counts:","Numeric cells","All cells including text","Only text cells","Only blank cells","COUNT counts numeric cells."],
+[X,"MAX / MIN return:","Highest / lowest value","Lowest / highest value","Total / average","First / last value","MAX = highest; MIN = lowest."],
+[X,"In =SUM(A1:A5), A1:A5 represents:","A range from A1 to A5","Only A1 and A5","A1 divided by A5","A text string","A1:A5 is the range A1 to A5."],
+[X,"A chart is the:","Graphical representation of data","Collection of formulas","Sheet tab","Cell border","Chart = graphical representation of data."],
+[X,"Which chart type is best for comparison across categories?","Column","Pie","Area","XY Scatter","Column: comparison."],
+[X,"A Bar chart is used for:","Horizontal comparison","Trends over time","Parts of a whole","Relationship between numbers","Bar: horizontal comparison."],
+[X,"A Line chart is best for showing:","Trends","Proportions","Horizontal comparison","Parts of a whole","Line: trends."],
+[X,"A Pie chart shows:","Proportion / parts of a whole","Trends over time","Horizontal bars","Relationship between two numbers","Pie: proportion / parts of whole."],
+[X,"An Area chart shows:","Magnitude / change over time","Parts of a pie","Cell ranges","Row totals only","Area: magnitude/change over time."],
+[X,"An XY Scatter chart shows:","Relationship between numerical values","Parts of a whole","Horizontal comparison","Text categories","XY Scatter: relationship between numerical values."],
+[X,"Which is NOT a chart component?","Formula Bar","Plot Area","Legend","Gridlines","Components: Chart Area, Plot Area, Title, Axis Title, Data Series, Gridlines, Legend, Data Label, Data Table."],
+[X,"The $ sign in a cell reference:","Fixes (anchors) the cell reference","Formats currency only","Starts a formula","Deletes the cell","$ → fixes cell reference."],
+[X,"A chart placed in an existing worksheet is a(n):","Embedded chart","Stacked chart","Master chart","Linked sheet","Embedded Chart = placed in an existing worksheet."],
+[X,"A Stacked chart shows:","Parts of a whole","Only trends","Only a single series","Cell addresses","Stacked chart: parts of a whole."],
+[X,"Ctrl + D in Excel:","Fills down","Fills right","Deletes the cell","Duplicates the sheet","Ctrl + D = Fill Down; Ctrl + R = Fill Right."],
+[X,"Ctrl + R in Excel:","Fills right","Fills down","Replaces","Refreshes","Ctrl + R = Fill Right."],
+[X,"Ctrl + F / N / O / P / S / W / Z stand respectively for:","Find / New / Open / Print / Save / Close / Undo","Format / New / Open / Paste / Save / Window / Zoom","Fill / Name / Order / Print / Sort / Wrap / Zoom","Find / Next / Output / Page / Save / Word / Undo","Standard Ctrl shortcuts."],
+[X,"F2 in Excel:","Edits the cell","Anchors reference","Saves As","Spell check","F2 = Edit Cell."],
+[X,"F4 in Excel (while editing a reference):","Fixes/anchors the reference","Edits the cell","Starts spell check","Opens Save As","F4 = Fix/Anchor reference."],
+[X,"F7 in Excel starts:","Spell check","Save As","Edit cell","Format cells","F7 = Spell Check; F12 = Save As."],
+[X,"Ctrl + Home in Excel moves to:","A1","The last cell","End of the row","Last sheet","Ctrl + Home → A1."],
+[X,"Ctrl + Arrow in Excel moves to:","The end of the data range","The next sheet","The next cell only","The top of the screen","Ctrl + Arrow → end of data range."],
+[X,"Shift + Arrow in Excel:","Selects a range","Moves to data end","Switches sheet","Hides rows","Shift + Arrow → select range."],
+[X,"Ctrl + Shift + Arrow in Excel:","Selects a continuous range","Selects a single cell","Moves between sheets","Inserts cells","Ctrl+Shift+Arrow selects a continuous range."],
+[X,"Alt + Enter in Excel:","Inserts a new line within a cell","Moves to next sheet","Opens Format Cells","Enters AutoSum","Alt + Enter = new line in cell."],
+[X,"Ctrl + Page Up/Down in Excel:","Switches sheets","Scrolls one screen","Hides rows","Zooms","Ctrl+PgUp/PgDn = switch sheets."],
+[X,"Ctrl + 9 in Excel:","Hides the row","Hides the column","Unhides the row","Inserts a row","Ctrl + 9 = Hide Row; Ctrl + 0 = Hide Column."],
+[X,"Ctrl + 0 in Excel:","Hides the column","Hides the row","Unhides the column","Selects column","Ctrl + 0 = Hide Column."],
+[X,"Shift + Ctrl + 9 / 0 in Excel:","Unhides row / column","Hides row / column","Deletes row / column","Inserts row / column","Shift+Ctrl+9/0 = Unhide row/column."],
+[X,"Shift + Space in Excel selects:","A row","A column","The sheet","A cell range","Shift+Space = row; Ctrl+Space = column."],
+[X,"Ctrl + Space in Excel selects:","A column","A row","The workbook","A chart","Ctrl + Space = column."],
+[X,"Ctrl + - (minus) in Excel:","Deletes cells","Inserts cells","Hides cells","Zooms out","Ctrl + - = Delete cells; Ctrl+Shift++ = Insert cells."],
+[X,"Ctrl + Shift + + in Excel:","Inserts cells","Deletes cells","Zooms in","Adds a sheet","Ctrl + Shift + + = Insert cells."],
+[X,"Ctrl + 1 in Excel opens:","Format Cells","Find","Help","Name Manager","Ctrl + 1 = Format Cells."],
+[X,"Alt + = in Excel inserts:","AutoSum","Average","A new sheet","A chart","Alt + = = AutoSum."],
+[X,"Ctrl + Shift + % / $ / # applies respectively:","Percentage / Currency / Date","Currency / Percentage / Date","Date / Currency / Percentage","Percentage / Date / Currency","Standard number format shortcuts."],
+[X,"Alt + H + 0 / 9 in Excel:","Increase / Decrease decimal","Hide / Unhide","Insert / Delete","Bold / Italic","Alt+H+0/9 → increase/decrease decimal."],
+[X,"Alt + H + O + R is used to:","Rename sheet","Autofit column width","Hide a row","Insert a row","Alt+H+O+R = Rename Sheet."],
+[X,"Alt + O + C + A is used to:","AutoFit column width","Rename sheet","Create a chart","Insert a column","Alt+O+C+A = AutoFit Column Width."],
+
+/* ======================= MS POWERPOINT ======================= */
+[P,"MS PowerPoint is a:","Presentation graphics software","Spreadsheet software","Database software","Word processor","PowerPoint = presentation graphics software."],
+[P,"PowerPoint can be used to create:","Slides with text, pictures, charts, audio, video and animations","Only text documents","Only spreadsheets","Only databases","Slides, pictures, charts, audio, video, animations & effects."],
+[P,"The modern PowerPoint file format is:",".pptx",".ppt",".pps",".pptm (macro only)","Older .ppt; modern .pptx."],
+[P,"Older PowerPoint file format is:",".ppt",".pptx",".potx",".pdf","Older: .ppt."],
+[P,"The default name of a new presentation is:","Presentation1","Slide1","Document1","Book1","New presentation: Presentation1."],
+[P,"The main working area in PowerPoint is the:","Slide","Notes Section","Outline","Status Bar","Slide = main working area."],
+[P,"Slide thumbnails and their arrangement appear in the:","Slide Pane / Slides tab","Notes Section","Title Bar","Status Bar","Slide Pane/Slides tab."],
+[P,"Outline View shows:","The text outline","Speaker notes","Slide animation","Master design","Outline View = text outline."],
+[P,"The Notes Section is used for:","Speaker notes","Slide thumbnails","Animations","Hyperlinks","Notes Section → speaker notes."],
+[P,"Normal View in PowerPoint is used to:","Create/edit slides","Arrange slide order","Run a full-screen show","Design masters","Normal = create/edit; Slide Sorter = arrange."],
+[P,"Slide Sorter view is used to:","Arrange slide order","Edit the text outline","Show speaker notes","Zoom to 400%","Slide Sorter → arrange slide order."],
+[P,"Slide Show view displays the presentation:","Full screen","In thumbnails","As an outline","As notes","Slide Show = full-screen presentation."],
+[P,"Which is NOT a type of Master in PowerPoint?","Chart Master","Slide Master","Handout Master","Notes Master","Masters: Slide, Handout, Notes."],
+[P,"Master View is used to set:","Common design/layout","Individual slide text","Speaker notes","Slide numbers only","Master View = common design/layout."],
+[P,"Master controls include:","Background, fonts, effects & placeholders","Only the slide title","Only audio","Only animations","Master controls: background, fonts, effects, placeholders."],
+[P,"A Trigger in PowerPoint is:","A clicked object that performs an action","A slide transition sound","A speaker note","A font style","Trigger: clicked object performs an action."],
+[P,"The maximum zoom in PowerPoint is:","400%","200%","300%","500%","Zoom: up to 400%."],
+[P,"Which multimedia can be inserted into PowerPoint?","Images, audio and video","Only images","Only text","Only tables","Multimedia: images, audio, video."],
+[P,"Ctrl + M in PowerPoint:","Inserts a new slide","Duplicates the slide","Opens the master","Mutes audio","Ctrl + M = New Slide."],
+[P,"Ctrl + D in PowerPoint:","Duplicates the object/slide","Deletes the slide","Opens Font dialog","Adds a table","Ctrl + D = Duplicate object/slide."],
+[P,"Ctrl + K in PowerPoint inserts a:","Hyperlink","Slide","Picture","Chart","Ctrl + K = Hyperlink."],
+[P,"Ctrl + A in PowerPoint:","Selects all","Aligns","Adds animation","Opens Alt text","Ctrl + A = Select All."],
+[P,"Tab / Shift + Tab in PowerPoint moves to the:","Next / Previous object","Next / Previous slide","Next / Previous view","Next / Previous font","Tab / Shift+Tab = next/previous object."],
+[P,"Ctrl + Shift + F in PowerPoint opens the:","Font dialog","Find dialog","File menu","Format painter","Ctrl + Shift + F = Font dialog."],
+[P,"Shift + F5 in PowerPoint starts the slide show:","From the current slide","From the beginning","From the last slide","In presenter mode only","Shift + F5 = start from current slide."],
+[P,"During a slide show, pressing B gives a:","Black screen","White screen","Blue screen","Blank slide","B = Black; W = White."],
+[P,"During a slide show, pressing W gives a:","White screen","Black screen","Next slide","Zoom","W = White screen."],
+[P,"Esc during a slide show:","Exits the show","Pauses the show","Starts the show","Opens notes","Esc = exit slide show."],
+[P,"Ctrl + F1 in PowerPoint:","Shows/hides the Ribbon","Opens Help","Starts the show","Opens Slide Master","Ctrl + F1 = Show/Hide Ribbon."],
+[P,"Alt + W + N switches to:","Normal View","Slide Master","Slide Show","Outline only","Alt+W+N = Normal View."],
+[P,"Alt + W + M opens:","Slide Master","Normal View","Notes","Slide Sorter","Alt+W+M = Slide Master."],
+[P,"Ctrl + Mouse Wheel in PowerPoint:","Zooms","Changes slides","Changes font size","Scrolls horizontally","Ctrl + Mouse Wheel = Zoom."],
+
+/* ======================= AUTOCAD ======================= */
+[A,"CAD stands for:","Computer-Aided Design","Computer-Assisted Drawing","Central Automated Design","Computed Area Drafting","CAD = Computer-Aided Design."],
+[A,"AutoCAD is used for accurate:","2D drawings & 3D models","Spreadsheets","Presentations","Word documents","AutoCAD → accurate 2D drawings & 3D models."],
+[A,"Which is NOT a typical use of AutoCAD per the notes?","Video editing","Civil Engineering","Surveying","Architecture","Uses: Civil Eng, Surveying, Architecture, Mapping."],
+[A,"Which of these is an example of AutoCAD output?","Survey / Cadastral map","Email","Slide deck","Word letter","Examples: house plan, road layout, survey/cadastral map."],
+[A,"In AutoCAD, the Application Menu contains:","New, Open, Save, Print, Export","Only drawing tools","Only layers","Only dimension tools","Application Menu → New, Open, Save, Print, Export."],
+[A,"The Quick Access toolbar has:","Save, Undo, Redo, Open","Layers only","Dimensions only","Hatch only","Quick Access → Save, Undo, Redo, Open."],
+[A,"In AutoCAD, the Command Line is used to:","Type commands","Display the map","Store layers","Set the UCS only","Command Line → type commands."],
+[A,"UCS in AutoCAD defines the:","X, Y, Z directions","Units","Layers","Limits","UCS → X, Y, Z directions."],
+[A,"UCS stands for:","User Coordinate System","Universal Cadastral System","Unit Control Setting","User Command Sequence","UCS = User Coordinate System."],
+[A,"Absolute coordinates in AutoCAD are entered as:","X,Y","@X,Y","@Distance<Angle","<Angle","Absolute: X,Y from origin (0,0)."],
+[A,"Relative coordinates are entered as:","@X,Y","X,Y","@Distance<Angle","Y,X","Relative: @X,Y from previous point."],
+[A,"Polar coordinates are entered as:","@Distance<Angle","@X,Y","X,Y","#Angle,Distance","Polar: @Distance<Angle."],
+[A,"Absolute coordinates are measured from the:","Origin (0,0)","Previous point","Last click","Drawing limits corner","Absolute → from origin."],
+[A,"Relative coordinates are measured from the:","Previous point","Origin (0,0)","UCS icon","Drawing limits","Relative → from previous point."],
+[A,"The UNITS (UN) command sets:","mm, metre, inch","Drawing area limits","Layer colours","Text height","UNITS → mm, metre, inch."],
+[A,"The LIMITS command sets:","Drawing area limits","Units","Snap modes","Layer names","LIMITS → drawing area."],
+[A,"The correct sequence for Zoom All is:","Z → Enter → A → Enter","A → Enter → Z → Enter","Z → Enter → E → Enter","ZA → Esc","Zoom All: Z, Enter, A, Enter."],
+[A,"F3 toggles:","OSNAP","Grid","Ortho","Polar Tracking","F3 = OSNAP."],
+[A,"F7 toggles:","Grid","OSNAP","Ortho","Dynamic Input","F7 = Grid."],
+[A,"F8 toggles:","Ortho","Grid","Polar Tracking","Object Snap Tracking","F8 = Ortho."],
+[A,"F10 toggles:","Polar Tracking","Ortho","OSNAP","Grid","F10 = Polar Tracking."],
+[A,"F11 toggles:","Object Snap Tracking","Dynamic Input","Grid","OSNAP","F11 = Object Snap Tracking."],
+[A,"F12 toggles:","Dynamic Input","Object Snap Tracking","Grid","Ortho","F12 = Dynamic Input."],
+[A,"Which is NOT an OSNAP point listed in the notes?","Perpendicular tangent loop","Endpoint","Midpoint","Intersection","OSNAP: Endpoint, Midpoint, Centre, Intersection."],
+[A,"The command L draws a:","Line","Layer","Leader","Limit","L = Line."],
+[A,"The command PL draws a:","Polyline","Polygon","Plane","Point list","PL = Polyline."],
+[A,"The command C draws a:","Circle","Copy","Chamfer","Curve","C = Circle."],
+[A,"The command REC draws a:","Rectangle","Redo","Regenerate","Revolve","REC = Rectangle."],
+[A,"The command A draws an:","Arc","Array","Area","Align","A = Arc."],
+[A,"The command POL draws a:","Polygon","Polyline","Pan","Point","POL = Polygon."],
+[A,"The command EL draws an:","Ellipse","Erase","Extend","Explode","EL = Ellipse."],
+[A,"The command H creates a:","Hatch","Hide","Help","Hexagon","H = Hatch."],
+[A,"The command SPL draws a:","Spline","Split","Spiral","Spelling","SPL = Spline."],
+[A,"The command M is used to:","Move","Mirror","Match","Measure","M = Move."],
+[A,"The commands CO / CP are used to:","Copy","Close","Chamfer","Change","CO/CP = Copy."],
+[A,"The command RO is used to:","Rotate","Redo","Remove","Rectangle","RO = Rotate."],
+[A,"The command TR is used to:","Trim","Translate","Track","Text","TR = Trim."],
+[A,"The command EX is used to:","Extend","Explode","Extrude","Export","EX = Extend; X = Explode."],
+[A,"The command O is used to:","Offset","Open","Orbit","Origin","O = Offset."],
+[A,"The command F is used to:","Fillet","Fit","Freeze","Fence","F = Fillet."],
+[A,"The command CHA is used to:","Chamfer","Change","Check","Chain","CHA = Chamfer."],
+[A,"The command MI is used to:","Mirror","Move","Mask","Miter","MI = Mirror."],
+[A,"The command SC is used to:","Scale","Select","Stretch","Split","SC = Scale."],
+[A,"The command X is used to:","Explode","Extend","Extrude","Exit","X = Explode."],
+[A,"The commands T / MT are used for:","Text","Trim","Table","Toolbar","T/MT = Text."],
+[A,"The command D opens the:","Dimension Style","Distance tool","Draw order","Delete tool","D = Dimension Style."],
+[A,"The command DLI creates a:","Linear dimension","Aligned dimension","Angular dimension","Radius dimension","DLI = Linear Dimension."],
+[A,"The command DAL creates an:","Aligned dimension","Angular dimension","Linear dimension","Area dimension","DAL = Aligned Dimension."],
+[A,"The command DAN creates an:","Angular dimension","Aligned dimension","Arc length","Area label","DAN = Angular Dimension."],
+[A,"The command DRA creates a:","Radius dimension","Diameter dimension","Angular dimension","Linear dimension","DRA = Radius."],
+[A,"The command LE creates a:","Leader","Line","Layer","Length","LE = Leader."],
+[A,"The command LA opens:","Layer","Line","Limits","Linetype scale","LA = Layer."],
+[A,"The command MA is used for:","Match Properties","Move All","Mirror All","Measure Area","MA = Match Properties."],
+[A,"The commands PR / CH open:","Properties","Print","Purge","Pan","PR/CH = Properties."],
+[A,"The command B creates a:","Block","Boundary","Break","Box","B = Block."],
+[A,"The command I is used to:","Insert (a block)","Isolate","Intersect","Invert","I = Insert."],
+[A,"The command OS opens:","Object Snap settings","Options","Orbit","Offset","OS = Object Snap."],
+[A,"The command P is used to:","Pan","Print","Polygon","Purge","P = Pan; Z = Zoom."],
+[A,"The command OP opens:","Options","Offset","Object Properties","Orbit","OP = Options."],
+[A,"The command PU is used to:","Purge unused items","Pull faces","Print unit","Pan up","PU = Purge unused items."],
+[A,"The command RE is used to:","Regenerate / refresh","Rotate","Remove","Rename","RE = Regenerate."],
+
+/* ======================= 2D DRAFTING & 3D ======================= */
+[D,"The LINE command supports which coordinate types?","Absolute, Relative and Polar","Only Absolute","Only Relative","Only Polar","LINE supports all three."],
+[D,"A POLYGON with 3 sides is a(n):","Equilateral triangle","Square","Right-angled triangle","Isosceles trapezoid","POLYGON: 3 sides = equilateral triangle."],
+[D,"POLYGON creates:","Regular polygons","Irregular polygons","Only squares","Only circles","POLYGON → regular polygons."],
+[D,"RECTANG creates a rectangle using:","Length × Width","Radius","Three points only","Diameter","RECTANG → Length × Width."],
+[D,"TEXT / DTEXT is used for:","Single-line text such as plot/survey numbers and labels","Multiline notes","Dimension style","Layer creation","TEXT/DTEXT → single-line."],
+[D,"MTEXT is used for:","Multiline/paragraph text, notes & instructions","Single-line labels","Hatching","Drawing arcs","MTEXT → multiline."],
+[D,"Which command controls Font, Height, Width Factor, Oblique Angle and Annotation Scale of text?","STYLE","MTEXT","DTEXT","HATCH","STYLE controls text properties."],
+[D,"HATCH is used to:","Fill closed areas with patterns/material symbols","Draw lines","Trim objects","Mirror objects","HATCH fills closed areas."],
+[D,"For a HATCH to work properly, the boundary:","Must be completely closed","Must be a circle","Must be 3D","Can have gaps","Boundary must be completely closed."],
+[D,"An Associative Hatch:","Updates automatically when the boundary changes","Never changes","Is always 3D","Can be used only on circles","Associative → updates with boundary."],
+[D,"Hatch Scale controls:","Line spacing of the pattern","Boundary shape","Layer colour","Text height","Hatch Scale → line spacing."],
+[D,"A small hatch scale produces a ___ pattern; a large scale produces a ___ pattern.","Dense; Sparse","Sparse; Dense","Thick; Thin","Dark; Light","Small → dense; large → sparse."],
+[D,"The MIRROR command creates:","A symmetrical copy about an axis","A scaled copy","A rotated copy","An offset copy","MIRROR → symmetrical copy."],
+[D,"The correct MIRROR steps are:","Select object → 1st mirror point → 2nd mirror point → Erase source?","Select 1st point → Select object → Erase","Select two objects → Confirm","Type radius → Enter","Steps as per notes."],
+[D,"In MIRROR, answering 'Yes' to 'Erase source objects?':","Deletes the original","Keeps the original","Rotates the original","Copies twice","Yes → original deleted."],
+[D,"In MIRROR, answering 'No' to 'Erase source objects?':","Retains the original","Deletes the original","Cancels the command","Scales the mirror","No → original retained."],
+[D,"3D Modeling converts:","2D profiles into 3D solid models","3D solids into 2D","Text into hatch","Lines into text","3D modeling → 2D profiles → 3D solids."],
+[D,"In 3D work, UCS is useful for:","Inclined/vertical surfaces","Printing only","Text styles","Layer names","UCS controls X-Y-Z orientation."],
+[D,"The visual style showing edges only is:","2D Wireframe","Conceptual","Realistic","Shaded with edges","2D Wireframe → edges only."],
+[D,"The visual style giving a smooth shaded model is:","Conceptual","2D Wireframe","Realistic","Hidden","Conceptual → smooth shaded model."],
+[D,"The visual style with materials, textures and lighting is:","Realistic","Conceptual","2D Wireframe","Sketchy","Realistic → materials + textures + lighting."],
+[D,"EXTRUDE converts a:","Closed 2D profile into a 3D solid","3D solid into 2D","Open line into text","Hatch into a block","EXTRUDE → closed 2D profile → 3D solid."],
+[D,"PRESSPULL is used to:","Push/pull a face to create, extend or cut solids","Mirror a solid","Combine solids","Export DXF","PRESSPULL → push/pull face."],
+[D,"UNION:","Combines solids","Removes one solid from another","Keeps common volume","Mirrors a solid","UNION = combine."],
+[D,"SUBTRACT:","Removes one solid from another","Combines solids","Keeps the common volume","Exports a DXF","SUBTRACT = removes one solid from another."],
+[D,"INTERSECT:","Keeps the common volume","Combines solids","Removes one solid","Creates a hatch","INTERSECT → common volume."],
+[D,"MIRROR3D mirrors an object across:","XY/YZ/ZX plane","Only the X axis","Only the origin","Only a line","MIRROR3D → XY/YZ/ZX plane."],
+[D,"DXF stands for:","Drawing Exchange Format","Digital Exchange File","Design Extension Format","Drawing Export Frame","DXF = Drawing Exchange Format."],
+[D,"DXF is a ___ drawing-data exchange format developed by Autodesk.","Text-based","Image-only","Audio-based","Encrypted binary only","DXF is a text-based exchange format."],
+[D,"In a DXF file, units, limits, coordinates and settings are stored in the:","HEADER","TABLES","BLOCKS","ENTITIES","HEADER → units, limits, coordinates & settings."],
+[D,"In a DXF file, layers, linetypes and text/dimension styles are stored in:","TABLES","HEADER","BLOCKS","ENTITIES","TABLES → layers, linetypes, styles."],
+[D,"In a DXF file, reusable components are stored in:","BLOCKS","TABLES","HEADER","ENTITIES","BLOCKS → reusable components."],
+[D,"In a DXF file, the actual objects (Line, Polyline, Circle, Text, Hatch) are in:","ENTITIES","HEADER","TABLES","BLOCKS","ENTITIES → actual objects."],
+[D,"DXFIN is used to:","Import a DXF into AutoCAD","Export a DXF","Draw a line","Close polygon","DXFIN = import."],
+[D,"DXFOUT is used to:","Export an AutoCAD drawing as DXF","Import a DXF","Delete DXF","Join lines","DXFOUT = export."],
+[D,"OVERKILL is used in cadastral cleanup to:","Remove duplicates/overlaps and merge collinear lines","Create 3D solids","Add hatch","Insert blocks","OVERKILL → removes duplicates/overlaps."],
+[D,"PEDIT → Join:","Combines lines into a polyline","Closes the polyline","Explodes polylines","Offsets lines","PEDIT Join → lines to polyline."],
+[D,"PEDIT → Close:","Closes a polyline to make a closed polygon","Joins separate lines","Deletes a vertex","Rotates the polyline","PEDIT Close → closed polygon."],
+[D,"A closed polygon is essential for:","Land/property boundaries","Text styles","Audio","Chart creation","Closed polygon → land/property boundaries."],
+[D,"Label alignment in cadastral data refers to proper placement of:","Survey No., Plot No., Bearing, Distance & Area","Only colours","Only layer names","Only hatch patterns","Label alignment → Survey/Plot No., Bearing, Distance, Area."],
+
+/* ======================= GIS & QGIS ======================= */
+[G,"GIS is used to:","Capture, store, edit, analyse, manage & display spatial data","Edit videos","Create spreadsheets","Write documents","GIS definition."],
+[G,"The GIS architecture is:","Client → Server → Spatial Database","Database → Client → Server","Server → Client → Database","Database → Server only","Architecture: Client → Server → Spatial DB."],
+[G,"Communication between GIS client and server is via:","HTTP","FTP only","SMTP","Bluetooth","Communication → HTTP."],
+[G,"The vector data model represents data as:","Point, Line, Polygon","Grid/pixels","Only images","Only text","Vector = points, lines, polygons."],
+[G,"The raster data model represents data as:","Grid/pixels","Point, Line, Polygon","Only roads","Only tables","Raster = grid/pixels."],
+[G,"Which is a typical vector dataset?","Roads, buildings, parcels","Satellite image","DEM","Rainfall grid","Vector examples: roads, buildings, parcels."],
+[G,"Which is a typical raster dataset?","Satellite image, DEM, rainfall","Parcels","Roads","Building footprints","Raster: satellite image, DEM, rainfall."],
+[G,"Easy way to remember: Vector = ___ , Raster = ___","Features; Pixels","Pixels; Features","Images; Lines","Grids; Points","Vector = Features | Raster = Pixels."],
+[G,"QGIS is a(n):","Open-source desktop GIS","Proprietary web GIS","Spreadsheet","Database server","QGIS → open-source desktop GIS."],
+[G,"QGIS runs on:","Windows, macOS and Linux","Windows only","Linux only","macOS only","Cross-platform."],
+[G,"LTR in QGIS stands for:","Long Term Release (stable)","Latest Test Release","Layer Transfer Rate","Local Tile Renderer","LTR → stable long-term release."],
+[G,"Plugins in QGIS:","Extend functionality","Delete layers","Convert OS","Print only","Plugins extend functionality."],
+[G,"Which organisation supports the open-source geospatial ecosystem including QGIS?","OSGeo","OGC only","Esri","Autodesk","OSGeo supports open-source geospatial ecosystem."],
+[G,"The QGIS Browser Panel gives access to:","Files, databases and web services","Only layer order","Only map canvas","Only coordinates","Browser Panel."],
+[G,"The QGIS Layers Panel controls:","Layer order, visibility and transparency","Coordinates","Plugins only","Printing only","Layers Panel."],
+[G,"The QGIS Map Canvas:","Displays the map","Lists layers","Stores plugins","Shows menus","Map Canvas = displays map."],
+[G,"The QGIS Status Bar shows:","Coordinates, scale, CRS etc.","Layer styles","Attribute table","Plugin list","Status Bar → coordinates, scale, CRS."],
+[G,"To load a vector layer in QGIS, use:","Layer → Add Vector Layer","Layer → Add Raster Layer","Plugins → Add vector","Edit → Add layer","Vector → Layer → Add Vector Layer."],
+[G,"To load a raster layer in QGIS, use:","Layer → Add Raster Layer","Layer → Add Vector Layer","Project → Raster","View → Raster","Raster → Layer → Add Raster Layer."],
+[G,"Which is NOT a common GIS data format listed?","DOCX","SHP","GeoJSON","GeoTIFF","Formats: SHP, GeoPackage, GeoJSON, GeoTIFF, DEM."],
+[G,"In an attribute table, a row represents a ___ and a column an ___.","Feature; Attribute","Attribute; Feature","Layer; Map","Field; Layer","Row = feature; Column = attribute."],
+[G,"Which is NOT a field type in the notes?","Blob/Raster","String","Integer","Date","Field types: String, Integer, Double, Date."],
+[G,"The Field Calculator is used to:","Create/update attributes","Draw features","Change CRS","Print maps","Field Calculator → create/update attributes."],
+[G,"A Table Join in QGIS joins tables using a:","Common key","Random ID","Layer colour","CRS","Table Join → common key."],
+[G,"Select by Attribute selects features based on:","Data/value","Spatial relationship","Colour","Layer order","Attribute → data/value."],
+[G,"Select by Location selects features based on:","Spatial relationship","Field value","Layer name","Symbol","Location → spatial relationship."],
+[G,"Easy memory: Attribute = ___, Location = ___","What; Where","Where; What","When; Why","Who; How","Attribute = What | Location = Where."],
+[G,"Digitizing converts:","Maps/coordinates into GIS features","GIS features into paper","Raster into text","Tables into charts","Digitizing → maps/coordinates → GIS features."],
+[G,"Which is NOT a digitizing/editing operation?","Compress to ZIP","Add","Split","Reshape","Add, Delete, Move, Split, Reshape."],
+[G,"Snapping in QGIS:","Connects vertices/segments and avoids gaps & overlaps","Deletes layers","Changes colour","Prints maps","Snapping → connects, avoids gaps/overlaps."],
+[G,"Single Symbol styling uses:","The same symbol for all features","Different symbols by category","Classes of numbers","Natural breaks","Single Symbol → same symbol."],
+[G,"Categorized symbology styles features by:","Categories","Numerical ranges only","One symbol","Natural breaks only","Categorized → categories."],
+[G,"Graduated symbology is used for:","Numerical values","Text categories","One symbol","Labels only","Graduated → numerical values."],
+[G,"Equal Interval classification gives:","Equal ranges","Equal number of features","Natural breaks","Random classes","Equal Interval → equal ranges."],
+[G,"Quantile classification gives:","Equal number of features in each class","Equal ranges","Natural breaks","Random classes","Quantile → equal number of features."],
+[G,"Jenks classification uses:","Natural breaks","Equal ranges","Equal counts","Fixed colours","Jenks → natural breaks."],
+[G,"A QGIS Map Layout is used for:","Printing/PDF/publication","Digitizing","Joins","Field calculations","Layout → printing, PDF, publication."],
+[G,"Key items of a map layout include:","Legend, Scale Bar, Grid, Map","Plugins, Joins, Fields","Snapping only","Topology only","Key items → Legend, Scale Bar, Grid, Map."],
+[G,"OTF projection (On-the-Fly) in QGIS:","Reprojects layers with different CRS for display","Permanently changes original data","Deletes CRS","Converts raster to vector","OTF → reprojects for display; usually doesn't alter original data."],
+[G,"OTF projection usually:","Does not alter the original data","Overwrites source files","Deletes layers","Converts to DXF","OTF doesn't alter original data."],
+[G,"GCS uses:","Latitude + Longitude + Degrees","2D grid + metres","Pixels only","Feet only","GCS → lat, long, degrees."],
+[G,"PCS uses:","2D grid + metres/feet; useful for measurement","Latitude/longitude degrees","Pixels","Colours","PCS → 2D grid + metres/feet."],
+[G,"WGS 84 is a common:","Global geographic reference system","Local projected system for India only","Raster format","Plugin","WGS 84 → global geographic reference system."],
+[G,"UTM divides the world into:","60 zones of 6° each","30 zones of 12° each","24 zones of 15° each","36 zones of 10° each","UTM → 60 zones × 6°."],
+[G,"An incorrect CRS can cause:","Position/distance/spatial errors","Faster printing","More layers","Better snapping","Incorrect CRS → position/distance errors."],
+[G,"QuickOSM plugin is used to:","Download OSM data","Classify satellite images","Join tables","Print maps","QuickOSM → download OSM data."],
+[G,"The SCP plugin is used for:","Remote sensing & satellite image classification","Downloading OSM data","Digitizing","Topology","SCP → remote sensing & image classification."],
+[G,"COGO stands for:","Coordinate Geometry","Cadastral Ground Output","Computed Geo Object","Common GIS Operation","COGO = Coordinate Geometry."],
+[G,"COGO is used in:","Surveying & parcel mapping","Video editing","Word processing","Audio mixing","COGO for surveying & parcel mapping."],
+[G,"COGO uses:","Angles, Distances, Bearings, Coordinates","Colours, Fonts, Sizes","Pixels, DPI","Passwords","COGO → angles, distances, bearings, coordinates."],
+[G,"Cadastral mapping is the mapping of:","Land parcels & boundaries","Rainfall","Satellite colours","Audio","Cadastral → parcels & boundaries."],
+[G,"Cadastral maps are used for:","Taxation, legal purposes, land administration","Entertainment","Weather","Music","Uses → taxation, legal, land administration."],
+[G,"Which is NOT a key cadastral topology rule in the notes?","Must be Rotated","Must Not Overlap","Must Not Have Gaps","Must Be Covered By","Rules: Must Not Overlap, Must Not Have Gaps, Must Be Covered By."],
+[G,"The Topology Checker finds:","Spatial/topological errors","Plugin updates","Colour mismatches","Missing fonts","Topology Checker → topological errors."],
+
+/* ======================= OGC & POSTGIS ======================= */
+[O,"OGC stands for:","Open Geospatial Consortium","Open GIS Cadastre","Online Geo Connect","Official Geodata Council","OGC = Open Geospatial Consortium."],
+[O,"WMS delivers:","Map images","Vector features with attributes","Raw raster data","Web editing","WMS = Map Image."],
+[O,"WFS delivers:","Vector features + attributes","Map images","Raw raster/pixel data","Only styles","WFS = Vector features."],
+[O,"WFS-T provides:","Web-based vector editing (transactions)","Raster download","Map images","Tile caching","WFS-T = web-based vector editing."],
+[O,"WCS provides:","Raw raster/pixel data","Map images","Vector features","Editing","WCS = Raster."],
+[O,"Memory aid: WMS = ___, WFS = ___, WCS = ___","Image; Vector; Raster","Vector; Image; Raster","Raster; Image; Vector","Image; Raster; Vector","WMS = Image | WFS = Vector | WCS = Raster."],
+[O,"GeoServer is:","Java-based; publishes/manages geospatial data","C-based lightweight map server","A desktop GIS","A spreadsheet","GeoServer → Java-based."],
+[O,"MapServer is:","Lightweight, efficient, C-based web mapping","Java-based","A desktop GIS","A spatial database","MapServer → lightweight, C-based."],
+[O,"Both GeoServer and MapServer support:","Web GIS / OGC services","Only desktop GIS","Only DXF","Only printing","Both support web GIS/OGC services."],
+[O,"PostGIS is:","PostgreSQL + a spatial extension","MySQL + GIS","Oracle + Java","A desktop GIS","PostGIS = PostgreSQL + spatial extension."],
+[O,"PostGIS is used to:","Store, index, query and analyse geographic data","Draw maps only on paper","Edit videos","Send email","PostGIS stores, indexes, queries, analyses geographic data."],
+[O,"In PostGIS, the GEOMETRY type is:","Flat 2D (X,Y), Euclidean, faster, for local/projected data","Curved Earth, geodesic, slower","Raster only","Text only","Geometry = flat + fast."],
+[O,"In PostGIS, the GEOGRAPHY type is:","Curved Earth (lat/long), geodesic, more accurate, global data","Flat 2D, Euclidean","Pixel grid","Only for local data","Geography = Earth + accurate."],
+[O,"Memory: Geometry = ___ ; Geography = ___","Flat + Fast; Earth + Accurate","Earth + Accurate; Flat + Fast","Curved + Fast; Flat + Accurate","Raster + Fast; Vector + Slow","As per notes."],
+[O,"GiST stands for:","Generalized Search Tree","Geographic Index Search Table","Geo Indexed Spatial Tree","Global Spatial Index Type","GiST = Generalized Search Tree."],
+[O,"R-Tree is a:","Spatial indexing structure","Raster format","Map style","Web protocol","R-Tree → spatial indexing structure."],
+[O,"MBR stands for:","Minimum Bounding Rectangle","Maximum Boundary Region","Map Base Raster","Minimum Buffer Radius","MBR = Minimum Bounding Rectangle."],
+[O,"The spatial indexing chain for fast search is:","GiST → R-Tree → MBR → Fast Search","MBR → GiST → Fast → R-Tree","R-Tree → SQL → GiST","B-Tree → MBR → GiST","Chain from notes."],
+[O,"ST_GeomFromText() converts:","WKT to geometry","Geometry to WKT","CRS to SRID","Area to length","ST_GeomFromText → WKT → Geometry."],
+[O,"ST_Contains() is used to:","Check containment","Create buffers","Calculate area","Transform CRS","ST_Contains → containment."],
+[O,"ST_Buffer() is used to:","Create a buffer","Check containment","Calculate area","Convert WKT","ST_Buffer → buffer."],
+[O,"ST_Intersection() returns:","The common/intersection area","The union","Total area","CRS","ST_Intersection → common area."],
+[O,"ST_Area() is used for:","Area calculation","Buffer creation","CRS conversion","Containment","ST_Area → area."],
+[O,"ST_Transform() is used for:","CRS/SRID conversion","Area calculation","Buffer","Containment","ST_Transform → CRS/SRID conversion."],
+[O,"WKT stands for:","Well-Known Text","Web Key Table","World Knowledge Token","Wide Kernel Type","WKT = Well-Known Text."],
+[O,"SRID stands for:","Spatial Reference System Identifier","Spatial Raster ID","Server Relation Index Data","Standard Region ID","SRID = Spatial Reference System Identifier."],
+[O,"Which of these is a valid WKT point for Bengaluru (lon, lat)?","POINT (77.59 12.97)","POINT [77.59, 12.97]","(77.59 12.97) POINT","POINT: 77.59/12.97","WKT example: POINT (77.59 12.97)."],
+[O,"Cartesian distance is for ___ data and is ___.","Flat/projected; Fast (Euclidean)","Curved Earth; Accurate","Raster; Slow","Text; Fast","Cartesian → flat/projected → Euclidean → fast."],
+[O,"Geodesic distance uses:","Curved Earth (ellipsoid / WGS84); accurate","Flat plane; fast","Pixels","Text strings","Geodesic → curved Earth → accurate."],
+[O,"The MapServer configuration file has the extension:",".map",".xml",".sld",".cfg","Mapfile (.map)."],
+[O,"SLD stands for:","Styled Layer Descriptor","Spatial Layer Data","Standard Layer Definition","Simple Link Data","SLD = Styled Layer Descriptor (map styling)."],
+[O,"YSLD is a:","YAML-based map styling format","XML schema","SQL function","Raster format","YSLD → YAML-based styling."],
+
+/* ======================= SDLC & LAND RECORDS ======================= */
+[L,"The SDLC sequence is:","Plan → Design → Develop → Test → Deploy → Maintain","Design → Plan → Test → Develop → Deploy","Develop → Plan → Deploy → Test","Plan → Develop → Design → Maintain → Test","SDLC order."],
+[L,"Requirement Analysis in SDLC identifies needs and produces the:","SRS","ERD","UAT report","Hash","Requirement Analysis → SRS."],
+[L,"SRS stands for:","Software Requirement Specification","System Report Summary","Secure Request Syntax","Standard Release Schedule","SRS = Software Requirement Specification."],
+[L,"System Design in SDLC covers:","Architecture, DB, UML, ERD, Security","Only coding","Only testing","Only deployment","System Design → architecture, DB, UML, ERD, security."],
+[L,"Development phase involves:","Coding (Java, APIs, DB)","Writing the SRS","UAT","Backups only","Development → coding."],
+[L,"The correct order of testing levels is:","Unit → Integration → System → UAT","UAT → System → Integration → Unit","System → Unit → UAT → Integration","Integration → Unit → UAT → System","Testing order."],
+[L,"UAT stands for:","User Acceptance Testing","Unit Application Test","Unified API Testing","User Authentication Token","UAT = User Acceptance Testing."],
+[L,"The deployment path is:","Development → Staging → Production","Production → Staging → Development","Staging → Development → Production","Development → Production → Staging","Deployment order."],
+[L,"Maintenance includes:","Bug fixes, updates, backup, optimization","Only requirement gathering","Only coding","Only UML","Maintenance phase."],
+[L,"Which is TRUE about SDLC?","It continues after deployment through maintenance","It ends at deployment","It ends at testing","It ends at design","SDLC continues through maintenance."],
+[L,"The legacy land-records migration flow is:","Legacy Data → Staging → ETL → Validate → Load → Test → Integrity Check → Production","Legacy → Production → ETL → Staging","ETL → Legacy → Test → Staging","Staging → Legacy → Load → ETL","Migration flow."],
+[L,"ETL stands for:","Extract → Transform → Load","Evaluate → Test → Launch","Encrypt → Transfer → Log","Export → Translate → Link","ETL."],
+[L,"Which is NOT a typical legacy migration problem listed?","Excess server cooling","Data truncation","Wrong field mapping","Broken foreign keys","Problems: truncation, missing data, wrong mapping, broken FKs, incorrect relationships, wrong ownership data."],
+[L,"A Staging Schema is a:","Temporary common structure for cleaning/validation","Final production database","Backup tape","Web portal","Staging schema → temporary structure."],
+[L,"Migration integrity is checked using:","Hash/Checksum compared before & after migration","Page size","Screen resolution","Colour codes","Integrity → hash/checksum."],
+[L,"A Web Application is software accessed through a:","Web browser","Floppy disk","Printer","Serial port","Web app via browser."],
+[L,"A Citizen Portal is a:","Single platform for government services","Private bank website","Social network","Game server","Citizen Portal → single platform for government services."],
+[L,"Which is NOT a common citizen-portal land service?","Online gaming","Land-record search","Mutation application/status","Application tracking","Common services: search, ownership, mutation, certificates, tracking."],
+[L,"A good portal is:","Simple + Secure + Accessible + Responsive + Easy navigation","Complex + Slow","Offline only","Hidden behind many menus","Good portal features."],
+[L,"The three-tier architecture flow is:","User → Presentation → Application → Data","User → Data → Application → Presentation","Application → User → Data","Data → Presentation → User","Three-tier."],
+[L,"The Presentation tier handles:","UI, forms, search, display","Business logic","Databases","Hash calculation","Presentation → UI."],
+[L,"The Application tier handles:","Business logic, validation, authentication, authorization, APIs","Only UI","Only storage","Only printing","Application tier."],
+[L,"The Data tier stores:","Text + spatial data, ownership, mutation, parcels","Only HTML","Only CSS","Only forms","Data tier."],
+[L,"Technologies of the Presentation tier are:","HTML, CSS, JavaScript","Java, Tomcat","PostgreSQL, PostGIS","SQLite only","Presentation → HTML/CSS/JS."],
+[L,"Application tier technologies are:","Java, Tomcat/WildFly","HTML, CSS","PostgreSQL + PostGIS","SQLite","Application → Java, Tomcat/WildFly."],
+[L,"Data tier technologies are:","PostgreSQL + PostGIS","HTML + CSS","Java + Tomcat","JavaScript","Data → PostgreSQL + PostGIS."],
+[L,"Authentication answers:","Who are you?","What can you do?","Where are you?","When did you log in?","Authentication = who are you?"],
+[L,"Authorization answers:","What can you do?","Who are you?","Where is the server?","What is your password?","Authorization = what can you do?"],
+[L,"Which is NOT a use of mobile field applications?","Video streaming","Land survey","Boundary verification","Crop inspection","Mobile apps: land survey, boundary verification, crop inspection, field verification."],
+[L,"Offline-First mobile design works as:","Offline work → Local storage → Network available → Sync → Central server","Online only → Server → Local","Local storage → Delete → Sync","Network → Offline → Delete","Offline-first flow."],
+[L,"SQLite is a:","Lightweight local mobile database","Heavy enterprise cluster DB","Web server","Map style","SQLite → lightweight local database."],
+[L,"Geo-tagging means:","Attaching location to data/photo/record","Deleting location data","Encrypting a map","Printing a map","Geo-tagging."],
+[L,"Geo-tagging uses ___ to obtain latitude and longitude.","GNSS","FTP","HTML","SMTP","GNSS → lat/long."],
+[L,"Geo-tagging connects:","Field information with its real-world location","Two databases","Two mobiles","Servers with printers","Geo-tagging connects field info to real-world location."],
+[L,"DSC stands for:","Digital Signature Certificate","Data Security Code","Digital Storage Card","Direct Server Connection","DSC = Digital Signature Certificate."],
+[L,"eSign is a(n):","Electronic signing mechanism","Encryption algorithm","Email service","Database","eSign → electronic signing."],
+[L,"In synchronization, data flows:","Local Data → Sync → Central Server","Central Server → Print → Local","Local → Delete → Server","Server → Local only","Sync flow."],
+[L,"Which is NOT a synchronization function?","Print paper receipts","Upload offline transactions","Detect conflicts","Resolve conflicting updates","Sync functions: upload, maintain order, detect conflicts, resolve, update central DB."],
+[L,"Textual land data includes:","Owner name, rights, mutation, transactions, documents","Coordinates and polygons","Satellite pixels","Hatch patterns","Textual data."],
+[L,"Spatial land data includes:","Coordinates, parcel boundaries, polygons, shapefiles","Owner names only","Mutation status only","Documents only","Spatial data."],
+[L,"Land Records =","Textual Data + Spatial Data","Only textual data","Only spatial data","Only raster data","Key point."],
+[L,"SDC stands for:","State Data Centre","Secure Data Code","Spatial Data Cloud","Standard Domain Control","SDC = State Data Centre."],
+[L,"The SDC security zone order is:","Internet → DMZ → Application Zone → Database Zone","Internet → Database → DMZ → Application","DMZ → Internet → Database → Application","Application → DMZ → Internet → DB","Security zones."],
+[L,"The DMZ contains:","Public-facing web servers; buffer between Internet and internal network","Core sensitive databases","Business logic only","Backups only","DMZ = public."],
+[L,"The Application Zone handles:","Business logic, transactions, workflows","Public web pages","Core databases only","Internet traffic","Application zone = logic."],
+[L,"The Database Zone holds:","Core/sensitive databases with restricted access","Public web servers","Web browsers","Printers","Database zone = data."],
+[L,"A Firewall in an SDC:","Controls traffic between zones","Stores data","Draws maps","Compiles Java","Firewall controls traffic."],
+[L,"Memory: DMZ = ___, App = ___, DB = ___","Public; Logic; Data","Logic; Public; Data","Data; Logic; Public","Public; Data; Logic","As per notes."],
+[L,"A Database Index:","Speeds up data search","Deletes duplicates","Encrypts data","Prints reports","Index speeds up search."],
+[L,"R-Tree uses ___ to speed up spatial searches.","MBR (Minimum Bounding Rectangle)","Hash","JSON","CSS","R-Tree → MBR."],
+[L,"R-Tree makes which searches faster?","Within, intersect, overlap, nearby","Spelling checks","Colour matching","Printing","R-Tree speeds spatial predicates."],
+[L,"GiST is used by:","PostgreSQL/PostGIS","MySQL only","SQLite only","Excel","GiST → PostgreSQL/PostGIS."],
+[L,"GiST is a:","Flexible indexing framework","Map style","Web protocol","Raster format","GiST → flexible indexing framework."],
+
+/* ======================= APIs & WEB ======================= */
+[H,"An API is a(n):","Interface that allows software systems to communicate","Antivirus program","Hardware port","Database table","API definition."],
+[H,"Land Records APIs connect:","Portal ↔ Mobile App ↔ Database ↔ GIS ↔ Payment ↔ Authentication","Only printers","Only emails","Only CAD files","API integration."],
+[H,"REST stands for:","Representational State Transfer","Remote Server Transfer","Real-time Secure Transport","Resource Exchange Standard Test","REST."],
+[H,"SOAP stands for:","Simple Object Access Protocol","Secure Online Access Process","Structured Object API Protocol","Simple Online Application Page","SOAP."],
+[H,"REST is a(n) ___ while SOAP is a(n) ___.","Architectural style; Protocol","Protocol; Architectural style","Database; Language","Language; Database","REST = style; SOAP = protocol."],
+[H,"REST commonly uses which data format?","JSON","XML only","CSV only","DWG","REST → commonly JSON."],
+[H,"SOAP is ___-based.","XML","JSON","CSV","HTML","SOAP → XML-based."],
+[H,"REST is described as:","Stateless and lightweight","Stateful and heavy","Binary only","Offline only","REST → stateless, lightweight."],
+[H,"SOAP supports:","WSDL / WS-Security","GeoTIFF","CSS","DXF","SOAP supports WSDL/WS-Security."],
+[H,"REST is mostly used for ___, SOAP for ___ systems.","Web/Mobile; Enterprise","Enterprise; Web/Mobile","Desktop; Printer","Mobile; Desktop","REST → web/mobile; SOAP → enterprise."],
+[H,"Memory: REST → ___ → Lightweight → Web/Mobile","JSON","XML","WSDL","DXF","REST → JSON."],
+[H,"An API Gateway is a:","Common entry point between clients and backend services","Database index","Hash function","CAD command","API Gateway."],
+[H,"Which is NOT an API Gateway function?","Drawing hatch patterns","Authentication","Rate limiting","Logging","Functions: auth, authz, routing, rate limit, security, logging, monitoring, load mgmt."],
+[H,"The API flow is:","Client → API Gateway → Backend Services","Backend → Client → Gateway","Gateway → Client → Backend","Client → Backend → Gateway","API flow."],
+[H,"Rate limiting:","Controls the number of requests in a given time","Increases bandwidth","Encrypts data","Deletes logs","Rate limiting."],
+[H,"JSON stands for:","JavaScript Object Notation","Java Standard Object Network","JavaScript Online Node","Joint Source Object Name","JSON."],
+[H,"JSON uses:","Key–Value pairs","Only tags","Only tables","Binary blocks","JSON → key-value pairs."],
+[H,"In JSON, objects are written in ___ and arrays in ___.","{}  ;  []","[] ; {}","<> ; ()","() ; {}","Objects {} and Arrays []."],
+[H,"Which is TRUE of JSON?","Lightweight, human-readable and easy to parse","Heavy and unreadable","Uses closing tags","Only for SOAP","JSON is lightweight, human-readable, easy to parse."],
+[H,"XML stands for:","Extensible Markup Language","Extra Modern Language","Extended Model Logic","Executable Markup Layer","XML."],
+[H,"XML uses:","User-defined tags","Fixed tags only","Key-value without tags","Binary only","XML → user-defined tags."],
+[H,"XML structure is:","Hierarchical and self-descriptive","Flat only","Random","Binary","XML hierarchical, self-descriptive."],
+[H,"XML supports ___ for validation.","Schema","Hash","Gateway","Rate limit","Schema validation."],
+[H,"Compared to JSON, XML is:","More verbose","Lighter","Always shorter","Not structured","JSON lightweight; XML more verbose."],
+[H,"Memory: XML → Tags → Structured → ___","SOAP","REST","CSS","GeoJSON","XML → SOAP."],
+[H,"HTML stands for:","HyperText Markup Language","High Text Machine Language","Hyperlink and Text Mapping Language","Home Tool Markup Language","HTML."],
+[H,"HTML is:","A markup language, NOT a programming language","A programming language","A database","An operating system","Important note in the notes."],
+[H,"The ___ tag is the root of an HTML page.","<html>","<head>","<body>","<title>","<html> → root."],
+[H,"The <head> tag contains:","Metadata","Visible content","Hyperlinks only","Images only","<head> → metadata."],
+[H,"The <title> tag defines the:","Page title","Heading 1","Paragraph","Root","<title> → page title."],
+[H,"The <body> tag holds:","Visible content","Metadata only","Scripts only","Hash values","<body> → visible content."],
+[H,"Which tag creates a hyperlink?","<a>","<p>","<img>","<h1>","<a> → hyperlink."],
+[H,"Which tag inserts an image?","<img>","<a>","<p>","<table>","<img> → image."],
+[H,"Which tag is used for a paragraph?","<p>","<h1>","<a>","<form>","<p> → paragraph."],
+[H,"Which tag is used for a main heading?","<h1>","<p>","<body>","<title>","<h1> → heading."],
+[H,"Which tags create a form and an input field?","<form> and <input>","<table> and <p>","<a> and <img>","<head> and <body>","<form> → form; <input> → input field."],
+[H,"In HTML + CSS + JavaScript, CSS controls:","Appearance","Structure","Behaviour/interaction","Database","HTML = structure, CSS = appearance, JS = behaviour."],
+[H,"In HTML + CSS + JavaScript, JavaScript controls:","Behaviour/interaction","Structure","Appearance","Storage","JavaScript → behaviour."],
+[H,"HTTPS =","HTTP + TLS security","HTTP + FTP","HTML + TLS","HTTP + SQL","HTTPS = HTTP + TLS."],
+[H,"TLS provides:","Encryption + Authentication","Only compression","Only storage","Only routing","TLS → encryption + authentication."],
+[H,"The 3 key benefits of HTTPS are:","Confidentiality, Integrity, Authentication","Speed, Colour, Size","Cost, Storage, Backup","Routing, Mapping, Logging","CIA."],
+[H,"A Digital Certificate is used for:","Server authentication","Drawing hatch","Spelling check","Zooming","Digital certificate → server authentication."],
+[H,"SSL is the ___ of TLS.","Older predecessor","Newer successor","Competitor with no relation","Database version","SSL → older predecessor of TLS."],
+[H,"HTTPS protects against:","MITM (Man-in-the-Middle) attacks","Power cuts","Disk failure","Paper jams","HTTPS protects against MITM."],
+[H,"UX stands for:","User Experience","User Extension","Universal Exchange","Unit eXecution","UX = User Experience."],
+[H,"Which is NOT a feature of a good government portal?","Complex, many-step tasks","Clear navigation","Multilingual support","Responsive design","Good portals are simple and task-focused."],
+[H,"A good portal's Search should support:","Parcel/Survey/Document No.","Only the owner's phone number","Only images","Only colours","Search → Parcel/Survey/Document No."],
+[H,"Multilingual support in a portal means:","Regional languages","Only English","Only Hindi","No language","Multilingual → regional languages."],
+[H,"Accessibility in portals includes:","Keyboard + Screen reader + Alt text","Only large fonts","Only colours","Only videos","Accessibility."],
+[H,"WCAG stands for:","Web Content Accessibility Guidelines","World Cadastral Access Guide","Web Code Authentication Gateway","Wide Content API Group","WCAG = web accessibility guidelines."],
+[H,"WCAG's minimum contrast ratio for normal text is:","4.5:1","3:1","2:1","7.5:1","4.5:1 minimum contrast."],
+[H,"A responsive portal works on:","Mobile + Desktop","Desktop only","Mobile only","Printers only","Responsive → mobile + desktop."],
+[H,"Good UX memory line: Good UX →","Simple + Accessible + Responsive + Secure + Fast","Complex + Slow + Secure","Colourful + Loud","Offline + Slow","As per notes."],
+
+/* ======================= JAVA & TECH STACK ======================= */
+[J,"Java is:","Object-oriented, platform-independent and used for enterprise applications","Procedural and OS-specific","A markup language","A database","Java traits."],
+[J,"The Java execution flow is:","Source → Compiler → Bytecode → JVM → Execution","Source → JVM → Compiler → Bytecode","Bytecode → Source → JVM","Compiler → Source → JVM","Java flow."],
+[J,"JDK is used to:","Develop + Compile","Only run apps","Only execute bytecode","Only store data","JDK → develop and compile."],
+[J,"JRE is used to:","Run Java applications","Develop + compile","Design databases","Create maps","JRE → run."],
+[J,"JVM:","Executes bytecode","Compiles source","Edits text","Creates tables","JVM → executes bytecode."],
+[J,"Memory: JDK → ___ | JRE → ___ | JVM → ___","Develop; Run; Execute","Run; Develop; Execute","Execute; Run; Develop","Develop; Execute; Run","As per notes."],
+[J,"In land records, Java is used for:","Business logic, APIs, transactions, database connectivity","Drawing hatch","Spell-check","Image editing","Java in land records."],
+[J,"Spring Boot is a:","Java backend/API framework","CSS library","Spatial database","GIS desktop","Spring Boot."],
+[J,"The core technology flow is:","Citizen → Web Portal → API Gateway → Java/Spring → PostgreSQL/PostGIS","Citizen → PostGIS → Java → Portal","Portal → Citizen → Gateway","Java → Citizen → Portal","Core flow."],
+[J,"In the core stack, the Web Portal is the:","User interface","API entry point","Database","Spatial store","Web Portal → UI."],
+[J,"In the core stack, Java/Spring provides:","Business logic","User interface","Spatial storage","Hashing only","Java/Spring → business logic."],
+[J,"In the core stack, PostgreSQL provides and PostGIS adds:","Database; Spatial data","Spatial data; Database","UI; API","API; UI","PostgreSQL → DB; PostGIS → spatial."],
+[J,"Memory: UI → API → ___ → Database","Logic","Hash","Style","Zoom","UI → API → Logic → Database."],
+[J,"A hash is a:","Fixed-length digital fingerprint of data","Variable-length copy","Password hint","Map style","Hash → fixed-length fingerprint."],
+[J,"Hashes are used for:","Data integrity, file verification, migration verification, detecting modifications","Painting maps","Zooming","Typing","Hash purposes."],
+[J,"The hash verification flow is:","Original Data → Hash → Migration → Hash Again → Compare","Hash → Compare → Migration → Original","Migration → Original → Compare","Compare → Hash → Original","Hash flow."],
+[J,"If the two hashes match after migration, it:","Is evidence the data is unchanged","Proves the data changed","Means the database crashed","Deletes data","Same hash → unchanged."],
+[J,"If the two hashes differ after migration:","Data differs → investigate","Data is perfect","Migration is complete","Ignore","Different hash → investigate."],
+[J,"Memory: Hash → Fingerprint → Compare →","Integrity","Colour","Zoom","Rendering","Hash → integrity."],
+[J,"From the technology table: CSS is for:","Webpage appearance","Webpage structure","Interaction","Database","CSS → appearance."],
+[J,"From the technology table: JavaScript is for:","Interaction & dynamic behaviour","Webpage structure","Appearance","Spatial indexing","JavaScript → behaviour."],
+[J,"From the technology table: HTTP is for:","Web data transfer","Secure HTTP","Database","Spatial indexing","HTTP → web data transfer."],
+[J,"From the technology table: SQLite is a(n):","Embedded/local database","Spatial extension","Web server","Styling language","SQLite → embedded/local DB."],
+[J,"From the technology table: PostgreSQL is a(n):","Relational database","Spatial index","API style","Web page language","PostgreSQL → relational DB."],
+[J,"From the technology table: PostGIS is a(n):","Spatial extension for PostgreSQL","Embedded database","Web protocol","Markup language","PostGIS → spatial extension."],
+[J,"From the technology table: R-Tree is used for:","Spatial indexing","Secure HTTP","Messaging","Styling","R-Tree → spatial indexing."],
+[J,"From the technology table: SOAP is a:","Structured messaging protocol","API architectural style","Database","Index","SOAP → structured messaging protocol."],
+[J,"From the technology table: REST is a(n):","API architectural style","Structured messaging protocol","Database","Indexing structure","REST → API architectural style."],
+[J,"From the technology table: TLS is the:","Security layer for HTTPS","Spatial index","API gateway","Mobile database","TLS → security for HTTPS."],
+[J,"From the technology table: XML is for:","Structured data exchange","Lightweight data exchange","Appearance","Web transfer","XML → structured; JSON → lightweight."],
+[J,"From the technology table: JSON is for:","Lightweight data exchange","Structured data exchange only","Webpage structure","Spatial indexing","JSON → lightweight data exchange."]
+];
+
+const BANK=RAW.map(r=>({s:r[0],q:r[1],a:r[2],w:[r[3],r[4],r[5]],e:r[6]||""}));
+
+/* ---------- State ---------- */
+const PLUS=1, MINUS=0.25;
+const LS="ca_quiz_history_v1";
+const app=document.getElementById("app");
+let sel=new Set(SECS), cntSel="all", secPer=45;
+let qs=[], ans=[], marked=[], cur=0, endAt=0, totalSec=0, startedAt=0, timerId=null, mode="home", filter="all";
+
+/* ---------- Helpers ---------- */
+function el(tag,attrs,...kids){
+  const n=document.createElement(tag);
+  if(attrs)for(const k in attrs){
+    const v=attrs[k];
+    if(v==null||v===false)continue;
+    if(k==="class")n.className=v;
+    else if(k.startsWith("on"))n.addEventListener(k.slice(2),v);
+    else n.setAttribute(k,v===true?"":v);
+  }
+  kids.flat(Infinity).forEach(c=>{if(c==null||c===false)return;n.append(c.nodeType?c:document.createTextNode(String(c)))});
+  return n;
+}
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function fmt(sec){sec=Math.max(0,Math.round(sec));const h=Math.floor(sec/3600),m=Math.floor(sec%3600/60),s=sec%60;
+  return (h?h+":":"")+String(m).padStart(h?2:1,"0")+":"+String(s).padStart(2,"0")}
+function num(x){return (Math.round(x*100)/100).toFixed(2).replace(/\.00$/,"")}
+function loadHist(){try{return JSON.parse(localStorage.getItem(LS)||"[]")}catch(e){return[]}}
+function saveHist(r){try{const h=loadHist();h.unshift(r);localStorage.setItem(LS,JSON.stringify(h.slice(0,6)))}catch(e){}}
+function clearHist(){try{localStorage.removeItem(LS)}catch(e){}}
+function counts(){const c={};SECS.forEach(s=>c[s]=0);BANK.forEach(b=>c[b.s]++);return c}
+function poolFor(){return BANK.filter(b=>sel.has(b.s))}
+function plannedCount(){const n=poolFor().length;return cntSel==="all"?n:Math.min(n,+cntSel)}
+
+function themeToggle(){
+  const root=document.documentElement;
+  const dark=root.dataset.theme?root.dataset.theme==="dark":matchMedia("(prefers-color-scheme:dark)").matches;
+  root.dataset.theme=dark?"light":"dark";
+  if(mode==="home")render();
+}
+function topline(){return el("div",{class:"topline"},el("button",{onclick:themeToggle,type:"button"},"Switch light / dark theme"))}
+
+/* ---------- Home ---------- */
+function renderHome(){
+  const c=counts();
+  const n=plannedCount(), tsec=n*secPer;
+  const contours=`<svg viewBox="0 0 520 420" aria-hidden="true">
+    <g transform="translate(300 190) rotate(-22)">
+      <ellipse rx="40" ry="24"/><ellipse rx="80" ry="50"/><ellipse class="idx" rx="125" ry="80"/>
+      <ellipse rx="170" ry="112"/><ellipse rx="215" ry="146"/><ellipse class="idx" rx="262" ry="182"/>
+      <ellipse rx="310" ry="220"/>
+    </g></svg>`;
+  const hero=el("section",{class:"hero"},
+    el("h1",null,"Computer Applications revision quiz"),
+    el("p",null,"Every topic from the RP Sir Classes notes: Word, Excel, PowerPoint, AutoCAD, 2D drafting and 3D, QGIS, PostGIS, land-records IT, web technologies and Java. Timed, scored and explained."),
+    el("div",{class:"rules"},
+      el("div",{class:"rule plus"},el("b","+1"),"each correct answer"),
+      el("div",{class:"rule minus"},el("b","−0.25"),"each wrong answer"),
+      el("div",{class:"rule"},el("b","0"),"for questions you skip"),
+      el("div",{class:"rule"},el("b",String(BANK.length)),"questions in the bank")
+    ));
+  hero.insertAdjacentHTML("afterbegin",contours);
+
+  const chips=el("div",{class:"chips"},SECS.map(s=>{
+    const cb=el("input",{type:"checkbox",checked:sel.has(s),onchange:e=>{e.target.checked?sel.add(s):sel.delete(s);render()}});
+    return el("label",{class:"chip"+(sel.has(s)?" on":"")},cb,el("span",null,s),el("span",{class:"n"},c[s]));
+  }));
+  const pick=el("section",{class:"panel"},
+    el("h2",null,"Choose what to test"),
+    el("p",{class:"sub"},"All topics are selected by default for a full revision."),
+    el("div",{class:"mini"},
+      el("button",{type:"button",onclick:()=>{sel=new Set(SECS);render()}},"Select all"),
+      el("button",{type:"button",onclick:()=>{sel=new Set();render()}},"Clear all")),
+    chips,
+    el("div",{class:"opts",style:"margin-top:20px"},
+      el("div",{class:"field"},el("label",{for:"cnt"},"Number of questions"),
+        el("select",{id:"cnt",onchange:e=>{cntSel=e.target.value;render()}},
+          [["all","All selected"],["100","100 random"],["50","50 random"],["25","25 random"]].map(([v,t])=>el("option",{value:v,selected:cntSel===v},t)))),
+      el("div",{class:"field"},el("label",{for:"spq"},"Time per question"),
+        el("select",{id:"spq",onchange:e=>{secPer=+e.target.value;render()}},
+          [[30,"30 seconds (hard)"],[45,"45 seconds (standard)"],[60,"60 seconds (relaxed)"]].map(([v,t])=>el("option",{value:v,selected:secPer===v},t))))
+    ),
+    el("div",{class:"summary"},
+      el("div",null,el("div",{class:"big"},n+" questions"),"Maximum score "+n),
+      el("div",null,el("div",{class:"big"},fmt(tsec)),"Time limit"),
+      el("div",{class:"grow"}),
+      el("button",{class:"btn primary",type:"button",disabled:n===0,onclick:()=>startTest(poolFor())},"Start test")
+    ));
+
+  const h=loadHist();
+  const hist=h.length?el("section",{class:"panel"},
+    el("h2",null,"Recent attempts"),
+    el("p",{class:"sub"},"Saved in this browser only."),
+    el("table",{class:"hist"},
+      el("thead",null,el("tr",null,["When","Score","Correct","Wrong","Skipped","Time used"].map(t=>el("th",null,t)))),
+      el("tbody",null,h.map(r=>el("tr",null,
+        el("td",null,new Date(r.t).toLocaleString([], {dateStyle:"medium",timeStyle:"short"})),
+        el("td",null,num(r.score)+" / "+r.total),el("td",null,r.c),el("td",null,r.w),el("td",null,r.s),el("td",null,fmt(r.used)))))),
+    el("div",{style:"margin-top:12px"},el("button",{class:"btn",type:"button",onclick:()=>{clearHist();render()}},"Clear history"))):null;
+
+  app.replaceChildren(topline(),hero,pick,hist);
+}
+
+/* ---------- Quiz ---------- */
+function startTest(pool){
+  let p=shuffle(pool.slice());
+  if(cntSel!=="all"&&pool.length===poolFor().length&&pool.every(x=>sel.has(x.s)))p=p.slice(0,+cntSel);
+  qs=p.map(b=>{const o=shuffle([b.a,...b.w]);return {...b,o,ci:o.indexOf(b.a)}});
+  ans=qs.map(()=>-1);marked=qs.map(()=>false);cur=0;filter="all";
+  totalSec=qs.length*secPer;startedAt=Date.now();endAt=startedAt+totalSec*1000;
+  mode="quiz";render();
+  clearInterval(timerId);timerId=setInterval(tick,500);
+  window.scrollTo(0,0);
+}
+function tick(){
+  const left=(endAt-Date.now())/1000;
+  const t=document.getElementById("timer");
+  if(t){t.textContent=fmt(left);t.classList.toggle("low",left<=Math.max(60,totalSec*.1))}
+  if(left<=0){clearInterval(timerId);finish(true)}
+}
+function answeredCount(){return ans.filter(a=>a>=0).length}
+
+function renderQuiz(){
+  const q=qs[cur];
+  const bar=el("div",{class:"bar"},
+    el("div",{class:"title"},"Question "+(cur+1)+" of "+qs.length),
+    el("div",{class:"grow"}),
+    el("div",{class:"timer",id:"timer",role:"timer","aria-label":"Time remaining"},fmt((endAt-Date.now())/1000)),
+    el("button",{class:"btn danger",type:"button",onclick:askSubmit},"Submit test"));
+  const prog=el("div",{class:"prog"},el("i",{style:"width:"+(answeredCount()/qs.length*100)+"%"}));
+
+  const letters="ABCD";
+  const options=el("div",{class:"options",role:"radiogroup","aria-label":"Answer options"},
+    q.o.map((t,i)=>el("button",{type:"button",role:"radio","aria-checked":ans[cur]===i,class:"opt"+(ans[cur]===i?" sel":""),
+      onclick:()=>{ans[cur]=ans[cur]===i?-1:i;render()}},
+      el("span",{class:"l"},letters[i]),el("span",null,t))));
+
+  const card=el("section",{class:"qcard"},
+    el("div",{class:"qmeta"},el("span",{class:"no"},"Q"+(cur+1)),el("span",{class:"tag"},q.s),
+      marked[cur]?el("span",{class:"tag",style:"color:var(--mark);border-color:var(--mark)"},"Marked for review"):null),
+    el("p",{class:"qtext"},q.q),options,
+    el("div",{class:"nav"},
+      el("button",{class:"btn",type:"button",disabled:cur===0,onclick:()=>go(cur-1)},"Previous"),
+      el("button",{class:"btn",type:"button",disabled:ans[cur]<0,onclick:()=>{ans[cur]=-1;render()}},"Clear answer"),
+      el("button",{class:"btn mk"+(marked[cur]?" on":""),type:"button",onclick:()=>{marked[cur]=!marked[cur];render()}},marked[cur]?"Unmark":"Mark for review"),
+      el("div",{class:"grow"}),
+      el("button",{class:"btn primary",type:"button",disabled:cur===qs.length-1,onclick:()=>go(cur+1)},"Next")),
+    el("p",{class:"sub",style:"margin:14px 0 0;font-size:13px;color:var(--muted)"},"Keys: 1–4 or A–D to answer, ← → to move, M to mark."));
+
+  const pal=el("div",{class:"pal"},qs.map((_,i)=>el("button",{type:"button","aria-label":"Go to question "+(i+1),
+    class:"pb"+(ans[i]>=0?" ans":"")+(marked[i]?" mk":"")+(i===cur?" cur":""),onclick:()=>go(i)},String(i+1))));
+  const side=el("aside",{class:"side"},
+    el("h3",null,"Question palette"),
+    el("div",{class:"counts"},el("span",null,"Answered "+answeredCount()),el("span",null,"Left "+(qs.length-answeredCount()))),
+    pal,
+    el("div",{class:"legend"},
+      el("span",null,el("i",{class:"a"}),"Answered"),
+      el("span",null,el("i"),"Not answered"),
+      el("span",null,el("i",{class:"m"}),"Marked for review")));
+
+  app.replaceChildren(bar,prog,el("div",{class:"layout"},card,side));
+  tick();
+}
+function go(i){cur=Math.max(0,Math.min(qs.length-1,i));render();window.scrollTo(0,0)}
+
+function askSubmit(){
+  const un=qs.length-answeredCount(), mk=marked.filter(Boolean).length;
+  const left=Math.max(0,(endAt-Date.now())/1000);
+  const m=el("div",{class:"modal",id:"modal",role:"dialog","aria-modal":"true","aria-labelledby":"mt"},
+    el("div",{class:"box"},
+      el("h2",{id:"mt"},"Submit your test?"),
+      el("p",null,"You have answered "+answeredCount()+" of "+qs.length+" questions. "+
+        (un?un+" unanswered will score 0. ":"")+(mk?mk+" still marked for review. ":"")+fmt(left)+" remaining."),
+      el("div",{class:"row"},
+        el("button",{class:"btn",type:"button",onclick:()=>m.remove()},"Keep going"),
+        el("button",{class:"btn primary",type:"button",onclick:()=>{m.remove();finish(false)}},"Submit now"))));
+  document.body.append(m);
+  m.querySelector(".btn").focus();
+}
+
+/* ---------- Results ---------- */
+function compute(){
+  let c=0,w=0,s=0;const by={};
+  qs.forEach((q,i)=>{
+    by[q.s]=by[q.s]||{n:0,c:0,w:0,s:0};const b=by[q.s];b.n++;
+    if(ans[i]<0){s++;b.s++}else if(ans[i]===q.ci){c++;b.c++}else{w++;b.w++}
+  });
+  return {c,w,s,by,score:c*PLUS-w*MINUS,total:qs.length*PLUS};
+}
+let result=null;
+function finish(auto){
+  clearInterval(timerId);
+  const used=Math.min(totalSec,(Date.now()-startedAt)/1000);
+  result=compute();result.used=used;result.auto=auto;
+  saveHist({t:Date.now(),score:result.score,total:result.total,c:result.c,w:result.w,s:result.s,used});
+  mode="result";filter="all";render();window.scrollTo(0,0);
+}
+function verdict(p){
+  if(p>=90)return "Outstanding. Exam-ready.";
+  if(p>=75)return "Strong result. Polish the weak topics.";
+  if(p>=55)return "Decent base. Revise the red topics below.";
+  if(p>=35)return "Needs work. Re-read the notes, then retry.";
+  return "Start with the notes, then retake the test.";
+}
+function renderResult(){
+  const r=result,pct=r.total?r.score/r.total*100:0,att=r.c+r.w;
+  const acc=att?r.c/att*100:0;
+  const head=el("section",{class:"score"},
+    el("div",{class:"ring"+(r.score<0?" neg":"")},el("div",null,el("b",null,num(r.score)),el("small",null,"out of "+r.total))),
+    el("div",null,
+      el("div",{class:"verdict"},(r.auto?"Time is up. ":"")+verdict(pct)),
+      el("div",{class:"stats"},
+        el("div",{class:"stat g"},el("b",null,r.c),el("span",null,"Correct (+"+num(r.c*PLUS)+")")),
+        el("div",{class:"stat r"},el("b",null,r.w),el("span",null,"Wrong (−"+num(r.w*MINUS)+")")),
+        el("div",{class:"stat"},el("b",null,r.s),el("span",null,"Skipped")),
+        el("div",{class:"stat"},el("b",null,num(acc)+"%"),el("span",null,"Accuracy on attempted")),
+        el("div",{class:"stat"},el("b",null,num(pct)+"%"),el("span",null,"Net score")),
+        el("div",{class:"stat"},el("b",null,fmt(r.used)),el("span",null,"Time used of "+fmt(totalSec))))));
+
+  const rows=Object.keys(r.by).sort((a,b)=>SECS.indexOf(a)-SECS.indexOf(b)).map(k=>{
+    const b=r.by[k],sc=b.c-b.w*MINUS,p=b.n?sc/b.n*100:0;
+    return el("tr",null,el("td",null,k),el("td",{class:"num"},b.c+"/"+b.n),el("td",{class:"num"},b.w),el("td",{class:"num"},b.s),
+      el("td",{class:"num"},num(sc)),
+      el("td",null,el("div",{class:"meter"},el("i",{class:p<50?"weak":"",style:"width:"+Math.max(0,Math.min(100,p))+"%"}))));
+  });
+  const secs=el("section",{class:"panel"},el("h2",null,"Topic-wise performance"),
+    el("p",{class:"sub"},"Bars under 50% net score are shown in red; those are your priority topics."),
+    el("div",{style:"overflow-x:auto"},el("table",{class:"secs"},
+      el("thead",null,el("tr",null,["Topic","Correct","Wrong","Skipped","Score","Net %"].map(t=>el("th",null,t)))),
+      el("tbody",null,rows))));
+
+  const miss=qs.map((q,i)=>i).filter(i=>ans[i]!==qs[i].ci);
+  const actions=el("div",{class:"actions"},
+    el("button",{class:"btn primary",type:"button",disabled:!miss.length,onclick:()=>{
+      cntSel="all";startTest(miss.map(i=>BANK.find(b=>b.q===qs[i].q)))}},"Retry wrong and skipped ("+miss.length+")"),
+    el("button",{class:"btn",type:"button",onclick:()=>{mode="home";render();window.scrollTo(0,0)}},"New test"));
+
+  const F=[["all","All"],["wrong","Wrong"],["skipped","Skipped"],["correct","Correct"],["marked","Marked"]];
+  const filters=el("div",{class:"filters",role:"group","aria-label":"Filter review"},F.map(([k,t])=>
+    el("button",{type:"button",class:filter===k?"on":"","aria-pressed":filter===k,onclick:()=>{filter=k;render()}},t)));
+
+  const list=qs.map((q,i)=>({q,i})).filter(({q,i})=>{
+    const st=ans[i]<0?"skipped":ans[i]===q.ci?"correct":"wrong";
+    return filter==="all"||filter===st||(filter==="marked"&&marked[i]);
+  }).map(({q,i})=>{
+    const st=ans[i]<0?"s":ans[i]===q.ci?"g":"r";
+    return el("article",{class:"rv"},
+      el("div",{class:"qmeta"},el("span",{class:"no"},"Q"+(i+1)),el("span",{class:"tag"},q.s),
+        el("span",{class:"res "+st},st==="g"?"+1":st==="r"?"−0.25":"Skipped (0)")),
+      el("p",{class:"qtext"},q.q),
+      el("div",{class:"options"},q.o.map((t,k)=>{
+        const good=k===q.ci,bad=k===ans[i]&&!good;
+        return el("div",{class:"opt"+(good?" good":"")+(bad?" bad":""),style:"cursor:default"},
+          el("span",{class:"l"},"ABCD"[k]),el("span",null,t+(good?"  (correct)":"")+(bad?"  (your answer)":"")));
+      })),
+      q.e?el("div",{class:"exp"},q.e):null);
+  });
+  const review=el("section",{style:"margin-top:26px"},el("h2",null,"Answer review"),filters,
+    list.length?list:el("p",{class:"sub"},"Nothing in this filter."));
+  app.replaceChildren(topline(),head,secs,actions,review);
+}
+
+/* ---------- Router + keyboard ---------- */
+function render(){
+  if(mode==="home")renderHome();else if(mode==="quiz")renderQuiz();else renderResult();
+}
+document.addEventListener("keydown",e=>{
+  if(mode!=="quiz"||document.getElementById("modal"))return;
+  if(e.target.tagName==="SELECT"||e.ctrlKey||e.metaKey||e.altKey)return;
+  const k=e.key.toLowerCase();
+  if("1234".includes(k)&&k.length===1){ans[cur]=+k-1;render()}
+  else if("abcd".includes(k)&&k.length===1){ans[cur]="abcd".indexOf(k);render()}
+  else if(k==="arrowright"||k==="n")go(cur+1);
+  else if(k==="arrowleft"||k==="p")go(cur-1);
+  else if(k==="m"){marked[cur]=!marked[cur];render()}
+});
+window.addEventListener("beforeunload",e=>{if(mode==="quiz"){e.preventDefault();e.returnValue=""}});
+render();
+</script>
+</body>
+</html>

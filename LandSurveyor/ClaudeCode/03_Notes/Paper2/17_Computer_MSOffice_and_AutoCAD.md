@@ -184,4 +184,4 @@ The flow shows the surveyor's normal loop: coordinates from the instrument are i
 > - **AutoCAD aliases:** `L, C, A, TR, EX, O, H, MI, EXT`; enter points as `x,y` / `@dx,dy` / `@d<angle>`.
 > - **2D → 3D:** EXTRUDE (height), REVOLVE (spin); MIRROR reflects a copy.
 > - **DXF = open ASCII interchange; DWG = native binary.** Import `DXFIN`, export `DXFOUT`; keep polygons **closed** and layers clean for cadastral hand-off.
-> - Related: [[18_Computer_GIS_Software]] | [[19_Computer_Software_Solutions_and_Land_Records_IT]] | [[02b_Paper2_Official_Syllabus]]
+> - Related: [[18_Computer_GIS_Software]] | [[LandSurveyor/ClaudeCode/03_Notes/Paper2/19_Computer_Software_Solutions_and_Land_Records_IT]] | [[02b_Paper2_Official_Syllabus]]

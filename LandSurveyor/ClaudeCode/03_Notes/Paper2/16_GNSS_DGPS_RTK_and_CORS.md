@@ -11,7 +11,7 @@ last_verified: 2026-09-30
 
 # GNSS, DGPS, RTK & CORS (ಜಿ.ಎನ್.ಎಸ್.ಎಸ್. / ಡಿ.ಜಿ.ಪಿ.ಎಸ್. / ಆರ್.ಟಿ.ಕೆ.)
 
-Advanced positioning & satellite communication block of Paper 2 — see [[02b_Paper2_Official_Syllabus]]. Sibling notes: [[14_Photogrammetry_Aerial_and_Drone_Survey]] and [[15_Satellite_Imagery_Remote_Sensing_and_GIS]].
+Advanced positioning & satellite communication block of Paper 2 — see [[02b_Paper2_Official_Syllabus]]. Sibling notes: [[LandSurveyor/ClaudeCode/03_Notes/Paper2/14_Photogrammetry_Aerial_and_Drone_Survey]] and [[LandSurveyor/ClaudeCode/03_Notes/Paper2/15_Satellite_Imagery_Remote_Sensing_and_GIS]].
 
 ## 1. GPS — definition, principle, applications
 
@@ -99,7 +99,7 @@ The **Karnataka State CORS network** is the state government's network of contin
 
 ### Field data collection & precision in cadastral surveys
 
-Workflow: connect rover to CORS via NTRIP → wait for **RTK-fixed** solution → **occupy each parcel corner** (survey-number boundary point) → store coordinates + attributes on the controller → export to GIS/CAD for the [[15_Satellite_Imagery_Remote_Sensing_and_GIS]] cadastral layer. Because every point is on the **same state datum**, boundaries are seamless and legally defensible at **cm precision**, replacing older chain/plane-table demarcation.
+Workflow: connect rover to CORS via NTRIP → wait for **RTK-fixed** solution → **occupy each parcel corner** (survey-number boundary point) → store coordinates + attributes on the controller → export to GIS/CAD for the [[LandSurveyor/ClaudeCode/03_Notes/Paper2/15_Satellite_Imagery_Remote_Sensing_and_GIS]] cadastral layer. Because every point is on the **same state datum**, boundaries are seamless and legally defensible at **cm precision**, replacing older chain/plane-table demarcation.
 
 ## 6. Satellite communication technology — constellations, frequencies, geometry & DOP
 
@@ -131,7 +131,7 @@ Actual error ≈ **DOP × range measurement error (UERE)**, so the same measurem
 
 ## 7. Related software
 
-**GNSS data processing / post-processing & network adjustment:** **Trimble Business Center (TBC), Leica Infinity, Topcon Magnet, Bernese, GAMIT/GLOBK, RTKLIB (open-source)** for baseline processing and **least-squares network adjustment**; field controllers run **Trimble Access, Leica Captivate, SurvCE/SurvPC**. Coordinates are then **integrated with GIS (QGIS, ArcGIS)** — exporting RTK/adjusted points straight into the cadastral vector layer of [[15_Satellite_Imagery_Remote_Sensing_and_GIS]].
+**GNSS data processing / post-processing & network adjustment:** **Trimble Business Center (TBC), Leica Infinity, Topcon Magnet, Bernese, GAMIT/GLOBK, RTKLIB (open-source)** for baseline processing and **least-squares network adjustment**; field controllers run **Trimble Access, Leica Captivate, SurvCE/SurvPC**. Coordinates are then **integrated with GIS (QGIS, ArcGIS)** — exporting RTK/adjusted points straight into the cadastral vector layer of [[LandSurveyor/ClaudeCode/03_Notes/Paper2/15_Satellite_Imagery_Remote_Sensing_and_GIS]].
 
 ## 8. Mnemonics
 
@@ -171,4 +171,4 @@ Actual error ≈ **DOP × range measurement error (UERE)**, so the same measurem
 > - **Constellations: GPS, GLONASS, Galileo, BeiDou, NavIC/IRNSS (India, regional, 7 sats).**
 > - **DOP: low = good geometry; error ≈ DOP × measurement error.**
 > - Software: **TBC, Leica Infinity, Topcon Magnet, RTKLIB; integrate with GIS.**
-> - Related: [[02b_Paper2_Official_Syllabus]] | [[14_Photogrammetry_Aerial_and_Drone_Survey]] | [[15_Satellite_Imagery_Remote_Sensing_and_GIS]]
+> - Related: [[02b_Paper2_Official_Syllabus]] | [[LandSurveyor/ClaudeCode/03_Notes/Paper2/14_Photogrammetry_Aerial_and_Drone_Survey]] | [[LandSurveyor/ClaudeCode/03_Notes/Paper2/15_Satellite_Imagery_Remote_Sensing_and_GIS]]

@@ -105,7 +105,7 @@ Rule of thumb: **WMS = a map to look at, WFS = the vector features to use, WCS =
 
 ## 6. How the GIS pieces fit together
 
-A typical open-source cadastral stack is a chain: **PostGIS (store) → GeoServer/MapServer (publish OGC services) → QGIS / web portal (view & edit)**. Data is digitized or imported into PostGIS, GeoServer exposes it as **WMS/WFS**, and both desktop QGIS and a browser-based citizen map consume the same authoritative data. This mirrors the land-records IT stack in [[19_Computer_Software_Solutions_and_Land_Records_IT]].
+A typical open-source cadastral stack is a chain: **PostGIS (store) → GeoServer/MapServer (publish OGC services) → QGIS / web portal (view & edit)**. Data is digitized or imported into PostGIS, GeoServer exposes it as **WMS/WFS**, and both desktop QGIS and a browser-based citizen map consume the same authoritative data. This mirrors the land-records IT stack in [[LandSurveyor/ClaudeCode/03_Notes/Paper2/19_Computer_Software_Solutions_and_Land_Records_IT]].
 
 | Layer | Software (open-source) | Role |
 |---|---|---|
@@ -148,4 +148,4 @@ They are complementary: GPS/RS feed data **into** a GIS.
 > - **OGC services:** **WMS = map image, WFS = vector features, WCS = raster coverage** (WMTS = tiles).
 > - **GeoServer / MapServer** publish those services; **PostGIS** = spatial extension of **PostgreSQL** (spatial types + `ST_*` functions).
 > - **CRS:** EPSG:4326 = WGS-84 lat/long (degrees); UTM = metres.
-> - Related: [[17_Computer_MSOffice_and_AutoCAD]] | [[19_Computer_Software_Solutions_and_Land_Records_IT]] | [[02b_Paper2_Official_Syllabus]]
+> - Related: [[LandSurveyor/ClaudeCode/03_Notes/Paper2/17_Computer_MSOffice_and_AutoCAD]] | [[LandSurveyor/ClaudeCode/03_Notes/Paper2/19_Computer_Software_Solutions_and_Land_Records_IT]] | [[02b_Paper2_Official_Syllabus]]

@@ -166,17 +166,17 @@ Header note printed on the syllabus (verbatim):
 
 | Syllabus block (weight) | Study note(s) |
 |---|---|
-| Mathematics — Arithmetic (40%) | [[03_Notes/11_Maths_Arithmetic]] |
-| Mathematics — Algebra & Coordinate Geometry | [[03_Notes/12_Maths_Algebra_and_Coordinate_Geometry]] |
-| Mathematics — Geometry & Mensuration | [[03_Notes/13_Maths_Geometry_and_Mensuration]] |
-| Modern Surveying — Photogrammetry, aerial & drone (part of 20%) | [[03_Notes/14_Photogrammetry_Aerial_and_Drone_Survey]] |
-| Modern Surveying — Satellite imagery, remote sensing & GIS | [[03_Notes/15_Satellite_Imagery_Remote_Sensing_and_GIS]] |
-| Modern Surveying — GNSS, DGPS, RTK & CORS | [[03_Notes/16_GNSS_DGPS_RTK_and_CORS]] |
-| Computer Applications — MS Office & AutoCAD (part of 20%) | [[03_Notes/17_Computer_MSOffice_and_AutoCAD]] |
-| Computer Applications — GIS software (QGIS/GeoServer/PostGIS) | [[03_Notes/18_Computer_GIS_Software]] |
-| Computer Applications — Software solutions & Land Records IT | [[03_Notes/19_Computer_Software_Solutions_and_Land_Records_IT]] |
-| Physics (10%) | [[03_Notes/20_Physics]] |
-| Geography (10%) | [[03_Notes/21_Geography_Earth_Lithosphere_Maps_India]] |
+| Mathematics — Arithmetic (40%) | [[LandSurveyor/ClaudeCode/03_Notes/Paper2/11_Maths_Arithmetic]] |
+| Mathematics — Algebra & Coordinate Geometry | [[LandSurveyor/ClaudeCode/03_Notes/Paper2/12_Maths_Algebra_and_Coordinate_Geometry]] |
+| Mathematics — Geometry & Mensuration | [[LandSurveyor/ClaudeCode/03_Notes/Paper2/13_Maths_Geometry_and_Mensuration]] |
+| Modern Surveying — Photogrammetry, aerial & drone (part of 20%) | [[LandSurveyor/ClaudeCode/03_Notes/Paper2/14_Photogrammetry_Aerial_and_Drone_Survey]] |
+| Modern Surveying — Satellite imagery, remote sensing & GIS | [[LandSurveyor/ClaudeCode/03_Notes/Paper2/15_Satellite_Imagery_Remote_Sensing_and_GIS]] |
+| Modern Surveying — GNSS, DGPS, RTK & CORS | [[LandSurveyor/ClaudeCode/03_Notes/Paper2/16_GNSS_DGPS_RTK_and_CORS]] |
+| Computer Applications — MS Office & AutoCAD (part of 20%) | [[LandSurveyor/ClaudeCode/03_Notes/Paper2/17_Computer_MSOffice_and_AutoCAD]] |
+| Computer Applications — GIS software (QGIS/GeoServer/PostGIS) | [[18_Computer_GIS_Software]] |
+| Computer Applications — Software solutions & Land Records IT | [[LandSurveyor/ClaudeCode/03_Notes/Paper2/19_Computer_Software_Solutions_and_Land_Records_IT]] |
+| Physics (10%) | [[20_Physics]] |
+| Geography (10%) | [[LandSurveyor/ClaudeCode/03_Notes/Paper2/21_Geography_Earth_Lithosphere_Maps_India]] |
 
 See also [[02_Syllabus_and_Pattern]] · [[00_START_HERE]].
 

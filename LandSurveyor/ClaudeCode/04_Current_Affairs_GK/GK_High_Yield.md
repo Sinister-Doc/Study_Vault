@@ -8,7 +8,7 @@ priority: high
 # GK High-Yield (ಸಾಮಾನ್ಯ ಜ್ಞಾನ)
 
 > [!note] RELIABILITY
-> Static GK for quick revision. Stable facts are safe to memorize; a few volatile items (annual awards, changing capitals, UN succession) are flagged inline as "cross-check" and collected in [[04_Current_Affairs_GK/_Unverified_Parking_Lot]]. GK ≈ **20–25 marks** per [[02_Syllabus_and_Pattern]] — this file plus [[03_Notes/06_History]], [[03_Notes/07_Geography]], [[03_Notes/08_Polity]] carry that load. Last reviewed 2026-09-30.
+> Static GK for quick revision. Stable facts are safe to memorize; a few volatile items (annual awards, changing capitals, UN succession) are flagged inline as "cross-check" and collected in [[04_Current_Affairs_GK/_Unverified_Parking_Lot]]. GK ≈ **20–25 marks** per [[02_Syllabus_and_Pattern]] — this file plus [[06_History]], [[07_Geography]], [[08_Polity]] carry that load. Last reviewed 2026-09-30.
 
 > [!tip] EXAM FOCUS
 > Karnataka-flavoured GK beats generic trivia in KEA papers. Priority: Karnataka facts → survey/geography hooks (this is a *surveyor* exam) → national symbols & dates → firsts → capitals/currencies → UN bodies.
@@ -67,10 +67,10 @@ priority: high
 |---|---|
 | Father of Indian Geography | **James Rennell** (first Surveyor General of Bengal, 1767) |
 | Great Trigonometrical Survey | started **1802 by William Lambton**; continued by **George Everest** (K2/Everest namesake) — measured India with triangulation |
-| GTS = basis of | India's datum/latitude-longitude network — links to [[03_Notes/02_Chain_Compass_Survey]] |
+| GTS = basis of | India's datum/latitude-longitude network — links to [[02_Chain_Compass_Survey]] |
 | 73rd Amendment | **1992** (in force **24 April 1993** = National Panchayati Raj Day), Part IX, **11th Schedule, 22 items** |
 | Land subject | **State List** (7th Schedule, List-II — entries on land, agriculture, revenue; registration = Concurrent) |
-| Karnataka land law | Karnataka Land Revenue Act **1964**; RTC (ಪಹಣಿ) + Khata; see [[03_Notes/05_Karnataka_Land_Revenue]] |
+| Karnataka land law | Karnataka Land Revenue Act **1964**; RTC (ಪಹಣಿ) + Khata; see [[05_Karnataka_Land_Revenue]] |
 
 ## 4. Important Dates (ಮುಖ್ಯ ದಿನಾಂಕಗಳು)
 
@@ -193,4 +193,4 @@ priority: high
 
 ## Related
 
-[[Current_Affairs_2026]] · [[03_Notes/05_Karnataka_Land_Revenue]] · [[03_Notes/06_History]] · [[03_Notes/07_Geography]] · [[03_Notes/08_Polity]] · [[03_Notes/09_Economy_Science]]
+[[Current_Affairs_2026]] · [[05_Karnataka_Land_Revenue]] · [[06_History]] · [[07_Geography]] · [[08_Polity]] · [[09_Economy_Science]]

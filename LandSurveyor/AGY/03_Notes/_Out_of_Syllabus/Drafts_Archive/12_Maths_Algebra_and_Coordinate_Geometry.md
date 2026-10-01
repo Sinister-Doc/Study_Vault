@@ -161,4 +161,4 @@ For $A(x_1,y_1)$ and $B(x_2,y_2)$:
 +---------------------------------------------------------------+
 ```
 
-*Related:* [[11_Maths_Arithmetic]] · [[13_Maths_Geometry_and_Mensuration]] · [[09_Survey_Mathematics_and_Applied_Physics]] (coordinate area determinant)
+*Related:* [[LandSurveyor/AGY/03_Notes/_Out_of_Syllabus/Drafts_Archive/11_Maths_Arithmetic]] · [[LandSurveyor/AGY/03_Notes/_Out_of_Syllabus/Drafts_Archive/13_Maths_Geometry_and_Mensuration]] · [[09_Survey_Mathematics_and_Applied_Physics]] (coordinate area determinant)

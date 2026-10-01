@@ -11,7 +11,7 @@ last_verified: 2026-09-30
 
 # Geography — Earth, Lithosphere, Maps & India (ಭೂಗೋಳ)
 
-Geography is a 10% block of Paper 2. It is fact-dense but predictable. See the parent list in [[02b_Paper2_Official_Syllabus]]; for Karnataka-specific physical and regional detail cross-refer [[03_Notes/07_Geography]]. This note keeps strictly to the syllabus themes: the Earth, the lithosphere, maps, and the physical features of India.
+Geography is a 10% block of Paper 2. It is fact-dense but predictable. See the parent list in [[02b_Paper2_Official_Syllabus]]; for Karnataka-specific physical and regional detail cross-refer [[07_Geography]]. This note keeps strictly to the syllabus themes: the Earth, the lithosphere, maps, and the physical features of India.
 
 ## 1. The Earth (ಭೂಮಿ)
 
@@ -162,4 +162,4 @@ India's relief has **six physical divisions**:
 > - **Maps:** large scale = detail/small area; RF unitless (1:50,000 → 1 cm = 0.5 km); contours close = steep.
 > - **India divisions:** Himalayas → Northern Plain → Peninsular Plateau → Coastal Plains → Islands (+Thar).
 > - **Rivers:** Himalayan perennial (Indus, Ganga, Brahmaputra); peninsular seasonal (Godavari, Krishna, Kaveri east; Narmada, Tapti west).
-> - Related: [[02b_Paper2_Official_Syllabus]] | [[03_Notes/07_Geography]] | [[03_Notes/20_Physics]]
+> - Related: [[02b_Paper2_Official_Syllabus]] | [[07_Geography]] | [[20_Physics]]

@@ -231,4 +231,4 @@ The country breaks into six physiographic regions: mountain wall in the north, r
 +---------------------------------------------------------------+
 ```
 
-*Related:* [[02_Karnataka_and_India_Geography]] · [[08_GPS_GIS_and_Remote_Sensing]] · [[15_Satellite_Imagery_Remote_Sensing_and_GIS]]
+*Related:* [[02_Karnataka_and_India_Geography]] · [[08_GPS_GIS_and_Remote_Sensing]] · [[LandSurveyor/AGY/03_Notes/_Out_of_Syllabus/Drafts_Archive/15_Satellite_Imagery_Remote_Sensing_and_GIS]]

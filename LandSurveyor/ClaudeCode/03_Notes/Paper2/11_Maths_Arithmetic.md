@@ -11,7 +11,7 @@ last_verified: 2026-09-30
 
 # Arithmetic (ಅಂಕಗಣಿತ)
 
-Arithmetic carries a large share of the Mathematics block (40% of Paper 2). It rewards formula recall and clean computation. See the parent list in [[02b_Paper2_Official_Syllabus]]; algebra continues in [[03_Notes/12_Maths_Algebra_and_Coordinate_Geometry]] and geometry in [[03_Notes/13_Maths_Geometry_and_Mensuration]].
+Arithmetic carries a large share of the Mathematics block (40% of Paper 2). It rewards formula recall and clean computation. See the parent list in [[02b_Paper2_Official_Syllabus]]; algebra continues in [[LandSurveyor/ClaudeCode/03_Notes/Paper2/12_Maths_Algebra_and_Coordinate_Geometry]] and geometry in [[LandSurveyor/ClaudeCode/03_Notes/Paper2/13_Maths_Geometry_and_Mensuration]].
 
 ## 1. Squares & square roots, cubes & cube roots (ವರ್ಗ ಮತ್ತು ವರ್ಗಮೂಲ)
 
@@ -215,4 +215,4 @@ The tree separates the three questions statistics answers: *where is the centre*
 > - **Matrix add:** same order; **multiply:** cols(A)=rows(B).
 > - **P = order matters, C = selection;** $^nP_r=\frac{n!}{(n-r)!}$, $^nC_r=\frac{^nP_r}{r!}$.
 > - **Mode = 3 Median − 2 Mean;** $\sigma=\sqrt{\frac{\sum f(x-\bar x)^2}{N}}$; **CV = σ/x̄ ×100** (lower = more consistent).
-> - Related: [[02b_Paper2_Official_Syllabus]] | [[03_Notes/12_Maths_Algebra_and_Coordinate_Geometry]] | [[03_Notes/13_Maths_Geometry_and_Mensuration]] | [[10_Mental_Ability]]
+> - Related: [[02b_Paper2_Official_Syllabus]] | [[LandSurveyor/ClaudeCode/03_Notes/Paper2/12_Maths_Algebra_and_Coordinate_Geometry]] | [[LandSurveyor/ClaudeCode/03_Notes/Paper2/13_Maths_Geometry_and_Mensuration]] | [[10_Mental_Ability]]

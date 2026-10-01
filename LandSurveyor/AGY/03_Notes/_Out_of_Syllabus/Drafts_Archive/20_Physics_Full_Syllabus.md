@@ -234,4 +234,4 @@ Same reading at **−40** (°C = °F). Absolute zero $=0$ K $=-273.15$ °C.
 +---------------------------------------------------------------+
 ```
 
-*Related:* [[09_Survey_Mathematics_and_Applied_Physics]] · [[04_General_Science_and_Mental_Ability]] · [[16_GNSS_DGPS_RTK_and_CORS]]
+*Related:* [[09_Survey_Mathematics_and_Applied_Physics]] · [[04_General_Science_and_Mental_Ability]] · [[LandSurveyor/AGY/03_Notes/_Out_of_Syllabus/Drafts_Archive/16_GNSS_DGPS_RTK_and_CORS]]

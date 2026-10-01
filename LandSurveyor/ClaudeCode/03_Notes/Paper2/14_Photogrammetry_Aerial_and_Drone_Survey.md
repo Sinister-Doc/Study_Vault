@@ -11,7 +11,7 @@ last_verified: 2026-09-30
 
 # Photogrammetry, Aerial & Drone Survey (ಛಾಯಾಚಿತ್ರ ಮಾಪನ / ಡ್ರೋನ್ ಸಮೀಕ್ಷೆ)
 
-Modern surveying block of Paper 2 — see [[02b_Paper2_Official_Syllabus]]. Sibling notes: [[15_Satellite_Imagery_Remote_Sensing_and_GIS]] and [[16_GNSS_DGPS_RTK_and_CORS]].
+Modern surveying block of Paper 2 — see [[02b_Paper2_Official_Syllabus]]. Sibling notes: [[LandSurveyor/ClaudeCode/03_Notes/Paper2/15_Satellite_Imagery_Remote_Sensing_and_GIS]] and [[LandSurveyor/ClaudeCode/03_Notes/Paper2/16_GNSS_DGPS_RTK_and_CORS]].
 
 ## 1. Photogrammetry — definition & principle
 
@@ -165,4 +165,4 @@ An **orthomosaic** is a *2-D map-accurate image*; a **DSM/DEM** stores *elevatio
 > - **SfM: match → sparse cloud → dense cloud → DSM/DEM → orthomosaic (ORI).**
 > - **DSM = tops; DTM = bare earth; orthomosaic = 2-D map image.**
 > - Software: **Metashape, Pix4D, DroneDeploy, DJI Terra, OpenDroneMap.**
-> - Related: [[02b_Paper2_Official_Syllabus]] | [[15_Satellite_Imagery_Remote_Sensing_and_GIS]] | [[16_GNSS_DGPS_RTK_and_CORS]]
+> - Related: [[02b_Paper2_Official_Syllabus]] | [[LandSurveyor/ClaudeCode/03_Notes/Paper2/15_Satellite_Imagery_Remote_Sensing_and_GIS]] | [[LandSurveyor/ClaudeCode/03_Notes/Paper2/16_GNSS_DGPS_RTK_and_CORS]]

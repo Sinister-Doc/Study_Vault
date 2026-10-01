@@ -11,7 +11,7 @@ last_verified: 2026-09-30
 
 # Geometry & Mensuration (ರೇಖಾಗಣಿತ ಮತ್ತು ಕ್ಷೇತ್ರಗಣಿತ)
 
-Geometry underpins every plan a Land Surveyor draws; mensuration is the daily arithmetic of area and volume for plots, tanks and earthwork. Companion notes: arithmetic [[03_Notes/11_Maths_Arithmetic]], algebra & coordinate geometry [[03_Notes/12_Maths_Algebra_and_Coordinate_Geometry]]; syllabus [[02b_Paper2_Official_Syllabus]].
+Geometry underpins every plan a Land Surveyor draws; mensuration is the daily arithmetic of area and volume for plots, tanks and earthwork. Companion notes: arithmetic [[LandSurveyor/ClaudeCode/03_Notes/Paper2/11_Maths_Arithmetic]], algebra & coordinate geometry [[LandSurveyor/ClaudeCode/03_Notes/Paper2/12_Maths_Algebra_and_Coordinate_Geometry]]; syllabus [[02b_Paper2_Official_Syllabus]].
 
 ## 1. Axioms, postulates & angle theorems (ಸ್ವಯಂಸಿದ್ಧ ಮತ್ತು ಆಧಾರತತ್ವ)
 
@@ -197,4 +197,4 @@ Worked (earthwork): a rectangular tank 10 m × 6 m × 3 m holds $10\times6\times
 > - **Thales:** parallel line splits sides proportionally; **similar-triangle areas ∝ (side ratio)².**
 > - **Pythagoras** $c^2=a^2+b^2$; 3-4-5, 5-12-13 triples.
 > - **Areas:** triangle $\frac12bh$, trapezium $\frac12(a+b)h$, circle $\pi r^2$. **Volumes:** cuboid $lbh$, cylinder $\pi r^2h$, cone $\frac13\pi r^2h$, sphere $\frac43\pi r^3$; **pyramid = ⅓ prism.**
-> - Related: [[02b_Paper2_Official_Syllabus]] | [[03_Notes/11_Maths_Arithmetic]] | [[03_Notes/12_Maths_Algebra_and_Coordinate_Geometry]] | [[01_Surveying_Basics]]
+> - Related: [[02b_Paper2_Official_Syllabus]] | [[LandSurveyor/ClaudeCode/03_Notes/Paper2/11_Maths_Arithmetic]] | [[LandSurveyor/ClaudeCode/03_Notes/Paper2/12_Maths_Algebra_and_Coordinate_Geometry]] | [[01_Surveying_Basics]]

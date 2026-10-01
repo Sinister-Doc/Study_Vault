@@ -237,4 +237,4 @@ $$F=G\frac{m_1m_2}{r^2},\qquad G=6.67\times10^{-11}\ \text{N m}^2\text{kg}^{-2}.
 > - **Light:** $n=\frac{\sin i}{\sin r}=\frac cv$; TIR → fibre/diamond/mirage; myopia→concave, hypermetropia→convex.
 > - **Sound:** ultrasonic > 20 kHz; **SONAR** $d=\frac12vt$; Doppler → pitch/blue-red shift.
 > - **Gravitation:** $F=G\frac{m_1m_2}{r^2}$, $g=\frac{GM}{R^2}$, W=mg; g max at poles; weightlessness in free fall.
-> - Related: [[02b_Paper2_Official_Syllabus]] | [[03_Notes/21_Geography_Earth_Lithosphere_Maps_India]]
+> - Related: [[02b_Paper2_Official_Syllabus]] | [[LandSurveyor/ClaudeCode/03_Notes/Paper2/21_Geography_Earth_Lithosphere_Maps_India]]

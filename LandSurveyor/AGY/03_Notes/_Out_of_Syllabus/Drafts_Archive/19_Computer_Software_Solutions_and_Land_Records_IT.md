@@ -170,4 +170,4 @@ Each phase produces a document or product that feeds the next; maintenance feedb
 +---------------------------------------------------------------+
 ```
 
-*Related:* [[10_Karnataka_Land_Records_Bhoomi_Mojini_Dishank]] · [[18_Computer_GIS_Software_QGIS_GeoServer_PostGIS]] · [[17_Computer_MSOffice_and_AutoCAD]]
+*Related:* [[10_Karnataka_Land_Records_Bhoomi_Mojini_Dishank]] · [[18_Computer_GIS_Software_QGIS_GeoServer_PostGIS]] · [[LandSurveyor/AGY/03_Notes/_Out_of_Syllabus/Drafts_Archive/17_Computer_MSOffice_and_AutoCAD]]

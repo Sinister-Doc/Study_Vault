@@ -149,4 +149,4 @@ When a citizen applies online for a mutation: the **portal (HTML/UX front end)**
 > - **API Gateway** = single secure entry (routing, auth, rate-limit); apps + portals → gateway → services → **SDC database**.
 > - **Field app:** offline-first, geo-tagging, **eSign/DSC**, sync to central server.
 > - **Web tech:** **Java** (backend), **HTML** (structure), **JSON/XML** (data), **HTTPS** (encrypted transport). UX = simple, consistent, accessible, responsive.
-> - Related: [[17_Computer_MSOffice_and_AutoCAD]] | [[18_Computer_GIS_Software]] | [[02b_Paper2_Official_Syllabus]]
+> - Related: [[LandSurveyor/ClaudeCode/03_Notes/Paper2/17_Computer_MSOffice_and_AutoCAD]] | [[18_Computer_GIS_Software]] | [[02b_Paper2_Official_Syllabus]]

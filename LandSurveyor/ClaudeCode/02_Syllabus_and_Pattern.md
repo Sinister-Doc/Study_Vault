@@ -71,16 +71,16 @@ This document defines the structure your entire study kit follows. All notes, mo
 
 | Block | Weight | What it covers | Study note |
 |---|---|---|---|
-| **Mathematics** | **40%** | Arithmetic, Algebra, Geometry & Mensuration, Coordinate Geometry, Statistics | [[03_Notes/11_Maths_Arithmetic]], [[03_Notes/12_Maths_Algebra_and_Coordinate_Geometry]], [[03_Notes/13_Maths_Geometry_and_Mensuration]] |
-| **Modern Methods of Surveying** | **20%** | Photogrammetry, aerial & drone (UAV) survey, satellite imagery, remote sensing, GPS, GIS, DGPS, GNSS/RTK/CORS | [[03_Notes/14_Photogrammetry_Aerial_and_Drone_Survey]], [[03_Notes/15_Satellite_Imagery_Remote_Sensing_and_GIS]], [[03_Notes/16_GNSS_DGPS_RTK_and_CORS]] |
-| **Computer Applications** | **20%** | MS Office, AutoCAD (DXF), GIS software (QGIS/GeoServer/PostGIS), software solutions & Land Records IT | [[03_Notes/17_Computer_MSOffice_and_AutoCAD]], [[03_Notes/18_Computer_GIS_Software]], [[03_Notes/19_Computer_Software_Solutions_and_Land_Records_IT]] |
-| **Physics** | **10%** | Magnetism, electricity, EM radiation, electronics, dynamics, heat, light, sound, gravitation | [[03_Notes/20_Physics]] |
-| **Geography** | **10%** | The Earth, lithosphere, maps, physical features of India | [[03_Notes/21_Geography_Earth_Lithosphere_Maps_India]] |
+| **Mathematics** | **40%** | Arithmetic, Algebra, Geometry & Mensuration, Coordinate Geometry, Statistics | [[LandSurveyor/ClaudeCode/03_Notes/Paper2/11_Maths_Arithmetic]], [[LandSurveyor/ClaudeCode/03_Notes/Paper2/12_Maths_Algebra_and_Coordinate_Geometry]], [[LandSurveyor/ClaudeCode/03_Notes/Paper2/13_Maths_Geometry_and_Mensuration]] |
+| **Modern Methods of Surveying** | **20%** | Photogrammetry, aerial & drone (UAV) survey, satellite imagery, remote sensing, GPS, GIS, DGPS, GNSS/RTK/CORS | [[LandSurveyor/ClaudeCode/03_Notes/Paper2/14_Photogrammetry_Aerial_and_Drone_Survey]], [[LandSurveyor/ClaudeCode/03_Notes/Paper2/15_Satellite_Imagery_Remote_Sensing_and_GIS]], [[LandSurveyor/ClaudeCode/03_Notes/Paper2/16_GNSS_DGPS_RTK_and_CORS]] |
+| **Computer Applications** | **20%** | MS Office, AutoCAD (DXF), GIS software (QGIS/GeoServer/PostGIS), software solutions & Land Records IT | [[LandSurveyor/ClaudeCode/03_Notes/Paper2/17_Computer_MSOffice_and_AutoCAD]], [[18_Computer_GIS_Software]], [[LandSurveyor/ClaudeCode/03_Notes/Paper2/19_Computer_Software_Solutions_and_Land_Records_IT]] |
+| **Physics** | **10%** | Magnetism, electricity, EM radiation, electronics, dynamics, heat, light, sound, gravitation | [[20_Physics]] |
+| **Geography** | **10%** | The Earth, lithosphere, maps, physical features of India | [[LandSurveyor/ClaudeCode/03_Notes/Paper2/21_Geography_Earth_Lithosphere_Maps_India]] |
 
 Raw sub-topic lists for every block are in **[[02b_Paper2_Official_Syllabus]]** (verbatim from the official PDF).
 
 > [!tip] Where the old surveying notes fit now
-> [[03_Notes/01_Surveying_Basics]] → [[03_Notes/05_Karnataka_Land_Revenue]] cover *traditional*
+> [[01_Surveying_Basics]] → [[05_Karnataka_Land_Revenue]] cover *traditional*
 > surveying and the Land Revenue Act. These are **background/context only** — they are **not** on the
 > verified Paper 2 syllabus. Do not spend Paper-2 study time on them; prioritise the five blocks above.
 
@@ -108,7 +108,7 @@ Paper 1 is General Knowledge (100 marks); Paper 2 is the verified subject paper 
 | 6 | General Knowledge (History, Polity, Economy, Science, CA, Karnataka) | Paper 1 | 100% | High |
 
 > [!note] Traditional surveying & Land Revenue Act = background only
-> [[03_Notes/01_Surveying_Basics]]–[[03_Notes/05_Karnataka_Land_Revenue]] are retained as context but
+> [[01_Surveying_Basics]]–[[05_Karnataka_Land_Revenue]] are retained as context but
 > are **not** on the verified Paper 2 syllabus. Mental-ability reasoning is likewise not an official
 > sub-area of either paper.
 
@@ -136,25 +136,25 @@ Based on verified weightage:
 
 **Paper 2 (verified subject paper):**
 - [[02b_Paper2_Official_Syllabus]] — raw official syllabus (verbatim)
-- [[03_Notes/11_Maths_Arithmetic]]
-- [[03_Notes/12_Maths_Algebra_and_Coordinate_Geometry]]
-- [[03_Notes/13_Maths_Geometry_and_Mensuration]]
-- [[03_Notes/14_Photogrammetry_Aerial_and_Drone_Survey]]
-- [[03_Notes/15_Satellite_Imagery_Remote_Sensing_and_GIS]]
-- [[03_Notes/16_GNSS_DGPS_RTK_and_CORS]]
-- [[03_Notes/17_Computer_MSOffice_and_AutoCAD]]
-- [[03_Notes/18_Computer_GIS_Software]]
-- [[03_Notes/19_Computer_Software_Solutions_and_Land_Records_IT]]
-- [[03_Notes/20_Physics]]
-- [[03_Notes/21_Geography_Earth_Lithosphere_Maps_India]]
+- [[LandSurveyor/ClaudeCode/03_Notes/Paper2/11_Maths_Arithmetic]]
+- [[LandSurveyor/ClaudeCode/03_Notes/Paper2/12_Maths_Algebra_and_Coordinate_Geometry]]
+- [[LandSurveyor/ClaudeCode/03_Notes/Paper2/13_Maths_Geometry_and_Mensuration]]
+- [[LandSurveyor/ClaudeCode/03_Notes/Paper2/14_Photogrammetry_Aerial_and_Drone_Survey]]
+- [[LandSurveyor/ClaudeCode/03_Notes/Paper2/15_Satellite_Imagery_Remote_Sensing_and_GIS]]
+- [[LandSurveyor/ClaudeCode/03_Notes/Paper2/16_GNSS_DGPS_RTK_and_CORS]]
+- [[LandSurveyor/ClaudeCode/03_Notes/Paper2/17_Computer_MSOffice_and_AutoCAD]]
+- [[18_Computer_GIS_Software]]
+- [[LandSurveyor/ClaudeCode/03_Notes/Paper2/19_Computer_Software_Solutions_and_Land_Records_IT]]
+- [[20_Physics]]
+- [[LandSurveyor/ClaudeCode/03_Notes/Paper2/21_Geography_Earth_Lithosphere_Maps_India]]
 
 **Paper 1 (General Knowledge):**
-- [[03_Notes/06_History]]
-- [[03_Notes/07_Geography]]
-- [[03_Notes/08_Polity]]
-- [[03_Notes/09_Economy_Science]]
-- [[03_Notes/10_Mental_Ability]]
+- [[06_History]]
+- [[07_Geography]]
+- [[08_Polity]]
+- [[09_Economy_Science]]
+- [[10_Mental_Ability]]
 - [[04_Current_Affairs_GK/Current_Affairs_2026]]
 
 **Background / not on Paper 2 syllabus (traditional surveying + Land Revenue Act):**
-- [[03_Notes/01_Surveying_Basics]] · [[03_Notes/02_Chain_Compass_Survey]] · [[03_Notes/03_Levelling_Contouring]] · [[03_Notes/04_Theodolite_Total_Station]] · [[03_Notes/05_Karnataka_Land_Revenue]]
+- [[01_Surveying_Basics]] · [[02_Chain_Compass_Survey]] · [[03_Levelling_Contouring]] · [[04_Theodolite_Total_Station]] · [[05_Karnataka_Land_Revenue]]

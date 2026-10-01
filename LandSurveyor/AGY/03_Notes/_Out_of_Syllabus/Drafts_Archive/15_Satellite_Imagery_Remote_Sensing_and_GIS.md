@@ -177,4 +177,4 @@ Trade-off: very high spatial resolution usually means a narrow swath and longer 
 +---------------------------------------------------------------+
 ```
 
-*Related:* [[08_GPS_GIS_and_Remote_Sensing]] · [[14_Photogrammetry_Aerial_and_Drone_Survey]] · [[16_GNSS_DGPS_RTK_and_CORS]] · [[18_Computer_GIS_Software_QGIS_GeoServer_PostGIS]]
+*Related:* [[08_GPS_GIS_and_Remote_Sensing]] · [[LandSurveyor/AGY/03_Notes/_Out_of_Syllabus/Drafts_Archive/14_Photogrammetry_Aerial_and_Drone_Survey]] · [[LandSurveyor/AGY/03_Notes/_Out_of_Syllabus/Drafts_Archive/16_GNSS_DGPS_RTK_and_CORS]] · [[18_Computer_GIS_Software_QGIS_GeoServer_PostGIS]]

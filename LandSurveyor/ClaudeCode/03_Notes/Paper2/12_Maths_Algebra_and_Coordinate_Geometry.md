@@ -11,7 +11,7 @@ last_verified: 2026-09-30
 
 # Algebra & Coordinate Geometry (ಬೀಜಗಣಿತ ಮತ್ತು ನಿರ್ದೇಶಾಂಕ ರೇಖಾಗಣಿತ)
 
-Algebra is the manipulation half of the Mathematics block; coordinate geometry links it to the plane a surveyor plots on. Companion notes: arithmetic in [[03_Notes/11_Maths_Arithmetic]], geometry in [[03_Notes/13_Maths_Geometry_and_Mensuration]]; syllabus source [[02b_Paper2_Official_Syllabus]].
+Algebra is the manipulation half of the Mathematics block; coordinate geometry links it to the plane a surveyor plots on. Companion notes: arithmetic in [[LandSurveyor/ClaudeCode/03_Notes/Paper2/11_Maths_Arithmetic]], geometry in [[LandSurveyor/ClaudeCode/03_Notes/Paper2/13_Maths_Geometry_and_Mensuration]]; syllabus source [[02b_Paper2_Official_Syllabus]].
 
 ## 1. Basics of algebra (ಬೀಜಗಣಿತದ ಮೂಲಗಳು)
 
@@ -162,4 +162,4 @@ This is precisely the calculation a surveyor performs when a boundary line's eas
 > - **Quadratic:** $x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$; $D=b^2-4ac$ → >0 distinct, =0 equal, <0 imaginary.
 > - **Sum of roots = −b/a, product = c/a;** build equation $x^2-(\text{sum})x+(\text{product})=0$.
 > - **Distance** $=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}$; midpoint = averages.
-> - Related: [[02b_Paper2_Official_Syllabus]] | [[03_Notes/11_Maths_Arithmetic]] | [[03_Notes/13_Maths_Geometry_and_Mensuration]] | [[01_Surveying_Basics]]
+> - Related: [[02b_Paper2_Official_Syllabus]] | [[LandSurveyor/ClaudeCode/03_Notes/Paper2/11_Maths_Arithmetic]] | [[LandSurveyor/ClaudeCode/03_Notes/Paper2/13_Maths_Geometry_and_Mensuration]] | [[01_Surveying_Basics]]

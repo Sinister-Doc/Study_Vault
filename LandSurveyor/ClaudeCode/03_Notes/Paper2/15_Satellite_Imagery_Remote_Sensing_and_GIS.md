@@ -11,7 +11,7 @@ last_verified: 2026-09-30
 
 # Satellite Imagery, Remote Sensing & GIS (ದೂರ ಸಂವೇದನೆ / ಜಿ.ಐ.ಎಸ್.)
 
-Modern surveying block of Paper 2 — see [[02b_Paper2_Official_Syllabus]]. Sibling notes: [[14_Photogrammetry_Aerial_and_Drone_Survey]] and [[16_GNSS_DGPS_RTK_and_CORS]].
+Modern surveying block of Paper 2 — see [[02b_Paper2_Official_Syllabus]]. Sibling notes: [[LandSurveyor/ClaudeCode/03_Notes/Paper2/14_Photogrammetry_Aerial_and_Drone_Survey]] and [[LandSurveyor/ClaudeCode/03_Notes/Paper2/16_GNSS_DGPS_RTK_and_CORS]].
 
 ## 1. Remote sensing — principle
 
@@ -84,7 +84,7 @@ There is usually a **trade-off**: very high spatial resolution often means small
 
 - **Radiometric correction** — remove sensor/atmospheric errors, striping, haze.
 - **Geometric correction / rectification** — fit the image to a map coordinate system using **Ground Control Points** and a resampling (nearest-neighbour, bilinear, cubic).
-- **Orthorectification** — additionally removes **terrain relief distortion** using a DEM, giving a truly map-accurate image (same idea as in [[14_Photogrammetry_Aerial_and_Drone_Survey]]).
+- **Orthorectification** — additionally removes **terrain relief distortion** using a DEM, giving a truly map-accurate image (same idea as in [[LandSurveyor/ClaudeCode/03_Notes/Paper2/14_Photogrammetry_Aerial_and_Drone_Survey]]).
 - **Mosaicking** — join adjacent corrected scenes into one seamless image (colour-balanced).
 - **Image enhancement** — contrast stretch, band ratios, filtering, **NDVI** = (NIR − Red)/(NIR + Red) for vegetation.
 - **Classification & information extraction:**
@@ -165,4 +165,4 @@ Land-use/land-cover mapping, urban and infrastructure planning, natural-resource
 > - **GIS = Hardware + Software + Data + People + Methods.**
 > - **Vector = parcels/boundaries; Raster = imagery/DEM; cadastre stored as vector polygons.**
 > - Software: **Google Earth Engine, ArcGIS Image Analyst, ERDAS, ENVI, QGIS.**
-> - Related: [[02b_Paper2_Official_Syllabus]] | [[14_Photogrammetry_Aerial_and_Drone_Survey]] | [[16_GNSS_DGPS_RTK_and_CORS]]
+> - Related: [[02b_Paper2_Official_Syllabus]] | [[LandSurveyor/ClaudeCode/03_Notes/Paper2/14_Photogrammetry_Aerial_and_Drone_Survey]] | [[LandSurveyor/ClaudeCode/03_Notes/Paper2/16_GNSS_DGPS_RTK_and_CORS]]

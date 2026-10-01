@@ -37,7 +37,7 @@ last_verified: 2026-09-30
 | DSLR / SSLR | **Survey, Settlement & Land Records** department (ಸರ್ವೆ, ಸೆಟೆಲ್‌ಮೆಂಟ್ ಮತ್ತು ಭೂ ದಾಖಲೆ ಇಲಾಖೆ) under Revenue Dept — **this exam recruits Surveyors (Bhoomapaka) for it.** |
 | DILRMP | Central **Digital India Land Records Modernisation Programme** — integrates RoR + maps + registration; Karnataka participates. |
 | SVAMITVA (ಸ್ವಾಮಿತ್ವ) | Central scheme using **drones** to map inhabited (abadi) rural land and issue property cards. Directly relevant to the modern-survey Paper 2. *(Karnataka rollout numbers: parking lot.)* |
-| RTC / Khata | RTC = **Record of Rights, Tenancy and Crops (ಪಹಣಿ)**; Khata = assessment account. Details in [[03_Notes/05_Karnataka_Land_Revenue]]. |
+| RTC / Khata | RTC = **Record of Rights, Tenancy and Crops (ಪಹಣಿ)**; Khata = assessment account. Details in [[05_Karnataka_Land_Revenue]]. |
 
 ## 2. Karnataka — Leadership, Schemes, Budget
 
@@ -108,4 +108,4 @@ Flagship guarantee schemes (likely questions):
 
 ## Related
 
-[[03_Notes/05_Karnataka_Land_Revenue]] · [[03_Notes/08_Polity]] · [[03_Notes/09_Economy_Science]] · [[04_Current_Affairs_GK/GK_High_Yield]] · [[04_Current_Affairs_GK/_Unverified_Parking_Lot]]
+[[05_Karnataka_Land_Revenue]] · [[08_Polity]] · [[09_Economy_Science]] · [[04_Current_Affairs_GK/GK_High_Yield]] · [[04_Current_Affairs_GK/_Unverified_Parking_Lot]]

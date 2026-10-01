@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Modern Survey — Problems & Formulas Test</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#f5f4ef;--card:#fff;--ink:#1c2230;--mut:#667085;--line:#dedbd1;--acc:#1f5fbf;--accbg:#e7effb;--ok:#14733f;--okbg:#e2f4e9;--bad:#b3261e;--badbg:#fbe8e6;--warn:#8a5a00;--warnbg:#fff1cc}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#13161b;--card:#1c2027;--ink:#e8eaee;--mut:#9aa3b2;--line:#323843;--acc:#6ea3f5;--accbg:#1d2a40;--ok:#58c98a;--okbg:#17301f;--bad:#f2837b;--badbg:#3a1d1b;--warn:#f0c15a;--warnbg:#3a2f12}}
+:root[data-theme="dark"]{--bg:#13161b;--card:#1c2027;--ink:#e8eaee;--mut:#9aa3b2;--line:#323843;--acc:#6ea3f5;--accbg:#1d2a40;--ok:#58c98a;--okbg:#17301f;--bad:#f2837b;--badbg:#3a1d1b;--warn:#f0c15a;--warnbg:#3a2f12}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:1040px;margin:0 auto;padding:14px}
+h1{font-size:1.5rem;margin:.2em 0}h2{font-size:1.1rem;margin:.2em 0 .6em}
+.mut{color:var(--mut)}.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin:12px 0}
+button{font:inherit;color:inherit;cursor:pointer}
+.btn{background:var(--card);border:1px solid var(--line);border-radius:9px;padding:8px 14px}
+.btn:hover{border-color:var(--acc)}.btn.pri{background:var(--acc);border-color:var(--acc);color:#fff;font-weight:600}
+.btn.on{background:var(--accbg);border-color:var(--acc);color:var(--acc);font-weight:600}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.chk{display:flex;gap:8px;align-items:center;padding:6px 10px;border:1px solid var(--line);border-radius:9px;background:var(--card)}
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding:8px 0;display:flex;justify-content:space-between;gap:8px;align-items:center;flex-wrap:wrap}
+#timer{font-variant-numeric:tabular-nums;font-weight:700;font-size:1.15rem;padding:4px 12px;border-radius:9px;background:var(--accbg);color:var(--acc)}
+#timer.low{background:var(--badbg);color:var(--bad)}
+.grid{display:grid;grid-template-columns:1fr 230px;gap:12px}
+@media(max-width:800px){.grid{grid-template-columns:1fr}}
+.tag{display:inline-block;font-size:.78rem;padding:2px 8px;border-radius:99px;background:var(--accbg);color:var(--acc);margin-right:6px}
+.stem{white-space:pre-line;font-size:1.05rem;margin:.6em 0 1em;overflow-wrap:anywhere}
+.opt{display:flex;gap:10px;width:100%;text-align:left;padding:10px 12px;margin:7px 0;border:1px solid var(--line);border-radius:10px;background:var(--card);overflow-wrap:anywhere}
+.opt b{min-width:1.4em;color:var(--mut)}
+.opt.sel{border-color:var(--acc);background:var(--accbg)}
+.opt.ok{border-color:var(--ok);background:var(--okbg)}.opt.bad{border-color:var(--bad);background:var(--badbg)}
+.pal{display:grid;grid-template-columns:repeat(auto-fill,minmax(38px,1fr));gap:6px}
+.pal button{padding:6px 0;border:1px solid var(--line);border-radius:8px;background:var(--card);font-size:.85rem}
+.pal .ans{background:var(--accbg);border-color:var(--acc)}.pal .mk{outline:2px solid var(--warn)}.pal .cur{box-shadow:0 0 0 2px var(--ink)}
+.pal .ok{background:var(--okbg);border-color:var(--ok)}.pal .bad{background:var(--badbg);border-color:var(--bad)}
+.exp{margin-top:8px;padding:8px 12px;border-radius:9px;background:var(--warnbg);color:var(--ink);font-size:.95rem}
+.stat{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px}
+.stat div{border:1px solid var(--line);border-radius:10px;padding:10px;background:var(--card)}.stat b{display:block;font-size:1.4rem}
+.tblw{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:.92rem}th,td{padding:6px 8px;border-bottom:1px solid var(--line);text-align:left}
+.weak{color:var(--bad);font-weight:600}.banner{background:var(--warnbg);border:1px solid var(--warn);border-radius:10px;padding:10px;margin:8px 0}
+</style></head><body><div class="wrap" id="app"></div>
+<script type="application/json" id="data">[{"t": "Scale & Distance", "n": 1, "q": "A surveyor measured the distance between two points on a plan drawn to a scale of 1 cm = 40 m and obtained 468 m. Later, it was found that the scale used was 1 cm = 20 m. What is the true distance between the points? (GATE CE 2025)", "o": ["468 m", "936 m", "234 m", "1872 m"], "a": 1, "e": "Map length = 468 / 20 = 23.4 cm. True distance = 23.4 × 40 = 936 m."}, {"t": "Scale & Distance", "n": 2, "q": "A map has a scale of 1:25,000. If the distance between two points on the map is 4 cm, what is the ground distance? (UPPSC)", "o": ["100 m", "1 km", "10 km", "625 m"], "a": 1, "e": "Ground = 4 × 25,000 = 100,000 cm = 1 km."}, {"t": "Scale & Distance", "n": 3, "q": "A plan is prepared at a scale of 1:1000. If the plan is reduced so that a 100 mm line becomes 90 mm, what is the new scale? (GATE)", "o": ["1:900", "1:1000", "Approximately 1:1111", "1:1250"], "a": 2, "e": "New scale = 1000 × 100/90 ≈ 1:1111."}, {"t": "Scale & Distance", "n": 4, "q": "On a plan, 1 cm represents 50 m on the ground. A line measures 7.2 cm on the plan. What is its ground length?", "o": ["36 m", "144 m", "360 m", "3600 m"], "a": 2, "e": "Ground = 7.2 × 50 = 360 m."}, {"t": "Scale & Distance", "n": 5, "q": "A ground distance of 2.5 km is to be shown on a 1:50,000 map. What will be its map length?", "o": ["0.5 cm", "5 cm", "12.5 cm", "50 cm"], "a": 1, "e": "2.5 km = 250,000 cm; 250,000 / 50,000 = 5 cm."}, {"t": "Coordinates", "n": 6, "q": "The coordinates of two points are A(10, 20) and B(13, 24). Find the distance AB. (GATE-type)", "o": ["3 units", "4 units", "5 units", "7 units"], "a": 2, "e": "D = √[(13−10)² + (24−20)²] = √(9+16) = √25 = 5 units."}, {"t": "Coordinates", "n": 7, "q": "The differences in Easting and Northing between two survey stations are 30 m and 40 m. Find the distance between them. (BPSC)", "o": ["35 m", "50 m", "70 m", "10 m"], "a": 1, "e": "D = √(30² + 40²) = √2500 = 50 m."}, {"t": "Coordinates", "n": 8, "q": "The coordinates of two points are (100 m, 200 m) and (400 m, 600 m). Find the distance between them. (UPPSC)", "o": ["300 m", "400 m", "500 m", "700 m"], "a": 2, "e": "ΔX = 300, ΔY = 400; D = √(300² + 400²) = 500 m."}, {"t": "Coordinates", "n": 9, "q": "Find the distance between P(0, 0) and Q(5, 12).", "o": ["7 units", "12 units", "13 units", "17 units"], "a": 2, "e": "D = √(25 + 144) = √169 = 13 units."}, {"t": "Coordinates", "n": 10, "q": "In a coordinate pair P(X, Y) used in surveying, which axis value is the Easting?", "o": ["Y", "X", "Z", "H"], "a": 1, "e": "Easting = X, Northing = Y."}, {"t": "Height & Slope", "n": 11, "q": "A line has a horizontal distance of 100 m and a difference in elevation of 10 m. Find the percentage slope. (GATE)", "o": ["1%", "10%", "0.1%", "100%"], "a": 1, "e": "Slope % = (ΔH / D) × 100 = (10/100) × 100 = 10%."}, {"t": "Height & Slope", "n": 12, "q": "A line has a horizontal distance of 40 m and a difference in elevation of 30 m. Find its slope distance. (BPSC)", "o": ["10 m", "35 m", "50 m", "70 m"], "a": 2, "e": "S = √(40² + 30²) = √2500 = 50 m."}, {"t": "Height & Slope", "n": 13, "q": "A line has a horizontal distance of 100 m and makes an angle of 30° with the horizontal. Find the difference in elevation. (UPPSC)", "o": ["50 m", "About 57.7 m", "About 86.6 m", "About 173.2 m"], "a": 1, "e": "ΔH = D tan θ = 100 × tan 30° ≈ 57.7 m."}, {"t": "Height & Slope", "n": 14, "q": "A slope line is 13 m long and its horizontal distance is 12 m. What is the difference in elevation?", "o": ["1 m", "5 m", "12 m", "25 m"], "a": 1, "e": "ΔH = √(S² − D²) = √(169 − 144) = 5 m."}, {"t": "Height & Slope", "n": 15, "q": "A ground rises 20 m over a horizontal distance of 80 m. Find the percentage slope.", "o": ["4%", "20%", "25%", "40%"], "a": 2, "e": "Slope % = 20/80 × 100 = 25%."}, {"t": "Height & Slope", "n": 16, "q": "Point 1 is at 215.4 m and point 2 is at 248.9 m above datum. What is ΔH = H2 − H1?", "o": ["33.5 m", "−33.5 m", "464.3 m", "23.5 m"], "a": 0, "e": "ΔH = 248.9 − 215.4 = 33.5 m."}, {"t": "Photogrammetry Scale", "n": 17, "q": "A camera with focal length 20 cm takes vertical aerial photographs. Average terrain elevation is 1200 m above MSL. At what height above MSL must the aircraft fly for a photo scale of 1:8000? (GATE CE 2019)", "o": ["1600 m", "2400 m", "2800 m", "3200 m"], "a": 2, "e": "H − h = f × scale denominator = 0.2 × 8000 = 1600 m. H = 1200 + 1600 = 2800 m."}, {"t": "Photogrammetry Scale", "n": 18, "q": "An aerial photograph is taken from 3.5 km above MSL with a camera of focal length 152 mm. Average ground elevation is 460 m above MSL. Find the photo scale. (GATE CE 2022)", "o": ["1:3,040", "1:20,000", "1:23,000", "1:30,400"], "a": 1, "e": "Scale = 0.152 / (3500 − 460) = 0.152 / 3040 = 1:20,000."}, {"t": "Photogrammetry Scale", "n": 19, "q": "A camera of focal length 150 mm has a flying height of 1500 m above the ground. Find the photo scale. (GATE/Photogrammetry)", "o": ["1:1,000", "1:10,000", "1:15,000", "1:100,000"], "a": 1, "e": "Scale = f / H = 0.15 / 1500 = 1:10,000."}, {"t": "Photogrammetry Scale", "n": 20, "q": "Other things being equal, what happens to photo scale when flying height increases?", "o": ["Scale becomes larger", "Scale becomes smaller", "Scale is unchanged", "Focal length increases"], "a": 1, "e": "Scale = f / (H − h). Higher flying height → smaller scale. Higher focal length → larger scale."}, {"t": "Photogrammetry Scale", "n": 21, "q": "A camera with f = 0.15 m is to give a scale of 1:5000. What flying height above ground is needed?", "o": ["33 m", "75 m", "750 m", "7500 m"], "a": 2, "e": "H = f × scale denominator = 0.15 × 5000 = 750 m."}, {"t": "Photogrammetry Scale", "n": 22, "q": "f = 300 mm, flying height above MSL = 4000 m, average ground elevation = 1000 m. Find the photo scale.", "o": ["1:3,333", "1:10,000", "1:13,333", "1:1,000"], "a": 1, "e": "Scale = 0.3 / (4000 − 1000) = 0.3 / 3000 = 1:10,000."}, {"t": "Pixels & Resolution", "n": 23, "q": "A student scans a 10 in × 10 in certificate at 600 dpi and then at 300 dpi. What is the percentage reduction in the number of pixels? (GATE CE 2023)", "o": ["25%", "50%", "75%", "100%"], "a": 2, "e": "600 dpi: 6000×6000 pixels; 300 dpi: 3000×3000 = ¼ of that. Reduction = 75%."}, {"t": "Pixels & Resolution", "n": 24, "q": "An image has 2000 pixels in length and 1000 pixels in breadth. Find the total number of pixels. (GATE Geomatics)", "o": ["3,000", "200,000", "2,000,000", "20,000,000"], "a": 2, "e": "Total = 2000 × 1000 = 2,000,000."}, {"t": "Pixels & Resolution", "n": 25, "q": "A satellite image has a pixel size of 10 m × 10 m. What ground area does one pixel represent? (ISRO)", "o": ["10 m²", "20 m²", "100 m²", "1000 m²"], "a": 2, "e": "Area = 10 × 10 = 100 m²."}, {"t": "Pixels & Resolution", "n": 26, "q": "A satellite image has a spatial resolution of 30 m. What ground area is represented by one pixel? (UPPSC)", "o": ["30 m²", "60 m²", "900 m²", "9000 m²"], "a": 2, "e": "Area = 30 × 30 = 900 m²."}, {"t": "Pixels & Resolution", "n": 27, "q": "Which resolution determines the smallest ground feature that can be distinguished in a satellite image? (ISRO)", "o": ["Spatial", "Spectral", "Temporal", "Radiometric"], "a": 0, "e": "Spatial resolution = ground detail / pixel size."}, {"t": "Pixels & Resolution", "n": 28, "q": "Which resolution indicates how frequently a satellite revisits the same area? (GATE Geomatics)", "o": ["Spatial", "Spectral", "Radiometric", "Temporal"], "a": 3, "e": "Temporal resolution = revisit frequency."}, {"t": "Pixels & Resolution", "n": 29, "q": "An 8 in × 6 in photograph is scanned at 300 dpi. How many pixels does the image contain?", "o": ["14,400", "432,000", "4,320,000", "43,200,000"], "a": 2, "e": "2400 × 1800 = 4,320,000 pixels."}, {"t": "Pixels & Resolution", "n": 30, "q": "How many 10 m × 10 m pixels are needed to cover 1 km² (1,000,000 m²)?", "o": ["100", "1,000", "10,000", "100,000"], "a": 2, "e": "1,000,000 / 100 = 10,000 pixels."}, {"t": "Pixels & Resolution", "n": 31, "q": "A sensor records 10-bit data. How many brightness (DN) levels are possible?", "o": ["256", "512", "1024", "2048"], "a": 2, "e": "2¹⁰ = 1024 levels (8-bit = 256, 12-bit = 4096)."}, {"t": "NDVI", "n": 32, "q": "Which two spectral bands are used to calculate NDVI? (UPSC/Remote Sensing)", "o": ["Red and Green", "Near Infrared and Red", "Blue and Green", "SWIR and Thermal"], "a": 1, "e": "NDVI = (NIR − RED) / (NIR + RED)."}, {"t": "NDVI", "n": 33, "q": "If NIR reflectance is 0.8 and Red reflectance is 0.2, calculate NDVI. (GATE Geomatics)", "o": ["0.2", "0.6", "0.75", "1.0"], "a": 1, "e": "NDVI = (0.8 − 0.2) / (0.8 + 0.2) = 0.6."}, {"t": "NDVI", "n": 34, "q": "NIR reflectance = 0.5 and Red reflectance = 0.3. Find NDVI.", "o": ["0.2", "0.25", "0.4", "0.6"], "a": 1, "e": "NDVI = 0.2 / 0.8 = 0.25."}, {"t": "NDVI", "n": 35, "q": "What is the possible range of NDVI values?", "o": ["0 to 1", "−1 to +1", "0 to 255", "−10 to +10"], "a": 1, "e": "NDVI ranges from −1 to +1; higher positive values generally mean healthier, denser vegetation."}, {"t": "NDVI", "n": 36, "q": "If NIR = Red = 0.4, what is NDVI?", "o": ["0", "0.5", "1", "−1"], "a": 0, "e": "NDVI = (0.4 − 0.4)/(0.4 + 0.4) = 0."}, {"t": "EM Waves", "n": 37, "q": "An electromagnetic wave has a frequency of 3 × 10⁸ Hz. Find its wavelength. (GATE)", "o": ["0.1 m", "1 m", "10 m", "100 m"], "a": 1, "e": "λ = c / f = (3 × 10⁸) / (3 × 10⁸) = 1 m."}, {"t": "EM Waves", "n": 38, "q": "If the wavelength of electromagnetic radiation increases, what happens to its frequency? (ISRO)", "o": ["It increases", "It decreases", "It is unchanged", "It becomes zero"], "a": 1, "e": "c = fλ with c constant, so frequency and wavelength are inversely related."}, {"t": "EM Waves", "n": 39, "q": "Which relationship between wavelength and frequency is correct for EM radiation? (UPSC)", "o": ["c = f / λ", "c = fλ", "c = λ / f", "c = f + λ"], "a": 1, "e": "c = fλ, so f = c/λ and λ = c/f."}, {"t": "EM Waves", "n": 40, "q": "An EM wave has wavelength 0.5 m. Find its frequency (c = 3 × 10⁸ m/s).", "o": ["1.5 × 10⁸ Hz", "6 × 10⁷ Hz", "6 × 10⁸ Hz", "1.5 × 10⁹ Hz"], "a": 2, "e": "f = c / λ = 3 × 10⁸ / 0.5 = 6 × 10⁸ Hz."}, {"t": "EM Waves", "n": 41, "q": "An EM wave has frequency 1.5 × 10⁹ Hz. Find its wavelength.", "o": ["0.2 m", "0.5 m", "2 m", "5 m"], "a": 0, "e": "λ = 3 × 10⁸ / 1.5 × 10⁹ = 0.2 m."}, {"t": "Signal Travel (EDM / GNSS)", "n": 42, "q": "An electromagnetic signal takes 1 microsecond to travel from transmitter to receiver. Find the distance travelled. (GATE)", "o": ["30 m", "150 m", "300 m", "3 km"], "a": 2, "e": "D = ct = 3 × 10⁸ × 1 × 10⁻⁶ = 300 m."}, {"t": "Signal Travel (EDM / GNSS)", "n": 43, "q": "An EDM instrument measures a round-trip signal travel time of 2 microseconds. Find the distance to the target. (GATE Surveying)", "o": ["150 m", "300 m", "600 m", "3 km"], "a": 1, "e": "D = ct / 2 = (3 × 10⁸ × 2 × 10⁻⁶) / 2 = 300 m."}, {"t": "Signal Travel (EDM / GNSS)", "n": 44, "q": "In GNSS, the basic relationship between signal travel time and satellite–receiver range is: (ISRO/GNSS)", "o": ["ρ = c / Δt", "ρ = cΔt", "ρ = Δt / c", "ρ = c + Δt"], "a": 1, "e": "ρ = cΔt (pseudorange = speed of light × signal travel-time difference)."}, {"t": "Signal Travel (EDM / GNSS)", "n": 45, "q": "Why is the EDM distance formula D = ct / 2 divided by 2?", "o": ["Light travels at half speed in air", "The signal travels to the target and returns", "Time is measured in half-cycles", "The target absorbs half the signal"], "a": 1, "e": "Round-trip: total path = 2D, so D = ct / 2."}, {"t": "Signal Travel (EDM / GNSS)", "n": 46, "q": "An EDM measures a round-trip time of 4 microseconds. What is the distance to the target?", "o": ["150 m", "300 m", "600 m", "1200 m"], "a": 2, "e": "D = 3 × 10⁸ × 4 × 10⁻⁶ / 2 = 600 m."}, {"t": "Signal Travel (EDM / GNSS)", "n": 47, "q": "A GNSS satellite signal takes 0.07 s to reach a receiver. What is the approximate range?", "o": ["2,100 km", "21,000 km", "210,000 km", "4,200 km"], "a": 1, "e": "ρ = cΔt = 3 × 10⁸ × 0.07 = 2.1 × 10⁷ m = 21,000 km."}, {"t": "Photogrammetry Scale", "n": 48, "q": "Which expression gives photo scale when H is flying height above MSL and h is ground elevation above MSL?", "o": ["f × (H − h)", "f / (H + h)", "f / (H − h)", "(H − h) / f²"], "a": 2, "e": "Photo scale = f / (H − h)."}, {"t": "Height & Slope", "n": 49, "q": "Which expression gives slope distance S from horizontal distance D and elevation difference ΔH?", "o": ["S = D + ΔH", "S = √[D² + (ΔH)²]", "S = D tan θ", "S = ΔH / D"], "a": 1, "e": "S = √[D² + (ΔH)²]."}]</script>
+<script>
+const CFG={"key": "rp-ps-prob", "title": "Modern Survey — Problems & Formulas Test", "sub": "Formula-based PYQs and variants: scale, coordinates, slope, photogrammetry, pixels, NDVI, EM waves, EDM/GNSS", "times": [60, 90, 120], "defTime": 90, "counts": [25, 10], "shuffle": true};
+const DATA=JSON.parse(document.getElementById('data').textContent).map((q,i)=>(q.id=i,q));
+const TOPICS=[...new Set(DATA.map(q=>q.t))];
+const app=document.getElementById('app');
+let S=null,tick=null;
+function h(t,a,...c){const e=document.createElement(t);for(const k in a||{}){const v=a[k];if(k==='class')e.className=v;else if(k.startsWith('on'))e.addEventListener(k.slice(2),v);else e.setAttribute(k,v)}for(const x of c.flat()){if(x==null||x===false)continue;e.append(x.nodeType?x:document.createTextNode(x))}return e}
+const pad=n=>String(n).padStart(2,'0');
+function fmt(s){s=Math.max(0,Math.round(s));const hh=Math.floor(s/3600),m=Math.floor(s%3600/60),r=s%60;return hh?`${hh}:${pad(m)}:${pad(r)}`:`${m}:${pad(r)}`}
+function shuf(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function hist(){try{return JSON.parse(localStorage.getItem(CFG.key)||'[]')}catch(e){return[]}}
+function saveHist(r){try{const a=hist();a.unshift(r);localStorage.setItem(CFG.key,JSON.stringify(a.slice(0,6)))}catch(e){}}
+const L='ABCD';
+
+function setup(){
+  clearInterval(tick);S=null;
+  let sel=new Set(TOPICS),cnt='all',per=CFG.defTime,sh=CFG.shuffle;
+  const sum=h('div',{class:'mut'}),box=h('div');
+  const avail=()=>DATA.filter(q=>sel.has(q.t));
+  const nOf=()=>{const a=avail().length;return cnt==='all'?a:Math.min(cnt,a)};
+  function draw(){
+    const n=nOf();sum.textContent=n?`${n} questions · ${per}s each · total ${fmt(n*per)}`:'Select at least one topic';
+    box.replaceChildren(
+      h('h2',{},'Topics'),
+      h('div',{class:'row'},TOPICS.map(t=>h('label',{class:'chk'},h('input',{type:'checkbox',...(sel.has(t)?{checked:''}:{}),onchange:e=>{e.target.checked?sel.add(t):sel.delete(t);draw()}}),`${t} (${DATA.filter(q=>q.t===t).length})`))),
+      h('div',{class:'row',style:'margin-top:8px'},h('button',{class:'btn',onclick:()=>{sel=new Set(TOPICS);draw()}},'Select all'),h('button',{class:'btn',onclick:()=>{sel=new Set();draw()}},'Clear')),
+      h('h2',{style:'margin-top:16px'},'Number of questions'),
+      h('div',{class:'row'},['all',...CFG.counts].filter(c=>c==='all'||c<avail().length).map(c=>h('button',{class:'btn'+(cnt===c?' on':''),onclick:()=>{cnt=c;draw()}},c==='all'?'All':'Random '+c))),
+      h('h2',{style:'margin-top:16px'},'Time per question'),
+      h('div',{class:'row'},CFG.times.map(t=>h('button',{class:'btn'+(per===t?' on':''),onclick:()=>{per=t;draw()}},t+' s'))),
+      h('label',{class:'chk',style:'margin-top:14px;width:fit-content'},h('input',{type:'checkbox',...(sh?{checked:''}:{}),onchange:e=>{sh=e.target.checked}}),'Shuffle option order'),
+      h('div',{style:'margin-top:16px'},sum,h('button',{class:'btn pri',style:'margin-top:8px',onclick:()=>{if(nOf())start(shuf(avail()).slice(0,nOf()).sort((a,b)=>a.id-b.id),per,sh)}},'Start test'))
+    );
+  }
+  draw();
+  const H=hist();
+  app.replaceChildren(h('h1',{},CFG.title),h('div',{class:'mut'},CFG.sub),
+    h('div',{class:'card'},h('b',{},'Marking: '),'+1 correct · −0.25 wrong · 0 skipped. The test auto-submits when time runs out.'),
+    h('div',{class:'card'},box),
+    H.length?h('div',{class:'card'},h('h2',{},'Recent attempts'),h('div',{class:'tblw'},h('table',{},h('tr',{},['Date','Score','Accuracy'].map(x=>h('th',{},x))),H.map(r=>h('tr',{},h('td',{},r.d),h('td',{},`${r.s} / ${r.n}`),h('td',{},r.acc+'%')))))):null);
+}
+
+function start(list,per,sh){
+  S={per,sh,i:0,done:false,confirm:false,qs:list.map(q=>{let o=q.o.map((t,k)=>({t,ok:k===q.a}));if(sh)o=shuf(o);return{id:q.id,t:q.t,n:q.n,q:q.q,e:q.e,o,pick:-1,mark:false}}),total:list.length*per};
+  S.end=Date.now()+S.total*1000;
+  clearInterval(tick);tick=setInterval(()=>{const r=(S.end-Date.now())/1000,el=document.getElementById('timer');if(el){el.textContent=fmt(r);el.className=r<=Math.max(60,S.total*.1)?'low':''}if(r<=0)submit()},500);
+  view();
+}
+function go(i){S.i=Math.max(0,Math.min(S.qs.length-1,i));S.confirm=false;view()}
+function pick(k){const q=S.qs[S.i];q.pick=q.pick===k?-1:k;view()}
+function view(){
+  const q=S.qs[S.i],n=S.qs.length,ans=S.qs.filter(x=>x.pick>=0).length;
+  const pal=h('div',{class:'pal'},S.qs.map((x,i)=>h('button',{class:(x.pick>=0?'ans ':'')+(x.mark?'mk ':'')+(i===S.i?'cur':''),onclick:()=>go(i)},i+1)));
+  app.replaceChildren(
+    h('div',{class:'top'},h('div',{},h('b',{},`Q ${S.i+1} / ${n}`),h('span',{class:'mut'},`  · answered ${ans}`)),h('div',{class:'row'},h('span',{id:'timer'},fmt((S.end-Date.now())/1000)),h('button',{class:'btn pri',onclick:()=>{S.confirm=true;view()}},'Submit'))),
+    S.confirm?h('div',{class:'banner'},`${n-ans} unanswered, ${S.qs.filter(x=>x.mark).length} marked for review. Submit now?  `,h('button',{class:'btn pri',onclick:submit},'Yes, submit'),' ',h('button',{class:'btn',onclick:()=>{S.confirm=false;view()}},'Keep going')):null,
+    h('div',{class:'grid'},
+      h('div',{class:'card'},h('span',{class:'tag'},q.t),q.mark?h('span',{class:'tag'},'⚑ marked'):null,
+        h('div',{class:'stem'},q.q),
+        q.o.map((o,k)=>h('button',{class:'opt'+(q.pick===k?' sel':''),onclick:()=>pick(k)},h('b',{},L[k]),h('span',{},o.t))),
+        h('div',{class:'row',style:'margin-top:12px'},h('button',{class:'btn',onclick:()=>go(S.i-1)},'← Prev'),h('button',{class:'btn',onclick:()=>go(S.i+1)},'Next →'),
+          h('button',{class:'btn'+(q.mark?' on':''),onclick:()=>{q.mark=!q.mark;view()}},'Mark (M)'),h('button',{class:'btn',onclick:()=>{q.pick=-1;view()}},'Clear')),
+        h('div',{class:'mut',style:'margin-top:8px;font-size:.85rem'},'Keys: 1–4 or A–D answer · ←/→ move · M mark · Backspace clear')),
+      h('div',{class:'card'},h('h2',{},'Palette'),pal,h('div',{class:'mut',style:'font-size:.8rem;margin-top:8px'},'Blue = answered · amber outline = marked'))));
+}
+document.addEventListener('keydown',e=>{
+  if(!S||S.done||e.ctrlKey||e.metaKey||e.altKey)return;const k=e.key.toLowerCase();
+  if('1234'.includes(k)&&k.length===1)pick(+k-1);else if('abcd'.includes(k)&&k.length===1)pick('abcd'.indexOf(k));
+  else if(k==='arrowright')go(S.i+1);else if(k==='arrowleft')go(S.i-1);else if(k==='m'){S.qs[S.i].mark=!S.qs[S.i].mark;view()}else if(k==='backspace'||k==='delete'){S.qs[S.i].pick=-1;view()}
+});
+
+function submit(){
+  if(!S||S.done)return;clearInterval(tick);S.done=true;S.used=Math.min(S.total,S.total-(S.end-Date.now())/1000);
+  let c=0,w=0;S.qs.forEach(q=>{if(q.pick<0)return;q.o[q.pick].ok?c++:w++});
+  S.c=c;S.w=w;S.sk=S.qs.length-c-w;S.score=c-w*.25;
+  saveHist({d:new Date().toLocaleString(),s:S.score,n:S.qs.length,acc:S.qs.length?Math.round(c/S.qs.length*100):0});
+  S.filter='all';results();
+}
+function results(){
+  const n=S.qs.length,att=S.c+S.w;
+  const rows=[...new Set(S.qs.map(q=>q.t))].map(t=>{const a=S.qs.filter(q=>q.t===t),c=a.filter(q=>q.pick>=0&&q.o[q.pick].ok).length,w=a.filter(q=>q.pick>=0&&!q.o[q.pick].ok).length;return{t,n:a.length,c,w,sk:a.length-c-w,s:c-w*.25,p:Math.round(c/a.length*100)}});
+  const st=q=>q.pick<0?'sk':q.o[q.pick].ok?'ok':'bad';
+  const shown=S.qs.map((q,i)=>({q,i})).filter(({q})=>S.filter==='all'||(S.filter==='wrong'&&st(q)==='bad')||(S.filter==='skip'&&st(q)==='sk')||(S.filter==='right'&&st(q)==='ok'));
+  const redo=S.qs.filter(q=>st(q)!=='ok');
+  app.replaceChildren(
+    h('h1',{},'Result'),
+    h('div',{class:'stat'},h('div',{},'Net score',h('b',{},`${S.score} / ${n}`)),h('div',{},'Correct',h('b',{},S.c)),h('div',{},'Wrong (−0.25 each)',h('b',{},S.w)),h('div',{},'Skipped',h('b',{},S.sk)),h('div',{},'Accuracy (of attempted)',h('b',{},att?Math.round(S.c/att*100)+'%':'–')),h('div',{},'Time used',h('b',{},fmt(S.used)))),
+    h('div',{class:'card'},h('h2',{},'Topic-wise'),h('div',{class:'tblw'},h('table',{},h('tr',{},['Topic','Qs','✓','✗','Skip','Net','% correct'].map(x=>h('th',{},x))),rows.map(r=>h('tr',{},h('td',{},r.t),h('td',{},r.n),h('td',{},r.c),h('td',{},r.w),h('td',{},r.sk),h('td',{},r.s),h('td',{class:r.p<50?'weak':''},r.p+'%'+(r.p<50?' ⚠':'')))))),h('div',{class:'mut',style:'font-size:.85rem;margin-top:6px'},'Topics under 50% are flagged.')),
+    h('div',{class:'row'},redo.length?h('button',{class:'btn pri',onclick:()=>start(redo.map(q=>DATA[q.id]),S.per,S.sh)},`Retry wrong & skipped (${redo.length})`):null,h('button',{class:'btn',onclick:setup},'New test')),
+    h('h2',{style:'margin-top:18px'},'Review'),
+    h('div',{class:'row'},[['all','All'],['wrong','Wrong'],['skip','Skipped'],['right','Correct']].map(([k,l])=>h('button',{class:'btn'+(S.filter===k?' on':''),onclick:()=>{S.filter=k;results()}},l))),
+    shown.map(({q,i})=>h('div',{class:'card'},h('span',{class:'tag'},`Q${i+1}`),h('span',{class:'tag'},q.t),h('b',{class:st(q)==='ok'?'':'weak'},st(q)==='ok'?'✓ Correct':st(q)==='bad'?'✗ Wrong':'— Skipped'),
+      h('div',{class:'stem'},q.q),
+      q.o.map((o,k)=>h('div',{class:'opt'+(o.ok?' ok':q.pick===k?' bad':'')},h('b',{},L[k]),h('span',{},o.t+(q.pick===k?'   (your answer)':'')+(o.ok?'   ✓':'')))),
+      q.e?h('div',{class:'exp'},q.e):null)));
+  window.scrollTo(0,0);
+}
+setup();
+</script></body></html>

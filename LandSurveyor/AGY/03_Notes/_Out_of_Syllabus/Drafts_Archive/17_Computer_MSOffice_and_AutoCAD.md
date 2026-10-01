@@ -179,4 +179,4 @@ tags: [land-surveyor, paper-2, computer, ms-office, autocad, dxf]
 +---------------------------------------------------------------+
 ```
 
-*Related:* [[18_Computer_GIS_Software_QGIS_GeoServer_PostGIS]] · [[19_Computer_Software_Solutions_and_Land_Records_IT]]
+*Related:* [[18_Computer_GIS_Software_QGIS_GeoServer_PostGIS]] · [[LandSurveyor/AGY/03_Notes/_Out_of_Syllabus/Drafts_Archive/19_Computer_Software_Solutions_and_Land_Records_IT]]

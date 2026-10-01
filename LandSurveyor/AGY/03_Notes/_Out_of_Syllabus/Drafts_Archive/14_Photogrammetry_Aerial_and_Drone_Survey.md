@@ -174,4 +174,4 @@ Overlapping images are matched by common features; **SfM** estimates the camera 
 +---------------------------------------------------------------+
 ```
 
-*Related:* [[15_Satellite_Imagery_Remote_Sensing_and_GIS]] · [[16_GNSS_DGPS_RTK_and_CORS]] · [[10_Karnataka_Land_Records_Bhoomi_Mojini_Dishank]] (SVAMITVA)
+*Related:* [[LandSurveyor/AGY/03_Notes/_Out_of_Syllabus/Drafts_Archive/15_Satellite_Imagery_Remote_Sensing_and_GIS]] · [[LandSurveyor/AGY/03_Notes/_Out_of_Syllabus/Drafts_Archive/16_GNSS_DGPS_RTK_and_CORS]] · [[10_Karnataka_Land_Records_Bhoomi_Mojini_Dishank]] (SVAMITVA)

@@ -28,33 +28,33 @@ exam: "KEA Karnataka Land Surveyor 2026"
 ### Paper 2 — Specific Paper (the subject paper)
 
 **Mathematics (40% of Paper 2 — the single biggest block)**
-- [[03_Notes/11_Maths_Arithmetic]] — number system, sets, sequences, matrices, permutations/combinations, statistics, HCF/LCM
-- [[03_Notes/12_Maths_Algebra_and_Coordinate_Geometry]] — algebraic expressions, linear & quadratic equations, factorisation, coordinate geometry
-- [[03_Notes/13_Maths_Geometry_and_Mensuration]] — triangles, circles, quadrilaterals, similarity, Pythagoras, surface areas & volumes
+- [[LandSurveyor/ClaudeCode/03_Notes/Paper2/11_Maths_Arithmetic]] — number system, sets, sequences, matrices, permutations/combinations, statistics, HCF/LCM
+- [[LandSurveyor/ClaudeCode/03_Notes/Paper2/12_Maths_Algebra_and_Coordinate_Geometry]] — algebraic expressions, linear & quadratic equations, factorisation, coordinate geometry
+- [[LandSurveyor/ClaudeCode/03_Notes/Paper2/13_Maths_Geometry_and_Mensuration]] — triangles, circles, quadrilaterals, similarity, Pythagoras, surface areas & volumes
 
 **Modern Methods of Surveying (20%)**
-- [[03_Notes/14_Photogrammetry_Aerial_and_Drone_Survey]] — photogrammetry, aerial & UAV/drone survey, SfM, DEM/DSM, ORI
-- [[03_Notes/15_Satellite_Imagery_Remote_Sensing_and_GIS]] — satellite imagery, resolutions, remote sensing, LIDAR, GIS
-- [[03_Notes/16_GNSS_DGPS_RTK_and_CORS]] — GPS/NAVSTAR, DGPS, RTK, Karnataka CORS network, GNSS constellations, DOP
+- [[LandSurveyor/ClaudeCode/03_Notes/Paper2/14_Photogrammetry_Aerial_and_Drone_Survey]] — photogrammetry, aerial & UAV/drone survey, SfM, DEM/DSM, ORI
+- [[LandSurveyor/ClaudeCode/03_Notes/Paper2/15_Satellite_Imagery_Remote_Sensing_and_GIS]] — satellite imagery, resolutions, remote sensing, LIDAR, GIS
+- [[LandSurveyor/ClaudeCode/03_Notes/Paper2/16_GNSS_DGPS_RTK_and_CORS]] — GPS/NAVSTAR, DGPS, RTK, Karnataka CORS network, GNSS constellations, DOP
 
 **Computer Applications (20%)**
-- [[03_Notes/17_Computer_MSOffice_and_AutoCAD]] — MS Office, AutoCAD, cadastral DXF
-- [[03_Notes/18_Computer_GIS_Software]] — QGIS, GeoServer/MapServer (WMS/WFS/WCS), PostGIS
-- [[03_Notes/19_Computer_Software_Solutions_and_Land_Records_IT]] — SDLC, web/mobile apps, SDC, REST/SOAP APIs, Java/JSON/XML/HTML
+- [[LandSurveyor/ClaudeCode/03_Notes/Paper2/17_Computer_MSOffice_and_AutoCAD]] — MS Office, AutoCAD, cadastral DXF
+- [[18_Computer_GIS_Software]] — QGIS, GeoServer/MapServer (WMS/WFS/WCS), PostGIS
+- [[LandSurveyor/ClaudeCode/03_Notes/Paper2/19_Computer_Software_Solutions_and_Land_Records_IT]] — SDLC, web/mobile apps, SDC, REST/SOAP APIs, Java/JSON/XML/HTML
 
-**Physics (10%)** — [[03_Notes/20_Physics]] · **Geography (10%)** — [[03_Notes/21_Geography_Earth_Lithosphere_Maps_India]]
+**Physics (10%)** — [[20_Physics]] · **Geography (10%)** — [[LandSurveyor/ClaudeCode/03_Notes/Paper2/21_Geography_Earth_Lithosphere_Maps_India]]
 
 ### Paper 1 — General Knowledge
 
-- [[03_Notes/06_History]] — Ancient/Medieval/Modern India + Karnataka dynasties
-- [[03_Notes/07_Geography]] — India + Karnataka geography
-- [[03_Notes/08_Polity]] — Constitution, Panchayati Raj, revenue administration
-- [[03_Notes/09_Economy_Science]] — economics, agriculture, general science
-- [[03_Notes/10_Mental_Ability]] — series, reasoning, arithmetic (not an official sub-area; practice aid)
+- [[06_History]] — Ancient/Medieval/Modern India + Karnataka dynasties
+- [[07_Geography]] — India + Karnataka geography
+- [[08_Polity]] — Constitution, Panchayati Raj, revenue administration
+- [[09_Economy_Science]] — economics, agriculture, general science
+- [[10_Mental_Ability]] — series, reasoning, arithmetic (not an official sub-area; practice aid)
 
 ### Background only (not on the verified Paper 2 syllabus)
 
-- [[03_Notes/01_Surveying_Basics]] · [[03_Notes/02_Chain_Compass_Survey]] · [[03_Notes/03_Levelling_Contouring]] · [[03_Notes/04_Theodolite_Total_Station]] · [[03_Notes/05_Karnataka_Land_Revenue]]
+- [[01_Surveying_Basics]] · [[02_Chain_Compass_Survey]] · [[03_Levelling_Contouring]] · [[04_Theodolite_Total_Station]] · [[05_Karnataka_Land_Revenue]]
 
 ## Current Affairs & GK
 
@@ -86,8 +86,8 @@ exam: "KEA Karnataka Land Surveyor 2026"
 
 | Day | Morning | Afternoon | Evening |
 |---|---|---|---|
-| Day 2 (30 Sep) | Maths: [[03_Notes/11_Maths_Arithmetic]] → [[03_Notes/12_Maths_Algebra_and_Coordinate_Geometry]] | Maths: [[03_Notes/13_Maths_Geometry_and_Mensuration]] → Modern: [[03_Notes/14_Photogrammetry_Aerial_and_Drone_Survey]] → [[03_Notes/15_Satellite_Imagery_Remote_Sensing_and_GIS]] → [[03_Notes/16_GNSS_DGPS_RTK_and_CORS]] | Computer: [[03_Notes/17_Computer_MSOffice_and_AutoCAD]] → [[03_Notes/18_Computer_GIS_Software]] → [[03_Notes/19_Computer_Software_Solutions_and_Land_Records_IT]] |
-| Day 1 (01 Oct) | Physics [[03_Notes/20_Physics]] + Geography [[03_Notes/21_Geography_Earth_Lithosphere_Maps_India]] + Paper-1 GK sweep ([[03_Notes/06_History]] → [[03_Notes/07_Geography]] → [[03_Notes/08_Polity]] → [[03_Notes/09_Economy_Science]]) + [[04_Current_Affairs_GK/Current_Affairs_2026]] | [[06_Mock_Tests/mock1.html\|Mock 1]] + review → [[06_Mock_Tests/mock2.html\|Mock 2]] + review | [[06_Mock_Tests/mock3.html\|Mock 3]] + review → mistake log + formula sheet → early sleep |
+| Day 2 (30 Sep) | Maths: [[LandSurveyor/ClaudeCode/03_Notes/Paper2/11_Maths_Arithmetic]] → [[LandSurveyor/ClaudeCode/03_Notes/Paper2/12_Maths_Algebra_and_Coordinate_Geometry]] | Maths: [[LandSurveyor/ClaudeCode/03_Notes/Paper2/13_Maths_Geometry_and_Mensuration]] → Modern: [[LandSurveyor/ClaudeCode/03_Notes/Paper2/14_Photogrammetry_Aerial_and_Drone_Survey]] → [[LandSurveyor/ClaudeCode/03_Notes/Paper2/15_Satellite_Imagery_Remote_Sensing_and_GIS]] → [[LandSurveyor/ClaudeCode/03_Notes/Paper2/16_GNSS_DGPS_RTK_and_CORS]] | Computer: [[LandSurveyor/ClaudeCode/03_Notes/Paper2/17_Computer_MSOffice_and_AutoCAD]] → [[18_Computer_GIS_Software]] → [[LandSurveyor/ClaudeCode/03_Notes/Paper2/19_Computer_Software_Solutions_and_Land_Records_IT]] |
+| Day 1 (01 Oct) | Physics [[20_Physics]] + Geography [[LandSurveyor/ClaudeCode/03_Notes/Paper2/21_Geography_Earth_Lithosphere_Maps_India]] + Paper-1 GK sweep ([[06_History]] → [[07_Geography]] → [[08_Polity]] → [[09_Economy_Science]]) + [[04_Current_Affairs_GK/Current_Affairs_2026]] | [[06_Mock_Tests/mock1.html\|Mock 1]] + review → [[06_Mock_Tests/mock2.html\|Mock 2]] + review | [[06_Mock_Tests/mock3.html\|Mock 3]] + review → mistake log + formula sheet → early sleep |
 
 ## Weightage at a Glance
 
@@ -95,11 +95,11 @@ exam: "KEA Karnataka Land Surveyor 2026"
 
 | Block | Weight | Key Notes |
 |---|---|---|
-| Mathematics | **40%** | [[03_Notes/11_Maths_Arithmetic]], [[03_Notes/12_Maths_Algebra_and_Coordinate_Geometry]], [[03_Notes/13_Maths_Geometry_and_Mensuration]] |
-| Modern Methods of Surveying | **20%** | [[03_Notes/14_Photogrammetry_Aerial_and_Drone_Survey]], [[03_Notes/15_Satellite_Imagery_Remote_Sensing_and_GIS]], [[03_Notes/16_GNSS_DGPS_RTK_and_CORS]] |
-| Computer Applications | **20%** | [[03_Notes/17_Computer_MSOffice_and_AutoCAD]], [[03_Notes/18_Computer_GIS_Software]], [[03_Notes/19_Computer_Software_Solutions_and_Land_Records_IT]] |
-| Physics | 10% | [[03_Notes/20_Physics]] |
-| Geography | 10% | [[03_Notes/21_Geography_Earth_Lithosphere_Maps_India]] |
+| Mathematics | **40%** | [[LandSurveyor/ClaudeCode/03_Notes/Paper2/11_Maths_Arithmetic]], [[LandSurveyor/ClaudeCode/03_Notes/Paper2/12_Maths_Algebra_and_Coordinate_Geometry]], [[LandSurveyor/ClaudeCode/03_Notes/Paper2/13_Maths_Geometry_and_Mensuration]] |
+| Modern Methods of Surveying | **20%** | [[LandSurveyor/ClaudeCode/03_Notes/Paper2/14_Photogrammetry_Aerial_and_Drone_Survey]], [[LandSurveyor/ClaudeCode/03_Notes/Paper2/15_Satellite_Imagery_Remote_Sensing_and_GIS]], [[LandSurveyor/ClaudeCode/03_Notes/Paper2/16_GNSS_DGPS_RTK_and_CORS]] |
+| Computer Applications | **20%** | [[LandSurveyor/ClaudeCode/03_Notes/Paper2/17_Computer_MSOffice_and_AutoCAD]], [[18_Computer_GIS_Software]], [[LandSurveyor/ClaudeCode/03_Notes/Paper2/19_Computer_Software_Solutions_and_Land_Records_IT]] |
+| Physics | 10% | [[20_Physics]] |
+| Geography | 10% | [[LandSurveyor/ClaudeCode/03_Notes/Paper2/21_Geography_Earth_Lithosphere_Maps_India]] |
 
 **Paper 1 (General Knowledge):** History, Geography, Polity, Economy/Science, Current Affairs, Karnataka GK — notes 06–10 + [[04_Current_Affairs_GK/Current_Affairs_2026]], [[04_Current_Affairs_GK/GK_High_Yield]].
 

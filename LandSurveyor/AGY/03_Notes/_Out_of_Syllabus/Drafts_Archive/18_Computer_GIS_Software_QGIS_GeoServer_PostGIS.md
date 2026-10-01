@@ -155,4 +155,4 @@ WHERE ST_Intersects(p.geom, r.geom);
 +---------------------------------------------------------------+
 ```
 
-*Related:* [[15_Satellite_Imagery_Remote_Sensing_and_GIS]] · [[17_Computer_MSOffice_and_AutoCAD]] · [[19_Computer_Software_Solutions_and_Land_Records_IT]]
+*Related:* [[LandSurveyor/AGY/03_Notes/_Out_of_Syllabus/Drafts_Archive/15_Satellite_Imagery_Remote_Sensing_and_GIS]] · [[LandSurveyor/AGY/03_Notes/_Out_of_Syllabus/Drafts_Archive/17_Computer_MSOffice_and_AutoCAD]] · [[LandSurveyor/AGY/03_Notes/_Out_of_Syllabus/Drafts_Archive/19_Computer_Software_Solutions_and_Land_Records_IT]]

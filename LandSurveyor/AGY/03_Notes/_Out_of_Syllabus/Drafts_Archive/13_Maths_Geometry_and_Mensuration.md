@@ -238,4 +238,4 @@ A quadrilateral whose four vertices lie on a circle.
 +----------------------------------------------------------------+
 ```
 
-*Related:* [[11_Maths_Arithmetic]] · [[12_Maths_Algebra_and_Coordinate_Geometry]] · [[09_Survey_Mathematics_and_Applied_Physics]]
+*Related:* [[LandSurveyor/AGY/03_Notes/_Out_of_Syllabus/Drafts_Archive/11_Maths_Arithmetic]] · [[LandSurveyor/AGY/03_Notes/_Out_of_Syllabus/Drafts_Archive/12_Maths_Algebra_and_Coordinate_Geometry]] · [[09_Survey_Mathematics_and_Applied_Physics]]
