@@ -26,6 +26,7 @@ sources:
 > [!IMPORTANT] Exam Focus & Mark Potential
 > - **Expected Weightage:** **18–22 Questions (18–22 Marks)** in Paper-I.
 > - **Core High-Yield Dynasties:** Kadambas (Mayurasharma, Halmidi 450 AD), Badami Chalukyas (Pulakeshin II, Aihole Inscription), Rashtrakutas (Amoghavarsha I, Kavirajamarga c. 850 AD), Hoysalas (Vishnuvardhana, Belur-Halebidu), Vijayanagara Empire (Harihara-Bukka 1336, Krishnadevaraya 1509-29, Talikota 1565), Mysore Wodeyars (Chikka Devaraja, Nalvadi Krishnaraja Wodeyar, Sir MV), and Freedom Struggle & Ekikarana.
+> - **Deep-Dive Studies:** See [[08a_Karnataka_History_Early_Dynasties]] (Prehistoric to Hoysalas) and [[08b_Karnataka_History_Vijayanagara_to_Modern]] (Vijayanagara to Ekikarana) for exhaustive dynasty-by-dynasty coverage, inscriptions, 50-fact sheets, and PYQs.
 
 ---
 
@@ -160,6 +161,9 @@ flowchart TD
 
 ---
 *Related Notes:*
+- [[08a_Karnataka_History_Early_Dynasties]] (Early Dynasties Deep Dive)
+- [[08b_Karnataka_History_Vijayanagara_to_Modern]] (Vijayanagara to Modern Deep Dive)
 - [[05_Karnataka_and_Indian_Geography]]
+- [[09_Karnataka_Geography_Deep_Dive]]
 - [[06_Indian_Constitution_and_Polity]]
 - [[07_Panchayat_Raj_Act_and_Rural_Administration]]

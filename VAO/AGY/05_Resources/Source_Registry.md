@@ -62,15 +62,15 @@ This registry indexes all official notifications, government acts, gazette notif
 
 The dedicated directory `05_Resources/Raw_Source_Papers/` holds the unedited, original question papers and official answer keys from the landmark KEA VAO examination:
 
-| File | Conducting Body | Exam Date | Content |
-| :--- | :---: | :---: | :--- |
-| `[[05_Resources/Raw_Source_Papers/KEA_VAO_Paper_1_Question_Paper_Kannada_27_10_2024.pdf]]` | KEA | 27-10-2024 | Paper-I General Knowledge & Rural Admin (Kannada, 100 Qs) |
-| `[[05_Resources/Raw_Source_Papers/KEA_VAO_Paper_1_Question_Paper_English_27_10_2024.pdf]]` | KEA | 27-10-2024 | Paper-I General Knowledge & Rural Admin (English, 100 Qs) |
-| `[[05_Resources/Raw_Source_Papers/KEA_VAO_Paper_2_Question_Paper_27_10_2024.pdf]]` | KEA | 27-10-2024 | Paper-II Language & Computer Knowledge (100 Qs) |
-| `[[05_Resources/Raw_Source_Papers/KEA_VAO_Paper_2_Official_Key_Answer_27_10_2024.pdf]]` | KEA | 29-10-2024 | Official KEA Key Answer sheet for Paper-II (Versions A1–A4, B1–B4) |
-| `[[05_Resources/Raw_Source_Papers/KEA_VAO_Compulsory_Kannada_Question_Paper_29_09_2024.pdf]]` | KEA | 29-09-2024 | Compulsory Kannada Qualifying Exam (150 Marks) |
-| `[[05_Resources/Raw_Source_Papers/KEA_VAO_Compulsory_Kannada_Key_Answer_29_09_2024.pdf]]` | KEA | 29-09-2024 | Compulsory Kannada Official Key Answer |
-| `[[05_Resources/Raw_Source_Papers/README.md]]` | AGY QA | 2026-09-30 | Full catalog, booklet codes, and syllabus mappings |
+| File                                                                                        | Conducting Body | Exam Date  | Content                                                            |
+| :------------------------------------------------------------------------------------------ | :-------------: | :--------: | :----------------------------------------------------------------- |
+| [[05_Resources/Raw_Source_Papers/KEA_VAO_Paper_1_Question_Paper_Kannada_27_10_2024.pdf]]    |       KEA       | 27-10-2024 | Paper-I General Knowledge & Rural Admin (Kannada, 100 Qs)          |
+| [[05_Resources/Raw_Source_Papers/KEA_VAO_Paper_1_Question_Paper_English_27_10_2024.pdf]]    |       KEA       | 27-10-2024 | Paper-I General Knowledge & Rural Admin (English, 100 Qs)          |
+| [[05_Resources/Raw_Source_Papers/KEA_VAO_Paper_2_Question_Paper_27_10_2024.pdf]]            |       KEA       | 27-10-2024 | Paper-II Language & Computer Knowledge (100 Qs)                    |
+| [[05_Resources/Raw_Source_Papers/KEA_VAO_Paper_2_Official_Key_Answer_27_10_2024.pdf]]       |       KEA       | 29-10-2024 | Official KEA Key Answer sheet for Paper-II (Versions A1–A4, B1–B4) |
+| [[05_Resources/Raw_Source_Papers/KEA_VAO_Compulsory_Kannada_Question_Paper_29_09_2024.pdf]] |       KEA       | 29-09-2024 | Compulsory Kannada Qualifying Exam (150 Marks)                     |
+| [[05_Resources/Raw_Source_Papers/KEA_VAO_Compulsory_Kannada_Key_Answer_29_09_2024.pdf]]     |       KEA       | 29-09-2024 | Compulsory Kannada Official Key Answer                             |
+| [[05_Resources/Raw_Source_Papers/README.md]]                                                |     AGY QA      | 2026-09-30 | Full catalog, booklet codes, and syllabus mappings                 |
 
 ---
 

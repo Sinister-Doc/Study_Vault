@@ -26,6 +26,7 @@ sources:
 > [!IMPORTANT] Exam Focus & Mark Potential
 > - **Expected Weightage:** **16–20 Questions (16–20 Marks)** in Paper-I.
 > - **Core Physical Features Tested:** 3 Physical zones (Karavali, Malnad, Bayaluseeme), Highest peak (Mullayanagiri, 1,930 m), Krishna & Cauvery river basins and dam projects, Famous waterfalls (Jog, Kunchikal, Shivanasamudra), Soils & 10 Agro-Climatic Zones, and Mineral resources (Hutti Gold Mines, Sandur Iron Ore).
+> - **Deep-Dive Study:** See [[09_Karnataka_Geography_Deep_Dive]] for the exhaustive 31-district matrix, 10 agro-climatic zones, 2011 census demographics, power plants, and Ramsar wetland sites.
 
 ---
 
@@ -148,6 +149,9 @@ Karnataka is exceptionally rich in mineral reserves:
 
 ---
 *Related Notes:*
+- [[09_Karnataka_Geography_Deep_Dive]] (Comprehensive Geography Deep Dive)
 - [[04_Karnataka_History_and_Heritage]]
+- [[08a_Karnataka_History_Early_Dynasties]]
+- [[08b_Karnataka_History_Vijayanagara_to_Modern]]
 - [[06_Indian_Constitution_and_Polity]]
 - [[07_Panchayat_Raj_Act_and_Rural_Administration]]

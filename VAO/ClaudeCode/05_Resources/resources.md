@@ -1,6 +1,11 @@
 ---
-tags: [resources, links, vao, kea, pyq, 2026]
-exam: "Karnataka VAO 2026"
+tags:
+  - resources
+  - links
+  - vao
+  - kea
+  - pyq
+exam: Karnataka VAO 2026
 priority: high
 ---
 

@@ -19,3 +19,4 @@
 | **6** | **T6.2** | Subject-Wise Timed Mocks (Kannada, English, Computer, RDPR, GK) | `06_Mock_Tests/Subject_Wise/` | **DONE** | 2026-09-30 09:20 |
 | **7** | **T7.1** | Re-sync Master Index & 4-Day / 2-Day Study Plan | `00_START_HERE.md` & `01_Study_Plan.md` | **DONE** | 2026-09-30 09:21 |
 | **8** | **T8.1** | Rigorous QA Audit, Zero-Defect Scan & QA Report | `07_Agent_Log/qa_report.md` | **DONE** | 2026-09-30 09:24 |
+| **9** | **T9.1** | Author Deep Dive Notes 08a, 08b (History) & 09 (Geography) | `03_Notes/` (Notes 08a, 08b, 09) | **DONE** | 2026-10-03 20:20 |
