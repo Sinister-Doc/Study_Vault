@@ -21,15 +21,15 @@ priority: High
 - **Three natural divisions:** (1) **Karavali (ಕರಾವಳಿ)** — narrow coast, heavy rain, ports (Mangaluru/New Mangalore, Karwar); (2) **Malnad (ಮಲೆನಾಡು)** — Western Ghats (ಪಶ್ಚಿಮ ಘಟ್ಟಗಳು), coffee/tea/spices, peaks Mullayanagiri (highest, Chikkamagaluru), Kudremukh, Tadiandamol; (3) **Maidan/Bayaluseeme (ಬಯಲುಸೀಮೆ)** — Deccan plateau, black/red soils, ragi–jowar–pulses belt.
 - **Rivers of Karnataka:**
 
-| River (ನದಿ) | Origin | Districts / flow | Joins | Key dam / project |
-|---|---|---|---|---|
-| Krishna (ಕೃಷ್ಣಾ) | Mahabaleshwar (MH) | North Karnataka border belt | Bay of Bengal | Almatti, Narayanpur |
-| Kaveri (ಕಾವೇರಿ) | Talakaveri, Kodagu | Kodagu–Mysuru–Mandya | Bay of Bengal (TN) | KRS (Krishnaraja Sagar) |
-| Tungabhadra (ತುಂಗಭದ್ರಾ) | Tunga+Bhadra meet at Koodli, Shivamogga | Central Karnataka | Krishna | Tungabhadra dam (Hospete) |
-| Malaprabha (ಮಲಪ್ರಭಾ) | Kanakumbi, Belagavi | North Karnataka | Krishna | Naviluteertha/Renuka Sagar |
-| Sharavati (ಶರಾವತಿ) | Ambuteertha, Shivamogga | West-flowing | Arabian Sea | Linganamakki; Jog Falls (ಜೋಗ ಜಲಪಾತ) |
-| Netravati (ನೇತ್ರಾವತಿ) | Kudremukh | Dakshina Kannada | Arabian Sea | Drinking water for Mangaluru |
-| Kali (ಕಾಳಿ) | Supa, Uttara Kannada | West-flowing | Arabian Sea | Supa/Kadra/Kodasalli hydel chain |
+| River (ನದಿ)             | Origin                                  | Districts / flow            | Joins              | Key dam / project                   |
+| ----------------------- | --------------------------------------- | --------------------------- | ------------------ | ----------------------------------- |
+| Krishna (ಕೃಷ್ಣಾ)        | Mahabaleshwar (MH)                      | North Karnataka border belt | Bay of Bengal      | Almatti, Narayanpur                 |
+| Kaveri (ಕಾವೇರಿ)         | Talakaveri, Kodagu                      | Kodagu–Mysuru–Mandya        | Bay of Bengal (TN) | KRS (Krishnaraja Sagar)             |
+| Tungabhadra (ತುಂಗಭದ್ರಾ) | Tunga+Bhadra meet at Koodli, Shivamogga | Central Karnataka           | Krishna            | Tungabhadra dam (Hospete)           |
+| Malaprabha (ಮಲಪ್ರಭಾ)    | Kanakumbi, Belagavi                     | North Karnataka             | Krishna            | Naviluteertha/Renuka Sagar          |
+| Sharavati (ಶರಾವತಿ)      | Ambuteertha, Shivamogga                 | West-flowing                | Arabian Sea        | Linganamakki; Jog Falls (ಜೋಗ ಜಲಪಾತ) |
+| Netravati (ನೇತ್ರಾವತಿ)   | Kudremukh                               | Dakshina Kannada            | Arabian Sea        | Drinking water for Mangaluru        |
+| Kali (ಕಾಳಿ)             | Supa, Uttara Kannada                    | West-flowing                | Arabian Sea        | Supa/Kadra/Kodasalli hydel chain    |
 
 - **Soils (ಮಣ್ಣು):** black/regur (ಕಪ್ಪು — Deccan trap north, cotton/sunflower), red (ಕೆಂಪು — Maidan, ragi/groundnut), laterite (laterite/ಜೇಡಿ — Malnad/coast, cashew/coffee), alluvial (ಮೆಕ್ಕಲು — river valleys, paddy/sugarcane), coastal sandy.
 - **Climate and crops:** tropical monsoon; coast >3000 mm rain, Bayaluseeme <700 mm. Kharif (ಮುಂಗಾರು: paddy, maize, cotton, sugarcane), Rabi (ಹಿಂಗಾರು: jowar, wheat, Bengal gram), plantation (coffee in Kodagu/Chikkamagaluru — Karnataka is India's top coffee state; areca, pepper, cardamom).

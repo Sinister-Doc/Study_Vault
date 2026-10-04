@@ -26,6 +26,7 @@ sources:
 > [!IMPORTANT] Exam Focus & Mark Potential
 > - **Expected Weightage:** **15–18 Questions (15–18 Marks)** in Paper-I.
 > - **Core Domain for VAO Post:** Karnataka Gram Swaraj & Panchayat Raj Act 1993, 3-tier PRI structure, Grama Sabha powers, Revenue Department Hierarchy (DC $\to$ AC $\to$ Tahsildar $\to$ RI $\to$ VAO), Duties of the Village Administrative Officer, Village Accounts & Registers (RTC / Pahani, Mutation Form 12, Jamabandi), and Bhoomi / e-Swathu workflows.
+> - **Deep-Dive Study:** See [[10_Panchayat_Raj_and_Rural_Administration_Deep_Dive]] for the exhaustive legal and administrative manual covering the full 1993 PR Act, 3-tier rules, complete 12-column anatomy of RTC Form 16, Section 128/129 mutations, all 24 village accounts, encroachment laws (Sec 192A/192B), and 50 high-yield facts.
 
 ---
 
@@ -160,6 +161,7 @@ flowchart TD
 
 ---
 *Related Notes:*
+- [[10_Panchayat_Raj_and_Rural_Administration_Deep_Dive]] (Comprehensive PR & VAO Deep Dive)
 - [[04_Karnataka_History_and_Heritage]]
 - [[05_Karnataka_and_Indian_Geography]]
 - [[06_Indian_Constitution_and_Polity]]
