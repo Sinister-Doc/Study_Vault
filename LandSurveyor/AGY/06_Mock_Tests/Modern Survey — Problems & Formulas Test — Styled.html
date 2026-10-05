@@ -1,0 +1,211 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Modern Surveying | Problems & Formulas Test</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet"><style>
+:root{
+  --paper:#EEF2F4; --card:#FFFFFF; --ink:#12263A; --muted:#566878; --line:#CBD5DC;
+  --accent:#0E7C86; --accent-ink:#FFFFFF; --accent-soft:#DDF0F2;
+  --good:#1E7D3A; --good-soft:#E1F3E6; --bad:#B3261E; --bad-soft:#FBE6E4;
+  --mark:#B7791F; --mark-soft:#FBF0D9;
+  --head:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --body:"IBM Plex Sans","Segoe UI",system-ui,-apple-system,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#0F1A24; --card:#17262F; --ink:#E6EEF2; --muted:#9BB0BD; --line:#2B3E4A;
+    --accent:#3DB5BF; --accent-ink:#05222A; --accent-soft:#12363C;
+    --good:#55C27A; --good-soft:#143323; --bad:#FF8A80; --bad-soft:#3B1A18;
+    --mark:#E8B84A; --mark-soft:#3A2F12;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0F1A24; --card:#17262F; --ink:#E6EEF2; --muted:#9BB0BD; --line:#2B3E4A;
+  --accent:#3DB5BF; --accent-ink:#05222A; --accent-soft:#12363C;
+  --good:#55C27A; --good-soft:#143323; --bad:#FF8A80; --bad-soft:#3B1A18;
+  --mark:#E8B84A; --mark-soft:#3A2F12;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit;cursor:pointer}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.wrap{max-width:1080px;margin:0 auto;padding:20px 16px 56px}
+h1,h2,h3{font-family:var(--head);line-height:1.15;margin:0}
+.btn{border:1.5px solid var(--ink);background:transparent;border-radius:8px;padding:10px 18px;font-weight:600}
+.btn:hover{background:var(--accent-soft)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn.primary:hover{filter:brightness(1.08)}
+.btn.danger{border-color:var(--bad);color:var(--bad)}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+.topline{display:flex;justify-content:flex-end;margin-bottom:6px}
+.topline button{border:none;background:none;color:var(--muted);font-size:14px;text-decoration:underline;padding:4px}
+/* Home */
+.hero{position:relative;overflow:hidden;border:1.5px solid var(--ink);border-radius:14px;background:var(--card);padding:34px 28px 30px}
+.hero svg{position:absolute;right:-60px;top:-40px;width:520px;height:420px;pointer-events:none}
+.hero svg *{fill:none;stroke:var(--line);stroke-width:1.4}
+.hero svg .idx{stroke:var(--accent);stroke-width:2;opacity:.7}
+.hero > *:not(svg){position:relative}
+.hero h1{font-size:clamp(30px,6vw,52px);font-weight:800;max-width:17ch;letter-spacing:-.02em}
+.hero p{max-width:65ch;color:var(--muted);margin:14px 0 0}
+.kicker{display:inline-flex;align-items:center;gap:8px;margin-bottom:13px;color:var(--accent);font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--accent)}
+.rules{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.rule{border:1.5px solid var(--line);border-radius:8px;padding:8px 14px;background:var(--paper);font-size:14px}
+.rule b{font-family:var(--mono);font-size:17px;display:block}
+.rule.plus b{color:var(--good)} .rule.minus b{color:var(--bad)}
+.panel{margin-top:22px;border:1.5px solid var(--line);border-radius:14px;background:var(--card);padding:22px}
+.panel h2{font-size:22px;margin-bottom:4px}.panel .sub{color:var(--muted);font-size:14px;margin:0 0 14px}
+.coverage{display:grid;grid-template-columns:repeat(auto-fill,minmax(245px,1fr));gap:10px}
+.cover{border:1.5px solid var(--line);border-radius:10px;padding:11px 12px;background:var(--paper);display:flex;gap:10px;align-items:flex-start}
+.cover strong{font-family:var(--head);font-size:15px;line-height:1.2}.cover span{display:block;color:var(--muted);font-size:13px;margin-top:4px}.cover .count{margin-left:auto;font-family:var(--mono);font-size:13px;color:var(--muted);white-space:nowrap}
+.chips{display:grid;grid-template-columns:repeat(auto-fill,minmax(245px,1fr));gap:10px}
+.chip{display:flex;align-items:center;gap:10px;border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;cursor:pointer;background:var(--paper);user-select:none}
+.chip input{width:18px;height:18px;accent-color:var(--accent);flex:none}.chip span.n{margin-left:auto;font-family:var(--mono);font-size:13px;color:var(--muted)}.chip.on{border-color:var(--accent);background:var(--accent-soft)}
+.mini{display:flex;gap:14px;margin-bottom:12px}.mini button{border:none;background:none;color:var(--accent);font-weight:600;padding:2px 0;text-decoration:underline}
+.opts{display:flex;flex-wrap:wrap;gap:20px}.field label{display:block;font-size:14px;color:var(--muted);margin-bottom:4px}
+select{font:inherit;padding:9px 12px;border-radius:8px;border:1.5px solid var(--line);background:var(--paper);color:var(--ink)}
+.summary{display:flex;flex-wrap:wrap;align-items:center;gap:14px 24px;margin-top:22px;padding-top:18px;border-top:1.5px dashed var(--line)}
+.summary .big{font-family:var(--mono);font-weight:600;font-size:18px}.summary .grow{flex:1}.hist{width:100%;border-collapse:collapse;font-size:14px}.hist td,.hist th{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line)}.hist th{color:var(--muted);font-weight:500}
+.source-note{margin-top:14px;padding:10px 12px;border-left:4px solid var(--accent);background:var(--accent-soft);border-radius:0 8px 8px 0;font-size:14px}
+/* Quiz */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);padding:10px 0;border-bottom:1.5px solid var(--line);display:flex;align-items:center;gap:14px;flex-wrap:wrap}.bar .title{font-family:var(--head);font-weight:700;font-size:18px}.bar .grow{flex:1}
+.timer{font-family:var(--mono);font-weight:600;font-size:22px;border:1.5px solid var(--ink);border-radius:8px;padding:4px 12px;background:var(--card);min-width:112px;text-align:center}.timer.low{color:var(--bad);border-color:var(--bad);animation:pulse 1s steps(2) infinite}
+@keyframes pulse{50%{background:var(--bad-soft)}}@media (prefers-reduced-motion:reduce){.timer.low{animation:none}}
+.prog{height:6px;background:var(--line);border-radius:3px;overflow:hidden;margin-top:10px}.prog i{display:block;height:100%;background:var(--accent);width:0}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 290px;gap:20px;margin-top:18px;align-items:start}@media (max-width:820px){.layout{grid-template-columns:1fr}}
+.qcard{border:1.5px solid var(--line);border-radius:14px;background:var(--card);padding:22px}.qmeta{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;margin-bottom:12px;font-size:14px;color:var(--muted)}.qmeta .tag{border:1.5px solid var(--line);border-radius:999px;padding:2px 10px}.qmeta .no{font-family:var(--mono);color:var(--ink);font-weight:600}.qtext{font-size:20px;font-weight:500;line-height:1.4;margin:0 0 18px;max-width:70ch;white-space:pre-line;overflow-wrap:anywhere}
+.options{display:grid;gap:10px}.opt{display:flex;gap:12px;align-items:flex-start;text-align:left;width:100%;border:1.5px solid var(--line);background:var(--paper);border-radius:10px;padding:12px 14px;white-space:pre-line;overflow-wrap:anywhere}.opt:hover{border-color:var(--accent)}
+.opt .l{flex:none;width:28px;height:28px;border-radius:50%;border:1.5px solid var(--muted);display:grid;place-items:center;font-family:var(--mono);font-size:13px;font-weight:600}.opt.sel{border-color:var(--accent);background:var(--accent-soft)}.opt.sel .l{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}.opt.good{border-color:var(--good);background:var(--good-soft)}.opt.good .l{background:var(--good);border-color:var(--good);color:var(--card)}.opt.bad{border-color:var(--bad);background:var(--bad-soft)}.opt.bad .l{background:var(--bad);border-color:var(--bad);color:var(--card)}.opt[disabled]{cursor:default}
+.nav{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}.nav .grow{flex:1}.btn.mk.on{background:var(--mark-soft);border-color:var(--mark);color:var(--mark)}
+.side{border:1.5px solid var(--line);border-radius:14px;background:var(--card);padding:16px;position:sticky;top:76px}.side h3{font-size:16px;margin-bottom:10px}.pal{display:grid;grid-template-columns:repeat(auto-fill,minmax(40px,1fr));gap:6px;max-height:390px;overflow:auto;padding:2px}.pb{height:38px;border-radius:7px;border:1.5px solid var(--line);background:var(--paper);font-family:var(--mono);font-size:13px;font-weight:600;position:relative}.pb.ans{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}.pb.mk::after{content:"";position:absolute;top:3px;right:3px;width:8px;height:8px;border-radius:50%;background:var(--mark);border:1.5px solid var(--card)}.pb.cur{outline:3px solid var(--ink);outline-offset:1px}.legend{display:grid;gap:6px;margin-top:14px;font-size:13px;color:var(--muted)}.legend span{display:flex;align-items:center;gap:8px}.legend i{width:16px;height:16px;border-radius:4px;border:1.5px solid var(--line);background:var(--paper);display:inline-block}.legend i.a{background:var(--accent);border-color:var(--accent)}.legend i.m{background:var(--mark);border-color:var(--mark);border-radius:50%}.counts{display:flex;justify-content:space-between;font-size:14px;margin-bottom:10px;font-family:var(--mono)}
+.tip{margin:14px 0 0;color:var(--muted);font-size:13px}
+/* Modal */
+.modal{position:fixed;inset:0;background:rgba(10,20,30,.6);display:grid;place-items:center;padding:20px;z-index:20}.modal .box{background:var(--card);border:1.5px solid var(--ink);border-radius:14px;padding:24px;max-width:420px;width:100%}.modal h2{font-size:22px;margin-bottom:8px}.modal .row{display:flex;gap:10px;margin-top:18px;justify-content:flex-end;flex-wrap:wrap}
+/* Results */
+.score{display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:center;border:1.5px solid var(--ink);border-radius:14px;background:var(--card);padding:26px}@media (max-width:640px){.score{grid-template-columns:1fr}}
+.ring{width:170px;height:170px;border-radius:50%;display:grid;place-items:center;text-align:center;border:10px solid var(--accent);font-family:var(--head)}.ring b{font-size:38px;font-weight:800;display:block;line-height:1}.ring small{font-family:var(--body);color:var(--muted);font-size:13px}.ring.neg{border-color:var(--bad)}.verdict{font-family:var(--head);font-size:26px;font-weight:700;margin-bottom:12px}.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px}.stat{border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;background:var(--paper)}.stat b{font-family:var(--mono);font-size:20px;display:block}.stat span{font-size:13px;color:var(--muted)}.stat.g b{color:var(--good)}.stat.r b{color:var(--bad)}
+.secs{width:100%;border-collapse:collapse;font-size:14px}.secs th,.secs td{text-align:left;padding:9px 8px;border-bottom:1px solid var(--line);vertical-align:middle}.secs th{color:var(--muted);font-weight:500}.secs td.num{font-family:var(--mono)}.meter{height:8px;border-radius:4px;background:var(--line);overflow:hidden;min-width:80px}.meter i{display:block;height:100%;background:var(--accent)}.meter i.weak{background:var(--bad)}.filters{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}.filters button{border:1.5px solid var(--line);background:var(--card);border-radius:999px;padding:6px 14px;font-size:14px;font-weight:500}.filters button.on{background:var(--ink);color:var(--card);border-color:var(--ink)}.rv{border:1.5px solid var(--line);border-radius:12px;background:var(--card);padding:18px;margin-bottom:12px}.rv .qtext{font-size:17px;margin-bottom:12px}.rv .res{font-family:var(--mono);font-size:13px;font-weight:600;margin-left:auto}.rv .res.g{color:var(--good)}.rv .res.r{color:var(--bad)}.rv .res.s{color:var(--muted)}.exp{margin-top:12px;padding:10px 12px;border-left:4px solid var(--accent);background:var(--accent-soft);border-radius:0 8px 8px 0;font-size:14px;white-space:pre-line}.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}.hide{display:none!important}
+</style></head><body><div class="wrap" id="app"></div><script>
+const DATA = [{"t":"Scale & Distance","n":1,"q":"A surveyor measured the distance between two points on a plan drawn to a scale of 1 cm = 40 m and obtained 468 m. Later, it was found that the scale used was 1 cm = 20 m. What is the true distance between the points? (GATE CE 2025)","o":["468 m","936 m","234 m","1872 m"],"a":1,"e":"Map length = 468 / 20 = 23.4 cm. True distance = 23.4 × 40 = 936 m."},{"t":"Scale & Distance","n":2,"q":"A map has a scale of 1:25,000. If the distance between two points on the map is 4 cm, what is the ground distance? (UPPSC)","o":["100 m","1 km","10 km","625 m"],"a":1,"e":"Ground = 4 × 25,000 = 100,000 cm = 1 km."},{"t":"Scale & Distance","n":3,"q":"A plan is prepared at a scale of 1:1000. If the plan is reduced so that a 100 mm line becomes 90 mm, what is the new scale? (GATE)","o":["1:900","1:1000","Approximately 1:1111","1:1250"],"a":2,"e":"New scale = 1000 × 100/90 ≈ 1:1111."},{"t":"Scale & Distance","n":4,"q":"On a plan, 1 cm represents 50 m on the ground. A line measures 7.2 cm on the plan. What is its ground length?","o":["36 m","144 m","360 m","3600 m"],"a":2,"e":"Ground = 7.2 × 50 = 360 m."},{"t":"Scale & Distance","n":5,"q":"A ground distance of 2.5 km is to be shown on a 1:50,000 map. What will be its map length?","o":["0.5 cm","5 cm","12.5 cm","50 cm"],"a":1,"e":"2.5 km = 250,000 cm; 250,000 / 50,000 = 5 cm."},{"t":"Coordinates","n":6,"q":"The coordinates of two points are A(10, 20) and B(13, 24). Find the distance AB. (GATE-type)","o":["3 units","4 units","5 units","7 units"],"a":2,"e":"D = √[(13−10)² + (24−20)²] = √(9+16) = √25 = 5 units."},{"t":"Coordinates","n":7,"q":"The differences in Easting and Northing between two survey stations are 30 m and 40 m. Find the distance between them. (BPSC)","o":["35 m","50 m","70 m","10 m"],"a":1,"e":"D = √(30² + 40²) = √2500 = 50 m."},{"t":"Coordinates","n":8,"q":"The coordinates of two points are (100 m, 200 m) and (400 m, 600 m). Find the distance between them. (UPPSC)","o":["300 m","400 m","500 m","700 m"],"a":2,"e":"ΔX = 300, ΔY = 400; D = √(300² + 400²) = 500 m."},{"t":"Coordinates","n":9,"q":"Find the distance between P(0, 0) and Q(5, 12).","o":["7 units","12 units","13 units","17 units"],"a":2,"e":"D = √(25 + 144) = √169 = 13 units."},{"t":"Coordinates","n":10,"q":"In a coordinate pair P(X, Y) used in surveying, which axis value is the Easting?","o":["Y","X","Z","H"],"a":1,"e":"Easting = X, Northing = Y."},{"t":"Height & Slope","n":11,"q":"A line has a horizontal distance of 100 m and a difference in elevation of 10 m. Find the percentage slope. (GATE)","o":["1%","10%","0.1%","100%"],"a":1,"e":"Slope % = (ΔH / D) × 100 = (10/100) × 100 = 10%."},{"t":"Height & Slope","n":12,"q":"A line has a horizontal distance of 40 m and a difference in elevation of 30 m. Find its slope distance. (BPSC)","o":["10 m","35 m","50 m","70 m"],"a":2,"e":"S = √(40² + 30²) = √2500 = 50 m."},{"t":"Height & Slope","n":13,"q":"A line has a horizontal distance of 100 m and makes an angle of 30° with the horizontal. Find the difference in elevation. (UPPSC)","o":["50 m","About 57.7 m","About 86.6 m","About 173.2 m"],"a":1,"e":"ΔH = D tan θ = 100 × tan 30° ≈ 57.7 m."},{"t":"Height & Slope","n":14,"q":"A slope line is 13 m long and its horizontal distance is 12 m. What is the difference in elevation?","o":["1 m","5 m","12 m","25 m"],"a":1,"e":"ΔH = √(S² − D²) = √(169 − 144) = 5 m."},{"t":"Height & Slope","n":15,"q":"A ground rises 20 m over a horizontal distance of 80 m. Find the percentage slope.","o":["4%","20%","25%","40%"],"a":2,"e":"Slope % = 20/80 × 100 = 25%."},{"t":"Height & Slope","n":16,"q":"Point 1 is at 215.4 m and point 2 is at 248.9 m above datum. What is ΔH = H2 − H1?","o":["33.5 m","−33.5 m","464.3 m","23.5 m"],"a":0,"e":"ΔH = 248.9 − 215.4 = 33.5 m."},{"t":"Photogrammetry Scale","n":17,"q":"A camera with focal length 20 cm takes vertical aerial photographs. Average terrain elevation is 1200 m above MSL. At what height above MSL must the aircraft fly for a photo scale of 1:8000? (GATE CE 2019)","o":["1600 m","2400 m","2800 m","3200 m"],"a":2,"e":"H − h = f × scale denominator = 0.2 × 8000 = 1600 m. H = 1200 + 1600 = 2800 m."},{"t":"Photogrammetry Scale","n":18,"q":"An aerial photograph is taken from 3.5 km above MSL with a camera of focal length 152 mm. Average ground elevation is 460 m above MSL. Find the photo scale. (GATE CE 2022)","o":["1:3,040","1:20,000","1:23,000","1:30,400"],"a":1,"e":"Scale = 0.152 / (3500 − 460) = 0.152 / 3040 = 1:20,000."},{"t":"Photogrammetry Scale","n":19,"q":"A camera of focal length 150 mm has a flying height of 1500 m above the ground. Find the photo scale. (GATE/Photogrammetry)","o":["1:1,000","1:10,000","1:15,000","1:100,000"],"a":1,"e":"Scale = f / H = 0.15 / 1500 = 1:10,000."},{"t":"Photogrammetry Scale","n":20,"q":"Other things being equal, what happens to photo scale when flying height increases?","o":["Scale becomes larger","Scale becomes smaller","Scale is unchanged","Focal length increases"],"a":1,"e":"Scale = f / (H − h). Higher flying height → smaller scale. Higher focal length → larger scale."},{"t":"Photogrammetry Scale","n":21,"q":"A camera with f = 0.15 m is to give a scale of 1:5000. What flying height above ground is needed?","o":["33 m","75 m","750 m","7500 m"],"a":2,"e":"H = f × scale denominator = 0.15 × 5000 = 750 m."},{"t":"Photogrammetry Scale","n":22,"q":"f = 300 mm, flying height above MSL = 4000 m, average ground elevation = 1000 m. Find the photo scale.","o":["1:3,333","1:10,000","1:13,333","1:1,000"],"a":1,"e":"Scale = 0.3 / (4000 − 1000) = 0.3 / 3000 = 1:10,000."},{"t":"Pixels & Resolution","n":23,"q":"A student scans a 10 in × 10 in certificate at 600 dpi and then at 300 dpi. What is the percentage reduction in the number of pixels? (GATE CE 2023)","o":["25%","50%","75%","100%"],"a":2,"e":"600 dpi: 6000×6000 pixels; 300 dpi: 3000×3000 = ¼ of that. Reduction = 75%."},{"t":"Pixels & Resolution","n":24,"q":"An image has 2000 pixels in length and 1000 pixels in breadth. Find the total number of pixels. (GATE Geomatics)","o":["3,000","200,000","2,000,000","20,000,000"],"a":2,"e":"Total = 2000 × 1000 = 2,000,000."},{"t":"Pixels & Resolution","n":25,"q":"A satellite image has a pixel size of 10 m × 10 m. What ground area does one pixel represent? (ISRO)","o":["10 m²","20 m²","100 m²","1000 m²"],"a":2,"e":"Area = 10 × 10 = 100 m²."},{"t":"Pixels & Resolution","n":26,"q":"A satellite image has a spatial resolution of 30 m. What ground area is represented by one pixel? (UPPSC)","o":["30 m²","60 m²","900 m²","9000 m²"],"a":2,"e":"Area = 30 × 30 = 900 m²."},{"t":"Pixels & Resolution","n":27,"q":"Which resolution determines the smallest ground feature that can be distinguished in a satellite image? (ISRO)","o":["Spatial","Spectral","Temporal","Radiometric"],"a":0,"e":"Spatial resolution = ground detail / pixel size."},{"t":"Pixels & Resolution","n":28,"q":"Which resolution indicates how frequently a satellite revisits the same area? (GATE Geomatics)","o":["Spatial","Spectral","Radiometric","Temporal"],"a":3,"e":"Temporal resolution = revisit frequency."},{"t":"Pixels & Resolution","n":29,"q":"An 8 in × 6 in photograph is scanned at 300 dpi. How many pixels does the image contain?","o":["14,400","432,000","4,320,000","43,200,000"],"a":2,"e":"2400 × 1800 = 4,320,000 pixels."},{"t":"Pixels & Resolution","n":30,"q":"How many 10 m × 10 m pixels are needed to cover 1 km² (1,000,000 m²)?","o":["100","1,000","10,000","100,000"],"a":2,"e":"1,000,000 / 100 = 10,000 pixels."},{"t":"Pixels & Resolution","n":31,"q":"A sensor records 10-bit data. How many brightness (DN) levels are possible?","o":["256","512","1024","2048"],"a":2,"e":"2¹⁰ = 1024 levels (8-bit = 256, 12-bit = 4096)."},{"t":"NDVI","n":32,"q":"Which two spectral bands are used to calculate NDVI? (UPSC/Remote Sensing)","o":["Red and Green","Near Infrared and Red","Blue and Green","SWIR and Thermal"],"a":1,"e":"NDVI = (NIR − RED) / (NIR + RED)."},{"t":"NDVI","n":33,"q":"If NIR reflectance is 0.8 and Red reflectance is 0.2, calculate NDVI. (GATE Geomatics)","o":["0.2","0.6","0.75","1.0"],"a":1,"e":"NDVI = (0.8 − 0.2) / (0.8 + 0.2) = 0.6."},{"t":"NDVI","n":34,"q":"NIR reflectance = 0.5 and Red reflectance = 0.3. Find NDVI.","o":["0.2","0.25","0.4","0.6"],"a":1,"e":"NDVI = 0.2 / 0.8 = 0.25."},{"t":"NDVI","n":35,"q":"What is the possible range of NDVI values?","o":["0 to 1","−1 to +1","0 to 255","−10 to +10"],"a":1,"e":"NDVI ranges from −1 to +1; higher positive values generally mean healthier, denser vegetation."},{"t":"NDVI","n":36,"q":"If NIR = Red = 0.4, what is NDVI?","o":["0","0.5","1","−1"],"a":0,"e":"NDVI = (0.4 − 0.4)/(0.4 + 0.4) = 0."},{"t":"EM Waves","n":37,"q":"An electromagnetic wave has a frequency of 3 × 10⁸ Hz. Find its wavelength. (GATE)","o":["0.1 m","1 m","10 m","100 m"],"a":1,"e":"λ = c / f = (3 × 10⁸) / (3 × 10⁸) = 1 m."},{"t":"EM Waves","n":38,"q":"If the wavelength of electromagnetic radiation increases, what happens to its frequency? (ISRO)","o":["It increases","It decreases","It is unchanged","It becomes zero"],"a":1,"e":"c = fλ with c constant, so frequency and wavelength are inversely related."},{"t":"EM Waves","n":39,"q":"Which relationship between wavelength and frequency is correct for EM radiation? (UPSC)","o":["c = f / λ","c = fλ","c = λ / f","c = f + λ"],"a":1,"e":"c = fλ, so f = c/λ and λ = c/f."},{"t":"EM Waves","n":40,"q":"An EM wave has wavelength 0.5 m. Find its frequency (c = 3 × 10⁸ m/s).","o":["1.5 × 10⁸ Hz","6 × 10⁷ Hz","6 × 10⁸ Hz","1.5 × 10⁹ Hz"],"a":2,"e":"f = c / λ = 3 × 10⁸ / 0.5 = 6 × 10⁸ Hz."},{"t":"EM Waves","n":41,"q":"An EM wave has frequency 1.5 × 10⁹ Hz. Find its wavelength.","o":["0.2 m","0.5 m","2 m","5 m"],"a":0,"e":"λ = 3 × 10⁸ / 1.5 × 10⁹ = 0.2 m."},{"t":"Signal Travel (EDM / GNSS)","n":42,"q":"An electromagnetic signal takes 1 microsecond to travel from transmitter to receiver. Find the distance travelled. (GATE)","o":["30 m","150 m","300 m","3 km"],"a":2,"e":"D = ct = 3 × 10⁸ × 1 × 10⁻⁶ = 300 m."},{"t":"Signal Travel (EDM / GNSS)","n":43,"q":"An EDM instrument measures a round-trip signal travel time of 2 microseconds. Find the distance to the target. (GATE Surveying)","o":["150 m","300 m","600 m","3 km"],"a":1,"e":"D = ct / 2 = (3 × 10⁸ × 2 × 10⁻⁶) / 2 = 300 m."},{"t":"Signal Travel (EDM / GNSS)","n":44,"q":"In GNSS, the basic relationship between signal travel time and satellite–receiver range is: (ISRO/GNSS)","o":["ρ = c / Δt","ρ = cΔt","ρ = Δt / c","ρ = c + Δt"],"a":1,"e":"ρ = cΔt (pseudorange = speed of light × signal travel-time difference)."},{"t":"Signal Travel (EDM / GNSS)","n":45,"q":"Why is the EDM distance formula D = ct / 2 divided by 2?","o":["Light travels at half speed in air","The signal travels to the target and returns","Time is measured in half-cycles","The target absorbs half the signal"],"a":1,"e":"Round-trip: total path = 2D, so D = ct / 2."},{"t":"Signal Travel (EDM / GNSS)","n":46,"q":"An EDM measures a round-trip time of 4 microseconds. What is the distance to the target?","o":["150 m","300 m","600 m","1200 m"],"a":2,"e":"D = 3 × 10⁸ × 4 × 10⁻⁶ / 2 = 600 m."},{"t":"Signal Travel (EDM / GNSS)","n":47,"q":"A GNSS satellite signal takes 0.07 s to reach a receiver. What is the approximate range?","o":["2,100 km","21,000 km","210,000 km","4,200 km"],"a":1,"e":"ρ = cΔt = 3 × 10⁸ × 0.07 = 2.1 × 10⁷ m = 21,000 km."},{"t":"Photogrammetry Scale","n":48,"q":"Which expression gives photo scale when H is flying height above MSL and h is ground elevation above MSL?","o":["f × (H − h)","f / (H + h)","f / (H − h)","(H − h) / f²"],"a":2,"e":"Photo scale = f / (H − h)."},{"t":"Height & Slope","n":49,"q":"Which expression gives slope distance S from horizontal distance D and elevation difference ΔH?","o":["S = D + ΔH","S = √[D² + (ΔH)²]","S = D tan θ","S = ΔH / D"],"a":1,"e":"S = √[D² + (ΔH)²]."}];
+const TITLE = "Modern Surveying | Problems & Formulas Test";
+const DESCRIPTION = "A calculation-focused drill covering scale, coordinates, height and slope, photogrammetric scale, pixels and resolution, NDVI, EM waves, and signal-travel relationships used in surveying and remote sensing.";
+const SOURCE = "Modern Survey Final Revision Notes.pdf";
+const SOURCE_NOTE = "The supplied 49-question problem set has been retained as-is. Its eight problem families are mapped in the coverage panel, and the numerical answer keys were checked by direct calculation.";
+const ACCENT_LABEL = "Modern Survey | Formula & problem drill";
+const SECS = [...new Set(DATA.map(x=>x.t))];
+const BANK = DATA.map((x,i)=>({
+  s:x.t, q:x.q, o:x.o.slice(), ci:x.a, e:x.e||"", sourceNo:x.n??(i+1), bankIndex:i
+}));
+const PLUS=1, MINUS=0.25;
+const LS="modern_formula_styled_v2";
+const app=document.getElementById("app");
+let sel=new Set(SECS), cntSel="all", secPer=45;
+let qs=[], ans=[], marked=[], cur=0, endAt=0, totalSec=0, startedAt=0, timerId=null, mode="home", filter="all", result=null;
+
+function el(tag,attrs,...kids){
+  const n=document.createElement(tag);
+  if(attrs)for(const k in attrs){const v=attrs[k];if(v==null||v===false)continue;if(k==="class")n.className=v;else if(k.startsWith("on"))n.addEventListener(k.slice(2),v);else n.setAttribute(k,v===true?"":v)}
+  kids.flat(Infinity).forEach(c=>{if(c==null||c===false)return;n.append(c.nodeType?c:document.createTextNode(String(c)))})
+  return n;
+}
+function esc(x){return String(x??"")}
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function fmt(sec){sec=Math.max(0,Math.round(sec));const h=Math.floor(sec/3600),m=Math.floor(sec%3600/60),s=sec%60;return(h?h+":" : "")+String(m).padStart(h?2:1,"0")+":"+String(s).padStart(2,"0")}
+function num(x){return(Math.round(x*100)/100).toFixed(2).replace(/\.00$/ ,"")}
+function loadHist(){try{return JSON.parse(localStorage.getItem(LS)||"[]")}catch(e){return[]}}
+function saveHist(r){try{const h=loadHist();h.unshift(r);localStorage.setItem(LS,JSON.stringify(h.slice(0,8)))}catch(e){}}
+function clearHist(){try{localStorage.removeItem(LS)}catch(e){}}
+function counts(){const c={};SECS.forEach(s=>c[s]=0);BANK.forEach(b=>c[b.s]++);return c}
+function poolFor(){return BANK.filter(b=>sel.has(b.s))}
+function plannedCount(){const n=poolFor().length;return cntSel==="all"?n:Math.min(n,+cntSel)}
+function themeToggle(){const root=document.documentElement;const dark=root.dataset.theme?root.dataset.theme==="dark":matchMedia("(prefers-color-scheme:dark)").matches;root.dataset.theme=dark?"light":"dark";render()}
+function topline(){return el("div",{class:"topline"},el("button",{onclick:themeToggle,type:"button"},"Switch light / dark theme"))}
+function topicColorState(s){return sel.has(s)?" on":""}
+function sourceCoverage(){
+  const c=counts();
+  return el("div",{class:"coverage"},SECS.map(s=>el("div",{class:"cover"},
+    el("div",null,el("strong",null,s),el("span",null,"Full source-aligned question set")),
+    el("div",{class:"count"},String(c[s])))));
+}
+function renderHome(){
+  const c=counts(), n=plannedCount(), tsec=n*secPer;
+  const contours=`<svg viewBox="0 0 520 420" aria-hidden="true"><g transform="translate(300 190) rotate(-22)"><ellipse rx="40" ry="24"/><ellipse rx="80" ry="50"/><ellipse class="idx" rx="125" ry="80"/><ellipse rx="170" ry="112"/><ellipse rx="215" ry="146"/><ellipse class="idx" rx="262" ry="182"/><ellipse rx="310" ry="220"/></g></svg>`;
+  const hero=el("section",{class:"hero"},
+    el("div",{class:"kicker"},el("span",{class:"dot"}),ACCENT_LABEL),
+    el("h1",null,TITLE),
+    el("p",null,DESCRIPTION),
+    el("div",{class:"source-note"},el("b",null,"Source alignment: "),SOURCE_NOTE),
+    el("div",{class:"rules"},
+      el("div",{class:"rule plus"},el("b",null,"+1"),"each correct answer"),
+      el("div",{class:"rule minus"},el("b",null,"-0.25"),"each wrong answer"),
+      el("div",{class:"rule"},el("b",null,"0"),"for skipped questions"),
+      el("div",{class:"rule"},el("b",null,String(BANK.length)),"questions in the bank")
+    ));
+  hero.insertAdjacentHTML("afterbegin",contours);
+
+  const cov=el("section",{class:"panel"},el("h2",null,"Coverage map"),el("p",{class:"sub"},"Every question supplied for this test is retained; topics can be selected independently for focused revision."),sourceCoverage());
+  const chips=el("div",{class:"chips"},SECS.map(s=>{
+    const cb=el("input",{type:"checkbox",checked:sel.has(s),onchange:e=>{e.target.checked?sel.add(s):sel.delete(s);render()}});
+    return el("label",{class:"chip"+topicColorState(s)},cb,el("span",null,s),el("span",{class:"n"},c[s]));
+  }));
+  const countOpts=[["all","All selected"]].concat([25,50,100,150].filter(v=>v<BANK.length).map(v=>[String(v),v+" random"]));
+  const pick=el("section",{class:"panel"},
+    el("h2",null,"Choose what to test"),
+    el("p",{class:"sub"},"All topics are selected by default for a full revision."),
+    el("div",{class:"mini"},el("button",{type:"button",onclick:()=>{sel=new Set(SECS);render()}},"Select all"),el("button",{type:"button",onclick:()=>{sel=new Set();render()}},"Clear all")),
+    chips,
+    el("div",{class:"opts",style:"margin-top:20px"},
+      el("div",{class:"field"},el("label",{for:"cnt"},"Number of questions"),el("select",{id:"cnt",onchange:e=>{cntSel=e.target.value;render()}},countOpts.map(([v,t])=>el("option",{value:v,selected:cntSel===v},t)))),
+      el("div",{class:"field"},el("label",{for:"spq"},"Time per question"),el("select",{id:"spq",onchange:e=>{secPer=+e.target.value;render()}},[[30,"30 seconds (hard)"],[45,"45 seconds (standard)"],[60,"60 seconds (relaxed)"]].map(([v,t])=>el("option",{value:v,selected:secPer===v},t))))
+    ),
+    el("div",{class:"summary"},
+      el("div",null,el("div",{class:"big"},n+" questions"),"Maximum score "+n),
+      el("div",null,el("div",{class:"big"},fmt(tsec)),"Time limit"),
+      el("div",{class:"grow"}),
+      el("button",{class:"btn primary",type:"button",disabled:n===0,onclick:()=>startTest(poolFor())},"Start test")
+    ));
+  const h=loadHist();
+  const hist=h.length?el("section",{class:"panel"},el("h2",null,"Recent attempts"),el("p",{class:"sub"},"Saved in this browser only."),el("table",{class:"hist"},el("thead",null,el("tr",null,["When","Score","Correct","Wrong","Skipped","Time used"].map(t=>el("th",null,t)))),el("tbody",null,h.map(r=>el("tr",null,el("td",null,new Date(r.t).toLocaleString([], {dateStyle:"medium",timeStyle:"short"})),el("td",null,num(r.score)+" / "+r.total),el("td",null,r.c),el("td",null,r.w),el("td",null,r.s),el("td",null,fmt(r.used)))))),el("div",{style:"margin-top:12px"},el("button",{class:"btn",type:"button",onclick:()=>{clearHist();render()}},"Clear history"))):null;
+  app.replaceChildren(topline(),hero,cov,pick,hist);
+}
+function startTest(pool){
+  let p=shuffle(pool.slice());
+  if(cntSel!=="all")p=p.slice(0,+cntSel);
+  qs=p.map(b=>{const o=shuffle(b.o.slice());const ci=o.indexOf(b.o[b.ci]);return{...b,o,ci}});
+  ans=qs.map(()=>-1);marked=qs.map(()=>false);cur=0;filter="all";totalSec=qs.length*secPer;startedAt=Date.now();endAt=startedAt+totalSec*1000;mode="quiz";render();clearInterval(timerId);timerId=setInterval(tick,500);window.scrollTo(0,0);
+}
+function tick(){const left=(endAt-Date.now())/1000;const t=document.getElementById("timer");if(t){t.textContent=fmt(left);t.classList.toggle("low",left<=Math.max(60,totalSec*.1))}if(left<=0){clearInterval(timerId);finish(true)}}
+function answeredCount(){return ans.filter(a=>a>=0).length}
+function renderQuiz(){
+  const q=qs[cur], letters="ABCD";
+  const bar=el("div",{class:"bar"},el("div",{class:"title"},"Question "+(cur+1)+" of "+qs.length),el("div",{class:"grow"}),el("div",{class:"timer",id:"timer",role:"timer","aria-label":"Time remaining"},fmt((endAt-Date.now())/1000)),el("button",{class:"btn danger",type:"button",onclick:askSubmit},"Submit test"));
+  const prog=el("div",{class:"prog",role:"progressbar","aria-valuemin":"0","aria-valuemax":String(qs.length),"aria-valuenow":String(answeredCount())},el("i",{style:"width:"+(answeredCount()/qs.length*100)+"%"}));
+  const options=el("div",{class:"options",role:"radiogroup","aria-label":"Answer options"},q.o.map((t,i)=>el("button",{type:"button",role:"radio","aria-checked":ans[cur]===i,class:"opt"+(ans[cur]===i?" sel":""),onclick:()=>{ans[cur]=ans[cur]===i?-1:i;render()}},el("span",{class:"l"},letters[i]),el("span",null,t))));
+  const card=el("section",{class:"qcard"},el("div",{class:"qmeta"},el("span",{class:"no"},"Q"+(cur+1)),el("span",{class:"tag"},q.s),q.sourceNo!=null?el("span",{class:"tag"},"Source Q"+q.sourceNo):null,marked[cur]?el("span",{class:"tag",style:"color:var(--mark);border-color:var(--mark)"},"Marked for review"):null),el("p",{class:"qtext"},q.q),options,el("div",{class:"nav"},el("button",{class:"btn",type:"button",disabled:cur===0,onclick:()=>go(cur-1)},"Previous"),el("button",{class:"btn",type:"button",disabled:ans[cur]<0,onclick:()=>{ans[cur]=-1;render()}},"Clear answer"),el("button",{class:"btn mk"+(marked[cur]?" on":""),type:"button",onclick:()=>{marked[cur]=!marked[cur];render()}},marked[cur]?"Unmark":"Mark for review"),el("div",{class:"grow"}),el("button",{class:"btn primary",type:"button",disabled:cur===qs.length-1,onclick:()=>go(cur+1)},"Next")),el("p",{class:"tip"},"Keys: 1-4 or A-D to answer, Left/Right to move, M to mark for review."));
+  const pal=el("div",{class:"pal"},qs.map((_,i)=>el("button",{type:"button","aria-label":"Go to question "+(i+1),class:"pb"+(ans[i]>=0?" ans":"")+(marked[i]?" mk":"")+(i===cur?" cur":""),onclick:()=>go(i)},String(i+1))));
+  const side=el("aside",{class:"side"},el("h3",null,"Question palette"),el("div",{class:"counts"},el("span",null,"Answered "+answeredCount()),el("span",null,"Left "+(qs.length-answeredCount()))),pal,el("div",{class:"legend"},el("span",null,el("i",{class:"a"}),"Answered"),el("span",null,el("i"),"Not answered"),el("span",null,el("i",{class:"m"}),"Marked for review")));
+  app.replaceChildren(bar,prog,el("div",{class:"layout"},card,side));tick();
+}
+function go(i){cur=Math.max(0,Math.min(qs.length-1,i));render();window.scrollTo(0,0)}
+function askSubmit(){const un=qs.length-answeredCount(),mk=marked.filter(Boolean).length,left=Math.max(0,(endAt-Date.now())/1000);const m=el("div",{class:"modal",id:"modal",role:"dialog","aria-modal":"true","aria-labelledby":"mt"},el("div",{class:"box"},el("h2",{id:"mt"},"Submit your test?"),el("p",null,"You have answered "+answeredCount()+" of "+qs.length+" questions. "+(un?un+" unanswered will score 0. ":"")+(mk?mk+" still marked for review. ":"")+fmt(left)+" remaining."),el("div",{class:"row"},el("button",{class:"btn",type:"button",onclick:()=>m.remove()},"Keep going"),el("button",{class:"btn primary",type:"button",onclick:()=>{m.remove();finish(false)}},"Submit now"))));document.body.append(m);m.querySelector(".btn").focus()}
+function compute(){let c=0,w=0,s=0;const by={};qs.forEach((q,i)=>{by[q.s]=by[q.s]||{n:0,c:0,w:0,s:0};const b=by[q.s];b.n++;if(ans[i]<0){s++;b.s++}else if(ans[i]===q.ci){c++;b.c++}else{w++;b.w++}});return{c,w,s,by,score:c*PLUS-w*MINUS,total:qs.length*PLUS}}
+function finish(auto){clearInterval(timerId);const used=Math.min(totalSec,(Date.now()-startedAt)/1000);result=compute();result.used=used;result.auto=auto;result.questionBankTitle=TITLE;saveHist({t:Date.now(),score:result.score,total:result.total,c:result.c,w:result.w,s:result.s,used});mode="result";filter="all";render();window.scrollTo(0,0)}
+function verdict(p){if(p>=90)return"Outstanding. Exam-ready.";if(p>=75)return"Strong result. Polish the weak topics.";if(p>=55)return"Decent base. Revise the red topics below.";if(p>=35)return"Needs work. Re-read the notes, then retry.";return"Start with the notes, then retake the test."}
+function renderResult(){
+  const r=result,pct=r.total?r.score/r.total*100:0,att=r.c+r.w,acc=att?r.c/att*100:0;
+  const head=el("section",{class:"score"},el("div",{class:"ring"+(r.score<0?" neg":"")},el("div",null,el("b",null,num(r.score)),el("small",null,"out of "+r.total))),el("div",null,el("div",{class:"verdict"},(r.auto?"Time is up. ":"")+verdict(pct)),el("div",{class:"stats"},el("div",{class:"stat g"},el("b",null,r.c),el("span",null,"Correct (+"+num(r.c*PLUS)+")")),el("div",{class:"stat r"},el("b",null,r.w),el("span",null,"Wrong (-"+num(r.w*MINUS)+")")),el("div",{class:"stat"},el("b",null,r.s),el("span",null,"Skipped")),el("div",{class:"stat"},el("b",null,num(acc)+"%"),el("span",null,"Accuracy on attempted")),el("div",{class:"stat"},el("b",null,num(pct)+"%"),el("span",null,"Net score")),el("div",{class:"stat"},el("b",null,fmt(r.used)),el("span",null,"Time used of "+fmt(totalSec))))));
+  const rows=Object.keys(r.by).sort((a,b)=>SECS.indexOf(a)-SECS.indexOf(b)).map(k=>{const b=r.by[k],sc=b.c-b.w*MINUS,p=b.n?sc/b.n*100:0;return el("tr",null,el("td",null,k),el("td",{class:"num"},b.c+"/"+b.n),el("td",{class:"num"},b.w),el("td",{class:"num"},b.s),el("td",{class:"num"},num(sc)),el("td",null,el("div",{class:"meter"},el("i",{class:p<50?"weak":"",style:"width:"+Math.max(0,Math.min(100,p))+"%"}))));});
+  const secs=el("section",{class:"panel"},el("h2",null,"Topic-wise performance"),el("p",{class:"sub"},"Bars under 50% net score are shown in red; use them as a revision signal rather than a grade."),el("div",{style:"overflow-x:auto"},el("table",{class:"secs"},el("thead",null,el("tr",null,["Topic","Correct","Wrong","Skipped","Score","Net %"].map(t=>el("th",null,t)))),el("tbody",null,rows))));
+  const miss=qs.map((q,i)=>i).filter(i=>ans[i]!==qs[i].ci);
+  const actions=el("div",{class:"actions"},el("button",{class:"btn primary",type:"button",disabled:!miss.length,onclick:()=>{cntSel="all";startTest(miss.map(i=>({s:qs[i].s,q:qs[i].q,o:qs[i].o.slice(),ci:qs[i].ci,e:qs[i].e,sourceNo:qs[i].sourceNo})))}} ,"Retry wrong and skipped ("+miss.length+")"),el("button",{class:"btn",type:"button",onclick:()=>{mode="home";render();window.scrollTo(0,0)}},"New test"));
+  const F=[["all","All"],["wrong","Wrong"],["skipped","Skipped"],["correct","Correct"],["marked","Marked"]];
+  const filters=el("div",{class:"filters",role:"group","aria-label":"Filter review"},F.map(([k,t])=>el("button",{type:"button",class:filter===k?"on":"","aria-pressed":filter===k,onclick:()=>{filter=k;render()}},t)));
+  const list=qs.map((q,i)=>({q,i})).filter(({q,i})=>{const st=ans[i]<0?"skipped":ans[i]===q.ci?"correct":"wrong";return filter==="all"||filter===st||(filter==="marked"&&marked[i])}).map(({q,i})=>{const st=ans[i]<0?"s":ans[i]===q.ci?"g":"r";return el("article",{class:"rv"},el("div",{class:"qmeta"},el("span",{class:"no"},"Q"+(i+1)),el("span",{class:"tag"},q.s),q.sourceNo!=null?el("span",{class:"tag"},"Source Q"+q.sourceNo):null,el("span",{class:"res "+st},st==="g"?"+1":st==="r"?"-0.25":"Skipped (0)")),el("p",{class:"qtext"},q.q),el("div",{class:"options"},q.o.map((t,k)=>{const good=k===q.ci,bad=k===ans[i]&&!good;return el("div",{class:"opt"+(good?" good":"")+(bad?" bad":""),style:"cursor:default"},el("span",{class:"l"},"ABCD"[k]),el("span",null,t+(good?"  (correct)":"")+(bad?"  (your answer)":"")))})),q.e?el("div",{class:"exp"},q.e):null)});
+  const review=el("section",{style:"margin-top:26px"},el("h2",null,"Answer review"),filters,list.length?list:el("p",{class:"sub"},"Nothing in this filter."));
+  app.replaceChildren(topline(),head,secs,actions,review);
+}
+function render(){if(mode==="home")renderHome();else if(mode==="quiz")renderQuiz();else renderResult()}
+document.addEventListener("keydown",e=>{if(mode!=="quiz"||document.getElementById("modal"))return;if(e.target.tagName==="SELECT"||e.ctrlKey||e.metaKey||e.altKey)return;const k=e.key.toLowerCase();if("1234".includes(k)&&k.length===1){ans[cur]=+k-1;render()}else if("abcd".includes(k)&&k.length===1){ans[cur]="abcd".indexOf(k);render()}else if(k==="arrowright"||k==="n")go(cur+1);else if(k==="arrowleft"||k==="p")go(cur-1);else if(k==="m"){marked[cur]=!marked[cur];render()}});
+window.addEventListener("beforeunload",e=>{if(mode==="quiz"){e.preventDefault();e.returnValue=""}});
+render();
+</script></body></html>

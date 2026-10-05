@@ -1,0 +1,2630 @@
+{
+  "papers": [
+    {
+      "paper": "Paper 1",
+      "title": "General Knowledge / General Studies",
+      "duration_minutes": 120,
+      "total_questions": 100,
+      "marking": {
+        "correct": 1.0,
+        "wrong": -0.25,
+        "unattempted": 0.0
+      },
+      "questions": [
+        {
+          "id": "P1-Q001",
+          "number": 1,
+          "text": "The coastal plain from Subarnarekha river to the south Rushikulya river is known as ___________",
+          "options": [
+            "Tamil Nadu plain",
+            "Andhra plain",
+            "Utkal plain",
+            "Malabar plain"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q002",
+          "number": 2,
+          "text": "Consider the following statements with reference to Indian Railways:<br><br>Statement-I: With the increase in population, industrialisation and urbanisation, there is heavy pressure of passengers and goods transport on the railways.<br><br>Statement-II : Railways are facing tough competition from road transport.<br><br>Which of the following is correct with respect to the above statements?",
+          "options": [
+            "Both Statement-I and Statement-II are correct and Statement-II explains Statement-I",
+            "Both Statement-I and Statement-II are correct but Statement-II does not explain Statement-I",
+            "Statement-I is correct but Statement-II is incorrect",
+            "Statement-I is incorrect but Statement-II is correct"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q003",
+          "number": 3,
+          "text": "Match List-I with List-II and choose the correct answer:<br><br><table border=\"1\" style=\"border-collapse: collapse; margin-bottom: 10px;\"><tr><td style=\"padding: 5px;\">List - I (Place)</td><td style=\"padding: 5px;\">List - II (Handloom Industry)</td></tr><br><tr><td style=\"padding: 5px;\">(a) Dhaka</td><td style=\"padding: 5px;\">(i) Calico</td></tr><br><tr><td style=\"padding: 5px;\">(b) Machilipatnam</td><td style=\"padding: 5px;\">(ii) Chintz</td></tr><br><tr><td style=\"padding: 5px;\">(c) Calicut</td><td style=\"padding: 5px;\">(iii) Muslin</td></tr><br><tr><td style=\"padding: 5px;\">(d) Baroda</td><td style=\"padding: 5px;\">(iv) Baftan</td></tr><br></table><br>Codes:",
+          "options": [
+            "a - i, b - ii, c - iii, d - iv",
+            "a - ii, b - iii, c - iv, d - i",
+            "a - iii, b - iv, c - ii, d - i",
+            "a - iii, b - ii, c - i, d - iv<br><br>> [!warning] Parse note: List matching format. Two columns in original print."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q004",
+          "number": 4,
+          "text": "Identify the correct statements regarding pollution:<br><br>(a) The water pollution is measured by the dissolved amount of oxygen.<br><br>(b) The air pollution is measured by 'Air Quality Index'<br><br>(c) Noise pollution is measured in decibels<br><br>(d) Soil pollution is measured by testing sand samples<br><br>Choose the correct answer from the options given below.",
+          "options": [
+            "(a), (b) and (d)",
+            "(a), (b) and (c)",
+            "(b), (c) and (d)",
+            "(a), (c) and (d)"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q005",
+          "number": 5,
+          "text": "Consider the following pairs:<br><br><table border=\"1\" style=\"border-collapse: collapse; margin-bottom: 10px;\"><tr><td style=\"padding: 5px;\">Initiatives</td><td style=\"padding: 5px;\">Focus Regions</td></tr><br><tr><td style=\"padding: 5px;\">(a) Great Green Wall</td><td style=\"padding: 5px;\">Sahara and Sahel</td></tr><br><tr><td style=\"padding: 5px;\">(b) Climate Smart Villages</td><td style=\"padding: 5px;\">India</td></tr><br><tr><td style=\"padding: 5px;\">(c) Zai and Ngro</td><td style=\"padding: 5px;\">Equatorial Region</td></tr><br></table><br>Which of the above pairs is/are correctly matched?",
+          "options": [
+            "(a) only",
+            "(a) and (b) only",
+            "(b) and (c) only",
+            "(a), (b) and (c)<br><br>> [!warning] Parse note: Tabular pairs layout in original print."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q006",
+          "number": 6,
+          "text": "Among the following identify the Biodiversity Hotspots of India:<br><br>(a) Himalaya<br><br>(b) Indo-Burma<br><br>(c) Eastern Ghats<br><br>(d) Western Ghats",
+          "options": [
+            "(a), (b) and (d)",
+            "(a), (b) and (c)",
+            "(b), (c) and (d)",
+            "(a), (c) and (d)"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q007",
+          "number": 7,
+          "text": "Expand GBRMPA.",
+          "options": [
+            "Great Barrier Reef Marine Park Agency",
+            "Great Barrier Reef Marine Protection Association",
+            "Great Barrier Reef Marine Park Authority",
+            "Great Barrier Reef Management and Planning Authority"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q008",
+          "number": 8,
+          "text": "Consider the following statements:<br><br>(a) The airborne soil is the secondary source of atmospheric lead.<br><br>(b) Sources of iron in ambient air include fly ash from combustion of coal and fuel oil.<br><br>Which of the above statement/s is/are correct?",
+          "options": [
+            "(a) only",
+            "(b) only",
+            "Both (a) and (b) are correct",
+            "Neither (a) nor (b) is correct"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q009",
+          "number": 9,
+          "text": "Match List-I with List-II and choose the correct answer:<br><br><table border=\"1\" style=\"border-collapse: collapse; margin-bottom: 10px;\"><tr><td style=\"padding: 5px;\">List - I (Earthquake Waves)</td><td style=\"padding: 5px;\">List - II (Specifications)</td></tr><br><tr><td style=\"padding: 5px;\">(a) P-Waves</td><td style=\"padding: 5px;\">(i) Epicentre</td></tr><br><tr><td style=\"padding: 5px;\">(b) Surface Waves</td><td style=\"padding: 5px;\">(ii) Longitudinal waves</td></tr><br><tr><td style=\"padding: 5px;\">(c) Harbour Waves</td><td style=\"padding: 5px;\">(iii) Transverse waves</td></tr><br><tr><td style=\"padding: 5px;\">(d) S-Waves</td><td style=\"padding: 5px;\">(iv) Tsunami</td></tr><br></table><br>Codes:",
+          "options": [
+            "a - iv, b - iii, c - i, d - ii",
+            "a - ii, b - i, c - iv, d - iii",
+            "a - i, b - iv, c - iii, d - ii",
+            "a - iii, b - ii, c - iv, d - i<br><br>> [!warning] Parse note: List matching format. Two columns in original print."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q010",
+          "number": 10,
+          "text": "Identify the correctly matched pairs:<br><br><table border=\"1\" style=\"border-collapse: collapse; margin-bottom: 10px;\"><tr><td style=\"padding: 5px;\">Drainage System</td><td style=\"padding: 5px;\">Examples</td></tr><br><tr><td style=\"padding: 5px;\">(a) Rectangular Pattern</td><td style=\"padding: 5px;\">Shyamak Hills</td></tr><br><tr><td style=\"padding: 5px;\">(b) Dendritic Pattern</td><td style=\"padding: 5px;\">Giridih</td></tr><br><tr><td style=\"padding: 5px;\">(c) Trellis Pattern</td><td style=\"padding: 5px;\">Aravalli Hills</td></tr><br><tr><td style=\"padding: 5px;\">(d) Annular Pattern</td><td style=\"padding: 5px;\">Girnar Hills</td></tr><br></table><br>Choose the correct answer from the options given below.",
+          "options": [
+            "(a), (b), (c) and (d)",
+            "(a), (b) and (c)",
+            "(a) and (c)",
+            "(a) and (d)<br><br>> [!warning] Parse note: Tabular pairs layout in original print."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q011",
+          "number": 11,
+          "text": "Consider the following statements with reference to Three Gorges Dam:<br><br>Statement-I: The Three Gorges Dam was constructed on the Yangtze river primarily to increase the habitat for endangered aquatic species in Central China<br><br>Statement-II: The dam's construction has resulted in negative environmental impacts, including the relocation of human settlements and increased erosion<br><br>Which of the following is correct with respect to the above statements?",
+          "options": [
+            "Both Statement-I and Statement-II are correct and Statement-II explains Statement-I",
+            "Both Statement-I and Statement-II are correct but Statement-II does not explain Statement-I",
+            "Statement-I is correct but Statement-II is incorrect",
+            "Statement-I is incorrect but Statement-II is correct"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q012",
+          "number": 12,
+          "text": "Match List - I with List - II and choose the correct answer:<br><br><table border=\"1\" style=\"border-collapse: collapse; margin-bottom: 10px;\"><tr><td style=\"padding: 5px;\">List - I (Shifting Cultivation)</td><td style=\"padding: 5px;\">List - II (States)</td></tr><br><tr><td style=\"padding: 5px;\">(a) Jhum</td><td style=\"padding: 5px;\">(i) Kerala</td></tr><br><tr><td style=\"padding: 5px;\">(b) Koman</td><td style=\"padding: 5px;\">(ii) Odisha</td></tr><br><tr><td style=\"padding: 5px;\">(c) Ponam</td><td style=\"padding: 5px;\">(iii) Andhra Pradesh</td></tr><br><tr><td style=\"padding: 5px;\">(d) Kumri</td><td style=\"padding: 5px;\">(iv) Assam</td></tr><br></table><br>Codes:",
+          "options": [
+            "a - iv, b - ii, c - i, d - iii",
+            "a - iv, b - i, c - ii, d - iii",
+            "a - i, b - ii, c - iv, d - iii",
+            "a - iii, b - i, c - ii, d - iv<br><br>> [!warning] Parse note: List matching format. Two columns in original print."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q013",
+          "number": 13,
+          "text": "Trade winds blowing direction is",
+          "options": [
+            "From sub-tropical high pressure belts to equatorial low pressure belt",
+            "From tropical high pressure belts to sub-tropical low pressure belt",
+            "From sub-tropical low pressure belts to equatorial high pressure belt",
+            "From equatorial high pressure belts to sub-tropical low pressure belt"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q014",
+          "number": 14,
+          "text": "On which of the following river basins we can find high concentration of sugar industry in Karnataka?<br><br>(a) Krishna, Tungabhadra and Cauvery river basins<br>(b) Pennar, Palar and Bhima river basins<br>(c) Sharavati, Gangavali and Hemavati river basins<br>(d) Netravati, Gangavali and Aghanashini river basins<br><br>Select the correct answer using the codes given below:",
+          "options": [
+            "(a) only",
+            "(a) and (d) only",
+            "(b) only",
+            "(a) and (c) only"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q015",
+          "number": 15,
+          "text": "Consider the following tourist places of Western Ghats and choose the correct option given below:<br><br>(a) Kemmannugundi is also known as Krishanaraja Wodeyar hills<br><br>(b) 'Lakya Dam' is built by Kuduremukh Iron Ore Company Ltd<br><br>(c) The three main rivers-Tunga, Bhadra and Sharavati take birth at Gangamoola<br><br>(d) The famous 'Sathoddi' waterfalls is in Uttara Kannada",
+          "options": [
+            "Only (a) and (b) are correct",
+            "(b), (c) and (d) are correct",
+            "(a), (b) and (c) are correct",
+            "(a), (b) and (d) are correct<br><br>> [!warning] Parse note: Question content is also captured on rescanned duplicate page `paper1_p07.png`."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q016",
+          "number": 16,
+          "text": "Which of the following statements are not correct regarding the recommendations of Balwant Rai Mehta Committee?<br><br>(a) The District Collector should be the Chairman of the Zilla Parishad<br><br>(b) Zilla Parishad should be the executive body<br><br>(c) Panchayat Samiti and Zilla Parishad should be constituted with directly elected members<br><br>(d) Village Panchayat should be constituted with indirectly elected members",
+          "options": [
+            "(a), (b) and (c)",
+            "(a), (c) and (d)",
+            "(b), (c) and (d)",
+            "(a), (b), (c) and (d)<br><br>> [!warning] Parse note: Candidate underlined 'not' in pencil. Question content is also captured on rescanned duplicate page `paper1_p07.png`."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q017",
+          "number": 17,
+          "text": "Match List - I with List - II and select the correct answer:<br><br><table border=\"1\" style=\"border-collapse: collapse; margin-bottom: 10px;\"><tr><td style=\"padding: 5px;\">List - I (Provisions)</td><td style=\"padding: 5px;\">List - II (Articles)</td></tr><br><tr><td style=\"padding: 5px;\">(a) Elections to Panchayats</td><td style=\"padding: 5px;\">(i) 243J</td></tr><br><tr><td style=\"padding: 5px;\">(b) Duration of Panchayats</td><td style=\"padding: 5px;\">(ii) 243D</td></tr><br><tr><td style=\"padding: 5px;\">(c) Reservation of seats in Panchayats</td><td style=\"padding: 5px;\">(iii) 243E</td></tr><br><tr><td style=\"padding: 5px;\">(d) Audit of accounts of Panchayats</td><td style=\"padding: 5px;\">(iv) 243K</td></tr><br></table><br>Codes:",
+          "options": [
+            "a - i, b - ii, c - iii, d - iv",
+            "a - iv, b - iii, c - i, d - ii",
+            "a - iv, b - iii, c - ii, d - i",
+            "a - ii, b - i, c - iii, d - iv<br><br>> [!warning] Parse note: List matching format. Two columns in original print."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q018",
+          "number": 18,
+          "text": "Which of the following aspects is not correct regarding the recommendations of Ashok Mehta Committee?",
+          "options": [
+            "Establishment of Mandal Panchayat",
+            "Panchayat Samiti should be made as executive body",
+            "Two-tier Panchayat Raj System",
+            "Participation of political parties in Panchayat election<br><br>> [!warning] Parse note: Candidate underlined 'not' in pencil."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q019",
+          "number": 19,
+          "text": "Match List - I with List - II and choose the correct answer:<br><br><table border=\"1\" style=\"border-collapse: collapse; margin-bottom: 10px;\"><tr><td style=\"padding: 5px;\">List - I (Tiers of Panchayat Raj System)</td><td style=\"padding: 5px;\">List - II (States)</td></tr><br><tr><td style=\"padding: 5px;\">(a) Traditional councils of village elders</td><td style=\"padding: 5px;\">(i) Punjab</td></tr><br><tr><td style=\"padding: 5px;\">(b) Only one-tier system</td><td style=\"padding: 5px;\">(ii) Orissa</td></tr><br><tr><td style=\"padding: 5px;\">(c) Two-tier system</td><td style=\"padding: 5px;\">(iii) Sikkim</td></tr><br><tr><td style=\"padding: 5px;\">(d) Three-tier system</td><td style=\"padding: 5px;\">(iv) Nagaland</td></tr><br></table><br>Codes:",
+          "options": [
+            "a - iii, b - i, c - iv, d - ii",
+            "a - ii, b - i, c - iii, d - iv",
+            "a - i, b - iii, c - iv, d - ii",
+            "a - iv, b - iii, c - ii, d - i<br><br>> [!warning] Parse note: List matching format. Two columns in original print."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q020",
+          "number": 20,
+          "text": "Who is the current President of the National Consumer Disputes Redressal Commission (NCDRC)?",
+          "options": [
+            "Amreshwar Pratap Sahi",
+            "Nidhi Khare",
+            "Pralhad Joshi",
+            "Nagesh Kumar"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q021",
+          "number": 21,
+          "text": "Which type of planning is good for economic development?<br><br>(a) Capitalistic Planning<br>(b) Socialistic Planning<br>(c) Democratic Planning<br>(d) Totalitarian Planning",
+          "options": [
+            "(a) and (b)",
+            "(c) and (d)",
+            "(b) and (d)",
+            "(b) and (c)"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q022",
+          "number": 22,
+          "text": "Which amendment of the Indian Constitution gave constitutional status to co-operative societies?",
+          "options": [
+            "97<sup>th</sup> Amendment",
+            "96<sup>th</sup> Amendment",
+            "98<sup>th</sup> Amendment",
+            "99<sup>th</sup> Amendment"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q023",
+          "number": 23,
+          "text": "The idea of a concurrent list was borrowed from the following acts:<br><br>(a) 1909 Indian Council Act<br>(b) Government of India Act, 1919<br>(c) Government of India Act, 1935<br>(d) Government of India Act, 1858",
+          "options": [
+            "(a) and (b)",
+            "(b) and (c)",
+            "(a) and (d)",
+            "(c) only<br><br>> [!warning] Parse note: Candidate wrote rough pencil note \"Australia\" next to statement (c). Printed text remains 100% legible."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q024",
+          "number": 24,
+          "text": "A Governor of a state possesses the following powers,",
+          "options": [
+            "Executive, Legislative and Discretionary powers",
+            "Executive, Legislative, Financial, Judicial and Discretionary powers",
+            "Legislative, Executive and Judicial powers",
+            "Executive and Financial powers"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q025",
+          "number": 25,
+          "text": "In the year 1925, who was elected as the Speaker of Lok Sabha in India?",
+          "options": [
+            "Sir Mohamad Yakub",
+            "Sir Ibrahim Rahamathulla",
+            "Sir Abdul Rahim",
+            "Vithalbhai Patel"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q026",
+          "number": 26,
+          "text": "Match List - I with List - II and select the correct answer:<br><br><table border=\"1\" style=\"border-collapse: collapse; margin-bottom: 10px;\"><tr><td style=\"padding: 5px;\">List - I (Subjects)</td><td style=\"padding: 5px;\">List - II (Articles)</td></tr><br><tr><td style=\"padding: 5px;\">(a) Consolidated Fund of India</td><td style=\"padding: 5px;\">(i) Article 110</td></tr><br><tr><td style=\"padding: 5px;\">(b) Contingency Fund of India</td><td style=\"padding: 5px;\">(ii) Article 112</td></tr><br><tr><td style=\"padding: 5px;\">(c) Money Bill</td><td style=\"padding: 5px;\">(iii) Article 266</td></tr><br><tr><td style=\"padding: 5px;\">(d) Annual Financial Statement</td><td style=\"padding: 5px;\">(iv) Article 267</td></tr><br></table><br>Codes:",
+          "options": [
+            "a - iii, b - iv, c - ii, d - i",
+            "a - iii, b - iv, c - i, d - ii",
+            "a - iv, b - iii, c - ii, d - i",
+            "a - i, b - ii, c - iii, d - iv<br><br>> [!warning] Parse note: List matching format. Two columns in original print."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q027",
+          "number": 27,
+          "text": "Which was the highest Court of Appeal in India before January 28, 1950?",
+          "options": [
+            "The Supreme Court of India",
+            "The Federal Court of India",
+            "The British Privy Council",
+            "The Unitary Court of India"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q028",
+          "number": 28,
+          "text": "Identify the incorrect statement/statements regarding the question hour in the Parliament:<br><br>(a) A starred question is one to which a member desires an oral answer in the house<br><br>(b) In the case of an unstarred question, a written answer is laid on the table by the concerned minister<br><br>(c) A short notice question relates to a matter of urgent public importance and can be asked with shorter notice<br><br>(d) Supplementary questions may be asked before an oral answer to a starred question<br><br>Choose the correct answer from the options given below:",
+          "options": [
+            "(a) and (b)",
+            "(d) only",
+            "(a), (b) and (c)",
+            "(c) only<br><br>> [!warning] Parse note: Candidate underlined 'incorrect' in pencil."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q029",
+          "number": 29,
+          "text": "Which Supreme Court case held that the pleasure of the President is not justiciable regarding the term of the office of the Governor?",
+          "options": [
+            "Suryanarayan Choudhary Case, 1981",
+            "S.R. Bommai Case, 1994",
+            "Minerva Mills Case, 1980",
+            "Golaknath Case, 1967"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q030",
+          "number": 30,
+          "text": "Match List - I with List - II and choose the correct answer:<br><br><table border=\"1\" style=\"border-collapse: collapse; margin-bottom: 10px;\"><tr><td style=\"padding: 5px;\">List - I (Missile by DRDO)</td><td style=\"padding: 5px;\">List - II (Types)</td></tr><br><tr><td style=\"padding: 5px;\">(a) Astra Missile</td><td style=\"padding: 5px;\">(i) Subsonic Cruise Missile</td></tr><br><tr><td style=\"padding: 5px;\">(b) Maitri Missile</td><td style=\"padding: 5px;\">(ii) Short-Range Surface to Air Missile</td></tr><br><tr><td style=\"padding: 5px;\">(c) Nag Missile</td><td style=\"padding: 5px;\">(iii) Anti-Tank Guided Missile</td></tr><br><tr><td style=\"padding: 5px;\">(d) Nirbhay Missile</td><td style=\"padding: 5px;\">(iv) Air-to-Air Missile</td></tr><br></table><br>Codes:",
+          "options": [
+            "a - iv, b - i, c - iii, d - ii",
+            "a - iii, b - ii, c - i, d - iv",
+            "a - iv, b - iii, c - ii, d - i",
+            "a - iv, b - ii, c - iii, d - i<br><br>> [!warning] Parse note: List matching format. Two columns in original print. Candidate wrote names of missiles in rough bottom space."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q031",
+          "number": 31,
+          "text": "Identify the correct statements of constitutional provision to reduce regionalism:<br><br>(a) Linguistic reorganisation of states<br><br>(b) A symmetric federalism<br><br>(c) Evaluating regional languages<br><br>(d) Using local knowledge to solve community issues and improve public service",
+          "options": [
+            "(a) and (b)",
+            "(b) and (c)",
+            "(a) and (c)",
+            "(b) and (d)"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q032",
+          "number": 32,
+          "text": "Identify the correct pairs:<br><br><table border=\"1\" style=\"border-collapse: collapse; margin-bottom: 10px;\"><tr><td style=\"padding: 5px;\">Anticorruption Agencies</td><td style=\"padding: 5px;\">Year of Establishment</td></tr><br><tr><td style=\"padding: 5px;\">(a) CBI</td><td style=\"padding: 5px;\">1962</td></tr><br><tr><td style=\"padding: 5px;\">(b) ED</td><td style=\"padding: 5px;\">1956</td></tr><br><tr><td style=\"padding: 5px;\">(c) ACB</td><td style=\"padding: 5px;\">1961</td></tr><br><tr><td style=\"padding: 5px;\">(d) CVC</td><td style=\"padding: 5px;\">1961</td></tr><br></table>",
+          "options": [
+            "(a), (b) and (d)",
+            "(a), (b) and (c)",
+            "(c) and (d)",
+            "(b), (c) and (d)<br><br>> [!warning] Parse note: Tabular pairs layout in original print."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q033",
+          "number": 33,
+          "text": "'I2U2' is also known as<br><br>(a) Middle East Quad<br><br>(b) Arabic Quad<br><br>(c) Western Quad<br><br>(d) New Quad<br><br>Which of the above is/are correct?",
+          "options": [
+            "(b) only",
+            "(a) only",
+            "(c) only",
+            "(a), (c) and (d)"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q034",
+          "number": 34,
+          "text": "Consider the following statements with reference to India and CTBT:<br><br>Statement-I: India is not the signatory of CTBT<br><br>Statement-II: India is listed in the Annexure-II of the treaty<br><br>Which of the following is correct with respect to the above statements?",
+          "options": [
+            "Both Statement-I and Statement-II are correct and Statement-II explains Statement-I",
+            "Both Statement-I and Statement-II are correct but Statement-II does not explain Statement-I",
+            "Statement-I is correct but Statement-II is incorrect",
+            "Statement-I is incorrect but Statement-II is correct"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q035",
+          "number": 35,
+          "text": "Who among the following is a part of the National Development Council?<br><br>(a) Prime Minister<br><br>(b) The Chairman, Finance Commission<br><br>(c) Ministers of the Union Cabinet<br><br>(d) Chief Ministers of the States",
+          "options": [
+            "(a), (b) and (c)",
+            "(b), (c) and (d)",
+            "(a), (c) and (d)",
+            "(a) and (b)"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q036",
+          "number": 36,
+          "text": "In cold region during winter, water in a lake",
+          "options": [
+            "Starts to freeze from upper surface of water",
+            "Starts to freeze from bottom of the lake",
+            "Does not freeze at any condition",
+            "Starts to freeze either from top or bottom depending on its depth"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q037",
+          "number": 37,
+          "text": "Match the following applications of waves:<br><br><table border=\"1\" style=\"border-collapse: collapse; margin-bottom: 10px;\"><tr><td style=\"padding: 5px;\">List - I (Application)</td><td style=\"padding: 5px;\">List - II (Technique / Device)</td></tr><br><tr><td style=\"padding: 5px;\">(a) To check the speed of overspeeding vehicles</td><td style=\"padding: 5px;\">(i) SONAR</td></tr><br><tr><td style=\"padding: 5px;\">(b) To study blood flow in different parts of the body</td><td style=\"padding: 5px;\">(ii) Ultrasound scanning</td></tr><br><tr><td style=\"padding: 5px;\">(c) To determine the depth of sea</td><td style=\"padding: 5px;\">(iii) RADAR</td></tr><br><tr><td style=\"padding: 5px;\">(d) To get images of internal organs of the human body</td><td style=\"padding: 5px;\">(iv) Sonography</td></tr><br></table><br>Codes:",
+          "options": [
+            "a - ii, b - iii, c - i, d - iv",
+            "a - ii, b - i, c - iv, d - iii",
+            "a - iii, b - iv, c - i, d - ii",
+            "a - i, b - iv, c - iii, d - ii<br><br>> [!warning] Parse note: List matching format. Two columns in original print."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q038",
+          "number": 38,
+          "text": "Bats search out prey and fly in dark night by emitting and detecting reflections of",
+          "options": [
+            "Ultraviolet waves",
+            "Ultrasonic waves",
+            "Microwaves",
+            "Infrasonic waves"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q039",
+          "number": 39,
+          "text": "Match List - I with List - II and select the correct answer using the codes given below:<br><br><table border=\"1\" style=\"border-collapse: collapse; margin-bottom: 10px;\"><tr><td style=\"padding: 5px;\">List - I (Alkaloids)</td><td style=\"padding: 5px;\">List - II (Source plant)</td></tr><br><tr><td style=\"padding: 5px;\">(a) Quinine</td><td style=\"padding: 5px;\">(i) Tobacco</td></tr><br><tr><td style=\"padding: 5px;\">(b) Morphine</td><td style=\"padding: 5px;\">(ii) Cinchona bark</td></tr><br><tr><td style=\"padding: 5px;\">(c) Nicotine</td><td style=\"padding: 5px;\">(iii) Coffee beans</td></tr><br><tr><td style=\"padding: 5px;\">(d) Caffeine</td><td style=\"padding: 5px;\">(iv) Opium poppy</td></tr><br></table><br>Codes:",
+          "options": [
+            "a - iv, b - ii, c - i, d - iii",
+            "a - ii, b - iv, c - i, d - iii",
+            "a - iv, b - ii, c - iii, d - i",
+            "a - iii, b - i, c - iv, d - ii<br><br>> [!warning] Parse note: List matching format. Two columns in original print."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q040",
+          "number": 40,
+          "text": "Maximum-minimum thermometer is also called as _________",
+          "options": [
+            "5's thermometer",
+            "6's thermometer",
+            "Liquid thermometer",
+            "Clinical thermometer"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q041",
+          "number": 41,
+          "text": "Match List - I with List - II and select the correct answer:<br><br><table border=\"1\" style=\"border-collapse: collapse; margin-bottom: 10px;\"><tr><td style=\"padding: 5px;\">List - I (Compounds)</td><td style=\"padding: 5px;\">List - II (Functions)</td></tr><br><tr><td style=\"padding: 5px;\">(a) Acetylcholine</td><td style=\"padding: 5px;\">(i) Artificial sweetener</td></tr><br><tr><td style=\"padding: 5px;\">(b) Sucralose</td><td style=\"padding: 5px;\">(ii) Antibiotic</td></tr><br><tr><td style=\"padding: 5px;\">(c) Chloramphenicol</td><td style=\"padding: 5px;\">(iii) Disinfectant</td></tr><br><tr><td style=\"padding: 5px;\">(d) Phenol</td><td style=\"padding: 5px;\">(iv) Neurotransmitters</td></tr><br></table><br>Codes:",
+          "options": [
+            "a - i, b - ii, c - iii, d - iv",
+            "a - ii, b - iii, c - iv, d - i",
+            "a - iii, b - iv, c - i, d - ii",
+            "a - iv, b - i, c - ii, d - iii<br><br>> [!warning] Parse note: List matching format. Two columns in original print."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q042",
+          "number": 42,
+          "text": "Which of the following animal groups have four-chambered heart?",
+          "options": [
+            "Amphibians, Reptiles, Birds",
+            "Crocodiles, Birds, Mammals",
+            "Crocodiles, Lizards, Turtles",
+            "Lizards, Mammals, Birds"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q043",
+          "number": 43,
+          "text": "Read the following statements and choose the correct answer from the options given below:<br><br>Statement I: Productivity is increased in tomato and bell pepper in greenhouses due to increased CO<sub>2</sub> concentration<br><br>Statement II: Maize and sorghum are plants not adapted to grow in dry tropical regions",
+          "options": [
+            "Both statements I and II are correct",
+            "Statement I is correct but Statement II is incorrect",
+            "Statement I is incorrect but Statement II is correct",
+            "Both Statements I and II are incorrect<br><br>> [!warning] Parse note: Chemical formula CO₂ with subscript 2 in Statement I. Candidate underlined 'not' in pencil."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q044",
+          "number": 44,
+          "text": "Choose the incorrect statement.",
+          "options": [
+            "Melatonin regulates the diurnal (24 hour) rhythm of our body",
+            "Thyrocalcitonin regulates the blood calcium levels",
+            "Parathyroid hormone decreases the calcium levels in the blood",
+            "Adrenaline and noradrenaline are hormones of flight or fight"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q045",
+          "number": 45,
+          "text": "Consider the following statements:<br><br>Statement I: 'O' blood group individuals are called universal donors<br><br>Statement II: There are no antigens on the RBCs in 'O' blood group individuals<br><br>Choose the correct answer from the options given below:",
+          "options": [
+            "Both Statement I and Statement II are incorrect",
+            "Statement I is correct but Statement II is incorrect",
+            "Statement I is incorrect but Statement II is correct",
+            "Both Statement I and Statement II are correct<br><br>> [!warning] Parse note: Candidate wrote rough pencil notes (\"no antigens?\", \"AB-ve\", etc.) in right margin. Printed text remains fully legible."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q046",
+          "number": 46,
+          "text": "A mobile manufacturer earns 20% profit by selling each mobile set for ₹ 18,000. If the production cost is increased by 10%, what should be the new selling price of a mobile set so as to gain 15%?",
+          "options": [
+            "₹ 18,900",
+            "₹ 18,970",
+            "₹ 18,975",
+            "₹ 18,960"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q047",
+          "number": 47,
+          "text": "The present age of son is one-fourth of the present age of his mother. After 10 years, mother's age will be twice the age of her son. Find the present age of mother.",
+          "options": [
+            "12 years",
+            "20 years",
+            "24 years",
+            "30 years"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q048",
+          "number": 48,
+          "text": "Consider the following bar diagram showing the sales and profits of a company during consecutive four years, and choose the correct answer.<br><br>[Image removed: _figures/P1-Q048_barchart.png|350]<br><br>Statements:<br><br>(i) There is constant growth in sales percentage year on year basis<br><br>(ii) Lowest margin of profit was in 2025<br><br>(iii) Profits are not doubled in 4 years period of time<br><br>(iv) Percentage of costs was least in 2022",
+          "options": [
+            "Statements (i) and (iii) are correct but Statements (ii) and (iv) are incorrect",
+            "Statements (i) and (ii) are correct but Statements (iii) and (iv) are incorrect",
+            "Statements (i) and (iii) are incorrect but Statements (ii) and (iv) are correct",
+            "Statements (ii) and (iii) are incorrect but Statements (i) and (iv) are correct<br><br>> [!warning] Parse note: Bar diagram included in question. Y-axis represents 'Sales and Profits (Crore ₹)' with values up to 14. X-axis shows 4 consecutive years with two bars each: hatched bar = Sales, white bar = Profits. Printed bar heights: Year 1 (Sales=6, Profits=4); Year 2 (Sales=8, Profits=5); Year 3 (Sales=10, Profits=6); Year 4 (Sales=14, Profits=8). Candidate penciled '22', '23', '24', '25' under the 4 years."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q049",
+          "number": 49,
+          "text": "In a survey, it was found that 20 people like product X, 25 liked product Y, 23 liked product Z. If 14 people liked products X and Y, 10 people liked products Y and Z, 8 people liked products X and Z and 6 liked all the three products. Find how many liked only one product?",
+          "options": [
+            "4",
+            "7",
+            "22",
+            "11"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q050",
+          "number": 50,
+          "text": "A man is facing towards east, he turns towards his left at 180° and again turns to his left 45°. In which direction is he facing now?",
+          "options": [
+            "North-east",
+            "South-west",
+            "West",
+            "South"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q051",
+          "number": 51,
+          "text": "Who among the following did NOT hold any responsibility in the opening or closing ceremony of the Glasgow 2026 Commonwealth Games?",
+          "options": [
+            "Weightlifter Mirabai Chanu",
+            "Boxer Lovlina Borgohain",
+            "Boxer Jaismine Lamboria",
+            "Shooter Manu Bhaker<br><br>> [!warning] Parse note: 'NOT' printed in capital letters in original text."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q052",
+          "number": 52,
+          "text": "What is the title of the upcoming autobiography of Sonia Gandhi?",
+          "options": [
+            "My Life, Memoir: My Journey",
+            "The Red Sari: An Autobiography",
+            "Courting Destiny: My Memoir",
+            "Belonging: A Journey of Love"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q053",
+          "number": 53,
+          "text": "Under which Article of the Constitution of India has the Kerala (Alteration of Name) Bill, 2026 passed to rename the state of Kerala to \"Keralam\"?",
+          "options": [
+            "Article 1",
+            "Article 3",
+            "Article 5",
+            "Article 7"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q054",
+          "number": 54,
+          "text": "Consider the following pairs related to Grand Slam Tennis and winners in 2026:<br><br><table border=\"1\" style=\"border-collapse: collapse; margin-bottom: 10px;\"><tr><td style=\"padding: 5px;\">Tournament</td><td style=\"padding: 5px;\">Winner</td></tr><br><tr><td style=\"padding: 5px;\">(a) Australian open</td><td style=\"padding: 5px;\">Alexander Zverev</td></tr><br><tr><td style=\"padding: 5px;\">(b) French open</td><td style=\"padding: 5px;\">Carlos Alcaraz</td></tr><br><tr><td style=\"padding: 5px;\">(c) Wimbledon</td><td style=\"padding: 5px;\">Jannik Sinner</td></tr><br></table><br>Which of the above pair/s is/are incorrectly matched?",
+          "options": [
+            "Only (a)",
+            "(b) and (c)",
+            "(a) and (b)",
+            "Only (c)<br><br>> [!warning] Parse note: Candidate circled 'incorrectly' in pencil."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q055",
+          "number": 55,
+          "text": "Which of the following districts are covered under the proposed Ecological Sensitive Area of Kasturirangan Report?<br><br>(a) Udupi, Uttara Kannada, Dakshina Kannada<br><br>(b) Hassan, Kodagu, Chikkamagaluru<br><br>(c) Dharwad, Bangalore Rural<br><br>(d) Belagavi, Mysuru, Chamarajanagar, Shivamogga",
+          "options": [
+            "(a) and (b)",
+            "(a), (b) and (d)",
+            "(b), (c) and (d)",
+            "(a), (b), (c) and (d)"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q056",
+          "number": 56,
+          "text": "In which of the following places has 'Buddha Rashmi Mani' former Director General of the National Museum of New Delhi has undertaken excavation work?<br><br>(a) Sarnath<br><br>(b) Ayodhya<br><br>(c) Dholavira<br><br>(d) Rakhigarhi<br><br>Select the correct answer using the codes given below:",
+          "options": [
+            "(a), (b) and (c)",
+            "(b) and (d)",
+            "(a), (b) and (d)",
+            "(a) and (b)"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q057",
+          "number": 57,
+          "text": "Expand MIST:",
+          "options": [
+            "Museum of Information, Science and Technology",
+            "Museum of Innovation, Startup and Technology",
+            "Ministry of Innovation, Startup and Technology",
+            "Museum of Information, Science and Tourism"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q058",
+          "number": 58,
+          "text": "Consider the following statements:<br><br>Statement I: The Sabka Bima, Sabki Raksha Act 2025 amended the Insurance Act, 1938 to strengthen policyholder protection.<br><br>Statement II: It aims to reduce foreign direct investment in the insurance sector.<br><br>Select the correct answer using the codes given below:",
+          "options": [
+            "Both statement I and II are correct and statement II is the correct explanation of Statement I",
+            "Both statements I and II are correct, but statement II is not the correct explanation of Statement I",
+            "Statement I is correct, but Statement II is incorrect",
+            "Statement I is incorrect, but Statement II is correct"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q059",
+          "number": 59,
+          "text": "Which former World Chess Champion was handed a two-year worldwide ban in 2026?",
+          "options": [
+            "Magnus Carlsen",
+            "Garry Kasparov",
+            "Vladimir Kramnik",
+            "Veselin Topalov"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q060",
+          "number": 60,
+          "text": "Consider the following statements regarding the UN Climate Change Conference:<br><br>(a) India recently withdrew its bid to host the COP-33 Summit scheduled for 2028.<br><br>(b) The COP-31 Summit is scheduled to be jointly organised by South Africa and Namibia.<br><br>(c) COP-30 Summit was hosted by Brazil.<br><br>Which of the above statements are correct?",
+          "options": [
+            "(a), (b) and (c)",
+            "(a) and (b) only",
+            "(a) and (c) only",
+            "(b) and (c) only<br><br>> [!warning] Parse note: Candidate underlined 'correct?' in pencil."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q061",
+          "number": 61,
+          "text": "Which of the following pairs are correct regarding Bhakti Movement?<br><br><table border=\"1\" style=\"border-collapse: collapse; margin-bottom: 10px;\"><tr><td style=\"padding: 5px;\">Saint</td><td style=\"padding: 5px;\">Place</td></tr><br><tr><td style=\"padding: 5px;\">(a) Ramananda</td><td style=\"padding: 5px;\">Varanasi</td></tr><br><tr><td style=\"padding: 5px;\">(b) Vallabhacharya</td><td style=\"padding: 5px;\">Allahabad</td></tr><br><tr><td style=\"padding: 5px;\">(c) Chaitanya</td><td style=\"padding: 5px;\">Nadiya</td></tr><br><tr><td style=\"padding: 5px;\">(d) Ekanath</td><td style=\"padding: 5px;\">Paithan</td></tr><br></table>",
+          "options": [
+            "(a), (b) and (c)",
+            "(a), (c) and (d)",
+            "(a), (b) and (d)",
+            "(c) and (d)<br><br>> [!warning] Parse note: Tabular pairs layout in original print."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q062",
+          "number": 62,
+          "text": "Who was honored by Devaraya II with the title 'Dakshin Samudradipati'?",
+          "options": [
+            "Kumaravyasa",
+            "Chamarasa",
+            "Lakkanna Dandesh",
+            "Vijaya Raya"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q063",
+          "number": 63,
+          "text": "Consider the following statements with reference to 'Doctrine of Lapse' policy:<br><br>Statement-I: This policy was introduced by Lord Dalhousie.<br><br>Statement-II: Hyderabad was the first victim state to this policy.<br><br>Which of the following is correct with respect to the above statements?",
+          "options": [
+            "Both Statement-I and Statement-II are correct",
+            "Both Statement-I and Statement-II are incorrect",
+            "Statement-I is correct but Statement-II is incorrect",
+            "Statement-I is incorrect but Statement-II is correct"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q064",
+          "number": 64,
+          "text": "Identify the correctly matched pairs:<br><br><table border=\"1\" style=\"border-collapse: collapse; margin-bottom: 10px;\"><tr><td style=\"padding: 5px;\">Poet / Author</td><td style=\"padding: 5px;\">Work</td></tr><br><tr><td style=\"padding: 5px;\">(a) Allasani Peddanna</td><td style=\"padding: 5px;\">Manucharitamu</td></tr><br><tr><td style=\"padding: 5px;\">(b) Thimmana</td><td style=\"padding: 5px;\">Parijatapaharanamu</td></tr><br><tr><td style=\"padding: 5px;\">(c) Durjati</td><td style=\"padding: 5px;\">Kalahasti Shatakam</td></tr><br><tr><td style=\"padding: 5px;\">(d) Tenali Ramakrishna</td><td style=\"padding: 5px;\">Panduranga Mahathme</td></tr><br></table>",
+          "options": [
+            "(a), (b), (c) and (d)",
+            "(a) and (b)",
+            "(a) and (d)",
+            "(b) and (c)<br><br>> [!warning] Parse note: Tabular pairs layout in original print."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q065",
+          "number": 65,
+          "text": "Match List-I with List-II and choose the correct answer:<br><br><table border=\"1\" style=\"border-collapse: collapse; margin-bottom: 10px;\"><tr><td style=\"padding: 5px;\">List - I (Rock Edict)</td><td style=\"padding: 5px;\">List - II (State)</td></tr><br><tr><td style=\"padding: 5px;\">(a) Rupnath Rock Edict</td><td style=\"padding: 5px;\">(i) Karnataka</td></tr><br><tr><td style=\"padding: 5px;\">(b) Sahasram Rock Edict</td><td style=\"padding: 5px;\">(ii) Rajasthan</td></tr><br><tr><td style=\"padding: 5px;\">(c) Bairat Rock Edict</td><td style=\"padding: 5px;\">(iii) Bihar</td></tr><br><tr><td style=\"padding: 5px;\">(d) Maski Rock Edict</td><td style=\"padding: 5px;\">(iv) Madhya Pradesh</td></tr><br></table><br>Codes:",
+          "options": [
+            "a - i, b - ii, c - iii, d - iv",
+            "a - iii, b - iv, c - i, d - ii",
+            "a - ii, b - iii, c - iv, d - i",
+            "a - iv, b - iii, c - ii, d - i<br><br>> [!warning] Parse note: List matching format. Two columns in original print."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q066",
+          "number": 66,
+          "text": "Arrange the following Diwans of Mysore in chronological order:<br><br>(a) Kantharaj Urs<br><br>(b) P.N Krishnamurti<br><br>(c) Mirza Ismail<br><br>(d) C. Rangacharlu",
+          "options": [
+            "(a), (b), (c), (d)",
+            "(c), (d), (a), (b)",
+            "(d), (b), (a), (c)",
+            "(c), (a), (b), (d)"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q067",
+          "number": 67,
+          "text": "Consider the following statements with reference to the Swadeshi Movement:<br><br>(a) Importance to self-reliance.<br>(b) Development of national dignity, honour and self-confidence.<br>(c) In the economic field, fostering indigenous industries and other enterprises.<br>(d) Co-operation to the British rule.<br><br>Which of the above statements are correct?",
+          "options": [
+            "(a), (b) and (c)",
+            "(b), (c) and (d)",
+            "(a), (b) and (d)",
+            "Only (c) and (d)"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q068",
+          "number": 68,
+          "text": "Consider the following statements regarding Ashoka:<br><br>Statement-I: After the Kalinga war, Ashoka abandoned the policy of aggression.<br><br>Statement-II: Ashoka renounced war, yet he continued his imperialist policy by consolidating the territories he had previously conquered.<br><br>Which of the following is correct with respect to the above statements?",
+          "options": [
+            "Both Statement-I and Statement-II are correct and Statement-II explains Statement-I",
+            "Both Statement-I and Statement-II are correct but Statement-II does not explain Statement-I",
+            "Statement-I is correct but Statement-II is incorrect",
+            "Statement-I is incorrect but Statement-II is correct"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q069",
+          "number": 69,
+          "text": "Identify the correctly matched pairs:<br><br><table border=\"1\" style=\"border-collapse: collapse; margin-bottom: 10px;\"><tr><td style=\"padding: 5px;\">Important sites of Indus Civilization</td><td style=\"padding: 5px;\">Name of the Archaeologists</td></tr><br><tr><td style=\"padding: 5px;\">(a) Kot Diji</td><td style=\"padding: 5px;\">F.A. Khan</td></tr><br><tr><td style=\"padding: 5px;\">(b) Lothal</td><td style=\"padding: 5px;\">Dr. S.R. Rao</td></tr><br><tr><td style=\"padding: 5px;\">(c) Harappa</td><td style=\"padding: 5px;\">Daya Ram Sahani</td></tr><br><tr><td style=\"padding: 5px;\">(d) Mohenjo Daro</td><td style=\"padding: 5px;\">R.D. Banerji</td></tr><br></table>",
+          "options": [
+            "Only (a), (c) and (d)",
+            "Only (b), (c) and (d)",
+            "(a), (b), (c) and (d)",
+            "Only (a), (b) and (d)<br><br>> [!warning] Parse note: Headings \"Important sites of Indus Civilization\" and \"Name of the Archaeologists\" are printed with underlines."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q070",
+          "number": 70,
+          "text": "Arrange the following in chronological order:<br><br>(a) Jallianwala Bagh Massacre<br>(b) Kheda Satyagraha<br>(c) Champaran Satyagraha<br>(d) Non-Cooperation Movement",
+          "options": [
+            "(c), (a), (b), (d)",
+            "(c), (a), (d), (b)",
+            "(a), (b), (d), (c)",
+            "(c), (b), (a), (d)"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q071",
+          "number": 71,
+          "text": "Match the Indian National Congress Presidents (List-I) with the respective Sessions (List-II):<br><br><table border=\"1\" style=\"border-collapse: collapse; margin-bottom: 10px;\"><tr><td style=\"padding: 5px;\">List – I (Presidents)</td><td style=\"padding: 5px;\">List – II (Sessions)</td></tr><br><tr><td style=\"padding: 5px;\">(a) Vallabhbhai Patel</td><td style=\"padding: 5px;\">(i) Surat</td></tr><br><tr><td style=\"padding: 5px;\">(b) A.C. Mazumdar</td><td style=\"padding: 5px;\">(ii) Karachi</td></tr><br><tr><td style=\"padding: 5px;\">(c) Rash Behari Ghosh</td><td style=\"padding: 5px;\">(iii) Lucknow</td></tr><br><tr><td style=\"padding: 5px;\">(d) Badruddin Tyabji</td><td style=\"padding: 5px;\">(iv) Madras</td></tr><br></table><br>Codes:",
+          "options": [
+            "a – i, b – iii, c – iv, d – ii",
+            "a – ii, b – iii, c – i, d – iv",
+            "a – iii, b – ii, c – iv, d – i",
+            "a – ii, b – i, c – iii, d – iv<br><br>> [!warning] Parse note: Match list format with Codes."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q072",
+          "number": 72,
+          "text": "Consider the following statements with reference to Queen Didda.<br><br>(a) Ruled Kashmir.<br>(b) Belonged to Lohara dynasty.<br>(c) She fought against Mahmud Ghazni.<br>(d) She acted as regent for her minor grandsons.<br><br>How many of the above statement/s is/are correct?",
+          "options": [
+            "One only",
+            "Two only",
+            "Three only",
+            "All the four"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q073",
+          "number": 73,
+          "text": "Consider the following statements related to Sir. M. Visvesvaraya.<br><br>Statement I: After resigning from the post of Diwan, he served as the Chairman of the executive committee of the Bhadravati Iron Factory for 6 years and received an honorarium of 2 lakh rupees.<br><br>Statement II: He donated his honorarium for the functioning of Bowring hospital, Bengaluru.<br><br>Which of the above statement/s is/are correct?",
+          "options": [
+            "Statement I only",
+            "Statement II only",
+            "Both Statement I and Statement II are correct",
+            "Neither Statement I nor Statement II<br><br>> [!warning] Parse note: Printed with \"Statement I:\" and \"Statement II:\" (Roman numerals without hyphens)."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q074",
+          "number": 74,
+          "text": "\"The Congress is tottering to its fall and one of my great ambitions, while in India, is to assist it to a peaceful demise\". The statement was declared by",
+          "options": [
+            "Lord Lytton",
+            "Lord Dufferin",
+            "Lord Hardinge",
+            "Lord Curzon"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q075",
+          "number": 75,
+          "text": "Consider the following conquests of Krishnadevaraya:<br><br>(a) Battle of Dhoni<br>(b) The Odisha Campaign<br>(c) Siege of Gulbarga<br>(d) Siege of Vijayawada<br><br>Which of the following is the correct chronological order?",
+          "options": [
+            "(c), (b), (d), (a)",
+            "(b), (c), (a), (d)",
+            "(a), (c), (b), (d)",
+            "(c), (b), (a), (d)"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q076",
+          "number": 76,
+          "text": "Whom did Mahmud Gawan support in the war of succession?",
+          "options": [
+            "Kapilendra Gajapati",
+            "Hammiradeva",
+            "Purushottam Gajapati",
+            "Shailendra Gajapati"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q077",
+          "number": 77,
+          "text": "Consider the following statements with reference to 'Praja Mitra Mandali':<br><br>(a) The organization was founded in 1919 in the Mysore state<br>(b) It was inspired by the Justice Party of Madras<br>(c) It supported the demand for responsible government<br>(d) It demanded greater representation for non-Brahmins in government services and the expansion of educational facilities.<br><br>How many of the above statement/s is/are correct?",
+          "options": [
+            "Only one statement is correct",
+            "Only two statements are correct",
+            "Only three statements are correct",
+            "All the four statements are correct"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q078",
+          "number": 78,
+          "text": "Identify the correct chronology of Kadamba Kings:<br><br>(a) Kakusthavarma<br>(b) Mrigeshavarma<br>(c) Kangavarma<br>(d) Mayuravarma",
+          "options": [
+            "(d), (c), (b), (a)",
+            "(d), (c), (a), (b)",
+            "(d), (a), (b), (c)",
+            "(d), (b), (c), (a)"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q079",
+          "number": 79,
+          "text": "To support the implementation of Deendayal Antyodaya National Rural Livelihood Mission objectives, Community Resource Persons [CRPs] are trained. Who among the following is not a trained CRPs from SHGs?",
+          "options": [
+            "Krishi Sakhi",
+            "Grameen Sakhi",
+            "Pashu Sakhi",
+            "Bima Sakhi<br><br>> [!warning] Parse note: Candidate wrote handwritten glosses in parentheses below options (`(Crop)`, `(Village)`, `(Animal)`, `(Insurance)`). Ignored per rules; printed text is completely clear."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q080",
+          "number": 80,
+          "text": "Correctly match the committees in List-I with their recommendations in List-II:<br><br><table border=\"1\" style=\"border-collapse: collapse; margin-bottom: 10px;\"><tr><td style=\"padding: 5px;\">List – I (Committees)</td><td style=\"padding: 5px;\">List – II (Recommendations)</td></tr><br><tr><td style=\"padding: 5px;\">(a) Govinda Rao Committee</td><td style=\"padding: 5px;\">(i) Recommended for the establishment of Farmers Welfare Fund and Raita Sanjeevini Health Insurance</td></tr><br><tr><td style=\"padding: 5px;\">(b) Nijalingappa Committee</td><td style=\"padding: 5px;\">(ii) Recommended abolition of Malnad and Bayaluseeme Area Development Boards</td></tr><br><tr><td style=\"padding: 5px;\">(c) G.K. Veeresh Committee</td><td style=\"padding: 5px;\">(iii) Recommended compulsory water cess on farmers of common area even if they are not using water for the maintenance of canals</td></tr><br><tr><td style=\"padding: 5px;\">(d) Nanjundappa Committee</td><td style=\"padding: 5px;\">(iv) Recommended establishment of Regional Development Boards</td></tr><br></table><br>Codes:",
+          "options": [
+            "a – ii, b – iii, c – i, d – iv",
+            "a – i, b – ii, c – iii, d – iv",
+            "a – iv, b – ii, c – i, d – iii",
+            "a – iv, b – iii, c – ii, d – i<br><br>> [!warning] Parse note: Match list format with Codes."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q081",
+          "number": 81,
+          "text": "Expand KITS.",
+          "options": [
+            "Kempegowda Industrial and Technical Society",
+            "Karnataka Innovation and Technology Society",
+            "Karnataka Institute for Transforming Society",
+            "Karnataka Industrial and Technical Society"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q082",
+          "number": 82,
+          "text": "The process of improving the nutritional value of food crops is called",
+          "options": [
+            "Bioengineering",
+            "Biofortification",
+            "Biogenetics",
+            "Bioinformatics"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q083",
+          "number": 83,
+          "text": "In which year, the major amendment for Karnataka Land Reforms Act, 1961 was introduced?",
+          "options": [
+            "1974",
+            "1999",
+            "2026",
+            "2006"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q084",
+          "number": 84,
+          "text": "Consider the following statements related to Karnataka Land Reforms Act, 1961:<br><br>Statement-I: Section 48(i)(ii) of Land Reforms Act, 1961 allows the Government of Karnataka to constitute land tribunals at Taluk level.<br><br>Statement-II: Land tribunals constituted at Taluk level consists four non-official members. One of them shall be a person belonging to a Scheduled Caste/Scheduled Tribe.<br><br>Which of the above statement/s is/are correct?",
+          "options": [
+            "Statement-I is correct but Statement-II is incorrect",
+            "Statement-I is incorrect but Statement-II is correct",
+            "Both Statements I and II are correct",
+            "Both Statements I and II are incorrect"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q085",
+          "number": 85,
+          "text": "Consider the following statements regarding the 2011 census:<br><br>(a) As per the 2011 census, Karnataka's sex ratio is 973<br>(b) As per the 2011 census, the district with the highest child sex ratio is Udupi<br>(c) As per the 2011 census, the district with the lowest child sex ratio is Vijayapura<br>(d) As per the 2011 census, the district with the lowest sex ratio is Bengaluru urban<br><br>Choose the correct statement/statements",
+          "options": [
+            "(a) and (b) only",
+            "(b) and (c) only",
+            "(a), (b) and (c) only",
+            "(a), (c) and (d) only"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q086",
+          "number": 86,
+          "text": "The main objectives of land reforms is/are<br><br>(a) Transfer of land ownership from tenant to tiller<br>(b) Transfer of land ownership from tiller to tenant<br>(c) Transfer of land ownership from tenant to tenant<br>(d) Transfer of land ownership from tiller to tiller",
+          "options": [
+            "(a) only",
+            "(b) only",
+            "(a), (b) and (c) only",
+            "(a), (b) and (d) only"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q087",
+          "number": 87,
+          "text": "Consider the following statements:<br><br>Statement-I: Gender Inequality Index [GII] across districts in Karnataka indicates lesser variations.<br><br>Statement-II: It is accounted for social participation at local level.<br><br>Which one of the following is correct in respect of the above statements?",
+          "options": [
+            "Both Statement-I and Statement-II are correct and Statement-II explains Statement-I.",
+            "Both Statement-I and Statement-II are correct, but Statement-II does not explain Statement-I.",
+            "Statement-I is correct, but Statement-II is incorrect",
+            "Statement-I is incorrect, but Statement-II is correct"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q088",
+          "number": 88,
+          "text": "Squared Poverty Gap Index determines<br><br>(a) Degree of poverty for each individual<br>(b) Degree of poverty for a given area<br>(c) Degree of poverty for each household<br>(d) Degree of poverty and unemployment<br><br>Which of the above statement/s is/are correct?",
+          "options": [
+            "(a), (b) and (c)",
+            "(a), (c) and (d)",
+            "(b), (c) and (d)",
+            "(a), (b) and (d)"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q089",
+          "number": 89,
+          "text": "Match List-I with List-II:<br><br><table border=\"1\" style=\"border-collapse: collapse; margin-bottom: 10px;\"><tr><td style=\"padding: 5px;\">List – I (Boards)</td><td style=\"padding: 5px;\">List – II (Places)</td></tr><br><tr><td style=\"padding: 5px;\">(a) Coconut Development Board</td><td style=\"padding: 5px;\">(i) Gurgaon, Haryana</td></tr><br><tr><td style=\"padding: 5px;\">(b) National Horticulture Board</td><td style=\"padding: 5px;\">(ii) Kochi, Kerala</td></tr><br><tr><td style=\"padding: 5px;\">(c) National Turmeric Board</td><td style=\"padding: 5px;\">(iii) Guntur, Andhra Pradesh</td></tr><br><tr><td style=\"padding: 5px;\">(d) Tobacco Board</td><td style=\"padding: 5px;\">(iv) Nizamabad, Telangana</td></tr><br></table><br>Codes:",
+          "options": [
+            "a – i, b – ii, c – iii, d – iv",
+            "a – ii, b – iii, c – i, d – iv",
+            "a – iv, b – iii, c – ii, d – i",
+            "a – ii, b – i, c – iv, d – iii<br><br>> [!warning] Parse note: Match list format with Codes."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q090",
+          "number": 90,
+          "text": "Choose the correct statements given below regarding Pradhan Mantri Annadata Aay Sanrakshan Abhiyan (PM-AASHA) Scheme:<br><br>(a) The Scheme was launched in 2018<br>(b) Is a Price Support Scheme<br>(c) Is a Price Deficit Payment Scheme<br>(d) Is a Market Intervention Scheme<br><br>Which of the above statements are correct?",
+          "options": [
+            "(b), (c) and (d)",
+            "(a), (b) and (c)",
+            "(a), (b), (c) and (d)",
+            "(b) and (d)"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q091",
+          "number": 91,
+          "text": "The Global Methane Pledge (GMP) aims to cut down Methane emissions from 2020 levels by 2030 is",
+          "options": [
+            "80 percent",
+            "40 percent",
+            "50 percent",
+            "30 percent"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q092",
+          "number": 92,
+          "text": "In 2025-26, which long-term program was announced to increase pulse production in India?",
+          "options": [
+            "Nine-years Pulse Mission",
+            "Six-years Pulse Mission",
+            "Ten-years Pulse Mission",
+            "Seven-years Pulse Mission"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q093",
+          "number": 93,
+          "text": "Consider the following statements:<br><br>Statement-I : Loan waivers alone can ensure sustainable agricultural development.<br><br>Statement-II : Sustainable agricultural development depends on productivity, infrastructure, technology and market access.<br><br>Which of the following is correct with respect to the above statements?",
+          "options": [
+            "Both Statement-I and Statement-II are correct",
+            "Statement-I is correct but Statement-II is incorrect",
+            "Statement-II is correct, but Statement-I is incorrect",
+            "Both Statement-I and Statement-II are incorrect"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q094",
+          "number": 94,
+          "text": "Select the correct statement from the following.",
+          "options": [
+            "Thimmappanagudi Iron Ore Mining Centre is in Tumkur district",
+            "Janikunta Iron Ore Mining Centre is located at Ballari district",
+            "Donimalai Iron Ore Mining Centre is situated at Kalburgi",
+            "Kallur Limestone Mine is in Ballari"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q095",
+          "number": 95,
+          "text": "Consider the following pairs:<br><br><table border=\"1\" style=\"border-collapse: collapse; margin-bottom: 10px;\"><tr><td style=\"padding: 5px;\">Thermal Plant</td><td style=\"padding: 5px;\">Located District</td></tr><br><tr><td style=\"padding: 5px;\">(a) Annechakanahalli</td><td style=\"padding: 5px;\">Hassan</td></tr><br><tr><td style=\"padding: 5px;\">(b) Kalkunike</td><td style=\"padding: 5px;\">Ballari</td></tr><br><tr><td style=\"padding: 5px;\">(c) Hanakona</td><td style=\"padding: 5px;\">Uttara Kannada</td></tr><br></table><br>Which of the above pairs is/are correctly matched?",
+          "options": [
+            "(a) only",
+            "(a) and (c) only",
+            "(c) only",
+            "(a), (b) and (c)<br><br>> [!warning] Parse note: Headings \"Thermal Plant\" and \"Located District\" are printed with underlines."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q096",
+          "number": 96,
+          "text": "Consider the following statements with reference to Karnataka's coasts:<br><br>Statement-I: Karnataka coast is also called Mackerel coast<br><br>Statement-II : Mackerel fishes are more in the Karnataka coast<br><br>Which of the above statement/s is correct?",
+          "options": [
+            "Only Statement-I is correct",
+            "Both Statement-I and Statement-II are correct",
+            "Statement-I is correct but Statement-II is incorrect",
+            "Statement-II is correct but Statement-I is incorrect"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q097",
+          "number": 97,
+          "text": "IIHR Institution is located in which of the following cities?",
+          "options": [
+            "Bengaluru",
+            "Hubballi",
+            "Bagalkot",
+            "Mysuru"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q098",
+          "number": 98,
+          "text": "Consider the following agricultural interventions:<br><br>(a) Crop diversification<br>(b) Minimum tillage<br>(c) Residue retention<br>(d) Weather-based insurance<br>(e) Community agriculture<br><br>Which of the above interventions are included in the ‘Climate-Smart Village approach’ in India?",
+          "options": [
+            "(a), (c), (d) and (e)",
+            "(b), (c), (d) and (e)",
+            "(a), (b), (c) and (d)",
+            "(a), (b), (d) and (e)"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q099",
+          "number": 99,
+          "text": "In South India, the summer rainfall is known as coffee blossoms. This summer rainfall is called _________.",
+          "options": [
+            "Orographic rainfall",
+            "Convectional rainfall",
+            "Cyclonic rainfall",
+            "Monsoon rainfall"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P1-Q100",
+          "number": 100,
+          "text": "Arrange the below mentioned types of iron ore according to the iron content in lowest to highest order:<br><br>(a) Hematite<br>(b) Siderite<br>(c) Magnetite<br>(d) Limonite",
+          "options": [
+            "(a), (b), (c), (d)",
+            "(b), (d), (a), (c)",
+            "(d), (b), (c), (a)",
+            "(b), (a), (d), (c)"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        }
+      ]
+    },
+    {
+      "paper": "Paper 2",
+      "title": "Specific Paper",
+      "duration_minutes": 120,
+      "total_questions": 100,
+      "marking": {
+        "correct": 1.0,
+        "wrong": -0.25,
+        "unattempted": 0.0
+      },
+      "questions": [
+        {
+          "id": "P2-Q001",
+          "number": 1,
+          "text": "The physical significance of the Gauss's law for magnetism (∇· B⃗ = 0) is",
+          "options": [
+            "The magnetic field is conservative",
+            "Magnetic monopoles do not exist",
+            "Magnetic fields are produced only by static electric charges.",
+            "The magnetic field is directly proportional to the enclosed electric current.<br><br>> [!warning] Parse note: Equation contains vector notation: $(\\nabla \\cdot \\vec{B} = 0)$."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q002",
+          "number": 2,
+          "text": "Arrange the following steps in a communication process in sequential order:<br><br>(a) Modulation<br><br>(b) Message signal<br><br>(c) Reception<br><br>(d) Demodulation<br><br>(e) Transmission",
+          "options": [
+            "(a) → (b) → (c) → (d) → (e)",
+            "(b) → (a) → (e) → (c) → (d)",
+            "(a) → (c) → (b) → (e) → (d)",
+            "(c) → (b) → (a) → (d) → (e)<br><br>> [!warning] Parse note: Options contain right arrow symbols (→). Candidate penciled rough letters in margin."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q003",
+          "number": 3,
+          "text": "Match the following:<br><br><table border=\"1\" style=\"border-collapse: collapse; margin-bottom: 10px;\"><tr><td style=\"padding: 5px;\">List-I (Physical Quantity)</td><td style=\"padding: 5px;\">List-II (SI Unit)</td></tr><br><tr><td style=\"padding: 5px;\">(a) Electric charge</td><td style=\"padding: 5px;\">(i) Ohm-meter (Ω-m)</td></tr><br><tr><td style=\"padding: 5px;\">(b) Electric current</td><td style=\"padding: 5px;\">(ii) Watt (W)</td></tr><br><tr><td style=\"padding: 5px;\">(c) Resistivity</td><td style=\"padding: 5px;\">(iii) Coulomb (C)</td></tr><br><tr><td style=\"padding: 5px;\">(d) Power</td><td style=\"padding: 5px;\">(iv) Ampere (A)</td></tr><br></table><br>Codes:",
+          "options": [
+            "a - ii, b - i, c - iii, d - iv",
+            "a - iii, b - iv, c - i, d - ii",
+            "a - iii, b - ii, c - iv, d - i",
+            "a - i, b - iv, c - ii, d - iii<br><br>> [!warning] Parse note: List matching format. Two columns in original print. Unit contains Greek symbol Ω (Omega)."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q004",
+          "number": 4,
+          "text": "An alpha particle enters into a uniform magnetic field in perpendicular direction. Then it moves",
+          "options": [
+            "Perpendicular to magnetic field in a straight line",
+            "Parallel to magnetic field",
+            "In a circular orbit",
+            "Comes to rest<br><br>> [!warning] Parse note: Candidate wrote rough note above question text."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q005",
+          "number": 5,
+          "text": "Match the following:<br><br><table border=\"1\" style=\"border-collapse: collapse; margin-bottom: 10px;\"><tr><td style=\"padding: 5px;\">List-I (Radiation)</td><td style=\"padding: 5px;\">List-II (Wavelength Range (in Å))</td></tr><br><tr><td style=\"padding: 5px;\">(a) Ultraviolet radiation</td><td style=\"padding: 5px;\">(i) 0.01 Å to 1 Å</td></tr><br><tr><td style=\"padding: 5px;\">(b) X-rays</td><td style=\"padding: 5px;\">(ii) 7000 Å to 20000 Å</td></tr><br><tr><td style=\"padding: 5px;\">(c) Infrared radiation</td><td style=\"padding: 5px;\">(iii) 1000 Å to 4000 Å</td></tr><br><tr><td style=\"padding: 5px;\">(d) Gamma radiation</td><td style=\"padding: 5px;\">(iv) 1 Å to 100 Å</td></tr><br></table><br>Codes:",
+          "options": [
+            "a - iii, b - iv, c - i, d - ii",
+            "a - ii, b - i, c - iv, d - iii",
+            "a - iv, b - iii, c - i, d - ii",
+            "a - iii, b - iv, c - ii, d - i<br><br>> [!warning] Parse note: List matching format. Two columns in original print. Units in Ångström (Å)."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q006",
+          "number": 6,
+          "text": "For a composite molecule to be Raman active,",
+          "options": [
+            "It should possess a permanent dipole moment.",
+            "It should possess a temporary dipole moment.",
+            "It should exhibit changes in polarizability.",
+            "It should be a linear molecule"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q007",
+          "number": 7,
+          "text": "Gravitational potential energy<br><br>(a) Increases with increase in height from the surface of the earth<br><br>(b) Decreases with increase in height from the surface of the earth<br><br>(c) Is maximum at infinite distance from the surface of the earth<br><br>(d) Is zero at infinite distance from the surface of the earth.<br><br>Which of the above statements is/are correct?",
+          "options": [
+            "(a), (b) and (c)",
+            "(b) only",
+            "(a), (b), (c) and (d)",
+            "(a), (c) and (d)"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q008",
+          "number": 8,
+          "text": "Which of the following are the methods regarding measuring of the velocity of ultrasonic waves in a solid?<br><br>(a) Pulse-echo method<br><br>(b) Young's modulus method<br><br>(c) Piezoelectric method<br><br>(d) Ferroelectric method<br><br>Choose the correct option.",
+          "options": [
+            "(a), (b), (c) and (d)",
+            "(c) and (d)",
+            "(a) and (c)",
+            "(d) only<br><br>> [!warning] Parse note: Candidate underlined 'ultrasonic waves' in pencil."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q009",
+          "number": 9,
+          "text": "Statement I: The speed of a transverse wave in a stretched string varies directly with the square root of the mass per unit length of the wave.<br><br>Statement II: All the particles oscillate with same amplitude in a stationary wave<br><br>Pick the correct answer regarding the above statements",
+          "options": [
+            "Statement I is incorrect but Statement II is correct",
+            "Both Statement I and Statement II are correct",
+            "Statement I is correct but Statement II is incorrect",
+            "Both Statement I and Statement II are incorrect<br><br>> [!warning] Parse note: Candidate wrote rough formula in bottom margin."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q010",
+          "number": 10,
+          "text": "Our body gives heat to the surroundings and receives heat from the surroundings by the process of",
+          "options": [
+            "Conduction",
+            "Convection",
+            "Radiation",
+            "Both Convection and Radiation"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q011",
+          "number": 11,
+          "text": "Consider the following statements and choose the correct option:<br><br>Statement I: Photogrammetry is used in stereoscopic measurements of human body using X-rays<br><br>Statement II: Accuracy of contours and cross-sections depends on the accuracy of 3D models generation from stereophotographs",
+          "options": [
+            "Both Statements I and II are correct, but Statement II is not related to Statement I",
+            "Both Statements I and II are correct, and Statement II is related to Statement I",
+            "Statement I is correct, but Statement II is incorrect",
+            "Statement I is incorrect, but Statement II is correct"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q012",
+          "number": 12,
+          "text": "Match the concepts in List - I with their explanations in List - II and choose the correct answer:<br><br><table border=\"1\" style=\"border-collapse: collapse; margin-bottom: 10px;\"><tr><td style=\"padding: 5px;\">List - I (Concepts)</td><td style=\"padding: 5px;\">List - II (Explanations)</td></tr><br><tr><td style=\"padding: 5px;\">(a) Exposure station</td><td style=\"padding: 5px;\">(i) The flying path an aircraft takes while taking the photographs</td></tr><br><tr><td style=\"padding: 5px;\">(b) Flightline</td><td style=\"padding: 5px;\">(ii) It is a vertical line from exposure station indicating the direction of gravity</td></tr><br><tr><td style=\"padding: 5px;\">(c) Perspective centre</td><td style=\"padding: 5px;\">(iii) Location of aircraft in the air at the time of taking photograph</td></tr><br><tr><td style=\"padding: 5px;\">(d) Plumbline</td><td style=\"padding: 5px;\">(iv) The point of origin or termination of bundles of perspective light rays</td></tr><br></table><br>Codes:",
+          "options": [
+            "a - i, b - ii, c - iii, d - iv",
+            "a - iv, b - i, c - iii, d - ii",
+            "a - ii, b - iii, c - iv, d - i",
+            "a - iii, b - i, c - iv, d - ii<br><br>> [!warning] Parse note: List matching format. Two columns in original print."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q013",
+          "number": 13,
+          "text": "Assume a vertical photograph was taken at a flying height of 5000 m above sea level using a camera with a 152 mm focal length lens, determine the photo scale points A and B, while they lie at elevations of 1200 m and 1960 m.",
+          "options": [
+            "1 : 25,000 - SA<br>    1 : 20,000 - SB",
+            "1 : 20,000 - SA<br>    1 : 25,000 - SB",
+            "1 : 25,000 - SA<br>    1 : 30,000 - SB",
+            "1 : 30,000 - SA<br>    1 : 25,000 - SB<br><br>> [!warning] Parse note: Ratio scales formatted as two-line pairs per option."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q014",
+          "number": 14,
+          "text": "A line AB appears measuring 12.70 cm on an aerial photograph and the corresponding line measures 2.54 cm on a map at a scale 1/50,000. The terrain has an average elevation of 200 m above MSL. Calculate the flying height of aircraft, above MSL, if the photograph was taken with camera of 16 cm focal length.",
+          "options": [
+            "1600 m",
+            "2000 m",
+            "1800 m",
+            "1400 m"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q015",
+          "number": 15,
+          "text": "The reference points, precisely located on both the ground and the photo whose three dimensional co-ordinates, are known as",
+          "options": [
+            "Scale",
+            "Control points",
+            "Principle points",
+            "Photograph centre"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q016",
+          "number": 16,
+          "text": "Which of the following data sources can be used to generate a Digital Elevation Model (DEM)?",
+          "options": [
+            "Topographic maps, stereo-air photos and stereo-satellite images",
+            "Only land survey data and GPS coordinates",
+            "Weather radar data and satellite thermal images",
+            "Multispectral satellite images and Sonar data"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q017",
+          "number": 17,
+          "text": "Remote sensing is best described as",
+          "options": [
+            "Acquiring information about any object without physical contact",
+            "The measurement of celestial bodies",
+            "Study of atmospheric pressure",
+            "The measurement of soil characteristics"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q018",
+          "number": 18,
+          "text": "Consider the following statements and choose the correct option:<br><br>Statement I: Electromagnetic radiation is a form of energy, that travels with a speed of light (3 × 10⁸ m/sec) in a harmonic pattern<br><br>Statement II: It has two fields: (i) Electric field and (ii) Magnetic field",
+          "options": [
+            "Both Statements I and II are correct but Statement II is not related to Statement I",
+            "Both Statements I and II are correct and Statement II is related to Statement I",
+            "Statement I is incorrect, but Statement II is correct",
+            "Statement I is correct, but Statement II is incorrect<br><br>> [!warning] Parse note: Scientific notation 3 × 10⁸ m/sec with superscript 8 in Statement I."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q019",
+          "number": 19,
+          "text": "The different stages of digital image processing in remote sensing are listed below<br><br>(a) Image enhancement<br><br>(b) Image preprocessing<br><br>(c) Image classification<br><br>(d) Image transformation<br><br>Identify the correct sequence.",
+          "options": [
+            "(a), (b), (c), (d)",
+            "(b), (a), (d), (c)",
+            "(d), (b), (a), (c)",
+            "(c), (a), (b), (d)"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q020",
+          "number": 20,
+          "text": "Which of the following is true regarding the Indian Regional Navigation Satellite System (IRNSS)?",
+          "options": [
+            "It consists of three satellites",
+            "It is a global positioning system",
+            "It was developed by the Department of Defence, USA",
+            "It is also known as NavIC and provides navigation signals over India and surrounding regions"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q021",
+          "number": 21,
+          "text": "Which of the following problems is resolved by adding a 4ᵗʰ satellite observation to the minimum 3-range measurements needed for location tracking in GPS?",
+          "options": [
+            "To calculate the exact velocity of the moving observer",
+            "To measure the undulating shape of the earth",
+            "To solve for the clock synchronisation error between the receiver and the satellite",
+            "To boost the weak satellite signals so that they can work indoors<br><br>> [!warning] Parse note: Ordinal 4ᵗʰ printed with superscript."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q022",
+          "number": 22,
+          "text": "What does synchronisation do in a GIS database?",
+          "options": [
+            "It speeds up computer internet connection",
+            "It refers to conversion of vector data models to raster grid automatically",
+            "It refers to forms of protection against inconsistencies that can result from multiple simultaneous users",
+            "To build public web application without needing custom code"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q023",
+          "number": 23,
+          "text": "What is the correct sequence of the 4 M's in a standard GIS framework?<br><br>(a) Mapping<br><br>(b) Monitoring<br><br>(c) Modelling<br><br>(d) Measurement",
+          "options": [
+            "(a), (b), (c), (d)",
+            "(d), (a), (b), (c)",
+            "(c), (a), (d), (b)",
+            "(a), (c), (b), (d)<br><br>> [!warning] Parse note: Candidate wrote rough note 'Geographical Info System' in right margin."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q024",
+          "number": 24,
+          "text": "Consider the following statements:<br><br>Statement - I : GNSS can be easily integrated with total station data and GIS<br><br>Statement - II : GNSS gives precise results in areas like forest, under a bridge, tunnel etc.<br><br>Which one of the following is correct in respect of the above statements?",
+          "options": [
+            "Both Statement-I and Statement-II are correct and Statement-II is related to Statement-I",
+            "Both Statement-I and Statement-II are correct but Statement-II is not related to Statement-I",
+            "Statement-I is incorrect but Statement-II is correct",
+            "Statement-I is correct but Statement-II is incorrect"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q025",
+          "number": 25,
+          "text": "Which of the following statements about the Continuously Operating Reference Stations (CORS) Network is incorrect?",
+          "options": [
+            "CORS continuously receives signals from GNSS stations",
+            "Karnataka CORS network provides correction data for accurate positioning and surveying",
+            "CORS operate 24/7 and serve as reference points for correcting GNSS measurements",
+            "CORS data does not support GNSS surveying.<br><br>> [!warning] Parse note: Candidate underlined 'incorrect?' in pencil. Rough work at bottom of page."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q026",
+          "number": 26,
+          "text": "Match the following Dilution of Precision (DoP) in List-I with the Satellite Geometry in List-II:<br><br><table border=\"1\" style=\"border-collapse: collapse; margin-bottom: 10px;\"><tr><td style=\"padding: 5px;\">List - I (Dilution of Precision)</td><td style=\"padding: 5px;\">List - II (Satellite Geometry)</td></tr><br><tr><td style=\"padding: 5px;\">(a) HDoP</td><td style=\"padding: 5px;\">(i) Better satellite geometry</td></tr><br><tr><td style=\"padding: 5px;\">(b) PDoP</td><td style=\"padding: 5px;\">(ii) Poor satellite geometry</td></tr><br><tr><td style=\"padding: 5px;\">(c) Low DoP</td><td style=\"padding: 5px;\">(iii) Accuracy of horizontal position</td></tr><br><tr><td style=\"padding: 5px;\">(d) High DoP</td><td style=\"padding: 5px;\">(iv) Position accuracy in 3-dimension</td></tr><br></table><br>Codes:",
+          "options": [
+            "a - iii, b - iv, c - i, d - ii",
+            "a - iii, b - i, c - iv, d - ii",
+            "a - i, b - ii, c - iii, d - iv",
+            "a - i, b - iii, c - ii, d - iv<br><br>> [!warning] Parse note: List matching format. Two columns in original print."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q027",
+          "number": 27,
+          "text": "Selective Availability in GPS signal is a",
+          "options": [
+            "Natural error",
+            "Intentional error",
+            "Systematic error",
+            "Bias error"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q028",
+          "number": 28,
+          "text": "Arrange the following steps in the correct sequence for obtaining position using DGPS:<br><br>(a) Correction data is transmitted to the rover.<br><br>(b) Rover determines its position using satellite signals.<br><br>(c) Base station is established at a known point<br><br>(d) Base station calculates the GPS errors<br><br>(e) Correct co-ordinates of the rovers are obtained",
+          "options": [
+            "(c), (b), (d), (a), (e)",
+            "(c), (d), (a), (b), (e)",
+            "(d), (c), (b), (a), (e)",
+            "(b), (c), (a), (d), (e)"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q029",
+          "number": 29,
+          "text": "Match List-I with List-II with respect to Real Time Kinematic (RTK) surveying and select the correct answer using the codes given below:<br><br><table border=\"1\" style=\"border-collapse: collapse; margin-bottom: 10px;\"><tr><td style=\"padding: 5px;\">List - I (RTK Surveying Component)</td><td style=\"padding: 5px;\">List - II (Description)</td></tr><br><tr><td style=\"padding: 5px;\">(a) Base station</td><td style=\"padding: 5px;\">(i) Receives correction data and determines the rover position</td></tr><br><tr><td style=\"padding: 5px;\">(b) Rover receiver</td><td style=\"padding: 5px;\">(ii) Transmits corrections from the base station to the rover</td></tr><br><tr><td style=\"padding: 5px;\">(c) Data link</td><td style=\"padding: 5px;\">(iii) A signal distortion that happens when satellite waves bounce off nearby surfaces</td></tr><br><tr><td style=\"padding: 5px;\">(d) Multipath error</td><td style=\"padding: 5px;\">(iv) GNSS receiver established over a known coordinate point.</td></tr><br></table><br>Codes:",
+          "options": [
+            "a - i, b - iv, c - iii, d - ii",
+            "a - i, b - ii, c - iv, d - iii",
+            "a - iv, b - i, c - ii, d - iii",
+            "a - iv, b - ii, c - i, d - iii<br><br>> [!warning] Parse note: List matching format. Two columns in original print."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q030",
+          "number": 30,
+          "text": "Which of the following best describes a satellite constellation?",
+          "options": [
+            "A single satellite placed in a fixed orbit",
+            "A group of satellites working together to provide continuous or improved coverage",
+            "A ground-based network of GNSS receivers",
+            "A satellite tracking and monitoring station"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q031",
+          "number": 31,
+          "text": "Sukri is the tributary of which river?",
+          "options": [
+            "Mahanadi",
+            "Luni",
+            "Rushi Kulya",
+            "Ponnaiyar"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q032",
+          "number": 32,
+          "text": "Identify the mountains of Tamil Nadu in the map.<br><br>[Image removed: _figures/P2-Q032_map.png|280]",
+          "options": [
+            "(a) Nilgiri (b) Javadi (c) Palani (d) Shevaroy",
+            "(a) Nilgiri (b) Javadi (c) Shevaroy (d) Palani",
+            "(a) Javadi (b) Nilgiri (c) Shevaroy (d) Palani",
+            "(a) Javadi (b) Nilgiri (c) Palani (d) Shevaroy<br><br>> [!warning] Parse note: [FIGURE] Outline map of India showing Tamil Nadu region with four marked locations: (a) western border / Nilgiri, (b) northern / Javadi, (c) central-east / Shevaroy, (d) southern / Palani."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q033",
+          "number": 33,
+          "text": "India is a peninsular country because",
+          "options": [
+            "It is located in the southern hemisphere",
+            "It lies entirely in the Northern hemisphere",
+            "It is located and surrounded by three sides of water and one side of land",
+            "It is the seventh largest country in the world"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q034",
+          "number": 34,
+          "text": "The primary purpose of a cadastral map is to show",
+          "options": [
+            "Physical features of the Earth's surface",
+            "Weather patterns and climate data",
+            "Political boundaries of countries and states",
+            "Land ownership and property parcels"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q035",
+          "number": 35,
+          "text": "Match the types of map in List-I with their uses mentioned in List-II:<br><br><table border=\"1\" style=\"border-collapse: collapse; margin-bottom: 10px;\"><tr><td style=\"padding: 5px;\">List - I (Types of map)</td><td style=\"padding: 5px;\">List - II (Uses)</td></tr><br><tr><td style=\"padding: 5px;\">(a) Physical map</td><td style=\"padding: 5px;\">(i) Shows political boundaries</td></tr><br><tr><td style=\"padding: 5px;\">(b) Political map</td><td style=\"padding: 5px;\">(ii) Focuses on specific theme</td></tr><br><tr><td style=\"padding: 5px;\">(c) Topographic map</td><td style=\"padding: 5px;\">(iii) Depicts physical features</td></tr><br><tr><td style=\"padding: 5px;\">(d) Thematic map</td><td style=\"padding: 5px;\">(iv) Uses contour lines to illustrate the elevation and shape of the land.</td></tr><br></table><br>Codes:",
+          "options": [
+            "a - iii, b - i, c - iv, d - ii",
+            "a - iv, b - iii, c - ii, d - i",
+            "a - i, b - ii, c - iii, d - iv",
+            "a - ii, b - i, c - iv, d - iii<br><br>> [!warning] Parse note: List matching format. Two columns in original print."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q036",
+          "number": 36,
+          "text": "Match List-I with List-II and choose the correct answer:<br><br><table border=\"1\" style=\"border-collapse: collapse; margin-bottom: 10px;\"><tr><td style=\"padding: 5px;\">List - I (Discontinuity)</td><td style=\"padding: 5px;\">List - II (Separate layers)</td></tr><br><tr><td style=\"padding: 5px;\">(a) Conrad</td><td style=\"padding: 5px;\">(i) Sial and Sima</td></tr><br><tr><td style=\"padding: 5px;\">(b) Mohorovicic</td><td style=\"padding: 5px;\">(ii) Outer core and inner core</td></tr><br><tr><td style=\"padding: 5px;\">(c) Gutenberg</td><td style=\"padding: 5px;\">(iii) Crust and mantle Zone</td></tr><br><tr><td style=\"padding: 5px;\">(d) Lehman</td><td style=\"padding: 5px;\">(iv) Mantle zone and core</td></tr><br></table><br>Codes:",
+          "options": [
+            "a - ii, b - iv, c - i, d - iii",
+            "a - i, b - iii, c - iv, d - ii",
+            "a - iii, b - i, c - iv, d - ii",
+            "a - iv, b - ii, c - iii, d - i<br><br>> [!warning] Parse note: List matching format. Two columns in original print."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q037",
+          "number": 37,
+          "text": "Consider the following statements and select the correct answer using the codes given below:<br><br>Statement I: In India, the drainage basin of Brahmaputra is bigger than that of the Indus basin<br><br>Statement II: The Mahanadi drainage basin is bigger than that of the Krishna river basin",
+          "options": [
+            "Only Statement I is correct",
+            "Only Statement II is correct",
+            "Both Statements I and II are correct",
+            "Both Statement I and Statement II are incorrect<br><br>> [!warning] Parse note: Candidate underlined 'Krishna river basin' in pencil."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q038",
+          "number": 38,
+          "text": "Choose the correct option.",
+          "options": [
+            "ITCZ is found between 20° - 25° latitude",
+            "ITCZ is found between 10° - 15° latitude",
+            "ITCZ is found between 25° - 30° latitude",
+            "ITCZ is found between 30° - 35° latitude<br><br>> [!warning] Parse note: Degree symbol (°) preserved in latitudes."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q039",
+          "number": 39,
+          "text": "Which of the following pairs is correctly matched?",
+          "options": [
+            "Abu - Malwa Plateau",
+            "Tura Range - Shillong Plateau",
+            "Pachmarhi - Aravalli Range",
+            "Mukurti - Telangana Plateau<br><br>> [!warning] Parse note: Tabular pairs layout presented as options in original print."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q040",
+          "number": 40,
+          "text": "The average depth of oceans and average height of the lithosphere, respectively, is",
+          "options": [
+            "3800 m and 840 m",
+            "11000 m and 8848 m",
+            "5000 m and 2500 m",
+            "4000 m and 3000 m<br><br>> [!warning] Parse note: Candidate wrote rough note 'highest' next to (2)."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q041",
+          "number": 41,
+          "text": "What is the primary function of GIS software environment's integration, with a Rational Database Management System (RDBMS)?",
+          "options": [
+            "Compiling custom python scripts for tool automation",
+            "Managing and linking spatial geometry with non-spatial attribute tables efficiently",
+            "Rendering high definition 3D cartographic map layouts",
+            "Directly capturing live GPS satellite telemetry signals<br><br>> [!warning] Parse note: Original printed text has suspected typo: 'Rational Database Management System' instead of 'Relational Database Management System'. Preserved verbatim as printed."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q042",
+          "number": 42,
+          "text": "What are the fundamental limitations and characteristics of Raster v/s Vector data models in representing geographic phenomena?",
+          "options": [
+            "Vector models struggle with topological verification, while raster models automatically enforce neighbour relations through pixel positions",
+            "Vector models treat space as continuous field whereas raster models use discrete, entity based co-ordinates.",
+            "Raster grids lack explicit topology, whereas topological vector models explicitly store these connection using nodes arcs and polygons",
+            "Raster models require less storage than vector models for high complex, rapidly changing continuous surfaces"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q043",
+          "number": 43,
+          "text": "Match the Raster and Vector plugins in List - I with their corresponding cartographic application in List - II:<br><br><table border=\"1\" style=\"border-collapse: collapse; margin-bottom: 10px;\"><tr><td style=\"padding: 5px;\">List - I (Plugins)</td><td style=\"padding: 5px;\">List - II (Cartographic Application)</td></tr><br><tr><td style=\"padding: 5px;\">(a) Vector line operations (eg: buffering)</td><td style=\"padding: 5px;\">(i) Best suited for continuous surface backgrounds</td></tr><br><tr><td style=\"padding: 5px;\">(b) Raster grid/pixel processing</td><td style=\"padding: 5px;\">(ii) Ideal for rendering precise land boundaries and transit networks with clean text labels</td></tr><br><tr><td style=\"padding: 5px;\">(c) Vector to raster conversion</td><td style=\"padding: 5px;\">(iii) Combines multiple administrative and land cover layers to calculate cartographic overlap</td></tr><br><tr><td style=\"padding: 5px;\">(d) Overlay analysis (composite mapping)</td><td style=\"padding: 5px;\">(iv) Converting crisp outline geometries into pixel grids often causing jagged edges or loss in line resolution</td></tr><br></table><br>Codes:",
+          "options": [
+            "a - ii, b - i, c - iv, d - iii",
+            "a - ii, b - i, c - iii, d - iv",
+            "a - iv, b - iii, c - ii, d - i",
+            "a - iii, b - ii, c - i, d - iv<br><br>> [!warning] Parse note: List matching format. Two columns in original print."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q044",
+          "number": 44,
+          "text": "Match the following OGC web services:<br><br><table border=\"1\" style=\"border-collapse: collapse; margin-bottom: 10px;\"><tr><td style=\"padding: 5px;\">List - I (OGC Web Services)</td><td style=\"padding: 5px;\">List - II (Descriptions)</td></tr><br><tr><td style=\"padding: 5px;\">(a) WMS</td><td style=\"padding: 5px;\">(i) Returns a raw multidimensional raster data suitable for analysis</td></tr><br><tr><td style=\"padding: 5px;\">(b) WFS</td><td style=\"padding: 5px;\">(ii) Core operation used to fetch the actual spatial features with geometric attributes</td></tr><br><tr><td style=\"padding: 5px;\">(c) WCS</td><td style=\"padding: 5px;\">(iii) Returns styled map images (PNG, JPEG)</td></tr><br><tr><td style=\"padding: 5px;\">(d) Get capabilities</td><td style=\"padding: 5px;\">(iv) Standard operation across all services</td></tr><br><tr><td style=\"padding: 5px;\">(e) Get Feature</td><td style=\"padding: 5px;\">(v) Returns raw vector features</td></tr><br></table><br>Codes:",
+          "options": [
+            "a - iii, b - v, c - i, d - iv, e - ii",
+            "a - ii, b - iv, c - v, d - i, e - iii",
+            "a - i, b - ii, c - iii, d - iv, e - v",
+            "a - v, b - iii, c - iv, d - ii, e - i<br><br>> [!warning] Parse note: List matching format with 5 entries (a to e). Two columns in original print."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q045",
+          "number": 45,
+          "text": "What is the primary purpose of cadastral map within GIS framework?",
+          "options": [
+            "To analyse global weather and real time precipitation patterns",
+            "To define, record and legalise property boundaries",
+            "To map out sub-surface geological rock formations",
+            "To illustrate national political boundaries"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q046",
+          "number": 46,
+          "text": "Given below are two statements related to AutoCAD software:<br><br>Statement I: Orthographic drawing refers to a 2D [2-Dimensional] representation of an object in a view that shows only one side at a time<br><br>Statement II: The file extension that cannot be accessed by AutoCAD is doc file<br><br>With respect to the above statements, choose the correct answer from the options given below:",
+          "options": [
+            "Both Statements I and II are false",
+            "Both Statements I and II are true",
+            "Statement I is true but Statement II is false",
+            "Statement I is false but Statement II is true<br><br>> [!warning] Parse note: Candidate underlined 'correct answer' in pencil."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q047",
+          "number": 47,
+          "text": "Which of the following statements is/are not correct with respect to mirror command in AutoCAD?<br><br>(a) Applies a mirror like reflection to an object<br><br>(b) Creates a duplicate copy of an object<br><br>(c) Flips an object over a specified axis<br><br>(d) Rotates an object around its center point",
+          "options": [
+            "(a) and (c)",
+            "(c) only",
+            "(a), (b) and (d)",
+            "(a), (b), (c) and (d)"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q048",
+          "number": 48,
+          "text": "Match the following function keys in List-I with their functions in List-II regarding to AutoCAD software:<br><br><table border=\"1\" style=\"border-collapse: collapse; margin-bottom: 10px;\"><tr><td style=\"padding: 5px;\">List - I (Function Keys)</td><td style=\"padding: 5px;\">List - II (Functions in AutoCAD)</td></tr><br><tr><td style=\"padding: 5px;\">(a) F6</td><td style=\"padding: 5px;\">(i) Toggles the SNAP on and off</td></tr><br><tr><td style=\"padding: 5px;\">(b) F7</td><td style=\"padding: 5px;\">(ii) Toggles ORTHO on and off</td></tr><br><tr><td style=\"padding: 5px;\">(c) F8</td><td style=\"padding: 5px;\">(iii) Toggles GRID on and off</td></tr><br><tr><td style=\"padding: 5px;\">(d) F9</td><td style=\"padding: 5px;\">(iv) Toggles the co-ordinate readout from absolute to incremental to off and back</td></tr><br></table><br>Choose the correct option using the codes given below:<br><br>Codes:",
+          "options": [
+            "a - iv, b - iii, c - ii, d - i",
+            "a - ii, b - i, c - iv, d - iii",
+            "a - iii, b - iv, c - i, d - ii",
+            "a - iv, b - iii, c - i, d - ii<br><br>> [!warning] Parse note: List matching format. Two columns in original print."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q049",
+          "number": 49,
+          "text": "Identify the correct file extension which is an open vector format primarily used for sharing CAD design across platforms, developed by Autodesk.",
+          "options": [
+            ".doc",
+            ".dwg",
+            ".dwt",
+            ".dxf"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q050",
+          "number": 50,
+          "text": "The command for opening 'drawing units' window in AutoCAD is",
+          "options": [
+            "U",
+            "UN",
+            "UNI",
+            "UIT"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q051",
+          "number": 51,
+          "text": "What will be the output of the following Java code?<br><br>```java<br>class incre {<br>    public static void main(String args[ ])<br>    {<br>        int g = 3;<br>        system.out.print(+ + g * 8);<br>    }<br>}<br>```",
+          "options": [
+            "33",
+            "34",
+            "24",
+            "32<br><br>> [!warning] Parse note: Code snippet contains `system.out.print(+ + g * 8);` with space between `+ +` and lowercase `system` as printed."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q052",
+          "number": 52,
+          "text": "Which line of the following HTML file contains an error?<br><br>1. < applet<br>2.    Width = 200, Height = 200<br>3.    Code = Hello.class<br>4. < param<br>5.    Name = \"string\"<br>6.    Value = \"Hello java\" ><br>7. < /applet >",
+          "options": [
+            "Line 4",
+            "Line 6",
+            "Line 3",
+            "Line 2<br><br>> [!warning] Parse note: HTML applet code snippet with numbered lines."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q053",
+          "number": 53,
+          "text": "How do you correctly declare a variable in PHP?",
+          "options": [
+            "variable x = 5;",
+            "int x = 5;",
+            "$x = 5;",
+            "var x = 5;"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q054",
+          "number": 54,
+          "text": "In a capacity based region quadtree used for point data, what primary condition triggers a leaf node to recursively split into four quadrants?",
+          "options": [
+            "The number of data points inside the node exceeds a predefined capacity threshold",
+            "The depth of the entire tree decreases below zero",
+            "The bounding box of the node intersects with another branch of the tree",
+            "The node becomes completely empty of any spatial data"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q055",
+          "number": 55,
+          "text": "What is the defining characteristic of an \"offline-first\" mobile application architecture compared to an \"online-first\" cloud dependent application?",
+          "options": [
+            "No local database on the device",
+            "Cannot function without an internet connection",
+            "No optimistic UI",
+            "It treats local device storage as the primary source of truth, rather than relying on a remote cloud server"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q056",
+          "number": 56,
+          "text": "What is the major limitation of the tradition waterfall model in Software Engineering?",
+          "options": [
+            "It promotes iterative delivery, every two weeks",
+            "It eliminates the need of formal testing phase",
+            "Requirements are freezed",
+            "Requires continuous collaboration<br><br>> [!warning] Parse note: Suspected typo in original: \"tradition waterfall model\" for \"traditional waterfall model\"."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q057",
+          "number": 57,
+          "text": "Consider the following two statements related to REST API.<br><br>Statement I: Stateless constraint of REST requires that each request from a client to server must contain all information necessary to understand and complete request<br><br>Statement II: Because API server stores user session data in its local memory to track state across successive requests, the server is forced to remember previous interactions, which directly violates this constraint<br><br>With respect to the above statements, choose an appropriate answer from the options given below:",
+          "options": [
+            "Statement I is correct but Statement II is incorrect",
+            "Statement I is incorrect but Statement II is correct",
+            "Both Statement I and Statement II are correct",
+            "Both Statement I and Statement II are incorrect<br><br>> [!warning] Parse note: Candidate wrote handwritten word \"cache\" above \"local memory\". Ignored per rules; printed text is completely clear."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q058",
+          "number": 58,
+          "text": "What is the correct sequence of software testing levels from lowest component level to complete system level?<br><br>(a) System Testing<br>(b) Integration Testing<br>(c) Unit Testing<br>(d) Acceptance Testing<br><br>Choose the correct sequence from the below mentioned options.",
+          "options": [
+            "(d), (a), (b), (c)",
+            "(c), (b), (a), (d)",
+            "(c), (a), (b), (d)",
+            "(d), (c), (a), (b)"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q059",
+          "number": 59,
+          "text": "Choose the correct sequential order of Jesse James Garrett's 'Five Planes Framework' in UX design:<br><br>(a) Strategy<br>(b) Scope<br>(c) Structure<br>(d) Surface<br>(e) Skeleton",
+          "options": [
+            "(a), (b), (d), (e), (c)",
+            "(a), (b), (c), (e), (d)",
+            "(b), (d), (a), (e), (c)",
+            "(e), (d), (b), (a), (c)"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q060",
+          "number": 60,
+          "text": "Which type of cryptographic mechanism serves as technological foundation for standard secure digital signatures to ensure non-repudiation?",
+          "options": [
+            "Shared secret key exchange",
+            "Hash based message authentication codes",
+            "Asymmetric key cryptography (public key infrastructure)",
+            "Symmetric key cryptography"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q061",
+          "number": 61,
+          "text": "Arrange the following steps in a proper sequence to construct an equilateral triangle of side 6 cm:<br><br>(a) Join A and C<br>(b) Take a radius of 6 cm in a compass, draw an arc from A above the segment and cut this arc from B using the same radius. Mark the intersection of these arcs as C.<br>(c) Draw a segment AB of length 6 cm.<br>(d) Join B and C.",
+          "options": [
+            "(a), (b), (c), (d)",
+            "(c), (b), (a), (d)",
+            "(a), (c), (b), (d)",
+            "(b), (d), (c), (a)"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q062",
+          "number": 62,
+          "text": "Statement I: Perpendicular bisectors of a triangle passes through the vertices of the triangle.<br><br>Statement II: Perpendicular bisectors of a triangle passes through the midpoints of sides of the triangle.<br><br>Which of the following conclusions can be drawn from the above statements?",
+          "options": [
+            "Both the Statements I and II are true",
+            "Both the Statements I and II are false",
+            "Statement I is true but Statement II is false",
+            "Statement I is false but Statement II is true"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q063",
+          "number": 63,
+          "text": "In $\\Delta\\text{ABC}$, $\\text{AB} = \\text{AC} = x$, $\\text{BC} = 10\\text{ cm}$ and area of $\\Delta\\text{ABC} = 60\\text{ cm}^2$. Then the value of $x$ is",
+          "options": [
+            "12 cm",
+            "5 cm",
+            "10 cm",
+            "13 cm"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q064",
+          "number": 64,
+          "text": "If $\\text{AE} = 10\\text{ cm}$, $\\text{BD} = 8\\text{ cm}$ and $\\text{BC} = 10\\text{ cm}$, then $\\text{AB}$ is equal to<br><br>[Image removed: _figures/P2-Q064_triangle.png|320]",
+          "options": [
+            "5 cm",
+            "25 cm",
+            "12.5 cm",
+            "2.5 cm<br><br>> [!warning] Parse note: [FIGURE]: Right-angled triangle $\\Delta\\text{ECA}$ with right angle at A, vertical segment $\\text{BD} \\perp \\text{CA}$ at B, with printed labels $\\text{BD} = 8$ and $\\text{BC} = 10$. Candidate added rough work calculations ($\\sqrt{164}$, $x = 12.5$)."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q065",
+          "number": 65,
+          "text": "Match the following List-I with List-II:<br><br><table border=\"1\" style=\"border-collapse: collapse; margin-bottom: 10px;\"><tr><td style=\"padding: 5px;\">List – I</td><td style=\"padding: 5px;\">List – II</td></tr><br><tr><td style=\"padding: 5px;\">(a) Opposite sides of a parallelogram</td><td style=\"padding: 5px;\">(i) Supplementary angle</td></tr><br><tr><td style=\"padding: 5px;\">(b) The diagonals of a parallelogram</td><td style=\"padding: 5px;\">(ii) Equal</td></tr><br><tr><td style=\"padding: 5px;\">(c) In parallelogram, consecutive angles are</td><td style=\"padding: 5px;\">(iii) Parallelogram</td></tr><br><tr><td style=\"padding: 5px;\"></td><td style=\"padding: 5px;\">(iv) Bisect each other</td></tr><br></table><br>Codes:",
+          "options": [
+            "a – ii, b – iv, c – i",
+            "a – ii, b – iii, c – iv",
+            "a – iii, b – ii, c – i",
+            "a – iv, b – i, c – ii<br><br>> [!warning] Parse note: Match list format with Codes."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q066",
+          "number": 66,
+          "text": "In the following figure, BC is parallel to DE. Then the ratio, Area of $\\Delta\\text{ADE}$ : Area of $\\Delta\\text{ABC}$ is ________ (in $\\text{cm}^2$)<br><br>[Image removed: _figures/P2-Q066_triangle.png|280]",
+          "options": [
+            "25 : 49",
+            "49 : 25",
+            "25 : 144",
+            "144 : 25<br><br>> [!warning] Parse note: [FIGURE]: Triangle ABC with segment DE parallel to base BC. Printed lengths show $\\text{AE} = 5\\text{ cm}$ and $\\text{EC} = 7\\text{ cm}$."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q067",
+          "number": 67,
+          "text": "List-I denotes the polygons and List-II denotes the number of sides of polygons.<br><br>Match the following:<br><br><table border=\"1\" style=\"border-collapse: collapse; margin-bottom: 10px;\"><tr><td style=\"padding: 5px;\">List – I (Polygons)</td><td style=\"padding: 5px;\">List – II (Number of sides)</td></tr><br><tr><td style=\"padding: 5px;\">(a) Decagon</td><td style=\"padding: 5px;\">(i) 8</td></tr><br><tr><td style=\"padding: 5px;\">(b) Hexagon</td><td style=\"padding: 5px;\">(ii) 5</td></tr><br><tr><td style=\"padding: 5px;\">(c) Octagon</td><td style=\"padding: 5px;\">(iii) 10</td></tr><br><tr><td style=\"padding: 5px;\">(d) Pentagon</td><td style=\"padding: 5px;\">(iv) 6</td></tr><br></table><br>Codes:",
+          "options": [
+            "a – iv, b – iii, c – ii, d – i",
+            "a – ii, b – iii, c – iv, d – i",
+            "a – iii, b – iv, c – i, d – ii",
+            "a – ii, b – i, c – iv, d – iii<br><br>> [!warning] Parse note: Match list format with Codes."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q068",
+          "number": 68,
+          "text": "The earning of a person is Rs. 40,000 in the first year and he earns Rs. 3000 more every year for the next 15 years. Find the total amount he has earned in 16 years.",
+          "options": [
+            "Rs. 8,00,000",
+            "Rs. 10,00,000",
+            "Rs. 10,30,000",
+            "Rs. 8,30,000"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q069",
+          "number": 69,
+          "text": "In the following figure, A, B and C are midpoints of PQ, PR and QR respectively. If the perimeter of $\\Delta\\text{PQR}$ is 36 cm, then the perimeter of $\\Delta\\text{ABC}$ is<br><br>[Image removed: _figures/P2-Q069_midpoints.png|260]",
+          "options": [
+            "9 cm",
+            "18 cm",
+            "20 cm",
+            "36 cm<br><br>> [!warning] Parse note: [FIGURE]: Triangle PQR with points A on PQ, B on PR, and C on QR connected to form inner triangle ABC."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q070",
+          "number": 70,
+          "text": "Match each of the set in List-I described in the roaster form with the same set in List-II described in the set builder form:<br><br><table border=\"1\" style=\"border-collapse: collapse; margin-bottom: 10px;\"><tr><td style=\"padding: 5px;\">List - I (Roster Form)</td><td style=\"padding: 5px;\">List - II (Set Builder Form)</td></tr><br><tr><td style=\"padding: 5px;\">(a) { 1, 2, 3, 6, 9, 18 }</td><td style=\"padding: 5px;\">(i) { x : x is an integer and $x^2 - 16 = 0$ }</td></tr><br><tr><td style=\"padding: 5px;\">(b) { 1, 2, 3, 6 }</td><td style=\"padding: 5px;\">(ii) { x : x is an odd natural number less than 10 }</td></tr><br><tr><td style=\"padding: 5px;\">(c) { 4, – 4 }</td><td style=\"padding: 5px;\">(iii) { x : x is a natural number and divisor of 6 }</td></tr><br><tr><td style=\"padding: 5px;\">(d) { 1, 3, 5, 7, 9 }</td><td style=\"padding: 5px;\">(iv) { x : x is a positive integer and a divisor of 18 }</td></tr><br></table><br>Codes:",
+          "options": [
+            "a – iv, b – iii, c – i, d – ii",
+            "a – iv, b – ii, c – i, d – iii",
+            "a – iii, b – i, c – ii, d – iv",
+            "a – iii, b – iv, c – ii, d – i<br><br>> [!warning] Parse note: Suspected typo in original: \"roaster form\" for \"roster form\". Math sets in roster and set-builder notation."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q071",
+          "number": 71,
+          "text": "If $x + y + z = 8$ and $xy + yz + zx = 12$, then the value of $x^2 + y^2 + z^2$ is",
+          "options": [
+            "40",
+            "- 40",
+            "38",
+            "- 38"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q072",
+          "number": 72,
+          "text": "Factorize: $a^4 + a^2b^2 + b^4$",
+          "options": [
+            "$(a^2 - b^2 + ab) (a^2 - b^2 - ab)$",
+            "$(a^2 - b^2 + ab) (a^2 + b^2 - ab)$",
+            "$(a^2 + b^2 + ab) (a^2 - b^2 - ab)$",
+            "$(a^2 + b^2 + ab) (a^2 + b^2 - ab)$"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q073",
+          "number": 73,
+          "text": "Statement I: If \"$^n\\text{C}_8 = {^n\\text{C}_2}$\", then \"$^n\\text{C}_2 = 45$\"<br><br>Statement II: If \"$^n\\text{C}_x = {^n\\text{C}_y}$\", then $n = x + y$",
+          "options": [
+            "Statement I is true but Statement II is false",
+            "Statement II is true but statement I is false",
+            "Both Statements I and II are true",
+            "Both Statements I and II are false<br><br>> [!warning] Parse note: Formulas printed with quotation marks as shown. Option (2) has lowercase \"statement I\"."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q074",
+          "number": 74,
+          "text": "The difference between two numbers is 2 and the product of their LCM and HCF is 48.<br><br>The numbers are",
+          "options": [
+            "8 and 6",
+            "11 and 9",
+            "10 and 12",
+            "6 and 4"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q075",
+          "number": 75,
+          "text": "Mode is equal to",
+          "options": [
+            "3 median + 3 mean",
+            "3 median + 2 mean",
+            "2 median - 3 mean",
+            "3 median - 2 mean"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q076",
+          "number": 76,
+          "text": "If $A = \\begin{bmatrix} 1 & -2 & 3 \\\\ -1 & 0 & 1 \\\\ 5 & 2 & 6 \\end{bmatrix}, B = \\begin{bmatrix} 2 & -1 & 3 \\\\ 0 & 1 & 4 \\\\ 2 & 6 & 1 \\end{bmatrix}$ and $2A + 3X = 5B$, then what is $X$?",
+          "options": [
+            "$\\frac{1}{3} \\begin{bmatrix} 8 & 1 & 9 \\\\ 2 & 0 & 18 \\\\ 0 & 20 & -7 \\end{bmatrix}$",
+            "$\\frac{1}{3} \\begin{bmatrix} 8 & -1 & 9 \\\\ 2 & 5 & 18 \\\\ 0 & 20 & -7 \\end{bmatrix}$",
+            "$\\frac{1}{3} \\begin{bmatrix} 8 & -1 & 9 \\\\ 2 & 5 & 18 \\\\ 0 & 20 & 7 \\end{bmatrix}$",
+            "$\\frac{1}{3} \\begin{bmatrix} 8 & -1 & -9 \\\\ 2 & 5 & 18 \\\\ 0 & 20 & -7 \\end{bmatrix}$<br><br>> [!warning] Parse note: Matrix arithmetic with $3 \\times 3$ matrices."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q077",
+          "number": 77,
+          "text": "The distance between two parallel tangents of a circle of radius 6 cm is ________",
+          "options": [
+            "10 cm",
+            "12 cm",
+            "8 cm",
+            "6 cm"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q078",
+          "number": 78,
+          "text": "The largest four-digit number which is divisible by 12, 15, 21 and 30 is",
+          "options": [
+            "9340",
+            "9831",
+            "9960",
+            "9660"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q079",
+          "number": 79,
+          "text": "The abscissa of a point is $\\frac{3}{2}$ units, and if the difference between the ordinate and $\\frac{5}{2}$ is double of the abscissa, then the value of the ordinate is",
+          "options": [
+            "$\\frac{3}{2}$",
+            "$\\frac{5}{2}$",
+            "$\\frac{7}{2}$",
+            "$\\frac{11}{2}$"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q080",
+          "number": 80,
+          "text": "In a parallelogram, the consecutive angles are",
+          "options": [
+            "Equal angles",
+            "Complementary angles",
+            "Right angles",
+            "Supplementary angles"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q081",
+          "number": 81,
+          "text": "Match the following List-I the name of the matrix with List-II examples of matrices.<br><br><table border=\"1\" style=\"border-collapse: collapse; margin-bottom: 10px;\"><tr><td style=\"padding: 5px;\">List - I (Matrix Name)</td><td style=\"padding: 5px;\">List - II (Example)</td></tr><br><tr><td style=\"padding: 5px;\">(a) Identity matrix</td><td style=\"padding: 5px;\">(i) [a 0 a]</td></tr><br><tr><td style=\"padding: 5px;\">(b) Diagonal matrix</td><td style=\"padding: 5px;\">(ii) $\\begin{bmatrix} 1 & 0 \\\\ 0 & 1 \\end{bmatrix}$</td></tr><br><tr><td style=\"padding: 5px;\">(c) Column matrix</td><td style=\"padding: 5px;\">(iii) $\\begin{bmatrix} a & 0 \\\\ 0 & b \\end{bmatrix}$</td></tr><br><tr><td style=\"padding: 5px;\">(d) Row matrix</td><td style=\"padding: 5px;\">(iv) $\\begin{bmatrix} a \\\\ b \\end{bmatrix}$</td></tr><br></table><br>Codes:",
+          "options": [
+            "a – ii, b – iii, c – iv, d – i",
+            "a – iii, b – ii, c – i, d – iv",
+            "a – iv, b – ii, c – iii, d – i",
+            "a – i, b – iv, c – ii, d – iii<br><br>> [!warning] Parse note: Match list format with matrix notation."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q082",
+          "number": 82,
+          "text": "In the following figure, PQRS and ABCR are the rectangles and B is the midpoint of PR. The ratio of lengths AC : PR is ________<br><br>[Image removed: _figures/P2-Q082_rectangles.png|300]",
+          "options": [
+            "1 : 2",
+            "2 : 1",
+            "1 : 1",
+            "2 : 3<br><br>> [!warning] Parse note: [FIGURE]: Outer rectangle PQRS with diagonal PR. Inner rectangle ABCR has vertex B at the midpoint of diagonal PR, vertex A on side SR, vertex C on side QR, with diagonal AC."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q083",
+          "number": 83,
+          "text": "Match the following square roots and cube roots in List-I with their corresponding answers in List-II.<br><br><table border=\"1\" style=\"border-collapse: collapse; margin-bottom: 10px;\"><tr><td style=\"padding: 5px;\">List - I (Expression)</td><td style=\"padding: 5px;\">List - II (Value)</td></tr><br><tr><td style=\"padding: 5px;\">(a) $\\sqrt[3]{2744}$</td><td style=\"padding: 5px;\">(i) 8</td></tr><br><tr><td style=\"padding: 5px;\">(b) $\\left(\\frac{2}{3}\\right)^3 \\sqrt{729}$</td><td style=\"padding: 5px;\">(ii) 30</td></tr><br><tr><td style=\"padding: 5px;\">(c) $\\sqrt{18^2 + 24^2}$</td><td style=\"padding: 5px;\">(iii) 4</td></tr><br><tr><td style=\"padding: 5px;\">(d) $\\sqrt{\\sqrt[3]{4096}}$</td><td style=\"padding: 5px;\">(iv) 14</td></tr><br></table><br>Codes:",
+          "options": [
+            "a – ii, b – iii, c – iv, d – i",
+            "a – iv, b – iii, c – i, d – ii",
+            "a – iii, b – iv, c – ii, d – i",
+            "a – iv, b – i, c – ii, d – iii<br><br>> [!warning] Parse note: Match list format with roots and powers. Item (d) has nested square root over cube root: $\\sqrt{\\sqrt[3]{4096}}$."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q084",
+          "number": 84,
+          "text": "The area a trapezium is $144\\text{ m}^2$ and its height is 12 m. If one of the parallel sides is 14 m less than the other, then find the length of each of the parallel sides.",
+          "options": [
+            "19 m and 5 m",
+            "20 m and 4 m",
+            "19 m and 4 m",
+            "20 m and 5 m<br><br>> [!warning] Parse note: Suspected typo in original: \"The area a trapezium\" for \"The area of a trapezium\"."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q085",
+          "number": 85,
+          "text": "The difference between the number of bases in a prism and a pyramid is ________",
+          "options": [
+            "A prism has one base and a pyramid has two bases",
+            "A prism has two parallel bases and a pyramid has one base",
+            "Both have the same number of bases",
+            "A prism has no base"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q086",
+          "number": 86,
+          "text": "The quadratic equation of the given graph is<br><br>[Image removed: _figures/P2-Q086_parabola.png|320]",
+          "options": [
+            "$x^2 - 4x + 3 = 0$",
+            "$x^2 - 4x - 3 = 0$",
+            "$x^2 + 4x - 3 = 0$",
+            "$x^2 + 4x + 3 = 0$<br><br>> [!warning] Parse note: [FIGURE]: Coordinate axes X-X' and Y-Y' showing parabola opening upwards, intersecting the X-axis at $x = 1$ and $x = 3$, with minimum at $x = 2$."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q087",
+          "number": 87,
+          "text": "The base of a parallelogram is thrice of its height. If the area of the parallelogram is $108\\text{ cm}^2$, then its height is",
+          "options": [
+            "8 cm",
+            "5 cm",
+            "6 cm",
+            "4 cm"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q088",
+          "number": 88,
+          "text": "If the four angles of a quadrilateral are in the ratio $2 : 3 : 5 : 8$, find the angles.",
+          "options": [
+            "$40^\\circ, 60^\\circ, 100^\\circ\\text{ and }160^\\circ$",
+            "$20^\\circ, 80^\\circ, 100^\\circ\\text{ and }160^\\circ$",
+            "$40^\\circ, 80^\\circ, 160^\\circ\\text{ and }180^\\circ$",
+            "$60^\\circ, 80^\\circ, 160^\\circ\\text{ and }180^\\circ$"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q089",
+          "number": 89,
+          "text": "$\\Delta\\text{ABC}$ has sides which are of length 5 cm, 12 cm and 13 cm respectively. The radius of circle circumscribing the triangle is",
+          "options": [
+            "5 cm",
+            "12 cm",
+            "2.5 cm",
+            "6.5 cm"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q090",
+          "number": 90,
+          "text": "How many 4 – digit numbers can be formed by using the digits 1 to 9 if repetition of digits is not allowed?",
+          "options": [
+            "3024",
+            "3034",
+            "4030",
+            "5060"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q091",
+          "number": 91,
+          "text": "Match the following Algebraic expressions in List-I with their simplified form in List-II.<br><br><table border=\"1\" style=\"border-collapse: collapse; margin-bottom: 10px;\"><tr><td style=\"padding: 5px;\">List - I (Algebraic Expression)</td><td style=\"padding: 5px;\">List - II (Simplified Form)</td></tr><br><tr><td style=\"padding: 5px;\">(a) (x – 3y) (x + 5y)</td><td style=\"padding: 5px;\">(i) $x^2 - 8xy + 15y^2$</td></tr><br><tr><td style=\"padding: 5px;\">(b) (x + 3y) (x + 5y)</td><td style=\"padding: 5px;\">(ii) $x^2 - 2xy - 15y^2$</td></tr><br><tr><td style=\"padding: 5px;\">(c) (x – 3y) (x – 5y)</td><td style=\"padding: 5px;\">(iii) $x^2 + 8xy + 15y^2$</td></tr><br><tr><td style=\"padding: 5px;\">(d) (x + 3y) (x – 5y)</td><td style=\"padding: 5px;\">(iv) $x^2 + 2xy - 15y^2$</td></tr><br></table><br>Codes:",
+          "options": [
+            "a – iii, b – ii, c – iv, d – i",
+            "a – iv, b – iii, c – i, d – ii",
+            "a – ii, b – iv, c – iii, d – i",
+            "a – ii, b – i, c – iii, d – iv<br><br>> [!warning] Parse note: Match list format with Codes."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q092",
+          "number": 92,
+          "text": "From the given figure, if $\\angle\\text{ADC} : \\angle\\text{ABC} = 1 : 2$, then what is the value of $\\angle\\text{ADC}$? Choose the correct answer from the given options.<br><br>[Image removed: _figures/P2-Q092_cyclic_quad.png|280]",
+          "options": [
+            "$20^\\circ$",
+            "$30^\\circ$",
+            "$80^\\circ$",
+            "$10^\\circ$<br><br>> [!warning] Parse note: [FIGURE]: Cyclic quadrilateral ABCD inside a circle. Printed label shows $\\angle\\text{CAB} = 50^\\circ$. Candidate added various handwritten angle values ($60$, $80$, $40$, $10$) on the figure."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q093",
+          "number": 93,
+          "text": "The length of the tangent drawn from a point which is 12 cm away from the center of a circle is 6 cm. Find the radius of the circle.",
+          "options": [
+            "6 cm",
+            "$2\\sqrt{3}\\text{ cm}$",
+            "$6\\sqrt{3}\\text{ cm}$",
+            "9 cm"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q094",
+          "number": 94,
+          "text": "The steps from solids to points are",
+          "options": [
+            "Lines – Points – Surfaces – Solids",
+            "Solids – Surfaces – Lines – Points",
+            "Lines – Surfaces – Points – Solids",
+            "Solids – Surfaces – Lines –Points"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q095",
+          "number": 95,
+          "text": "Which of the following sets are infinite sets.<br><br>(a) The total population of India.<br>(b) Set of Natural numbers.<br>(c) Set of Prime numbers.<br>(d) Number of water drops in a glass.",
+          "options": [
+            "(a) and (c)",
+            "(b) and (c)",
+            "(a) and (d)",
+            "(b), (c) and (d)<br><br>> [!warning] Parse note: Question sentence ends with a period instead of a question mark."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q096",
+          "number": 96,
+          "text": "Which point of concurrency is equidistant from the three sides of a triangle and serves as the center of its inscribed circle?",
+          "options": [
+            "Centroid",
+            "Incenter",
+            "Orthocenter",
+            "Circumcenter"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q097",
+          "number": 97,
+          "text": "How many faces and edges does a triangular prism have respectively?",
+          "options": [
+            "8 and 9",
+            "9 and 8",
+            "9 and 5",
+            "5 and 9"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q098",
+          "number": 98,
+          "text": "Arrange the following polynomials in an ascending order of their highest degrees:<br><br>(a) $(x^2 + 3) (x^2 + 1)$<br>(b) $2x^2 (x^3 + 4x + 1)$<br>(c) $x (2x^2 + 3x + 1)$<br>(d) $(x + 1) (3x + 2)$",
+          "options": [
+            "(b) $\\rightarrow$ (a) $\\rightarrow$ (c) $\\rightarrow$ (d)",
+            "(d) $\\rightarrow$ (c) $\\rightarrow$ (a) $\\rightarrow$ (b)",
+            "(b) $\\rightarrow$ (c) $\\rightarrow$ (a) $\\rightarrow$ (d)",
+            "(d) $\\rightarrow$ (c) $\\rightarrow$ (b) $\\rightarrow$ (a)"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q099",
+          "number": 99,
+          "text": "'A' and 'B' together can do a piece of work in 4 days. If one day's work of 'A' is two times one day's work of 'B', then how many days will each take to finish the work if 'A' and 'B' work individually?",
+          "options": [
+            "A: 4 days and B: 3 days",
+            "A: 3 days and B: 2 days",
+            "A: 2 days and B: 4 days",
+            "A: 6 days and B: 12 days"
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        },
+        {
+          "id": "P2-Q100",
+          "number": 100,
+          "text": "In the following figure, ABCD is a parallelogram. Find the angle measures of x, y and z.<br><br>[Image removed: _figures/P2-Q100_parallelogram.png|340]",
+          "options": [
+            "$\\angle x = 110^\\circ, \\angle y = 30^\\circ, \\angle z = 40^\\circ$",
+            "$\\angle x = 110^\\circ, \\angle y = 40^\\circ, \\angle z = 30^\\circ$",
+            "$\\angle x = 40^\\circ, \\angle y = 110^\\circ, \\angle z = 30^\\circ$",
+            "$\\angle x = 40^\\circ, \\angle y = 30^\\circ, \\angle z = 110^\\circ$<br><br>> [!warning] Parse note: [FIGURE]: Parallelogram ABCD with diagonal AC. Printed angles show $\\angle\\text{DAC} = 40^\\circ$, $\\angle\\text{CAB} = z$, $\\angle\\text{D} = x$, $\\angle\\text{ACD} = y$, and exterior angle at vertex B with extended side AB is $70^\\circ$. Candidate wrote rough work ($y=40^\\circ, z=30^\\circ, x=110$)."
+          ],
+          "correct_answer": null,
+          "rationale": "Answer not available"
+        }
+      ]
+    }
+  ]
+}

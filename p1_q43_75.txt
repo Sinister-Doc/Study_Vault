@@ -1,0 +1,576 @@
+=== 43 ===
+P1-Q043 · p.15 · confidence: high
+
+Question: Read the following statements and choose the correct answer from the options given below:
+
+Statement I: Productivity is increased in tomato and bell pepper in greenhouses due to increased CO<sub>2</sub> concentration
+
+Statement II: Maize and sorghum are plants not adapted to grow in dry tropical regions
+
+- [ ] (1) Both statements I and II are correct
+- [ ] (2) Statement I is correct but Statement II is incorrect
+- [ ] (3) Statement I is incorrect but Statement II is correct
+- [ ] (4) Both Statements I and II are incorrect
+
+> [!warning] Parse note: Chemical formula CO₂ with subscript 2 in Statement I. Candidate underlined 'not' in pencil.
+
+---
+
+=== 44 ===
+P1-Q044 · p.16 · confidence: high
+
+Question: Choose the incorrect statement.
+
+- [ ] (1) Melatonin regulates the diurnal (24 hour) rhythm of our body
+- [ ] (2) Thyrocalcitonin regulates the blood calcium levels
+- [ ] (3) Parathyroid hormone decreases the calcium levels in the blood
+- [ ] (4) Adrenaline and noradrenaline are hormones of flight or fight
+
+---
+
+=== 45 ===
+P1-Q045 · p.16 · confidence: high
+
+Question: Consider the following statements:
+
+Statement I: 'O' blood group individuals are called universal donors
+
+Statement II: There are no antigens on the RBCs in 'O' blood group individuals
+
+Choose the correct answer from the options given below:
+
+- [ ] (1) Both Statement I and Statement II are incorrect
+- [ ] (2) Statement I is correct but Statement II is incorrect
+- [ ] (3) Statement I is incorrect but Statement II is correct
+- [ ] (4) Both Statement I and Statement II are correct
+
+> [!warning] Parse note: Candidate wrote rough pencil notes ("no antigens?", "AB-ve", etc.) in right margin. Printed text remains fully legible.
+
+---
+
+=== 46 ===
+P1-Q046 · p.16 · confidence: high
+
+Question: A mobile manufacturer earns 20% profit by selling each mobile set for ₹ 18,000. If the production cost is increased by 10%, what should be the new selling price of a mobile set so as to gain 15%?
+
+- [ ] (1) ₹ 18,900
+- [ ] (2) ₹ 18,970
+- [ ] (3) ₹ 18,975
+- [ ] (4) ₹ 18,960
+
+---
+
+=== 47 ===
+P1-Q047 · p.16 · confidence: high
+
+Question: The present age of son is one-fourth of the present age of his mother. After 10 years, mother's age will be twice the age of her son. Find the present age of mother.
+
+- [ ] (1) 12 years
+- [ ] (2) 20 years
+- [ ] (3) 24 years
+- [ ] (4) 30 years
+
+---
+
+=== 48 ===
+P1-Q048 · p.17 · confidence: high
+
+Question: Consider the following bar diagram showing the sales and profits of a company during consecutive four years, and choose the correct answer.
+
+Statements:
+
+(i) There is constant growth in sales percentage year on year basis
+
+(ii) Lowest margin of profit was in 2025
+
+(iii) Profits are not doubled in 4 years period of time
+
+(iv) Percentage of costs was least in 2022
+
+- [ ] (1) Statements (i) and (iii) are correct but Statements (ii) and (iv) are incorrect
+- [ ] (2) Statements (i) and (ii) are correct but Statements (iii) and (iv) are incorrect
+- [ ] (3) Statements (i) and (iii) are incorrect but Statements (ii) and (iv) are correct
+- [ ] (4) Statements (ii) and (iii) are incorrect but Statements (i) and (iv) are correct
+
+> [!warning] Parse note: Bar diagram included in question. Y-axis represents 'Sales and Profits (Crore ₹)' with values up to 14. X-axis shows 4 consecutive years with two bars each: hatched bar = Sales, white bar = Profits. Printed bar heights: Year 1 (Sales=6, Profits=4); Year 2 (Sales=8, Profits=5); Year 3 (Sales=10, Profits=6); Year 4 (Sales=14, Profits=8). Candidate penciled '22', '23', '24', '25' under the 4 years.
+
+---
+
+=== 49 ===
+P1-Q049 · p.17 · confidence: high
+
+Question: In a survey, it was found that 20 people like product X, 25 liked product Y, 23 liked product Z. If 14 people liked products X and Y, 10 people liked products Y and Z, 8 people liked products X and Z and 6 liked all the three products. Find how many liked only one product?
+
+- [ ] (1) 4
+- [ ] (2) 7
+- [ ] (3) 22
+- [ ] (4) 11
+
+---
+
+=== 50 ===
+P1-Q050 · p.18 · confidence: high
+
+Question: A man is facing towards east, he turns towards his left at 180° and again turns to his left 45°. In which direction is he facing now?
+
+- [ ] (1) North-east
+- [ ] (2) South-west
+- [ ] (3) West
+- [ ] (4) South
+
+---
+
+=== 51 ===
+P1-Q051 · p.18 · confidence: high
+
+Question: Who among the following did NOT hold any responsibility in the opening or closing ceremony of the Glasgow 2026 Commonwealth Games?
+
+- [ ] (1) Weightlifter Mirabai Chanu
+- [ ] (2) Boxer Lovlina Borgohain
+- [ ] (3) Boxer Jaismine Lamboria
+- [ ] (4) Shooter Manu Bhaker
+
+> [!warning] Parse note: 'NOT' printed in capital letters in original text.
+
+---
+
+=== 52 ===
+P1-Q052 · p.18 · confidence: high
+
+Question: What is the title of the upcoming autobiography of Sonia Gandhi?
+
+- [ ] (1) My Life, Memoir: My Journey
+- [ ] (2) The Red Sari: An Autobiography
+- [ ] (3) Courting Destiny: My Memoir
+- [ ] (4) Belonging: A Journey of Love
+
+---
+
+=== 53 ===
+P1-Q053 · p.18 · confidence: high
+
+Question: Under which Article of the Constitution of India has the Kerala (Alteration of Name) Bill, 2026 passed to rename the state of Kerala to "Keralam"?
+
+- [ ] (1) Article 1
+- [ ] (2) Article 3
+- [ ] (3) Article 5
+- [ ] (4) Article 7
+
+---
+
+=== 54 ===
+P1-Q054 · p.18 · confidence: high
+
+Question: Consider the following pairs related to Grand Slam Tennis and winners in 2026:
+
+(a) Australian open - Alexander Zverev
+(b) French open - Carlos Alcaraz
+(c) Wimbledon - Jannik Sinner
+
+Which of the above pair/s is/are incorrectly matched?
+
+- [ ] (1) Only (a)
+- [ ] (2) (b) and (c)
+- [ ] (3) (a) and (b)
+- [ ] (4) Only (c)
+
+> [!warning] Parse note: Candidate circled 'incorrectly' in pencil.
+
+---
+
+=== 55 ===
+P1-Q055 · p.19 · confidence: high
+
+Question: Which of the following districts are covered under the proposed Ecological Sensitive Area of Kasturirangan Report?
+
+(a) Udupi, Uttara Kannada, Dakshina Kannada
+
+(b) Hassan, Kodagu, Chikkamagaluru
+
+(c) Dharwad, Bangalore Rural
+
+(d) Belagavi, Mysuru, Chamarajanagar, Shivamogga
+
+- [ ] (1) (a) and (b)
+- [ ] (2) (a), (b) and (d)
+- [ ] (3) (b), (c) and (d)
+- [ ] (4) (a), (b), (c) and (d)
+
+---
+
+=== 56 ===
+P1-Q056 · p.19 · confidence: high
+
+Question: In which of the following places has 'Buddha Rashmi Mani' former Director General of the National Museum of New Delhi has undertaken excavation work?
+
+(a) Sarnath
+
+(b) Ayodhya
+
+(c) Dholavira
+
+(d) Rakhigarhi
+
+Select the correct answer using the codes given below:
+
+- [ ] (1) (a), (b) and (c)
+- [ ] (2) (b) and (d)
+- [ ] (3) (a), (b) and (d)
+- [ ] (4) (a) and (b)
+
+---
+
+=== 57 ===
+P1-Q057 · p.19 · confidence: high
+
+Question: Expand MIST:
+
+- [ ] (1) Museum of Information, Science and Technology
+- [ ] (2) Museum of Innovation, Startup and Technology
+- [ ] (3) Ministry of Innovation, Startup and Technology
+- [ ] (4) Museum of Information, Science and Tourism
+
+---
+
+=== 58 ===
+P1-Q058 · p.20 · confidence: high
+
+Question: Consider the following statements:
+
+Statement I: The Sabka Bima, Sabki Raksha Act 2025 amended the Insurance Act, 1938 to strengthen policyholder protection.
+
+Statement II: It aims to reduce foreign direct investment in the insurance sector.
+
+Select the correct answer using the codes given below:
+
+- [ ] (1) Both statement I and II are correct and statement II is the correct explanation of Statement I
+- [ ] (2) Both statements I and II are correct, but statement II is not the correct explanation of Statement I
+- [ ] (3) Statement I is correct, but Statement II is incorrect
+- [ ] (4) Statement I is incorrect, but Statement II is correct
+
+---
+
+=== 59 ===
+P1-Q059 · p.20 · confidence: high
+
+Question: Which former World Chess Champion was handed a two-year worldwide ban in 2026?
+
+- [ ] (1) Magnus Carlsen
+- [ ] (2) Garry Kasparov
+- [ ] (3) Vladimir Kramnik
+- [ ] (4) Veselin Topalov
+
+---
+
+=== 60 ===
+P1-Q060 · p.20 · confidence: high
+
+Question: Consider the following statements regarding the UN Climate Change Conference:
+
+(a) India recently withdrew its bid to host the COP-33 Summit scheduled for 2028.
+
+(b) The COP-31 Summit is scheduled to be jointly organised by South Africa and Namibia.
+
+(c) COP-30 Summit was hosted by Brazil.
+
+Which of the above statements are correct?
+
+- [ ] (1) (a), (b) and (c)
+- [ ] (2) (a) and (b) only
+- [ ] (3) (a) and (c) only
+- [ ] (4) (b) and (c) only
+
+> [!warning] Parse note: Candidate underlined 'correct?' in pencil.
+
+---
+
+=== 61 ===
+P1-Q061 · p.21 · confidence: high
+
+Question: Which of the following pairs are correct regarding Bhakti Movement?
+
+(a) Ramananda - Varanasi
+(b) Vallabhacharya - Allahabad
+(c) Chaitanya - Nadiya
+(d) Ekanath - Paithan
+
+- [ ] (1) (a), (b) and (c)
+- [ ] (2) (a), (c) and (d)
+- [ ] (3) (a), (b) and (d)
+- [ ] (4) (c) and (d)
+
+> [!warning] Parse note: Tabular pairs layout in original print.
+
+---
+
+=== 62 ===
+P1-Q062 · p.21 · confidence: high
+
+Question: Who was honored by Devaraya II with the title 'Dakshin Samudradipati'?
+
+- [ ] (1) Kumaravyasa
+- [ ] (2) Chamarasa
+- [ ] (3) Lakkanna Dandesh
+- [ ] (4) Vijaya Raya
+
+---
+
+=== 63 ===
+P1-Q063 · p.21 · confidence: high
+
+Question: Consider the following statements with reference to 'Doctrine of Lapse' policy:
+
+Statement-I: This policy was introduced by Lord Dalhousie.
+
+Statement-II: Hyderabad was the first victim state to this policy.
+
+Which of the following is correct with respect to the above statements?
+
+- [ ] (1) Both Statement-I and Statement-II are correct
+- [ ] (2) Both Statement-I and Statement-II are incorrect
+- [ ] (3) Statement-I is correct but Statement-II is incorrect
+- [ ] (4) Statement-I is incorrect but Statement-II is correct
+
+---
+
+=== 64 ===
+P1-Q064 · p.22 · confidence: high
+
+Question: Identify the correctly matched pairs:
+
+(a) Allasani Peddanna - Manucharitamu
+(b) Thimmana - Parijatapaharanamu
+(c) Durjati - Kalahasti Shatakam
+(d) Tenali Ramakrishna - Panduranga Mahathme
+
+- [ ] (1) (a), (b), (c) and (d)
+- [ ] (2) (a) and (b)
+- [ ] (3) (a) and (d)
+- [ ] (4) (b) and (c)
+
+> [!warning] Parse note: Tabular pairs layout in original print.
+
+---
+
+=== 65 ===
+P1-Q065 · p.22 · confidence: high
+
+Question: Match List-I with List-II and choose the correct answer:
+
+List-I
+(a) Rupnath Rock Edict
+(b) Sahasram Rock Edict
+(c) Bairat Rock Edict
+(d) Maski Rock Edict
+
+List-II
+(i) Karnataka
+(ii) Rajasthan
+(iii) Bihar
+(iv) Madhya Pradesh
+
+Codes:
+
+- [ ] (1) a - i, b - ii, c - iii, d - iv
+- [ ] (2) a - iii, b - iv, c - i, d - ii
+- [ ] (3) a - ii, b - iii, c - iv, d - i
+- [ ] (4) a - iv, b - iii, c - ii, d - i
+
+> [!warning] Parse note: List matching format. Two columns in original print.
+
+---
+
+=== 66 ===
+P1-Q066 · p.22 · confidence: high
+
+Question: Arrange the following Diwans of Mysore in chronological order:
+
+(a) Kantharaj Urs
+
+(b) P.N Krishnamurti
+
+(c) Mirza Ismail
+
+(d) C. Rangacharlu
+
+- [ ] (1) (a), (b), (c), (d)
+- [ ] (2) (c), (d), (a), (b)
+- [ ] (3) (d), (b), (a), (c)
+- [ ] (4) (c), (a), (b), (d)
+
+---
+
+=== 67 ===
+P1-Q067 · p.23 · confidence: high
+
+Question: Consider the following statements with reference to the Swadeshi Movement:
+
+(a) Importance to self-reliance.
+(b) Development of national dignity, honour and self-confidence.
+(c) In the economic field, fostering indigenous industries and other enterprises.
+(d) Co-operation to the British rule.
+
+Which of the above statements are correct?
+
+- [ ] (1) (a), (b) and (c)
+- [ ] (2) (b), (c) and (d)
+- [ ] (3) (a), (b) and (d)
+- [ ] (4) Only (c) and (d)
+
+---
+
+=== 68 ===
+P1-Q068 · p.23 · confidence: high
+
+Question: Consider the following statements regarding Ashoka:
+
+Statement-I: After the Kalinga war, Ashoka abandoned the policy of aggression.
+
+Statement-II: Ashoka renounced war, yet he continued his imperialist policy by consolidating the territories he had previously conquered.
+
+Which of the following is correct with respect to the above statements?
+
+- [ ] (1) Both Statement-I and Statement-II are correct and Statement-II explains Statement-I
+- [ ] (2) Both Statement-I and Statement-II are correct but Statement-II does not explain Statement-I
+- [ ] (3) Statement-I is correct but Statement-II is incorrect
+- [ ] (4) Statement-I is incorrect but Statement-II is correct
+
+---
+
+=== 69 ===
+P1-Q069 · p.24 · confidence: high
+
+Question: Identify the correctly matched pairs:
+
+Important sites of Indus Civilization  Name of the Archaeologists
+(a) Kot Diji – F.A. Khan
+(b) Lothal – Dr. S.R. Rao
+(c) Harappa – Daya Ram Sahani
+(d) Mohenjo Daro – R.D. Banerji
+
+- [ ] (1) Only (a), (c) and (d)
+- [ ] (2) Only (b), (c) and (d)
+- [ ] (3) (a), (b), (c) and (d)
+- [ ] (4) Only (a), (b) and (d)
+
+> [!warning] Parse note: Headings "Important sites of Indus Civilization" and "Name of the Archaeologists" are printed with underlines.
+
+---
+
+=== 70 ===
+P1-Q070 · p.24 · confidence: high
+
+Question: Arrange the following in chronological order:
+
+(a) Jallianwala Bagh Massacre
+(b) Kheda Satyagraha
+(c) Champaran Satyagraha
+(d) Non-Cooperation Movement
+
+- [ ] (1) (c), (a), (b), (d)
+- [ ] (2) (c), (a), (d), (b)
+- [ ] (3) (a), (b), (d), (c)
+- [ ] (4) (c), (b), (a), (d)
+
+---
+
+=== 71 ===
+P1-Q071 · p.25 · confidence: high
+
+Question: Match the Indian National Congress Presidents (List-I) with the respective Sessions (List-II):
+
+List – I
+(Presidents)
+(a) Vallabhbhai Patel
+(b) A.C. Mazumdar
+(c) Rash Behari Ghosh
+(d) Badruddin Tyabji
+
+List – II
+(Sessions)
+(i) Surat
+(ii) Karachi
+(iii) Lucknow
+(iv) Madras
+
+Codes:
+
+- [ ] (1) a – i, b – iii, c – iv, d – ii
+- [ ] (2) a – ii, b – iii, c – i, d – iv
+- [ ] (3) a – iii, b – ii, c – iv, d – i
+- [ ] (4) a – ii, b – i, c – iii, d – iv
+
+> [!warning] Parse note: Match list format with Codes.
+
+---
+
+=== 72 ===
+P1-Q072 · p.25 · confidence: high
+
+Question: Consider the following statements with reference to Queen Didda.
+
+(a) Ruled Kashmir.
+(b) Belonged to Lohara dynasty.
+(c) She fought against Mahmud Ghazni.
+(d) She acted as regent for her minor grandsons.
+
+How many of the above statement/s is/are correct?
+
+- [ ] (1) One only
+- [ ] (2) Two only
+- [ ] (3) Three only
+- [ ] (4) All the four
+
+---
+
+=== 73 ===
+P1-Q073 · p.26 · confidence: high
+
+Question: Consider the following statements related to Sir. M. Visvesvaraya.
+
+Statement I: After resigning from the post of Diwan, he served as the Chairman of the executive committee of the Bhadravati Iron Factory for 6 years and received an honorarium of 2 lakh rupees.
+
+Statement II: He donated his honorarium for the functioning of Bowring hospital, Bengaluru.
+
+Which of the above statement/s is/are correct?
+
+- [ ] (1) Statement I only
+- [ ] (2) Statement II only
+- [ ] (3) Both Statement I and Statement II are correct
+- [ ] (4) Neither Statement I nor Statement II
+
+> [!warning] Parse note: Printed with "Statement I:" and "Statement II:" (Roman numerals without hyphens).
+
+---
+
+=== 74 ===
+P1-Q074 · p.26 · confidence: high
+
+Question: "The Congress is tottering to its fall and one of my great ambitions, while in India, is to assist it to a peaceful demise". The statement was declared by
+
+- [ ] (1) Lord Lytton
+- [ ] (2) Lord Dufferin
+- [ ] (3) Lord Hardinge
+- [ ] (4) Lord Curzon
+
+---
+
+=== 75 ===
+P1-Q075 · p.26 · confidence: high
+
+Question: Consider the following conquests of Krishnadevaraya:
+
+(a) Battle of Dhoni
+(b) The Odisha Campaign
+(c) Siege of Gulbarga
+(d) Siege of Vijayawada
+
+Which of the following is the correct chronological order?
+
+- [ ] (1) (c), (b), (d), (a)
+- [ ] (2) (b), (c), (a), (d)
+- [ ] (3) (a), (c), (b), (d)
+- [ ] (4) (c), (b), (a), (d)
+
+---
+

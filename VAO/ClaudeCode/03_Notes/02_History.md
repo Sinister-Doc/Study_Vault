@@ -85,3 +85,17 @@ timeline
 ## Related notes
 
 [[01_Kannada_Grammar]] · [[03_Geography]] · [[04_Polity]] · [[02_Syllabus_and_Pattern]] · [[05_Economy]]
+
+
+
+
+Hello, world! It's 3:45 p.m. — “curly quotes” and 'single'; (brackets) [square] {braces} #hash @at 50% & more.
+Second line: naïve café, Zoë, Müller, ₹500, €20.
+CJK: 日本語 中文 한국어. Emoji: 😀 👍 🚀.
+	Tabbed line. END-OF-TEST
+
+Hello, world! It's 3:45 p.m. — “curly quotes” and 'single'; (brackets) [square] {braces} #hash @at 50% & more.
+Second line: naïve café, Zoë, Müller, ₹500, €20.
+CJK: 日本語 中文 한국어. Emoji: 😀 👍 🚀.
+	Tabbed line. END-OF-TEST
+	

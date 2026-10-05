@@ -1,0 +1,1502 @@
+[
+  {
+    "q_num": 1,
+    "q_id": "P2-Q001",
+    "question": "ಲಕ್ಷ್ಮಿಯು <u>ಸೂರ್ಯೋದಯದ</u> ವೇಳೆಗೆ ಎದ್ದು <u>ವಿದ್ಯಾಭ್ಯಾಸವನ್ನು</u> ಮಾಡಲು <u>ಗುರೂಪದೇಶವನ್ನು</u> ಪಡೆದಳು. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3 ಅಡಿಗೆರೆ ಎಳೆದ ಪದಗಳ ಸಂಧಿಗಳನ್ನು ಕ್ರಮವಾಗಿ ಗುರುತಿಸಿ.",
+    "options": {
+      "1": "ಸವರ್ಣದೀರ್ಘ ಸಂಧಿ - ಸವರ್ಣದೀರ್ಘ ಸಂಧಿ - ಗುಣ ಸಂಧಿ",
+      "2": "ಸವರ್ಣದೀರ್ಘ ಸಂಧಿ - ಗುಣ ಸಂಧಿ - ಸವರ್ಣದೀರ್ಘ ಸಂಧಿ",
+      "3": "ಗುಣ ಸಂಧಿ - ಸವರ್ಣದೀರ್ಘ ಸಂಧಿ - ಸವರ್ಣದೀರ್ಘ ಸಂಧಿ",
+      "4": "ಗುಣ ಸಂಧಿ - ಗುಣ ಸಂಧಿ - ಸವರ್ಣದೀರ್ಘ ಸಂಧಿ"
+    },
+    "marked": 3,
+    "key": 3,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 2,
+    "q_id": "P2-Q002",
+    "question": "ಕೆಳಗಿನ ಹೇಳಿಕೆಗಳನ್ನು ಪರಿಗಣಿಸಿ. ಹೇಳಿಕೆ - I : ಪ್ಲುತ ಸ್ವರಗಳ ಮುಂದೆ ಸ್ವರ ಪರವಾದಾಗ ಸಂಧಿಕಾರ್ಯ ಮಾಡದಿರೆ ಅದನ್ನು ಪ್ರಕೃತಿಭಾವ ಎನ್ನುವರು. ಹೇಳಿಕೆ - II : ಭಾವಸೂಚಕ ಅವ್ಯಯಗಳ ಮುಂದೆ ಸ್ವರ ಪರವಾದಾಗ ಸಂಧಿ ಕಾರ್ಯವಾಗುವುದಿಲ್ಲ. ಕೆಳಗಿನ ಆಯ್ಕೆಗಳಿಂದ ಸರಿಯಾದ ಉತ್ತರವನ್ನು ಆರಿಸಿ.",
+    "options": {
+      "1": "ಹೇಳಿಕೆ - I ಸರಿ, ಆದರೆ ಹೇಳಿಕೆ - II ತಪ್ಪು.",
+      "2": "ಹೇಳಿಕೆ - II ಸರಿ, ಆದರೆ ಹೇಳಿಕೆ - I ತಪ್ಪು.",
+      "3": "ಹೇಳಿಕೆ - I ಮತ್ತು ಹೇಳಿಕೆ - II ಎರಡೂ ಸರಿ.",
+      "4": "ಹೇಳಿಕೆ - I ಮತ್ತು ಹೇಳಿಕೆ - II ಎರಡೂ ತಪ್ಪು."
+    },
+    "marked": 5,
+    "key": 3,
+    "status": "UNANSWERED",
+    "marks": 0.0
+  },
+  {
+    "q_num": 3,
+    "q_id": "P2-Q003",
+    "question": "“ಮಾತು ಬಲ್ಲವಗೆ ಜಗಳವಿಲ್ಲ ಊಟ ಬಲ್ಲವಗೆ ರೋಗವಿಲ್ಲ ” ಇದು ಯಾವ ಅಲಂಕಾರವಾಗಿದೆ?",
+    "options": {
+      "1": "ರೂಪಕಾಲಂಕಾರ",
+      "2": "ಉಪಮಾಲಂಕಾರ",
+      "3": "ಅರ್ಥಾಂತರನ್ಯಾಸಾಲಂಕಾರ",
+      "4": "ದೃಷ್ಟಾಂತಾಲಂಕಾರ"
+    },
+    "marked": 5,
+    "key": 4,
+    "status": "UNANSWERED",
+    "marks": 0.0
+  },
+  {
+    "q_num": 4,
+    "q_id": "P2-Q004",
+    "question": "ಈ ಕೆಳಗಿನವುಗಳಲ್ಲಿ ಸರಿಯಾಗಿರುವ ಜೋಡಿಗಳನ್ನು ಗುರುತಿಸಿ. (a) ಕಂದಪದ್ಯದ ಮೊದಲ ಪಾದದಲ್ಲಿರುವ ಮಾತ್ರೆಗಳ ಸಂಖ್ಯೆ - 12 (b) ಮಂದಾನಿಲ ರಗಳೆಯ ಮೊದಲ ಪಾದದಲ್ಲಿರುವ ಮಾತ್ರೆಗಳ ಸಂಖ್ಯೆ -16 (c) ಭಾಮಿನಿ ಷಟ್ಪದಿಯ ಮೊದಲ ಪಾದದಲ್ಲಿರುವ ಮಾತ್ರೆಗಳ ಸಂಖ್ಯೆ - 16 (d) ಲಲಿತ ರಗಳೆಯ ಮೊದಲ ಪಾದದಲ್ಲಿರುವ ಮಾತ್ರೆಗಳ ಸಂಖ್ಯೆ - 20",
+    "options": {
+      "1": "(a) ಮತ್ತು (b) ಸರಿಯಾಗಿವೆ",
+      "2": "(b) ಮಾತ್ರ ಸರಿಯಾಗಿದೆ",
+      "3": "(a), (b) ಮತ್ತು (d) ಸರಿಯಾಗಿವೆ",
+      "4": "(b), (c) ಮತ್ತು (d) ಸರಿಯಾಗಿವೆ"
+    },
+    "marked": 5,
+    "key": 3,
+    "status": "UNANSWERED",
+    "marks": 0.0
+  },
+  {
+    "q_num": 5,
+    "q_id": "P2-Q005",
+    "question": "‘ಐ’ ಅಕ್ಷರದ ಉತ್ಪತ್ತಿ ಸ್ಥಾನ ಯಾವುದು?",
+    "options": {
+      "1": "ಕಂಠ್ಯ",
+      "2": "ತಾಲವ್ಯ",
+      "3": "ಕಂಠತಾಲವ್ಯ",
+      "4": "ದಂತ್ಯ"
+    },
+    "marked": 2,
+    "key": 3,
+    "status": "WRONG",
+    "marks": -0.25
+  },
+  {
+    "q_num": 6,
+    "q_id": "P2-Q006",
+    "question": "ಹೊಂದಿಸಿ ಬರೆಯಿರಿ. | ಪಟ್ಟಿ-I | ಪಟ್ಟಿ-II | | :--- | :--- | | (a) ಉತ್ತ, ದ, ವ | (i) ವಿದ್ಯರ್ಥಕಗಳು | | (b) ಅವನು, ಅವಳು, ಅದು | (ii) ಕಾಲಸೂಚಕಗಳು | | (c) ಅನು, ಇಳು, ಇವೆ | (iii) ಆಖ್ಯಾತ ಪ್ರತ್ಯಯಗಳು | | (d) ಬರೆ, ಆಡಿ, ಬಾ | (iv) ಪ್ರಥಮ ಪುರುಷ ಏಕವಚನ | ಸಂಕೇತಗಳು:",
+    "options": {
+      "1": "a – iv, b – i, c – ii, d – iii",
+      "2": "a – ii, b – iv, c – iii, d – i",
+      "3": "a – iii, b – iv, c – i, d – ii",
+      "4": "a – i, b – iii, c – ii, d – iv"
+    },
+    "marked": 2,
+    "key": 2,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 7,
+    "q_id": "P2-Q007",
+    "question": "ಆಖ್ಯಾತ ಪ್ರತ್ಯಯಗಳಲ್ಲಿ ಇದು ಪ್ರಧಾನವಾಗಿ ಇರುತ್ತದೆ.",
+    "options": {
+      "1": "ಭಾವ",
+      "2": "ರೂಪ",
+      "3": "ಆತ್ಮ",
+      "4": "ದೇಹ"
+    },
+    "marked": 5,
+    "key": 1,
+    "status": "UNANSWERED",
+    "marks": 0.0
+  },
+  {
+    "q_num": 8,
+    "q_id": "P2-Q008",
+    "question": "ಕೆಳಗೆ ಕೊಟ್ಟಿರುವ ಪಟ್ಟಿ - I ನ್ನು ಪಟ್ಟಿ - II ರೊಂದಿಗೆ ಹೊಂದಿಸಿರುವ ಸರಿಯಾದ ಉತ್ತರವನ್ನು ಆರಿಸಿ. | ಪಟ್ಟಿ - I | ಪಟ್ಟಿ - II | | :--- | :--- | | (a) ಅನುಕರಣ ಅವ್ಯಯ | (i) ಆದ್ದರಿಂದ | | (b) ಭಾವಸೂಚಕ ಅವ್ಯಯ | (ii) ಜುಳುಜುಳು | | (c) ಕ್ರಿಯಾರ್ಥಕ ಅವ್ಯಯ | (iii) ಅಯ್ಯೋ | | (d) ಸಂಬಂಧಾರ್ಥಕ ಅವ್ಯಯ | (iv) ಬೇಕು | ಸಂಕೇತಗಳು:",
+    "options": {
+      "1": "a – ii, b – iii, c – iv, d – i",
+      "2": "a – ii, b – iv, c – iii, d – i",
+      "3": "a – iii, b – ii, c – i, d – iv",
+      "4": "a – iv, b – iii, c – i, d – ii"
+    },
+    "marked": 1,
+    "key": 1,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 9,
+    "q_id": "P2-Q009",
+    "question": "ಈ ಕೆಳಗಿನವುಗಳಲ್ಲಿ ತಪ್ಪಾದ ಜೋಡಿ/ಜೋಡಿಗಳನ್ನು ಗುರುತಿಸಿ. (a) ರುಧಿರ - ರಕ್ತ (b) ರಾತ್ರಿ - ನಿಶಾ (c) ರೋದನ - ಗೋಳಾಟ (d) ರಸನ - ಜಲನಿಧಿ",
+    "options": {
+      "1": "(a) ಮತ್ತು (d)",
+      "2": "(d) ಮಾತ್ರ",
+      "3": "(b) ಮತ್ತು (c)",
+      "4": "(c) ಮಾತ್ರ"
+    },
+    "marked": 2,
+    "key": 2,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 10,
+    "q_id": "P2-Q010",
+    "question": "ಈ ಕೆಳಗಿನ ಪಟ್ಟಿ - I ನ್ನು ಪಟ್ಟಿ - II ರ ಜೊತೆ ಸರಿಯಾಗಿ ಹೊಂದಿಸಿ ಬರೆಯಿರಿ. | ಪಟ್ಟಿ - I | ಪಟ್ಟಿ - II | | :--- | :--- | | (a) ಪ್ರಕಾರವಾಚಕ | (i) ಬಡಗಲು | | (b) ಪರಿಮಾಣವಾಚಕ | (ii) ನಾಲ್ವರು | | (c) ದಿಗ್ವಾಚಕ | (iii) ನಾಲ್ಕು | | (d) ಸಂಖ್ಯೇಯವಾಚಕ | (iv) ಕೆಲವು | | | (v) ಇಂಥವನು | ಸಂಕೇತಗಳು:",
+    "options": {
+      "1": "a – iii, b – v, c – ii, d – i",
+      "2": "a – v, b – iv, c – i, d – ii",
+      "3": "a – v, b – iv, c – ii, d – i",
+      "4": "a – ii, b – v, c – iv, d – iii"
+    },
+    "marked": 2,
+    "key": 2,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 11,
+    "q_id": "P2-Q011",
+    "question": "ಈ ಕೆಳಗಿನವುಗಳಲ್ಲಿ ತಪ್ಪಾದ ಜೋಡಿಗಳನ್ನು ಗುರುತಿಸಿ. (a) ಸರ್ವನಾಮ - ಅದು, ಅವು (b) ದ್ವಿರುಕ್ತಿ - ಸರಸರ, ಬೇಗ-ಬೇಗ (c) ಅವ್ಯಯ - ಚೆನ್ನಾಗಿ, ನೆಟ್ಟಗೆ (d) ನಾಮಪ್ರಕೃತಿ - ಮರ-ಗಳು",
+    "options": {
+      "1": "(a) ಮತ್ತು (b)",
+      "2": "(b) ಮಾತ್ರ",
+      "3": "(c) ಮತ್ತು (d)",
+      "4": "(d) ಮತ್ತು (a)"
+    },
+    "marked": 5,
+    "key": 2,
+    "status": "UNANSWERED",
+    "marks": 0.0
+  },
+  {
+    "q_num": 12,
+    "q_id": "P2-Q012",
+    "question": "‘ಭೂತಯ್ಯನ ಮಗ ಅಯ್ಯು’ ಸಣ್ಣ ಕಥೆಯನ್ನು ಬರೆದವರು",
+    "options": {
+      "1": "ಮಾಸ್ತಿ ವೆಂಕಟೇಶ ಅಯ್ಯಂಗಾರ್",
+      "2": "ಗೊರೂರು ರಾಮಸ್ವಾಮಿ ಐಯ್ಯಂಗಾರ್",
+      "3": "ಪಂಜೆ ಮಂಗೇಶರಾಯರು",
+      "4": "ಬಸವರಾಜ ಕಟ್ಟೀಮನಿ"
+    },
+    "marked": 5,
+    "key": 2,
+    "status": "UNANSWERED",
+    "marks": 0.0
+  },
+  {
+    "q_num": 13,
+    "q_id": "P2-Q013",
+    "question": "ಈ ಕೆಳಗಿನ ಪಟ್ಟಿ - I ನ್ನು ಪಟ್ಟಿ - II ರ ಜೊತೆ ಹೊಂದಿಸಿ, ಸರಿಯಾದ ಉತ್ತರವನ್ನು ಆರಿಸಿ. | ಪಟ್ಟಿ - I<br>(ಕಥೆಗಾರರು) | ಪಟ್ಟಿ - II<br>(ಕಥಾ ಸಂಕಲನಗಳು) | | :--- | :--- | | (a) ಭಾರತೀಪ್ರಿಯ | (i) ಸೂರ್ಯನ ಕುದುರೆ | | (b) ಕೊಡಗಿನ ಗೌರಮ್ಮ | (ii) ಶವದ ಮನೆ | | (c) ಚದುರಂಗ | (iii) ರುದ್ರವೀಣೆ | | (d) ಯು.ಆರ್. ಅನಂತಮೂರ್ತಿ | (iv) ಕಂಬನಿ | ಸಂಕೇತಗಳು:",
+    "options": {
+      "1": "a – i, b – ii, c – iii, d – iv",
+      "2": "a – iii, b – ii, c – iv, d – i",
+      "3": "a – iii, b – iv, c – ii, d – i",
+      "4": "a – iv, b – iii, c – ii, d – i"
+    },
+    "marked": 5,
+    "key": 3,
+    "status": "UNANSWERED",
+    "marks": 0.0
+  },
+  {
+    "q_num": 14,
+    "q_id": "P2-Q014",
+    "question": "ಕೆಳಗಿನ ಪಟ್ಟಿ - I ನ್ನು ಪಟ್ಟಿ - II ರ ಜೊತೆ ಹೊಂದಿಸಿ, ಸರಿಯಾದ ಉತ್ತರವನ್ನು ಗುರುತಿಸಿರಿ. | ಪಟ್ಟಿ - I | ಪಟ್ಟಿ - II | | :--- | :--- | | (a) ಯಶೋಧರ ಚರಿತೆ | (i) ಸಾಂಗತ್ಯ | | (b) ವೀರೇಶ್ವರ ಚರಿತೆ | (ii) ಕಂದ | | (c) ಯೋಗಾಂಗ ತ್ರಿವಿಧಿ | (iii) ಷಟ್ಪದಿ | | (d) ಮೋಹನ ತರಂಗಿಣಿ | (iv) ತ್ರಿಪದಿ | ಸಂಕೇತಗಳು:",
+    "options": {
+      "1": "a – iii, b – iv, c – i, d – ii",
+      "2": "a – iv, b – i, c – ii, d – iii",
+      "3": "a – ii, b – iii, c – iv, d – i",
+      "4": "a – i, b – iv, c – ii, d – iii"
+    },
+    "marked": 5,
+    "key": 3,
+    "status": "UNANSWERED",
+    "marks": 0.0
+  },
+  {
+    "q_num": 15,
+    "q_id": "P2-Q015",
+    "question": "“ನೀನ್ಯಾಕೋ ನಿನ್ನ ಹಂಗ್ಯಾಕೋ ನಿನ್ನ ನಾಮದ ಬಲವೊಂದಿದ್ದರೆ ಸಾಕೋ” ಇದು ಯಾರ ಕೀರ್ತನೆಯ ಸಾಲಾಗಿದೆ?",
+    "options": {
+      "1": "ಶ್ರೀಪಾದರಾಯರು",
+      "2": "ವ್ಯಾಸರಾಯರು",
+      "3": "ಪುರಂದರದಾಸರು",
+      "4": "ಕನಕದಾಸರು"
+    },
+    "marked": 5,
+    "key": 3,
+    "status": "UNANSWERED",
+    "marks": 0.0
+  },
+  {
+    "q_num": 16,
+    "q_id": "P2-Q016",
+    "question": "‘ಕರ್ಮಾರ್ಥ’ ಕಾರಕವನ್ನು ಬಯಸುವ ವಿಭಕ್ತಿ ಯಾವುದು?",
+    "options": {
+      "1": "ಪ್ರಥಮಾ",
+      "2": "ಷಷ್ಠೀ",
+      "3": "ದ್ವಿತೀಯಾ",
+      "4": "ಪಂಚಮೀ"
+    },
+    "marked": 5,
+    "key": 3,
+    "status": "UNANSWERED",
+    "marks": 0.0
+  },
+  {
+    "q_num": 17,
+    "q_id": "P2-Q017",
+    "question": "ಈ ಕೆಳಗಿನವುಗಳನ್ನು ಹೊಂದಿಸಿ ಬರೆಯಿರಿ. | ಪಟ್ಟಿ-I | ಪಟ್ಟಿ-II | | :--- | :--- | | (a) ವ್ಯಷ್ಟಿ | (i) ಕಪಟ | | (b) ಲೇಪ | (ii) ನಿಂದ್ಯ | | (c) ಮುಗ್ಧ | (iii) ನಿರ್ಲೇಪ | | (d) ವಂದ್ಯ | (iv) ಸಮಷ್ಟಿ | ಸಂಕೇತಗಳು:",
+    "options": {
+      "1": "a – iv, b – ii, c – iii, d – i",
+      "2": "a – iii, b – ii, c – i, d – iv",
+      "3": "a – iv, b – iii, c – i, d – ii",
+      "4": "a – i, b – iii, c – iv, d – ii"
+    },
+    "marked": 3,
+    "key": 3,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 18,
+    "q_id": "P2-Q018",
+    "question": "ಈ ಕೆಳಗೆ ನೀಡಲಾದ ನುಡಿಗಟ್ಟಿಗೆ ಸರಿಯಾದ ಅರ್ಥವನ್ನು ಗುರುತಿಸಿ. ‘ಈ ಕಿವಿಯಲ್ಲಿ ಕೇಳು, ಆ ಕಿವಿಯಲ್ಲಿ ಬಿಡು’.",
+    "options": {
+      "1": "ಗಮನವಿಟ್ಟು ಕೇಳು",
+      "2": "ನಿರ್ಲಕ್ಷಿಸು",
+      "3": "ಕೇಳಿಸದವನಂತೆ ನಟಿಸು",
+      "4": "ಒಬ್ಬರಿಂದ ಒಬ್ಬರಿಗೆ ಚಾಡಿ ಹೇಳು"
+    },
+    "marked": 2,
+    "key": 2,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 19,
+    "q_id": "P2-Q019",
+    "question": "‘ಮನೀಷಿ’ ಪದದ ಸಮಾನಾರ್ಥಕ ಪದಗಳು ಯಾವುವು?",
+    "options": {
+      "1": "ಪಂಡಿತ, ವಿದ್ವಾಂಸ",
+      "2": "ಆತ್ಮಸಾಕ್ಷಿ, ಅಂತರಂಗ",
+      "3": "ಕಾಂತಿ, ಕಿರಣ",
+      "4": "ದಡ್ಡ, ತಿಳಿಗೇಡಿ"
+    },
+    "marked": 1,
+    "key": 1,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 20,
+    "q_id": "P2-Q020",
+    "question": "ಈ ಕೆಳಗಿನವುಗಳನ್ನು ಪರಿಗಣಿಸಿ. (a) ಕಂದರ್ಪ, ಅನಂಗ, ಮನಸಿಜ, ಶರ್ವ (b) ಮಹಿಷ, ಉಲಾಮ, ಕಾಸಾರ, ಕೋಣ (c) ಬೇಡ, ಕಿರಾತ, ಶಬರ, ವ್ಯಾಧ (d) ಬಿಲ್ಲು, ಚಾಪ, ಕೋದಂಡ, ಶಾಂಡಿಲ್ಯ ಮೇಲಿನವುಗಳಲ್ಲಿ ಗುಂಪಿಗೆ ಸೇರದಿರುವುದನ್ನು ಗುರುತಿಸಿ.",
+    "options": {
+      "1": "(a) ಮತ್ತು (d)",
+      "2": "(a) ಮತ್ತು (c)",
+      "3": "(b) ಮತ್ತು (c)",
+      "4": "(c) ಮತ್ತು (d)"
+    },
+    "marked": 5,
+    "key": 1,
+    "status": "UNANSWERED",
+    "marks": 0.0
+  },
+  {
+    "q_num": 21,
+    "q_id": "P2-Q021",
+    "question": "‘ನೀನ್’ ಎಂಬುದು ಈ ಕೆಳಗಿನ ಯಾವ ಪುರುಷವಾಚಕ ರೂಪವಾಗಿದೆ?",
+    "options": {
+      "1": "ಉತ್ತಮ ಪುರುಷ",
+      "2": "ಪ್ರಥಮ ಪುರುಷ",
+      "3": "ಅಧಮ ಪುರುಷ",
+      "4": "ಮಧ್ಯಮ ಪುರುಷ"
+    },
+    "marked": 3,
+    "key": 4,
+    "status": "WRONG",
+    "marks": -0.25
+  },
+  {
+    "q_num": 22,
+    "q_id": "P2-Q022",
+    "question": "ಈ ಕೆಳಗಿನವುಗಳನ್ನು ಹೊಂದಿಸಿ ಬರೆಯಿರಿ. | ಪಟ್ಟಿ-I | ಪಟ್ಟಿ-II | | :--- | :--- | | (a) ಊರಲ್ಲಿ | (i) ಯಕಾರಾಗಮ ಸಂಧಿ | | (b) ನಿನಗಲ್ಲದೆ | (ii) ಉಕಾರ ಲೋಪಸಂಧಿ | | (c) ಕೈಯನ್ನು | (iii) ವಕಾರಾಗಮ ಸಂಧಿ | | (d) ಗೋವಿಂದ | (iv) ಎಕಾರ ಲೋಪಸಂಧಿ | ಸಂಕೇತಗಳು:",
+    "options": {
+      "1": "a – iii, b – iv, c – i, d – ii",
+      "2": "a – iii, b – iv, c – ii, d – i",
+      "3": "a – ii, b – i, c – iv, d – iii",
+      "4": "a – ii, b – iv, c – i, d – iii"
+    },
+    "marked": 4,
+    "key": 4,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 23,
+    "q_id": "P2-Q023",
+    "question": "ಕೆಳಗಿನ ತತ್ಸಮ-ತದ್ಭವಗಳಲ್ಲಿ ಸರಿಯಾಗಿ ಹೊಂದಾಣಿಕೆಯಾಗದ ಜೋಡಿಗಳನ್ನು ಗುರುತಿಸಿ. (a) ನಾವಿಕ – ಆವಿಕ (b) ಉಪಾಧ್ಯ – ಉವಜ್ಜ (c) ಆಶ್ಚರ್ಯ – ಅಚ್ಚರಿ (d) ಪಾರ್ಶ್ವ – ಪಂಚೆತ್ತು",
+    "options": {
+      "1": "(a) ಮತ್ತು (b)",
+      "2": "(b) ಮತ್ತು (c)",
+      "3": "(c) ಮತ್ತು (d)",
+      "4": "(a) ಮತ್ತು (d)"
+    },
+    "marked": 5,
+    "key": 4,
+    "status": "UNANSWERED",
+    "marks": 0.0
+  },
+  {
+    "q_num": 24,
+    "q_id": "P2-Q024",
+    "question": "ವಾಕ್ಯದಲ್ಲಿ ಬಿಟ್ಟು ಹೋಗಿರುವ ಪದಗಳನ್ನು ವಾಕ್ಯಾರ್ಥದ ಪೂರ್ತಿಗಾಗಿ ಇರುವ ಪದಗಳ ಆಧಾರದಿಂದ ಊಹಿಸಿಕೊಂಡು ಸೇರಿಸುವುದನ್ನು _______ ಎನ್ನುತ್ತಾರೆ.",
+    "options": {
+      "1": "ಪ್ರಕ್ರಿಯೆ",
+      "2": "ವಿಕಲ್ಪ",
+      "3": "ಅಧ್ಯಾಹಾರ",
+      "4": "ದ್ವಿರುಕ್ತಿ"
+    },
+    "marked": 3,
+    "key": 3,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 25,
+    "q_id": "P2-Q025",
+    "question": "‘ದೇವಋಷಿಧರ್ಮ’ ಪದವು ಯಾವ ಸಮಾಸಕ್ಕೆ ಉದಾಹರಣೆಯಾಗಿದೆ?",
+    "options": {
+      "1": "ಕರ್ಮಧಾರಯ ಸಮಾಸ",
+      "2": "ತತ್ಪುರುಷ ಸಮಾಸ",
+      "3": "ದ್ವಂದ್ವ ಸಮಾಸ",
+      "4": "ಅರಿ ಸಮಾಸ"
+    },
+    "marked": 4,
+    "key": 3,
+    "status": "WRONG",
+    "marks": -0.25
+  },
+  {
+    "q_num": 26,
+    "q_id": "P2-Q026",
+    "question": "ಈ ಕೆಳಗಿನ ಹೇಳಿಕೆಗಳನ್ನು ಪರಿಗಣಿಸಿ. ಹೇಳಿಕೆ-I : ಕನ್ನಡ ಪದದೊಡನೆ ಸಂಸ್ಕೃತ ಪದವನ್ನು ಸೇರಿಸಿ ಸಮಾಸ ಮಾಡಬಾರದು. ಹಾಗೆ ಮಾಡಿದರೆ ಅದನ್ನು ಅರಿ ಸಮಾಸ ಎನ್ನುವರು. ಹೇಳಿಕೆ-II : ಪೂರ್ವಕವಿಗಳ ಕಾವ್ಯ ಪ್ರಯೋಗಗಳಲ್ಲಿ, ಬಿರುದಾವಳಿಗಳಲ್ಲಿ, ಗಮಕ ಸಮಾಸ ಮತ್ತು ಕ್ರಿಯಾ ಸಮಾಸಗಳಲ್ಲಿ ದೋಷವಿಲ್ಲ. ಸರಿಯಾದ ಉತ್ತರವನ್ನು ಆರಿಸಿ.",
+    "options": {
+      "1": "ಹೇಳಿಕೆ -II ಸರಿ, ಆದರೆ ಹೇಳಿಕೆ -I ತಪ್ಪು",
+      "2": "ಹೇಳಿಕೆ -I ಸರಿ, ಆದರೆ ಹೇಳಿಕೆ -II ತಪ್ಪು",
+      "3": "ಹೇಳಿಕೆ -I ಮತ್ತು ಹೇಳಿಕೆ -II ಸರಿ.",
+      "4": "ಹೇಳಿಕೆ -I ಮತ್ತು ಹೇಳಿಕೆ -II ತಪ್ಪು."
+    },
+    "marked": 2,
+    "key": 3,
+    "status": "WRONG",
+    "marks": -0.25
+  },
+  {
+    "q_num": 27,
+    "q_id": "P2-Q027",
+    "question": "‘ಕಾರ್ವಳ್’ ಪದದ ಅರ್ಥವನ್ನು ಗುರುತಿಸಿ.",
+    "options": {
+      "1": "ದುಃಖ",
+      "2": "ಕತ್ತಲು",
+      "3": "ಮೌನ",
+      "4": "ಶಾಂತತೆ"
+    },
+    "marked": 2,
+    "key": 2,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 28,
+    "q_id": "P2-Q028",
+    "question": "‘ನಿಂದಿಸುವರ್ ದುರ್ಜನರ್ ಎಂದಿಂಪು ಬಾಯ್ವೊತ್ತು ಸುಕವಿ ರಚಿಸನೆ ಕೃತಿಯಂ’ - ಈ ವಾಕ್ಯದಲ್ಲಿರುವ ಅಲಂಕಾರವನ್ನು ಗುರುತಿಸಿ.",
+    "options": {
+      "1": "ಅರ್ಥಾಂತರನ್ಯಾಸಾಲಂಕಾರ",
+      "2": "ಶ್ಲೇಷಾಲಂಕಾರ",
+      "3": "ಉತ್ಪ್ರೇಕ್ಷಾಲಂಕಾರ",
+      "4": "ದೃಷ್ಟಾಂತಾಲಂಕಾರ"
+    },
+    "marked": 5,
+    "key": 1,
+    "status": "UNANSWERED",
+    "marks": 0.0
+  },
+  {
+    "q_num": 29,
+    "q_id": "P2-Q029",
+    "question": "‘ಖಾನ ದೇಶವು ಮಲೇರಿಯಾದಿಂದ ಕೂಡಿ, ವಿಶ್ವೇಶ್ವರಯ್ಯನವರ ಆರೋಗ್ಯದ ಮೇಲೆ ದುಷ್ಪರಿಣಾಮ ಮಾಡಿ, ಅವರು ಅಲ್ಲಿಂದ ವರ್ಗವಾಗುವಂತೆ ಮಾಡಿತು’ - ಇದು ಈ ಬಗೆಯ ವಾಕ್ಯ",
+    "options": {
+      "1": "ಸಾಮಾನ್ಯ ವಾಕ್ಯ",
+      "2": "ಸಂಯೋಜಿತ ವಾಕ್ಯ",
+      "3": "ಮಿಶ್ರ ವಾಕ್ಯ",
+      "4": "ಸಂದಿಗ್ಧ ವಾಕ್ಯ"
+    },
+    "marked": 2,
+    "key": 2,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 30,
+    "q_id": "P2-Q030",
+    "question": "‘ಅನುಜರವರಿರಲೇಕೆ’ - ಈ ಪದವನ್ನು ವಿಂಗಡಿಸಿ ಬರೆದ ಸರಿಯಾದ ರೂಪ ಯಾವುದು?",
+    "options": {
+      "1": "ಅನುಜರವರು + ಇರಲೇಕೆ",
+      "2": "ಅನುಜರು + ಅವರಿರಲು + ಏಕೆ",
+      "3": "ಅನುಜರವರಿಲು + ಏಕೆ",
+      "4": "ಅನುಜರು + ಅವರು + ಇರಲು + ಏಕೆ"
+    },
+    "marked": 4,
+    "key": 4,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 31,
+    "q_id": "P2-Q031",
+    "question": "‘ಮಜ್ಜಿಗೆ ಒಯ್ದಾರಾ ಊರಂತಾರಾ ಸೊಲಕ್ಕೊಂದು ಬಂಗಾರ್ ಬಳಿ ಜೋಡಾ’ - ಈ ವಾಕ್ಯದಲ್ಲಿರುವ ‘ಸೊಲ’ ಪದದ ಅರ್ಥವನ್ನು ಗುರುತಿಸಿ.",
+    "options": {
+      "1": "ಎಮ್ಮೆ, ಆಕಳ",
+      "2": "ಕುಸ್ತಿ, ಮೈದಾನ",
+      "3": "ಪಡಸಾಲೆ, ಅಂಗಳ",
+      "4": "ಶಾಲಾ, ಖರ್ಚಿ"
+    },
+    "marked": 1,
+    "key": 1,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 32,
+    "q_id": "P2-Q032",
+    "question": "ಯಾವ ವಿಭಕ್ತಿಯು ಕಾರಕಾರ್ಥವನ್ನು ಹೊಂದಿಲ್ಲ ?",
+    "options": {
+      "1": "ಚತುರ್ಥಿ",
+      "2": "ಪಂಚಮೀ",
+      "3": "ಷಷ್ಠಿ",
+      "4": "ಸಪ್ತಮೀ"
+    },
+    "marked": 5,
+    "key": 3,
+    "status": "UNANSWERED",
+    "marks": 0.0
+  },
+  {
+    "q_num": 33,
+    "q_id": "P2-Q033",
+    "question": "ಅಣ್ಣ ಅಣ್ಣ ಈ ಸಂಕಟವನ್ನು ಹೇಗೆ ನೋಡಲಿ - ಈ ವಾಕ್ಯಕ್ಕೆ ಸರಿಯಾದ ಲೇಖನ ಚಿಹ್ನೆ ಹಾಕಿರುವುದನ್ನು ಗುರುತಿಸಿ.",
+    "options": {
+      "1": "ಅಣ್ಣ, ಅಣ್ಣ, ಈ ಸಂಕಟವನ್ನು ; ಹೇಗೆ ನೋಡಲಿ?",
+      "2": "ಅಣ್ಣ, ಅಣ್ಣ, ಈ ಸಂಕಟವನ್ನು ಹೇಗೆ ನೋಡಲಿ?",
+      "3": "ಅಣ್ಣ! ಅಣ್ಣ! ಈ ಸಂಕಟವನ್ನು ಹೇಗೆ ನೋಡಲಿ?",
+      "4": "ಅಣ್ಣ, ಅಣ್ಣ, ಈ ಸಂಕಟವನ್ನು ಹೇಗೆ? ನೋಡಲಿ."
+    },
+    "marked": 3,
+    "key": 2,
+    "status": "WRONG",
+    "marks": -0.25
+  },
+  {
+    "q_num": 34,
+    "q_id": "P2-Q034",
+    "question": "ಕೆಳಗಿನ ಹೇಳಿಕೆಗಳನ್ನು ಪರಿಗಣಿಸಿ. (a) ಆ, ಕ, ಹ ವರ್ಣಗಳು ಕಂಠ್ಯಗಳಾಗಿವೆ. (b) ಡ, ರ, ಣ, ಷ ಗಳು ಮೂರ್ಧನ್ಯಗಳಾಗಿವೆ. (c) ಉ, ಫ, ಭ, ಮ ಗಳು ತಾಲವ್ಯಾಕ್ಷರಗಳಾಗಿವೆ. (d) ಗ, ಧ, ಊ, ತ ಗಳು ದಂತ್ಯಗಳಾಗಿವೆ. ಮೇಲಿನವುಗಳಲ್ಲಿ ಎಷ್ಟು ಹೇಳಿಕೆ/ಗಳು ಸರಿಯಾಗಿದೆ/ವೆ?",
+    "options": {
+      "1": "ಕೇವಲ ಒಂದು",
+      "2": "ಕೇವಲ ಎರಡು",
+      "3": "ಕೇವಲ ಮೂರು",
+      "4": "ಎಲ್ಲಾ ನಾಲ್ಕು"
+    },
+    "marked": 5,
+    "key": 2,
+    "status": "UNANSWERED",
+    "marks": 0.0
+  },
+  {
+    "q_num": 35,
+    "q_id": "P2-Q035",
+    "question": "ಡಮರುಕ, ಮಲ್ಲಿಕಾ, ಬಜಿ, ಭೂತಿ - ಇವುಗಳಲ್ಲಿ ಗುಂಪಿಗೆ ಸೇರದಿರುವುದನ್ನು ಗುರುತಿಸಿ.",
+    "options": {
+      "1": "ಭೂತಿ",
+      "2": "ಬಜಿ",
+      "3": "ಮಲ್ಲಿಕಾ",
+      "4": "ಡಮರುಕ"
+    },
+    "marked": 4,
+    "key": 2,
+    "status": "WRONG",
+    "marks": -0.25
+  },
+  {
+    "q_num": 36,
+    "q_id": "P2-Q036",
+    "question": "Choose the option that correctly describes a continuous action: She _________ at the office when I meet her next.",
+    "options": {
+      "1": "is working",
+      "2": "has been working",
+      "3": "will be working",
+      "4": "did work"
+    },
+    "marked": 3,
+    "key": 3,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 37,
+    "q_id": "P2-Q037",
+    "question": "Match the words in List-I with the appropriate parts of speech in List-II and select the correct option given below: | List – I | List – II | | :--- | :--- | | (a) Asylum | (i) Adverb | | (b) Ourselves | (ii) Noun | | (c) Scarcely | (iii) Adjective | | (d) First | (iv) Pronoun | Codes:",
+    "options": {
+      "1": "a – i, b – ii, c – iii, d – iv",
+      "2": "a – ii, b – iv, c – i, d – iii",
+      "3": "a – iii, b – i, c – iv, d – ii",
+      "4": "a – iv, b – iii, c – ii, d – i"
+    },
+    "marked": 2,
+    "key": 2,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 38,
+    "q_id": "P2-Q038",
+    "question": "Fill in the blank with correct sentence that agrees to the first sentence: If he gave me a book, _____________________.",
+    "options": {
+      "1": "I will be grateful to him",
+      "2": "I am grateful to him",
+      "3": "I would be grateful to him",
+      "4": "I shall be grateful to him"
+    },
+    "marked": 4,
+    "key": 3,
+    "status": "WRONG",
+    "marks": -0.25
+  },
+  {
+    "q_num": 39,
+    "q_id": "P2-Q039",
+    "question": "Fill in the blanks with correct articles in the following sentence: __________ dinner is organised by __________ President to the members.",
+    "options": {
+      "1": "A, a",
+      "2": "The, the",
+      "3": "The, a",
+      "4": "A, the"
+    },
+    "marked": 4,
+    "key": 4,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 40,
+    "q_id": "P2-Q040",
+    "question": "Fill in the blanks with correct articles in the following sentence: __________ teacher should know __________ psychology of the students.",
+    "options": {
+      "1": "The, a",
+      "2": "The, the",
+      "3": "A, a",
+      "4": "A, the"
+    },
+    "marked": 4,
+    "key": 4,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 41,
+    "q_id": "P2-Q041",
+    "question": "Choose the right option to fill in the blank: She wanted to __________ a child as she was childless.",
+    "options": {
+      "1": "adapt",
+      "2": "adopt",
+      "3": "adept",
+      "4": "adorn"
+    },
+    "marked": 2,
+    "key": 2,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 42,
+    "q_id": "P2-Q042",
+    "question": "Rearrange the following parts of the sentence which are labelled as P, Q, R and S to produce the meaningful sentence. <u>Move to withdraw charges against those</u> P <u>A brazen attack on rule of law and justice</u> Q <u>The Uttar Pradesh Government's</u> R <u>Accused of lynching Person 'A' is</u> S",
+    "options": {
+      "1": "QPRS",
+      "2": "RPSQ",
+      "3": "RSPQ",
+      "4": "RPQS"
+    },
+    "marked": 2,
+    "key": 2,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 43,
+    "q_id": "P2-Q043",
+    "question": "One of the present tense forms of the following sentences is wrongly given. Identify the sentence and choose the appropriate answer.",
+    "options": {
+      "1": "Has he not been sleeping since 6 o' clock?",
+      "2": "I have finished the entire report, so we can send it to the client immediately.",
+      "3": "Had we not been living in Delhi since 1980?",
+      "4": "The Government has become more interested in Arts education after the charge is taken by the new Minister."
+    },
+    "marked": 3,
+    "key": 3,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 44,
+    "q_id": "P2-Q044",
+    "question": "In the following item, there is a sentence of which some parts have been jumbled up. You are required to rearrange these parts which are labelled P, Q, R and S to produce the correct sentence. Choose the correct sequence and mark in your answer sheet accordingly. Mohan, the son of my friend P: gave me a set of pens Q: which is very precious R: while working in Japan S: who died in an accident The proper sequence should be",
+    "options": {
+      "1": "PQRS",
+      "2": "SRPQ",
+      "3": "RSPQ",
+      "4": "SPQR"
+    },
+    "marked": 2,
+    "key": 2,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 45,
+    "q_id": "P2-Q045",
+    "question": "Choose the correct passive voice form of the following sentence: \"The work will have been completed by the team by next week\".",
+    "options": {
+      "1": "The work will have completed the team by next week",
+      "2": "The team has completed the work by next week",
+      "3": "The team will complete the work by next week",
+      "4": "The team will have completed the work by next week"
+    },
+    "marked": 3,
+    "key": 4,
+    "status": "WRONG",
+    "marks": -0.25
+  },
+  {
+    "q_num": 46,
+    "q_id": "P2-Q046",
+    "question": "Pick the appropriate prepositions for the following sentence: We arrived __________ the station just __________ time for boarding.",
+    "options": {
+      "1": "in, at",
+      "2": "on, in",
+      "3": "at, in",
+      "4": "at, near"
+    },
+    "marked": 3,
+    "key": 3,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 47,
+    "q_id": "P2-Q047",
+    "question": "Convert the following simple sentence as compound ones: \"Not withstanding my hard work, I did not succeed\".",
+    "options": {
+      "1": "I worked hard, yet did not succeed.",
+      "2": "Me worked hard, yet I did not succeed.",
+      "3": "I worked hard, nonetheless me did not succeed.",
+      "4": "My hard work did not succeed."
+    },
+    "marked": 1,
+    "key": 1,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 48,
+    "q_id": "P2-Q048",
+    "question": "Fill in the blank with appropriate conjunction: The boxer trained rigorously everyday, __________ he was determined to retain his championship.",
+    "options": {
+      "1": "although",
+      "2": "whereas",
+      "3": "for",
+      "4": "unless"
+    },
+    "marked": 3,
+    "key": 3,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 49,
+    "q_id": "P2-Q049",
+    "question": "Fill in the blank. A contented life is the greatest blessing __________ a man can enjoy in the world.",
+    "options": {
+      "1": "which",
+      "2": "that",
+      "3": "where",
+      "4": "relative pronoun is omitted"
+    },
+    "marked": 4,
+    "key": 2,
+    "status": "WRONG",
+    "marks": -0.25
+  },
+  {
+    "q_num": 50,
+    "q_id": "P2-Q050",
+    "question": "Identify the correctly punctuated sentence from the given options: The teacher said Why are you shouting in the class",
+    "options": {
+      "1": "The teacher said, Why are you shouting in the class?",
+      "2": "The teacher said, \"Why are you shouting in the class.\"",
+      "3": "The \"teacher said, why are you shouting in the class\"",
+      "4": "The teacher said, \"Why are you shouting in the class?\""
+    },
+    "marked": 4,
+    "key": 4,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 51,
+    "q_id": "P2-Q051",
+    "question": "What is a phrase?",
+    "options": {
+      "1": "A group of words which gives complete meaning.",
+      "2": "A part of sentence which gives meaning but not complete meaning.",
+      "3": "It has a subject and clause of its own.",
+      "4": "It has a subject and predicate of its own."
+    },
+    "marked": 2,
+    "key": 2,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 52,
+    "q_id": "P2-Q052",
+    "question": "Fill in the blank with suitable prefix: The punishment given by the judge is __________ bearable.",
+    "options": {
+      "1": "in-",
+      "2": "im-",
+      "3": "un-",
+      "4": "il-"
+    },
+    "marked": 3,
+    "key": 3,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 53,
+    "q_id": "P2-Q053",
+    "question": "Match the following: | List-I | List-II | | :--- | :--- | | (a) Frog | (i) Duckling | | (b) Cow | (ii) Tadpole | | (c) Swan | (iii) Calf | | (d) Duck | (iv) Signet | Codes:",
+    "options": {
+      "1": "a – ii, b – iii, c – iv, d – i",
+      "2": "a – iv, b – ii, c – iii, d – i",
+      "3": "a – ii, b – i, c – iv, d – iii",
+      "4": "a – iv, b – iii, c – ii, d – i"
+    },
+    "marked": 1,
+    "key": 1,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 54,
+    "q_id": "P2-Q054",
+    "question": "Choose the most appropriate meaning of the word 'FORLORN' from the following.",
+    "options": {
+      "1": "Fortunate",
+      "2": "Uncared",
+      "3": "Funny",
+      "4": "Fearful"
+    },
+    "marked": 1,
+    "key": 2,
+    "status": "WRONG",
+    "marks": -0.25
+  },
+  {
+    "q_num": 55,
+    "q_id": "P2-Q055",
+    "question": "Choose the correctly spelt word among the following.",
+    "options": {
+      "1": "bafelo",
+      "2": "baffelo",
+      "3": "buffalo",
+      "4": "bufello"
+    },
+    "marked": 3,
+    "key": 3,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 56,
+    "q_id": "P2-Q056",
+    "question": "Pick out the antonym of the underlined word: The <u>benevolent</u> people help others without any expectation.",
+    "options": {
+      "1": "Generous",
+      "2": "Kind",
+      "3": "Cruel",
+      "4": "Copious"
+    },
+    "marked": 2,
+    "key": 2,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 57,
+    "q_id": "P2-Q057",
+    "question": "Match the following animals (List-I) with their offsprings (List-II) in the table below: | List-I | List-II | | :--- | :--- | | (a) Elephant | (i) Foal | | (b) Tiger | (ii) Calf | | (c) Tortoise | (iii) Cub | | (d) Horse | (iv) Hatchling | Codes:",
+    "options": {
+      "1": "a – ii, b – iv, c – iii, d – i",
+      "2": "a – iv, b – iii, c – ii, d – i",
+      "3": "a – iii, b – i, c – iv, d – ii",
+      "4": "a – ii, b – iii, c – iv, d – i"
+    },
+    "marked": 4,
+    "key": 4,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 58,
+    "q_id": "P2-Q058",
+    "question": "Choose the alternative which best expresses the meaning of the idiom/phrase given below: At the stake",
+    "options": {
+      "1": "In danger",
+      "2": "In secret",
+      "3": "On a larger scale",
+      "4": "On a small scale"
+    },
+    "marked": 1,
+    "key": 1,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 59,
+    "q_id": "P2-Q059",
+    "question": "Choose the alternative which best expresses the meaning of the idiom/phrase given below: To break the ice",
+    "options": {
+      "1": "To end a conversation",
+      "2": "To begin a conversation",
+      "3": "To work hard",
+      "4": "To be cool"
+    },
+    "marked": 2,
+    "key": 2,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 60,
+    "q_id": "P2-Q060",
+    "question": "According to the passage, pleasure reading",
+    "options": {
+      "1": "lowers academic performance",
+      "2": "has no measurable benefits",
+      "3": "improves academic outcomes",
+      "4": "only benefits younger children"
+    },
+    "marked": 3,
+    "key": 3,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 61,
+    "q_id": "P2-Q061",
+    "question": "The author implies that modern students",
+    "options": {
+      "1": "dislike fiction",
+      "2": "bogged down by connectivity",
+      "3": "have more free time",
+      "4": "read more than previous generations"
+    },
+    "marked": 2,
+    "key": 2,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 62,
+    "q_id": "P2-Q062",
+    "question": "Educators disagree on whether schools should",
+    "options": {
+      "1": "ban fiction reading",
+      "2": "include popular fiction",
+      "3": "eliminate textbooks",
+      "4": "promote social media use"
+    },
+    "marked": 2,
+    "key": 2,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 63,
+    "q_id": "P2-Q063",
+    "question": "Fill in the blank with the suitable word: He purchased a bundle of paper from the __________.",
+    "options": {
+      "1": "stationery",
+      "2": "stationary",
+      "3": "station",
+      "4": "statutory"
+    },
+    "marked": 1,
+    "key": 1,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 64,
+    "q_id": "P2-Q064",
+    "question": "Directions: Choose the right synonym for the underlined word in the given sentence. Nachiketh <u>squandered</u> his savings on the stock market.",
+    "options": {
+      "1": "invested",
+      "2": "wasted",
+      "3": "earned",
+      "4": "regained"
+    },
+    "marked": 2,
+    "key": 2,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 65,
+    "q_id": "P2-Q065",
+    "question": "Select the option that can be used as a one-word substitute for the given group of words. Abnormal tendency towards grand and grandiose behaviour is",
+    "options": {
+      "1": "Megalomania",
+      "2": "Melomania",
+      "3": "Metromania",
+      "4": "Mythomania"
+    },
+    "marked": 1,
+    "key": 1,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 66,
+    "q_id": "P2-Q066",
+    "question": "Choose the suitable interjection for the following sentence. __________! We have won the competition.",
+    "options": {
+      "1": "Ugh",
+      "2": "Alas",
+      "3": "Ouch",
+      "4": "Hurrah"
+    },
+    "marked": 4,
+    "key": 4,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 67,
+    "q_id": "P2-Q067",
+    "question": "Identify the misspelt word.",
+    "options": {
+      "1": "Assessment",
+      "2": "Assault",
+      "3": "Ameliorate",
+      "4": "Asiduous"
+    },
+    "marked": 4,
+    "key": 4,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 68,
+    "q_id": "P2-Q068",
+    "question": "Choose the correct plural forms for the below given singular forms: Daughter-in-law, loaf",
+    "options": {
+      "1": "Daughters-in-law, loaves",
+      "2": "Daughter-in-laws, loafs",
+      "3": "Daughter's-in-law, loaf's",
+      "4": "Daughter-in-law's, loaves'"
+    },
+    "marked": 4,
+    "key": 1,
+    "status": "WRONG",
+    "marks": -0.25
+  },
+  {
+    "q_num": 69,
+    "q_id": "P2-Q069",
+    "question": "Identify the correct form of “wh” question in the given sentences.",
+    "options": {
+      "1": "What is your favourite author?",
+      "2": "Whom is your favourite author?",
+      "3": "Which is your favourite author?",
+      "4": "Who is your favourite author?"
+    },
+    "marked": 4,
+    "key": 4,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 70,
+    "q_id": "P2-Q070",
+    "question": "Identify the incorrect degrees of comparison in the given list.",
+    "options": {
+      "1": "Far, farther, farthest",
+      "2": "Much, mucher, muchest",
+      "3": "Happy, happier, happiest",
+      "4": "Brave, braver, bravest"
+    },
+    "marked": 2,
+    "key": 2,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 71,
+    "q_id": "P2-Q071",
+    "question": "EDSAC stands for",
+    "options": {
+      "1": "Electronic Delay Storage Arithmetic Calculator",
+      "2": "Electronic Delay Storage Automatic Calculator",
+      "3": "Electronic Display Storage Automatic Calculator",
+      "4": "Electronic Delay Storage Automatic Computer"
+    },
+    "marked": 1,
+    "key": 2,
+    "status": "WRONG",
+    "marks": -0.25
+  },
+  {
+    "q_num": 72,
+    "q_id": "P2-Q072",
+    "question": "Which of the following allows you to uniquely identify a tuple in a table?",
+    "options": {
+      "1": "Foreign key",
+      "2": "Primary key",
+      "3": "Non key",
+      "4": "Constraint"
+    },
+    "marked": 2,
+    "key": 2,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 73,
+    "q_id": "P2-Q073",
+    "question": "Person credited with inventing the first system capable of sending messages between users on different host computers connected via a network is ____________ .",
+    "options": {
+      "1": "Linus Torvalds",
+      "2": "James Gosling",
+      "3": "Ray Tomlinson",
+      "4": "Guido van Rossum"
+    },
+    "marked": 5,
+    "key": 3,
+    "status": "UNANSWERED",
+    "marks": 0.0
+  },
+  {
+    "q_num": 74,
+    "q_id": "P2-Q074",
+    "question": "Unicode stands for ____________",
+    "options": {
+      "1": "Unique Character Encoder",
+      "2": "Unique Coded Encoder",
+      "3": "Universal Character Encoder",
+      "4": "Universal Character Encoding"
+    },
+    "marked": 4,
+    "key": 4,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 75,
+    "q_id": "P2-Q075",
+    "question": "Match the following: | List - I (HTTP Request Methods) | List - II (Descriptions) | | :--- | :--- | | (a) GET | (i) Append to a named resource | | (b) HEAD | (ii) Request to read a webpage | | (c) POST | (iii) Request to read a webpage's header | | (d) TRACE | (iv) Reserved for future use | | (e) CONNECT | (v) Echo the incoming request | Codes:",
+    "options": {
+      "1": "a - ii, b - iii, c - i, d - v, e - iv",
+      "2": "a - ii, b - i, c - iii, d - iv, e - v",
+      "3": "a - i, b - ii, c - iii, d - iv, e - v",
+      "4": "a - iv, b - ii, c - iii, d - i, e - v"
+    },
+    "marked": 1,
+    "key": 1,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 76,
+    "q_id": "P2-Q076",
+    "question": "Identify the statements that are correct about MS PowerPoint: (a) Can type text directly on a slide (b) Can choose a picture from Insert menu and then file to insert that image into slide (c) Can show or hide task pane from view >> tool bars (d) To write on the slide, can use pen from start inking option.",
+    "options": {
+      "1": "(a), (b) and (d)",
+      "2": "(a), (c) and (d)",
+      "3": "(a), (b), (c) and (d)",
+      "4": "(b), (c) and (d)"
+    },
+    "marked": 4,
+    "key": 4,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 77,
+    "q_id": "P2-Q077",
+    "question": "Arrange the following in terms of their storage capacity in increasing order: (a) Magnetic tapes (b) Main memory (c) Registers (d) Cache memory (e) Magnetic disks",
+    "options": {
+      "1": "(c), (b), (e), (d), (a)",
+      "2": "(c), (e), (b), (d), (a)",
+      "3": "(c), (d), (b), (e), (a)",
+      "4": "(a), (b), (c), (d), (e)"
+    },
+    "marked": 3,
+    "key": 3,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 78,
+    "q_id": "P2-Q078",
+    "question": "____________ is a website that helps you stay focussed on your work by alerting you with ambient sounds.",
+    "options": {
+      "1": "FocalFilter",
+      "2": "SoftMurmur",
+      "3": "LastPass",
+      "4": "HootSuite"
+    },
+    "marked": 1,
+    "key": 2,
+    "status": "WRONG",
+    "marks": -0.25
+  },
+  {
+    "q_num": 79,
+    "q_id": "P2-Q079",
+    "question": "Match the following: | List - I | List - II | | :--- | :--- | | (a) Google | (i) Safari | | (b) Microsoft | (ii) Firefox | | (c) Apple | (iii) Chrome | | (d) Mozilla Foundation | (iv) Edge | Codes:",
+    "options": {
+      "1": "a - ii, b - iii, c - iv, d - i",
+      "2": "a - iv, b - iii, c - i, d - ii",
+      "3": "a - iii, b - iv, c - i, d - ii",
+      "4": "a - ii, b - i, c - iv, d - iii"
+    },
+    "marked": 3,
+    "key": 3,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 80,
+    "q_id": "P2-Q080",
+    "question": "By considering the following statements with respect to ethical hacking, identify the correct answer from the given options: Statement I: ‘Black Hat’ hackers operate with malicious intent and without legal authorization Statement II: ‘White Hat’ hackers use the same technique as Black Hat hackers to strengthen the security system with legal authorization",
+    "options": {
+      "1": "Statement I is correct, but Statement II is not correct",
+      "2": "Statement II is correct, but Statement I is not correct",
+      "3": "Both the Statements I and II are correct",
+      "4": "Both the Statements I and II are not correct"
+    },
+    "marked": 3,
+    "key": 3,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 81,
+    "q_id": "P2-Q081",
+    "question": "“ChatGPT” responses are generated on what basis?",
+    "options": {
+      "1": "Predefined templates",
+      "2": "User input and trained data",
+      "3": "Randomization",
+      "4": "Hard-coded rules"
+    },
+    "marked": 2,
+    "key": 2,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 82,
+    "q_id": "P2-Q082",
+    "question": "The purpose of the “Slide Master” in PowerPoint is ____________",
+    "options": {
+      "1": "To organize the order of slides in a presentation",
+      "2": "To set the default layout, fonts and theme for all slides",
+      "3": "To record a narration for the presentation",
+      "4": "To export the presentation as a video file"
+    },
+    "marked": 1,
+    "key": 2,
+    "status": "WRONG",
+    "marks": -0.25
+  },
+  {
+    "q_num": 83,
+    "q_id": "P2-Q083",
+    "question": "Expand DevOps.",
+    "options": {
+      "1": "Development Options",
+      "2": "Development Operations",
+      "3": "Developed Options",
+      "4": "Developing Options"
+    },
+    "marked": 2,
+    "key": 2,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 84,
+    "q_id": "P2-Q084",
+    "question": "The attacker is able to intercept communication between the user terminal and internet banking server in ____________ attack strategy.",
+    "options": {
+      "1": "User credential guessing",
+      "2": "Injection of commands",
+      "3": "Security policy violation",
+      "4": "User credential compromise"
+    },
+    "marked": 4,
+    "key": 4,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 85,
+    "q_id": "P2-Q085",
+    "question": "Using ____________ operation, it is possible to store files in a server from client computer.",
+    "options": {
+      "1": "Transfer",
+      "2": "Download",
+      "3": "Upload",
+      "4": "Trash"
+    },
+    "marked": 3,
+    "key": 3,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 86,
+    "q_id": "P2-Q086",
+    "question": "____________ is the best mode to communicate a large amount of data between devices.",
+    "options": {
+      "1": "Bus",
+      "2": "Serial Ports",
+      "3": "Parallel Ports",
+      "4": "Registered Port"
+    },
+    "marked": 1,
+    "key": 1,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 87,
+    "q_id": "P2-Q087",
+    "question": "With respect to Microsoft 365, which of the following statements are correct? (a) Microsoft 365 provides applications such as Word, Excel, PowerPoint and Outlook. (b) Microsoft 365 doesn’t provide cloud storage. (c) Microsoft 365 includes teams application for communication and collaboration (d) Microsoft 365 provides security features like MFA.",
+    "options": {
+      "1": "Only (a) and (b)",
+      "2": "(a), (b) and (c)",
+      "3": "(a), (b) and (d)",
+      "4": "(a), (c) and (d)"
+    },
+    "marked": 4,
+    "key": 4,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 88,
+    "q_id": "P2-Q088",
+    "question": "When using ‘Track Changes’ in Microsoft Word, ____________ view shows the document as if all changes which were proposed have been accepted.",
+    "options": {
+      "1": "All Markup",
+      "2": "Simple Markup",
+      "3": "Original Markup",
+      "4": "No Markup"
+    },
+    "marked": 4,
+    "key": 4,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 89,
+    "q_id": "P2-Q089",
+    "question": "When was the world’s first laptop computer introduced to the market and by which company?",
+    "options": {
+      "1": "1980, Apple",
+      "2": "1985, IBM",
+      "3": "1981, Epson",
+      "4": "1978, Compaq"
+    },
+    "marked": 2,
+    "key": 3,
+    "status": "WRONG",
+    "marks": -0.25
+  },
+  {
+    "q_num": 90,
+    "q_id": "P2-Q090",
+    "question": "Which of the following is not a valid version of MS Office?",
+    "options": {
+      "1": "Office XP",
+      "2": "Office Vista",
+      "3": "Office 2007",
+      "4": "Office 2010"
+    },
+    "marked": 2,
+    "key": 2,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 91,
+    "q_id": "P2-Q091",
+    "question": "How do you create a dynamic named range in Excel?",
+    "options": {
+      "1": "Use the “Define Name” feature",
+      "2": "Apply a filter to a ‘column’",
+      "3": "Use the “Paste Special” option",
+      "4": "Apply a filter to a row"
+    },
+    "marked": 5,
+    "key": 1,
+    "status": "UNANSWERED",
+    "marks": 0.0
+  },
+  {
+    "q_num": 92,
+    "q_id": "P2-Q092",
+    "question": "Which of the following is NOT a valid binary number?",
+    "options": {
+      "1": "1 0 1 0 1 1",
+      "2": "1 0 2 1 1 1",
+      "3": "1 1 1 0 0 0",
+      "4": "1 0 1 1 0 1"
+    },
+    "marked": 2,
+    "key": 2,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 93,
+    "q_id": "P2-Q093",
+    "question": "Which of the following computer networks is built on the top of another computer network?",
+    "options": {
+      "1": "Overlay Network",
+      "2": "Prime Network",
+      "3": "Prior Network",
+      "4": "Chief Network"
+    },
+    "marked": 1,
+    "key": 1,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 94,
+    "q_id": "P2-Q094",
+    "question": "An RJ45 connector is primarily used for connecting devices to a ____________",
+    "options": {
+      "1": "Wide Area Network (WAN)",
+      "2": "Personal Area Network (PAN)",
+      "3": "Local Area Network (LAN)",
+      "4": "Power Source"
+    },
+    "marked": 3,
+    "key": 3,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 95,
+    "q_id": "P2-Q095",
+    "question": "In www.abc.com, what does .com refer to?",
+    "options": {
+      "1": "Commercial",
+      "2": "Company",
+      "3": "Communication",
+      "4": "Commerce"
+    },
+    "marked": 4,
+    "key": 1,
+    "status": "WRONG",
+    "marks": -0.25
+  },
+  {
+    "q_num": 96,
+    "q_id": "P2-Q096",
+    "question": "Which of the following factors can affect data transmission quality? (a) Noise (b) Keyboard (c) Mouse (d) Signal attenuation",
+    "options": {
+      "1": "(a) and (b)",
+      "2": "(a), (b) and (c)",
+      "3": "(a) and (d)",
+      "4": "(a) and (c)"
+    },
+    "marked": 3,
+    "key": 3,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 97,
+    "q_id": "P2-Q097",
+    "question": "A single speed CD-ROM Drive transfers data at ____________",
+    "options": {
+      "1": "1 MB per second",
+      "2": "100 bytes per second",
+      "3": "150 KBs per second",
+      "4": "20 million bits per second"
+    },
+    "marked": 3,
+    "key": 3,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 98,
+    "q_id": "P2-Q098",
+    "question": "What was the previous name of Google Workspace?",
+    "options": {
+      "1": "Google Office",
+      "2": "G-Suite",
+      "3": "Google Cloud Suite",
+      "4": "Google Work Tools"
+    },
+    "marked": 2,
+    "key": 2,
+    "status": "CORRECT",
+    "marks": 1.0
+  },
+  {
+    "q_num": 99,
+    "q_id": "P2-Q099",
+    "question": "Match the following. | List - I (Microsoft Office Application) | List - II (Features supported) | | :--- | :--- | | (a) Microsoft Project | (i) A digital, free-form, notebook application that allows users to create, organize and share information | | (b) Microsoft One Note | (ii) Software program designed to assist in developing schedules, assigning resources to tasks, tracking progress and budget | | (c) Microsoft Access | (iii) Software program used to store, manage and analyze large complex datasets | Codes:",
+    "options": {
+      "1": "a - ii, b - iii, c - i",
+      "2": "a - iii, b - i, c - ii",
+      "3": "a - ii, b - i, c - iii",
+      "4": "a - i, b - ii, c - iii"
+    },
+    "marked": 2,
+    "key": 3,
+    "status": "WRONG",
+    "marks": -0.25
+  },
+  {
+    "q_num": 100,
+    "q_id": "P2-Q100",
+    "question": "The purpose of IoT sensors is",
+    "options": {
+      "1": "To store data on cloud",
+      "2": "To provide network security",
+      "3": "To collect data from environment",
+      "4": "To improve performance"
+    },
+    "marked": 3,
+    "key": 3,
+    "status": "CORRECT",
+    "marks": 1.0
+  }
+]

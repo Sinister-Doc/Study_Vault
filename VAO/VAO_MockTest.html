@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="kn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KEA VAO 2026 — Mock Test & Answer Key (ಗ್ರಾಮ ಆಡಳಿತಾಧಿಕಾರಿ)</title>
+<style>
+:root {
+    --bg-page: #f8f9fa;
+    --bg-card: #ffffff;
+    --text-primary: #1f2328;
+    --text-secondary: #656d76;
+    --border-color: #d0d7de;
+    --border-light: #eaeef2;
+    --btn-primary-bg: #24292f;
+    --btn-primary-text: #ffffff;
+    --btn-primary-hover: #32383f;
+    --btn-secondary-bg: #ffffff;
+    --btn-secondary-text: #24292f;
+    --btn-secondary-hover: #f3f4f6;
+    --success-bg: #dafbe1;
+    --success-border: #4ac26b;
+    --success-text: #1a7f37;
+    --danger-bg: #ffebe9;
+    --danger-border: #ff8182;
+    --danger-text: #cf222e;
+    --warning-bg: #fff8c5;
+    --warning-border: #d4a72c;
+    --warning-text: #9a6700;
+    --active-outline: #0969da;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans Kannada", "Tunga", "Kedage", sans-serif;
+    background-color: var(--bg-page);
+    color: var(--text-primary);
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+.app-header {
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--border-color);
+    padding: 16px 24px;
+}
+
+.app-header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.app-header h1 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.app-header p {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-top: 2px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 24px auto;
+    padding: 0 20px;
+}
+
+/* Cards & Layout */
+.card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 24px;
+    margin-bottom: 20px;
+}
+
+.landing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.paper-card h2 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.paper-meta {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+    line-height: 1.6;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    background: var(--btn-secondary-bg);
+    color: var(--btn-secondary-text);
+    text-decoration: none;
+    transition: background 0.1s ease;
+}
+
+.btn:hover {
+    background: var(--btn-secondary-hover);
+}
+
+.btn-primary {
+    background: var(--btn-primary-bg);
+    color: var(--btn-primary-text);
+    border-color: var(--btn-primary-bg);
+}
+
+.btn-primary:hover {
+    background: var(--btn-primary-hover);
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Test Layout */
+.test-layout {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 20px;
+    align-items: start;
+}
+
+@media (max-width: 900px) {
+    .test-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+.test-topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 12px 20px;
+    margin-bottom: 20px;
+}
+
+.timer-box {
+    font-size: 1.15rem;
+    font-weight: 700;
+    font-family: monospace;
+    background: #f6f8fa;
+    padding: 6px 14px;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+}
+
+.q-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.q-title {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.q-body {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+/* Content Table inside questions */
+.content-table {
+    border-collapse: collapse;
+    margin: 14px 0;
+    width: 100%;
+    font-size: 0.95rem;
+}
+
+.content-table th, .content-table td {
+    border: 1px solid var(--border-color);
+    padding: 8px 12px;
+    text-align: left;
+}
+
+.content-table th {
+    background-color: #f6f8fa;
+    font-weight: 600;
+}
+
+/* Options */
+.options-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+.option-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 12px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    cursor: pointer;
+    background: var(--bg-card);
+    transition: border-color 0.1s ease;
+}
+
+.option-item:hover {
+    background: #f6f8fa;
+}
+
+.option-item input[type="radio"] {
+    margin-top: 4px;
+    margin-right: 12px;
+    cursor: pointer;
+}
+
+.option-text {
+    flex: 1;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Palette */
+.palette-card {
+    position: sticky;
+    top: 20px;
+}
+
+.palette-legend {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.legend-swatch {
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+    border: 1px solid var(--border-color);
+}
+
+.palette-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 6px;
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 4px;
+    margin-bottom: 16px;
+}
+
+.pal-btn {
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background: #ffffff;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.pal-btn:hover {
+    filter: brightness(0.95);
+}
+
+.pal-btn.answered {
+    background: var(--success-bg);
+    border-color: var(--success-border);
+    color: var(--success-text);
+}
+
+.pal-btn.marked {
+    background: var(--warning-bg);
+    border-color: var(--warning-border);
+    color: var(--warning-text);
+}
+
+.pal-btn.active {
+    outline: 2px solid var(--active-outline);
+    outline-offset: 1px;
+    font-weight: 700;
+}
+
+/* Post-Test & Review */
+.score-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    margin: 20px 0;
+}
+
+.score-box {
+    background: #f6f8fa;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 16px;
+    text-align: center;
+}
+
+.score-box .num {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-top: 4px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 3px 8px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 12px;
+    margin-bottom: 8px;
+}
+
+.badge-correct { background: var(--success-bg); color: var(--success-text); border: 1px solid var(--success-border); }
+.badge-wrong { background: var(--danger-bg); color: var(--danger-text); border: 1px solid var(--danger-border); }
+.badge-unattempted { background: #f6f8fa; color: var(--text-secondary); border: 1px solid var(--border-color); }
+
+.review-item {
+    border-bottom: 1px solid var(--border-color);
+    padding: 24px 0;
+}
+
+.review-item:last-child {
+    border-bottom: none;
+}
+
+.opt-review {
+    padding: 10px 14px;
+    border-radius: 4px;
+    border: 1px solid var(--border-light);
+    margin-bottom: 6px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.opt-review.is-correct {
+    background: var(--success-bg);
+    border-color: var(--success-border);
+    color: var(--success-text);
+    font-weight: 500;
+}
+
+.opt-review.is-wrong {
+    background: var(--danger-bg);
+    border-color: var(--danger-border);
+    color: var(--danger-text);
+}
+
+.rationale-box {
+    background: #fcfcfc;
+    border-left: 3px solid #656d76;
+    padding: 12px 16px;
+    margin-top: 14px;
+    font-size: 0.95rem;
+    color: #24292f;
+}
+
+/* Modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.4);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal {
+    background: #ffffff;
+    border-radius: 6px;
+    padding: 24px;
+    max-width: 480px;
+    width: 90%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.modal h3 {
+    margin-bottom: 12px;
+}
+
+.modal-stats {
+    background: #f6f8fa;
+    padding: 12px 16px;
+    border-radius: 4px;
+    margin: 16px 0;
+    font-size: 0.9rem;
+    line-height: 1.8;
+}
+
+@media print {
+    .app-header, .btn, .palette-card, .controls, .test-topbar {
+        display: none !important;
+    }
+    .test-layout {
+        display: block;
+    }
+    body {
+        background: #ffffff;
+    }
+    .card {
+        border: none;
+        padding: 0;
+    }
+}
+</style>
+</head>
+<body>
+
+<header class="app-header">
+    <div class="app-header-content">
+        <div>
+            <h1>KEA VAO 2026 Examination (ಗ್ರಾಮ ಆಡಳಿತಾಧಿಕಾರಿ)</h1>
+            <p>Official Paper Review & Interactive Mock Test Portal</p>
+        </div>
+        <div id="header-nav">
+            <!-- Nav buttons populated by JS -->
+        </div>
+    </div>
+</header>
+
+<main class="container" id="main-view">
+    <!-- Dynamic views rendered here -->
+</main>
+
+<div class="modal-overlay" id="submit-modal">
+    <div class="modal">
+        <h3>Submit Mock Examination</h3>
+        <p>Are you sure you want to conclude and submit your exam?</p>
+        <div class="modal-stats" id="modal-summary"></div>
+        <div class="button-group" style="justify-content: flex-end;">
+            <button class="btn" onclick="closeSubmitModal()">Continue Exam</button>
+            <button class="btn btn-primary" onclick="confirmSubmit()">Confirm & Submit</button>
+        </div>
+    </div>
+</div>
+
+<script>
+const EXAM_DATA = {"exam": "KEA Village Administrative Officer (VAO) Competitive Examination 2026", "papers": [{"paper": "Paper 1", "title": "General Knowledge (ಸಾಮಾನ್ಯ ಜ್ಞಾನ)", "duration_minutes": 120, "total_questions": 100, "marking": {"correct": 1.0, "wrong": -0.25, "unattempted": 0.0}, "questions": [{"id": "P1-Q001", "number": 1, "text": "Consider the following statements:<br><br>Statement I: Asthma is a difficulty in breathing causing wheezing due to inflammation of bronchi and bronchioles<br><br>Statement II: Emphysema is a chronic disorder in which alveolar walls are damaged due to which respiratory surface is increased<br><br>Choose the correct answer from the options given below.", "options": ["Both statements I and II are incorrect", "Statement I is correct but Statement II incorrect", "Both statements I and II are correct", "Statement I is incorrect but Statement II is correct"], "correct_answer": 2, "rationale": "ಸರಿಯಾದ ಉತರ : B ಉಬಸ ( ಆಸಮಾ ) - ಶಾಸನಾಳ / ಕಿರುಶಾಸನಾಳಗಳ ಉರಿಯೂತದಿಂದ ಸೀಟಿ ಶಬದೊಂದಿಗೆ ಕದ ಉಸಿರಾಟ ✔ (NCERT). ಎಂಫಿಸೀಮಾದಲಿ ವಾಯುಕೋಶಗಳ ಗೋಡೆ ಹಾನಿಯಾಗಿ ಶಾಸಕ ಮೇ..."}, {"id": "P1-Q002", "number": 2, "text": "Bithionol is generally added to the soaps as an additive to function as a/an", "options": ["Dryer", "Buffering agent", "Antiseptic", "Softener"], "correct_answer": 3, "rationale": "ಸರಿಯಾದ ಉತರ : C ಬಿಥಿಯೋನಾಲ್ - ಸಾಬೂನುಗಳಿಗೆ ಸೇರಿಸುವ ಪೂತಿನಾಶಕ (Antiseptic); ದುವಾಸನೆ ಉಂಟುಮಾಡುವ ಬಾಕೀರಿಯಾಗಳನು ಕಡಿಮೆ ಮಾಡುತದೆ (NCERT - ದೈನಂದಿನ ಜೀವನದಲಿ ರಸಾಯ..."}, {"id": "P1-Q003", "number": 3, "text": "Consider the following statements regarding Vitamin A:<br><br>(a) Deficiency of Vitamin A causes night blindness.<br><br>(b) Its chemical name is biotin<br><br>(c) It is a diterpenoid<br><br>(d) It is a water-soluble vitamin<br><br>Which of the above statements is/are incorrect?", "options": ["(a), (b), (c) and (d)", "(a) and (c)", "(b) and (d)", "Only (d)"], "correct_answer": 3, "rationale": "ಸರಿಯಾದ ಉತರ : C ಜೀವಸತ - ಎ ( ರೆಟಿನಾಲ್ ) - ಕೊಬಿನಲಿ ಕರಗುವ ಡೈಟಪಿನಾಯ್ ; ಕೊರತೆಯಿಂದ ಇರುಳು ಕುರುಡು . ಬಯೋಟಿನ್ ಜೀವಸತ -B7. ಆದರಿಂದ (b) ಮತು (d) ತಪು ."}, {"id": "P1-Q004", "number": 4, "text": "Consider the following statements:<br><br>Statement I: Generally potato tubers will sprout rapidly in vegetable shop.<br><br>Statement II: The rottened vegetables or fruits are frequently removed from the heaps<br><br>Which hormone is responsible for the above process?", "options": ["Auxin", "Gibberellin", "Cytokinin", "Ethylene"], "correct_answer": 4, "rationale": "ಸರಿಯಾದ ಉತರ : D ಇಥಿಲೀನ್ ಅನಿಲ ರೂಪದ ಸಸ ಹಾಮೋನ್ - ಆಲೂಗಡೆ ಗೆಡೆಗಳ ಸುಪಾವಸೆ ಮುರಿದು ಮೊಳಕೆಯೊಡೆಯಲು ಹಾಗೂ ಹಣು ಮಾಗಲು / ಕೊಳೆಯಲು ಕಾರಣ (NCERT). ಕೊಳೆತ ಹಣಿನ ಇಥಿಲೀನ್..."}, {"id": "P1-Q005", "number": 5, "text": "Which of the following are incorrect?<br><br>(a) Coronary artery disease - Affects the blood vessels that supply blood to heart muscle<br>(b) Heart failure - Heart stops beating<br>(c) Cardiac arrest - Heart is not pumping the blood effectively<br>(d) Heart attack - Heart muscles are damaged by inadequate blood supply", "options": ["(a) and (b)", "(b) and (c)", "(c) and (d)", "(a) and (d)"], "correct_answer": 2, "rationale": "ಸರಿಯಾದ ಉತರ : B NCERT ಪಕಾರ : ಹೃದಯ ವೈಫಲ (Heart failure) - ಹೃದಯ ದೇಹದ ಅಗತಕೆ ತಕ ರಕ ಪಂಪ್ ಮಾಡಲಾಗದ ಸಿತಿ ; ಹೃದಯ ಸಂಭನ (Cardiac arrest) - ಹೃದಯ ಬಡಿತ ನಿಲುವು..."}, {"id": "P1-Q006", "number": 6, "text": "The average weight of boys in a class is 45 kg and the average weight of girls in the same class is 30 kg. If the average weight of the whole class is 39 kg, then what is the ratio of number of boys to number of girls?", "options": ["2 : 5", "3 : 7", "3 : 2", "2 : 7"], "correct_answer": 3, "rationale": "ಸರಿಯಾದ ಉತರ : C ಆೕಪಣ ನಿಯಮ (Alligation): ಹುಡುಗರು : ಹುಡುಗಿಯರು = (39 −"}, {"id": "P1-Q007", "number": 7, "text": "Read the following table regarding an opinion survey and choose the correct statement:<br><br><table class=\"content-table\"><thead><tr><th>Participants</th><th>For</th><th>Against</th><th>No opinion</th><th>Total</th></tr></thead><tbody><tr><td>Men</td><td>300</td><td>650</td><td>200</td><td>1150</td></tr><tr><td>Women</td><td>400</td><td>800</td><td>100</td><td>1300</td></tr><tr><td>Total</td><td>700</td><td>1450</td><td>300</td><td>2450</td></tr></tbody></table>", "options": ["Only 16 % of men voted for in the opinion polling", "There is less women participation in the opinion polling", "More people did not respond the opinion polling", "Most of the people are against the opinion polling"], "correct_answer": 4, "rationale": "ಸರಿಯಾದ ಉತರ : D ಒಟು 2450 ರಲಿ 1450 ಜನರು ( ≈ 59%) ವೀಧಿಸಿದಾರೆ ✔ . (1) ಪುರುಷರ ಪರ = 300/1150 ≈ 26% (16% ಅಲ ); (2) ಮಹಿಳೆಯರು 1300 > ಪುರುಷರು 1150 - ಭಾಗವಹಿಸುವಿಕ..."}, {"id": "P1-Q008", "number": 8, "text": "Suraj moves from his initial position to the east 20 km. He takes left and moves 14 km. Again takes left and moves 5 km. He turns south and moves 6 km further. Now he is how far from the original position?", "options": ["17 km", "15 km", "24 km", "18 km"], "correct_answer": 1, "rationale": "Correct answer is option (1): ."}, {"id": "P1-Q009", "number": 9, "text": "The question below consists of statements and conclusions. Read all the conclusions and decide which of the given conclusions logically follow the given statements:<br><br>Statements:<br>I. Some cubes are squares.<br>II. All squares are circles.<br><br>Conclusions:<br>I. All cubes are circles.<br>II. Some circles are cubes.<br>III. Some circles are squares.<br>IV. All squares are cubes.", "options": ["Conclusion I follows", "Conclusions I, II and III follow", "All conclusions follow", "Only conclusions II and III follow"], "correct_answer": 4, "rationale": "ಸರಿಯಾದ ಉತರ : D ಕೆಲವು ಘನ = ಚೌಕ , ಎಲಾ ಚೌಕ = ವೃತ ⇒ ಕೆಲವು ಘನ = ವೃತ ⇒ ಕೆಲವು ವೃತ = ಘನ (II ✔ ). ಎಲಾ ಚೌಕ = ವೃತ ⇒ ಕೆಲವು ವೃತ = ಚೌಕ (III ✔ ). ' ಎಲಾ ಘನಗಳು ವೃತ..."}, {"id": "P1-Q010", "number": 10, "text": "The difference between the simple interest received from two different sources on ₹ 1500 for 3 years is ₹ 13.50. The difference between the interest rates of two different sources is", "options": ["0.1 %", "0.2 %", "0.3 %", "0.4 %"], "correct_answer": 3, "rationale": "ಸರಿಯಾದ ಉತರ : C ಬಡಿ ವತಾಸ = P × T × (R ₁ − R ₂ ) ÷ 100 ⇒ 13.50 = 1500 × 3 × d ÷ 100 ⇒ d = 1350 ÷ 4500 = 0.3%."}, {"id": "P1-Q011", "number": 11, "text": "As per the recent (2026) Railway Board notification regarding the Mangaluru railway area, which of the following statements is NOT correct?", "options": ["The Mangaluru railway area will be transferred from Southern Railway to South Western Railway.", "The Mangaluru railway area will be brought under the Mysuru Division of South Western Railway.", "The Mangaluru railway area will be separated from the Palakkad Division of Southern Railway", "The Mangaluru railway area will be transferred to Konkan Railway"], "correct_answer": 4, "rationale": "ಸರಿಯಾದ ಉತರ : D ರೈಲೆ ಮಂಡಳಿಯ ನಿಧಾರದಂತೆ ಮಂಗಳೂರು ಪದೇಶವನು ದಕ್ಷಿಣ ರೈಲೆಯ ಪಾಲಕಾಡ್ ವಿಭಾಗದಿಂದ ಬೇಪಡಿಸಿ ನೈಋತ ರೈಲೆಯ ( ಹುಬಳಿ ಕೇಂದ ) ಮೈಸೂರು ವಿಭಾಗಕೆ ಸೆ..."}, {"id": "P1-Q012", "number": 12, "text": "Which of the following are the pillars of the India's Arctic Policy?<br><br>(a) Climate and Environmental Protection.<br>(b) Economic and Human Development.<br>(c) Military Base Expansion.<br>(d) National Capacity Building.<br><br>Select the correct answer using the codes:", "options": ["(a) and (b)", "(a), (b) and (d)", "(b), (c) and (d)", "(a), (b), (c) and (d)"], "correct_answer": 2, "rationale": "ಸರಿಯಾದ ಉತರ : B ಭಾರತದ ಆಕಿಕ್ ನೀತಿ (2022) ಆರು ಸಂಭಗಳು : ವಿಜ್ಞಾನ ಮತು ಸಂೕಧನೆ , ಹವಾಮಾನ ಮತು ಪರಿಸರ ಸಂರಕ್ಷಣೆ , ಆಥಿಕ ಮತು ಮಾನವಾಭಿವೃದಿ , ಸಾರಿಗೆ ಮತು ಸಂಪಕ , ಆಡ..."}, {"id": "P1-Q013", "number": 13, "text": "Consider the following statements related to 'Padma-Shastri Honorary Translator Award':<br><br>(a) This award is given by the Karnataka Sahitya Academy.<br><br>(b) Padma Ramachandra Sharma was chosen for the award for the year 2025.<br><br>(c) The Awardee translated Poornachandra Tejaswi's ‘Karvalo’, Kuvempau's ‘Kanooru Heggadithi’.<br><br>Which of the above statements are correct?", "options": ["(a) and (b)", "(a) and (c)", "(b) and (c)", "(a), (b) and (c)"], "correct_answer": 4, "rationale": "ಸರಿಯಾದ ಉತರ : D ಕನಾಟಕ ಸಾಹಿತ ಅಕಾಡೆಮಿಯ ದತಿ ಪಶಸಿಯಾದ ಪದಾ - ಶಾಸಿ ಗೌರವ ಅನುವಾದಕ ಪಶಸಿ (2025) ಪದಾ ರಾಮಚಂದ ಶಮಾ ಅವರಿಗೆ ಲಭಿಸಿದೆ . ಅವರು ತೇಜಸಿಯವರ ' ಕವಾಲೊ ' ಹ..."}, {"id": "P1-Q014", "number": 14, "text": "Whom did Linda Noskova defeat in the final to win the 2026 Wimbledon Women’s Singles title?", "options": ["Iga Swiatek", "Karolina Muchova", "Aryna Sabalenka", "Maja Chwalinska"], "correct_answer": 2, "rationale": "ಸರಿಯಾದ ಉತರ : B 11 ಜುಲೈ 2026 ರ ಫೈನಲ್ ನಲಿ ಜೆಕ್ ಆಟಗಾತಿ ಲಿಂಡಾ ನೊಸೊವಾ ತಮದೇ ದೇಶದ ಕೕಲಿನಾ ಮುೕವಾ ಅವರನು 6-2, 5-7, 6-3 ಅಂತರದಲಿ ಸೋಲಿಸಿ ಮೊದಲ ಗಾಂಡ್ ಸಾಮ್ ಗೆ..."}, {"id": "P1-Q015", "number": 15, "text": "Expand 'KWIN':", "options": ["Knowledge, Wellbeing, Innovation and Network", "Karnataka Welfare, Industry and Network", "Karnataka Work, Infrastructure and Navigation", "Knowledge, Water, Industry and Nature"], "correct_answer": 1, "rationale": "ಸರಿಯಾದ ಉತರ : A ದೊಡಬಳಾಪುರ - ದಾಬಸ್ ೕಟೆ ಬಳಿ ನಿಮಾಣವಾಗುತಿರುವ 'KWIN ಸಿಟಿ ' = Knowledge, Wellbeing and Innovation ( ಜ್ಞಾನ , ಸಾಸ ಮತು ನಾವೀನತೆ ) ನಗರ . ಆಯೆ..."}, {"id": "P1-Q016", "number": 16, "text": "Graca Machel has been selected for which of the following prestigious award for the year 2025?", "options": ["Ramon Magsaysay Award", "International Booker Prize", "Indira Gandhi Prize for Peace, Disarmament and Development", "Gandhi Peace Prize"], "correct_answer": 3, "rationale": "ಸರಿಯಾದ ಉತರ : C ಮೊಜಾಂಬಿಕ್ ನ ಶಿಕ್ಷಣ ಹಾಗೂ ಮಹಿಳಾ - ಮಕಳ ಹಕುಗಳ ಹೋರಾಟಗಾತಿ ಗಾಕಾ ಮಚೆಲ್ ಅವರಿಗೆ 2025 ರ ಇಂದಿರಾಗಾಂಧಿ ಶಾಂತಿ , ನಿಶಸೀಕರಣ ಮತು ಅಭಿವೃದಿ ಪಶಸಿ ೕಷಿಸಲ..."}, {"id": "P1-Q017", "number": 17, "text": "Consider the following pairs related to players and sports:<br><br>(a) Sree Charani - Cricket<br>(b) Divya Deshmukh - Chess<br>(c) Jasmine Lamboria - Badminton<br>(d) Anahath Singh - Boxing<br><br>Which of the above pairs are correctly matched?", "options": ["(a) and (b)", "(b) and (c)", "(a) and (d)", "(a), (b) and (c)"], "correct_answer": 1, "rationale": "ಸರಿಯಾದ ಉತರ : A ಶೀ ಚರಣಿ - ಮಹಿಳಾ ಕಿಕೆಟ್ ( ಸಿನರ್ ) ✔ , ದಿವಾ ದೇಶಮುಖ್ - ಚೆಸ್ (ಮಹಿಳಾ ವಿಶಕಪ್ ವಿಜೇತೆ ) ✔ . ಜಾಸಿನ್ ಲಾಂಬೋರಿಯಾ - ಬಾಕಿಂಗ್ (ಬಾಡಿಂಟನ್ ಅಲ )..."}, {"id": "P1-Q018", "number": 18, "text": "Consider the following regarding 'SraVaani'.<br><br>(a) It is India's first multilingual speech recognition model.<br>(b) It is developed by ISRO.<br>(c) It has been trained on massive dataset of 65 Indian languages.<br><br>Which of the above statements are correct?", "options": ["(a) and (b)", "(b) and (c)", "(a) and (c)", "(a), (b) and (c)"], "correct_answer": 3, "rationale": "ಸರಿಯಾದ ಉತರ : C SraVaani ಯನು ಬೆಂಗಳೂರಿನ IISc ಯ SPIRE ಲಾಬ್ , ARTPARK ಸಹಯೋಗದಲಿ (Google ಬೆಂಬಲ ) ಅಭಿವೃದಿಪಡಿಸಿದೆ - ಇಸೋ ಅಲ . ಇದು 65 ಭಾರತೀಯ ಭಾಷೆ / ಉಪಭಾಷೆಗಳ..."}, {"id": "P1-Q019", "number": 19, "text": "Consider the following statements regarding Mekedatu balancing reservoir project.<br><br>(a) It is designed to store 67.16 TMC of Water.<br><br>(b) It requires the utilisation of 4879 hectares of forest land within the Bandipur National Park.<br><br>(c) This project aims to meet drinking water requirements of Bengaluru.<br><br>(d) It aims to generate 400 MW of hydroelectric power.<br><br>Which of the above statement/s is/are incorrect?", "options": ["(a) and (b)", "(b) only", "(c) and (d)", "(d) only"], "correct_answer": 2, "rationale": "ಸರಿಯಾದ ಉತರ : B ಮೇಕೆದಾಟು ಯೋಜನೆ : 67.16 TMC ಸಂಗಹ ಸಾಮಥ , ಬೆಂಗಳೂರು ಹಾಗೂ ಸುತಲಿನ ಕುಡಿಯುವ ನೀರು , 400 MW ಜಲವಿದುತ್ . ಮುಳುಗಡೆಯಾಗುವ ಅರಣ ಪದೇಶ ಕಾವೇರಿ ವನಜೀವ..."}, {"id": "P1-Q020", "number": 20, "text": "Match the following sports events with the host country in 2026:<br><br><table class=\"content-table\"><thead><tr><th>List – I (Sports Events)</th><th>List – II (Host Country)</th></tr></thead><tbody><tr><td>(a) FIFA World Cup Final</td><td>(i) Scotland</td></tr><tr><td>(b) Women's T20 World Cup Final</td><td>(ii) USA</td></tr><tr><td>(c) World Badminton Championship</td><td>(iii) England</td></tr><tr><td>(d) Commonwealth Games</td><td>(iv) India</td></tr></tbody></table><br><br>Codes:", "options": ["a – iii, b – ii, c – iv, d – i", "a – i, b – iv, c – ii, d – iii", "a – iv, b – i, c – iii, d – ii", "a – ii, b – iii, c – iv, d – i"], "correct_answer": 4, "rationale": "ಸರಿಯಾದ ಉತರ : D 2026 ಫಿಫಾ ವಿಶಕಪ್ ಫೈನಲ್ - ಅಮೆರಿಕ ( ನೂಜೆಸಿ ); ಮಹಿಳಾ T20 ವಿಶಕಪ್ - ಇಂಗೆಂಡ್ ( ಫೈನಲ್ ಲಾಡ್ ); ವಿಶ ಬಾಡಿಂಟನ್ ಚಾಂಪಿಯನ್ ಶಿಪ್ - ಭಾರತ ( ನವದೆಹ..."}, {"id": "P1-Q021", "number": 21, "text": "Match the following Gangas monuments:<br><br><table class=\"content-table\"><thead><tr><th>List – I (Places)</th><th>List – II (Temples)</th></tr></thead><tbody><tr><td>(a) Talakadu</td><td>(i) Kapileshwara Temple</td></tr><tr><td>(b) Manne</td><td>(ii) Nageshwara Temple</td></tr><tr><td>(c) Beguru</td><td>(iii) Panchakuta Basadi</td></tr><tr><td>(d) Kambadahalli</td><td>(iv) Pataleshwara Temple</td></tr></tbody></table><br><br>Codes:", "options": ["a – i, b – ii, c – iv, d – iii", "a – i, b – iv, c – ii, d – iii", "a – iv, b – i, c – ii, d – iii", "a – iv, b – i, c – iii, d – ii"], "correct_answer": 3, "rationale": "ಸರಿಯಾದ ಉತರ : C ತಲಕಾಡು - ಪಾತಾಳೇಶರ ಮತು ಮರಳೇಶರ ದೇವಾಲಯ ; ಮಣೆ (ಮಾನಪುರ ) - ಕಪಿಲೇಶರ ದೇವಾಲಯ ; ಬೇಗೂರು - ನಾಗೇಶರ ದೇವಾಲಯ ; ಕಂಬದಹಳಿ - ಪಂಚಕೂಟ ಬಸದಿ ( ಜೈನ )."}, {"id": "P1-Q022", "number": 22, "text": "A royal dynasty that had a special wing of bodyguards called ‘Garuda’ is", "options": ["Rashtrakutas", "Cholas", "Hoysalas", "Gangas"], "correct_answer": 3, "rationale": "ಸರಿಯಾದ ಉತರ : C ಹೊಯಳ ಅರಸರಿಗೆ ಪಾಣ ಕೊಡಲು ಸಿದರಾಗಿದ ನಿಷಾವಂತ ಅಂಗರಕ್ಷಕರನು ' ಗರುಡ ' ರು ಎನುತಿದರು ( ಉದಾ : ಕುವರ ಲಕ್ಷ - 2 ನೇ ವೀರಬಲಾಳನ ಗರುಡ )."}, {"id": "P1-Q023", "number": 23, "text": "The book that first referred to the music system of south as 'Carnatic music' is ______", "options": ["Vikramankadevacharitha", "Kavirajamarga", "Sangeetha Chudamani", "Abhilashithartha Chinthamani"], "correct_answer": 4, "rationale": "ಸರಿಯಾದ ಉತರ : D ಕಲಾಣ ಚಾಲುಕ ಮೂರನೇ ಸೋಮೇಶರನ ' ಮಾನಸೋಲಾಸ ' ಅಥವಾ 'ಅಭಿಲಾಷಿತಾಥ ಚಿಂತಾಮಣಿ ' ( ಕಿ . ಶ . 1129) ಗಂಥದಲಿ ದಕ್ಷಿಣದ ಸಂಗೀತವನು ' ಕನಾಟಕ ' ಸಂಗೀತ ಎಂ..."}, {"id": "P1-Q024", "number": 24, "text": "To which of the following personalities from Karnataka, the below given statements are related?<br><br>(a) He strongly opposed Mysore Civil Service examination in representative assembly.<br>(b) He started more than ten newspapers including Mysore Herald to inculcate patriotism in Mysore.<br>(c) He led the Karnataka Unification Movement in Mysore.<br>(d) He was known as the Grand Old Man of Mysore.", "options": ["K. Ranga Ayengar", "Kadapa Raghavendra Rao", "Tagadur Ramachandra Rao", "M. Venkatakrishnaiah"], "correct_answer": 4, "rationale": "ಸರಿಯಾದ ಉತರ : D ಎಂ . ವೆಂಕಟಕೃಯ ( ತಾತಯ ) - ' ಮೈಸೂರಿನ ಪಿತಾಮಹ ' (Grand Old Man of Mysore). ಮೈಸೂರು ಹೆರಾಲ್ , ವೃತಾಂತ ಚಿಂತಾಮಣಿ , ಸಾಧಿ ಮೊದಲಾದ ಅನೇಕ ಪತಿಕೆಗಳ..."}, {"id": "P1-Q025", "number": 25, "text": "Identify the places where Kadamba inscriptions were found:<br><br>(a) Talagunda<br>(b) Mahakuta<br>(c) Gudnapura<br>(d) Chandravalli", "options": ["Only (a) and (b)", "Only (a) and (c)", "Only (a), (c) and (d)", "(a), (b), (c) and (d)"], "correct_answer": 3, "rationale": "ಸರಿಯಾದ ಉತರ : C ತಾಳಗುಂದ ( ಕಾಕುತವಮನ ಸಂಭ ಶಾಸನ ), ಗುಡಾಪುರ ( ರವಿವಮನ ಶಾಸನ ), ಚಂದವಳಿ ( ಮಯೂರಶಮನ ಶಾಸನ ) - ಕದಂಬರದು . ಮಹಾಕೂಟ ಸಂಭ ಶಾಸನ ಬಾದಾಮಿ ಚಾಲುಕರ ಮಂಗಳೇಶನದು ."}, {"id": "P1-Q026", "number": 26, "text": "Consider the following pairs with reference to women's organisations:<br><br>(a) Sarala Baladevi - Bharat Stree Mandal<br>(b) Ramabai - Poona Seva Sadan<br>(c) Annie Besant - Women's India Association<br>(d) Usha Mehta - Nari Satyagraha Sangh<br><br>How many of the above pairs are correctly matched?", "options": ["Only one", "Only two", "Only three", "All the four"], "correct_answer": 3, "rationale": "ಸರಿಯಾದ ಉತರ : C ಸರಳಾದೇವಿ ಚೌಧುರಾಣಿ - ಭಾರತ ಸೀ ಮಹಾಮಂಡಲ (1910) ✔ ; ರಮಾಬಾಯಿ ರಾನಡೆ - ಪೂನಾ ಸೇವಾ ಸದನ (1909) ✔ ; ಆನಿ ಬೆಸೆಂಟ್ (ಮಾಗರೆಟ್ ಕಸಿನ್ ಜೊತೆ ) - ವುಮೆನ್..."}, {"id": "P1-Q027", "number": 27, "text": "Which of the following is NOT correct regarding pre-Independence social organizations in Karnataka?", "options": ["The Veerashaiva Mahasabha was founded in 1904", "The Vokkaligara Sangha was founded in 1906", "The Prajamitra Mandali was founded in 1917", "The Karnataka Vidyavardhaka Sangha was founded in 1915"], "correct_answer": 4, "rationale": "ಸರಿಯಾದ ಉತರ : D ಕನಾಟಕ ವಿದಾವಧಕ ಸಂಘ ಧಾರವಾಡದಲಿ ಆರ್ . ಎಚ್ . ದೇಶಪಾಂಡೆ ಅವರಿಂದ 1890 ರಲಿ ಸಾಪನೆಯಾಯಿತು (1915 ಅಲ ). 1915 ರಲಿ ಸಾಪನೆಯಾದದು ಕನಡ ಸಾಹಿತ ಪರಿಷತು ."}, {"id": "P1-Q028", "number": 28, "text": "Identify the incorrect statements regarding the establishment of the Indian National Congress:<br><br>(a) The first session of the Indian National Congress was held at Bombay on 27-12-1885<br>(b) W. C. Bonnerjee was elected as the President<br>(c) 78 delegates from different parts of India attended it.<br>(d) Eight delegates from Karnataka attended it", "options": ["Only (a) and (b)", "Only (c) and (d)", "Only (b) and (c)", "Only (b) and (d)"], "correct_answer": 2, "rationale": "ಸರಿಯಾದ ಉತರ : B ಮೊದಲ ಅಧಿವೇಶನ ಡಿಸೆಂಬರ್ 1885 ರಲಿ ಬಾಂಬೆಯ ಗೋಕುಲದಾಸ್ ತೇಜಪಾಲ್ ಸಂಸತ ಕಾಲೇಜಿನಲಿ , ಡಬೂ . ಸಿ . ಬಾನಜಿ ಅಧಕ್ಷತೆಯಲಿ ನಡೆಯಿತು . ಭಾಗವಹಿಸಿದ ಪತಿನಿ..."}, {"id": "P1-Q029", "number": 29, "text": "Consider the following statements with reference to town planning of Indus Civilization:<br><br>Statement I: Their town planning proves that they lived a highly civilized and developed life.<br><br>Statement II: Indus people were the first to build planned cities with scientific drainage system.<br><br>Which of the following is correct with respect to the above statements?", "options": ["Both Statement I and Statement II are correct and Statement II explains Statement I", "Both Statement I and Statement II are correct, but Statement II does not explain Statement I", "Statement I is correct, but Statement II is incorrect", "Statement I is incorrect, but Statement II is correct"], "correct_answer": 1, "rationale": "ಸರಿಯಾದ ಉತರ : A ಗಿಡ್ ಮಾದರಿಯ ಬೀದಿಗಳು , ಸುಟ ಇಟಿಗೆಯ ಮನೆಗಳು , ಮುಚಿದ ಒಳಚರಂಡಿ - ಇವು ಸಿಂಧೂ ಜನರ ಮುಂದುವರಿದ ನಾಗರಿಕ ಜೀವನವನು ತೋರಿಸುತವೆ . ವೈಜ್ಞಾನಿಕ ಒಳಚರಂಡಿಯಿರುವ..."}, {"id": "P1-Q030", "number": 30, "text": "Isampur, a centre of stone tool manufacturing is situated in ____________", "options": ["Tamil Nadu", "Uttar Pradesh", "Kerala", "Karnataka"], "correct_answer": 4, "rationale": "ಸರಿಯಾದ ಉತರ : D ಇಸಾಂಪುರ ( ಹುಣಸಗಿ ಕಣಿವೆ , ಯಾದಗಿರಿ ಜಿಲೆ , ಕನಾಟಕ ) - ಹಳೆ ಶಿಲಾಯುಗದ ( ಆಲಿಯನ್ ) ಕಲಿನ ಉಪಕರಣ ತಯಾರಿಕಾ ಕಾಯಾಗಾರ ಸಳ ."}, {"id": "P1-Q031", "number": 31, "text": "Identify the incorrect statement/statements regarding Poorna Swaraj:<br><br>(a) Historical Lahore Session was held in 1929.<br>(b) It passed a resolution declaring 'Poorna Swaraj'<br>(c) Motilal Nehru was selected as the President of this session.<br>(d) This session announced the launching of Civil Disobedience Movement.", "options": ["(a) and (b)", "Only (d)", "(b) and (d)", "Only (c)"], "correct_answer": 4, "rationale": "ಸರಿಯಾದ ಉತರ : D 1929 ರ ಲಾಹೋರ್ ಅಧಿವೇಶನದ ಅಧಕ್ಷರು ಜವಾಹರಲಾಲ್ ನೆಹರೂ ( ಮೋತಿಲಾಲ್ ನೆಹರೂ ಅಲ ). ಪೂಣ ಸರಾಜ್ ನಿಣಯ ಅಂಗೀಕಾರ , 26 ಜನವರಿ 1930 ಸಾತಂತ ದಿನಾಚರಣೆ , ನಾಗರ..."}, {"id": "P1-Q032", "number": 32, "text": "Arrange the following in chronological order:<br><br>(a) Treaty of Srirangapatna<br>(b) Treaty of Madras<br>(c) Treaty of Mangalore<br>(d) Treaty of Bassein<br><br>Choose the correct answer using the codes given below:", "options": ["(c), (d), (a), (b)", "(a), (b), (c), (d)", "(d), (a), (b), (c)", "(b), (c), (a), (d)"], "correct_answer": 4, "rationale": "ಸರಿಯಾದ ಉತರ : D ಮದಾಸ್ ಒಪಂದ 1769 (1 ನೇ ಆಂಗೋ - ಮೈಸೂರು ಯುದ ) → ಮಂಗಳೂರು ಒಪಂದ 1784 (2 ನೇ ಯುದ ) → ಶೀರಂಗಪಟಣ ಒಪಂದ 1792 (3 ನೇ ಯುದ ) → ಬೆಸೀನ್ ಒಪಂದ 1..."}, {"id": "P1-Q033", "number": 33, "text": "Consider the following statements with reference to Buddhist religion:<br><br>Statement I: North India was a major center of Buddhism from the 6th Century BCE through the 12th Century CE.<br><br>Statement II: During the same period Buddhism received royal patronage in South India<br><br>Which of the following options is correct regarding the above statements?", "options": ["Both Statement I and Statement II are correct", "Both Statement I and Statement II are incorrect", "Statement I is correct but Statement II is incorrect", "Statement I is incorrect but Statement II is correct"], "correct_answer": 3, "rationale": "ಸರಿಯಾದ ಉತರ : C ಬುದನ ಕಾಲದಿಂದ ಪಾಲ ವಂಶದವರೆಗೆ (12 ನೇ ಶತಮಾನ ) ಉತರ ಭಾರತ - ಮಗಧ , ನಳಂದ , ವಿಕಮಶಿಲ - ಬೌದಧಮದ ಪಮುಖ ಕೇಂದ . ದಕ್ಷಿಣದಲಿ ಶಾತವಾಹನರಂತಹ ಕೆಲವರ ಆಶಯ ಬಿಟ..."}, {"id": "P1-Q034", "number": 34, "text": "Consider the following statements regarding the Bahmani King Firoz Shah:<br><br>(a) Firoz Shah fought alongside of Aliya Rama Raya.<br>(b) Firoz Shah had no interest in the construction of royal buildings<br>(c) Firoz Shah built the city of 'Firozabad'<br>(d) Firoz Shah sent an embassy to the court of Timur", "options": ["(a), (b) and (c) are correct", "(c) and (d) are correct", "(b), (c) and (d) are correct", "(a), (b) and (d) are correct"], "correct_answer": 2, "rationale": "ಸರಿಯಾದ ಉತರ : B ತಾಜುದೀನ್ ಫೀಜ್ ಷಾ (1397-1422) ಭೀಮಾ ನದಿ ದಡದಲಿ ಫೀಜಾಬಾದ್ ನಗರ ಕಟಿಸಿದನು ಮತು ತೈಮೂರನ ಆಸಾನಕೆ ನಿಯೋಗ ಕಳುಹಿಸಿದನು . ಅವನು ಹೋರಾಡಿದು 1 ನೇ ದೆ..."}, {"id": "P1-Q035", "number": 35, "text": "According to the Kapaluru inscription, which Vijayanagara King built a fort at the Barkur port on the Western Coast?", "options": ["Harihara I", "Harihara II", "Bukka I", "Devaraya II"], "correct_answer": 1, "rationale": "Correct answer is option (1): ."}, {"id": "P1-Q036", "number": 36, "text": "Consider the following statements regarding the principles of Sufism:<br><br>Statement I: God is One, He is Omnipotent.<br><br>Statement II: They did not pay attention to spirituality.<br><br>Which of the following is correct with respect to the above statements?", "options": ["Both Statement I and Statement II are correct and Statement II explains Statement I", "Both Statement I and Statement II are correct, but Statement II does not explain Statement I", "Statement I is incorrect, but Statement II is correct", "Statement I is correct, but Statement II is incorrect"], "correct_answer": 4, "rationale": "ಸರಿಯಾದ ಉತರ : D ಸೂಫಿಗಳು ಏಕದೇೕಪಾಸನೆ , ದೈವೕಮ , ಗುರು ( ಪೀರ್ ) ಮಾಗದಶನ ಮತು ಆಧಾತಿಕ ಸಾಧನೆಗೆ ಹೆಚು ಒತು ನೀಡಿದರು . ಆದರಿಂದ ಹೇಳಿಕೆ -II ತಪು ."}, {"id": "P1-Q037", "number": 37, "text": "Consider the following statements regarding Razia Sultana:<br><br>(a) Iltutmish had no sons<br>(b) Iltutmish imprinted Razia's name on the coins.<br>(c) Ruknuddin was an incompetent ruler.<br>(d) Razia did not know how to ride a horse.", "options": ["(a), (b) and (c) are correct", "(b), (c) and (d) are correct", "(a), (b) and (d) are correct", "(b) and (c) are correct"], "correct_answer": 4, "rationale": "ಸರಿಯಾದ ಉತರ : D ಇಲುತಿಶ್ ಗೆ ರುಕುದೀನ್ ಫೀಜ್ ಮೊದಲಾದ ಗಂಡು ಮಕಳಿದರು ; ಆದರೆ ಅವರು ಅಸಮಥರೆಂದು ಭಾವಿಸಿ ರಜಿಯಾಳನು ಉತರಾಧಿಕಾರಿಯಾಗಿ ನಾಮಕರಣ ಮಾಡಿ ನಾಣಗಳಲಿ ಅವಳ ಹೆಸರು..."}, {"id": "P1-Q038", "number": 38, "text": "Which of the following pair/s is/are correctly matched?<br><br>I. Deshmukh's Rebellion – Lieutenant Sutherland<br>II. Uprising of Koppal – Major General Pritzler", "options": ["I only", "II only", "Both I and II", "Neither I nor II are correctly matched"], "correct_answer": 3, "rationale": "ಸರಿಯಾದ ಉತರ : C ಬಿಟಿಷರ ವಿರುದದ ಆರಂಭಿಕ ದಂಗೆಗಳು : ಕೊಪಳ ದಂಗೆ (1819, ವೀರಪ ) - ಮೇಜರ್ ಜನರಲ್ ಪಿಟರ್ ನೇತೃತದಲಿ ಹತಿಕಲಾಯಿತು ; ಬೀದರ್ ಪದೇಶದ ದೇಶಮುಖರ ಬಂಡಾಯ..."}, {"id": "P1-Q039", "number": 39, "text": "Name the head of the committee which recommended for integration of all poverty alleviation programmes with IRDP for better linkage.", "options": ["S. R. Hashim", "P. R. Brahmananda", "Madhu Dandavate", "C. Raja Chelliah"], "correct_answer": 1, "rationale": "ಸರಿಯಾದ ಉತರ : A ಎಸ್ . ಆರ್ . ಹಶೀಮ್ ಸಮಿತಿ (1997) ಸಯಂ - ಉದೋಗ / ಬಡತನ ನಿಮೂಲನಾ ಕಾಯಕಮಗಳನು (TRYSEM, DWCRA, SITRA, GKY) IRDP ಯೊಂದಿಗೆ ಒಂದೇ ಕಾಯಕಮವಾಗಿ ಸಂಯೋಜಿ..."}, {"id": "P1-Q040", "number": 40, "text": "A project to achieve e-governance in MIDH (Mission for Integrated Development of Horticulture) is", "options": ["HORNET", "HORTNET", "PLANTNET", "AGRINET"], "correct_answer": 2, "rationale": ": (45 − 39) = 9 : 6 = 3 : 2. ಪರಿಶೀಲನೆ : (3×45 + 2×30) ÷ 5 = 195 ÷ 5 = 39 ✔"}, {"id": "P1-Q041", "number": 41, "text": "What is the limit of units of agricultural land that can be sanctioned by district magistrate for educational purposes to private organizations under Section 109(1) of the Land Reforms Act of 1961?", "options": ["Not exceeding 10 units", "Not exceeding 4 units", "Not exceeding 5 units", "Not exceeding 2 units"], "correct_answer": 2, "rationale": "ಸರಿಯಾದ ಉತರ : B ಕಲಂ 109 ರ ಅಡಿಯಲಿ ಜಿಲಾಧಿಕಾರಿಗಳು ನೀಡಬಹುದಾದ ವಿನಾಯಿತಿ ಮಿತಿ : ಕೈಗಾರಿಕೆ - 20 ಯೂನಿಟ್ , ೖಕ್ಷಣಿಕ ಸಂಸೆ - 4 ಯೂನಿಟ್ , ಧಾಮಿಕ ಸಳ - 1 ಯೂನಿಟ್ , ವಸತಿ..."}, {"id": "P1-Q042", "number": 42, "text": "Which of the following is/are correct regarding 'Shuchi Nanna Mythri' scheme?<br><br>(a) It is a modified version of the government's Shuchi programme<br>(b) It encourages the use of reusable menstrual cups and distributes to adolescent girls.<br>(c) Initially this scheme was implemented in Dakshina Kannada and Chamarajanagar district.<br>(d) Menstrual cups can be reused up to 8-10 months.<br><br>Choose the correct answer using the codes given below.", "options": ["(a) and (b)", "(a) and (c)", "(a), (b) and (c)", "(a), (b), (c) and (d)"], "correct_answer": 3, "rationale": "ಸರಿಯಾದ ಉತರ : C 'ಶುಚಿ ' ಕಾಯಕಮದ ಸುಧಾರಿತ ರೂಪವಾದ ' ಶುಚಿ - ನನ ಮೈತಿ ' (2022) ಅಡಿ ಮೆನ್ ಸುಯಲ್ ಕಪ್ ವಿತರಣೆ ; ಮೊದಲು ದಕ್ಷಿಣ ಕನಡ ಮತು ಚಾಮರಾಜನಗರದಲಿ ಪಾಯೋಗಿಕ ಜಾರಿ..."}, {"id": "P1-Q043", "number": 43, "text": "Consider the following pairs.<br><br>(a) First devaluation of Rupee – 1948<br>(b) Second devaluation of Rupee – 1966<br>(c) Third devaluation of Rupee – 1995.<br><br>Identify the correctly matched pairs above.", "options": ["(a) only", "(a) and (b) only", "(c) only", "(a), (b) and (c)"], "correct_answer": 2, "rationale": "ಸರಿಯಾದ ಉತರ : B ರೂಪಾಯಿ ಅಪಮೌಲೀಕರಣ : 1 ನೇ - ಸೆಂಬರ್ 1949, 2 ನೇ - ಜೂನ್ 1966, 3 ನೇ - ಜುಲೈ 1991. ನಿಖರವಾಗಿ (b) ಮಾತ ಸರಿ ; ಆದರೆ ಅಂತಹ ಆಯೆ ಇಲ . 1966 ಸರಿಯಾಗಿರ..."}, {"id": "P1-Q044", "number": 44, "text": "The book titled \"Magnanimity for Equity\" consists of<br><br>(a) A list of unique CSR practices in Karnataka<br>(b) A list of unique corporate investors in Karnataka<br>(c) A list of unique unicorns in Karnataka<br>(d) A list of unique investors in Karnataka", "options": ["(a) only", "(b) only", "(c) only", "(c) and (d) only"], "correct_answer": 1, "rationale": "Correct answer is option (1): ."}, {"id": "P1-Q045", "number": 45, "text": "Objectives of Land Reforms are<br><br>(a) Equitable land distribution<br>(b) Poverty alleviation<br>(c) Tenancy regulation<br>(d) Wealth concentration", "options": ["(c) and (d)", "(b), (c) and (d)", "(a), (b) and (c)", "(a), (b) and (d)"], "correct_answer": 3, "rationale": "ಸರಿಯಾದ ಉತರ : C ಭೂ ಸುಧಾರಣೆಗಳ ಉದೇಶ ಭೂಮಿಯ ನಾಯಯುತ ಹಂಚಿಕೆ , ಬಡತನ ನಿವಾರಣೆ , ಗೇಣಿದಾರರ ರಕ್ಷಣೆ / ಗೇಣಿ ನಿಯಂತಣ . ಸಂಪತಿನ ಕೇಂದೀಕರಣವನು ತಡೆಯುವುದು ಗುರಿ - ಕೇಂದಿ..."}, {"id": "P1-Q046", "number": 46, "text": "Match List – I with List – II:<br><br><table class=\"content-table\"><thead><tr><th>List – I (Agency)</th><th>List – II (Scheme)</th></tr></thead><tbody><tr><td>(a) AMRUT (Atal Mission for Rejuvenation and Urban Transformation)</td><td>(i) To provide financial assistance to rural development</td></tr><tr><td>(b) Deen Dayal Upadhyaya Grameena Kaushalya Yojana</td><td>(ii) To provide employment guarantee in poor districts</td></tr><tr><td>(c) Jayaprakash Narayan Rozgar Guarantee Yojana</td><td>(iii) Skill upgradation of youth</td></tr><tr><td>(d) District Rural Development Agency</td><td>(iv) Urban upgradation</td></tr></tbody></table><br><br>Codes:", "options": ["a – iv, b – iii, c – ii, d – i", "a – iii, b – ii, c – i, d – iv", "a – ii, b – iv, c – iii, d – i", "a – i, b – ii, c – iii, d – iv"], "correct_answer": 1, "rationale": "ಸರಿಯಾದ ಉತರ : A AMRUT - ನಗರಗಳ ಮೂಲಸೌಕಯ ಉನತೀಕರಣ ; DDU-GKY - ಗಾಮೀಣ ಯುವಜನರ ಕೌಶಲಾಭಿವೃದಿ ; ಜಯಪಕಾಶ್ ನಾರಾಯಣ್ ೕಜ್ ಗಾರ್ ಗಾರಂಟಿ ಯೋಜನೆ - ಹಿಂದುಳಿದ ಜಿಲೆಗಳಲಿ ಉ..."}, {"id": "P1-Q047", "number": 47, "text": "Consider the following Assertion (A) and Reason (R) statements with reference to Indian agriculture:<br><br>Assertion (A): Indian agriculture has experienced an increase in its share of GDP over a period of time.<br><br>Reason (R): The industrial and service sectors have grown faster than agriculture.<br><br>Which of the following is correct with respect to the above statements?", "options": ["Both Assertion (A) and Reason (R) are true and Reason (R) is the correct explanation of Assertion (A)", "Both Assertion (A) and Reason (R) are true but Reason (R) is not the correct explanation of Assertion (A)", "Assertion (A) is true, but Reason (R) is false", "Assertion (A) is false, but Reason (R) is true"], "correct_answer": 4, "rationale": "ಸರಿಯಾದ ಉತರ : D 1950-51 ರಲಿ ಸುಮಾರು 50% ಇದ ಕೃಷಿಯ ಪಾಲು ಇಂದು ಸುಮಾರು 16- 18% ಕೆ ಇಳಿದಿದೆ - ಆದರಿಂದ (A) ತಪು . ಕೈಗಾರಿಕೆ ಮತು ಸೇವಾ ವಲಯಗಳ ವೇಗದ ಬೆಳವಣಿಗೆಯೇ ಈ ಇಳ..."}, {"id": "P1-Q048", "number": 48, "text": "Which one of the following are correctly matched pairs?<br><br>(a) PM-KSY – Focuses on better irrigation system<br>(b) PM-VY – Focuses on organic farming<br>(c) PM-MSY – Focuses on blue revolution<br>(d) PM-KMY – Focuses on modernisation of agriculture", "options": ["(a) and (b)", "(a) and (c)", "(a), (c) and (d)", "(a), (b) and (c)"], "correct_answer": 4, "rationale": "ಸರಿಯಾದ ಉತರ : D PMKSY - ' ಹರ್ ಖೇತ್ ಕೋ ಪಾನಿ ', ' ಪತಿ ಹನಿಗೆ ಹೆಚು ಬೆಳೆ '; ಪರಂಪರಾಗತ ಕೃಷಿ ವಿಕಾಸ ಯೋಜನೆ - ಸಾವಯವ ಕೃಷಿ ; PMMSY - ಮೀನುಗಾರಿಕೆ ( ನೀಲಿ ಕಾಂತಿ ). PM..."}, {"id": "P1-Q049", "number": 49, "text": "2025-26 Central Union Budget Kisan Credit Card loan limit increased from", "options": ["₹3 lakh to ₹5 lakh", "₹2.5 lakh to ₹4 lakh", "₹3 lakh to ₹6 lakh", "₹3 lakh to ₹4.5 lakh"], "correct_answer": 1, "rationale": "ಸರಿಯಾದ ಉತರ : A ಕೇಂದ ಬಜೆಟ್ 2025-26 ರಲಿ ಮಾಪಡಿಸಿದ ಬಡಿ ಸಹಾಯಧನ ಯೋಜನೆಯಡಿ KCC ಸಾಲದ ಮಿತಿಯನು ₹ 3 ಲಕ್ಷದಿಂದ ₹ 5 ಲಕ್ಷಕೆ ಹೆಚಿಸಲಾಯಿತು ."}, {"id": "P1-Q050", "number": 50, "text": "Identify the incorrect statement regarding the PM-Surya Ghar Yojana.", "options": ["The scheme was launched in 2024", "The subsidy will be provided for households and institutions", "It aims to provide solar energy to households in India", "The subsidy will cover up to 40% of solar panels and maximum capped at ₹78,000/-"], "correct_answer": 2, "rationale": "ಸರಿಯಾದ ಉತರ : B PM ಸೂಯ ಘರ್ : ಮುಫ್ ಬಿಜಿ ಯೋಜನೆ ( ಫೆಬವರಿ 2024) - 1 ಕೋಟಿ ಮನೆಗಳ ಮೇಲಾವಣಿ ಸೌರ ಘಟಕ , ತಿಂಗಳಿಗೆ 300 ಯೂನಿಟ್ ಉಚಿತ ವಿದುತ್ ; ಗರಿ ಸಹಾಯಧನ ₹ 78,00..."}, {"id": "P1-Q051", "number": 51, "text": "The nodal agency responsible for estimating the Gross State Domestic Product (GSDP) in Karnataka is", "options": ["Planning Department, GoK", "Directorate of Economics and Statistics, GoK", "Central Statistical Office, GoI", "Karnataka State Finance Commission"], "correct_answer": 2, "rationale": "ಸರಿಯಾದ ಉತರ : B ರಾಜದ GSDP, ತಲಾ ಆದಾಯ ಮುಂತಾದ ಅಂದಾಜುಗಳನು ಆಥಿಕ ಮತು ಸಾಂಖಿಕ ನಿದೇಶನಾಲಯ (DES) ಸಿದಪಡಿಸುತದೆ ; ರಾ ಮಟದಲಿ GDP ಅಂದಾಜು ಮಾಡುವುದು NSO ( ಹಿಂದಿನ CSO)."}, {"id": "P1-Q052", "number": 52, "text": "Which one of the following is not a feature of Karnataka Start-up Policy 2022-27?", "options": ["WEscalate", "Grassroot innovation", "Rajiv Gandhi Entrepreneurship Programme", "Labour welfare incentives"], "correct_answer": 4, "rationale": "ಸರಿಯಾದ ಉತರ : D ಕನಾಟಕ ಸಾಟ್ ಅಪ್ ನೀತಿಯ ಉಪಕಮಗಳು : ಎಲಿವೇಟ್ , WEscalate ( ಮಹಿಳಾ ಉದಮಿಗಳಿಗೆ ), ತಳಮಟದ ನಾವೀನತೆ , ರಾಜೀವ್ ಗಾಂಧಿ ಉದಮಶೀಲತಾ ಕಾಯಕಮ , NAIN ಕೇ..."}, {"id": "P1-Q053", "number": 53, "text": "Consider the following statements with reference to Indian agriculture:<br><br>Statement I: In 2024-25, 54.6% of the total workforce of India is engaged in agriculture and allied sector.<br><br>Statement II: Agricultural sector accounted for 18.4% of India's GVA at current prices during 2022-23.<br><br>Which of the following is correct with respect to the above statements?", "options": ["Both Statement I and Statements II are correct and Statement II explains Statement I", "Both Statement I and Statement II are correct, but Statement II does not explain Statement I", "Statement I is correct, but Statement II is incorrect", "Statement I is incorrect, but Statement II is correct"], "correct_answer": 4, "rationale": "ಸರಿಯಾದ ಉತರ : D ೕ . 54.6 ಶಮಶಕಿ ಕೃಷಿಯಲಿ ಎಂಬುದು 2011 ರ ಜನಗಣತಿ ಅಂಕಿ ; 2024- 25 ರಲಿ ಇದು ಸುಮಾರು ೕ . 45-46 (PLFS). ಆದರಿಂದ ಹೇಳಿಕೆ -I ತಪು . 2022-23 ರಲಿ ಪಸ..."}, {"id": "P1-Q054", "number": 54, "text": "Manganese ore, found in Karnataka, belongs to", "options": ["Archaean period", "Pleistocene period", "Tertiary period", "Cretaceous period"], "correct_answer": 1, "rationale": "ಸರಿಯಾದ ಉತರ : A ಕನಾಟಕದ ಕಬಿಣ , ಮಾಂಗನೀಸ್ , ಚಿನದ ನಿಕ್ಷೇಪಗಳು ಆಕಿಯನ್ (ಧಾರವಾಡ ಶಿಲಾಸೋಮ ) ಯುಗದ ಶಿಲೆಗಳಲಿ ಕಂಡುಬರುತವೆ - ಸಂಡೂರು , ಶಿವಮೊಗ , ಉತರ ಕನಡ ."}, {"id": "P1-Q055", "number": 55, "text": "In which of the following Census, the highest population growth has been recorded in Karnataka?", "options": ["1961", "1971", "1981", "1991"], "correct_answer": 3, "rationale": "ಸರಿಯಾದ ಉತರ : C ಕನಾಟಕದ ದಶಕದ ಬೆಳವಣಿಗೆ ದರ : 1961-71 - 24.22%, 1971-81 - 26.75% ( ಅತಿ ಹೆಚು ), 1981-91 - 21.12%. ಆದರಿಂದ 1981 ರ ಜನಗಣತಿ ."}, {"id": "P1-Q056", "number": 56, "text": "Consider the following pairs:<br><br><table class=\"content-table\"><thead><tr><th>Rivers</th><th>Dams</th></tr></thead><tbody><tr><td>(a) Sharavathi</td><td>Hirebhaskara</td></tr><tr><td>(b) Kaveri</td><td>Madhavmantri</td></tr><tr><td>(c) Shimsha</td><td>Kodasalli</td></tr></tbody></table><br><br>Which of the above pair/s is/are correctly matched?", "options": ["(a) and (b) only", "(b) only", "(b) and (c) only", "(a), (b) and (c)"], "correct_answer": 1, "rationale": "ಸರಿಯಾದ ಉತರ : A ಹಿರೇಭಾಸರ ಅಣೆಕಟು - ಶರಾವತಿ ( ಈಗ ಲಿಂಗನಮಕಿ ಜಲಾಶಯದಲಿ ಮುಳುಗಿದೆ ); ಮಾಧವಮಂತಿ ಅಣೆಕಟು - ಕಾವೇರಿ ( ತಲಕಾಡು ಬಳಿ ). ಕೊಡಸಳಿ ಅಣೆಕಟು ಕಾಳಿ ನದಿಗೆ ಸೇರಿ..."}, {"id": "P1-Q057", "number": 57, "text": "Arrange the following states which are surrounding the Karnataka state in clockwise starting from Goa:", "options": ["Maharashtra, Andhra Pradesh, Telangana, Tamil Nadu, Kerala", "Maharashtra, Telangana, Andhra Pradesh, Tamil Nadu, Kerala", "Maharashtra, Andhra Pradesh, Telangana, Kerala, Tamil Nadu", "Andhra Pradesh, Maharashtra, Telangana, Tamil Nadu, Kerala"], "correct_answer": 2, "rationale": "ಸರಿಯಾದ ಉತರ : B ಗೋವಾ ( ವಾಯುವ ) → ಮಹಾರಾ ( ಉತರ ) → ತೆಲಂಗಾಣ ( ಈಶಾನ ) → ಆಂಧಪದೇಶ ( ಪೂವ ) → ತಮಿಳುನಾಡು ( ಆಗೇಯ ) → ಕೇರಳ ( ನೈಋತ ). ಕನಾಟಕಕೆ 6 ನೆರೆ ರಾಜ..."}, {"id": "P1-Q058", "number": 58, "text": "Identify the correctly matched pairs:<br><br>(a) Mumbai - Catanopolis<br>(b) Hyderabad - Silicon Hub<br>(c) Gorakhpur - Java of India<br>(d) Mysore - City of Palaces", "options": ["(a), (b), (c) and (d)", "(a) and (c)", "(a), (b) and (d)", "(c), (b) and (d)"], "correct_answer": 1, "rationale": "ಸರಿಯಾದ ಉತರ : A ಮುಂಬೈ - ಕಾಟನೋಪೊಲಿಸ್ ( ಹತಿ ಜವಳಿ ಕೇಂದ ); ಹೈದರಾಬಾದ್ ( ಸೈಬರಾಬಾದ್ ) - IT/ ಸಿಲಿಕಾನ್ ಕೇಂದ ; ಗೋರಖ್ ಪುರ - ಹಿಂದೆ ಅತಿ ಹೆಚು ಸಕರೆ ಕಾಖಾನೆಗಳಿದ..."}, {"id": "P1-Q059", "number": 59, "text": "'Syzygy' means", "options": ["Sun, Moon and Earth are in straight line configuration", "Sun and Moon are in perpendicular position to Earth", "Sun, Moon and Earth configure according to size", "Size of celestial body and its gravitational pull"], "correct_answer": 1, "rationale": "ಸರಿಯಾದ ಉತರ : A ಸೈಜಿಜಿ (Syzygy) - ಮೂರು ಆಕಾಶಕಾಯಗಳು ಒಂದೇ ಸರಳರೇಖೆಯಲಿರುವ ಸಿತಿ ; ಹುಣಿಮೆ / ಅಮಾವಾಸೆಯಂದು ಉಂಟಾಗುವ ಬೃಹತ್ ಉಬರ (Spring tide) ಇದರ ಪರಿಣಾಮ . ಲಂಬ ಸಾ..."}, {"id": "P1-Q060", "number": 60, "text": "Statement I: Wind energy is cheapest, pollution-free, eco-friendly and can be developed away from the conventional sources.<br><br>Statement II: India ranks 4th in the world after China, USA and Germany with respect to wind energy production<br><br>Considering the above statements, choose the correct option:", "options": ["Statement I is correct but Statement II is incorrect", "Statement I is incorrect but Statement II is correct", "Both Statement I and Statement II are incorrect", "Both Statement I and Statement II are correct"], "correct_answer": 4, "rationale": "ಸರಿಯಾದ ಉತರ : D ಪವನ ಶಕಿ ನವೀಕರಿಸಬಹುದಾದ , ಮಾಲಿನರಹಿತ ಹಾಗೂ ಕಡಿಮೆ ವೆಚದ ಅಸಾಂಪದಾಯಿಕ ಮೂಲ . ಸಾಪಿತ ಪವನ ಶಕಿ ಸಾಮಥದಲಿ ಭಾರತ ಚೀನಾ , ಅಮೆರಿಕ , ಜಮನಿ ನಂತರ ವಿಶದಲಿ..."}, {"id": "P1-Q061", "number": 61, "text": "The Banihal Pass connects which of the following regions?", "options": ["Connects Jammu and Srinagar", "Connects Manali and Leh", "Connects Kullu, Lahaul and Spiti Valley", "Connects Kashmir Valley and Kargil"], "correct_answer": 1, "rationale": "ಸರಿಯಾದ ಉತರ : A ಪೀರ್ ಪಂಜಾಲ್ ೕಣಿಯಲಿರುವ ಬನಿಹಾಲ್ ಕಣಿವೆ ಮಾಗ ( ಜವಾಹರ್ ಸುರಂಗ ) ಜಮು - ಶೀನಗರ ಹೆದಾರಿಯನು ಜೋಡಿಸುತದೆ . ಕಾಶೀರ - ಕಾಗಿಲ್ - ಜೋಜಿಲಾ ; ಮನಾಲಿ -..."}, {"id": "P1-Q062", "number": 62, "text": "Which type of soil in India is called as Tropical Chernozems?", "options": ["The Black soil", "The Red soil", "The Laterite soil", "The Alluvial soil"], "correct_answer": 1, "rationale": "ಸರಿಯಾದ ಉತರA--- PAGE 13 --- NHK VAO GK (04/10/2026) THE TARGET 100 ಇ ಹೆನ Study Materials ಗೆ ನಿಮ ನೆನ The target 100 telegram ಚಾನೆಲ್ Join ಅಗಿ 13 ಕಪು ಮಣು..."}, {"id": "P1-Q063", "number": 63, "text": "Match List – I with List – II and choose the correct answer:<br><br><table class=\"content-table\"><thead><tr><th>List – I (Ports)</th><th>List – II (Identification)</th></tr></thead><tbody><tr><td>(a) Mumbai Port</td><td>(i) Riverine Port</td></tr><tr><td>(b) Kolkata Port</td><td>(ii) Largest Port</td></tr><tr><td>(c) Chennai Port</td><td>(iii) Artificial Port</td></tr><tr><td>(d) New Mangalore Port</td><td>(iv) Oldest Port</td></tr></tbody></table><br><br>Codes:", "options": ["a – i, b – ii, c – iii, d – iv", "a – ii, b – i, c – iv, d – iii", "a – iv, b – i, c – ii, d – iii", "a – iii, b – iv, c – i, d – ii"], "correct_answer": 2, "rationale": "ಸರಿಯಾದ ಉತರ : B ಮುಂಬೈ - ಅತಿ ದೊಡ ನೈಸಗಿಕ ಬಂದರು ; ಕೋಲತಾ - ಹೂಗಿ ನದಿ ಅಳಿವೆಯ ಬಂದರು ; ಚೆನೆ - ಪೂವ ಕರಾವಳಿಯ ಅತಿ ಹಳೆಯ ಬಂದರು ; ನವ ಮಂಗಳೂರು - ಕೃತಕ ಆಳ ಸಮುದ ಬಂದರು ."}, {"id": "P1-Q064", "number": 64, "text": "Match List – I with List – II and choose the correct answer:<br><br><table class=\"content-table\"><thead><tr><th>List – I (Aluminium Company)</th><th>List – II (Location of Industry)</th></tr></thead><tbody><tr><td>(a) Hindalco</td><td>(i) Jharsuguda</td></tr><tr><td>(b) NALCO</td><td>(ii) Korba</td></tr><tr><td>(c) BALCO</td><td>(iii) Angul</td></tr><tr><td>(d) Vedanta</td><td>(iv) Renukoot</td></tr></tbody></table><br><br>Codes:", "options": ["a – iv, b – iii, c – ii, d – i", "a – ii, b – i, c – iii, d – iv", "a – iii, b – iv, c – ii, d – i", "a – iv, b – i, c – ii, d – iii"], "correct_answer": 1, "rationale": "ಸರಿಯಾದ ಉತರ : A HINDALCO - ರೇಣುಕೂಟ್ ( ಉತರ ಪದೇಶ ); NALCO - ಅಂಗುಲ್ (ಒಡಿಶಾ ); BALCO - ಕೋಬಾ ( ಛತೀಸ್ ಗಢ ); ವೇದಾಂತ - ಝಾಸುಗುಡಾ (ಒಡಿಶಾ )."}, {"id": "P1-Q065", "number": 65, "text": "Match List – I with List – II and choose the correct answer:<br><br><table class=\"content-table\"><thead><tr><th>List – I (Earth's Interiors)</th><th>List – II (Specification)</th></tr></thead><tbody><tr><td>(a) Ocean Crust</td><td>(i) Lower layer of the mantle</td></tr><tr><td>(b) Mesosphere</td><td>(ii) Outer part of the mantle</td></tr><tr><td>(c) Continental Crust</td><td>(iii) Lowest part of the crust</td></tr><tr><td>(d) Asthenosphere</td><td>(iv) Sial</td></tr></tbody></table><br><br>Codes:", "options": ["a – i, b – ii, c – iii, d – iv", "a – iii, b – i, c – iv, d – ii", "a – iii, b – ii, c – iv, d – i", "a – iv, b – iii, c – i, d – ii"], "correct_answer": 2, "rationale": "ಸರಿಯಾದ ಉತರ : B ಸಾಗರ ಕವಚ ( ಸಿಮಾ ) - ಭೂಕವಚದ ತಳಭಾಗ ; ಮೆಸೋಸಿಯರ್ - ಮಾಂಟಲ್ ನ ಕೆಳಪದರ ; ಭೂಖಂಡ ಕವಚ - ಸಿಯಾಲ್ (Si+Al); ಅಸೆನೋಸಿಯರ್ - ಮಾಂಟಲ್ ನ ಮೇಲದರ ( ಮೃದು ಪದರ )."}, {"id": "P1-Q066", "number": 66, "text": "Match List – I with List – II and choose the correct answer:<br><br><table class=\"content-table\"><thead><tr><th>List – I (Atmospheric Layers)</th><th>List – II (Major Characteristics)</th></tr></thead><tbody><tr><td>(a) Mesosphere</td><td>(i) Layer of earth's weak gravity</td></tr><tr><td>(b) Troposphere</td><td>(ii) Protector from meteors</td></tr><tr><td>(c) Ionosphere</td><td>(iii) Coldest layer of atmosphere</td></tr><tr><td>(d) Exosphere</td><td>(iv) Weather manufacturer</td></tr></tbody></table><br><br>Codes:", "options": ["a – iii, b – iv, c – ii, d – i", "a – ii, b – iii, c – iv, d – i", "a – iv, b – ii, c – i, d – iii", "a – i, b – iii, c – iv, d – ii"], "correct_answer": 1, "rationale": "ಸರಿಯಾದ ಉತರ : A ಮಧಗೋಳ ( ಮೆಸೋಸಿಯರ್ ) - ಅತಂತ ಶೀತ ಪದರ ( ≈ -90°C); ಪರಿವತನಾ ಗೋಳ ( ೕಪೋಸಿಯರ್ ) - ಹವಾಮಾನ ವಿದಮಾನಗಳು ಉಂಟಾಗುವ ಪದರ ; ಅಯಾನುಗೋಳ - ಉಲೆಗಳು ಉರಿ..."}, {"id": "P1-Q067", "number": 67, "text": "Identify the incorrect pair/pairs regarding the earthquake monitoring centres of India:<br><br>(a) Bengaluru - Karnataka<br>(b) Pune - Maharashtra<br>(c) Kodaikanal - Tamil Nadu<br>(d) Kolkata - West Bengal<br><br>Choose the correct answer from the options given below:", "options": ["(a) and (b) only", "(c) only", "(b) and (d) only", "(a) only"], "correct_answer": 4, "rationale": "ಸರಿಯಾದ ಉತರ : D ಪುಣೆ , ಕೊಡೈಕೆನಾಲ್ , ಕೋಲತಾ ( ಅಲಿಪುರ ) - ಹಳೆಯ ಪಮುಖ ಭೂಕಂಪನ ವೀಕ್ಷಣಾಲಯಗಳಾಗಿ ಪಠಪುಸಕಗಳಲಿ ಉಲೇಖಿತ . ಕನಾಟಕದ ಭೂಕಂಪನ ಕೇಂದ ಗೌರಿಬಿದನೂರು - ಬೆಂ..."}, {"id": "P1-Q068", "number": 68, "text": "Dr. Paramashivaiah Report is related to", "options": ["Water resources and drought", "Floods", "Interstate boundaries", "Industries"], "correct_answer": 1, "rationale": "ಸರಿಯಾದ ಉತರ : A ಡಾ . ಜಿ . ಎಸ್ . ಪರಮಶಿವಯ ಸಮಿತಿ - ಬರಪೀಡಿತ ಬಯಲುಸೀಮೆ ಜಿಲೆಗಳಿಗೆ ನೀರು ಪೂರೈಸಲು ಪಶಿಮವಾಹಿನಿ ನದಿಗಳ ನೀರನು ತಿರುಗಿಸುವ ಸಮಗ ಜಲಸಂಪನೂಲ ಯೋಜನೆ ( ಎತಿ..."}, {"id": "P1-Q069", "number": 69, "text": "Consider the following agricultural practices:<br><br>(a) Biodynamic farming<br>(b) Permaculture<br>(c) Concentrated Animal Feeding Operations (CAFOs)<br>(d) Farmer-Managed Natural Regeneration (FMNR)<br>(e) Monoculture-based industrial production<br><br>Which of the above are the considered forms of alternative agriculture or sustainable agro-ecological practices?", "options": ["(a), (b) and (d)", "(a), (c) and (e)", "(b), (c) and (e)", "(a), (b) and (c)"], "correct_answer": 1, "rationale": "ಸರಿಯಾದ ಉತರ : A ಬಯೋಡೈನಾಮಿಕ್ ಕೃಷಿ , ಪಮಾಕಲರ್ ಮತು FMNR ( ರೈತರೇ ನೈಸಗಿಕವಾಗಿ ಮರಗಳನು ಪುನರುತಾದಿಸುವುದು ) - ಸುಸಿರ ಕೃಷಿ - ಪರಿಸರ ವಿಧಾನಗಳು . CAFO ಮತು ಏಕಬೆಳೆ..."}, {"id": "P1-Q070", "number": 70, "text": "Consider the following ecosystem services:<br><br>(a) Water purification<br>(b) Provision of fresh water<br>(c) Pollination of crops<br>(d) Timber production<br>(e) Climate regulation<br><br>Which of the above are classified as 'regulating services' according to Millennium Ecosystem Assessment?", "options": ["(a), (b) and (d)", "(a), (c) and (e)", "(b), (c) and (d)", "(a), (d) and (e)"], "correct_answer": 2, "rationale": "ಸರಿಯಾದ ಉತರ : B MEA (2005) ಪಕಾರ ನಿಯಂತಣಾ ಸೇವೆಗಳು : ಜಲ ಶುದೀಕರಣ , ಪರಾಗಸಶ , ಹವಾಮಾನ ನಿಯಂತಣ , ೕಗ / ಪವಾಹ ನಿಯಂತಣ . ಸಿಹಿನೀರಿನ ಸರಬರಾಜು ಮತು ಮರದ ದಿಮಿ - ಒದಗ..."}, {"id": "P1-Q071", "number": 71, "text": "Consider the following pairs:<br><br><table class=\"content-table\"><thead><tr><th>Concepts</th><th>Applications</th></tr></thead><tbody><tr><td>(a) Carbon footprint</td><td>Measuring land area required to sustain population's consumption</td></tr><tr><td>(b) Water footprints</td><td>Calculating direct and indirect freshwater consumption by an individual or product</td></tr><tr><td>(c) Composting</td><td>Biological process of breaking down of organic waste into humus</td></tr><tr><td>(d) Lifecycle assessment</td><td>Evaluating environmental impacts of a product from raw material to disposal</td></tr></tbody></table><br><br>How many of the above pair(s) is/are correctly matched?", "options": ["Only one", "Only two", "Only three", "All the four"], "correct_answer": 3, "rationale": "Correct answer is option (3): ."}, {"id": "P1-Q072", "number": 72, "text": "The highest concentration of ozone occurs at what altitudes in tropics?", "options": ["From 25 to 42 km", "From 25 to 40 km", "From 26 to 28 km", "From 26 to 36 km"], "correct_answer": 3, "rationale": "ಸರಿಯಾದ ಉತರ : C ಓೕನ್ ಪದರ ಸುಮಾರು 15-35 ಕಿ . ಮೀ ಎತರದ ವಾಯುಮಂಡಲದಲಿದೆ . ಉವಲಯದಲಿ ಗರಿ ಸಾಂದ ತೆ 26-28 ಕಿ . ಮೀ ಎತರದಲಿ , ಧುವ ಪದೇಶದಲಿ ಇದು ಕಡಿಮೆ ಎತರದಲಿ..."}, {"id": "P1-Q073", "number": 73, "text": "Identify the correctly matched pairs:<br><br>(a) Red data book - Documenting extinction risk of biological species<br>(b) Green data book - To provide complete information related to environmental data<br>(c) Red data book - To provide general industrial pollution Statistics<br>(d) Green data book - To provide specific animal's population<br><br>Choose the correct answer from the options given below.", "options": ["(a) and (b)", "(a) and (d)", "(b) and (c)", "(c) and (a)"], "correct_answer": 1, "rationale": "ಸರಿಯಾದ ಉತರ : A IUCN ನ ರೆಡ್ ಡಾಟಾ ಪುಸಕ - ಅಳಿವಿನಂಚಿನ ಪಭೇದಗಳ ದಾಖಲೆ . ಗೀನ್ ಡಾಟಾ ಪುಸಕ - ಅಪರೂಪದ / ಸಳೀಯ ಸಸ ಪಭೇದಗಳು ಹಾಗೂ ಪರಿಸರ ಸಂಬಂಧಿತ ದತಾಂಶಗಳ ದಾಖಲೆ . ಕೆ..."}, {"id": "P1-Q074", "number": 74, "text": "Arrange the following in chronological order:<br><br>(a) Rhino Project<br>(b) Lion Project<br>(c) Elephant Project<br>(d) Tiger Project", "options": ["(b), (a), (d), (c)", "(b), (c), (a), (d)", "(b), (c), (d), (a)", "(b), (d), (a), (c)"], "correct_answer": 4, "rationale": "ಸರಿಯಾದ ಉತರ : D ಗಿರ್ ಲಯನ್ ಪಾಜೆಕ್ (1972) → ಪಾಜೆಕ್ ಟೈಗರ್ (1973) → ರೈನೋ ಸಂರಕ್ಷಣಾ ಯೋಜನೆ (1987) → ಪಾಜೆಕ್ ಎಲಿಫೆಂಟ್ (1992). ಆಯೆಗಳಲಿ ಲಯನ್ ನಂತರ ಟೈಗರ್..."}, {"id": "P1-Q075", "number": 75, "text": "Which of the following statements about tourist places of Karnataka is correct?", "options": ["Historian Percy Brown has described Pattadakallu as \"Cradle of temple architecture\"", "Once in 14 years in Talakadu, a famous religious fair \"Panchalinga Darshana\" is celebrated", "The road leading to 'Maravanthe beach' lies between Arabian Sea in the west and Sauparnika river in the east", "Gudavi Bird Sanctuary is located on the banks of Gudavi Lake Taluq of Sagara in Shivamogga district."], "correct_answer": 3, "rationale": "ಸರಿಯಾದ ಉತರ : C ಮರವಂತೆಯಲಿ NH-66 ಪಶಿಮದಲಿ ಅರಬೀ ಸಮುದ ಹಾಗೂ ಪೂವದಲಿ ಸೌಪಣಿಕಾ ನದಿಯ ನಡುವೆ ಸಾಗುತದೆ ✔ . ' ದೇವಾಲಯ ವಾಸುಶಿಲದ ತೊಟಿಲು ' - ಐಹೊಳೆ ; ಪಂಚಲಿಂಗ ದಶನ..."}, {"id": "P1-Q076", "number": 76, "text": "The features of parliamentary government in India are<br><br>(a) Nominal and real executives<br>(b) Collective responsibility<br>(c) Leadership of the President<br>(d) Majority party rule", "options": ["(a), (b) and (c) are correct", "(a), (b) and (d) are correct", "(a) and (b) are correct", "(b) and (d) are correct"], "correct_answer": 2, "rationale": "ಸರಿಯಾದ ಉತರ : B ಸಂಸದೀಯ ಸಕಾರದಲಿ ರಾಪತಿ ನಾಮಮಾತ ಮುಖಸ , ಪಧಾನಿ ನೇತೃತದ ಸಂಪುಟ ನೈಜ ಕಾಯಾಂಗ ; ಲೋಕಸಭೆಗೆ ಸಾಮೂಹಿಕ ಜವಾಬಾರಿ ; ಬಹುಮತ ಪಕ್ಷದ ಆಡಳಿತ . ನಾಯಕತ ಪಧಾನ..."}, {"id": "P1-Q077", "number": 77, "text": "Which of the following statements is/are correct?<br><br>(a) India has signed the NPT<br>(b) China has not signed the NPT<br>(c) India and Pakistan have not signed the NPT<br>(d) NPT has been signed by Iran and North Korea", "options": ["(c) only", "(a) and (b)", "(b) and (c)", "(c) and (d)"], "correct_answer": 1, "rationale": "ಸರಿಯಾದ ಉತರ : A ಭಾರತ , ಪಾಕಿಸಾನ , ಇಸೇಲ್ , ದಕ್ಷಿಣ ಸುಡಾನ್ NPT ಗೆ ಸಹಿ ಹಾಕಿಲ . ಚೀನಾ 1992 ರಲಿ ಸೇರಿದೆ . ಉತರ ಕೊರಿಯಾ 2003 ರಲಿ ಹಿಂದೆ ಸರಿದಿದೆ - ಆದರಿಂದ (d) ಸರಿ..."}, {"id": "P1-Q078", "number": 78, "text": "With reference to 'Agni-IV' missile, consider the following statements:<br><br>(a) It is a surface-to-surface missile<br><br>(b) It is fuelled by liquid propellant<br><br>(c) It was earlier known as 'Agni-II Prime'<br><br>(d) 'Agni-IV' is the 3<sup>rd</sup> in the Agni series<br><br>Based on the above statements choose the correct answer.", "options": ["(a), (b) and (c)", "(a), (c) and (d)", "(a) and (c)", "(a) and (d)"], "correct_answer": 3, "rationale": "ಸರಿಯಾದ ಉತರ : C ಅಗಿ -IV: ಭೂಮಿಯಿಂದ ಭೂಮಿಗೆ ಹಾರುವ ಮಧಂತರ ವಾಪಿಯ ( ≈ 4000 ಕಿ . ಮೀ ) ಕ್ಷಿಪಣಿ ; ಎರಡು ಹಂತದ ಘನ ಇಂಧನ ( ದವ ಅಲ ); ಮೊದಲ ಹೆಸರು 'ಅಗಿ -II ಮ್ '. ಇದು..."}, {"id": "P1-Q079", "number": 79, "text": "Match List – I with List – II and choose the correct answer:<br><br><table class=\"content-table\"><thead><tr><th>List - I (Air Commands)</th><th>List - II (Headquarters)</th></tr></thead><tbody><tr><td>(a) Eastern Air Command</td><td>(i) Thiruvananthapuram</td></tr><tr><td>(b) Southern Air Command</td><td>(ii) Prayagraj</td></tr><tr><td>(c) Western Air Command</td><td>(iii) Shillong</td></tr><tr><td>(d) Central Air Command</td><td>(iv) New Delhi</td></tr></tbody></table><br><br>Codes:", "options": ["a – iii, b – iv, c – i, d – ii", "a – iii, b – i, c – iv, d – ii", "a – ii, b – iv, c – i, d – iii", "a – ii, b – iii, c – i, d – iv"], "correct_answer": 2, "rationale": "ಸರಿಯಾದ ಉತರ : B ಭಾರತೀಯ ವಾಯುಪಡೆ ಕಮಾಂಡ್ ಗಳು : ಪೂವ - ಶಿಲಾಂಗ್ ; ದಕ್ಷಿಣ - ತಿರುವನಂತಪುರಂ ; ಪಶಿಮ - ನವದೆಹಲಿ ( ಸುಬೋತೋ ಪಾಕ್ ); ಕೇಂದ - ಪಯಾಗರಾಜ್ ; ನೈಋತ - ಗಾಂ..."}, {"id": "P1-Q080", "number": 80, "text": "Consider the following statements regarding the powers and functions of the Election Commission:<br><br>(a) To prepare, periodically revise electoral rolls and register all eligible voters<br><br>(b) To grant recognition to political parties and allot election symbols to them<br><br>(c) To advise the President on matters relating to the disqualifications of the Members of State Legislature<br><br>(d) To advise the President on matters relating to the disqualifications of the Members of Parliament<br><br>Choose the correct answer from the options given below.", "options": ["(a), (b) and (c)", "(b), (c) and (d)", "(a), (b) and (d)", "(c) and (d)"], "correct_answer": 3, "rationale": "ಸರಿಯಾದ ಉತರ : C ಸಂಸತ್ ಸದಸರ ಅನಹತೆ ಕುರಿತು ರಾಪತಿಗೆ ( ವಿಧಿ 103) ಹಾಗೂ ರಾಜ ಶಾಸಕರ ಅನಹತೆ ಕುರಿತು ರಾಜಪಾಲರಿಗೆ ( ವಿಧಿ 192) ಚುನಾವಣಾ ಆಯೋಗ ಸಲಹೆ ನೀಡುತದೆ . (c) ಯಲಿ..."}, {"id": "P1-Q081", "number": 81, "text": "Arrange the following in chronological order regarding the establishment of local self governments in India:<br><br>(a) Mysore and Bangalore Municipal Corporations<br><br>(b) Madras Municipal Corporation<br><br>(c) Bombay and Calcutta Municipal Corporations<br><br>(d) Ahmedabad Municipal Corporation", "options": ["(c), (b), (a), (d)", "(b), (c), (a), (d)", "(a), (c), (d), (b)", "(b), (d), (c), (a)"], "correct_answer": 2, "rationale": "ಸರಿಯಾದ ಉತರ : B ಮದಾಸ್ ಕಾಪೊರೇಷನ್ 1688 ( ಮೊದಲನೆಯದು ) → ಬಾಂಬೆ ಮತು ಕಲತಾ 1726 → ಮೈಸೂರು ಮತು ಬೆಂಗಳೂರು ಪುರಸಭೆಗಳು 1862 → ಅಹದಾಬಾದ್ ಮಹಾನಗರ ಪಾಲಿಕೆ 1950."}, {"id": "P1-Q082", "number": 82, "text": "Who is the 'de facto executive'?", "options": ["Governor", "Chief Minister", "High Court Judge of state", "Chief Election Commissioner of state"], "correct_answer": 2, "rationale": "ಸರಿಯಾದ ಉತರ : B ರಾಜದಲಿ ರಾಜಪಾಲರು ' ಡಿ ಜೂರ್ ' ( ನಾಮಮಾತ / ಕಾನೂನುಬದ ) ಕಾಯಾಂಗ ; ಮುಖಮಂತಿ ನೇತೃತದ ಮಂತಿಮಂಡಲ ' ಡಿ ಫಾಕೋ ' ( ನೈಜ ) ಕಾಯಾಂಗ ."}, {"id": "P1-Q083", "number": 83, "text": "Identify the incorrect statement/statements regarding reservation of seats in every Panchayat for Scheduled Castes (SCs) and Scheduled Tribes (STs):<br><br>(a) Article 243(G) explains about the number of seats reserved for Scheduled Castes and Scheduled Tribes<br><br>(b) Not less than one-third (1/3) of the total number of seats shall be reserved for women<br><br>(c) The offices of the Chairpersons shall be reserved for the Scheduled Castes and Scheduled Tribes as the Legislature of a state may by law<br><br>(d) The reserved seats may be allotted by rotation", "options": ["(b) and (c)", "(a) only", "(c) and (d)", "(c) only"], "correct_answer": 2, "rationale": "ಸರಿಯಾದ ಉತರ : B ಪಂಚಾಯಿತಿಗಳಲಿ SC/ST ಹಾಗೂ ಮಹಿಳಾ ಮೀಸಲಾತಿಯ ಬಗೆ ಹೇಳುವುದು ವಿಧಿ 243(D). ವಿಧಿ 243(G) - ಪಂಚಾಯಿತಿಗಳ ಅಧಿಕಾರ ಮತು ಜವಾಬಾರಿಗಳು (11 ನೇ ಅನುಸೂಚಿ ). ಉಳಿದ..."}, {"id": "P1-Q084", "number": 84, "text": "Expand PESA.", "options": ["Panchayats Election to the Scheduled Areas", "Panchayats Examination of the Scheduled Areas", "Panchayats Extension to the Scheduled Areas", "Panchayats Extension to the Social Areas"], "correct_answer": 3, "rationale": "ಸರಿಯಾದ ಉತರ : C PESA = Panchayats (Extension to the Scheduled Areas) Act, 1996 - 5 ನೇ ಅನುಸೂಚಿತ ಪದೇಶಗಳಿಗೆ ಪಂಚಾಯತ್ ವವಸೆ ವಿಸರಣೆ ; ದಿಲೀಪ್ ಸಿಂಗ್ ಭೂರಿಯಾ ಸಮಿ..."}, {"id": "P1-Q085", "number": 85, "text": "Which of the following states is not covered under the fifth Schedule of Indian Constitution?", "options": ["Haryana", "Gujarat", "Rajasthan", "Himachal Pradesh"], "correct_answer": 1, "rationale": "ಸರಿಯಾದ ಉತರ : A 5 ನೇ ಅನುಸೂಚಿತ ಪದೇಶಗಳಿರುವ 10 ರಾಜಗಳು : ಆಂಧಪದೇಶ , ತೆಲಂಗಾಣ , ಛತೀಸ್ ಗಢ , ಗುಜರಾತ್ , ಹಿಮಾಚಲ ಪದೇಶ , ಜಾಖಂಡ್ , ಮಧಪದೇಶ , ಮಹಾರಾ , ಒಡಿಶಾ..."}, {"id": "P1-Q086", "number": 86, "text": "Consider the following statements with reference to 73<sup>rd</sup> Constitutional Amendment Act, 1992 and give the correct answer:<br><br>Statement - I: 73<sup>rd</sup> Amendment Act, 1992 has given a practical shape to Article 40<br><br>Statement - II: Before the enactment of 73<sup>rd</sup> Amendment Act, 1992, there were <u>no</u> Panchayat Raj Institutions in India", "options": ["Both Statement I and Statement II are correct", "Both Statement I and Statement II are not correct", "Statement I is correct but Statement II is not correct", "Statement I is not correct but Statement II is correct"], "correct_answer": 3, "rationale": "ಸರಿಯಾದ ಉತರ : C ವಿಧಿ 40 (DPSP) - ಗಾಮ ಪಂಚಾಯಿತಿಗಳ ಸಂಘಟನೆ ; 73 ನೇ ತಿದುಪಡಿ ಇದಕೆ ಸಾಂವಿಧಾನಿಕ ಸಾನಮಾನ ನೀಡಿತು ✔ . ಆದರೆ 1959 ರಲೇ ರಾಜಸಾನದ ನಾಗೌರ್ ನಲಿ ಪಂಚಾಯತ್ ರ..."}, {"id": "P1-Q087", "number": 87, "text": "Which of the following provisions are the mandatory provisions under 73<sup>rd</sup> Constitutional Amendment Act?<br><br>(a) Grama Sabha<br><br>(b) Reservation of seats for Scheduled Caste and Scheduled Tribes in Panchayats<br><br>(c) Reservation of Seats for backward classes in Panchayats<br><br>(d) The Chairperson of Village Panchayat should be elected by direct election", "options": ["(a) and (d)", "(b) and (c)", "(b) and (d)", "(a) and (b)"], "correct_answer": 4, "rationale": "ಸರಿಯಾದ ಉತರ : D ಕಡಾಯ ಅಂಶಗಳು : ಗಾಮ ಸಭೆ , ಮೂರು ಹಂತದ ವವಸೆ , SC/ST ಹಾಗೂ ಮಹಿಳಾ ಮೀಸಲಾತಿ , 5 ವಷ ಅವಧಿ , ರಾಜ ಚುನಾವಣಾ ಆಯೋಗ , ರಾಜ ಹಣಕಾಸು ಆಯೋಗ . ಹಿಂದುಳಿದ ವಗಗಳ..."}, {"id": "P1-Q088", "number": 88, "text": "The Judge of the Supreme Court can be removed from his/her office by proved misbehaviour or incapacity by", "options": ["The Prime Minister", "The Attorney General of India", "The Parliament of India", "The State Legislature"], "correct_answer": 3, "rationale": "ಸರಿಯಾದ ಉತರ : C ವಿಧಿ 124(4): ಸಂಸತಿನ ಎರಡೂ ಸದನಗಳು ವೀಷ ಬಹುಮತದಿಂದ ಅಂಗೀಕರಿಸಿದ ನಿಣಯದ ಮೇರೆಗೆ ರಾಪತಿ ಆದೇಶ ಹೊರಡಿಸುತಾರೆ - ಪದಚುತಿ ಪಕಿಯೆಯ ಅಧಿಕಾರ ಸಂಸತಿನದು ."}, {"id": "P1-Q089", "number": 89, "text": "The Amendment which discontinued provision of special representation of the Anglo-Indian Community in the Lok Sabha is", "options": ["104<sup>th</sup> Amendment", "95<sup>th</sup> Amendment", "106<sup>th</sup> Amendment", "86<sup>th</sup> Amendment"], "correct_answer": 1, "rationale": "ಸರಿಯಾದ ಉತರ : A 104 ನೇ ತಿದುಪಡಿ (2019, ಜಾರಿ 2020) - ಲೋಕಸಭೆ ಹಾಗೂ ವಿಧಾನಸಭೆಗಳಲಿ ಆಂಗೋ - ಇಂಡಿಯನ್ ನಾಮನಿದೇಶನ ರದು ; SC/ST ಮೀಸಲಾತಿ 2030 ರವರೆಗೆ ವಿಸರಣೆ . 106..."}, {"id": "P1-Q090", "number": 90, "text": "Consider the following statements:<br><br>Statement I: Confidence of Parliament means confidence of the House of People.<br><br>Statement II: Responsibility of the executive means responsibility to the House of People<br><br>Choose the correct answer from the options given below.", "options": ["Both statements I and II are correct", "Both statements I and II are incorrect", "Statement I is correct but Statement II is incorrect", "Statement I is incorrect but Statement II is correct"], "correct_answer": 1, "rationale": "Correct answer is option (1): ."}, {"id": "P1-Q091", "number": 91, "text": "Consider the following statements and choose the correct answer:<br><br>Statement I: NOTA does not apply for proportional representation system of indirect election.<br><br>Statement II: In the direct election, NOTA facility is not provided for a voter", "options": ["Statement I is correct but Statement II is incorrect", "Statement II is correct but Statement I is incorrect", "Both statements I and II are incorrect", "Both statements I and II are correct"], "correct_answer": 1, "rationale": "ಸರಿಯಾದ ಉತರ : A 2018 ರಲಿ ಸುಪೀಂ ಕೋಟ್ ರಾಜಸಭಾ ಚುನಾವಣೆಯಂತಹ ಪೕಕ್ಷ (ಪಮಾಣಾನುಗುಣ ಪಾತಿನಿಧ ) ಚುನಾವಣೆಗಳಿಗೆ NOTA ಅನಯಿಸುವುದಿಲ ಎಂದಿದೆ ✔ . ಆದರೆ 2013 ರ PUCL ತೀಪ..."}, {"id": "P1-Q092", "number": 92, "text": "The states which have bicameral legislatures are<br><br>(a) Karnataka<br><br>(b) Kerala<br><br>(c) Bihar<br><br>(d) Tamil Nadu", "options": ["Only (a) and (b)", "Only (c) and (d)", "Only (a) and (c)", "Only (b) and (c)"], "correct_answer": 3, "rationale": "ಸರಿಯಾದ ಉತರ : C ವಿಧಿ 169 ರಂತೆ ವಿಧಾನ ಪರಿಷತು ಹೊಂದಿರುವ 6 ರಾಜಗಳು : ಕನಾಟಕ , ಬಿಹಾರ , ಮಹಾರಾ , ಉತರ ಪದೇಶ , ಆಂಧಪದೇಶ , ತೆಲಂಗಾಣ . ಕೇರಳ ಮತು ತಮಿಳುನಾಡು ಏಕಸದನ (..."}, {"id": "P1-Q093", "number": 93, "text": "The High Court has the power of superintendence over all courts and tribunals in its territorial jurisdiction. In this subject \"all courts\" means", "options": ["District Courts, Family Courts, Munsiff Courts", "District Courts, Munsiff Courts, Military Courts", "District Courts, Family Courts, Military Courts", "District Courts, Family Courts, Inter-State Water Tribunals"], "correct_answer": 1, "rationale": "ಸರಿಯಾದ ಉತರ : A ವಿಧಿ 227 ರಂತೆ ಹೈಕೋಟ್ ತನ ವಾಪಿಯ ಎಲಾ ನಾಯಾಲಯ / ನಾಯಮಂಡಳಿಗಳ ಮೇಲಿಚಾರಣೆ ನಡೆಸುತದೆ - ಸಶಸ ಪಡೆಗಳ ಮಿಲಿಟರಿ ನಾಯಾಲಯ / ನಾಯಮಂಡಳಿ ಹೊರತುಪಡಿಸಿ [227..."}, {"id": "P1-Q094", "number": 94, "text": "When no party has a clear majority in the Legislative Assembly, which of the following statements is correct?", "options": ["Must prove majority in the assembly before he/she is appointed as Chief Minister.", "The Governor has to first appoint the Chief Minister and then he/she has to prove majority in the assembly with a reasonable period", "The Constitution requires that a person must prove majority after two years he/she is appointed as Chief Minister", "That a person must prove majority after one year he/she is appointed as the Chief Minister"], "correct_answer": 2, "rationale": "ಸರಿಯಾದ ಉತರ : B ಅತಂತ ವಿಧಾನಸಭೆಯಲಿ ರಾಜಪಾಲರು ತಮ ವಿವೇಚನೆಯಿಂದ ಬಹುಮತ ಗಳಿಸಬಲ ನಾಯಕನನು ಮುಖಮಂತಿಯಾಗಿ ನೇಮಿಸಿ , ನಿಗದಿತ ಸಮಂಜಸ ಅವಧಿಯೊಳಗೆ ಸದನದಲಿ ವಿಶಾಸಮತ ಸಾಬೀತುಪ..."}, {"id": "P1-Q095", "number": 95, "text": "Consider the following statements and select the correct answer using the codes given below:<br><br>(a) In India, residuary powers are vested in the hands of Union Government (Article 248)<br><br>(b) State Governments can make legislations<br><br>(c) Union Government can make laws on it<br><br>(d) The President of India issues decree on it", "options": ["(a) and (c)", "(a) and (b)", "(b) and (c)", "(c) and (d)"], "correct_answer": 1, "rationale": "ಸರಿಯಾದ ಉತರ : A ವಿಧಿ 248 ಹಾಗೂ 7 ನೇ ಅನುಸೂಚಿಯ ಕೇಂದ ಪಟಿಯ 97 ನೇ ನಮೂದು ಪಕಾರ ಮೂರೂ ಪಟಿಗಳಲಿ ಇಲದ ವಿಷಯಗಳ ( ೕಷಾಧಿಕಾರ ) ಮೇಲೆ ಕಾನೂನು ರಚಿಸುವ ಅಧಿಕಾರ ಸಂಸತಿಗೆ ಮಾತ..."}, {"id": "P1-Q096", "number": 96, "text": "Pressure cooker used in kitchen works on the principle that", "options": ["Boiling point of water increases with increase in pressure", "Boiling point of water decreases with increase in pressure", "Boiling point of water increases with decrease in pressure", "Boiling point is independent of pressure"], "correct_answer": 1, "rationale": "ಸರಿಯಾದ ಉತರ : A ಕುಕರ್ ಒಳಗೆ ಆವಿ ಒತಡ ಹೆಚಾಗಿ ನೀರು ಸುಮಾರು 120°C ನಲಿ ಕುದಿಯುತದೆ ; ಇದರಿಂದ ಆಹಾರ ಬೇಗ ಬೇಯುತದೆ . ( ಎತರದ ಪದೇಶದಲಿ ಒತಡ ಕಡಿಮೆ - ಕುದಿಯುವ ಬಿಂದು..."}, {"id": "P1-Q097", "number": 97, "text": "MASER is an acronym for", "options": ["Microwave Amplification by Stimulated Emission of Radiation", "Microwave Amplification by Spontaneous Emission of Radiation", "Microwave Attenuation by Spontaneous Emission of Radiation", "Microwave Attenuation by Stimulated Emission of Radiation"], "correct_answer": 1, "rationale": "ಸರಿಯಾದ ಉತರ : A MASER = Microwave Amplification by Stimulated Emission of Radiation (1954, ಚಾಲ್ ಟೌನ್ ). LASER ನಲಿ 'M' ಬದಲು 'L' (Light) - ಎರಡರಲೂ 'Stimu..."}, {"id": "P1-Q098", "number": 98, "text": "Match List – I with List – II and select the correct answer using the codes given below:<br><br><table class=\"content-table\"><thead><tr><th>List – I</th><th>List – II</th></tr></thead><tbody><tr><td>(a) X-rays</td><td>(i) William Herschel</td></tr><tr><td>(b) Ultraviolet rays</td><td>(ii) W.C. Rontgen</td></tr><tr><td>(c) Infrared rays</td><td>(iii) Percy Spencer</td></tr><tr><td>(d) Microwave oven</td><td>(iv) J. W. Ritter</td></tr></tbody></table><br><br>Codes:", "options": ["a – i, b – iii, c – iv, d – ii", "a – ii, b – iv, c – i, d – iii", "a – iv, b – i, c – iii, d – ii", "a – ii, b – i, c – iv, d – iii"], "correct_answer": 2, "rationale": "ಸರಿಯಾದ ಉತರ : B ಎಕ್ - ಕಿರಣ - ರಾಂಟೆನ್ (1895); ನೇರಳಾತೀತ ಕಿರಣ - ಜೆ . ಡಬೂ . ರಿಟರ್ (1801); ಅತಿಗೆಂಪು ಕಿರಣ - ವಿಲಿಯಂ ಹಷೆಲ್ (1800); ಮೈಕೋವೇವ್ ಓವನ್ - ಪಸಿ..."}, {"id": "P1-Q099", "number": 99, "text": "Which is known as \"The gateway to empowering India's economy and power sector\"?", "options": ["Thorium-232", "Plutonium-239", "Potassium-40", "Uranium-238"], "correct_answer": 1, "rationale": "ಸರಿಯಾದ ಉತರ : A ಭಾರತದಲಿ ವಿಶದ ಅತಿ ದೊಡ ೕರಿಯಂ ನಿಕ್ಷೇಪಗಳಿವೆ ( ಕೇರಳದ ಮೊನಜೈಟ್ ಮರಳು ). ಹೋಮಿ ಭಾಭಾ ಅವರ ಮೂರು ಹಂತದ ಅಣು ಕಾಯಕಮದ ಅಂತಿಮ ಗುರಿ ೕರಿಯಂ -232 ಬಳಕೆ - ಇಂ..."}, {"id": "P1-Q100", "number": 100, "text": "In which of the following planets of the solar system, the Sun rises in the west?", "options": ["Mercury and Venus", "Mars and Uranus", "Venus and Uranus", "Jupiter and Venus"], "correct_answer": 3, "rationale": "ಸರಿಯಾದ ಉತರ : C ಶುಕ ಮತು ಯುರೇನಸ್ ಗಹಗಳು ಪೂವದಿಂದ ಪಶಿಮಕೆ ವಿರುದ ದಿಕಿನಲಿ (Retrograde) ತಮ ಅಕ್ಷದ ಸುತ ಸುತುತವೆ ; ಆದರಿಂದ ಅಲಿ ಸೂಯ ಪಶಿಮದಲಿ ಉದಯಿಸುತಾನೆ ."}]}, {"paper": "Paper 2", "title": "General Kannada, General English & Computer Knowledge", "duration_minutes": 120, "total_questions": 100, "marking": {"correct": 1.0, "wrong": -0.25, "unattempted": 0.0}, "questions": [{"id": "P2-Q001", "number": 1, "text": "ಲಕ್ಷ್ಮಿಯು <u>ಸೂರ್ಯೋದಯದ</u> ವೇಳೆಗೆ ಎದ್ದು <u>ವಿದ್ಯಾಭ್ಯಾಸವನ್ನು</u> ಮಾಡಲು <u>ಗುರೂಪದೇಶವನ್ನು</u> ಪಡೆದಳು.  <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3  <br>ಅಡಿಗೆರೆ ಎಳೆದ ಪದಗಳ ಸಂಧಿಗಳನ್ನು ಕ್ರಮವಾಗಿ ಗುರುತಿಸಿ.", "options": ["ಸವರ್ಣದೀರ್ಘ ಸಂಧಿ - ಸವರ್ಣದೀರ್ಘ ಸಂಧಿ - ಗುಣ ಸಂಧಿ", "ಸವರ್ಣದೀರ್ಘ ಸಂಧಿ - ಗುಣ ಸಂಧಿ - ಸವರ್ಣದೀರ್ಘ ಸಂಧಿ", "ಗುಣ ಸಂಧಿ - ಸವರ್ಣದೀರ್ಘ ಸಂಧಿ - ಸವರ್ಣದೀರ್ಘ ಸಂಧಿ", "ಗುಣ ಸಂಧಿ - ಗುಣ ಸಂಧಿ - ಸವರ್ಣದೀರ್ಘ ಸಂಧಿ"], "correct_answer": 3, "rationale": "ಸೂರ್ಯೋದಯ = ಸೂರ್ಯ+ಉದಯ (ಗುಣ ಸಂಧಿ); ವಿದ್ಯಾಭ್ಯಾಸ = ವಿದ್ಯಾ+ಅಭ್ಯಾಸ (ಸವರ್ಣದೀರ್ಘ); ಗುರೂಪದೇಶ = ಗುರು+ಉಪದೇಶ (ಸವರ್ಣದೀರ್ಘ). ಕ್ರಮ: ಗುಣ - ಸವರ್ಣದೀರ್ಘ - ಸವರ್ಣದೀರ್ಘ."}, {"id": "P2-Q002", "number": 2, "text": "ಕೆಳಗಿನ ಹೇಳಿಕೆಗಳನ್ನು ಪರಿಗಣಿಸಿ.<br><br>ಹೇಳಿಕೆ - I : ಪ್ಲುತ ಸ್ವರಗಳ ಮುಂದೆ ಸ್ವರ ಪರವಾದಾಗ ಸಂಧಿಕಾರ್ಯ ಮಾಡದಿರೆ ಅದನ್ನು ಪ್ರಕೃತಿಭಾವ ಎನ್ನುವರು.<br><br>ಹೇಳಿಕೆ - II : ಭಾವಸೂಚಕ ಅವ್ಯಯಗಳ ಮುಂದೆ ಸ್ವರ ಪರವಾದಾಗ ಸಂಧಿ ಕಾರ್ಯವಾಗುವುದಿಲ್ಲ.<br><br>ಕೆಳಗಿನ ಆಯ್ಕೆಗಳಿಂದ ಸರಿಯಾದ ಉತ್ತರವನ್ನು ಆರಿಸಿ.", "options": ["ಹೇಳಿಕೆ - I ಸರಿ, ಆದರೆ ಹೇಳಿಕೆ - II ತಪ್ಪು.", "ಹೇಳಿಕೆ - II ಸರಿ, ಆದರೆ ಹೇಳಿಕೆ - I ತಪ್ಪು.", "ಹೇಳಿಕೆ - I ಮತ್ತು ಹೇಳಿಕೆ - II ಎರಡೂ ಸರಿ.", "ಹೇಳಿಕೆ - I ಮತ್ತು ಹೇಳಿಕೆ - II ಎರಡೂ ತಪ್ಪು."], "correct_answer": 3, "rationale": "ಪ್ಲುತ ಸ್ವರಗಳ ಮುಂದೆ ಸ್ವರ ಪರವಾದಾಗ ಹಾಗೂ ಭಾವಸೂಚಕ ಅವ್ಯಯಗಳ ಮುಂದೆ ಸ್ವರ ಪರವಾದಾಗ ಸಂಧಿಕಾರ್ಯವಾಗದೆ ಪ್ರಕೃತಿಭಾವ ಉಳಿಯುತ್ತದೆ; ಎರಡೂ ಹೇಳಿಕೆಗಳು ಸರಿ."}, {"id": "P2-Q003", "number": 3, "text": "“ಮಾತು ಬಲ್ಲವಗೆ ಜಗಳವಿಲ್ಲ  <br>ಊಟ ಬಲ್ಲವಗೆ ರೋಗವಿಲ್ಲ ”<br><br>ಇದು ಯಾವ ಅಲಂಕಾರವಾಗಿದೆ?", "options": ["ರೂಪಕಾಲಂಕಾರ", "ಉಪಮಾಲಂಕಾರ", "ಅರ್ಥಾಂತರನ್ಯಾಸಾಲಂಕಾರ", "ದೃಷ್ಟಾಂತಾಲಂಕಾರ"], "correct_answer": 4, "rationale": "ವಾಕ್ಯಗಳೆರಡರ ನಡುವೆ ಉಪಮಾವಾಚಕವಿಲ್ಲದೆ ಬಿಂಬ-ಪ್ರತಿಬಿಂಬ ಭಾವದಿಂದ ಅರ್ಥ ವ್ಯಕ್ತವಾಗುವುದರಿಂದ ಇದು ದೃಷ್ಟಾಂತಾಲಂಕಾರವಾಗಿದೆ."}, {"id": "P2-Q004", "number": 4, "text": "ಈ ಕೆಳಗಿನವುಗಳಲ್ಲಿ ಸರಿಯಾಗಿರುವ ಜೋಡಿಗಳನ್ನು ಗುರುತಿಸಿ.<br><br>(a) ಕಂದಪದ್ಯದ ಮೊದಲ ಪಾದದಲ್ಲಿರುವ ಮಾತ್ರೆಗಳ ಸಂಖ್ಯೆ - 12  <br>(b) ಮಂದಾನಿಲ ರಗಳೆಯ ಮೊದಲ ಪಾದದಲ್ಲಿರುವ ಮಾತ್ರೆಗಳ ಸಂಖ್ಯೆ -16  <br>(c) ಭಾಮಿನಿ ಷಟ್ಪದಿಯ ಮೊದಲ ಪಾದದಲ್ಲಿರುವ ಮಾತ್ರೆಗಳ ಸಂಖ್ಯೆ - 16  <br>(d) ಲಲಿತ ರಗಳೆಯ ಮೊದಲ ಪಾದದಲ್ಲಿರುವ ಮಾತ್ರೆಗಳ ಸಂಖ್ಯೆ - 20", "options": ["(a) ಮತ್ತು (b) ಸರಿಯಾಗಿವೆ", "(b) ಮಾತ್ರ ಸರಿಯಾಗಿದೆ", "(a), (b) ಮತ್ತು (d) ಸರಿಯಾಗಿವೆ", "(b), (c) ಮತ್ತು (d) ಸರಿಯಾಗಿವೆ"], "correct_answer": 3, "rationale": "ಕಂದಪದ್ಯದ 1ನೇ ಪಾದದಲ್ಲಿ 12 ಮಾತ್ರೆಗಳು, ಮಂದಾನಿಲ ರಗಳೆಯಲ್ಲಿ 16, ಲಲಿತ ರಗಳೆಯಲ್ಲಿ 20 ಮಾತ್ರೆಗಳಿರುತ್ತವೆ (ಭಾಮಿನಿ ಷಟ್ಪದಿಯ 1ನೇ ಪಾದದಲ್ಲಿ 14 ಮಾತ್ರೆಗಳು). (a), (b), (d) ಸರಿ."}, {"id": "P2-Q005", "number": 5, "text": "‘ಐ’ ಅಕ್ಷರದ ಉತ್ಪತ್ತಿ ಸ್ಥಾನ ಯಾವುದು?", "options": ["ಕಂಠ್ಯ", "ತಾಲವ್ಯ", "ಕಂಠತಾಲವ್ಯ", "ದಂತ್ಯ"], "correct_answer": 3, "rationale": "ಅ/ಆ ಜೊತೆ ಇ/ಈ ಸೇರಿದಾಗ ಕಂಠ ಮತ್ತು ತಾಲವ್ಯ ಸ್ಥಾನಗಳ ಸಂಯೋಗದಿಂದ ‘ಐ’ ವರ್ಣವು ಉತ್ಪತ್ತಿಯಾಗುವುದರಿಂದ ಇದು ಕಂಠತಾಲವ್ಯವಾಗಿದೆ."}, {"id": "P2-Q006", "number": 6, "text": "ಹೊಂದಿಸಿ ಬರೆಯಿರಿ.<br><br><table class=\"content-table\"><thead><tr><th>ಪಟ್ಟಿ-I</th><th>ಪಟ್ಟಿ-II</th></tr></thead><tbody><tr><td>(a) ಉತ್ತ, ದ, ವ</td><td>(i) ವಿದ್ಯರ್ಥಕಗಳು</td></tr><tr><td>(b) ಅವನು, ಅವಳು, ಅದು</td><td>(ii) ಕಾಲಸೂಚಕಗಳು</td></tr><tr><td>(c) ಅನು, ಇಳು, ಇವೆ</td><td>(iii) ಆಖ್ಯಾತ ಪ್ರತ್ಯಯಗಳು</td></tr><tr><td>(d) ಬರೆ, ಆಡಿ, ಬಾ</td><td>(iv) ಪ್ರಥಮ ಪುರುಷ ಏಕವಚನ</td></tr></tbody></table><br><br>ಸಂಕೇತಗಳು:", "options": ["a – iv, b – i, c – ii, d – iii", "a – ii, b – iv, c – iii, d – i", "a – iii, b – iv, c – i, d – ii", "a – i, b – iii, c – ii, d – iv"], "correct_answer": 2, "rationale": "ಉತ್ತ/ದ/ವ ಕಾಲಸೂಚಕಗಳು (ii), ಅವನು/ಅವಳು/ಅದು ಪ್ರಥಮ ಪುರುಷ (iv), ಅನು/ಇಳು/ಇವೆ ಆಖ್ಯಾತ ಪ್ರತ್ಯಯಗಳು (iii), ಬರೆ/ಆಡಿ/ಬಾ ಧಾತು/ವಿದ್ಯರ್ಥಕ (i). ಕ್ರಮ: a-ii, b-iv, c-iii, d-i."}, {"id": "P2-Q007", "number": 7, "text": "ಆಖ್ಯಾತ ಪ್ರತ್ಯಯಗಳಲ್ಲಿ ಇದು ಪ್ರಧಾನವಾಗಿ ಇರುತ್ತದೆ.", "options": ["ಭಾವ", "ರೂಪ", "ಆತ್ಮ", "ದೇಹ"], "correct_answer": 1, "rationale": "ಆಖ್ಯಾತ ಪ್ರತ್ಯಯಗಳು ಕ್ರಿಯಾಪದದ ಕೊನೆಯಲ್ಲಿ ಸೇರಿ ಕ್ರಿಯೆಯ ಭಾವ/ಅರ್ಥ ಮತ್ತು ಲಿಂಗ-ವಚನ-ಪುರುಷಗಳನ್ನು ಪ್ರಧಾನವಾಗಿ ವ್ಯಕ್ತಪಡಿಸುತ್ತವೆ."}, {"id": "P2-Q008", "number": 8, "text": "ಕೆಳಗೆ ಕೊಟ್ಟಿರುವ ಪಟ್ಟಿ - I ನ್ನು ಪಟ್ಟಿ - II ರೊಂದಿಗೆ ಹೊಂದಿಸಿರುವ ಸರಿಯಾದ ಉತ್ತರವನ್ನು ಆರಿಸಿ.<br><br><table class=\"content-table\"><thead><tr><th>ಪಟ್ಟಿ - I</th><th>ಪಟ್ಟಿ - II</th></tr></thead><tbody><tr><td>(a) ಅನುಕರಣ ಅವ್ಯಯ</td><td>(i) ಆದ್ದರಿಂದ</td></tr><tr><td>(b) ಭಾವಸೂಚಕ ಅವ್ಯಯ</td><td>(ii) ಜುಳುಜುಳು</td></tr><tr><td>(c) ಕ್ರಿಯಾರ್ಥಕ ಅವ್ಯಯ</td><td>(iii) ಅಯ್ಯೋ</td></tr><tr><td>(d) ಸಂಬಂಧಾರ್ಥಕ ಅವ್ಯಯ</td><td>(iv) ಬೇಕು</td></tr></tbody></table><br><br>ಸಂಕೇತಗಳು:", "options": ["a – ii, b – iii, c – iv, d – i", "a – ii, b – iv, c – iii, d – i", "a – iii, b – ii, c – i, d – iv", "a – iv, b – iii, c – i, d – ii"], "correct_answer": 1, "rationale": "ಅನುಕರಣ ಅವ್ಯಯ (ಜುಳುಜುಳು - ii), ಭಾವಸೂಚಕ (ಅಯ್ಯೋ - iii), ಕ್ರಿಯಾರ್ಥಕ (ಬೇಕು - iv), ಸಂಬಂಧಾರ್ಥಕ (ಆದ್ದರಿಂದ - i). ಸಂಕೇತ: a-ii, b-iii, c-iv, d-i."}, {"id": "P2-Q009", "number": 9, "text": "ಈ ಕೆಳಗಿನವುಗಳಲ್ಲಿ ತಪ್ಪಾದ ಜೋಡಿ/ಜೋಡಿಗಳನ್ನು ಗುರುತಿಸಿ.<br><br>(a) ರುಧಿರ - ರಕ್ತ  <br>(b) ರಾತ್ರಿ - ನಿಶಾ  <br>(c) ರೋದನ - ಗೋಳಾಟ  <br>(d) ರಸನ - ಜಲನಿಧಿ", "options": ["(a) ಮತ್ತು (d)", "(d) ಮಾತ್ರ", "(b) ಮತ್ತು (c)", "(c) ಮಾತ್ರ"], "correct_answer": 2, "rationale": "ರುಧಿರ/ರಕ್ತ, ರಾತ್ರಿ/ನಿಶಾ, ರೋದನ/ಗೋಳಾಟ ಸಮಾನಾರ್ಥಕಗಳು; ರಸನ ಎಂದರೆ ನಾಲಿಗೆ/ರುಚಿ (ಜಲನಿಧಿ ಎಂದರೆ ಸಮುದ್ರ). ಆದ್ದರಿಂದ (d) ಮಾತ್ರ ತಪ್ಪಾಗಿದೆ."}, {"id": "P2-Q010", "number": 10, "text": "ಈ ಕೆಳಗಿನ ಪಟ್ಟಿ - I ನ್ನು ಪಟ್ಟಿ - II ರ ಜೊತೆ ಸರಿಯಾಗಿ ಹೊಂದಿಸಿ ಬರೆಯಿರಿ.<br><br><table class=\"content-table\"><thead><tr><th>ಪಟ್ಟಿ - I</th><th>ಪಟ್ಟಿ - II</th></tr></thead><tbody><tr><td>(a) ಪ್ರಕಾರವಾಚಕ</td><td>(i) ಬಡಗಲು</td></tr><tr><td>(b) ಪರಿಮಾಣವಾಚಕ</td><td>(ii) ನಾಲ್ವರು</td></tr><tr><td>(c) ದಿಗ್ವಾಚಕ</td><td>(iii) ನಾಲ್ಕು</td></tr><tr><td>(d) ಸಂಖ್ಯೇಯವಾಚಕ</td><td>(iv) ಕೆಲವು</td></tr><tr><td></td><td>(v) ಇಂಥವನು</td></tr></tbody></table><br><br>ಸಂಕೇತಗಳು:", "options": ["a – iii, b – v, c – ii, d – i", "a – v, b – iv, c – i, d – ii", "a – v, b – iv, c – ii, d – i", "a – ii, b – v, c – iv, d – iii"], "correct_answer": 2, "rationale": "ಪ್ರಕಾರವಾಚಕ (ಇಂಥವನು - v), ಪರಿಮಾಣವಾಚಕ (ಕೆಲವು - iv), ದಿಗ್ವಾಚಕ (ಬಡಗಲು - i), ಸಂಖ್ಯೇಯವಾಚಕ (ನಾಲ್ವರು - ii). ಸಂಕೇತ: a-v, b-iv, c-i, d-ii."}, {"id": "P2-Q011", "number": 11, "text": "ಈ ಕೆಳಗಿನವುಗಳಲ್ಲಿ ತಪ್ಪಾದ ಜೋಡಿಗಳನ್ನು ಗುರುತಿಸಿ.<br><br>(a) ಸರ್ವನಾಮ - ಅದು, ಅವು  <br>(b) ದ್ವಿರುಕ್ತಿ - ಸರಸರ, ಬೇಗ-ಬೇಗ  <br>(c) ಅವ್ಯಯ - ಚೆನ್ನಾಗಿ, ನೆಟ್ಟಗೆ  <br>(d) ನಾಮಪ್ರಕೃತಿ - ಮರ-ಗಳು", "options": ["(a) ಮತ್ತು (b)", "(b) ಮಾತ್ರ", "(c) ಮತ್ತು (d)", "(d) ಮತ್ತು (a)"], "correct_answer": 2, "rationale": "‘ಸರಸರ’ ಎಂಬುದು ಶಬ್ದಾನುಕರಣೆ (ಅನುಕರಣಾವ್ಯಯ), ದ್ವಿರುಕ್ತಿಯಲ್ಲ. ಆದ್ದರಿಂದ (b) ತಪ್ಪಾದ ಜೋಡಿಯಾಗಿದೆ."}, {"id": "P2-Q012", "number": 12, "text": "‘ಭೂತಯ್ಯನ ಮಗ ಅಯ್ಯು’ ಸಣ್ಣ ಕಥೆಯನ್ನು ಬರೆದವರು", "options": ["ಮಾಸ್ತಿ ವೆಂಕಟೇಶ ಅಯ್ಯಂಗಾರ್", "ಗೊರೂರು ರಾಮಸ್ವಾಮಿ ಐಯ್ಯಂಗಾರ್", "ಪಂಜೆ ಮಂಗೇಶರಾಯರು", "ಬಸವರಾಜ ಕಟ್ಟೀಮನಿ"], "correct_answer": 2, "rationale": "‘ಭೂತಯ್ಯನ ಮಗ ಅಯ್ಯು’ ಎಂಬ ಪ್ರಸಿದ್ಧ ಗ್ರಾಮೀಣ ಕಥೆಯನ್ನು ರಚಿಸಿದವರು ಗೊರೂರು ರಾಮಸ್ವಾಮಿ ಐಯ್ಯಂಗಾರ್."}, {"id": "P2-Q013", "number": 13, "text": "ಈ ಕೆಳಗಿನ ಪಟ್ಟಿ - I ನ್ನು ಪಟ್ಟಿ - II ರ ಜೊತೆ ಹೊಂದಿಸಿ, ಸರಿಯಾದ ಉತ್ತರವನ್ನು ಆರಿಸಿ.<br><br><table class=\"content-table\"><thead><tr><th>ಪಟ್ಟಿ - I<br>(ಕಥೆಗಾರರು)</th><th>ಪಟ್ಟಿ - II<br>(ಕಥಾ ಸಂಕಲನಗಳು)</th></tr></thead><tbody><tr><td>(a) ಭಾರತೀಪ್ರಿಯ</td><td>(i) ಸೂರ್ಯನ ಕುದುರೆ</td></tr><tr><td>(b) ಕೊಡಗಿನ ಗೌರಮ್ಮ</td><td>(ii) ಶವದ ಮನೆ</td></tr><tr><td>(c) ಚದುರಂಗ</td><td>(iii) ರುದ್ರವೀಣೆ</td></tr><tr><td>(d) ಯು.ಆರ್. ಅನಂತಮೂರ್ತಿ</td><td>(iv) ಕಂಬನಿ</td></tr></tbody></table><br><br>ಸಂಕೇತಗಳು:", "options": ["a – i, b – ii, c – iii, d – iv", "a – iii, b – ii, c – iv, d – i", "a – iii, b – iv, c – ii, d – i", "a – iv, b – iii, c – ii, d – i"], "correct_answer": 3, "rationale": "ಭಾರತೀಪ್ರಿಯ (ರುದ್ರವೀಣೆ - iii), ಕೊಡಗಿನ ಗೌರಮ್ಮ (ಕಂಬನಿ - iv), ಚದುರಂಗ (ಶವದ ಮನೆ - ii), ಯು.ಆರ್. ಅನಂತಮೂರ್ತಿ (ಸೂರ್ಯನ ಕುದುರೆ - i)."}, {"id": "P2-Q014", "number": 14, "text": "ಕೆಳಗಿನ ಪಟ್ಟಿ - I ನ್ನು ಪಟ್ಟಿ - II ರ ಜೊತೆ ಹೊಂದಿಸಿ, ಸರಿಯಾದ ಉತ್ತರವನ್ನು ಗುರುತಿಸಿರಿ.<br><br><table class=\"content-table\"><thead><tr><th>ಪಟ್ಟಿ - I</th><th>ಪಟ್ಟಿ - II</th></tr></thead><tbody><tr><td>(a) ಯಶೋಧರ ಚರಿತೆ</td><td>(i) ಸಾಂಗತ್ಯ</td></tr><tr><td>(b) ವೀರೇಶ್ವರ ಚರಿತೆ</td><td>(ii) ಕಂದ</td></tr><tr><td>(c) ಯೋಗಾಂಗ ತ್ರಿವಿಧಿ</td><td>(iii) ಷಟ್ಪದಿ</td></tr><tr><td>(d) ಮೋಹನ ತರಂಗಿಣಿ</td><td>(iv) ತ್ರಿಪದಿ</td></tr></tbody></table><br><br>ಸಂಕೇತಗಳು:", "options": ["a – iii, b – iv, c – i, d – ii", "a – iv, b – i, c – ii, d – iii", "a – ii, b – iii, c – iv, d – i", "a – i, b – iv, c – ii, d – iii"], "correct_answer": 3, "rationale": "ಯಶೋಧರ ಚರಿತೆ (ಕಂದ - ii), ವೀರೇಶ್ವರ ಚರಿತೆ (ಷಟ್ಪದಿ - iii), ಯೋಗಾಂಗ ತ್ರಿವಿಧಿ (ತ್ರಿಪದಿ - iv), ಮೋಹನ ತರಂಗಿಣಿ (ಸಾಂಗತ್ಯ - i)."}, {"id": "P2-Q015", "number": 15, "text": "“ನೀನ್ಯಾಕೋ ನಿನ್ನ ಹಂಗ್ಯಾಕೋ ನಿನ್ನ ನಾಮದ ಬಲವೊಂದಿದ್ದರೆ ಸಾಕೋ” ಇದು ಯಾರ ಕೀರ್ತನೆಯ ಸಾಲಾಗಿದೆ?", "options": ["ಶ್ರೀಪಾದರಾಯರು", "ವ್ಯಾಸರಾಯರು", "ಪುರಂದರದಾಸರು", "ಕನಕದಾಸರು"], "correct_answer": 3, "rationale": "“ನೀನ್ಯಾಕೋ ನಿನ್ನ ಹಂಗ್ಯಾಕೋ ನಿನ್ನ ನಾಮದ ಬಲವೊಂದಿದ್ದರೆ ಸಾಕೋ” ಎಂಬುದು ಕರ್ನಾಟಕ ಸಂಗೀತ ಪಿತಾಮಹ ಪುರಂದರದಾಸರ ಪ್ರಸಿದ್ಧ ಕೀರ್ತನೆಯಾಗಿದೆ."}, {"id": "P2-Q016", "number": 16, "text": "‘ಕರ್ಮಾರ್ಥ’ ಕಾರಕವನ್ನು ಬಯಸುವ ವಿಭಕ್ತಿ ಯಾವುದು?", "options": ["ಪ್ರಥಮಾ", "ಷಷ್ಠೀ", "ದ್ವಿತೀಯಾ", "ಪಂಚಮೀ"], "correct_answer": 3, "rationale": "ದ್ವಿತೀಯಾ ವಿಭಕ್ತಿಯು ವ್ಯಾಕರಣದಲ್ಲಿ ಕ್ರಿಯೆಯ ಫಲವನ್ನು ಅನುಭವಿಸುವ ಕರ್ಮಾರ್ಥ (ಕರ್ಮ ಕಾರಕ) ಕಾರಕಾರ್ಥವನ್ನು ಬಯಸುತ್ತದೆ."}, {"id": "P2-Q017", "number": 17, "text": "ಈ ಕೆಳಗಿನವುಗಳನ್ನು ಹೊಂದಿಸಿ ಬರೆಯಿರಿ.<br><br><table class=\"content-table\"><thead><tr><th>ಪಟ್ಟಿ-I</th><th>ಪಟ್ಟಿ-II</th></tr></thead><tbody><tr><td>(a) ವ್ಯಷ್ಟಿ</td><td>(i) ಕಪಟ</td></tr><tr><td>(b) ಲೇಪ</td><td>(ii) ನಿಂದ್ಯ</td></tr><tr><td>(c) ಮುಗ್ಧ</td><td>(iii) ನಿರ್ಲೇಪ</td></tr><tr><td>(d) ವಂದ್ಯ</td><td>(iv) ಸಮಷ್ಟಿ</td></tr></tbody></table><br><br>ಸಂಕೇತಗಳು:", "options": ["a – iv, b – ii, c – iii, d – i", "a – iii, b – ii, c – i, d – iv", "a – iv, b – iii, c – i, d – ii", "a – i, b – iii, c – iv, d – ii"], "correct_answer": 3, "rationale": "ವಿರುದ್ಧ ಪದಗಳು: ವ್ಯಷ್ಟಿ × ಸಮಷ್ಟಿ (iv), ಲೇಪ × ನಿರ್ಲೇಪ (iii), ಮುಗ್ಧ × ಕಪಟ (i), ವಂದ್ಯ × ನಿಂದ್ಯ (ii). ಸಂಕೇತ: a-iv, b-iii, c-i, d-ii."}, {"id": "P2-Q018", "number": 18, "text": "ಈ ಕೆಳಗೆ ನೀಡಲಾದ ನುಡಿಗಟ್ಟಿಗೆ ಸರಿಯಾದ ಅರ್ಥವನ್ನು ಗುರುತಿಸಿ.<br><br>‘ಈ ಕಿವಿಯಲ್ಲಿ ಕೇಳು, ಆ ಕಿವಿಯಲ್ಲಿ ಬಿಡು’.", "options": ["ಗಮನವಿಟ್ಟು ಕೇಳು", "ನಿರ್ಲಕ್ಷಿಸು", "ಕೇಳಿಸದವನಂತೆ ನಟಿಸು", "ಒಬ್ಬರಿಂದ ಒಬ್ಬರಿಗೆ ಚಾಡಿ ಹೇಳು"], "correct_answer": 2, "rationale": "‘ಈ ಕಿವಿಯಲ್ಲಿ ಕೇಳು, ಆ ಕಿವಿಯಲ್ಲಿ ಬಿಡು’ ಎಂಬ ನುಡಿಗಟ್ಟು ಕೇಳಿದ ವಿಷಯವನ್ನು ಗಮನಿಸದೆ ನಿರ್ಲಕ್ಷಿಸುವುದನ್ನು ಸೂಚಿಸುತ್ತದೆ."}, {"id": "P2-Q019", "number": 19, "text": "‘ಮನೀಷಿ’ ಪದದ ಸಮಾನಾರ್ಥಕ ಪದಗಳು ಯಾವುವು?", "options": ["ಪಂಡಿತ, ವಿದ್ವಾಂಸ", "ಆತ್ಮಸಾಕ್ಷಿ, ಅಂತರಂಗ", "ಕಾಂತಿ, ಕಿರಣ", "ದಡ್ಡ, ತಿಳಿಗೇಡಿ"], "correct_answer": 1, "rationale": "‘ಮನೀಷಿ’ ಎಂಬ ಸಂಸ್ಕೃತ ತತ್ಸಮ ಪದವು ಬುದ್ಧಿವಂತ, ಪಂಡಿತ, ವಿದ್ವಾಂಸ ಎಂಬ ಅರ್ಥವನ್ನು ನೀಡುತ್ತದೆ."}, {"id": "P2-Q020", "number": 20, "text": "ಈ ಕೆಳಗಿನವುಗಳನ್ನು ಪರಿಗಣಿಸಿ.<br><br>(a) ಕಂದರ್ಪ, ಅನಂಗ, ಮನಸಿಜ, ಶರ್ವ<br>(b) ಮಹಿಷ, ಉಲಾಮ, ಕಾಸಾರ, ಕೋಣ<br>(c) ಬೇಡ, ಕಿರಾತ, ಶಬರ, ವ್ಯಾಧ<br>(d) ಬಿಲ್ಲು, ಚಾಪ, ಕೋದಂಡ, ಶಾಂಡಿಲ್ಯ<br><br>ಮೇಲಿನವುಗಳಲ್ಲಿ ಗುಂಪಿಗೆ ಸೇರದಿರುವುದನ್ನು ಗುರುತಿಸಿ.", "options": ["(a) ಮತ್ತು (d)", "(a) ಮತ್ತು (c)", "(b) ಮತ್ತು (c)", "(c) ಮತ್ತು (d)"], "correct_answer": 1, "rationale": "ಗುಂಪಿಗೆ ಸೇರದ ಪದಗಳು: (a) ಯಲ್ಲಿ ಶರ್ವ (ಶಿವ; ಉಳಿದವು ಮನ್ಮಥ), (d) ಯಲ್ಲಿ ಶಾಂಡಿಲ್ಯ (ಋಷಿ; ಉಳಿದವು ಬಿಲ್ಲು). ಆದ್ದರಿಂದ (a) ಮತ್ತು (d) ಗುಂಪಿಗೆ ಸೇರಿಲ್ಲ."}, {"id": "P2-Q021", "number": 21, "text": "‘ನೀನ್’ ಎಂಬುದು ಈ ಕೆಳಗಿನ ಯಾವ ಪುರುಷವಾಚಕ ರೂಪವಾಗಿದೆ?", "options": ["ಉತ್ತಮ ಪುರುಷ", "ಪ್ರಥಮ ಪುರುಷ", "ಅಧಮ ಪುರುಷ", "ಮಧ್ಯಮ ಪುರುಷ"], "correct_answer": 4, "rationale": "‘ನೀನ್’ (ನೀನು) ಎಂಬುದು ಎದುರಿಗಿರುವ ವ್ಯಕ್ತಿಯನ್ನು ಸಂಬೋಧಿಸುವ ದ್ವಿತೀಯ ಪುರುಷ / ಮಧ್ಯಮ ಪುರುಷ ಸರ್ವನಾಮವಾಗಿದೆ."}, {"id": "P2-Q022", "number": 22, "text": "ಈ ಕೆಳಗಿನವುಗಳನ್ನು ಹೊಂದಿಸಿ ಬರೆಯಿರಿ.<br><br><table class=\"content-table\"><thead><tr><th>ಪಟ್ಟಿ-I</th><th>ಪಟ್ಟಿ-II</th></tr></thead><tbody><tr><td>(a) ಊರಲ್ಲಿ</td><td>(i) ಯಕಾರಾಗಮ ಸಂಧಿ</td></tr><tr><td>(b) ನಿನಗಲ್ಲದೆ</td><td>(ii) ಉಕಾರ ಲೋಪಸಂಧಿ</td></tr><tr><td>(c) ಕೈಯನ್ನು</td><td>(iii) ವಕಾರಾಗಮ ಸಂಧಿ</td></tr><tr><td>(d) ಗೋವಿಂದ</td><td>(iv) ಎಕಾರ ಲೋಪಸಂಧಿ</td></tr></tbody></table><br><br>ಸಂಕೇತಗಳು:", "options": ["a – iii, b – iv, c – i, d – ii", "a – iii, b – iv, c – ii, d – i", "a – ii, b – i, c – iv, d – iii", "a – ii, b – iv, c – i, d – iii"], "correct_answer": 4, "rationale": "ಊರಲ್ಲಿ (ಉಕಾರ ಲೋಪ - ii), ನಿನಗಲ್ಲದೆ (ಎಕಾರ ಲೋಪ - iv), ಕೈಯನ್ನು (ಯಕಾರಾಗಮ - i), ಗೋವಿಂದ (ವಕಾರಾಗಮ - iii). ಸಂಕೇತ: a-ii, b-iv, c-i, d-iii."}, {"id": "P2-Q023", "number": 23, "text": "ಕೆಳಗಿನ ತತ್ಸಮ-ತದ್ಭವಗಳಲ್ಲಿ ಸರಿಯಾಗಿ ಹೊಂದಾಣಿಕೆಯಾಗದ ಜೋಡಿಗಳನ್ನು ಗುರುತಿಸಿ.<br><br>(a) ನಾವಿಕ – ಆವಿಕ<br>(b) ಉಪಾಧ್ಯ – ಉವಜ್ಜ<br>(c) ಆಶ್ಚರ್ಯ – ಅಚ್ಚರಿ<br>(d) ಪಾರ್ಶ್ವ – ಪಂಚೆತ್ತು", "options": ["(a) ಮತ್ತು (b)", "(b) ಮತ್ತು (c)", "(c) ಮತ್ತು (d)", "(a) ಮತ್ತು (d)"], "correct_answer": 4, "rationale": "ನಾವಿಕ -> ನಾವಿಗ (ಆವಿಕ ತಪ್ಪು), ಪಾರ್ಶ್ವ -> ಪಕ್ಕ/ಪಸ (ಪಂಚೆತ್ತು ತಪ್ಪು). ಆದ್ದರಿಂದ ಹೊಂದಾಣಿಕೆಯಾಗದ ಜೋಡಿಗಳು (a) ಮತ್ತು (d)."}, {"id": "P2-Q024", "number": 24, "text": "ವಾಕ್ಯದಲ್ಲಿ ಬಿಟ್ಟು ಹೋಗಿರುವ ಪದಗಳನ್ನು ವಾಕ್ಯಾರ್ಥದ ಪೂರ್ತಿಗಾಗಿ ಇರುವ ಪದಗಳ ಆಧಾರದಿಂದ ಊಹಿಸಿಕೊಂಡು ಸೇರಿಸುವುದನ್ನು _______ ಎನ್ನುತ್ತಾರೆ.", "options": ["ಪ್ರಕ್ರಿಯೆ", "ವಿಕಲ್ಪ", "ಅಧ್ಯಾಹಾರ", "ದ್ವಿರುಕ್ತಿ"], "correct_answer": 3, "rationale": "ವಾಕ್ಯದಲ್ಲಿ ನೇರವಾಗಿ ಹೇಳದಿದ್ದರೂ ಸಂದರ್ಭಾನುಸಾರ ಅರ್ಥ ಪೂರ್ತಿಗಾಗಿ ಊಹಿಸಿ ಗ್ರಹಿಸುವ ಪದಸೇರ್ಪಡೆಗೆ ವ್ಯಾಕರಣದಲ್ಲಿ ‘ಅಧ್ಯಾಹಾರ’ ಎನ್ನುತ್ತಾರೆ."}, {"id": "P2-Q025", "number": 25, "text": "‘ದೇವಋಷಿಧರ್ಮ’ ಪದವು ಯಾವ ಸಮಾಸಕ್ಕೆ ಉದಾಹರಣೆಯಾಗಿದೆ?", "options": ["ಕರ್ಮಧಾರಯ ಸಮಾಸ", "ತತ್ಪುರುಷ ಸಮಾಸ", "ದ್ವಂದ್ವ ಸಮಾಸ", "ಅರಿ ಸಮಾಸ"], "correct_answer": 3, "rationale": "ದೇವನೂ, ಋಷಿಯೂ, ಧರ್ಮವೂ - ಎಲ್ಲ ಪೂರ್ವ ಮತ್ತು ಉತ್ತರ ಪದಗಳೂ ಪ್ರಧಾನವಾಗಿರುವ ಸಮಸ್ತ ಪದವು ದ್ವಂದ್ವ ಸಮಾಸವಾಗಿದೆ."}, {"id": "P2-Q026", "number": 26, "text": "ಈ ಕೆಳಗಿನ ಹೇಳಿಕೆಗಳನ್ನು ಪರಿಗಣಿಸಿ.<br><br>ಹೇಳಿಕೆ-I : ಕನ್ನಡ ಪದದೊಡನೆ ಸಂಸ್ಕೃತ ಪದವನ್ನು ಸೇರಿಸಿ ಸಮಾಸ ಮಾಡಬಾರದು. ಹಾಗೆ ಮಾಡಿದರೆ ಅದನ್ನು ಅರಿ ಸಮಾಸ ಎನ್ನುವರು.<br><br>ಹೇಳಿಕೆ-II : ಪೂರ್ವಕವಿಗಳ ಕಾವ್ಯ ಪ್ರಯೋಗಗಳಲ್ಲಿ, ಬಿರುದಾವಳಿಗಳಲ್ಲಿ, ಗಮಕ ಸಮಾಸ ಮತ್ತು ಕ್ರಿಯಾ ಸಮಾಸಗಳಲ್ಲಿ ದೋಷವಿಲ್ಲ.<br><br>ಸರಿಯಾದ ಉತ್ತರವನ್ನು ಆರಿಸಿ.", "options": ["ಹೇಳಿಕೆ -II ಸರಿ, ಆದರೆ ಹೇಳಿಕೆ -I ತಪ್ಪು", "ಹೇಳಿಕೆ -I ಸರಿ, ಆದರೆ ಹೇಳಿಕೆ -II ತಪ್ಪು", "ಹೇಳಿಕೆ -I ಮತ್ತು ಹೇಳಿಕೆ -II ಸರಿ.", "ಹೇಳಿಕೆ -I ಮತ್ತು ಹೇಳಿಕೆ -II ತಪ್ಪು."], "correct_answer": 3, "rationale": "ಕನ್ನಡ-ಸಂಸ್ಕೃತ ಬೆರೆಸಿದರೆ ಅರಿಸಮಾಸವೆಂಬ ನಿಯಮ ಹಾಗೂ ಪ್ರಾಚೀನ ಕವಿಪ್ರಯೋಗ, ಬಿರುದಾವಳಿ, ಗಮಕ/ಕ್ರಿಯಾಸಮಾಸಗಳಲ್ಲಿ ದೋಷವಿಲ್ಲವೆಂಬ ವಿನಾಯಿತಿ ಎರಡೂ ಸರಿ."}, {"id": "P2-Q027", "number": 27, "text": "‘ಕಾರ್ವಳ್’ ಪದದ ಅರ್ಥವನ್ನು ಗುರುತಿಸಿ.", "options": ["ದುಃಖ", "ಕತ್ತಲು", "ಮೌನ", "ಶಾಂತತೆ"], "correct_answer": 2, "rationale": "ಹಳಗನ್ನಡದಲ್ಲಿ ‘ಕಾರ್ವಳ್’ (ಕಾರ್+ಒಳ್) ಪದವು ಗಾಢವಾದ ಕತ್ತಲು ಎಂಬ ಅರ್ಥವನ್ನು ಕೊಡುತ್ತದೆ."}, {"id": "P2-Q028", "number": 28, "text": "‘ನಿಂದಿಸುವರ್ ದುರ್ಜನರ್ ಎಂದಿಂಪು ಬಾಯ್ವೊತ್ತು ಸುಕವಿ ರಚಿಸನೆ ಕೃತಿಯಂ’ - ಈ ವಾಕ್ಯದಲ್ಲಿರುವ ಅಲಂಕಾರವನ್ನು ಗುರುತಿಸಿ.", "options": ["ಅರ್ಥಾಂತರನ್ಯಾಸಾಲಂಕಾರ", "ಶ್ಲೇಷಾಲಂಕಾರ", "ಉತ್ಪ್ರೇಕ್ಷಾಲಂಕಾರ", "ದೃಷ್ಟಾಂತಾಲಂಕಾರ"], "correct_answer": 1, "rationale": "ದುರ್ಜನರು ನಿಂದಿಸುತ್ತಾರೆಂದು ಕವಿ ಕೃತಿ ರಚಿಸದೆ ಇರಲಾರನೆಂಬ ವಿಶೇಷವನ್ನು ಸಾಮಾನ್ಯ ಲೋಕನೀತಿಯಿಂದ ಸಮರ್ಥಿಸಿರುವುದರಿಂದ ಇದು ಅರ್ಥಾಂತರನ್ಯಾಸಾಲಂಕಾರ."}, {"id": "P2-Q029", "number": 29, "text": "‘ಖಾನ ದೇಶವು ಮಲೇರಿಯಾದಿಂದ ಕೂಡಿ, ವಿಶ್ವೇಶ್ವರಯ್ಯನವರ ಆರೋಗ್ಯದ ಮೇಲೆ ದುಷ್ಪರಿಣಾಮ ಮಾಡಿ, ಅವರು ಅಲ್ಲಿಂದ ವರ್ಗವಾಗುವಂತೆ ಮಾಡಿತು’ - ಇದು ಈ ಬಗೆಯ ವಾಕ್ಯ", "options": ["ಸಾಮಾನ್ಯ ವಾಕ್ಯ", "ಸಂಯೋಜಿತ ವಾಕ್ಯ", "ಮಿಶ್ರ ವಾಕ್ಯ", "ಸಂದಿಗ್ಧ ವಾಕ್ಯ"], "correct_answer": 2, "rationale": "ಪರಸ್ಪರ ಅವಲಂಬಿತ ಹಲವು ಉಪವಾಕ್ಯಗಳು ಪ್ರಧಾನ ವಾಕ್ಯದೊಡನೆ ಸೇರಿರುವುದರಿಂದ ಇದು ಸಂಯೋಜಿತ ವಾಕ್ಯವಾಗಿದೆ."}, {"id": "P2-Q030", "number": 30, "text": "‘ಅನುಜರವರಿರಲೇಕೆ’ - ಈ ಪದವನ್ನು ವಿಂಗಡಿಸಿ ಬರೆದ ಸರಿಯಾದ ರೂಪ ಯಾವುದು?", "options": ["ಅನುಜರವರು + ಇರಲೇಕೆ", "ಅನುಜರು + ಅವರಿರಲು + ಏಕೆ", "ಅನುಜರವರಿಲು + ಏಕೆ", "ಅನುಜರು + ಅವರು + ಇರಲು + ಏಕೆ"], "correct_answer": 4, "rationale": "ಸಂಧಿ ನಿಯಮದಂತೆ ಪೂರ್ಣ ಪದ ವಿಂಗಡಣೆ: ಅನುಜರು + ಅವರು + ಇರಲು + ಏಕೆ = ಅನುಜರವರಿರಲೇಕೆ (ಲೋಪ ಸಂಧಿ ಸರಣಿ)."}, {"id": "P2-Q031", "number": 31, "text": "‘ಮಜ್ಜಿಗೆ ಒಯ್ದಾರಾ ಊರಂತಾರಾ ಸೊಲಕ್ಕೊಂದು ಬಂಗಾರ್ ಬಳಿ ಜೋಡಾ’ - ಈ ವಾಕ್ಯದಲ್ಲಿರುವ ‘ಸೊಲ’ ಪದದ ಅರ್ಥವನ್ನು ಗುರುತಿಸಿ.", "options": ["ಎಮ್ಮೆ, ಆಕಳ", "ಕುಸ್ತಿ, ಮೈದಾನ", "ಪಡಸಾಲೆ, ಅಂಗಳ", "ಶಾಲಾ, ಖರ್ಚಿ"], "correct_answer": 1, "rationale": "ಉತ್ತರ ಕರ್ನಾಟಕದ ಜನಪದ ಆಡುಭಾಷೆಯಲ್ಲಿ ‘ಸೊಲ/ಸೊಲಗು’ ಎಂದರೆ ಹಾಲು ಕರೆಯುವ ಎಮ್ಮೆ ಅಥವಾ ಆಕಳಿನ ಪಶುಧನವನ್ನು ಸೂಚಿಸುತ್ತದೆ."}, {"id": "P2-Q032", "number": 32, "text": "ಯಾವ ವಿಭಕ್ತಿಯು ಕಾರಕಾರ್ಥವನ್ನು ಹೊಂದಿಲ್ಲ ?", "options": ["ಚತುರ್ಥಿ", "ಪಂಚಮೀ", "ಷಷ್ಠಿ", "ಸಪ್ತಮೀ"], "correct_answer": 3, "rationale": "ಷಷ್ಠೀ ವಿಭಕ್ತಿಯು ಕೇವಲ ನಾಮಪದಗಳ ನಡುವಿನ ಸ್ವಾಮಿ-ಸೇವಕ, ಜನ್ಯ-ಜನಕ ಮುಂತಾದ ಸಂಬಂಧಾರ್ಥವನ್ನು ಹೇಳುವುದರಿಂದ ಇದಕ್ಕೆ ಸ್ವತಂತ್ರ ಕಾರಕಾರ್ಥವಿಲ್ಲ."}, {"id": "P2-Q033", "number": 33, "text": "ಅಣ್ಣ ಅಣ್ಣ ಈ ಸಂಕಟವನ್ನು ಹೇಗೆ ನೋಡಲಿ - ಈ ವಾಕ್ಯಕ್ಕೆ ಸರಿಯಾದ ಲೇಖನ ಚಿಹ್ನೆ ಹಾಕಿರುವುದನ್ನು ಗುರುತಿಸಿ.", "options": ["ಅಣ್ಣ, ಅಣ್ಣ, ಈ ಸಂಕಟವನ್ನು ; ಹೇಗೆ ನೋಡಲಿ?", "ಅಣ್ಣ, ಅಣ್ಣ, ಈ ಸಂಕಟವನ್ನು ಹೇಗೆ ನೋಡಲಿ?", "ಅಣ್ಣ! ಅಣ್ಣ! ಈ ಸಂಕಟವನ್ನು ಹೇಗೆ ನೋಡಲಿ?", "ಅಣ್ಣ, ಅಣ್ಣ, ಈ ಸಂಕಟವನ್ನು ಹೇಗೆ? ನೋಡಲಿ."], "correct_answer": 2, "rationale": "ಸಂಬೋಧನೆ ಹಾಗೂ ಪ್ರಶ್ನಾರ್ಥಕ ರಚನೆಯಿರುವ ವಾಕ್ಯಕ್ಕೆ ಸರಿಯಾದ ಲೇಖನ ಚಿಹ್ನೆ: ಅಣ್ಣ, ಅಣ್ಣ, ಈ ಸಂಕಟವನ್ನು ಹೇಗೆ ನೋಡಲಿ?"}, {"id": "P2-Q034", "number": 34, "text": "ಕೆಳಗಿನ ಹೇಳಿಕೆಗಳನ್ನು ಪರಿಗಣಿಸಿ.<br><br>(a) ಆ, ಕ, ಹ ವರ್ಣಗಳು ಕಂಠ್ಯಗಳಾಗಿವೆ.<br>(b) ಡ, ರ, ಣ, ಷ ಗಳು ಮೂರ್ಧನ್ಯಗಳಾಗಿವೆ.<br>(c) ಉ, ಫ, ಭ, ಮ ಗಳು ತಾಲವ್ಯಾಕ್ಷರಗಳಾಗಿವೆ.<br>(d) ಗ, ಧ, ಊ, ತ ಗಳು ದಂತ್ಯಗಳಾಗಿವೆ.<br><br>ಮೇಲಿನವುಗಳಲ್ಲಿ ಎಷ್ಟು ಹೇಳಿಕೆ/ಗಳು ಸರಿಯಾಗಿದೆ/ವೆ?", "options": ["ಕೇವಲ ಒಂದು", "ಕೇವಲ ಎರಡು", "ಕೇವಲ ಮೂರು", "ಎಲ್ಲಾ ನಾಲ್ಕು"], "correct_answer": 2, "rationale": "ಆ, ಕ, ಹ ಕಂಠ್ಯಗಳು ✔; ಡ, ರ, ಣ, ಷ ಮೂರ್ಧನ್ಯಗಳು ✔; (c) ಓಷ್ಠ್ಯಗಳು ಹಾಗೂ (d) ಮಿಶ್ರವರ್ಣಗಳಾಗಿರುವುದರಿಂದ ಕೇವಲ ಎರಡು ಹೇಳಿಕೆಗಳು ಸರಿಯಾಗಿವೆ."}, {"id": "P2-Q035", "number": 35, "text": "ಡಮರುಕ, ಮಲ್ಲಿಕಾ, ಬಜಿ, ಭೂತಿ - ಇವುಗಳಲ್ಲಿ ಗುಂಪಿಗೆ ಸೇರದಿರುವುದನ್ನು ಗುರುತಿಸಿ.", "options": ["ಭೂತಿ", "ಬಜಿ", "ಮಲ್ಲಿಕಾ", "ಡಮರುಕ"], "correct_answer": 2, "rationale": "ಡಮರುಕ, ಮಲ್ಲಿಕಾ, ಭೂತಿ ತತ್ಸಮ ಪದಗಳು; ‘ಬಜಿ’ ಎಂಬುದು ದೇಶ್ಯ/ಅನ್ಯ ಶಬ್ದವಾಗಿರುವುದರಿಂದ ಗುಂಪಿಗೆ ಸೇರುವುದಿಲ್ಲ."}, {"id": "P2-Q036", "number": 36, "text": "Choose the option that correctly describes a continuous action:<br><br>She _________ at the office when I meet her next.", "options": ["is working", "has been working", "will be working", "did work"], "correct_answer": 3, "rationale": "Future continuous tense ('will be working') expresses an action ongoing at a specified future reference point ('when I meet her next')."}, {"id": "P2-Q037", "number": 37, "text": "Match the words in List-I with the appropriate parts of speech in List-II and select the correct option given below:<br><br><table class=\"content-table\"><thead><tr><th>List – I</th><th>List – II</th></tr></thead><tbody><tr><td>(a) Asylum</td><td>(i) Adverb</td></tr><tr><td>(b) Ourselves</td><td>(ii) Noun</td></tr><tr><td>(c) Scarcely</td><td>(iii) Adjective</td></tr><tr><td>(d) First</td><td>(iv) Pronoun</td></tr></tbody></table><br><br>Codes:", "options": ["a – i, b – ii, c – iii, d – iv", "a – ii, b – iv, c – i, d – iii", "a – iii, b – i, c – iv, d – ii", "a – iv, b – iii, c – ii, d – i"], "correct_answer": 2, "rationale": "Asylum is a Noun (ii), Ourselves is a Pronoun (iv), Scarcely is an Adverb (i), First is an Adjective (iii). Sequence: a-ii, b-iv, c-i, d-iii."}, {"id": "P2-Q038", "number": 38, "text": "Fill in the blank with correct sentence that agrees to the first sentence:<br><br>If he gave me a book, _____________________.", "options": ["I will be grateful to him", "I am grateful to him", "I would be grateful to him", "I shall be grateful to him"], "correct_answer": 3, "rationale": "In second conditional sentences (If + Past Simple), the main clause uses 'would + bare infinitive': 'I would be grateful to him'."}, {"id": "P2-Q039", "number": 39, "text": "Fill in the blanks with correct articles in the following sentence:<br><br>__________ dinner is organised by __________ President to the members.", "options": ["A, a", "The, the", "The, a", "A, the"], "correct_answer": 4, "rationale": "Before specific official titles and formal meals: 'A dinner is organised by the President to the members'."}, {"id": "P2-Q040", "number": 40, "text": "Fill in the blanks with correct articles in the following sentence:<br><br>__________ teacher should know __________ psychology of the students.", "options": ["The, a", "The, the", "A, a", "A, the"], "correct_answer": 4, "rationale": "General singular countable noun with generic reference takes 'A', while definite branch of mind takes 'the': 'A teacher should know the psychology'."}, {"id": "P2-Q041", "number": 41, "text": "Choose the right option to fill in the blank:<br><br>She wanted to __________ a child as she was childless.", "options": ["adapt", "adopt", "adept", "adorn"], "correct_answer": 2, "rationale": "'Adopt' means to legally take another's child as one's own; 'adapt' means to adjust, 'adept' means skilled."}, {"id": "P2-Q042", "number": 42, "text": "Rearrange the following parts of the sentence which are labelled as P, Q, R and S to produce the meaningful sentence.<br><br><u>Move to withdraw charges against those</u><br>P<br><u>A brazen attack on rule of law and justice</u><br>Q<br><u>The Uttar Pradesh Government's</u><br>R<br><u>Accused of lynching Person 'A' is</u><br>S", "options": ["QPRS", "RPSQ", "RSPQ", "RPQS"], "correct_answer": 2, "rationale": "Logical syntactic sequence: The Uttar Pradesh Government's (R) -> move to withdraw charges against those (P) -> accused of lynching Person 'A' is (S) -> a brazen attack on rule of law and justice (Q)."}, {"id": "P2-Q043", "number": 43, "text": "One of the present tense forms of the following sentences is wrongly given. Identify the sentence and choose the appropriate answer.", "options": ["Has he not been sleeping since 6 o' clock?", "I have finished the entire report, so we can send it to the client immediately.", "Had we not been living in Delhi since 1980?", "The Government has become more interested in Arts education after the charge is taken by the new Minister."], "correct_answer": 3, "rationale": "'Had we not been living...' is in the Past Perfect Continuous tense, making it the non-present tense form among the choices."}, {"id": "P2-Q044", "number": 44, "text": "In the following item, there is a sentence of which some parts have been jumbled up. You are required to rearrange these parts which are labelled P, Q, R and S to produce the correct sentence. Choose the correct sequence and mark in your answer sheet accordingly.<br><br>Mohan, the son of my friend<br>P: gave me a set of pens<br>Q: which is very precious<br>R: while working in Japan<br>S: who died in an accident<br><br>The proper sequence should be", "options": ["PQRS", "SRPQ", "RSPQ", "SPQR"], "correct_answer": 2, "rationale": "Syntactic coherence: Mohan, the son of my friend who died in an accident (S), while working in Japan (R), gave me a set of pens (P) which is very precious (Q)."}, {"id": "P2-Q045", "number": 45, "text": "Choose the correct passive voice form of the following sentence:<br><br>\"The work will have been completed by the team by next week\".", "options": ["The work will have completed the team by next week", "The team has completed the work by next week", "The team will complete the work by next week", "The team will have completed the work by next week"], "correct_answer": 4, "rationale": "The active voice of the future perfect passive ('will have been completed by the team') is 'The team will have completed the work by next week'."}, {"id": "P2-Q046", "number": 46, "text": "Pick the appropriate prepositions for the following sentence:<br><br>We arrived __________ the station just __________ time for boarding.", "options": ["in, at", "on, in", "at, in", "at, near"], "correct_answer": 3, "rationale": "Correct prepositional collocations: arrive at a specific location ('at the station') and arrive timely ('just in time for boarding')."}, {"id": "P2-Q047", "number": 47, "text": "Convert the following simple sentence as compound ones:<br><br>\"Not withstanding my hard work, I did not succeed\".", "options": ["I worked hard, yet did not succeed.", "Me worked hard, yet I did not succeed.", "I worked hard, nonetheless me did not succeed.", "My hard work did not succeed."], "correct_answer": 1, "rationale": "A compound sentence connects two independent coordinate clauses with an adversative conjunction: 'I worked hard, yet did not succeed'."}, {"id": "P2-Q048", "number": 48, "text": "Fill in the blank with appropriate conjunction:<br><br>The boxer trained rigorously everyday, __________ he was determined to retain his championship.", "options": ["although", "whereas", "for", "unless"], "correct_answer": 3, "rationale": "The coordinating conjunction 'for' functions as a literary equivalent of 'because', giving the reason why the boxer trained rigorously."}, {"id": "P2-Q049", "number": 49, "text": "Fill in the blank.<br><br>A contented life is the greatest blessing __________ a man can enjoy in the world.", "options": ["which", "that", "where", "relative pronoun is omitted"], "correct_answer": 2, "rationale": "Following a superlative adjective ('the greatest blessing'), standard grammar prescribes the relative pronoun 'that' rather than 'which'."}, {"id": "P2-Q050", "number": 50, "text": "Identify the correctly punctuated sentence from the given options:<br><br>The teacher said Why are you shouting in the class", "options": ["The teacher said, Why are you shouting in the class?", "The teacher said, \"Why are you shouting in the class.\"", "The \"teacher said, why are you shouting in the class\"", "The teacher said, \"Why are you shouting in the class?\""], "correct_answer": 4, "rationale": "Direct speech requires comma after reporting verb, opening capital letter inside quotation marks, and terminal question mark: The teacher said, \"Why are you shouting in the class?\""}, {"id": "P2-Q051", "number": 51, "text": "What is a phrase?", "options": ["A group of words which gives complete meaning.", "A part of sentence which gives meaning but not complete meaning.", "It has a subject and clause of its own.", "It has a subject and predicate of its own."], "correct_answer": 2, "rationale": "A phrase is a grammatically connected group of words that makes sense but does not express a complete thought (lacks subject-predicate nexus)."}, {"id": "P2-Q052", "number": 52, "text": "Fill in the blank with suitable prefix:<br><br>The punishment given by the judge is __________ bearable.", "options": ["in-", "im-", "un-", "il-"], "correct_answer": 3, "rationale": "The standard negative prefix attaching to the root 'bearable' is 'un-', producing 'unbearable' (incapable of being endured)."}, {"id": "P2-Q053", "number": 53, "text": "Match the following:<br><br><table class=\"content-table\"><thead><tr><th>List-I</th><th>List-II</th></tr></thead><tbody><tr><td>(a) Frog</td><td>(i) Duckling</td></tr><tr><td>(b) Cow</td><td>(ii) Tadpole</td></tr><tr><td>(c) Swan</td><td>(iii) Calf</td></tr><tr><td>(d) Duck</td><td>(iv) Signet</td></tr></tbody></table><br><br>Codes:", "options": ["a – ii, b – iii, c – iv, d – i", "a – iv, b – ii, c – iii, d – i", "a – ii, b – i, c – iv, d – iii", "a – iv, b – iii, c – ii, d – i"], "correct_answer": 1, "rationale": "Animal young matching: Frog - Tadpole (ii), Cow - Calf (iii), Swan - Signet/Cygnet (iv), Duck - Duckling (i). Sequence: a-ii, b-iii, c-iv, d-i."}, {"id": "P2-Q054", "number": 54, "text": "Choose the most appropriate meaning of the word 'FORLORN' from the following.", "options": ["Fortunate", "Uncared", "Funny", "Fearful"], "correct_answer": 2, "rationale": "'Forlorn' denotes desolate, lonely, abandoned, or pitifully uncared for."}, {"id": "P2-Q055", "number": 55, "text": "Choose the correctly spelt word among the following.", "options": ["bafelo", "baffelo", "buffalo", "bufello"], "correct_answer": 3, "rationale": "The standard and correct English spelling is 'buffalo' (b-u-f-f-a-l-o)."}, {"id": "P2-Q056", "number": 56, "text": "Pick out the antonym of the underlined word:<br><br>The <u>benevolent</u> people help others without any expectation.", "options": ["Generous", "Kind", "Cruel", "Copious"], "correct_answer": 2, "rationale": "'Benevolent' signifies kind, charitable, and well-meaning; its direct antonym is 'cruel' or malicious."}, {"id": "P2-Q057", "number": 57, "text": "Match the following animals (List-I) with their offsprings (List-II) in the table below:<br><br><table class=\"content-table\"><thead><tr><th>List-I</th><th>List-II</th></tr></thead><tbody><tr><td>(a) Elephant</td><td>(i) Foal</td></tr><tr><td>(b) Tiger</td><td>(ii) Calf</td></tr><tr><td>(c) Tortoise</td><td>(iii) Cub</td></tr><tr><td>(d) Horse</td><td>(iv) Hatchling</td></tr></tbody></table><br><br>Codes:", "options": ["a – ii, b – iv, c – iii, d – i", "a – iv, b – iii, c – ii, d – i", "a – iii, b – i, c – iv, d – ii", "a – ii, b – iii, c – iv, d – i"], "correct_answer": 4, "rationale": "Animal offspring matching: Elephant - Calf (ii), Tiger - Cub (iii), Tortoise - Hatchling (iv), Horse - Foal (i). Sequence: a-ii, b-iii, c-iv, d-i."}, {"id": "P2-Q058", "number": 58, "text": "Choose the alternative which best expresses the meaning of the idiom/phrase given below:<br><br>At the stake", "options": ["In danger", "In secret", "On a larger scale", "On a small scale"], "correct_answer": 1, "rationale": "The idiomatic phrase 'at stake' means in danger of being lost, at risk, or in jeopardy."}, {"id": "P2-Q059", "number": 59, "text": "Choose the alternative which best expresses the meaning of the idiom/phrase given below:<br><br>To break the ice", "options": ["To end a conversation", "To begin a conversation", "To work hard", "To be cool"], "correct_answer": 2, "rationale": "'To break the ice' means to initiate social interaction or begin a conversation to overcome initial awkwardness."}, {"id": "P2-Q060", "number": 60, "text": "According to the passage, pleasure reading", "options": ["lowers academic performance", "has no measurable benefits", "improves academic outcomes", "only benefits younger children"], "correct_answer": 3, "rationale": "The passage directly asserts that students engaging in pleasure reading perform better academically than those reading solely for exams."}, {"id": "P2-Q061", "number": 61, "text": "The author implies that modern students", "options": ["dislike fiction", "bogged down by connectivity", "have more free time", "read more than previous generations"], "correct_answer": 2, "rationale": "The text notes modern students are hindered by digital distractions and online gaming, implying they are bogged down by excessive connectivity."}, {"id": "P2-Q062", "number": 62, "text": "Educators disagree on whether schools should", "options": ["ban fiction reading", "include popular fiction", "eliminate textbooks", "promote social media use"], "correct_answer": 2, "rationale": "The passage explicitly discusses the curricular debate over whether schools should incorporate popular fiction or restrict time to academic texts."}, {"id": "P2-Q063", "number": 63, "text": "Fill in the blank with the suitable word:<br><br>He purchased a bundle of paper from the __________.", "options": ["stationery", "stationary", "station", "statutory"], "correct_answer": 1, "rationale": "'Stationery' (with -ery) denotes writing materials and paper goods, whereas 'stationary' (with -ary) means immobile."}, {"id": "P2-Q064", "number": 64, "text": "Directions: Choose the right synonym for the underlined word in the given sentence.<br><br>Nachiketh <u>squandered</u> his savings on the stock market.", "options": ["invested", "wasted", "earned", "regained"], "correct_answer": 2, "rationale": "'Squandered' means wasted or dissipated money, resources, or time foolishly and recklessly."}, {"id": "P2-Q065", "number": 65, "text": "Select the option that can be used as a one-word substitute for the given group of words.<br><br>Abnormal tendency towards grand and grandiose behaviour is", "options": ["Megalomania", "Melomania", "Metromania", "Mythomania"], "correct_answer": 1, "rationale": "'Megalomania' is a psychological condition characterized by delusional fantasies of wealth, power, and grandiose self-importance."}, {"id": "P2-Q066", "number": 66, "text": "Choose the suitable interjection for the following sentence.<br><br>__________! We have won the competition.", "options": ["Ugh", "Alas", "Ouch", "Hurrah"], "correct_answer": 4, "rationale": "The exclamation expressing victory, triumph, and collective rejoicing is 'Hurrah!'."}, {"id": "P2-Q067", "number": 67, "text": "Identify the misspelt word.", "options": ["Assessment", "Assault", "Ameliorate", "Asiduous"], "correct_answer": 4, "rationale": "The misspelt word is 'Asiduous'; the correct orthography requires double 's': 'Assiduous' (meaning diligent and persistent)."}, {"id": "P2-Q068", "number": 68, "text": "Choose the correct plural forms for the below given singular forms:<br><br>Daughter-in-law, loaf", "options": ["Daughters-in-law, loaves", "Daughter-in-laws, loafs", "Daughter's-in-law, loaf's", "Daughter-in-law's, loaves'"], "correct_answer": 1, "rationale": "Compound nouns modify the principal noun for pluralization: 'Daughters-in-law', and the plural of loaf with f-to-ves mutation is 'loaves'."}, {"id": "P2-Q069", "number": 69, "text": "Identify the correct form of “wh” question in the given sentences.", "options": ["What is your favourite author?", "Whom is your favourite author?", "Which is your favourite author?", "Who is your favourite author?"], "correct_answer": 4, "rationale": "When inquiring about an individual's personal identity as an author, the interrogative pronoun 'Who' is required: 'Who is your favourite author?'."}, {"id": "P2-Q070", "number": 70, "text": "Identify the incorrect degrees of comparison in the given list.", "options": ["Far, farther, farthest", "Much, mucher, muchest", "Happy, happier, happiest", "Brave, braver, bravest"], "correct_answer": 2, "rationale": "The irregular adjective 'much' has comparative 'more' and superlative 'most'; 'mucher' and 'muchest' are grammatically invalid."}, {"id": "P2-Q071", "number": 71, "text": "EDSAC stands for", "options": ["Electronic Delay Storage Arithmetic Calculator", "Electronic Delay Storage Automatic Calculator", "Electronic Display Storage Automatic Calculator", "Electronic Delay Storage Automatic Computer"], "correct_answer": 2, "rationale": "EDSAC, built by Maurice Wilkes at Cambridge in 1949, stands for Electronic Delay Storage Automatic Calculator."}, {"id": "P2-Q072", "number": 72, "text": "Which of the following allows you to uniquely identify a tuple in a table?", "options": ["Foreign key", "Primary key", "Non key", "Constraint"], "correct_answer": 2, "rationale": "A Primary Key is a minimal superkey that uniquely identifies each individual record/tuple in a relational database table."}, {"id": "P2-Q073", "number": 73, "text": "Person credited with inventing the first system capable of sending messages between users on different host computers connected via a network is ____________ .", "options": ["Linus Torvalds", "James Gosling", "Ray Tomlinson", "Guido van Rossum"], "correct_answer": 3, "rationale": "Ray Tomlinson developed ARPANET's networked email application in 1971 and introduced the universal '@' addressing convention."}, {"id": "P2-Q074", "number": 74, "text": "Unicode stands for ____________", "options": ["Unique Character Encoder", "Unique Coded Encoder", "Universal Character Encoder", "Universal Character Encoding"], "correct_answer": 4, "rationale": "Unicode provides a universal encoding standard for representing every character and script across global digital platforms."}, {"id": "P2-Q075", "number": 75, "text": "Match the following:<br><br><table class=\"content-table\"><thead><tr><th>List - I (HTTP Request Methods)</th><th>List - II (Descriptions)</th></tr></thead><tbody><tr><td>(a) GET</td><td>(i) Append to a named resource</td></tr><tr><td>(b) HEAD</td><td>(ii) Request to read a webpage</td></tr><tr><td>(c) POST</td><td>(iii) Request to read a webpage's header</td></tr><tr><td>(d) TRACE</td><td>(iv) Reserved for future use</td></tr><tr><td>(e) CONNECT</td><td>(v) Echo the incoming request</td></tr></tbody></table><br><br>Codes:", "options": ["a - ii, b - iii, c - i, d - v, e - iv", "a - ii, b - i, c - iii, d - iv, e - v", "a - i, b - ii, c - iii, d - iv, e - v", "a - iv, b - ii, c - iii, d - i, e - v"], "correct_answer": 1, "rationale": "HTTP method mapping: GET reads resource (ii), HEAD fetches header only (iii), POST appends data (i), TRACE echoes request (v), CONNECT establishes tunnel (iv)."}, {"id": "P2-Q076", "number": 76, "text": "Identify the statements that are correct about MS PowerPoint:<br><br>(a) Can type text directly on a slide<br>(b) Can choose a picture from Insert menu and then file to insert that image into slide<br>(c) Can show or hide task pane from view >> tool bars<br>(d) To write on the slide, can use pen from start inking option.", "options": ["(a), (b) and (d)", "(a), (c) and (d)", "(a), (b), (c) and (d)", "(b), (c) and (d)"], "correct_answer": 4, "rationale": "In PowerPoint, text requires a placeholder/text box; pictures are inserted via Insert menu (b), toolbars toggled (c), and ink annotations drawn (d)."}, {"id": "P2-Q077", "number": 77, "text": "Arrange the following in terms of their storage capacity in increasing order:<br><br>(a) Magnetic tapes<br>(b) Main memory<br>(c) Registers<br>(d) Cache memory<br>(e) Magnetic disks", "options": ["(c), (b), (e), (d), (a)", "(c), (e), (b), (d), (a)", "(c), (d), (b), (e), (a)", "(a), (b), (c), (d), (e)"], "correct_answer": 3, "rationale": "Storage capacity hierarchy from smallest to largest: Registers (c) < Cache (d) < Main memory (b) < Magnetic disks (e) < Magnetic tapes (a)."}, {"id": "P2-Q078", "number": 78, "text": "____________ is a website that helps you stay focussed on your work by alerting you with ambient sounds.", "options": ["FocalFilter", "SoftMurmur", "LastPass", "HootSuite"], "correct_answer": 2, "rationale": "SoftMurmur (thesoftmurmur.com) is an ambient sound generator used by professionals to mask background noise and maintain focus."}, {"id": "P2-Q079", "number": 79, "text": "Match the following:<br><br><table class=\"content-table\"><thead><tr><th>List - I</th><th>List - II</th></tr></thead><tbody><tr><td>(a) Google</td><td>(i) Safari</td></tr><tr><td>(b) Microsoft</td><td>(ii) Firefox</td></tr><tr><td>(c) Apple</td><td>(iii) Chrome</td></tr><tr><td>(d) Mozilla Foundation</td><td>(iv) Edge</td></tr></tbody></table><br><br>Codes:", "options": ["a - ii, b - iii, c - iv, d - i", "a - iv, b - iii, c - i, d - ii", "a - iii, b - iv, c - i, d - ii", "a - ii, b - i, c - iv, d - iii"], "correct_answer": 3, "rationale": "Browser development match: Google -> Chrome (iii), Microsoft -> Edge (iv), Apple -> Safari (i), Mozilla Foundation -> Firefox (ii)."}, {"id": "P2-Q080", "number": 80, "text": "By considering the following statements with respect to ethical hacking, identify the correct answer from the given options:<br><br>Statement I: ‘Black Hat’ hackers operate with malicious intent and without legal authorization<br><br>Statement II: ‘White Hat’ hackers use the same technique as Black Hat hackers to strengthen the security system with legal authorization", "options": ["Statement I is correct, but Statement II is not correct", "Statement II is correct, but Statement I is not correct", "Both the Statements I and II are correct", "Both the Statements I and II are not correct"], "correct_answer": 3, "rationale": "Both statements are correct: Black hat hackers intrude without authorization with malicious intent; White hat ethical hackers use identical tools legitimately."}, {"id": "P2-Q081", "number": 81, "text": "“ChatGPT” responses are generated on what basis?", "options": ["Predefined templates", "User input and trained data", "Randomization", "Hard-coded rules"], "correct_answer": 2, "rationale": "ChatGPT is a Large Language Model whose responses are probabilistically predicted based on user prompts and vast pre-trained transformer corpora."}, {"id": "P2-Q082", "number": 82, "text": "The purpose of the “Slide Master” in PowerPoint is ____________", "options": ["To organize the order of slides in a presentation", "To set the default layout, fonts and theme for all slides", "To record a narration for the presentation", "To export the presentation as a video file"], "correct_answer": 2, "rationale": "The Slide Master controls the top-level hierarchy, setting default typography, color themes, placeholders, and layouts for all presentation slides."}, {"id": "P2-Q083", "number": 83, "text": "Expand DevOps.", "options": ["Development Options", "Development Operations", "Developed Options", "Developing Options"], "correct_answer": 2, "rationale": "DevOps is an operational and cultural methodology integrating software Development (Dev) and IT Operations (Ops) for continuous delivery."}, {"id": "P2-Q084", "number": 84, "text": "The attacker is able to intercept communication between the user terminal and internet banking server in ____________ attack strategy.", "options": ["User credential guessing", "Injection of commands", "Security policy violation", "User credential compromise"], "correct_answer": 4, "rationale": "In a Man-in-the-Middle (MitM) session interception, the attacker eavesdrops on and tampers with credentials exchanged between client and banking server."}, {"id": "P2-Q085", "number": 85, "text": "Using ____________ operation, it is possible to store files in a server from client computer.", "options": ["Transfer", "Download", "Upload", "Trash"], "correct_answer": 3, "rationale": "Transferring and storing a file from a local client computer to a remote network server is called 'Uploading'."}, {"id": "P2-Q086", "number": 86, "text": "____________ is the best mode to communicate a large amount of data between devices.", "options": ["Bus", "Serial Ports", "Parallel Ports", "Registered Port"], "correct_answer": 1, "rationale": "A system Bus provides the high-bandwidth parallel or high-speed serialized pathway for moving large data volumes between system components."}, {"id": "P2-Q087", "number": 87, "text": "With respect to Microsoft 365, which of the following statements are correct?<br><br>(a) Microsoft 365 provides applications such as Word, Excel, PowerPoint and Outlook.<br>(b) Microsoft 365 doesn’t provide cloud storage.<br>(c) Microsoft 365 includes teams application for communication and collaboration<br>(d) Microsoft 365 provides security features like MFA.", "options": ["Only (a) and (b)", "(a), (b) and (c)", "(a), (b) and (d)", "(a), (c) and (d)"], "correct_answer": 4, "rationale": "Microsoft 365 includes Office apps (a), Teams collaboration (c), and MFA security (d); statement (b) is false as it includes 1 TB OneDrive cloud storage."}, {"id": "P2-Q088", "number": 88, "text": "When using ‘Track Changes’ in Microsoft Word, ____________ view shows the document as if all changes which were proposed have been accepted.", "options": ["All Markup", "Simple Markup", "Original Markup", "No Markup"], "correct_answer": 4, "rationale": "In Microsoft Word Track Changes, 'No Markup' displays the finished document view with all revisions cleanly incorporated without inline markup bars."}, {"id": "P2-Q089", "number": 89, "text": "When was the world’s first laptop computer introduced to the market and by which company?", "options": ["1980, Apple", "1985, IBM", "1981, Epson", "1978, Compaq"], "correct_answer": 3, "rationale": "The world's first commercial notebook/laptop computer, the Epson HX-20 with built-in screen and keyboard, was released by Epson in 1981."}, {"id": "P2-Q090", "number": 90, "text": "Which of the following is not a valid version of MS Office?", "options": ["Office XP", "Office Vista", "Office 2007", "Office 2010"], "correct_answer": 2, "rationale": "Windows Vista was an operating system; Microsoft never released an office suite called 'Office Vista' (the contemporaneous suite was Office 2007)."}, {"id": "P2-Q091", "number": 91, "text": "How do you create a dynamic named range in Excel?", "options": ["Use the “Define Name” feature", "Apply a filter to a ‘column’", "Use the “Paste Special” option", "Apply a filter to a row"], "correct_answer": 1, "rationale": "Dynamic named ranges in Excel are created through the 'Define Name' dialog using flexible dynamic formulas such as OFFSET() and COUNTA()."}, {"id": "P2-Q092", "number": 92, "text": "Which of the following is NOT a valid binary number?", "options": ["1 0 1 0 1 1", "1 0 2 1 1 1", "1 1 1 0 0 0", "1 0 1 1 0 1"], "correct_answer": 2, "rationale": "Binary notation permits only bits 0 and 1; '1 0 2 1 1 1' contains the digit 2, making it an invalid binary representation."}, {"id": "P2-Q093", "number": 93, "text": "Which of the following computer networks is built on the top of another computer network?", "options": ["Overlay Network", "Prime Network", "Prior Network", "Chief Network"], "correct_answer": 1, "rationale": "An Overlay Network is a virtual computer network layered on top of an underlying physical network infrastructure (e.g., VPNs, Tor, P2P)."}, {"id": "P2-Q094", "number": 94, "text": "An RJ45 connector is primarily used for connecting devices to a ____________", "options": ["Wide Area Network (WAN)", "Personal Area Network (PAN)", "Local Area Network (LAN)", "Power Source"], "correct_answer": 3, "rationale": "An 8-pin RJ45 connector is the standard physical termination interface used for Ethernet twisted-pair cabling in Local Area Networks (LAN)."}, {"id": "P2-Q095", "number": 95, "text": "In www.abc.com, what does .com refer to?", "options": ["Commercial", "Company", "Communication", "Commerce"], "correct_answer": 1, "rationale": "In the Domain Name System hierarchy, the top-level domain '.com' stands for 'commercial' business entities."}, {"id": "P2-Q096", "number": 96, "text": "Which of the following factors can affect data transmission quality?<br><br>(a) Noise<br>(b) Keyboard<br>(c) Mouse<br>(d) Signal attenuation", "options": ["(a) and (b)", "(a), (b) and (c)", "(a) and (d)", "(a) and (c)"], "correct_answer": 3, "rationale": "Physical transmission impairments affecting signal fidelity across communication media include ambient noise (a) and signal attenuation (d)."}, {"id": "P2-Q097", "number": 97, "text": "A single speed CD-ROM Drive transfers data at ____________", "options": ["1 MB per second", "100 bytes per second", "150 KBs per second", "20 million bits per second"], "correct_answer": 3, "rationale": "The baseline single-speed (1x) CD-ROM drive standard transfers data at an exact sustained rate of 150 KB/s (Kilobytes per second)."}, {"id": "P2-Q098", "number": 98, "text": "What was the previous name of Google Workspace?", "options": ["Google Office", "G-Suite", "Google Cloud Suite", "Google Work Tools"], "correct_answer": 2, "rationale": "Prior to its rebranding as Google Workspace in October 2020, Google's integrated enterprise productivity platform was named G-Suite."}, {"id": "P2-Q099", "number": 99, "text": "Match the following.<br><br><table class=\"content-table\"><thead><tr><th>List - I (Microsoft Office Application)</th><th>List - II (Features supported)</th></tr></thead><tbody><tr><td>(a) Microsoft Project</td><td>(i) A digital, free-form, notebook application that allows users to create, organize and share information</td></tr><tr><td>(b) Microsoft One Note</td><td>(ii) Software program designed to assist in developing schedules, assigning resources to tasks, tracking progress and budget</td></tr><tr><td>(c) Microsoft Access</td><td>(iii) Software program used to store, manage and analyze large complex datasets</td></tr></tbody></table><br><br>Codes:", "options": ["a - ii, b - iii, c - i", "a - iii, b - i, c - ii", "a - ii, b - i, c - iii", "a - i, b - ii, c - iii"], "correct_answer": 3, "rationale": "Application match: Microsoft Project manages schedules and budgets (ii), OneNote provides digital note taking (i), Access manages databases (iii)."}, {"id": "P2-Q100", "number": 100, "text": "The purpose of IoT sensors is", "options": ["To store data on cloud", "To provide network security", "To collect data from environment", "To improve performance"], "correct_answer": 3, "rationale": "Internet of Things (IoT) sensor nodes are deployed to monitor physical ambient parameters (temperature, pressure, motion) and transmit data."}]}]};
+
+const state = {
+    view: 'home',
+    paperIndex: 0,
+    currentQuestion: 0,
+    answers: {},
+    markedReview: {},
+    timeRemaining: 0,
+    timerId: null,
+    submitted: false
+};
+
+function init() {
+    render();
+}
+
+function render() {
+    const main = document.getElementById('main-view');
+    const nav = document.getElementById('header-nav');
+    
+    if (state.view === 'home') {
+        nav.innerHTML = '';
+        main.innerHTML = renderHome();
+    } else if (state.view === 'mock') {
+        nav.innerHTML = '<button class="btn" onclick="confirmExitTest()">Exit to Home</button>';
+        main.innerHTML = renderMockTest();
+        updatePalette();
+    } else if (state.view === 'result') {
+        nav.innerHTML = '<button class="btn" onclick="goHome()">Home</button>';
+        main.innerHTML = renderResults();
+    } else if (state.view === 'key') {
+        nav.innerHTML = '<button class="btn" onclick="goHome()">Home</button> <button class="btn btn-primary" onclick="window.print()">Print Key</button>';
+        main.innerHTML = renderAnswerKey();
+    }
+}
+
+function renderHome() {
+    let html = `
+        <div class="card">
+            <h2>Welcome to KEA VAO 2026 Test Engine</h2>
+            <p style="color: var(--text-secondary); margin-top: 4px;">
+                Digitized from official Village Administrative Officer question papers and authoritative evaluation reports.
+                Practice under real exam conditions or review full question solutions offline.
+            </p>
+        </div>
+        <div class="landing-grid">
+    `;
+    
+    EXAM_DATA.papers.forEach((p, idx) => {
+        html += `
+            <div class="card paper-card">
+                <h2>${p.paper}: ${p.title}</h2>
+                <div class="paper-meta">
+                    <strong>Duration:</strong> ${p.duration_minutes} Minutes (2 Hours)<br>
+                    <strong>Questions:</strong> ${p.total_questions} Multiple-Choice Questions<br>
+                    <strong>Marking:</strong> +${p.marking.correct} for correct, ${p.marking.wrong} for incorrect, 0.00 for unattempted
+                </div>
+                <div class="button-group">
+                    <button class="btn btn-primary" onclick="startMockTest(${idx})">Take Mock Test</button>
+                    <button class="btn" onclick="viewAnswerKey(${idx})">View Answer Key</button>
+                </div>
+            </div>
+        `;
+    });
+    
+    html += '</div>';
+    return html;
+}
+
+function startMockTest(paperIdx) {
+    state.view = 'mock';
+    state.paperIndex = paperIdx;
+    state.currentQuestion = 0;
+    state.answers = {};
+    state.markedReview = {};
+    state.submitted = false;
+    state.timeRemaining = EXAM_DATA.papers[paperIdx].duration_minutes * 60;
+    
+    clearInterval(state.timerId);
+    state.timerId = setInterval(() => {
+        if (state.timeRemaining > 0) {
+            state.timeRemaining--;
+            updateTimerDisplay();
+        } else {
+            clearInterval(state.timerId);
+            alert("Exam duration ended. Your test will now be submitted automatically.");
+            confirmSubmit();
+        }
+    }, 1000);
+    
+    render();
+}
+
+function updateTimerDisplay() {
+    const el = document.getElementById('timer-display');
+    if (!el) return;
+    const m = Math.floor(state.timeRemaining / 60);
+    const s = state.timeRemaining % 60;
+    el.textContent = `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+}
+
+function renderMockTest() {
+    const paper = EXAM_DATA.papers[state.paperIndex];
+    const q = paper.questions[state.currentQuestion];
+    const userAns = state.answers[state.currentQuestion];
+    const isMarked = !!state.markedReview[state.currentQuestion];
+    
+    let optionsHtml = '';
+    for (let i = 0; i < 4; i++) {
+        const optNum = i + 1;
+        const checked = userAns === optNum ? 'checked' : '';
+        optionsHtml += `
+            <label class="option-item">
+                <input type="radio" name="mock_opt" value="${optNum}" ${checked} onchange="selectOption(${optNum})">
+                <div class="option-text"><strong>(${optNum})</strong> ${q.options[i]}</div>
+            </label>
+        `;
+    }
+    
+    let paletteBtns = '';
+    paper.questions.forEach((_, idx) => {
+        let cls = 'pal-btn';
+        if (state.answers[idx]) cls += ' answered';
+        if (state.markedReview[idx]) cls += ' marked';
+        if (idx === state.currentQuestion) cls += ' active';
+        paletteBtns += `<button class="${cls}" id="pal-btn-${idx}" onclick="jumpToQuestion(${idx})">${idx + 1}</button>`;
+    });
+    
+    const m = Math.floor(state.timeRemaining / 60);
+    const s = state.timeRemaining % 60;
+    const timeStr = `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+    
+    return `
+        <div class="test-topbar">
+            <div>
+                <strong>${paper.paper}: ${paper.title}</strong>
+                <span style="color: var(--text-secondary); margin-left: 12px;">Question ${state.currentQuestion + 1} of ${paper.total_questions}</span>
+            </div>
+            <div class="timer-box" id="timer-display">${timeStr}</div>
+        </div>
+        
+        <div class="test-layout">
+            <div class="card" style="margin-bottom: 0;">
+                <div class="q-header">
+                    <div class="q-title">Question ${q.number} (${q.id})</div>
+                    <div>
+                        <button class="btn" style="${isMarked ? 'background: var(--warning-bg); border-color: var(--warning-border); color: var(--warning-text);' : ''}" onclick="toggleMarkReview()">
+                            ${isMarked ? '★ Marked for Review' : '☆ Mark for Review'}
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="q-body">${q.text}</div>
+                
+                <div class="options-list">${optionsHtml}</div>
+                
+                <div class="button-group" style="justify-content: space-between; border-top: 1px solid var(--border-light); padding-top: 16px;">
+                    <div>
+                        <button class="btn" onclick="clearResponse()" ${userAns ? '' : 'disabled'}>Clear Response</button>
+                    </div>
+                    <div class="button-group">
+                        <button class="btn" onclick="prevQuestion()" ${state.currentQuestion === 0 ? 'disabled' : ''}>Previous</button>
+                        <button class="btn btn-primary" onclick="nextQuestion()" ${state.currentQuestion === paper.total_questions - 1 ? 'disabled' : ''}>Next</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card palette-card">
+                <h3 style="font-size: 1rem; margin-bottom: 12px;">Question Navigator</h3>
+                <div class="palette-legend">
+                    <div class="legend-item"><div class="legend-swatch" style="background: var(--success-bg); border-color: var(--success-border);"></div> Answered</div>
+                    <div class="legend-item"><div class="legend-swatch" style="background: var(--warning-bg); border-color: var(--warning-border);"></div> Marked</div>
+                    <div class="legend-item"><div class="legend-swatch" style="background: #ffffff;"></div> Unanswered</div>
+                    <div class="legend-item"><div class="legend-swatch" style="border: 2px solid var(--active-outline);"></div> Current</div>
+                </div>
+                <div class="palette-grid">${paletteBtns}</div>
+                <button class="btn btn-primary" style="width: 100%; margin-top: 8px;" onclick="openSubmitModal()">Submit Test</button>
+            </div>
+        </div>
+    `;
+}
+
+function selectOption(optNum) {
+    state.answers[state.currentQuestion] = optNum;
+    updatePalette();
+    const clearBtn = document.querySelector('button[onclick="clearResponse()"]');
+    if (clearBtn) clearBtn.disabled = false;
+}
+
+function clearResponse() {
+    delete state.answers[state.currentQuestion];
+    render();
+}
+
+function toggleMarkReview() {
+    if (state.markedReview[state.currentQuestion]) {
+        delete state.markedReview[state.currentQuestion];
+    } else {
+        state.markedReview[state.currentQuestion] = true;
+    }
+    render();
+}
+
+function nextQuestion() {
+    const paper = EXAM_DATA.papers[state.paperIndex];
+    if (state.currentQuestion < paper.total_questions - 1) {
+        state.currentQuestion++;
+        render();
+    }
+}
+
+function prevQuestion() {
+    if (state.currentQuestion > 0) {
+        state.currentQuestion--;
+        render();
+    }
+}
+
+function jumpToQuestion(idx) {
+    state.currentQuestion = idx;
+    render();
+}
+
+function updatePalette() {
+    const paper = EXAM_DATA.papers[state.paperIndex];
+    paper.questions.forEach((_, idx) => {
+        const btn = document.getElementById(`pal-btn-${idx}`);
+        if (!btn) return;
+        btn.className = 'pal-btn';
+        if (state.answers[idx]) btn.classList.add('answered');
+        if (state.markedReview[idx]) btn.classList.add('marked');
+        if (idx === state.currentQuestion) btn.classList.add('active');
+    });
+}
+
+function openSubmitModal() {
+    const paper = EXAM_DATA.papers[state.paperIndex];
+    const total = paper.total_questions;
+    const answered = Object.keys(state.answers).length;
+    const marked = Object.keys(state.markedReview).length;
+    const unattempted = total - answered;
+    
+    document.getElementById('modal-summary').innerHTML = `
+        <strong>Total Questions:</strong> ${total}<br>
+        <strong>Answered:</strong> ${answered}<br>
+        <strong>Marked for Review:</strong> ${marked}<br>
+        <strong>Unattempted:</strong> ${unattempted}
+    `;
+    document.getElementById('submit-modal').style.display = 'flex';
+}
+
+function closeSubmitModal() {
+    document.getElementById('submit-modal').style.display = 'none';
+}
+
+function confirmSubmit() {
+    clearInterval(state.timerId);
+    closeSubmitModal();
+    state.view = 'result';
+    state.submitted = true;
+    render();
+}
+
+function confirmExitTest() {
+    if (confirm("Are you sure you want to exit the mock test? Current progress will be lost.")) {
+        clearInterval(state.timerId);
+        goHome();
+    }
+}
+
+function renderResults() {
+    const paper = EXAM_DATA.papers[state.paperIndex];
+    let correctCount = 0;
+    let wrongCount = 0;
+    let unattemptedCount = 0;
+    
+    paper.questions.forEach((q, idx) => {
+        const userAns = state.answers[idx];
+        if (userAns === undefined || userAns === null) {
+            unattemptedCount++;
+        } else if (userAns === q.correct_answer) {
+            correctCount++;
+        } else {
+            wrongCount++;
+        }
+    });
+    
+    const netMarks = (correctCount * paper.marking.correct) + (wrongCount * paper.marking.wrong);
+    const attempted = correctCount + wrongCount;
+    const accuracy = attempted > 0 ? ((correctCount / attempted) * 100).toFixed(1) : 0;
+    
+    let reviewHtml = '';
+    paper.questions.forEach((q, idx) => {
+        const userAns = state.answers[idx];
+        const isCorrect = userAns === q.correct_answer;
+        const isUnattempted = userAns === undefined || userAns === null;
+        
+        let badgeClass = isUnattempted ? 'badge-unattempted' : (isCorrect ? 'badge-correct' : 'badge-wrong');
+        let badgeText = isUnattempted ? 'Unattempted (0.00)' : (isCorrect ? `Correct (+${paper.marking.correct.toFixed(2)})` : `Incorrect (${paper.marking.wrong.toFixed(2)})`);
+        
+        let optionsHtml = '';
+        for (let i = 0; i < 4; i++) {
+            const optNum = i + 1;
+            let optClass = 'opt-review';
+            let label = '';
+            
+            if (optNum === q.correct_answer) {
+                optClass += ' is-correct';
+                label = ' ✓ Correct Answer';
+            }
+            if (optNum === userAns) {
+                if (!isCorrect) optClass += ' is-wrong';
+                label += ' (Your Response)';
+            }
+            
+            optionsHtml += `
+                <div class="${optClass}">
+                    <div><strong>(${optNum})</strong> ${q.options[i]}</div>
+                    <div style="font-size: 0.85rem; font-weight: 600;">${label}</div>
+                </div>
+            `;
+        }
+        
+        reviewHtml += `
+            <div class="review-item">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span class="badge ${badgeClass}">${badgeText}</span>
+                    <span style="font-size: 0.85rem; color: var(--text-secondary);">Question ${q.number} (${q.id})</span>
+                </div>
+                <div style="font-size: 1.05rem; margin: 12px 0;">${q.text}</div>
+                <div style="margin-bottom: 12px;">${optionsHtml}</div>
+                <div class="rationale-box">
+                    <strong>Official Rationale / Solution:</strong><br>
+                    ${q.rationale}
+                </div>
+            </div>
+        `;
+    });
+    
+    return `
+        <div class="card">
+            <h2>Examination Performance Summary</h2>
+            <p style="color: var(--text-secondary);">${paper.paper}: ${paper.title}</p>
+            
+            <div class="score-summary">
+                <div class="score-box">
+                    <div style="color: var(--text-secondary); font-size: 0.85rem;">NET SCORE</div>
+                    <div class="num" style="color: ${netMarks >= 50 ? 'var(--success-text)' : 'var(--text-primary)'};">${netMarks.toFixed(2)}</div>
+                    <div style="font-size: 0.8rem; color: var(--text-secondary);">out of ${paper.total_questions}.00</div>
+                </div>
+                <div class="score-box">
+                    <div style="color: var(--text-secondary); font-size: 0.85rem;">ACCURACY</div>
+                    <div class="num">${accuracy}%</div>
+                    <div style="font-size: 0.8rem; color: var(--text-secondary);">${correctCount} / ${attempted} attempted</div>
+                </div>
+                <div class="score-box">
+                    <div style="color: var(--text-secondary); font-size: 0.85rem;">CORRECT</div>
+                    <div class="num" style="color: var(--success-text);">${correctCount}</div>
+                    <div style="font-size: 0.8rem; color: var(--text-secondary);">+${(correctCount * paper.marking.correct).toFixed(2)} Marks</div>
+                </div>
+                <div class="score-box">
+                    <div style="color: var(--text-secondary); font-size: 0.85rem;">WRONG</div>
+                    <div class="num" style="color: var(--danger-text);">${wrongCount}</div>
+                    <div style="font-size: 0.8rem; color: var(--text-secondary);">${(wrongCount * paper.marking.wrong).toFixed(2)} Marks</div>
+                </div>
+                <div class="score-box">
+                    <div style="color: var(--text-secondary); font-size: 0.85rem;">UNATTEMPTED</div>
+                    <div class="num" style="color: var(--text-secondary);">${unattemptedCount}</div>
+                    <div style="font-size: 0.8rem; color: var(--text-secondary);">0.00 Penalty</div>
+                </div>
+            </div>
+            
+            <div class="button-group" style="margin-top: 20px;">
+                <button class="btn btn-primary" onclick="startMockTest(${state.paperIndex})">Retake Mock Test</button>
+                <button class="btn" onclick="goHome()">Back to Home</button>
+                <button class="btn" onclick="window.print()">Print Scorecard</button>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h3>Detailed Question-by-Question Review</h3>
+            ${reviewHtml}
+        </div>
+    `;
+}
+
+function viewAnswerKey(paperIdx) {
+    state.view = 'key';
+    state.paperIndex = paperIdx;
+    render();
+}
+
+function renderAnswerKey() {
+    const paper = EXAM_DATA.papers[state.paperIndex];
+    
+    let listHtml = '';
+    paper.questions.forEach((q) => {
+        let optionsHtml = '';
+        for (let i = 0; i < 4; i++) {
+            const optNum = i + 1;
+            let optClass = 'opt-review';
+            let label = '';
+            if (optNum === q.correct_answer) {
+                optClass += ' is-correct';
+                label = ' ✓ Official Key';
+            }
+            optionsHtml += `
+                <div class="${optClass}">
+                    <div><strong>(${optNum})</strong> ${q.options[i]}</div>
+                    <div style="font-size: 0.85rem; font-weight: 600;">${label}</div>
+                </div>
+            `;
+        }
+        
+        listHtml += `
+            <div class="review-item">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-weight: 600; font-size: 1.05rem;">Question ${q.number} (${q.id})</span>
+                    <span class="badge badge-correct">Key: Option (${q.correct_answer})</span>
+                </div>
+                <div style="font-size: 1.05rem; margin: 12px 0;">${q.text}</div>
+                <div style="margin-bottom: 12px;">${optionsHtml}</div>
+                <div class="rationale-box">
+                    <strong>Official Rationale / Solution:</strong><br>
+                    ${q.rationale}
+                </div>
+            </div>
+        `;
+    });
+    
+    return `
+        <div class="card">
+            <h2>Official Answer Key & Detailed Rationale</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 16px;">${paper.paper}: ${paper.title} · 100 Questions</p>
+            <div class="button-group">
+                <button class="btn btn-primary" onclick="startMockTest(${state.paperIndex})">Take This Mock Test</button>
+                <button class="btn" onclick="goHome()">Back to Home</button>
+                <button class="btn" onclick="window.print()">Print Answer Key</button>
+            </div>
+        </div>
+        <div class="card">
+            ${listHtml}
+        </div>
+    `;
+}
+
+function goHome() {
+    state.view = 'home';
+    render();
+}
+
+init();
+</script>
+</body>
+</html>
