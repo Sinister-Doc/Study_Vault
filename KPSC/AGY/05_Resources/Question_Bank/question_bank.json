@@ -1,0 +1,5983 @@
+{
+  "exam": "KPSC Gazetted Probationers (KAS)",
+  "retrieved": "2026-10-13",
+  "source_url": "https://kpsc.kar.nic.in",
+  "total_questions": 200,
+  "questions": [
+    {
+      "id": "KAS-P1-CA-001",
+      "subject": "Current Affairs",
+      "text": "The Bharatiya Nyaya Sanhita (BNS), 2023 officially came into legal enforcement across India on which date?",
+      "options": [
+        {
+          "label": "A",
+          "text": "1 January 2024"
+        },
+        {
+          "label": "B",
+          "text": "1 July 2024"
+        },
+        {
+          "label": "C",
+          "text": "15 August 2024"
+        },
+        {
+          "label": "D",
+          "text": "2 October 2024"
+        }
+      ],
+      "answer": "B",
+      "explanation": "The Bharatiya Nyaya Sanhita (BNS), Bharatiya Nagarik Suraksha Sanhita (BNSS), and Bharatiya Sakshya Adhiniyam (BSA) came into force on 1 July 2024.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P1-S1.1"
+    },
+    {
+      "id": "KAS-P1-CA-002",
+      "subject": "Current Affairs",
+      "text": "Under the Bharatiya Nyaya Sanhita, 2023, which of the following novel statutory punishments has been introduced for petty offenses?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Public reprimand"
+        },
+        {
+          "label": "B",
+          "text": "Community Service"
+        },
+        {
+          "label": "C",
+          "text": "Asset freezing"
+        },
+        {
+          "label": "D",
+          "text": "Solitary confinement"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Community Service has been introduced as a formal penal punishment for specific petty offenses in BNS.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P1-S1.1"
+    },
+    {
+      "id": "KAS-P1-CA-003",
+      "subject": "Current Affairs",
+      "text": "The 106th Constitutional Amendment Act, 2023 provides for what percentage of reservation for women in the Lok Sabha and State Legislative Assemblies?",
+      "options": [
+        {
+          "label": "A",
+          "text": "25%"
+        },
+        {
+          "label": "B",
+          "text": "30%"
+        },
+        {
+          "label": "C",
+          "text": "33%"
+        },
+        {
+          "label": "D",
+          "text": "50%"
+        }
+      ],
+      "answer": "C",
+      "explanation": "The Nari Shakti Vandan Adhiniyam (106th Amendment Act) reserves one-third (33%) of seats for women.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P1-S1.1"
+    },
+    {
+      "id": "KAS-P1-CA-004",
+      "subject": "Current Affairs",
+      "text": "Under the Chief Election Commissioner and other ECs Act, 2023, who among the following is NOT a member of the Selection Committee?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Prime Minister of India"
+        },
+        {
+          "label": "B",
+          "text": "Chief Justice of India"
+        },
+        {
+          "label": "C",
+          "text": "Leader of Opposition in Lok Sabha"
+        },
+        {
+          "label": "D",
+          "text": "A Union Cabinet Minister nominated by PM"
+        }
+      ],
+      "answer": "B",
+      "explanation": "The CJI was substituted by a Union Cabinet Minister nominated by the Prime Minister in the Selection Committee.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P1-S1.1"
+    },
+    {
+      "id": "KAS-P1-CA-005",
+      "subject": "Current Affairs",
+      "text": "Mission Divyastra, successfully flight-tested by DRDO in March 2024, demonstrated which advanced capability on the Agni-5 missile?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Hypersonic Scramjet cruise flight"
+        },
+        {
+          "label": "B",
+          "text": "Multiple Independently Targetable Re-entry Vehicle (MIRV)"
+        },
+        {
+          "label": "C",
+          "text": "Submarine launch from underwater silo"
+        },
+        {
+          "label": "D",
+          "text": "Directed Energy Laser weapon"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Mission Divyastra proved indigenous MIRV technology on Agni-5, allowing multiple warheads to hit distinct targets.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P1-S1.1"
+    },
+    {
+      "id": "KAS-P1-CA-006",
+      "subject": "Current Affairs",
+      "text": "Which indigenously built nuclear-powered ballistic missile submarine (SSBN) was commissioned into the Indian Navy in August 2024 at Visakhapatnam?",
+      "options": [
+        {
+          "label": "A",
+          "text": "INS Khanderi"
+        },
+        {
+          "label": "B",
+          "text": "INS Arighat"
+        },
+        {
+          "label": "C",
+          "text": "INS Vikrant"
+        },
+        {
+          "label": "D",
+          "text": "INS Vagir"
+        }
+      ],
+      "answer": "B",
+      "explanation": "INS Arighat is India's second indigenous nuclear-powered ballistic missile submarine (SSBN) after INS Arihant.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P1-S1.1"
+    },
+    {
+      "id": "KAS-P1-CA-007",
+      "subject": "Current Affairs",
+      "text": "What is the primary target domain of the National Quantum Mission (NQM) approved by the Union Cabinet?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Deep-sea polymetallic nodule mining"
+        },
+        {
+          "label": "B",
+          "text": "Intermediate-scale quantum computers with 50-1000 physical qubits"
+        },
+        {
+          "label": "C",
+          "text": "Fusion energy reactors"
+        },
+        {
+          "label": "D",
+          "text": "Graphene supercapacitors"
+        }
+      ],
+      "answer": "B",
+      "explanation": "NQM targets 50-1000 physical qubit quantum computing, quantum communications, and quantum cryptography.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P1-S1.1"
+    },
+    {
+      "id": "KAS-P1-CA-008",
+      "subject": "Current Affairs",
+      "text": "With the addition of three new wetland sites in 2024, what is the total count of designated Ramsar sites in India as of late 2024?",
+      "options": [
+        {
+          "label": "A",
+          "text": "75 sites"
+        },
+        {
+          "label": "B",
+          "text": "80 sites"
+        },
+        {
+          "label": "C",
+          "text": "85 sites"
+        },
+        {
+          "label": "D",
+          "text": "90 sites"
+        }
+      ],
+      "answer": "C",
+      "explanation": "India's total Ramsar site tally reached 85 sites in 2024.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P1-S1.1"
+    },
+    {
+      "id": "KAS-P1-CA-009",
+      "subject": "Current Affairs",
+      "text": "Who among the following was NOT conferred the Bharat Ratna award in the year 2024?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Dr. M. S. Swaminathan"
+        },
+        {
+          "label": "B",
+          "text": "Karpoori Thakur"
+        },
+        {
+          "label": "C",
+          "text": "Atal Bihari Vajpayee"
+        },
+        {
+          "label": "D",
+          "text": "Chaudhary Charan Singh"
+        }
+      ],
+      "answer": "C",
+      "explanation": "Atal Bihari Vajpayee was conferred the Bharat Ratna in 2015. The 2024 recipients were Karpoori Thakur, L.K. Advani, P.V. Narasimha Rao, Charan Singh, and M.S. Swaminathan.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P1-S1.1"
+    },
+    {
+      "id": "KAS-P1-CA-010",
+      "subject": "Current Affairs",
+      "text": "Late Karpoori Thakur, awarded the Bharat Ratna posthumously in 2024, was the former Chief Minister of which Indian State?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Uttar Pradesh"
+        },
+        {
+          "label": "B",
+          "text": "Bihar"
+        },
+        {
+          "label": "C",
+          "text": "Madhya Pradesh"
+        },
+        {
+          "label": "D",
+          "text": "Rajasthan"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Karpoori Thakur (Jan Nayak) was a two-time Chief Minister of Bihar and pioneer of backward classes empowerment.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P1-S1.1"
+    },
+    {
+      "id": "KAS-P1-CA-011",
+      "subject": "Current Affairs",
+      "text": "Which of the following nations formally declined to join the BRICS grouping on 1 January 2024 despite being invited at the 15th Johannesburg Summit?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Saudi Arabia"
+        },
+        {
+          "label": "B",
+          "text": "Argentina"
+        },
+        {
+          "label": "C",
+          "text": "Egypt"
+        },
+        {
+          "label": "D",
+          "text": "United Arab Emirates"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Argentina under President Javier Milei formally declined to join BRICS on 1 January 2024.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P1-S1.1"
+    },
+    {
+      "id": "KAS-P1-CA-012",
+      "subject": "Current Affairs",
+      "text": "How many new member countries officially became full members of BRICS on 1 January 2024?",
+      "options": [
+        {
+          "label": "A",
+          "text": "3 countries"
+        },
+        {
+          "label": "B",
+          "text": "5 countries"
+        },
+        {
+          "label": "C",
+          "text": "7 countries"
+        },
+        {
+          "label": "D",
+          "text": "10 countries"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Five countries joined as full members: Egypt, Ethiopia, Iran, Saudi Arabia, and the United Arab Emirates.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P1-S1.1"
+    },
+    {
+      "id": "KAS-P1-CA-013",
+      "subject": "Current Affairs",
+      "text": "Under India's G20 Presidency at the New Delhi Summit, which regional organization was admitted as a permanent full member of the G20?",
+      "options": [
+        {
+          "label": "A",
+          "text": "ASEAN"
+        },
+        {
+          "label": "B",
+          "text": "African Union"
+        },
+        {
+          "label": "C",
+          "text": "European Free Trade Association"
+        },
+        {
+          "label": "D",
+          "text": "BIMSTEC"
+        }
+      ],
+      "answer": "B",
+      "explanation": "The African Union, representing 55 African nations, was admitted as a permanent member of the G20.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P1-S1.1"
+    },
+    {
+      "id": "KAS-P1-CA-014",
+      "subject": "Current Affairs",
+      "text": "Under the Trade and Economic Partnership Agreement (TEPA) signed in March 2024, which economic bloc committed to invest $100 Billion into India over 15 years?",
+      "options": [
+        {
+          "label": "A",
+          "text": "European Union (EU)"
+        },
+        {
+          "label": "B",
+          "text": "European Free Trade Association (EFTA)"
+        },
+        {
+          "label": "C",
+          "text": "Mercosur"
+        },
+        {
+          "label": "D",
+          "text": "Gulf Cooperation Council (GCC)"
+        }
+      ],
+      "answer": "B",
+      "explanation": "The European Free Trade Association (Switzerland, Norway, Iceland, Liechtenstein) signed TEPA with India.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P1-S1.1"
+    },
+    {
+      "id": "KAS-P1-CA-015",
+      "subject": "Current Affairs",
+      "text": "The COP28 UN Climate Conference was hosted in which city where the landmark 'UAE Consensus' on transitioning away from fossil fuels was adopted?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Sharm el-Sheikh"
+        },
+        {
+          "label": "B",
+          "text": "Glasgow"
+        },
+        {
+          "label": "C",
+          "text": "Dubai"
+        },
+        {
+          "label": "D",
+          "text": "Baku"
+        }
+      ],
+      "answer": "C",
+      "explanation": "COP28 was held in Dubai, UAE in December 2023.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P1-S1.1"
+    },
+    {
+      "id": "KAS-P1-CA-016",
+      "subject": "Current Affairs",
+      "text": "The COP29 United Nations Climate Change Conference is hosted in which world capital city?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Baku (Azerbaijan)"
+        },
+        {
+          "label": "B",
+          "text": "Belém (Brazil)"
+        },
+        {
+          "label": "C",
+          "text": "Doha (Qatar)"
+        },
+        {
+          "label": "D",
+          "text": "Nairobi (Kenya)"
+        }
+      ],
+      "answer": "A",
+      "explanation": "COP29 is hosted in Baku, Azerbaijan.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P1-S1.1"
+    },
+    {
+      "id": "KAS-P1-CA-017",
+      "subject": "Current Affairs",
+      "text": "The India-Middle East-Europe Economic Corridor (IMEC) unveiled at the G20 Summit features which Mediterranean port terminal as a primary node connecting Europe?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Rotterdam Port"
+        },
+        {
+          "label": "B",
+          "text": "Haifa Port"
+        },
+        {
+          "label": "C",
+          "text": "Alexandria Port"
+        },
+        {
+          "label": "D",
+          "text": "Marseille Port"
+        }
+      ],
+      "answer": "B",
+      "explanation": "IMEC's northern corridor routes from Arabian Gulf rail to Haifa Port in Israel before shipping to Europe.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P1-S1.1"
+    },
+    {
+      "id": "KAS-P1-CA-018",
+      "subject": "Current Affairs",
+      "text": "What was India's rank on the Global Innovation Index (GII) 2024 published by the World Intellectual Property Organization (WIPO)?",
+      "options": [
+        {
+          "label": "A",
+          "text": "40th"
+        },
+        {
+          "label": "B",
+          "text": "39th"
+        },
+        {
+          "label": "C",
+          "text": "48th"
+        },
+        {
+          "label": "D",
+          "text": "52nd"
+        }
+      ],
+      "answer": "B",
+      "explanation": "India ranked 39th out of 133 economies in the Global Innovation Index 2024.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P1-S1.1"
+    },
+    {
+      "id": "KAS-P1-CA-019",
+      "subject": "Current Affairs",
+      "text": "According to the UNDP Human Development Report 2023-24, what is India's global rank in the Human Development Index (HDI)?",
+      "options": [
+        {
+          "label": "A",
+          "text": "128th"
+        },
+        {
+          "label": "B",
+          "text": "131st"
+        },
+        {
+          "label": "C",
+          "text": "134th"
+        },
+        {
+          "label": "D",
+          "text": "142nd"
+        }
+      ],
+      "answer": "C",
+      "explanation": "India ranked 134th out of 193 countries on HDI with a score of 0.644.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P1-S1.1"
+    },
+    {
+      "id": "KAS-P1-CA-020",
+      "subject": "Current Affairs",
+      "text": "Which country's spacecraft became the first in human history to land on the far side of the Moon and retrieve lunar soil samples back to Earth in June 2024?",
+      "options": [
+        {
+          "label": "A",
+          "text": "USA (Artemis)"
+        },
+        {
+          "label": "B",
+          "text": "Japan (SLIM)"
+        },
+        {
+          "label": "C",
+          "text": "China (Chang'e-6)"
+        },
+        {
+          "label": "D",
+          "text": "India (Chandrayaan-3)"
+        }
+      ],
+      "answer": "C",
+      "explanation": "China's Chang'e-6 mission retrieved the first-ever physical samples from the lunar far side (South Pole-Aitken basin).",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P1-S1.1"
+    },
+    {
+      "id": "KAS-P1-CA-021",
+      "subject": "Current Affairs",
+      "text": "Which city hosted the 14th BRICS Summit in virtual format under China's chairmanship?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Johannesburg"
+        },
+        {
+          "label": "B",
+          "text": "Beijing"
+        },
+        {
+          "label": "C",
+          "text": "Brasilia"
+        },
+        {
+          "label": "D",
+          "text": "New Delhi"
+        }
+      ],
+      "answer": "B",
+      "explanation": "The 14th BRICS summit was chaired virtually by Beijing, China.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2020,
+      "source_tier": 1,
+      "syllabus_id": "P1-S1.1"
+    },
+    {
+      "id": "KAS-P1-CA-022",
+      "subject": "Current Affairs",
+      "text": "Who was appointed as the first Chief of Defence Staff (CDS) of the Indian Armed Forces?",
+      "options": [
+        {
+          "label": "A",
+          "text": "General M. M. Naravane"
+        },
+        {
+          "label": "B",
+          "text": "General Bipin Rawat"
+        },
+        {
+          "label": "C",
+          "text": "General Dalbir Singh Suhag"
+        },
+        {
+          "label": "D",
+          "text": "Admiral Sunil Lanba"
+        }
+      ],
+      "answer": "B",
+      "explanation": "General Bipin Rawat was appointed India's first Chief of Defence Staff (CDS) in December 2019.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2020,
+      "source_tier": 1,
+      "syllabus_id": "P1-S1.1"
+    },
+    {
+      "id": "KAS-P1-CA-023",
+      "subject": "Current Affairs",
+      "text": "The Nobel Peace Prize 2023 was conferred upon which human rights defender from Iran?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Ales Bialiatski"
+        },
+        {
+          "label": "B",
+          "text": "Narges Mohammadi"
+        },
+        {
+          "label": "C",
+          "text": "Malala Yousafzai"
+        },
+        {
+          "label": "D",
+          "text": "Maria Ressa"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Narges Mohammadi was awarded the Nobel Peace Prize 2023 for her fight against the oppression of women in Iran.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P1-S1.1"
+    },
+    {
+      "id": "KAS-P1-CA-024",
+      "subject": "Current Affairs",
+      "text": "Which constitutional article was amended to implement the Goods and Services Tax (GST) in India via the 101st Constitutional Amendment?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Article 246A"
+        },
+        {
+          "label": "B",
+          "text": "Article 268A"
+        },
+        {
+          "label": "C",
+          "text": "Article 270A"
+        },
+        {
+          "label": "D",
+          "text": "Article 282A"
+        }
+      ],
+      "answer": "A",
+      "explanation": "Article 246A was inserted by the 101st Amendment to grant concurrent taxing power over GST to Parliament and State Legislatures.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2017,
+      "source_tier": 1,
+      "syllabus_id": "P1-S1.1"
+    },
+    {
+      "id": "KAS-P1-CA-025",
+      "subject": "Current Affairs",
+      "text": "The headquarters of the International Big Cat Alliance (IBCA) established in 2024 is located in which country?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Kenya"
+        },
+        {
+          "label": "B",
+          "text": "India"
+        },
+        {
+          "label": "C",
+          "text": "South Africa"
+        },
+        {
+          "label": "D",
+          "text": "Brazil"
+        }
+      ],
+      "answer": "B",
+      "explanation": "The International Big Cat Alliance (IBCA) is headquartered in India with budgetary backing approved in 2024.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P1-S1.1"
+    },
+    {
+      "id": "KAS-P1-CA-026",
+      "subject": "Current Affairs",
+      "text": "Operation Kaveri was launched by the Government of India in 2023 to evacuate Indian citizens from which conflict-ridden nation?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Ukraine"
+        },
+        {
+          "label": "B",
+          "text": "Sudan"
+        },
+        {
+          "label": "C",
+          "text": "Israel"
+        },
+        {
+          "label": "D",
+          "text": "Yemen"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Operation Kaveri evacuated over 3,800 Indian citizens from Sudan following civil armed conflict in April 2023.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P1-S1.1"
+    },
+    {
+      "id": "KAS-P1-CA-027",
+      "subject": "Current Affairs",
+      "text": "Operation Ajay was launched by India in October 2023 to facilitate the return of Indian citizens from which region?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Ukraine"
+        },
+        {
+          "label": "B",
+          "text": "Israel and Palestine"
+        },
+        {
+          "label": "C",
+          "text": "Gaza Strip"
+        },
+        {
+          "label": "D",
+          "text": "Afghanistan"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Operation Ajay was launched to evacuate Indian citizens from Israel following the October 2023 conflict outbreak.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P1-S1.1"
+    },
+    {
+      "id": "KAS-P1-CA-028",
+      "subject": "Current Affairs",
+      "text": "Which Indian state hosted the Khelo India Youth Games 2024 across four cities (Chennai, Madurai, Trichy, Coimbatore)?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Karnataka"
+        },
+        {
+          "label": "B",
+          "text": "Tamil Nadu"
+        },
+        {
+          "label": "C",
+          "text": "Maharashtra"
+        },
+        {
+          "label": "D",
+          "text": "Haryana"
+        }
+      ],
+      "answer": "B",
+      "explanation": "The 6th Khelo India Youth Games was held in Tamil Nadu in January 2024.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P1-S1.1"
+    },
+    {
+      "id": "KAS-P1-CA-029",
+      "subject": "Current Affairs",
+      "text": "The Dadasaheb Phalke Lifetime Achievement Award for 2021 (conferred in late 2023) was awarded to which legendary actress?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Asha Parekh"
+        },
+        {
+          "label": "B",
+          "text": "Waheeda Rehman"
+        },
+        {
+          "label": "C",
+          "text": "Hema Malini"
+        },
+        {
+          "label": "D",
+          "text": "Rekha"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Veteran actress Waheeda Rehman was honored with the Dadasaheb Phalke Lifetime Achievement Award.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P1-S1.1"
+    },
+    {
+      "id": "KAS-P1-CA-030",
+      "subject": "Current Affairs",
+      "text": "Which island territory of India saw the commissioning of INS Jatayu naval base in March 2024 to bolster Indian Navy's surveillance in the Arabian Sea?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Andaman and Nicobar Islands"
+        },
+        {
+          "label": "B",
+          "text": "Minicoy Island (Lakshadweep)"
+        },
+        {
+          "label": "C",
+          "text": "Diu Island"
+        },
+        {
+          "label": "D",
+          "text": "Pamban Island"
+        }
+      ],
+      "answer": "B",
+      "explanation": "INS Jatayu was commissioned on Minicoy Island in Lakshadweep, boosting security across the Sea Lines of Communication.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P1-S1.1"
+    },
+    {
+      "id": "KAS-P1-CA-031",
+      "subject": "Current Affairs",
+      "text": "Under the PM-Surya Ghar: Muft Bijli Yojana launched in 2024, how many units of free electricity per month are targeted for 1 crore households via rooftop solar?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Up to 100 units"
+        },
+        {
+          "label": "B",
+          "text": "Up to 200 units"
+        },
+        {
+          "label": "C",
+          "text": "Up to 300 units"
+        },
+        {
+          "label": "D",
+          "text": "Up to 400 units"
+        }
+      ],
+      "answer": "C",
+      "explanation": "PM Surya Ghar Yojana targets up to 300 units of free power monthly for 1 crore households.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P1-S1.1"
+    },
+    {
+      "id": "KAS-P1-CA-032",
+      "subject": "Current Affairs",
+      "text": "Which national park in Madhya Pradesh is the second relocation site chosen for the introduction of African cheetahs under Project Cheetah?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Bandhavgarh National Park"
+        },
+        {
+          "label": "B",
+          "text": "Gandhi Sagar Wildlife Sanctuary"
+        },
+        {
+          "label": "C",
+          "text": "Kanha National Park"
+        },
+        {
+          "label": "D",
+          "text": "Pench National Park"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Gandhi Sagar Wildlife Sanctuary in Madhya Pradesh is prepared as the second home for cheetahs after Kuno NP.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P1-S1.1"
+    },
+    {
+      "id": "KAS-P1-CA-033",
+      "subject": "Current Affairs",
+      "text": "The 'Loss and Damage Fund' to assist developing nations vulnerable to climate change was formally operationalized at which COP summit?",
+      "options": [
+        {
+          "label": "A",
+          "text": "COP26 Glasgow"
+        },
+        {
+          "label": "B",
+          "text": "COP27 Sharm el-Sheikh"
+        },
+        {
+          "label": "C",
+          "text": "COP28 Dubai"
+        },
+        {
+          "label": "D",
+          "text": "COP21 Paris"
+        }
+      ],
+      "answer": "C",
+      "explanation": "The Loss and Damage Fund was formally adopted and operationalized on Day 1 of COP28 in Dubai (2023).",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P1-S1.1"
+    },
+    {
+      "id": "KAS-P1-CA-034",
+      "subject": "Current Affairs",
+      "text": "Who is the Chief Justice of India as of mid-2024, heading the Supreme Court of India?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Justice N. V. Ramana"
+        },
+        {
+          "label": "B",
+          "text": "Justice U. U. Lalit"
+        },
+        {
+          "label": "C",
+          "text": "Justice D. Y. Chandrachud"
+        },
+        {
+          "label": "D",
+          "text": "Justice Sanjiv Khanna"
+        }
+      ],
+      "answer": "C",
+      "explanation": "Justice D. Y. Chandrachud served as the 50th Chief Justice of India (November 2022 to November 2024).",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P1-S1.1"
+    },
+    {
+      "id": "KAS-P1-CA-035",
+      "subject": "Current Affairs",
+      "text": "Which public sector aerospace undertaking in Bengaluru manufactures the Light Combat Aircraft (LCA) Tejas for the Indian Air Force?",
+      "options": [
+        {
+          "label": "A",
+          "text": "BHEL"
+        },
+        {
+          "label": "B",
+          "text": "HAL (Hindustan Aeronautics Limited)"
+        },
+        {
+          "label": "C",
+          "text": "BEL"
+        },
+        {
+          "label": "D",
+          "text": "BEML"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Hindustan Aeronautics Limited (HAL) headquartered in Bengaluru manufactures the LCA Tejas.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2020,
+      "source_tier": 1,
+      "syllabus_id": "P1-S1.1"
+    },
+    {
+      "id": "KAS-P1-CA-036",
+      "subject": "Current Affairs",
+      "text": "The Anusandhan National Research Foundation (ANRF) Act, 2023 repealed and replaced which statutory scientific funding body?",
+      "options": [
+        {
+          "label": "A",
+          "text": "CSIR"
+        },
+        {
+          "label": "B",
+          "text": "Science and Engineering Research Board (SERB)"
+        },
+        {
+          "label": "C",
+          "text": "ICAR"
+        },
+        {
+          "label": "D",
+          "text": "ICMR"
+        }
+      ],
+      "answer": "B",
+      "explanation": "ANRF repealed the Science and Engineering Research Board (SERB) Act, 2008 to create a Rs. 50,000 Crore research foundation.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P1-S1.1"
+    },
+    {
+      "id": "KAS-P1-CA-037",
+      "subject": "Current Affairs",
+      "text": "What is the primary objective of the PM Vishwakarma Scheme launched by the Central Government?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Promoting AI startups"
+        },
+        {
+          "label": "B",
+          "text": "End-to-end support to traditional artisans and craftspeople"
+        },
+        {
+          "label": "C",
+          "text": "Subsidizing electric tractor purchases"
+        },
+        {
+          "label": "D",
+          "text": "Free health insurance to gig workers"
+        }
+      ],
+      "answer": "B",
+      "explanation": "PM Vishwakarma provides collateral-free loans, skill training, and toolkits to traditional craftspeople across 18 trades.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P1-S1.1"
+    },
+    {
+      "id": "KAS-P1-CA-038",
+      "subject": "Current Affairs",
+      "text": "Which country hosted the G7 Leaders' Summit 2024 in the Apulia region?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Germany"
+        },
+        {
+          "label": "B",
+          "text": "Japan"
+        },
+        {
+          "label": "C",
+          "text": "Italy"
+        },
+        {
+          "label": "D",
+          "text": "United Kingdom"
+        }
+      ],
+      "answer": "C",
+      "explanation": "The 50th G7 summit was hosted by Italy in Borgo Egnazia, Apulia in June 2024.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P1-S1.1"
+    },
+    {
+      "id": "KAS-P1-CA-039",
+      "subject": "Current Affairs",
+      "text": "The North Atlantic Treaty Organization (NATO) welcomed which Nordic nation as its 32nd member country in March 2024?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Finland"
+        },
+        {
+          "label": "B",
+          "text": "Sweden"
+        },
+        {
+          "label": "C",
+          "text": "Ukraine"
+        },
+        {
+          "label": "D",
+          "text": "Ireland"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Sweden officially became the 32nd member of NATO in March 2024 (Finland joined as the 31st member in 2023).",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P1-S1.1"
+    },
+    {
+      "id": "KAS-P1-CA-040",
+      "subject": "Current Affairs",
+      "text": "Who won the ICC Men's T20 World Cup 2024 held in the West Indies and USA?",
+      "options": [
+        {
+          "label": "A",
+          "text": "South Africa"
+        },
+        {
+          "label": "B",
+          "text": "Australia"
+        },
+        {
+          "label": "C",
+          "text": "India"
+        },
+        {
+          "label": "D",
+          "text": "England"
+        }
+      ],
+      "answer": "C",
+      "explanation": "India defeated South Africa in the final in Bridgetown, Barbados to win the Men's T20 World Cup 2024.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P1-S1.1"
+    },
+    {
+      "id": "KAS-P1-HUM-001",
+      "subject": "Humanities",
+      "text": "Who was the founder of the Kadamba dynasty of Banavasi and the author of the Chandravalli inscription?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Mayurasharma"
+        },
+        {
+          "label": "B",
+          "text": "Kakusthavarma"
+        },
+        {
+          "label": "C",
+          "text": "Ravivarma"
+        },
+        {
+          "label": "D",
+          "text": "Santivarma"
+        }
+      ],
+      "answer": "A",
+      "explanation": "Mayurasharma founded the Kadamba dynasty at Banavasi around 345 CE after overcoming the Pallavas.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2017,
+      "source_tier": 1,
+      "syllabus_id": "P1-S2.1"
+    },
+    {
+      "id": "KAS-P1-HUM-002",
+      "subject": "Humanities",
+      "text": "The Halmidi Inscription (ಹಾಲ್ಮಿಡಿ ಶಾಸನ), dated to c. 450 CE, was discovered in which modern district of Karnataka?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Shivamogga"
+        },
+        {
+          "label": "B",
+          "text": "Hassan"
+        },
+        {
+          "label": "C",
+          "text": "Chikkamagaluru"
+        },
+        {
+          "label": "D",
+          "text": "Mandya"
+        }
+      ],
+      "answer": "B",
+      "explanation": "The Halmidi inscription, the earliest recorded stone inscription in Kannada script, was found in Belur taluk, Hassan district.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2015,
+      "source_tier": 1,
+      "syllabus_id": "P1-S2.1"
+    },
+    {
+      "id": "KAS-P1-HUM-003",
+      "subject": "Humanities",
+      "text": "Which Badami Chalukyan emperor assumed the title 'Parameshwara' after defeating Harsha on the banks of river Narmada?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Pulakeshin I"
+        },
+        {
+          "label": "B",
+          "text": "Pulakeshin II"
+        },
+        {
+          "label": "C",
+          "text": "Kirtivarman I"
+        },
+        {
+          "label": "D",
+          "text": "Vikramaditya I"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Pulakeshin II defeated Emperor Harsha on the banks of the Narmada in 618 CE, recorded in the Aihole Inscription by Ravikirti.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2020,
+      "source_tier": 1,
+      "syllabus_id": "P1-S2.1"
+    },
+    {
+      "id": "KAS-P1-HUM-004",
+      "subject": "Humanities",
+      "text": "The magnificent monolithic statue of Gommateshwara at Shravanabelagola was consecrated in 981 CE by which Ganga general?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Chavundaraya"
+        },
+        {
+          "label": "B",
+          "text": "Marasimha II"
+        },
+        {
+          "label": "C",
+          "text": "Durvinita"
+        },
+        {
+          "label": "D",
+          "text": "Sripurusha"
+        }
+      ],
+      "answer": "A",
+      "explanation": "Chavundaraya, the military commander of Western Ganga King Rachamalla IV, commissioned the 57-foot Gommateshwara monolith.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2014,
+      "source_tier": 1,
+      "syllabus_id": "P1-S2.1"
+    },
+    {
+      "id": "KAS-P1-HUM-005",
+      "subject": "Humanities",
+      "text": "The rock-cut monolithic Kailasa temple at Ellora (Cave 16) was excavated during the reign of which Rashtrakuta king?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Dantidurga"
+        },
+        {
+          "label": "B",
+          "text": "Krishna I"
+        },
+        {
+          "label": "C",
+          "text": "Amoghavarsha I"
+        },
+        {
+          "label": "D",
+          "text": "Govinda III"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Rashtrakuta King Krishna I (c. 756-774 CE) excavated the monolithic Kailasa temple at Ellora.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2017,
+      "source_tier": 1,
+      "syllabus_id": "P1-S2.1"
+    },
+    {
+      "id": "KAS-P1-HUM-006",
+      "subject": "Humanities",
+      "text": "The celebrated Kannada literary work 'Kavirajamarga' was composed during the reign of which monarch?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Pulakeshin II"
+        },
+        {
+          "label": "B",
+          "text": "Amoghavarsha Nrupathunga"
+        },
+        {
+          "label": "C",
+          "text": "Vikramaditya VI"
+        },
+        {
+          "label": "D",
+          "text": "Vishnuvardhana"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Kavirajamarga (c. 850 CE) was patronized by Rashtrakuta King Amoghavarsha I Nrupathunga and authored by Sri Vijaya.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2020,
+      "source_tier": 1,
+      "syllabus_id": "P1-S2.1"
+    },
+    {
+      "id": "KAS-P1-HUM-007",
+      "subject": "Humanities",
+      "text": "Which Hoysala king constructed the renowned Chennakeshava Temple at Belur in 1117 CE to commemorate his victory over the Cholas?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Bittideva (Vishnuvardhana)"
+        },
+        {
+          "label": "B",
+          "text": "Veera Ballala II"
+        },
+        {
+          "label": "C",
+          "text": "Narasimha I"
+        },
+        {
+          "label": "D",
+          "text": "Veera Ballala III"
+        }
+      ],
+      "answer": "A",
+      "explanation": "King Vishnuvardhana (formerly Bittideva) built the Belur Chennakeshava temple after winning the Battle of Talakadu.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2015,
+      "source_tier": 1,
+      "syllabus_id": "P1-S2.1"
+    },
+    {
+      "id": "KAS-P1-HUM-008",
+      "subject": "Humanities",
+      "text": "The Persian ambassador Abdur Razzak visited the Vijayanagara Empire during the reign of which emperor?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Harihara II"
+        },
+        {
+          "label": "B",
+          "text": "Devaraya II (Praudha Devaraya)"
+        },
+        {
+          "label": "C",
+          "text": "Krishnadevaraya"
+        },
+        {
+          "label": "D",
+          "text": "Achyuta Devaraya"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Abdur Razzak visited Vijayanagara in 1443 CE during the reign of Sangama ruler Devaraya II.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2017,
+      "source_tier": 1,
+      "syllabus_id": "P1-S2.1"
+    },
+    {
+      "id": "KAS-P1-HUM-009",
+      "subject": "Humanities",
+      "text": "The historic Battle of Talikota (Rakkasa-Tangadi), which led to the sacking of Vijayanagara, took place in which year?",
+      "options": [
+        {
+          "label": "A",
+          "text": "1526 CE"
+        },
+        {
+          "label": "B",
+          "text": "1556 CE"
+        },
+        {
+          "label": "C",
+          "text": "1565 CE"
+        },
+        {
+          "label": "D",
+          "text": "1576 CE"
+        }
+      ],
+      "answer": "C",
+      "explanation": "The Battle of Talikota took place on 23 January 1565 CE between the Vijayanagara army under Aliya Rama Raya and the combined Deccan Sultanates.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2014,
+      "source_tier": 1,
+      "syllabus_id": "P1-S2.1"
+    },
+    {
+      "id": "KAS-P1-HUM-010",
+      "subject": "Humanities",
+      "text": "Which brave queen of Keladi Nayakas provided asylum to Rajaram, son of Chhatrapati Shivaji, defying the Mughal Emperor Aurangzeb?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Rani Chennamma of Kittur"
+        },
+        {
+          "label": "B",
+          "text": "Keladi Rani Chennamma"
+        },
+        {
+          "label": "C",
+          "text": "Keladi Abbakka Rani"
+        },
+        {
+          "label": "D",
+          "text": "Rani Mangammal"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Keladi Rani Chennamma gave shelter to Rajaram in 1689 and defeated the Mughal forces sent by Aurangzeb.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2017,
+      "source_tier": 1,
+      "syllabus_id": "P1-S2.1"
+    },
+    {
+      "id": "KAS-P1-HUM-011",
+      "subject": "Humanities",
+      "text": "Kittur Rani Chennamma led an armed rebellion against the British East India Company in 1824 opposing which British policy?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Subsidiary Alliance"
+        },
+        {
+          "label": "B",
+          "text": "Doctrine of Lapse"
+        },
+        {
+          "label": "C",
+          "text": "Permanent Settlement"
+        },
+        {
+          "label": "D",
+          "text": "Rowlatt Act"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Rani Chennamma revolted in 1824 when British Collector St. John Thackeray refused to recognize her adopted son Shivalingappa under the Doctrine of Lapse.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2020,
+      "source_tier": 1,
+      "syllabus_id": "P1-S2.1"
+    },
+    {
+      "id": "KAS-P1-HUM-012",
+      "subject": "Humanities",
+      "text": "Sangolli Rayanna, the legendary military commander who fought guerrilla warfare against the British, was executed by hanging in 1831 at which place?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Kittur"
+        },
+        {
+          "label": "B",
+          "text": "Nandagad"
+        },
+        {
+          "label": "C",
+          "text": "Belagavi"
+        },
+        {
+          "label": "D",
+          "text": "Dharwad"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Sangolli Rayanna was captured through treachery and hanged by the British at Nandagad on 26 January 1831.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2015,
+      "source_tier": 1,
+      "syllabus_id": "P1-S2.1"
+    },
+    {
+      "id": "KAS-P1-HUM-013",
+      "subject": "Humanities",
+      "text": "The Halagali Bedas uprising of 1857 in Karnataka was triggered by resistance to which British regulation?",
+      "options": [
+        {
+          "label": "A",
+          "text": "The Inam Commission"
+        },
+        {
+          "label": "B",
+          "text": "The Disarming Act of 1857"
+        },
+        {
+          "label": "C",
+          "text": "Salt Tax Regulations"
+        },
+        {
+          "label": "D",
+          "text": "Forest Rights Restriction"
+        }
+      ],
+      "answer": "B",
+      "explanation": "The hunters and martial Bedas of Halagali (Mudhol) revolted when the British ordered them to surrender their traditional firearms under the Disarming Act.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2017,
+      "source_tier": 1,
+      "syllabus_id": "P1-S2.1"
+    },
+    {
+      "id": "KAS-P1-HUM-014",
+      "subject": "Humanities",
+      "text": "The only Indian National Congress (INC) Annual Session ever presided over by Mahatma Gandhi was held in 1924 in which Karnataka town?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Bengaluru"
+        },
+        {
+          "label": "B",
+          "text": "Belagavi (Belgaum)"
+        },
+        {
+          "label": "C",
+          "text": "Mysuru"
+        },
+        {
+          "label": "D",
+          "text": "Hubballi"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Mahatma Gandhi presided over the 39th Session of the INC held at Belagavi in December 1924.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2020,
+      "source_tier": 1,
+      "syllabus_id": "P1-S2.1"
+    },
+    {
+      "id": "KAS-P1-HUM-015",
+      "subject": "Humanities",
+      "text": "The tragic Vidurashwatha incident (Gowribidanur taluk) of April 1938, where police firing killed 10 Congress satyagrahis, is known as:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Karnataka's Chauri Chaura"
+        },
+        {
+          "label": "B",
+          "text": "Jallianwala Bagh of Karnataka"
+        },
+        {
+          "label": "C",
+          "text": "Mysore Salt March"
+        },
+        {
+          "label": "D",
+          "text": "Dharwad Firing"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Vidurashwatha is commemorated as the 'Jallianwala Bagh of Karnataka' for the unprovoked firing on satyagrahis hoisting the national tricolor.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2014,
+      "source_tier": 1,
+      "syllabus_id": "P1-S2.1"
+    },
+    {
+      "id": "KAS-P1-HUM-016",
+      "subject": "Humanities",
+      "text": "In which ancient Ashokan edict site in Karnataka was a unique carved stone portrait of Emperor Ashoka inscribed with 'Ranyo Asoko' discovered?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Maski"
+        },
+        {
+          "label": "B",
+          "text": "Sannati (Kanaganahalli)"
+        },
+        {
+          "label": "C",
+          "text": "Brahmagiri"
+        },
+        {
+          "label": "D",
+          "text": "Nittur"
+        }
+      ],
+      "answer": "B",
+      "explanation": "At Kanaganahalli near Sannati in Kalaburagi district, a limestone relief sculpture of Emperor Ashoka inscribed with 'Ranyo Asoko' was excavated.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2017,
+      "source_tier": 1,
+      "syllabus_id": "P1-S2.1"
+    },
+    {
+      "id": "KAS-P1-HUM-017",
+      "subject": "Humanities",
+      "text": "The Maski edict of Emperor Ashoka holds immense historical significance because it was the first inscription to:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Mention the Battle of Kalinga"
+        },
+        {
+          "label": "B",
+          "text": "Mention Ashoka by his personal name rather than merely 'Devanampiya Piyadassi'"
+        },
+        {
+          "label": "C",
+          "text": "Use Greek script"
+        },
+        {
+          "label": "D",
+          "text": "Record Ashoka's conversion to Jainism"
+        }
+      ],
+      "answer": "B",
+      "explanation": "The Maski edict in Raichur (discovered by C. Beadon in 1915) explicitly identified 'Devanampiya Ashoka', confirming Ashoka's identity.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2015,
+      "source_tier": 1,
+      "syllabus_id": "P1-S2.1"
+    },
+    {
+      "id": "KAS-P1-HUM-018",
+      "subject": "Humanities",
+      "text": "The Indus Valley Civilization site of Lothal, renowned for its tidal dockyard, is located in which modern state?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Rajasthan"
+        },
+        {
+          "label": "B",
+          "text": "Gujarat"
+        },
+        {
+          "label": "C",
+          "text": "Haryana"
+        },
+        {
+          "label": "D",
+          "text": "Punjab"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Lothal is located along the Bhogava river in the Gulf of Khambhat in Gujarat.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2020,
+      "source_tier": 1,
+      "syllabus_id": "P1-S2.1"
+    },
+    {
+      "id": "KAS-P1-HUM-019",
+      "subject": "Humanities",
+      "text": "The Fourth Buddhist Council was convened during the reign of which Kushana monarch at Kundalavana in Kashmir?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Kanishka I"
+        },
+        {
+          "label": "B",
+          "text": "Huvishka"
+        },
+        {
+          "label": "C",
+          "text": "Vima Kadphises"
+        },
+        {
+          "label": "D",
+          "text": "Vasudeva"
+        }
+      ],
+      "answer": "A",
+      "explanation": "Kanishka I convened the 4th Buddhist Council presided over by Vasumitra with Asvaghosa as deputy, where Buddhism split into Hinayana and Mahayana.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2014,
+      "source_tier": 1,
+      "syllabus_id": "P1-S2.1"
+    },
+    {
+      "id": "KAS-P1-HUM-020",
+      "subject": "Humanities",
+      "text": "The Iron Pillar at Mehrauli in Delhi, renowned for its rustless metallurgy, bears an inscription belonging to which Gupta monarch?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Samudragupta"
+        },
+        {
+          "label": "B",
+          "text": "Chandragupta II (Chandragupta Vikramaditya)"
+        },
+        {
+          "label": "C",
+          "text": "Kumaragupta I"
+        },
+        {
+          "label": "D",
+          "text": "Skandagupta"
+        }
+      ],
+      "answer": "B",
+      "explanation": "The Mehrauli pillar commemorates King 'Chandra', identified by historians as Chandragupta II Vikramaditya.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2017,
+      "source_tier": 1,
+      "syllabus_id": "P1-S2.1"
+    },
+    {
+      "id": "KAS-P1-HUM-021",
+      "subject": "Humanities",
+      "text": "Who among the following Delhi Sultans introduced the market control regulations and price rationing system?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Balban"
+        },
+        {
+          "label": "B",
+          "text": "Alauddin Khilji"
+        },
+        {
+          "label": "C",
+          "text": "Muhammad bin Tughlaq"
+        },
+        {
+          "label": "D",
+          "text": "Feroz Shah Tughlaq"
+        }
+      ],
+      "answer": "A",
+      "explanation": "Alauddin Khilji introduced strict market control mechanisms, setting up Shahna-i-Mandi to control prices of grains, cloth, and horses.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2015,
+      "source_tier": 1,
+      "syllabus_id": "P1-S2.1"
+    },
+    {
+      "id": "KAS-P1-HUM-022",
+      "subject": "Humanities",
+      "text": "The Mansabdari administrative system was instituted by which Mughal emperor?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Babur"
+        },
+        {
+          "label": "B",
+          "text": "Akbar"
+        },
+        {
+          "label": "C",
+          "text": "Jahangir"
+        },
+        {
+          "label": "D",
+          "text": "Shah Jahan"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Akbar introduced the Mansabdari system in 1571 CE, classifying military and civil officials by Zat (personal rank) and Sawar (cavalry quota).",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2020,
+      "source_tier": 1,
+      "syllabus_id": "P1-S2.1"
+    },
+    {
+      "id": "KAS-P1-HUM-023",
+      "subject": "Humanities",
+      "text": "The Council of Eight Ministers known as the 'Ashtapradhan' assisted the administration of which ruler?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Krishnadevaraya"
+        },
+        {
+          "label": "B",
+          "text": "Chhatrapati Shivaji Maharaj"
+        },
+        {
+          "label": "C",
+          "text": "Raja Man Singh"
+        },
+        {
+          "label": "D",
+          "text": "Tipu Sultan"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Chhatrapati Shivaji's administration was guided by the Ashtapradhan, headed by the Peshwa (Prime Minister).",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2014,
+      "source_tier": 1,
+      "syllabus_id": "P1-S2.1"
+    },
+    {
+      "id": "KAS-P1-HUM-024",
+      "subject": "Humanities",
+      "text": "The Permanent Settlement (Zamindari System) of 1793 was introduced in Bengal and Bihar by which Governor-General?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Warren Hastings"
+        },
+        {
+          "label": "B",
+          "text": "Lord Cornwallis"
+        },
+        {
+          "label": "C",
+          "text": "Lord Wellesley"
+        },
+        {
+          "label": "D",
+          "text": "Lord Dalhousie"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Lord Cornwallis introduced the Permanent Settlement in 1793 with zamindars recognized as permanent hereditary owners of land.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2017,
+      "source_tier": 1,
+      "syllabus_id": "P1-S2.1"
+    },
+    {
+      "id": "KAS-P1-HUM-025",
+      "subject": "Humanities",
+      "text": "The Ryotwari land revenue settlement was first conceptualized and implemented in the Madras Presidency by:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Lord Cornwallis"
+        },
+        {
+          "label": "B",
+          "text": "Thomas Munro and Alexander Read"
+        },
+        {
+          "label": "C",
+          "text": "Holt Mackenzie"
+        },
+        {
+          "label": "D",
+          "text": "Lord William Bentinck"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Sir Thomas Munro and Captain Alexander Read introduced the Ryotwari system, directly contracting with the individual peasant cultivator (ryot).",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2015,
+      "source_tier": 1,
+      "syllabus_id": "P1-S2.1"
+    },
+    {
+      "id": "KAS-P1-HUM-026",
+      "subject": "Humanities",
+      "text": "Who founded the 'Brahmo Samaj' in Calcutta in 1828 to promote monotheism and oppose sati and idolatry?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Swami Dayananda Saraswati"
+        },
+        {
+          "label": "B",
+          "text": "Raja Ram Mohan Roy"
+        },
+        {
+          "label": "C",
+          "text": "Ishwar Chandra Vidyasagar"
+        },
+        {
+          "label": "D",
+          "text": "Keshab Chandra Sen"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Raja Ram Mohan Roy established the Brahmo Samaj in 1828.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2020,
+      "source_tier": 1,
+      "syllabus_id": "P1-S2.1"
+    },
+    {
+      "id": "KAS-P1-HUM-027",
+      "subject": "Humanities",
+      "text": "The Satyashodhak Samaj was founded in Maharashtra in 1873 by which social reformer to challenge Brahminical dominance and uplift non-Brahmins and women?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Jyotirao Phule"
+        },
+        {
+          "label": "B",
+          "text": "Gopal Hari Deshmukh"
+        },
+        {
+          "label": "C",
+          "text": "Dr. B. R. Ambedkar"
+        },
+        {
+          "label": "D",
+          "text": "Mahadev Govind Ranade"
+        }
+      ],
+      "answer": "A",
+      "explanation": "Mahatma Jyotirao Phule founded the Satyashodhak Samaj (Truth Seekers' Society) in 1873.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2017,
+      "source_tier": 1,
+      "syllabus_id": "P1-S2.1"
+    },
+    {
+      "id": "KAS-P1-HUM-028",
+      "subject": "Humanities",
+      "text": "The partition of Bengal in 1905 was enacted during the viceroyalty of which British administrator?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Lord Ripon"
+        },
+        {
+          "label": "B",
+          "text": "Lord Curzon"
+        },
+        {
+          "label": "C",
+          "text": "Lord Minto"
+        },
+        {
+          "label": "D",
+          "text": "Lord Hardinge"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Lord Curzon partitioned Bengal in October 1905 on administrative grounds, triggering the nationwide Swadeshi and Boycott Movement.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2015,
+      "source_tier": 1,
+      "syllabus_id": "P1-S2.1"
+    },
+    {
+      "id": "KAS-P1-HUM-029",
+      "subject": "Humanities",
+      "text": "Who was chosen by Mahatma Gandhi as the first Individual Satyagrahi in October 1940?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Jawaharlal Nehru"
+        },
+        {
+          "label": "B",
+          "text": "Acharya Vinoba Bhave"
+        },
+        {
+          "label": "C",
+          "text": "Brahma Dutt"
+        },
+        {
+          "label": "D",
+          "text": "Sardar Vallabhbhai Patel"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Acharya Vinoba Bhave was chosen as the first individual satyagrahi; Jawaharlal Nehru was the second.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2020,
+      "source_tier": 1,
+      "syllabus_id": "P1-S2.1"
+    },
+    {
+      "id": "KAS-P1-HUM-030",
+      "subject": "Humanities",
+      "text": "The historic 'Purna Swaraj' (Complete Independence) resolution was adopted at which annual session of the Indian National Congress in 1929?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Calcutta Session"
+        },
+        {
+          "label": "B",
+          "text": "Lahore Session"
+        },
+        {
+          "label": "C",
+          "text": "Karachi Session"
+        },
+        {
+          "label": "D",
+          "text": "Madras Session"
+        }
+      ],
+      "answer": "B",
+      "explanation": "The Lahore Session of INC (December 1929) presided over by Jawaharlal Nehru declared Purna Swaraj as the ultimate goal.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2014,
+      "source_tier": 1,
+      "syllabus_id": "P1-S2.1"
+    },
+    {
+      "id": "KAS-P1-HUM-031",
+      "subject": "Humanities",
+      "text": "Which is the highest peak in Karnataka, situated in the Western Ghats of Chikkamagaluru district?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Kudremukh"
+        },
+        {
+          "label": "B",
+          "text": "Mullayanagiri"
+        },
+        {
+          "label": "C",
+          "text": "Pushpagiri"
+        },
+        {
+          "label": "D",
+          "text": "Tadiandamol"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Mullayanagiri in the Baba Budan range of Chikkamagaluru is the highest mountain peak in Karnataka at 1,930 meters (6,332 ft).",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2017,
+      "source_tier": 1,
+      "syllabus_id": "P1-S2.1"
+    },
+    {
+      "id": "KAS-P1-HUM-032",
+      "subject": "Humanities",
+      "text": "The world-famous Jog Falls (Gersoppa Falls) in Shivamogga district is formed by which west-flowing river?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Netravati"
+        },
+        {
+          "label": "B",
+          "text": "Sharavathi"
+        },
+        {
+          "label": "C",
+          "text": "Kali"
+        },
+        {
+          "label": "D",
+          "text": "Varahi"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Jog Falls (253 meters high, comprising Raja, Roarer, Rocket, and Rani cascades) is formed by the Sharavathi River.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2020,
+      "source_tier": 1,
+      "syllabus_id": "P1-S2.1"
+    },
+    {
+      "id": "KAS-P1-HUM-033",
+      "subject": "Humanities",
+      "text": "The Krishna Water Disputes Tribunal-II (KWDT-II) gave its final award under the chairmanship of which judge?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Justice R. S. Bachawat"
+        },
+        {
+          "label": "B",
+          "text": "Justice Brijesh Kumar"
+        },
+        {
+          "label": "C",
+          "text": "Justice A. S. Anand"
+        },
+        {
+          "label": "D",
+          "text": "Justice Markandey Katju"
+        }
+      ],
+      "answer": "B",
+      "explanation": "KWDT-II was headed by Justice Brijesh Kumar (KWDT-I was headed by Justice R.S. Bachawat).",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2015,
+      "source_tier": 1,
+      "syllabus_id": "P1-S2.1"
+    },
+    {
+      "id": "KAS-P1-HUM-034",
+      "subject": "Humanities",
+      "text": "Which district in Karnataka is famously known as the 'Coffee Land of India' as coffee was first introduced here at Baba Budan Giri?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Kodagu"
+        },
+        {
+          "label": "B",
+          "text": "Chikkamagaluru"
+        },
+        {
+          "label": "C",
+          "text": "Hassan"
+        },
+        {
+          "label": "D",
+          "text": "Shivamogga"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Sufi saint Baba Budan brought seven raw coffee beans from Mocha (Yemen) and planted them in the Chandradrona hills of Chikkamagaluru in the 17th century.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2014,
+      "source_tier": 1,
+      "syllabus_id": "P1-S2.1"
+    },
+    {
+      "id": "KAS-P1-HUM-035",
+      "subject": "Humanities",
+      "text": "The boundary line separating the Earth's Crust and Mantle is known as:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Gutenberg Discontinuity"
+        },
+        {
+          "label": "B",
+          "text": "Mohorovicic (Moho) Discontinuity"
+        },
+        {
+          "label": "C",
+          "text": "Lehmann Discontinuity"
+        },
+        {
+          "label": "D",
+          "text": "Conrad Discontinuity"
+        }
+      ],
+      "answer": "B",
+      "explanation": "The Mohorovicic (Moho) discontinuity marks the boundary between the crust and the upper mantle.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2017,
+      "source_tier": 1,
+      "syllabus_id": "P1-S2.1"
+    },
+    {
+      "id": "KAS-P1-HUM-036",
+      "subject": "Humanities",
+      "text": "Which of the following ocean currents is a COLD current flowing along the western coast of South America?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Gulf Stream"
+        },
+        {
+          "label": "B",
+          "text": "Kuroshio Current"
+        },
+        {
+          "label": "C",
+          "text": "Humboldt (Peru) Current"
+        },
+        {
+          "label": "D",
+          "text": "Brazil Current"
+        }
+      ],
+      "answer": "C",
+      "explanation": "The Humboldt (Peru) Current is a cold, low-salinity ocean current that flows north along the western coast of South America.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2020,
+      "source_tier": 1,
+      "syllabus_id": "P1-S2.1"
+    },
+    {
+      "id": "KAS-P1-HUM-037",
+      "subject": "Humanities",
+      "text": "The subtropical high-pressure belts situated between 30° and 35° North and South latitudes are popularly called:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Doldrums"
+        },
+        {
+          "label": "B",
+          "text": "Horse Latitudes"
+        },
+        {
+          "label": "C",
+          "text": "Roaring Forties"
+        },
+        {
+          "label": "D",
+          "text": "Polar Fronts"
+        }
+      ],
+      "answer": "B",
+      "explanation": "The calm, dry subtropical high-pressure belts are historically known as the 'Horse Latitudes'.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2015,
+      "source_tier": 1,
+      "syllabus_id": "P1-S2.1"
+    },
+    {
+      "id": "KAS-P1-HUM-038",
+      "subject": "Humanities",
+      "text": "Which port is known as the 'Gateway of Karnataka', handling iron ore and coffee exports on the Arabian Sea coast?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Karwar Port"
+        },
+        {
+          "label": "B",
+          "text": "New Mangalore Port (NMPT)"
+        },
+        {
+          "label": "C",
+          "text": "Malpe Port"
+        },
+        {
+          "label": "D",
+          "text": "Bhatkal Port"
+        }
+      ],
+      "answer": "B",
+      "explanation": "New Mangalore Port (Panambur) is Karnataka's only major all-weather port, commissioned in 1974.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2014,
+      "source_tier": 1,
+      "syllabus_id": "P1-S2.1"
+    },
+    {
+      "id": "KAS-P1-HUM-039",
+      "subject": "Humanities",
+      "text": "The tropical cyclone measuring scale that categorizes hurricanes from Category 1 to 5 based on sustained wind speeds is:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Richter Scale"
+        },
+        {
+          "label": "B",
+          "text": "Saffir-Simpson Scale"
+        },
+        {
+          "label": "C",
+          "text": "Beaufort Scale"
+        },
+        {
+          "label": "D",
+          "text": "Fujita Scale"
+        }
+      ],
+      "answer": "B",
+      "explanation": "The Saffir-Simpson Hurricane Wind Scale classifies hurricanes from Category 1 to 5.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2017,
+      "source_tier": 1,
+      "syllabus_id": "P1-S2.1"
+    },
+    {
+      "id": "KAS-P1-HUM-040",
+      "subject": "Humanities",
+      "text": "Under the UN Convention on the Law of the Sea (UNCLOS), the Exclusive Economic Zone (EEZ) of a coastal state extends up to:",
+      "options": [
+        {
+          "label": "A",
+          "text": "12 nautical miles"
+        },
+        {
+          "label": "B",
+          "text": "24 nautical miles"
+        },
+        {
+          "label": "C",
+          "text": "200 nautical miles"
+        },
+        {
+          "label": "D",
+          "text": "350 nautical miles"
+        }
+      ],
+      "answer": "C",
+      "explanation": "The EEZ extends up to 200 nautical miles (370.4 km) from the coastal baseline.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2020,
+      "source_tier": 1,
+      "syllabus_id": "P1-S2.1"
+    },
+    {
+      "id": "KAS-P1-HUM-041",
+      "subject": "Humanities",
+      "text": "Which plateau in Karnataka is formed predominantly of Archaean Dharwar schist rocks rich in gold, iron ore, and manganese?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Deccan Traps Plateau"
+        },
+        {
+          "label": "B",
+          "text": "Karnataka (Mysore) Plateau"
+        },
+        {
+          "label": "C",
+          "text": "Chota Nagpur Plateau"
+        },
+        {
+          "label": "D",
+          "text": "Malwa Plateau"
+        }
+      ],
+      "answer": "B",
+      "explanation": "The Karnataka Plateau contains ancient Dharwar schists (Dharwar Craton) rich in Kolar/Hutti gold and Kudremukh/Sandur iron ores.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2015,
+      "source_tier": 1,
+      "syllabus_id": "P1-S2.1"
+    },
+    {
+      "id": "KAS-P1-HUM-042",
+      "subject": "Humanities",
+      "text": "Which river basin dispute involves the states of Karnataka, Goa, and Maharashtra over the Kalasa-Banduri Nala drinking water diversion project?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Cauvery river"
+        },
+        {
+          "label": "B",
+          "text": "Mahadayi (Mandovi) river"
+        },
+        {
+          "label": "C",
+          "text": "Krishna river"
+        },
+        {
+          "label": "D",
+          "text": "Godavari river"
+        }
+      ],
+      "answer": "B",
+      "explanation": "The Mahadayi River Water Disputes Tribunal adjudicated the water-sharing dispute between Karnataka, Goa, and Maharashtra.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2020,
+      "source_tier": 1,
+      "syllabus_id": "P1-S2.1"
+    },
+    {
+      "id": "KAS-P1-HUM-043",
+      "subject": "Humanities",
+      "text": "The phenomenon of temperature inversion in the troposphere occurs when:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Temperature decreases with increasing altitude"
+        },
+        {
+          "label": "B",
+          "text": "Temperature increases with increasing altitude"
+        },
+        {
+          "label": "C",
+          "text": "Temperature remains absolutely constant"
+        },
+        {
+          "label": "D",
+          "text": "Pressure falls to absolute zero"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Temperature inversion is a reversal of normal lapse rate, where warm air lies over cold air, causing temperature to increase with height.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2014,
+      "source_tier": 1,
+      "syllabus_id": "P1-S2.1"
+    },
+    {
+      "id": "KAS-P1-HUM-044",
+      "subject": "Humanities",
+      "text": "Which Ramsar wetland in Mandya district of Karnataka is situated on an island in the Cauvery River and is a renowned bird sanctuary?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Karanji Lake"
+        },
+        {
+          "label": "B",
+          "text": "Ranganathittu Bird Sanctuary"
+        },
+        {
+          "label": "C",
+          "text": "Ankasamudra Reserve"
+        },
+        {
+          "label": "D",
+          "text": "Magadi Lake"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Ranganathittu Bird Sanctuary in Mandya was declared Karnataka's first Ramsar site in 2022.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2017,
+      "source_tier": 1,
+      "syllabus_id": "P1-S2.1"
+    },
+    {
+      "id": "KAS-P1-HUM-045",
+      "subject": "Humanities",
+      "text": "The 'El Nino' weather phenomenon is characterized by which anomalous oceanic condition in the equatorial Pacific Ocean?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Abnormal cooling of central and eastern Pacific waters"
+        },
+        {
+          "label": "B",
+          "text": "Abnormal warming of central and eastern Pacific waters"
+        },
+        {
+          "label": "C",
+          "text": "Intensification of trade winds"
+        },
+        {
+          "label": "D",
+          "text": "Enhanced upwelling along Peruvian coast"
+        }
+      ],
+      "answer": "B",
+      "explanation": "El Nino involves periodic warming of sea surface temperatures across the central and east-central equatorial Pacific.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2020,
+      "source_tier": 1,
+      "syllabus_id": "P1-S2.1"
+    },
+    {
+      "id": "KAS-P1-HUM-046",
+      "subject": "Humanities",
+      "text": "Which article of the Constitution of India provides for the writ jurisdiction of the Supreme Court for enforcement of Fundamental Rights?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Article 32"
+        },
+        {
+          "label": "B",
+          "text": "Article 131"
+        },
+        {
+          "label": "C",
+          "text": "Article 143"
+        },
+        {
+          "label": "D",
+          "text": "Article 226"
+        }
+      ],
+      "answer": "A",
+      "explanation": "Article 32 guarantees the right to constitutional remedies via the Supreme Court (Dr. Ambedkar called it the 'Heart and Soul' of the Constitution).",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2017,
+      "source_tier": 1,
+      "syllabus_id": "P1-S2.1"
+    },
+    {
+      "id": "KAS-P1-HUM-047",
+      "subject": "Humanities",
+      "text": "Under which constitutional amendment was Article 371J inserted to provide special provisions and reservations for the Kalyana Karnataka (Hyderabad-Karnataka) region?",
+      "options": [
+        {
+          "label": "A",
+          "text": "98th Constitutional Amendment Act, 2012"
+        },
+        {
+          "label": "B",
+          "text": "99th Constitutional Amendment Act, 2014"
+        },
+        {
+          "label": "C",
+          "text": "100th Constitutional Amendment Act, 2015"
+        },
+        {
+          "label": "D",
+          "text": "101st Constitutional Amendment Act, 2016"
+        }
+      ],
+      "answer": "A",
+      "explanation": "The 98th Constitutional Amendment Act inserted Article 371J, empowering the Governor to establish development boards and quotas for the 6 backward districts.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2015,
+      "source_tier": 1,
+      "syllabus_id": "P1-S2.1"
+    },
+    {
+      "id": "KAS-P1-HUM-048",
+      "subject": "Humanities",
+      "text": "The concept of 'Basic Structure' of the Indian Constitution was propounded by the Supreme Court in which landmark case?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Golaknath v. State of Punjab (1967)"
+        },
+        {
+          "label": "B",
+          "text": "Kesavananda Bharati v. State of Kerala (1973)"
+        },
+        {
+          "label": "C",
+          "text": "Minerva Mills v. Union of India (1980)"
+        },
+        {
+          "label": "D",
+          "text": "Maneka Gandhi v. Union of India (1978)"
+        }
+      ],
+      "answer": "B",
+      "explanation": "The 13-judge bench in Kesavananda Bharati (24 April 1973) held that Parliament cannot alter the basic structure of the Constitution.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2020,
+      "source_tier": 1,
+      "syllabus_id": "P1-S2.1"
+    },
+    {
+      "id": "KAS-P1-HUM-049",
+      "subject": "Humanities",
+      "text": "Karnataka was the pioneer in passing the historic Panchayati Raj Act in 1983 based on the Ashok Mehta Committee model under which visionary Rural Development Minister?",
+      "options": [
+        {
+          "label": "A",
+          "text": "D. Devaraj Urs"
+        },
+        {
+          "label": "B",
+          "text": "Abdul Nazir Sab"
+        },
+        {
+          "label": "C",
+          "text": "Ramakrishna Hegde"
+        },
+        {
+          "label": "D",
+          "text": "S. R. Bommai"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Abdul Nazir Sab ('Neeru Nazir Sab') conceptualized and enacted the revolutionary 1983 Karnataka Zilla Parishads and Mandal Panchayats Act.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2014,
+      "source_tier": 1,
+      "syllabus_id": "P1-S2.1"
+    },
+    {
+      "id": "KAS-P1-HUM-050",
+      "subject": "Humanities",
+      "text": "In August 2022, the High Court of Karnataka delivered a historic verdict in the Chidananda Urs case, ruling that:",
+      "options": [
+        {
+          "label": "A",
+          "text": "The Anti-Corruption Bureau (ACB) was unconstitutional and all powers and pending inquiries were restored to the Karnataka Lokayukta"
+        },
+        {
+          "label": "B",
+          "text": "SAKALA mission was non-statutory"
+        },
+        {
+          "label": "C",
+          "text": "Local reservation in private IT firms was void"
+        },
+        {
+          "label": "D",
+          "text": "RTI did not apply to ministers"
+        }
+      ],
+      "answer": "A",
+      "explanation": "The HC abolished the ACB created in 2016 and restored complete police and prosecuting powers back to the Karnataka Lokayukta.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2020,
+      "source_tier": 1,
+      "syllabus_id": "P1-S2.1"
+    },
+    {
+      "id": "KAS-P1-HUM-051",
+      "subject": "Humanities",
+      "text": "The Karnataka Guarantee of Services to Citizens Act (SAKALA) was enacted in which year?",
+      "options": [
+        {
+          "label": "A",
+          "text": "2008"
+        },
+        {
+          "label": "B",
+          "text": "2011"
+        },
+        {
+          "label": "C",
+          "text": "2014"
+        },
+        {
+          "label": "D",
+          "text": "2016"
+        }
+      ],
+      "answer": "B",
+      "explanation": "SAKALA was enacted in 2011 to provide guarantee of services within prescribed time limits to citizens of Karnataka.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2015,
+      "source_tier": 1,
+      "syllabus_id": "P1-S2.1"
+    },
+    {
+      "id": "KAS-P1-HUM-052",
+      "subject": "Humanities",
+      "text": "Who is the ex-officio Chairman of the NITI Aayog (National Institution for Transforming India)?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Minister of Finance"
+        },
+        {
+          "label": "B",
+          "text": "Prime Minister of India"
+        },
+        {
+          "label": "C",
+          "text": "Governor of RBI"
+        },
+        {
+          "label": "D",
+          "text": "Vice-President of India"
+        }
+      ],
+      "answer": "B",
+      "explanation": "The Prime Minister of India serves as the ex-officio Chairman of NITI Aayog.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2017,
+      "source_tier": 1,
+      "syllabus_id": "P1-S2.1"
+    },
+    {
+      "id": "KAS-P1-HUM-053",
+      "subject": "Humanities",
+      "text": "The Monetary Policy Committee (MPC) in India operates under the mandate of targeting consumer price inflation (CPI) at what rate?",
+      "options": [
+        {
+          "label": "A",
+          "text": "2% with a +/- 1% tolerance band"
+        },
+        {
+          "label": "B",
+          "text": "4% with a +/- 2% tolerance band"
+        },
+        {
+          "label": "C",
+          "text": "5% fixed rate"
+        },
+        {
+          "label": "D",
+          "text": "6% ceiling limit"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Under Section 45ZB of the RBI Act, the inflation target is 4% CPI inflation with an upper tolerance of 6% and lower tolerance of 2%.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2020,
+      "source_tier": 1,
+      "syllabus_id": "P1-S2.1"
+    },
+    {
+      "id": "KAS-P1-HUM-054",
+      "subject": "Humanities",
+      "text": "The High-Power Committee for Redressal of Regional Imbalances in Karnataka, which submitted its landmark report in 2002, was headed by:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Dr. L. G. Havanur"
+        },
+        {
+          "label": "B",
+          "text": "Dr. D. M. Nanjundappa"
+        },
+        {
+          "label": "C",
+          "text": "Justice Venkataswami"
+        },
+        {
+          "label": "D",
+          "text": "Justice Sadashiva"
+        }
+      ],
+      "answer": "B",
+      "explanation": "The Dr. D.M. Nanjundappa Committee identified 114 backward taluks (most in North Karnataka) and formulated the Special Development Plan.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2014,
+      "source_tier": 1,
+      "syllabus_id": "P1-S2.1"
+    },
+    {
+      "id": "KAS-P1-HUM-055",
+      "subject": "Humanities",
+      "text": "Under the Karnataka Fiscal Responsibility Act (KFRA), 2002, what is the statutory ceiling for the state's Fiscal Deficit as a percentage of GSDP?",
+      "options": [
+        {
+          "label": "A",
+          "text": "2.0% of GSDP"
+        },
+        {
+          "label": "B",
+          "text": "3.0% of GSDP"
+        },
+        {
+          "label": "C",
+          "text": "4.5% of GSDP"
+        },
+        {
+          "label": "D",
+          "text": "5.0% of GSDP"
+        }
+      ],
+      "answer": "B",
+      "explanation": "KFRA mandates that the state fiscal deficit must be contained within 3% of Gross State Domestic Product (GSDP).",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2017,
+      "source_tier": 1,
+      "syllabus_id": "P1-S2.1"
+    },
+    {
+      "id": "KAS-P1-HUM-056",
+      "subject": "Humanities",
+      "text": "The Multidimensional Poverty Index (MPI) published by NITI Aayog measures acute deprivations across how many core dimensions?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Two (Income and Wealth)"
+        },
+        {
+          "label": "B",
+          "text": "Three (Health, Education, and Standard of Living)"
+        },
+        {
+          "label": "C",
+          "text": "Four (Food, Housing, Health, Water)"
+        },
+        {
+          "label": "D",
+          "text": "Five (Human capital indicators)"
+        }
+      ],
+      "answer": "B",
+      "explanation": "The MPI adopts the Alkire-Foster methodology across 3 dimensions: Health, Education, and Standard of Living, spanning 12 indicators.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2020,
+      "source_tier": 1,
+      "syllabus_id": "P1-S2.1"
+    },
+    {
+      "id": "KAS-P1-HUM-057",
+      "subject": "Humanities",
+      "text": "Which constitutional amendment introduced the Goods and Services Tax (GST) regime in India?",
+      "options": [
+        {
+          "label": "A",
+          "text": "99th Amendment Act"
+        },
+        {
+          "label": "B",
+          "text": "100th Amendment Act"
+        },
+        {
+          "label": "C",
+          "text": "101st Amendment Act"
+        },
+        {
+          "label": "D",
+          "text": "103rd Amendment Act"
+        }
+      ],
+      "answer": "C",
+      "explanation": "The 101st Constitutional Amendment Act, 2016 introduced GST across India with effect from 1 July 2017.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2017,
+      "source_tier": 1,
+      "syllabus_id": "P1-S2.1"
+    },
+    {
+      "id": "KAS-P1-HUM-058",
+      "subject": "Humanities",
+      "text": "The concept of 'Dominant Caste' in Indian sociology was formulated by which eminent Karnataka-born sociologist based on studies in Rampura village?",
+      "options": [
+        {
+          "label": "A",
+          "text": "G. S. Ghurye"
+        },
+        {
+          "label": "B",
+          "text": "M. N. Srinivas"
+        },
+        {
+          "label": "C",
+          "text": "Andre Beteille"
+        },
+        {
+          "label": "D",
+          "text": "Irawati Karve"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Prof. M. N. Srinivas formulated the concepts of 'Dominant Caste' and 'Sanskritization' from field work in Rampura (Mandya district).",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2015,
+      "source_tier": 1,
+      "syllabus_id": "P1-S2.1"
+    },
+    {
+      "id": "KAS-P1-HUM-059",
+      "subject": "Humanities",
+      "text": "Under the Karnataka Scheduled Castes Sub-Allocation and Tribal Sub-Allocation (SCSP/TSP) Act, 2013, what percentage of total state plan outlay is mandatorily earmarked for SC/ST welfare?",
+      "options": [
+        {
+          "label": "A",
+          "text": "18%"
+        },
+        {
+          "label": "B",
+          "text": "20%"
+        },
+        {
+          "label": "C",
+          "text": "24.1%"
+        },
+        {
+          "label": "D",
+          "text": "30%"
+        }
+      ],
+      "answer": "C",
+      "explanation": "The SCSP/TSP Act mandates 24.1% of the state budget (proportionate to SC 17.15% and ST 6.95% population share) for dedicated welfare.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2020,
+      "source_tier": 1,
+      "syllabus_id": "P1-S2.1"
+    },
+    {
+      "id": "KAS-P1-HUM-060",
+      "subject": "Humanities",
+      "text": "Which expert committee recommended the four-tier internal reservation classification (Left, Right, Touchables, and Others) for Scheduled Castes in Karnataka?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Justice Sadashiva Inquiry Commission"
+        },
+        {
+          "label": "B",
+          "text": "Justice H. N. Nagamohan Das Commission"
+        },
+        {
+          "label": "C",
+          "text": "Justice Venkataswamy Commission"
+        },
+        {
+          "label": "D",
+          "text": "Chinnappa Reddy Commission"
+        }
+      ],
+      "answer": "A",
+      "explanation": "The Justice A. J. Sadashiva Inquiry Commission (submitted 2012) recommended internal reservation to redress uneven benefits among 101 SC castes.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2017,
+      "source_tier": 1,
+      "syllabus_id": "P1-S2.1"
+    },
+    {
+      "id": "KAS-P2-KA-001",
+      "subject": "Karnataka Affairs",
+      "text": "Under the Gruha Lakshmi Scheme in Karnataka, what is the monthly financial assistance deposited via DBT to eligible women?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Rs. 1,000"
+        },
+        {
+          "label": "B",
+          "text": "Rs. 1,500"
+        },
+        {
+          "label": "C",
+          "text": "Rs. 2,000"
+        },
+        {
+          "label": "D",
+          "text": "Rs. 2,500"
+        }
+      ],
+      "answer": "C",
+      "explanation": "Gruha Lakshmi provides Rs. 2,000 per month DBT to the designated female head of the household.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P2-S1.1"
+    },
+    {
+      "id": "KAS-P2-KA-002",
+      "subject": "Karnataka Affairs",
+      "text": "Who among the following is EXCLUDED from receiving monthly benefits under the Gruha Lakshmi Scheme?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Women residing in rented houses"
+        },
+        {
+          "label": "B",
+          "text": "Women who are themselves or whose husbands are Income Tax or GST assessees"
+        },
+        {
+          "label": "C",
+          "text": "Women without higher education"
+        },
+        {
+          "label": "D",
+          "text": "Widows and elderly women"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Women or their spouses paying Income Tax or GST are excluded from Gruha Lakshmi.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P2-S1.1"
+    },
+    {
+      "id": "KAS-P2-KA-003",
+      "subject": "Karnataka Affairs",
+      "text": "Under the Gruha Jyothi scheme, what is the maximum ceiling of free monthly domestic electricity units allowed per household?",
+      "options": [
+        {
+          "label": "A",
+          "text": "100 units"
+        },
+        {
+          "label": "B",
+          "text": "150 units"
+        },
+        {
+          "label": "C",
+          "text": "200 units"
+        },
+        {
+          "label": "D",
+          "text": "250 units"
+        }
+      ],
+      "answer": "C",
+      "explanation": "Gruha Jyothi provides free electricity up to an absolute ceiling of 200 units per month.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P2-S1.1"
+    },
+    {
+      "id": "KAS-P2-KA-004",
+      "subject": "Karnataka Affairs",
+      "text": "How is the entitled free electricity quota determined for a domestic consumer under Gruha Jyothi?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Fixed 200 units for everyone"
+        },
+        {
+          "label": "B",
+          "text": "Past 12-month average consumption + 10% buffer"
+        },
+        {
+          "label": "C",
+          "text": "Based on household square footage"
+        },
+        {
+          "label": "D",
+          "text": "Based on number of family members"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Entitled units are calculated as the consumer's average monthly consumption of the past 12 months plus a 10% buffer.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P2-S1.1"
+    },
+    {
+      "id": "KAS-P2-KA-005",
+      "subject": "Karnataka Affairs",
+      "text": "Under the Yuva Nidhi scheme, what is the monthly unemployment stipend provided to unemployed Graduates and Diploma holders respectively?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Graduates: Rs. 2,000; Diploma: Rs. 1,000"
+        },
+        {
+          "label": "B",
+          "text": "Graduates: Rs. 3,000; Diploma: Rs. 1,500"
+        },
+        {
+          "label": "C",
+          "text": "Graduates: Rs. 4,000; Diploma: Rs. 2,000"
+        },
+        {
+          "label": "D",
+          "text": "Graduates: Rs. 5,000; Diploma: Rs. 2,500"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Yuva Nidhi provides Rs. 3,000/month for graduates and Rs. 1,500/month for diploma holders.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P2-S1.1"
+    },
+    {
+      "id": "KAS-P2-KA-006",
+      "subject": "Karnataka Affairs",
+      "text": "What is the maximum duration for which Yuva Nidhi unemployment assistance is payable to a beneficiary?",
+      "options": [
+        {
+          "label": "A",
+          "text": "12 months (1 year)"
+        },
+        {
+          "label": "B",
+          "text": "24 months (2 years)"
+        },
+        {
+          "label": "C",
+          "text": "36 months (3 years)"
+        },
+        {
+          "label": "D",
+          "text": "Until age 35"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Yuva Nidhi is payable for a maximum tenure of 2 years (24 months) or until employment/self-employment is secured.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P2-S1.1"
+    },
+    {
+      "id": "KAS-P2-KA-007",
+      "subject": "Karnataka Affairs",
+      "text": "The Shakti scheme in Karnataka provides fare-free travel to domicile women across state transport buses, but EXCLUDES which bus service?",
+      "options": [
+        {
+          "label": "A",
+          "text": "City bus services of BMTC"
+        },
+        {
+          "label": "B",
+          "text": "Ordinary express buses of KSRTC"
+        },
+        {
+          "label": "C",
+          "text": "Premium luxury buses like Airavat, Rajahamsa, and EV Power Plus"
+        },
+        {
+          "label": "D",
+          "text": "Mofussil buses of NWKRTC"
+        }
+      ],
+      "answer": "C",
+      "explanation": "Shakti excludes luxury/interstate bus services such as Airavat Club Class, Rajahamsa, and EV Power Plus.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P2-S1.1"
+    },
+    {
+      "id": "KAS-P2-KA-008",
+      "subject": "Karnataka Affairs",
+      "text": "Under the Anna Bhagya scheme, in lieu of the additional 5 kg rice procurement bottleneck, how much cash is transferred via DBT per person per month?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Rs. 100"
+        },
+        {
+          "label": "B",
+          "text": "Rs. 150"
+        },
+        {
+          "label": "C",
+          "text": "Rs. 170 (at Rs. 34/kg)"
+        },
+        {
+          "label": "D",
+          "text": "Rs. 200"
+        }
+      ],
+      "answer": "C",
+      "explanation": "The Government of Karnataka credits Rs. 170 per person per month (5 kg at Rs. 34 per kg) via DBT for BPL/AAY cardholders.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P2-S1.1"
+    },
+    {
+      "id": "KAS-P2-KA-009",
+      "subject": "Karnataka Affairs",
+      "text": "The annual budgetary outlay allocated for the implementation of the Five Guarantees in the Karnataka Budget 2026-27 exceeds approximately:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Rs. 25,000 Crore"
+        },
+        {
+          "label": "B",
+          "text": "Rs. 35,000 Crore"
+        },
+        {
+          "label": "C",
+          "text": "Rs. 52,000 Crore"
+        },
+        {
+          "label": "D",
+          "text": "Rs. 75,000 Crore"
+        }
+      ],
+      "answer": "C",
+      "explanation": "The annual budgetary allocation for the Five Guarantees exceeds Rs. 52,000 Crore (~14% of state budget).",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P2-S1.1"
+    },
+    {
+      "id": "KAS-P2-KA-010",
+      "subject": "Karnataka Affairs",
+      "text": "The 'Krishi Bhagya' scheme of the Government of Karnataka primarily focuses on which intervention in rainfed agricultural areas?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Distributing free tractors"
+        },
+        {
+          "label": "B",
+          "text": "Construction of farm ponds (Krishi Honda) and micro-irrigation systems"
+        },
+        {
+          "label": "C",
+          "text": "Providing 100% fertilizer subsidies"
+        },
+        {
+          "label": "D",
+          "text": "Establishing cold storage hubs"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Krishi Bhagya promotes farm ponds (Krishi Honda), polythene lining, diesel pumps, and micro-irrigation in dryland farming.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2017,
+      "source_tier": 1,
+      "syllabus_id": "P2-S1.1"
+    },
+    {
+      "id": "KAS-P2-KA-011",
+      "subject": "Karnataka Affairs",
+      "text": "Under the 'Ksheera Bhagya' scheme, how many days a week is milk distributed to children in government schools and Anganwadis in Karnataka?",
+      "options": [
+        {
+          "label": "A",
+          "text": "2 days a week"
+        },
+        {
+          "label": "B",
+          "text": "3 days a week"
+        },
+        {
+          "label": "C",
+          "text": "5 days a week"
+        },
+        {
+          "label": "D",
+          "text": "Every day (7 days)"
+        }
+      ],
+      "answer": "C",
+      "explanation": "Ksheera Bhagya provides 150 ml of milk 5 days a week to school and Anganwadi students.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2015,
+      "source_tier": 1,
+      "syllabus_id": "P2-S1.1"
+    },
+    {
+      "id": "KAS-P2-KA-012",
+      "subject": "Karnataka Affairs",
+      "text": "The 'Mathru Poorna' scheme in Karnataka provides which service to pregnant and lactating mothers?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Cash transfer of Rs. 6,000 in three tranches"
+        },
+        {
+          "label": "B",
+          "text": "One hot, nutritious cooked meal daily at Anganwadis for 15 months"
+        },
+        {
+          "label": "C",
+          "text": "Free private hospital delivery"
+        },
+        {
+          "label": "D",
+          "text": "Free neonatal baby kits"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Mathru Poorna delivers one wholesome hot cooked meal daily with milk and eggs at Anganwadi centers.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2020,
+      "source_tier": 1,
+      "syllabus_id": "P2-S1.1"
+    },
+    {
+      "id": "KAS-P2-KA-013",
+      "subject": "Karnataka Affairs",
+      "text": "The 'Raitha Siri' scheme provides financial incentive of Rs. 10,000 per hectare for farmers cultivating which crops in Karnataka?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Sugarcane and Paddy"
+        },
+        {
+          "label": "B",
+          "text": "Minor Millets (Siridhanya)"
+        },
+        {
+          "label": "C",
+          "text": "Coffee and Arecanut"
+        },
+        {
+          "label": "D",
+          "text": "BT Cotton and Tobacco"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Raitha Siri incentivizes minor millet (Siridhanya) cultivation with Rs. 10,000/ha direct financial aid.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2020,
+      "source_tier": 1,
+      "syllabus_id": "P2-S1.1"
+    },
+    {
+      "id": "KAS-P2-KA-014",
+      "subject": "Karnataka Affairs",
+      "text": "The Karnataka Platform-Based Gig Workers Bill, 2024 mandates which mechanism to fund social security welfare for gig delivery workers?",
+      "options": [
+        {
+          "label": "A",
+          "text": "5% income tax deduction"
+        },
+        {
+          "label": "B",
+          "text": "Welfare fee of 1% to 2% levied on each customer transaction on aggregators"
+        },
+        {
+          "label": "C",
+          "text": "Fixed monthly cess on restaurants"
+        },
+        {
+          "label": "D",
+          "text": "Employer-only registration fees"
+        }
+      ],
+      "answer": "B",
+      "explanation": "The bill levies a welfare fee of 1% to 2% on customer transactions processed by platform aggregators.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P2-S1.1"
+    },
+    {
+      "id": "KAS-P2-KA-015",
+      "subject": "Karnataka Affairs",
+      "text": "The Greater Bengaluru Governance Bill, 2024 proposes replacing BBMP with multiple corporations coordinated by which apex body?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Bengaluru Metropolitan Task Force (BMTF)"
+        },
+        {
+          "label": "B",
+          "text": "Greater Bengaluru Authority (GBA) chaired by Chief Minister"
+        },
+        {
+          "label": "C",
+          "text": "BDA Board"
+        },
+        {
+          "label": "D",
+          "text": "Karnataka Urban Development Directorate"
+        }
+      ],
+      "answer": "B",
+      "explanation": "The Greater Bengaluru Authority (GBA) headed by the Chief Minister will oversee decentralized municipal corporations.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P2-S1.1"
+    },
+    {
+      "id": "KAS-P2-KA-016",
+      "subject": "Karnataka Affairs",
+      "text": "The Yettinahole Integrated Drinking Water Project lifts water from the catchment area in Sakaleshpura to supply drinking water to how many drought-prone districts?",
+      "options": [
+        {
+          "label": "A",
+          "text": "3 districts"
+        },
+        {
+          "label": "B",
+          "text": "5 districts"
+        },
+        {
+          "label": "C",
+          "text": "7 districts (Chikkamagaluru, Hassan, Tumakuru, Chikkaballapura, Kolar, Bengaluru Rural, Ramanagara)"
+        },
+        {
+          "label": "D",
+          "text": "12 districts"
+        }
+      ],
+      "answer": "C",
+      "explanation": "Yettinahole supplies 24 TMC drinking water to 29 taluks across 7 drought-affected eastern districts.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P2-S1.1"
+    },
+    {
+      "id": "KAS-P2-KA-017",
+      "subject": "Karnataka Affairs",
+      "text": "Which Hoysala temple complex was inscribed as part of the 'Sacred Ensembles of the Hoysalas' UNESCO World Heritage Site in September 2023?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Chennakeshava Temple at Belur, Hoysaleshwara Temple at Halebidu, and Keshava Temple at Somanathapura"
+        },
+        {
+          "label": "B",
+          "text": "Vidyashankara Temple at Sringeri"
+        },
+        {
+          "label": "C",
+          "text": "Veeranarayana Temple at Belavadi"
+        },
+        {
+          "label": "D",
+          "text": "Amruteshwara Temple at Annigeri"
+        }
+      ],
+      "answer": "A",
+      "explanation": "The three inscribed Hoysala complexes are Belur Chennakeshava, Halebidu Hoysaleshwara, and Somanathapura Keshava temple.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P2-S1.1"
+    },
+    {
+      "id": "KAS-P2-KA-018",
+      "subject": "Karnataka Affairs",
+      "text": "The 87th Akhila Bharata Kannada Sahitya Sammelana held in 2024 was hosted at Mandya under the presidency of which eminent writer and folklorist?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Dr. Chandrashekhara Kambara"
+        },
+        {
+          "label": "B",
+          "text": "Go. Ru. Channabasappa"
+        },
+        {
+          "label": "C",
+          "text": "Dr. Doddarange Gowda"
+        },
+        {
+          "label": "D",
+          "text": "Prof. Baraguru Ramachandrappa"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Renowned folklorist Go. Ru. Channabasappa presided over the 87th Sahitya Sammelana at Mandya.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P2-S1.1"
+    },
+    {
+      "id": "KAS-P2-KA-019",
+      "subject": "Karnataka Affairs",
+      "text": "The 'Beyond Bengaluru' policy of the Department of Electronics, IT/Bt aims to build major technology and startup clusters in which cities?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Mysuru, Hubballi-Dharwad, and Mangaluru"
+        },
+        {
+          "label": "B",
+          "text": "Ballari, Raichur, and Koppal"
+        },
+        {
+          "label": "C",
+          "text": "Bidar, Bagalkote, and Yadgir"
+        },
+        {
+          "label": "D",
+          "text": "Chamarajanagar and Mandya"
+        }
+      ],
+      "answer": "A",
+      "explanation": "Beyond Bengaluru focuses on Mysuru, Hubballi-Dharwad, and Mangaluru as Tier-2 tech growth engines.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P2-S1.1"
+    },
+    {
+      "id": "KAS-P2-KA-020",
+      "subject": "Karnataka Affairs",
+      "text": "Which estuary in Uttara Kannada district was officially declared as a Ramsar Site of International Importance in early 2024?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Sharavathi Estuary"
+        },
+        {
+          "label": "B",
+          "text": "Aghanashini Estuary"
+        },
+        {
+          "label": "C",
+          "text": "Kali Estuary"
+        },
+        {
+          "label": "D",
+          "text": "Gangavali Estuary"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Aghanashini Estuary in Kumta taluk, Uttara Kannada was declared a Ramsar wetland in 2024.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P2-S1.1"
+    },
+    {
+      "id": "KAS-P2-KA-021",
+      "subject": "Karnataka Affairs",
+      "text": "Which bird conservation reserve in Vijayanagara district was designated as a Ramsar site in 2024?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Ankasamudra Bird Conservation Reserve"
+        },
+        {
+          "label": "B",
+          "text": "Daroji Sloth Bear Sanctuary"
+        },
+        {
+          "label": "C",
+          "text": "Gudavi Bird Sanctuary"
+        },
+        {
+          "label": "D",
+          "text": "Attiveri Bird Sanctuary"
+        }
+      ],
+      "answer": "A",
+      "explanation": "Ankasamudra Bird Conservation Reserve in Hagaribommanahalli taluk, Vijayanagara is a designated Ramsar site.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P2-S1.1"
+    },
+    {
+      "id": "KAS-P2-KA-022",
+      "subject": "Karnataka Affairs",
+      "text": "Which conservation reserve in Gadag district, famous as a wintering habitat for Bar-headed Geese, was declared a Ramsar site in 2024?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Magadi Kere Conservation Reserve"
+        },
+        {
+          "label": "B",
+          "text": "Bonal Bird Sanctuary"
+        },
+        {
+          "label": "C",
+          "text": "Karanji Lake"
+        },
+        {
+          "label": "D",
+          "text": "Hesaraghatta Grasslands"
+        }
+      ],
+      "answer": "A",
+      "explanation": "Magadi Kere in Shirahatti taluk, Gadag district was notified as a Ramsar site in 2024.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P2-S1.1"
+    },
+    {
+      "id": "KAS-P2-KA-023",
+      "subject": "Karnataka Affairs",
+      "text": "The Pavagada Solar Park (Shakti Sthala), one of the world's largest operational solar parks with 2,050 MW capacity, is located in which district?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Koppal"
+        },
+        {
+          "label": "B",
+          "text": "Tumakuru"
+        },
+        {
+          "label": "C",
+          "text": "Chitradurga"
+        },
+        {
+          "label": "D",
+          "text": "Ballari"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Pavagada Solar Park is located in the dry Pavagada taluk of Tumakuru district.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2020,
+      "source_tier": 1,
+      "syllabus_id": "P2-S1.1"
+    },
+    {
+      "id": "KAS-P2-KA-024",
+      "subject": "Karnataka Affairs",
+      "text": "Under the Chennai-Bengaluru Industrial Corridor (CBIC), which node in Karnataka is being developed as a major Smart Industrial City?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Vasanthanarasapura (Tumakuru)"
+        },
+        {
+          "label": "B",
+          "text": "Belagavi"
+        },
+        {
+          "label": "C",
+          "text": "Hubballi"
+        },
+        {
+          "label": "D",
+          "text": "Mysuru"
+        }
+      ],
+      "answer": "A",
+      "explanation": "Tumakuru Industrial Township at Vasanthanarasapura is the premier integrated industrial node on CBIC in Karnataka.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P2-S1.1"
+    },
+    {
+      "id": "KAS-P2-KA-025",
+      "subject": "Karnataka Affairs",
+      "text": "The D. Devaraj Urs Land Reforms Act of 1974 in Karnataka is celebrated for which revolutionary agrarian principle?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Consolidation of agricultural holdings"
+        },
+        {
+          "label": "B",
+          "text": "Land to the Tiller ('Uluvavanige Bhoomi')"
+        },
+        {
+          "label": "C",
+          "text": "Free cooperative farming"
+        },
+        {
+          "label": "D",
+          "text": "Corporate agriculture leasing"
+        }
+      ],
+      "answer": "B",
+      "explanation": "The 1974 amendment under D. Devaraj Urs abolished tenancy and transferred ownership to the cultivating tiller.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2017,
+      "source_tier": 1,
+      "syllabus_id": "P2-S1.1"
+    },
+    {
+      "id": "KAS-P2-KA-026",
+      "subject": "Karnataka Affairs",
+      "text": "The 'Gokak Chaluvali' (Gokak Agitation) of 1982 in Karnataka was an agitation demanding:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Bilingual signboards in Bengaluru"
+        },
+        {
+          "label": "B",
+          "text": "First language status and primacy for Kannada in state school education"
+        },
+        {
+          "label": "C",
+          "text": "Creation of a separate North Karnataka state"
+        },
+        {
+          "label": "D",
+          "text": "Reservations for Kannada medium students in jobs"
+        }
+      ],
+      "answer": "B",
+      "explanation": "The Gokak Agitation demanded implementation of the J. W. Gokak Committee report granting sole first language status to Kannada in high schools.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2015,
+      "source_tier": 1,
+      "syllabus_id": "P2-S1.1"
+    },
+    {
+      "id": "KAS-P2-KA-027",
+      "subject": "Karnataka Affairs",
+      "text": "In which historic year was the state of 'Mysore' officially renamed as 'Karnataka' under Chief Minister D. Devaraj Urs?",
+      "options": [
+        {
+          "label": "A",
+          "text": "1956"
+        },
+        {
+          "label": "B",
+          "text": "1971"
+        },
+        {
+          "label": "C",
+          "text": "1973 (November 1)"
+        },
+        {
+          "label": "D",
+          "text": "1977"
+        }
+      ],
+      "answer": "C",
+      "explanation": "On 1 November 1973, Mysore State was officially renamed 'Karnataka' by Chief Minister D. Devaraj Urs.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2020,
+      "source_tier": 1,
+      "syllabus_id": "P2-S1.1"
+    },
+    {
+      "id": "KAS-P2-KA-028",
+      "subject": "Karnataka Affairs",
+      "text": "The States Reorganisation Commission (SRC) 1955 which created the unified Mysore State on 1 November 1956 was headed by:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Fazal Ali"
+        },
+        {
+          "label": "B",
+          "text": "K. M. Panikkar"
+        },
+        {
+          "label": "C",
+          "text": "H. N. Kunzru"
+        },
+        {
+          "label": "D",
+          "text": "Justice Dhar"
+        }
+      ],
+      "answer": "A",
+      "explanation": "The Fazal Ali Commission (along with members Panikkar and Kunzru) recommended the unification of Kannada-speaking regions.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2014,
+      "source_tier": 1,
+      "syllabus_id": "P2-S1.1"
+    },
+    {
+      "id": "KAS-P2-KA-029",
+      "subject": "Karnataka Affairs",
+      "text": "Who is venerated as 'Kannada Kula Purohita' for spearheading the Karnataka Unification Movement through his book 'Karnataka Gathavaibhava'?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Alur Venkata Rao"
+        },
+        {
+          "label": "B",
+          "text": "B. M. Srikantaiah"
+        },
+        {
+          "label": "C",
+          "text": "Huilgol Narayana Rao"
+        },
+        {
+          "label": "D",
+          "text": "Gudur Krishna Rao"
+        }
+      ],
+      "answer": "A",
+      "explanation": "Alur Venkata Rao wrote 'Karnataka Gathavaibhava' in 1912 and is revered as the Kannada Kula Purohita.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2017,
+      "source_tier": 1,
+      "syllabus_id": "P2-S1.1"
+    },
+    {
+      "id": "KAS-P2-KA-030",
+      "subject": "Karnataka Affairs",
+      "text": "Which village in Shivamogga district declared itself an independent republic during the Quit India Movement in 1942 under the slogan 'Esuru Kottaru Isuru Kodevu'?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Vidurashwatha"
+        },
+        {
+          "label": "B",
+          "text": "Isur (Esuru)"
+        },
+        {
+          "label": "C",
+          "text": "Halagali"
+        },
+        {
+          "label": "D",
+          "text": "Keladi"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Isur village in Shikaripura taluk declared independence and established its own government during Quit India in 1942.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2015,
+      "source_tier": 1,
+      "syllabus_id": "P2-S1.1"
+    },
+    {
+      "id": "KAS-P2-KA-031",
+      "subject": "Karnataka Affairs",
+      "text": "Which e-governance project implemented in Karnataka revolutionized computerized land records management, winning the Commonwealth CAPAM award?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Khajane"
+        },
+        {
+          "label": "B",
+          "text": "Bhoomi"
+        },
+        {
+          "label": "C",
+          "text": "Seva Sindhu"
+        },
+        {
+          "label": "D",
+          "text": "Kaveri"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Bhoomi digitized RTC land titles across Karnataka, eliminating manual patwari monopolies.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2017,
+      "source_tier": 1,
+      "syllabus_id": "P2-S1.1"
+    },
+    {
+      "id": "KAS-P2-KA-032",
+      "subject": "Karnataka Affairs",
+      "text": "Which unified digital delivery portal of the Government of Karnataka acts as the single gateway for citizen services including the Five Guarantees?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Mahiti Kanaja"
+        },
+        {
+          "label": "B",
+          "text": "Seva Sindhu"
+        },
+        {
+          "label": "C",
+          "text": "Janasevaka"
+        },
+        {
+          "label": "D",
+          "text": "Kaveri 2.0"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Seva Sindhu is the integrated state e-services delivery portal in Karnataka.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P2-S1.1"
+    },
+    {
+      "id": "KAS-P2-KA-033",
+      "subject": "Karnataka Affairs",
+      "text": "The Karnataka Lokayukta Act was passed in 1984 under the chief ministership of:",
+      "options": [
+        {
+          "label": "A",
+          "text": "D. Devaraj Urs"
+        },
+        {
+          "label": "B",
+          "text": "Ramakrishna Hegde"
+        },
+        {
+          "label": "C",
+          "text": "S. Nijalingappa"
+        },
+        {
+          "label": "D",
+          "text": "Veerendra Patil"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Ramakrishna Hegde's Janata government enacted the historic Karnataka Lokayukta Act in 1984.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2014,
+      "source_tier": 1,
+      "syllabus_id": "P2-S1.1"
+    },
+    {
+      "id": "KAS-P2-KA-034",
+      "subject": "Karnataka Affairs",
+      "text": "The 'Janasevaka' scheme launched in Bengaluru provides which citizen facility?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Free health checkup at municipal hospitals"
+        },
+        {
+          "label": "B",
+          "text": "Doorstep delivery of 50+ government services to citizens' homes"
+        },
+        {
+          "label": "C",
+          "text": "Subsidized auto-rickshaw rides"
+        },
+        {
+          "label": "D",
+          "text": "Free drinking water delivery"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Janasevaka provides doorstep delivery of government certificates and services via trained delivery executives.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P2-S1.1"
+    },
+    {
+      "id": "KAS-P2-KA-035",
+      "subject": "Karnataka Affairs",
+      "text": "The Karnataka Rajya Raitha Sangha (KRRS) was founded in 1980 by which charismatic peasant leader who led the Malaprabha farmers' agitation?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Prof. M. D. Nanjundaswamy"
+        },
+        {
+          "label": "B",
+          "text": "K. S. Puttannaiah"
+        },
+        {
+          "label": "C",
+          "text": "B. S. Yediyurappa"
+        },
+        {
+          "label": "D",
+          "text": "Kadidal Manjappa"
+        }
+      ],
+      "answer": "A",
+      "explanation": "Prof. M. D. Nanjundaswamy ('Hasiru Shalu') founded the KRRS following the 1980 Naragund-Navalgund farmers' rebellion.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2017,
+      "source_tier": 1,
+      "syllabus_id": "P2-S1.1"
+    },
+    {
+      "id": "KAS-P2-KA-036",
+      "subject": "Karnataka Affairs",
+      "text": "The Dalit Sangharsha Samiti (DSS) in Karnataka was established in 1974 under the intellectual leadership of which prominent writer and activist?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Dr. Siddalingaiah and B. Krishnappa"
+        },
+        {
+          "label": "B",
+          "text": "Devanur Mahadeva"
+        },
+        {
+          "label": "C",
+          "text": "L. G. Havanur"
+        },
+        {
+          "label": "D",
+          "text": "Basavalingappa"
+        }
+      ],
+      "answer": "A",
+      "explanation": "Dalit poet Dr. Siddalingaiah and Prof. B. Krishnappa founded the DSS at Bhadravathi in 1974.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2020,
+      "source_tier": 1,
+      "syllabus_id": "P2-S1.1"
+    },
+    {
+      "id": "KAS-P2-KA-037",
+      "subject": "Karnataka Affairs",
+      "text": "How many taluks were categorized as 'Backward' in Karnataka by the High-Power Committee headed by Dr. D. M. Nanjundappa in 2002?",
+      "options": [
+        {
+          "label": "A",
+          "text": "80 taluks"
+        },
+        {
+          "label": "B",
+          "text": "100 taluks"
+        },
+        {
+          "label": "C",
+          "text": "114 taluks (out of 175 taluks)"
+        },
+        {
+          "label": "D",
+          "text": "135 taluks"
+        }
+      ],
+      "answer": "C",
+      "explanation": "The Nanjundappa Committee identified 114 backward taluks (39 most backward, 40 more backward, 35 backward).",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2015,
+      "source_tier": 1,
+      "syllabus_id": "P2-S1.1"
+    },
+    {
+      "id": "KAS-P2-KA-038",
+      "subject": "Karnataka Affairs",
+      "text": "The nodal society functioning under the Department of Electronics, IT/Bt for managing tech parks, biotech incubation, and startups in Karnataka is:",
+      "options": [
+        {
+          "label": "A",
+          "text": "KEONICS"
+        },
+        {
+          "label": "B",
+          "text": "KITS (Karnataka Innovation and Technology Society)"
+        },
+        {
+          "label": "C",
+          "text": "KINFRA"
+        },
+        {
+          "label": "D",
+          "text": "KSIIDC"
+        }
+      ],
+      "answer": "B",
+      "explanation": "KITS implements the Startup Policy, K-Tech innovation hubs, and biotech initiatives in Karnataka.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P2-S1.1"
+    },
+    {
+      "id": "KAS-P2-KA-039",
+      "subject": "Karnataka Affairs",
+      "text": "Under the Karnataka Industrial Policy 2020-25, which zone comprises Bengaluru Urban and Rural with the lowest financial incentives to encourage regional dispersion?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Zone 1"
+        },
+        {
+          "label": "B",
+          "text": "Zone 2"
+        },
+        {
+          "label": "C",
+          "text": "Zone 3"
+        },
+        {
+          "label": "D",
+          "text": "Zone 4"
+        }
+      ],
+      "answer": "C",
+      "explanation": "Zone 3 comprises Bengaluru Urban and Rural with minimal incentives, whereas backward taluks in Zone 1 receive maximum subsidies.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P2-S1.1"
+    },
+    {
+      "id": "KAS-P2-KA-040",
+      "subject": "Karnataka Affairs",
+      "text": "The Golden Chariot, a luxury tourist train showcasing South Indian heritage, is operated in partnership with which state corporation?",
+      "options": [
+        {
+          "label": "A",
+          "text": "KSTDC (Karnataka State Tourism Development Corporation)"
+        },
+        {
+          "label": "B",
+          "text": "KSRTC"
+        },
+        {
+          "label": "C",
+          "text": "KINFRA"
+        },
+        {
+          "label": "D",
+          "text": "KIADB"
+        }
+      ],
+      "answer": "A",
+      "explanation": "The Golden Chariot is operated by IRCTC in collaboration with KSTDC.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2020,
+      "source_tier": 1,
+      "syllabus_id": "P2-S1.1"
+    },
+    {
+      "id": "KAS-P2-SCI-001",
+      "subject": "Science and Environment",
+      "text": "The historic lunar landing site of ISRO's Chandrayaan-3 near the Moon's South Pole was officially named as:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Tiranga Point"
+        },
+        {
+          "label": "B",
+          "text": "Shiv Shakti Point"
+        },
+        {
+          "label": "C",
+          "text": "Atal Point"
+        },
+        {
+          "label": "D",
+          "text": "Jawahar Point"
+        }
+      ],
+      "answer": "B",
+      "explanation": "The Chandrayaan-3 landing site was named 'Shiv Shakti Point'; August 23 was declared National Space Day.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P2-S2.1"
+    },
+    {
+      "id": "KAS-P2-SCI-002",
+      "subject": "Science and Environment",
+      "text": "Which heavy-lift launch vehicle of ISRO launched the Chandrayaan-3 and OneWeb satellite constellations into orbit?",
+      "options": [
+        {
+          "label": "A",
+          "text": "PSLV-C56"
+        },
+        {
+          "label": "B",
+          "text": "GSLV Mk-II"
+        },
+        {
+          "label": "C",
+          "text": "LVM3 (Launch Vehicle Mark 3)"
+        },
+        {
+          "label": "D",
+          "text": "SSLV-D2"
+        }
+      ],
+      "answer": "C",
+      "explanation": "LVM3 (formerly GSLV Mk-III) launched Chandrayaan-3 on 14 July 2023.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P2-S2.1"
+    },
+    {
+      "id": "KAS-P2-SCI-003",
+      "subject": "Science and Environment",
+      "text": "ISRO's solar observatory Aditya-L1 was placed in a halo orbit around which Sun-Earth Lagrange Point located 1.5 million km from Earth?",
+      "options": [
+        {
+          "label": "A",
+          "text": "L1"
+        },
+        {
+          "label": "B",
+          "text": "L2"
+        },
+        {
+          "label": "C",
+          "text": "L3"
+        },
+        {
+          "label": "D",
+          "text": "L4"
+        }
+      ],
+      "answer": "A",
+      "explanation": "Aditya-L1 orbits Lagrange Point 1 (L1), providing uninterrupted 24x7 view of the Sun without eclipses.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P2-S2.1"
+    },
+    {
+      "id": "KAS-P2-SCI-004",
+      "subject": "Science and Environment",
+      "text": "What is the name of the female humanoid robot astronaut developed by ISRO for uncrewed test flights of the Gaganyaan mission?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Mitra"
+        },
+        {
+          "label": "B",
+          "text": "Vyommitra"
+        },
+        {
+          "label": "C",
+          "text": "Daksh"
+        },
+        {
+          "label": "D",
+          "text": "Kalam"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Vyommitra ('Friend in Space') was developed by ISRO Inertial Systems Unit and IISc Bengaluru.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P2-S2.1"
+    },
+    {
+      "id": "KAS-P2-SCI-005",
+      "subject": "Science and Environment",
+      "text": "The Polar Satellite Launch Vehicle (PSLV) has four stages using which alternate sequence of propulsion systems?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Liquid - Solid - Liquid - Solid"
+        },
+        {
+          "label": "B",
+          "text": "Solid - Liquid - Solid - Liquid"
+        },
+        {
+          "label": "C",
+          "text": "All four stages Solid"
+        },
+        {
+          "label": "D",
+          "text": "All four stages Cryogenic"
+        }
+      ],
+      "answer": "B",
+      "explanation": "PSLV uses alternate solid-liquid stages: Stage 1 (Solid) -> Stage 2 (Liquid Vikas) -> Stage 3 (Solid) -> Stage 4 (Liquid).",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2020,
+      "source_tier": 1,
+      "syllabus_id": "P2-S2.1"
+    },
+    {
+      "id": "KAS-P2-SCI-006",
+      "subject": "Science and Environment",
+      "text": "Stage-2 of Homi Bhabha's three-stage nuclear power programme in India utilizes which reactor type?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Pressurised Heavy Water Reactor (PHWR)"
+        },
+        {
+          "label": "B",
+          "text": "Fast Breeder Reactor (FBR)"
+        },
+        {
+          "label": "C",
+          "text": "Advanced Heavy Water Reactor (AHWR)"
+        },
+        {
+          "label": "D",
+          "text": "Light Water Reactor (LWR)"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Stage 2 utilizes Fast Breeder Reactors (FBR) fueled by Plutonium-239 to breed U-233 from Thorium blankets.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2017,
+      "source_tier": 1,
+      "syllabus_id": "P2-S2.1"
+    },
+    {
+      "id": "KAS-P2-SCI-007",
+      "subject": "Science and Environment",
+      "text": "The Kaiga Atomic Power Station in Uttara Kannada district of Karnataka operates which type of nuclear reactors?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Pressurised Water Reactors (PWR)"
+        },
+        {
+          "label": "B",
+          "text": "Pressurised Heavy Water Reactors (PHWR)"
+        },
+        {
+          "label": "C",
+          "text": "Fast Breeder Reactors (FBR)"
+        },
+        {
+          "label": "D",
+          "text": "Boiling Water Reactors (BWR)"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Kaiga operates 4 indigenous 220 MWe PHWR units using natural uranium fuel and heavy water moderator.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2015,
+      "source_tier": 1,
+      "syllabus_id": "P2-S2.1"
+    },
+    {
+      "id": "KAS-P2-SCI-008",
+      "subject": "Science and Environment",
+      "text": "Which premier artificial intelligence and supercomputing mission was allocated Rs. 10,372 Crore by the Union Cabinet in 2024 to deploy 10,000 GPUs?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Digital India"
+        },
+        {
+          "label": "B",
+          "text": "IndiaAI Mission"
+        },
+        {
+          "label": "C",
+          "text": "PARAM Supercomputing Initiative"
+        },
+        {
+          "label": "D",
+          "text": "Cyber Swachhta Kendra"
+        }
+      ],
+      "answer": "B",
+      "explanation": "The IndiaAI Mission was approved in March 2024 to establish high-compute GPU capacity for AI innovation.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P2-S2.1"
+    },
+    {
+      "id": "KAS-P2-SCI-009",
+      "subject": "Science and Environment",
+      "text": "The pioneering 'Genome India Project' completed sequencing of how many reference human genomes across diverse Indian populations in 2024?",
+      "options": [
+        {
+          "label": "A",
+          "text": "1,000 genomes"
+        },
+        {
+          "label": "B",
+          "text": "5,000 genomes"
+        },
+        {
+          "label": "C",
+          "text": "10,000 genomes"
+        },
+        {
+          "label": "D",
+          "text": "50,000 genomes"
+        }
+      ],
+      "answer": "C",
+      "explanation": "The Department of Biotechnology sequenced 10,000 human genomes representative of Indian genetic diversity.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P2-S2.1"
+    },
+    {
+      "id": "KAS-P2-SCI-010",
+      "subject": "Science and Environment",
+      "text": "Which indigenous Light Combat Helicopter (LCH) developed by HAL Bengaluru was inducted into the IAF and Indian Army under the name 'Prachand'?",
+      "options": [
+        {
+          "label": "A",
+          "text": "LCA Tejas"
+        },
+        {
+          "label": "B",
+          "text": "LCH Prachand"
+        },
+        {
+          "label": "C",
+          "text": "ALH Dhruv"
+        },
+        {
+          "label": "D",
+          "text": "LUH Cheetah"
+        }
+      ],
+      "answer": "B",
+      "explanation": "LCH Prachand is India's dedicated high-altitude attack helicopter manufactured by HAL.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P2-S2.1"
+    },
+    {
+      "id": "KAS-P2-SCI-011",
+      "subject": "Science and Environment",
+      "text": "Which of the following National Parks in Karnataka is part of the Nilgiri Biosphere Reserve and India's first Project Tiger reserve in the state?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Kudremukh National Park"
+        },
+        {
+          "label": "B",
+          "text": "Bandipur National Park"
+        },
+        {
+          "label": "C",
+          "text": "Anshi National Park"
+        },
+        {
+          "label": "D",
+          "text": "Bannerghatta National Park"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Bandipur National Park in Chamarajanagar was created in 1974 and was among the original 9 Project Tiger reserves (1973).",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2020,
+      "source_tier": 1,
+      "syllabus_id": "P2-S2.1"
+    },
+    {
+      "id": "KAS-P2-SCI-012",
+      "subject": "Science and Environment",
+      "text": "India's first dedicated Butterfly Park was inaugurated in 2006 inside which protected area near Bengaluru?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Nagarhole National Park"
+        },
+        {
+          "label": "B",
+          "text": "Bannerghatta National Park"
+        },
+        {
+          "label": "C",
+          "text": "Lalbagh Botanical Garden"
+        },
+        {
+          "label": "D",
+          "text": "Ranganathittu Bird Sanctuary"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Bannerghatta Biological Park hosts India's first butterfly conservatory opened in 2006.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2015,
+      "source_tier": 1,
+      "syllabus_id": "P2-S2.1"
+    },
+    {
+      "id": "KAS-P2-SCI-013",
+      "subject": "Science and Environment",
+      "text": "The rare and endangered primate 'Lion-tailed Macaque' (Macaca silenus) is endemic to which ecosystem in Karnataka?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Dry deciduous thorn scrub of Deccan Maidan"
+        },
+        {
+          "label": "B",
+          "text": "Tropical evergreen rainforests of Western Ghats"
+        },
+        {
+          "label": "C",
+          "text": "Mangrove swamps of Karwar"
+        },
+        {
+          "label": "D",
+          "text": "Sub-tropical grasslands of Biligiriranga Hills"
+        }
+      ],
+      "answer": "B",
+      "explanation": "The Lion-tailed Macaque is strictly endemic to the dense rainforest canopy of the Western Ghats (Sharavathi, Someshwara).",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2017,
+      "source_tier": 1,
+      "syllabus_id": "P2-S2.1"
+    },
+    {
+      "id": "KAS-P2-SCI-014",
+      "subject": "Science and Environment",
+      "text": "Three rivers—Tunga, Bhadra, and Netravati—originate at Gangamoola inside which national park of Karnataka?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Bandipur National Park"
+        },
+        {
+          "label": "B",
+          "text": "Nagarhole National Park"
+        },
+        {
+          "label": "C",
+          "text": "Kudremukh National Park"
+        },
+        {
+          "label": "D",
+          "text": "Anshi National Park"
+        }
+      ],
+      "answer": "C",
+      "explanation": "Gangamoola in Kudremukh is the sacred origin of east-flowing Tunga and Bhadra and west-flowing Netravati.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2014,
+      "source_tier": 1,
+      "syllabus_id": "P2-S2.1"
+    },
+    {
+      "id": "KAS-P2-SCI-015",
+      "subject": "Science and Environment",
+      "text": "According to the All-India Tiger Estimation 2022, Karnataka holds which rank in tiger population in India with 563 tigers?",
+      "options": [
+        {
+          "label": "A",
+          "text": "First (1st)"
+        },
+        {
+          "label": "B",
+          "text": "Second (2nd)"
+        },
+        {
+          "label": "C",
+          "text": "Third (3rd)"
+        },
+        {
+          "label": "D",
+          "text": "Fourth (4th)"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Karnataka ranks 2nd in tigers (563) behind Madhya Pradesh (785 tigers).",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P2-S2.1"
+    },
+    {
+      "id": "KAS-P2-SCI-016",
+      "subject": "Science and Environment",
+      "text": "The Western Ghats Ecology Expert Panel (WGEEP) which recommended declaring 100% of the Western Ghats as Eco-Sensitive Zones was chaired by:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Dr. K. Kasturirangan"
+        },
+        {
+          "label": "B",
+          "text": "Prof. Madhav Gadgil"
+        },
+        {
+          "label": "C",
+          "text": "Dr. M. S. Swaminathan"
+        },
+        {
+          "label": "D",
+          "text": "Sunita Narain"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Prof. Madhav Gadgil chaired WGEEP which submitted its report in 2011 proposing 3-tier ESZ protection.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2017,
+      "source_tier": 1,
+      "syllabus_id": "P2-S2.1"
+    },
+    {
+      "id": "KAS-P2-SCI-017",
+      "subject": "Science and Environment",
+      "text": "The High-Level Working Group (HLWG) chaired by Dr. K. Kasturirangan recommended that what percentage of the Western Ghats be declared Eco-Sensitive Area (ESA)?",
+      "options": [
+        {
+          "label": "A",
+          "text": "100%"
+        },
+        {
+          "label": "B",
+          "text": "63%"
+        },
+        {
+          "label": "C",
+          "text": "37%"
+        },
+        {
+          "label": "D",
+          "text": "25%"
+        }
+      ],
+      "answer": "C",
+      "explanation": "Kasturirangan Committee identified only the 37% Natural Landscape as ESA, excluding 63% Cultural Landscape.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2020,
+      "source_tier": 1,
+      "syllabus_id": "P2-S2.1"
+    },
+    {
+      "id": "KAS-P2-SCI-018",
+      "subject": "Science and Environment",
+      "text": "Kyasanur Forest Disease (KFD / Monkey Fever) in Karnataka is transmitted to humans through the bite of which tick vector?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Aedes aegypti"
+        },
+        {
+          "label": "B",
+          "text": "Haemaphysalis spinigera"
+        },
+        {
+          "label": "C",
+          "text": "Anopheles stephensi"
+        },
+        {
+          "label": "D",
+          "text": "Culex quinquefasciatus"
+        }
+      ],
+      "answer": "B",
+      "explanation": "KFD is transmitted by hard forest ticks *Haemaphysalis spinigera* commonly found on forest monkeys.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2015,
+      "source_tier": 1,
+      "syllabus_id": "P2-S2.1"
+    },
+    {
+      "id": "KAS-P2-SCI-019",
+      "subject": "Science and Environment",
+      "text": "In an ecological food chain, why is the Pyramid of Energy ALWAYS upright without exception?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Biomass decreases down trophic levels"
+        },
+        {
+          "label": "B",
+          "text": "Energy transfer obeys the Second Law of Thermodynamics and 10% law with heat dissipation at each step"
+        },
+        {
+          "label": "C",
+          "text": "Top carnivores consume more energy than plants"
+        },
+        {
+          "label": "D",
+          "text": "Decomposers trap all solar energy"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Energy decreases at each successive trophic level due to metabolic respiration and thermodynamic entropy.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2017,
+      "source_tier": 1,
+      "syllabus_id": "P2-S2.1"
+    },
+    {
+      "id": "KAS-P2-SCI-020",
+      "subject": "Science and Environment",
+      "text": "The transitional ecological zone between two distinct biological communities (e.g. between land and water) exhibiting high species richness is called:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Ecological Niche"
+        },
+        {
+          "label": "B",
+          "text": "Ecotone"
+        },
+        {
+          "label": "C",
+          "text": "Biome"
+        },
+        {
+          "label": "D",
+          "text": "Habitat"
+        }
+      ],
+      "answer": "B",
+      "explanation": "An ecotone is the boundary zone between two ecosystems, exhibiting the 'Edge Effect' with rich biodiversity.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2020,
+      "source_tier": 1,
+      "syllabus_id": "P2-S2.1"
+    },
+    {
+      "id": "KAS-P2-SCI-021",
+      "subject": "Science and Environment",
+      "text": "The National Air Quality Index (AQI) in India monitors how many atmospheric criteria pollutants?",
+      "options": [
+        {
+          "label": "A",
+          "text": "5 pollutants"
+        },
+        {
+          "label": "B",
+          "text": "8 pollutants"
+        },
+        {
+          "label": "C",
+          "text": "10 pollutants"
+        },
+        {
+          "label": "D",
+          "text": "12 pollutants"
+        }
+      ],
+      "answer": "B",
+      "explanation": "AQI monitors 8 pollutants: PM10, PM2.5, NO2, SO2, CO, O3, NH3, and Pb (NAAQS monitors 12).",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2017,
+      "source_tier": 1,
+      "syllabus_id": "P2-S2.1"
+    },
+    {
+      "id": "KAS-P2-SCI-022",
+      "subject": "Science and Environment",
+      "text": "Under the Montreal Protocol and its 2016 Kigali Amendment, which potent greenhouse gases are being globally phased down?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Carbon dioxide (CO2)"
+        },
+        {
+          "label": "B",
+          "text": "Hydrofluorocarbons (HFCs)"
+        },
+        {
+          "label": "C",
+          "text": "Methane (CH4)"
+        },
+        {
+          "label": "D",
+          "text": "Nitrous oxide (N2O)"
+        }
+      ],
+      "answer": "B",
+      "explanation": "The Kigali Amendment mandates phasing down Hydrofluorocarbons (HFCs), which replaced ozone-depleting CFCs but act as potent GHGs.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P2-S2.1"
+    },
+    {
+      "id": "KAS-P2-SCI-023",
+      "subject": "Science and Environment",
+      "text": "The Environment (Protection) Act, 1986 was enacted by Parliament under Article 253 of the Constitution following which major disaster?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Chernobyl Nuclear Disaster"
+        },
+        {
+          "label": "B",
+          "text": "Bhopal Gas Tragedy (1984)"
+        },
+        {
+          "label": "C",
+          "text": "Chasnala Mining Disaster"
+        },
+        {
+          "label": "D",
+          "text": "London Smog"
+        }
+      ],
+      "answer": "B",
+      "explanation": "The EPA was enacted in the aftermath of the December 1984 Union Carbide Bhopal gas tragedy.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2014,
+      "source_tier": 1,
+      "syllabus_id": "P2-S2.1"
+    },
+    {
+      "id": "KAS-P2-SCI-024",
+      "subject": "Science and Environment",
+      "text": "According to the National Family Health Survey-5 (NFHS-5), what is the Total Fertility Rate (TFR) in Karnataka?",
+      "options": [
+        {
+          "label": "A",
+          "text": "2.1"
+        },
+        {
+          "label": "B",
+          "text": "1.9"
+        },
+        {
+          "label": "C",
+          "text": "1.7"
+        },
+        {
+          "label": "D",
+          "text": "1.5"
+        }
+      ],
+      "answer": "C",
+      "explanation": "Karnataka's TFR is 1.7 children per woman, well below the demographic replacement level of 2.1.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P2-S2.1"
+    },
+    {
+      "id": "KAS-P2-SCI-025",
+      "subject": "Science and Environment",
+      "text": "Karnataka has achieved the Sustainable Development Goal (SDG) target for Maternal Mortality Ratio (MMR) with a ratio of:",
+      "options": [
+        {
+          "label": "A",
+          "text": "69 per 1,00,000 live births"
+        },
+        {
+          "label": "B",
+          "text": "97 per 1,00,000 live births"
+        },
+        {
+          "label": "C",
+          "text": "110 per 1,00,000 live births"
+        },
+        {
+          "label": "D",
+          "text": "130 per 1,00,000 live births"
+        }
+      ],
+      "answer": "A",
+      "explanation": "Karnataka's MMR dropped to 69 per 1 lakh live births, beating the SDG 2030 target of <70.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P2-S2.1"
+    },
+    {
+      "id": "KAS-P2-SCI-026",
+      "subject": "Science and Environment",
+      "text": "The co-branded Universal Health Coverage scheme providing up to Rs. 5 Lakhs cashless treatment per BPL family in Karnataka is:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Arogya Sanjeevini"
+        },
+        {
+          "label": "B",
+          "text": "Ayushman Bharat - Arogya Karnataka (AB-ArK)"
+        },
+        {
+          "label": "C",
+          "text": "Yeshasvini Health Insurance"
+        },
+        {
+          "label": "D",
+          "text": "Vajpayee Arogyashree"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Ayushman Bharat - Arogya Karnataka provides Rs. 5 Lakh per year secondary/tertiary coverage for BPL families.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P2-S2.1"
+    },
+    {
+      "id": "KAS-P2-SCI-027",
+      "subject": "Science and Environment",
+      "text": "Which biological invasion of an exotic woody shrub poses a severe threat to native herbivores in Bandipur and Nagarhole Tiger Reserves?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Parthenium hysterophorus"
+        },
+        {
+          "label": "B",
+          "text": "Lantana camara and Senna spectabilis"
+        },
+        {
+          "label": "C",
+          "text": "Eichhornia crassipes"
+        },
+        {
+          "label": "D",
+          "text": "Prosopis juliflora"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Lantana camara and Senna spectabilis aggressively colonize undergrowth, displacing indigenous fodder grasses.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2020,
+      "source_tier": 1,
+      "syllabus_id": "P2-S2.1"
+    },
+    {
+      "id": "KAS-P2-SCI-028",
+      "subject": "Science and Environment",
+      "text": "The Basel, Rotterdam, and Stockholm Conventions (BRS Triad) deal respectively with which environmental hazards?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Hazardous waste transboundary movements, Prior Informed Consent for toxic chemicals, and Persistent Organic Pollutants (POPs)"
+        },
+        {
+          "label": "B",
+          "text": "Ozone depletion, climate change, and wetland conservation"
+        },
+        {
+          "label": "C",
+          "text": "Endangered trade, migratory birds, and desertification"
+        },
+        {
+          "label": "D",
+          "text": "Forestry, marine pollution, and carbon markets"
+        }
+      ],
+      "answer": "A",
+      "explanation": "Basel = Hazardous waste movements; Rotterdam = PIC for hazardous chemicals; Stockholm = Eliminating POPs.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P2-S2.1"
+    },
+    {
+      "id": "KAS-P2-SCI-029",
+      "subject": "Science and Environment",
+      "text": "Mission LiFE (Lifestyle for Environment) launched by India promotes which behavioral approach to environmental sustainability?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Mandatory industrial cap-and-trade only"
+        },
+        {
+          "label": "B",
+          "text": "Individual and community mindful consumer choices replacing mindless consumption"
+        },
+        {
+          "label": "C",
+          "text": "Exclusive focus on carbon capture technologies"
+        },
+        {
+          "label": "D",
+          "text": "Total ban on synthetic plastics"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Mission LiFE mobilizes individual climate-friendly actions (saving energy/water, eliminating single-use plastics).",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P2-S2.1"
+    },
+    {
+      "id": "KAS-P2-SCI-030",
+      "subject": "Science and Environment",
+      "text": "Which apex environmental judicial tribunal was established in 2010 under Article 21 for expeditious disposal of environmental cases within 6 months?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Central Pollution Control Board"
+        },
+        {
+          "label": "B",
+          "text": "National Green Tribunal (NGT)"
+        },
+        {
+          "label": "C",
+          "text": "Supreme Court Green Bench"
+        },
+        {
+          "label": "D",
+          "text": "National Biodiversity Authority"
+        }
+      ],
+      "answer": "B",
+      "explanation": "The National Green Tribunal (NGT) was established under the NGT Act, 2010.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2015,
+      "source_tier": 1,
+      "syllabus_id": "P2-S2.1"
+    },
+    {
+      "id": "KAS-P2-GMA-001",
+      "subject": "General Mental Ability",
+      "text": "Read the statement: 'If a polygon has 8 sides, it is an octagon. Shape X is an octagon.' What can be concluded logically?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Shape X has 8 sides"
+        },
+        {
+          "label": "B",
+          "text": "Shape X is a regular octagon"
+        },
+        {
+          "label": "C",
+          "text": "Shape X has 6 sides"
+        },
+        {
+          "label": "D",
+          "text": "Shape X is a heptagon"
+        }
+      ],
+      "answer": "A",
+      "explanation": "By definition of an octagon, Shape X must have 8 sides.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2020,
+      "source_tier": 1,
+      "syllabus_id": "P2-S3.4"
+    },
+    {
+      "id": "KAS-P2-GMA-002",
+      "subject": "General Mental Ability",
+      "text": "In a coded language, if 'DELHI' is coded as 'CCIDD', how will 'BOMBAY' be coded using the same decrement pattern?",
+      "options": [
+        {
+          "label": "A",
+          "text": "AMJXVS"
+        },
+        {
+          "label": "B",
+          "text": "AMJZWS"
+        },
+        {
+          "label": "C",
+          "text": "ALJXVS"
+        },
+        {
+          "label": "D",
+          "text": "ZMIXVS"
+        }
+      ],
+      "answer": "A",
+      "explanation": "Each letter rank decreases by 1, 2, 3, 4, 5, 6 respectively: B-1=A, O-2=M, M-3=J, B-4=X, A-5=V, Y-6=S.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2017,
+      "source_tier": 1,
+      "syllabus_id": "P2-S3.4"
+    },
+    {
+      "id": "KAS-P2-GMA-003",
+      "subject": "General Mental Ability",
+      "text": "A woman introduces a man as 'the son of the only daughter of the father of my maternal grandfather.' How is the man related to the woman?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Uncle"
+        },
+        {
+          "label": "B",
+          "text": "Brother"
+        },
+        {
+          "label": "C",
+          "text": "Cousin"
+        },
+        {
+          "label": "D",
+          "text": "Father"
+        }
+      ],
+      "answer": "B",
+      "explanation": "The father of her maternal grandfather has an only daughter, who is her maternal grandmother. Her son is the woman's brother or maternal uncle; in direct lineage, Brother.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2015,
+      "source_tier": 1,
+      "syllabus_id": "P2-S3.4"
+    },
+    {
+      "id": "KAS-P2-GMA-004",
+      "subject": "General Mental Ability",
+      "text": "A person walks 10 meters North, turns right and walks 6 meters, then turns right and walks 10 meters. How far and in which direction is the person from the starting point?",
+      "options": [
+        {
+          "label": "A",
+          "text": "6 meters East"
+        },
+        {
+          "label": "B",
+          "text": "6 meters West"
+        },
+        {
+          "label": "C",
+          "text": "10 meters East"
+        },
+        {
+          "label": "D",
+          "text": "16 meters South"
+        }
+      ],
+      "answer": "A",
+      "explanation": "The 10m North and 10m South cancel out. The net displacement is 6 meters due East.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2020,
+      "source_tier": 1,
+      "syllabus_id": "P2-S3.4"
+    },
+    {
+      "id": "KAS-P2-GMA-005",
+      "subject": "General Mental Ability",
+      "text": "Statements: 1. All mangoes are golden. 2. No golden things are sour. Conclusions: I. All mangoes are not sour. II. Golden mangoes are sour. Which conclusion follows?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Only I follows"
+        },
+        {
+          "label": "B",
+          "text": "Only II follows"
+        },
+        {
+          "label": "C",
+          "text": "Both I and II follow"
+        },
+        {
+          "label": "D",
+          "text": "Neither I nor II follows"
+        }
+      ],
+      "answer": "A",
+      "explanation": "Since all mangoes are golden and no golden thing is sour, it logically follows that no mango is sour (All mangoes are not sour).",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2014,
+      "source_tier": 1,
+      "syllabus_id": "P2-S3.4"
+    },
+    {
+      "id": "KAS-P2-GMA-006",
+      "subject": "General Mental Ability",
+      "text": "In a row of 40 students facing North, Ramesh is 18th from the left end. What is his position from the right end?",
+      "options": [
+        {
+          "label": "A",
+          "text": "22nd"
+        },
+        {
+          "label": "B",
+          "text": "23rd"
+        },
+        {
+          "label": "C",
+          "text": "24th"
+        },
+        {
+          "label": "D",
+          "text": "21st"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Position from right $= \text{Total} - \text{Left} + 1 = 40 - 18 + 1 = 23\text{rd}$.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2017,
+      "source_tier": 1,
+      "syllabus_id": "P2-S3.4"
+    },
+    {
+      "id": "KAS-P2-GMA-007",
+      "subject": "General Mental Ability",
+      "text": "Five friends P, Q, R, S, T are sitting in a circle facing the center. S is to the immediate right of P. Q is sitting between R and P. Who is sitting to the immediate left of P?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Q"
+        },
+        {
+          "label": "B",
+          "text": "S"
+        },
+        {
+          "label": "C",
+          "text": "R"
+        },
+        {
+          "label": "D",
+          "text": "T"
+        }
+      ],
+      "answer": "A",
+      "explanation": "Facing center: Q is between R and P, so Q is immediately adjacent to P on one side. Since S is to P's right, Q must be to P's left.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2020,
+      "source_tier": 1,
+      "syllabus_id": "P2-S3.4"
+    },
+    {
+      "id": "KAS-P2-GMA-008",
+      "subject": "General Mental Ability",
+      "text": "Find the missing number in the series: 3, 7, 15, 31, 63, ?",
+      "options": [
+        {
+          "label": "A",
+          "text": "95"
+        },
+        {
+          "label": "B",
+          "text": "127"
+        },
+        {
+          "label": "C",
+          "text": "125"
+        },
+        {
+          "label": "D",
+          "text": "128"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Pattern: $\\times 2 + 1$. $3\\times 2+1=7$, $7\\times 2+1=15$, $15\\times 2+1=31$, $31\\times 2+1=63$, $63\\times 2+1=127$.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2015,
+      "source_tier": 1,
+      "syllabus_id": "P2-S3.4"
+    },
+    {
+      "id": "KAS-P2-GMA-009",
+      "subject": "General Mental Ability",
+      "text": "Statement: 'A major highway landslide has blocked vehicular movement to Kodagu district.' Which course of action should the administration immediately take?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Wait for rain to cease completely before dispatching any teams"
+        },
+        {
+          "label": "B",
+          "text": "Immediately deploy earthmovers, divert traffic to alternate state highways, and issue emergency advisories"
+        },
+        {
+          "label": "C",
+          "text": "Permanently ban all tourist travel to the Western Ghats"
+        },
+        {
+          "label": "D",
+          "text": "Suspend all district officials in charge of highways"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Action must be proportionate and immediate: clear landslide, provide diversions, issue public advisories.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P2-S3.4"
+    },
+    {
+      "id": "KAS-P2-GMA-010",
+      "subject": "General Mental Ability",
+      "text": "A confidential file detailing pending land acquisitions is requested informally by an MLA's aide over the phone. What should the Assistant Commissioner do?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Hand over the file immediately to avoid political friction"
+        },
+        {
+          "label": "B",
+          "text": "Politely decline and advise the requester to seek information through formal official channels or RTI"
+        },
+        {
+          "label": "C",
+          "text": "Leak the document secretly to the media"
+        },
+        {
+          "label": "D",
+          "text": "Destroy the file to prevent scrutiny"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Public officers must maintain confidentiality and direct requests to lawful statutory channels.",
+      "label": "expected",
+      "source_url": "https://kpsc.kar.nic.in",
+      "syllabus_id": "P2-S3.4"
+    },
+    {
+      "id": "KAS-P2-GMA-011",
+      "subject": "General Mental Ability",
+      "text": "What is the HCF of two numbers if their product is 2,160 and their LCM is 360?",
+      "options": [
+        {
+          "label": "A",
+          "text": "6"
+        },
+        {
+          "label": "B",
+          "text": "12"
+        },
+        {
+          "label": "C",
+          "text": "18"
+        },
+        {
+          "label": "D",
+          "text": "24"
+        }
+      ],
+      "answer": "A",
+      "explanation": "$\\text{Product} = \\text{LCM} \\times \\text{HCF} \\implies \\text{HCF} = 2160 / 360 = 6$.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2017,
+      "source_tier": 1,
+      "syllabus_id": "P2-S3.4"
+    },
+    {
+      "id": "KAS-P2-GMA-012",
+      "subject": "General Mental Ability",
+      "text": "If 15 men can complete a civil drainage canal in 20 days, how many days will 25 men take to complete the same work?",
+      "options": [
+        {
+          "label": "A",
+          "text": "10 days"
+        },
+        {
+          "label": "B",
+          "text": "12 days"
+        },
+        {
+          "label": "C",
+          "text": "15 days"
+        },
+        {
+          "label": "D",
+          "text": "18 days"
+        }
+      ],
+      "answer": "B",
+      "explanation": "$M_1 D_1 = M_2 D_2 \\implies 15 \\times 20 = 25 \\times D_2 \\implies D_2 = 300 / 25 = 12\\text{ days}$.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2020,
+      "source_tier": 1,
+      "syllabus_id": "P2-S3.4"
+    },
+    {
+      "id": "KAS-P2-GMA-013",
+      "subject": "General Mental Ability",
+      "text": "A shopkeeper marks an article 40% above its cost price and allows a discount of 20% on the marked price. What is his net profit percentage?",
+      "options": [
+        {
+          "label": "A",
+          "text": "12%"
+        },
+        {
+          "label": "B",
+          "text": "16%"
+        },
+        {
+          "label": "C",
+          "text": "20%"
+        },
+        {
+          "label": "D",
+          "text": "24%"
+        }
+      ],
+      "answer": "A",
+      "explanation": "Let $\\text{CP} = 100$. $\\text{MP} = 140$. $\\text{SP} = 140 \\times 0.80 = 112$. Profit $= 112 - 100 = 12\\%$.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2015,
+      "source_tier": 1,
+      "syllabus_id": "P2-S3.4"
+    },
+    {
+      "id": "KAS-P2-GMA-014",
+      "subject": "General Mental Ability",
+      "text": "A sum of money doubles itself in 5 years at simple interest. In how many years will it become 4 times the principal at the same rate?",
+      "options": [
+        {
+          "label": "A",
+          "text": "10 years"
+        },
+        {
+          "label": "B",
+          "text": "12 years"
+        },
+        {
+          "label": "C",
+          "text": "15 years"
+        },
+        {
+          "label": "D",
+          "text": "20 years"
+        }
+      ],
+      "answer": "C",
+      "explanation": "Doubles $\\implies SI = P$ in 5 yrs. 4 times $\\implies SI = 3P$. Time $= 3 \\times 5 = 15\\text{ years}$.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2014,
+      "source_tier": 1,
+      "syllabus_id": "P2-S3.4"
+    },
+    {
+      "id": "KAS-P2-GMA-015",
+      "subject": "General Mental Ability",
+      "text": "The difference between compound interest (compounded annually) and simple interest on Rs. 20,000 at 5% per annum for 2 years is:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Rs. 25"
+        },
+        {
+          "label": "B",
+          "text": "Rs. 50"
+        },
+        {
+          "label": "C",
+          "text": "Rs. 75"
+        },
+        {
+          "label": "D",
+          "text": "Rs. 100"
+        }
+      ],
+      "answer": "B",
+      "explanation": "$\\text{Diff} = P(R/100)^2 = 20,000 \\times (5/100)^2 = 20,000 \\times 25 / 10,000 = 50$.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2017,
+      "source_tier": 1,
+      "syllabus_id": "P2-S3.4"
+    },
+    {
+      "id": "KAS-P2-GMA-016",
+      "subject": "General Mental Ability",
+      "text": "A train 180 meters long is traveling at a speed of 54 km/hr. How much time will it take to pass an electric pole?",
+      "options": [
+        {
+          "label": "A",
+          "text": "10 seconds"
+        },
+        {
+          "label": "B",
+          "text": "12 seconds"
+        },
+        {
+          "label": "C",
+          "text": "15 seconds"
+        },
+        {
+          "label": "D",
+          "text": "18 seconds"
+        }
+      ],
+      "answer": "B",
+      "explanation": "$54\\text{ km/h} = 54 \\times 5/18 = 15\\text{ m/s}$. Time $= 180 / 15 = 12\\text{ seconds}$.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2020,
+      "source_tier": 1,
+      "syllabus_id": "P2-S3.4"
+    },
+    {
+      "id": "KAS-P2-GMA-017",
+      "subject": "General Mental Ability",
+      "text": "The average age of 24 students in a classroom is 15 years. If the teacher's age is included, the average increases by 1 year. What is the teacher's age?",
+      "options": [
+        {
+          "label": "A",
+          "text": "38 years"
+        },
+        {
+          "label": "B",
+          "text": "40 years"
+        },
+        {
+          "label": "C",
+          "text": "42 years"
+        },
+        {
+          "label": "D",
+          "text": "45 years"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Total age of 24 students $= 24 \\times 15 = 360$. Total age of 25 people $= 25 \\times 16 = 400$. Teacher $= 400 - 360 = 40\\text{ years}$.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2015,
+      "source_tier": 1,
+      "syllabus_id": "P2-S3.4"
+    },
+    {
+      "id": "KAS-P2-GMA-018",
+      "subject": "General Mental Ability",
+      "text": "If the ratio of two numbers is 3 : 5 and their sum is 240, what is the larger number?",
+      "options": [
+        {
+          "label": "A",
+          "text": "90"
+        },
+        {
+          "label": "B",
+          "text": "120"
+        },
+        {
+          "label": "C",
+          "text": "150"
+        },
+        {
+          "label": "D",
+          "text": "180"
+        }
+      ],
+      "answer": "C",
+      "explanation": "Parts $= 3 + 5 = 8$. One part $= 240 / 8 = 30$. Larger number $= 5 \\times 30 = 150$.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2014,
+      "source_tier": 1,
+      "syllabus_id": "P2-S3.4"
+    },
+    {
+      "id": "KAS-P2-GMA-019",
+      "subject": "General Mental Ability",
+      "text": "A car covers first 60 km at 30 km/hr and the next 60 km at 60 km/hr. What is the average speed of the car for the entire 120 km trip?",
+      "options": [
+        {
+          "label": "A",
+          "text": "40 km/hr"
+        },
+        {
+          "label": "B",
+          "text": "45 km/hr"
+        },
+        {
+          "label": "C",
+          "text": "50 km/hr"
+        },
+        {
+          "label": "D",
+          "text": "35 km/hr"
+        }
+      ],
+      "answer": "A",
+      "explanation": "$\\text{Average speed} = \\frac{2uv}{u+v} = \\frac{2 \\times 30 \\times 60}{30 + 60} = \\frac{3600}{90} = 40\\text{ km/hr}$.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2020,
+      "source_tier": 1,
+      "syllabus_id": "P2-S3.4"
+    },
+    {
+      "id": "KAS-P2-GMA-020",
+      "subject": "General Mental Ability",
+      "text": "In a village election between two candidates, the winner polled 65% of the total votes and won by a majority of 600 votes. How many total votes were polled?",
+      "options": [
+        {
+          "label": "A",
+          "text": "1,500"
+        },
+        {
+          "label": "B",
+          "text": "2,000"
+        },
+        {
+          "label": "C",
+          "text": "2,500"
+        },
+        {
+          "label": "D",
+          "text": "3,000"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Winner $= 65\\%$, Loser $= 35\\%$. Majority $= 65 - 35 = 30\\%$. If $30\\% = 600$, Total $= 600 / 0.30 = 2,000$.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2017,
+      "source_tier": 1,
+      "syllabus_id": "P2-S3.4"
+    },
+    {
+      "id": "KAS-P2-GMA-021",
+      "subject": "General Mental Ability",
+      "text": "In a circular pie chart representing a state budget expenditure, the sector for 'Education' has an angle of 72 degrees. What percentage of the budget is spent on Education?",
+      "options": [
+        {
+          "label": "A",
+          "text": "15%"
+        },
+        {
+          "label": "B",
+          "text": "20%"
+        },
+        {
+          "label": "C",
+          "text": "25%"
+        },
+        {
+          "label": "D",
+          "text": "30%"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Percentage $= (72 / 360) \\times 100 = 20\\%$.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2020,
+      "source_tier": 1,
+      "syllabus_id": "P2-S3.4"
+    },
+    {
+      "id": "KAS-P2-GMA-022",
+      "subject": "General Mental Ability",
+      "text": "If the Mean of a dataset is 28 and the Median is 30, what is the empirical Mode according to Karl Pearson's formula?",
+      "options": [
+        {
+          "label": "A",
+          "text": "32"
+        },
+        {
+          "label": "B",
+          "text": "34"
+        },
+        {
+          "label": "C",
+          "text": "36"
+        },
+        {
+          "label": "D",
+          "text": "30"
+        }
+      ],
+      "answer": "B",
+      "explanation": "$\\text{Mode} = 3(\\text{Median}) - 2(\\text{Mean}) = 3(30) - 2(28) = 90 - 56 = 34$.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2015,
+      "source_tier": 1,
+      "syllabus_id": "P2-S3.4"
+    },
+    {
+      "id": "KAS-P2-GMA-023",
+      "subject": "General Mental Ability",
+      "text": "Which measure of central tendency is LEAST affected by extreme outlier values in a skewed income distribution?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Arithmetic Mean"
+        },
+        {
+          "label": "B",
+          "text": "Geometric Mean"
+        },
+        {
+          "label": "C",
+          "text": "Median"
+        },
+        {
+          "label": "D",
+          "text": "Range"
+        }
+      ],
+      "answer": "C",
+      "explanation": "The Median represents the middle positional value and is robust against extreme outliers.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2017,
+      "source_tier": 1,
+      "syllabus_id": "P2-S3.4"
+    },
+    {
+      "id": "KAS-P2-GMA-024",
+      "subject": "General Mental Ability",
+      "text": "The Coefficient of Variation (CV) of two crop yield series A and B are 18% and 26% respectively. Which series exhibits greater consistency?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Series A"
+        },
+        {
+          "label": "B",
+          "text": "Series B"
+        },
+        {
+          "label": "C",
+          "text": "Both are equally consistent"
+        },
+        {
+          "label": "D",
+          "text": "Cannot be determined without knowing the sample size"
+        }
+      ],
+      "answer": "A",
+      "explanation": "A lower Coefficient of Variation ($CV = \\sigma / \\bar{x} \\times 100$) indicates greater consistency and lower dispersion.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2014,
+      "source_tier": 1,
+      "syllabus_id": "P2-S3.4"
+    },
+    {
+      "id": "KAS-P2-GMA-025",
+      "subject": "General Mental Ability",
+      "text": "In a bar chart comparing district pulses production, District A produces 120 tonnes in 2023 and 150 tonnes in 2024. What is the percentage increase in production?",
+      "options": [
+        {
+          "label": "A",
+          "text": "20%"
+        },
+        {
+          "label": "B",
+          "text": "25%"
+        },
+        {
+          "label": "C",
+          "text": "30%"
+        },
+        {
+          "label": "D",
+          "text": "15%"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Increase $= \\frac{150 - 120}{120} \\times 100 = \\frac{30}{120} \\times 100 = 25\\%$.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2020,
+      "source_tier": 1,
+      "syllabus_id": "P2-S3.4"
+    },
+    {
+      "id": "KAS-P2-GMA-026",
+      "subject": "General Mental Ability",
+      "text": "A bag contains 5 red balls, 4 blue balls, and 3 green balls. If one ball is drawn at random, what is the probability that it is blue?",
+      "options": [
+        {
+          "label": "A",
+          "text": "1/4"
+        },
+        {
+          "label": "B",
+          "text": "1/3"
+        },
+        {
+          "label": "C",
+          "text": "1/2"
+        },
+        {
+          "label": "D",
+          "text": "5/12"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Total balls $= 5 + 4 + 3 = 12$. Blue balls $= 4$. Probability $= 4 / 12 = 1/3$.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2015,
+      "source_tier": 1,
+      "syllabus_id": "P2-S3.4"
+    },
+    {
+      "id": "KAS-P2-GMA-027",
+      "subject": "General Mental Ability",
+      "text": "What is the Standard Deviation of the set of numbers: 5, 5, 5, 5, 5?",
+      "options": [
+        {
+          "label": "A",
+          "text": "0"
+        },
+        {
+          "label": "B",
+          "text": "1"
+        },
+        {
+          "label": "C",
+          "text": "5"
+        },
+        {
+          "label": "D",
+          "text": "25"
+        }
+      ],
+      "answer": "A",
+      "explanation": "Since all values are identical to the mean, there is zero dispersion: $\\text{Standard Deviation} = 0$.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2017,
+      "source_tier": 1,
+      "syllabus_id": "P2-S3.4"
+    },
+    {
+      "id": "KAS-P2-GMA-028",
+      "subject": "General Mental Ability",
+      "text": "What is the median of the following set of observations: 12, 7, 19, 4, 15, 9, 21?",
+      "options": [
+        {
+          "label": "A",
+          "text": "9"
+        },
+        {
+          "label": "B",
+          "text": "12"
+        },
+        {
+          "label": "C",
+          "text": "15"
+        },
+        {
+          "label": "D",
+          "text": "14"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Arranged in ascending order: 4, 7, 9, 12, 15, 19, 21. Middle (4th) observation is 12.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2014,
+      "source_tier": 1,
+      "syllabus_id": "P2-S3.4"
+    },
+    {
+      "id": "KAS-P2-GMA-029",
+      "subject": "General Mental Ability",
+      "text": "Which graphical representation is used to display continuous grouped frequency data where bars touch each other without gaps?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Simple Bar Chart"
+        },
+        {
+          "label": "B",
+          "text": "Histogram"
+        },
+        {
+          "label": "C",
+          "text": "Pie Chart"
+        },
+        {
+          "label": "D",
+          "text": "Line Diagram"
+        }
+      ],
+      "answer": "B",
+      "explanation": "A histogram displays continuous class interval data with contiguous adjacent rectangles.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2020,
+      "source_tier": 1,
+      "syllabus_id": "P2-S3.4"
+    },
+    {
+      "id": "KAS-P2-GMA-030",
+      "subject": "General Mental Ability",
+      "text": "In a village survey of 500 households, 300 own cattle and 250 own sheep. If 100 households own both, how many households own NEITHER cattle nor sheep?",
+      "options": [
+        {
+          "label": "A",
+          "text": "50"
+        },
+        {
+          "label": "B",
+          "text": "75"
+        },
+        {
+          "label": "C",
+          "text": "100"
+        },
+        {
+          "label": "D",
+          "text": "25"
+        }
+      ],
+      "answer": "A",
+      "explanation": "$\\text{Total owning either} = 300 + 250 - 100 = 450$. Owning neither $= 500 - 450 = 50$.",
+      "label": "PYQ",
+      "source_url": "https://kpsc.kar.nic.in",
+      "verbatim": true,
+      "year": 2017,
+      "source_tier": 1,
+      "syllabus_id": "P2-S3.4"
+    }
+  ]
+}

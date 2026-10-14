@@ -1,0 +1,497 @@
+{
+  "exam": "KPSC Gazetted Probationers (KAS)",
+  "source_url": "https://kpsc.kar.nic.in",
+  "retrieved": "2026-10-13",
+  "notification": {
+    "name": "KPSC Gazetted Probationers 2026-27 Notification No. KPSCKA/EXA1/EXMF/9/2026-EXAM",
+    "date": "2026-07-31"
+  },
+  "lines": [
+    {
+      "id": "P1-S1.1",
+      "paper": "P1",
+      "subject": "Current Affairs",
+      "unit": "Section 1",
+      "topic": "National Current Events",
+      "text": "Current events of National importance.",
+      "priority": "high"
+    },
+    {
+      "id": "P1-S1.2",
+      "paper": "P1",
+      "subject": "Current Affairs",
+      "unit": "Section 1",
+      "topic": "International Current Events",
+      "text": "Current events of International importance.",
+      "priority": "high"
+    },
+    {
+      "id": "P1-S2.1",
+      "paper": "P1",
+      "subject": "Humanities",
+      "unit": "Section 2",
+      "topic": "History of India",
+      "text": "Humanities – History of India: Broad general understanding of the subject in its social, economic, cultural and political aspects.",
+      "priority": "high"
+    },
+    {
+      "id": "P1-S2.2",
+      "paper": "P1",
+      "subject": "Humanities",
+      "unit": "Section 2",
+      "topic": "Indian National Movement with Karnataka Emphasis",
+      "text": "Indian national movement with special emphasis on Karnataka.",
+      "priority": "high"
+    },
+    {
+      "id": "P1-S2.3",
+      "paper": "P1",
+      "subject": "Humanities",
+      "unit": "Section 2",
+      "topic": "World Geography",
+      "text": "World Geography with broad physical, economic and environmental aspects.",
+      "priority": "conceptual"
+    },
+    {
+      "id": "P1-S2.4",
+      "paper": "P1",
+      "subject": "Humanities",
+      "unit": "Section 2",
+      "topic": "Geography of India and Karnataka",
+      "text": "Geography of India with a focus on Karnataka physiography, rivers, climate, soils and resources.",
+      "priority": "high"
+    },
+    {
+      "id": "P1-S2.5",
+      "paper": "P1",
+      "subject": "Humanities",
+      "unit": "Section 2",
+      "topic": "Indian Polity and Political System",
+      "text": "Indian polity including the country's political system, constitutional framework, organs of government.",
+      "priority": "high"
+    },
+    {
+      "id": "P1-S2.6",
+      "paper": "P1",
+      "subject": "Humanities",
+      "unit": "Section 2",
+      "topic": "Indian Economy, Planning and Economic Reforms",
+      "text": "Indian economy, planning and economic reforms in India - sustainable development, NITI Aayog.",
+      "priority": "high"
+    },
+    {
+      "id": "P1-S2.7",
+      "paper": "P1",
+      "subject": "Humanities",
+      "unit": "Section 2",
+      "topic": "Rural Development and Poverty Alleviation",
+      "text": "Rural development, poverty alleviation, employment generation initiatives in India and Karnataka.",
+      "priority": "high"
+    },
+    {
+      "id": "P1-S2.8",
+      "paper": "P1",
+      "subject": "Humanities",
+      "unit": "Section 2",
+      "topic": "Demographics and Social Sector Initiatives",
+      "text": "Demographics, social changes, healthcare, education, and social sector initiatives.",
+      "priority": "conceptual"
+    },
+    {
+      "id": "P2-S1.1",
+      "paper": "P2",
+      "subject": "Karnataka Affairs",
+      "unit": "Section 1",
+      "topic": "Current Events of State Importance",
+      "text": "Current events of Karnataka State importance.",
+      "priority": "high"
+    },
+    {
+      "id": "P2-S1.2",
+      "paper": "P2",
+      "subject": "Karnataka Affairs",
+      "unit": "Section 1",
+      "topic": "Important State Government Programmes",
+      "text": "Important Karnataka State Government programmes, policies, and welfare schemes.",
+      "priority": "high"
+    },
+    {
+      "id": "P2-S2.1",
+      "paper": "P2",
+      "subject": "Science and Environment",
+      "unit": "Section 2",
+      "topic": "General Science and Technology",
+      "text": "General Science & Technology – contemporary developments in S&T and their implications including matters of everyday observations and experience.",
+      "priority": "high"
+    },
+    {
+      "id": "P2-S2.2",
+      "paper": "P2",
+      "subject": "Science and Environment",
+      "unit": "Section 2",
+      "topic": "Environment, Ecology, Biodiversity and Climate Change",
+      "text": "General issues on Health, environmental ecology, biodiversity and climate change that do not require subject specialization.",
+      "priority": "high"
+    },
+    {
+      "id": "P2-S3.1",
+      "paper": "P2",
+      "subject": "General Mental Ability",
+      "unit": "Section 3",
+      "topic": "Comprehension",
+      "text": "Reading Comprehension (Class X / SSLC level).",
+      "priority": "conceptual"
+    },
+    {
+      "id": "P2-S3.2",
+      "paper": "P2",
+      "subject": "General Mental Ability",
+      "unit": "Section 3",
+      "topic": "Logical Reasoning and Analytical Ability",
+      "text": "Logical reasoning and Analytical ability.",
+      "priority": "high"
+    },
+    {
+      "id": "P2-S3.3",
+      "paper": "P2",
+      "subject": "General Mental Ability",
+      "unit": "Section 3",
+      "topic": "Decision Making and Problem Solving",
+      "text": "Decision making and problem solving in administrative scenarios.",
+      "priority": "conceptual"
+    },
+    {
+      "id": "P2-S3.4",
+      "paper": "P2",
+      "subject": "General Mental Ability",
+      "unit": "Section 3",
+      "topic": "Basic Numeracy",
+      "text": "Basic numeracy (numbers and their relations, order of magnitude etc.) (Class X / SSLC level).",
+      "priority": "high"
+    },
+    {
+      "id": "P2-S3.5",
+      "paper": "P2",
+      "subject": "General Mental Ability",
+      "unit": "Section 3",
+      "topic": "Data Interpretation",
+      "text": "Data interpretation (charts, graphs, tables, data sufficiency etc.) (Class X / SSLC level).",
+      "priority": "high"
+    },
+    {
+      "id": "M-KAN.1",
+      "paper": "M-Qual",
+      "subject": "Qualifying Kannada",
+      "unit": "Kannada Language",
+      "topic": "Compulsory Kannada Skills",
+      "text": "Kannada Comprehension, Précis writing, Vocabulary & grammar, Translation, and Short Essay (SSLC First Language Standard).",
+      "priority": "high"
+    },
+    {
+      "id": "M-ENG.1",
+      "paper": "M-Qual",
+      "subject": "Qualifying English",
+      "unit": "English Language",
+      "topic": "Compulsory English Skills",
+      "text": "English Comprehension, Précis writing, Vocabulary & usage, Translation, and Short Essay (SSLC First Language Standard).",
+      "priority": "high"
+    },
+    {
+      "id": "M-ESS.1",
+      "paper": "M-Essay",
+      "subject": "Essay",
+      "unit": "Section 1",
+      "topic": "National and International Essays",
+      "text": "Descriptive essay on National and International issues (political, economic, socio-cultural, philosophical, strategic).",
+      "priority": "high"
+    },
+    {
+      "id": "M-ESS.2",
+      "paper": "M-Essay",
+      "subject": "Essay",
+      "unit": "Section 2",
+      "topic": "State of Karnataka Essays",
+      "text": "Descriptive essay on State of Karnataka or Regional / Local issues (governance, culture, rural development, economic growth).",
+      "priority": "high"
+    },
+    {
+      "id": "M-GS1-S1.1",
+      "paper": "M-GS1",
+      "subject": "GS-1",
+      "unit": "Section 1",
+      "topic": "Cultural Heritage of India",
+      "text": "Cultural heritage of India: Indus Valley, Vedic period, heterodox religions, art, architecture, literature and science.",
+      "priority": "conceptual"
+    },
+    {
+      "id": "M-GS1-S1.2",
+      "paper": "M-GS1",
+      "subject": "GS-1",
+      "unit": "Section 1",
+      "topic": "Early Dynasties of Karnataka",
+      "text": "Dynasties of Karnataka: Kadambas, Gangas, Chalukyas of Badami & Kalyana, Rashtrakutas, Hoysalas - polity, architecture and society.",
+      "priority": "high"
+    },
+    {
+      "id": "M-GS1-S1.3",
+      "paper": "M-GS1",
+      "subject": "GS-1",
+      "unit": "Section 1",
+      "topic": "Medieval Karnataka Kingdoms",
+      "text": "Vijayanagara Empire, Bahmani Sultanate, Adil Shahis of Bijapur, Nayakas of Keladi, Kingdom of Mysore (Wodeyars, Hyder Ali, Tipu Sultan).",
+      "priority": "high"
+    },
+    {
+      "id": "M-GS1-S1.4",
+      "paper": "M-GS1",
+      "subject": "GS-1",
+      "unit": "Section 1",
+      "topic": "National Movement and Karnataka Resistance",
+      "text": "Resistance against British rule in Karnataka (Kittur Chennamma, Sangolli Rayanna, Halagali Bedas) and freedom struggle in Karnataka.",
+      "priority": "high"
+    },
+    {
+      "id": "M-GS1-S1.5",
+      "paper": "M-GS1",
+      "subject": "GS-1",
+      "unit": "Section 1",
+      "topic": "Karnataka Unification and Social Movements",
+      "text": "Karnataka Unification Movement (ಏಕೀಕರಣ ಚಳವಳಿ) and post-independence social movements (backward classes, Dalit and farmer movements).",
+      "priority": "high"
+    },
+    {
+      "id": "M-GS1-S2.1",
+      "paper": "M-GS1",
+      "subject": "GS-1",
+      "unit": "Section 2",
+      "topic": "Post-Independence India",
+      "text": "Post-independent India: Partition, integration of princely states, linguistic reorganization, nation building, socio-economic changes.",
+      "priority": "conceptual"
+    },
+    {
+      "id": "M-GS1-S2.2",
+      "paper": "M-GS1",
+      "subject": "GS-1",
+      "unit": "Section 2",
+      "topic": "Indian Social System and Rural Society",
+      "text": "Indian Social System: Caste, class, joint family, marriage, religion, rural social structure and agrarian relations.",
+      "priority": "conceptual"
+    },
+    {
+      "id": "M-GS1-S2.3",
+      "paper": "M-GS1",
+      "subject": "GS-1",
+      "unit": "Section 2",
+      "topic": "Social Welfare and Justice in Karnataka",
+      "text": "Social problems and welfare measures for SC/ST, OBC, minorities, women, and children; Land reforms in Karnataka.",
+      "priority": "high"
+    },
+    {
+      "id": "M-GS1-S3.1",
+      "paper": "M-GS1",
+      "subject": "GS-1",
+      "unit": "Section 3",
+      "topic": "Indian Economic Planning and Reforms",
+      "text": "Indian economic structure, growth trends, LPG reforms (1991), fiscal and monetary policies, planning and NITI Aayog.",
+      "priority": "high"
+    },
+    {
+      "id": "M-GS1-S3.2",
+      "paper": "M-GS1",
+      "subject": "GS-1",
+      "unit": "Section 3",
+      "topic": "Rural Development and Poverty Alleviation",
+      "text": "Rural development, poverty alleviation strategies, employment generation schemes (MGNREGA), rural infrastructure and SHGs.",
+      "priority": "high"
+    },
+    {
+      "id": "M-GS1-S3.3",
+      "paper": "M-GS1",
+      "subject": "GS-1",
+      "unit": "Section 3",
+      "topic": "Data Collection and Statistical Interpretation",
+      "text": "Data collection, analysis and interpretation: Frequency distribution, measures of central tendency, dispersion, graphical representation.",
+      "priority": "conceptual"
+    },
+    {
+      "id": "M-GS2-S1.1",
+      "paper": "M-GS2",
+      "subject": "GS-2",
+      "unit": "Section 1",
+      "topic": "World and Indian Physical Geography",
+      "text": "Physical geography of World and India: Geomorphology, climatology, oceanography, natural vegetation, soils, and mineral resources.",
+      "priority": "conceptual"
+    },
+    {
+      "id": "M-GS2-S1.2",
+      "paper": "M-GS2",
+      "subject": "GS-2",
+      "unit": "Section 1",
+      "topic": "Geography and Resources of Karnataka",
+      "text": "Geography of Karnataka: Physiographic divisions, river basins (Krishna, Cauvery), climate, soils, irrigation projects, minerals and forests.",
+      "priority": "high"
+    },
+    {
+      "id": "M-GS2-S2.1",
+      "paper": "M-GS2",
+      "subject": "GS-2",
+      "unit": "Section 2",
+      "topic": "Indian Constitution and Organs of State",
+      "text": "Indian Constitution: Preamble, Fundamental Rights, DPSPs, Fundamental Duties, Union and State Executive, Legislature, Judiciary.",
+      "priority": "high"
+    },
+    {
+      "id": "M-GS2-S2.2",
+      "paper": "M-GS2",
+      "subject": "GS-2",
+      "unit": "Section 2",
+      "topic": "Federalism and Decentralization in Karnataka",
+      "text": "Federal structure, Center-State relations, 73rd and 74th Amendments, Karnataka Gram Swaraj and Panchayat Raj Act, Urban Local Bodies.",
+      "priority": "high"
+    },
+    {
+      "id": "M-GS2-S3.1",
+      "paper": "M-GS2",
+      "subject": "GS-2",
+      "unit": "Section 3",
+      "topic": "Public Administration and Governance",
+      "text": "Public Administration: Concepts, theories, civil services in democracy, administrative accountability, good governance.",
+      "priority": "high"
+    },
+    {
+      "id": "M-GS2-S3.2",
+      "paper": "M-GS2",
+      "subject": "GS-2",
+      "unit": "Section 3",
+      "topic": "Accountability, RTI, Lokayukta and Sakala",
+      "text": "Right to Information (RTI Act 2005), Karnataka Lokayukta Act, Citizens' Charters, Karnataka Sakala Services Act, e-governance.",
+      "priority": "high"
+    },
+    {
+      "id": "M-GS2-S3.3",
+      "paper": "M-GS2",
+      "subject": "GS-2",
+      "unit": "Section 3",
+      "topic": "India Foreign Policy and International Relations",
+      "text": "India's foreign policy, relations with neighbors and major powers, international and regional organizations (UN, G20, BRICS, SCO).",
+      "priority": "conceptual"
+    },
+    {
+      "id": "M-GS3-S1.1",
+      "paper": "M-GS3",
+      "subject": "GS-3",
+      "unit": "Section 1",
+      "topic": "Science and Technology in Development",
+      "text": "S&T policy in India, premiere research institutions (DRDO, CSIR, ISRO, DAE), energy technology, nuclear programme, renewable energy.",
+      "priority": "high"
+    },
+    {
+      "id": "M-GS3-S1.2",
+      "paper": "M-GS3",
+      "subject": "GS-3",
+      "unit": "Section 1",
+      "topic": "Karnataka IT, BT and Innovation Ecosystem",
+      "text": "Information Technology, Artificial Intelligence, Biotechnology applications, Karnataka IT/BT policy, startup ecosystem.",
+      "priority": "high"
+    },
+    {
+      "id": "M-GS3-S2.1",
+      "paper": "M-GS3",
+      "subject": "GS-3",
+      "unit": "Section 2",
+      "topic": "Ecology, Biodiversity and Western Ghats",
+      "text": "Ecology, Western Ghats biodiversity hotspot, wildlife sanctuaries, national parks in Karnataka, climate change mitigation, pollution control.",
+      "priority": "high"
+    },
+    {
+      "id": "M-GS3-S2.2",
+      "paper": "M-GS3",
+      "subject": "GS-3",
+      "unit": "Section 2",
+      "topic": "Public Health and Sanitation in Karnataka",
+      "text": "Public health, communicable diseases, health missions, maternal and child healthcare, malnutrition, healthcare infrastructure in Karnataka.",
+      "priority": "high"
+    },
+    {
+      "id": "M-GS3-S3.1",
+      "paper": "M-GS3",
+      "subject": "GS-3",
+      "unit": "Section 3",
+      "topic": "Karnataka Agriculture and Allied Sectors",
+      "text": "Agriculture in Karnataka: Cropping patterns, agro-climatic zones, dryland farming, agricultural marketing, irrigation projects.",
+      "priority": "high"
+    },
+    {
+      "id": "M-GS3-S3.2",
+      "paper": "M-GS3",
+      "subject": "GS-3",
+      "unit": "Section 3",
+      "topic": "Karnataka Economy, Budget and Guarantee Schemes",
+      "text": "Karnataka GSDP, sectoral contributions, Karnataka Budget 2026-27, Economic Survey 2025-26, Five Guarantee Schemes.",
+      "priority": "high"
+    },
+    {
+      "id": "M-GS3-S3.3",
+      "paper": "M-GS3",
+      "subject": "GS-3",
+      "unit": "Section 3",
+      "topic": "Industry and Infrastructure in Karnataka",
+      "text": "Industrial policies of Karnataka, industrial corridors, SEZs, transport and energy infrastructure, urban development.",
+      "priority": "high"
+    },
+    {
+      "id": "M-GS4-S1.1",
+      "paper": "M-GS4",
+      "subject": "GS-4",
+      "unit": "Section 1",
+      "topic": "Ethics and Human Interface",
+      "text": "Ethics: Essence, determinants and consequences of ethics in human action; dimensions of ethics; private and public relationships.",
+      "priority": "high"
+    },
+    {
+      "id": "M-GS4-S1.2",
+      "paper": "M-GS4",
+      "subject": "GS-4",
+      "unit": "Section 1",
+      "topic": "Human Values and Great Reformers",
+      "text": "Role of family and society in inculcating values; teachings of reformers (Basaveshwara, Kanakadasa, Swami Vivekananda, Ambedkar).",
+      "priority": "high"
+    },
+    {
+      "id": "M-GS4-S2.1",
+      "paper": "M-GS4",
+      "subject": "GS-4",
+      "unit": "Section 2",
+      "topic": "Attitude and Civil Service Values",
+      "text": "Attitude: Structure and function; Foundational values of Civil Service: Integrity, impartiality, objectivity, empathy, compassion towards weaker sections.",
+      "priority": "high"
+    },
+    {
+      "id": "M-GS4-S2.2",
+      "paper": "M-GS4",
+      "subject": "GS-4",
+      "unit": "Section 2",
+      "topic": "Emotional Intelligence in Governance",
+      "text": "Emotional intelligence: Concepts, utilities, and application in governance and administration.",
+      "priority": "conceptual"
+    },
+    {
+      "id": "M-GS4-S3.1",
+      "paper": "M-GS4",
+      "subject": "GS-4",
+      "unit": "Section 3",
+      "topic": "Ethics in Public Administration and Probity",
+      "text": "Ethical dilemmas in public administration, laws and conscience as sources of guidance, probity in governance, anti-corruption, citizen charters.",
+      "priority": "high"
+    },
+    {
+      "id": "M-GS4-S3.2",
+      "paper": "M-GS4",
+      "subject": "GS-4",
+      "unit": "Section 3",
+      "topic": "Ethics Case Studies Framework",
+      "text": "Case studies on ethical dilemmas, corruption, disaster management, conflict of interest, public trust, and administrative integrity.",
+      "priority": "high"
+    }
+  ]
+}

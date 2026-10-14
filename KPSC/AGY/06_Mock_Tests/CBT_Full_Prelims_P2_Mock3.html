@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KPSC KAS Prelims Paper 2 — Mock3 (Full Mock) - KPSC KAS CBT Simulator</title>
+<style>
+:root {
+  --bg-primary: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-surface-secondary: #f1f5f9;
+  --border-color: #cbd5e1;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --accent-color: #2563eb;
+  --accent-hover: #1d4ed8;
+  --ans-green: #16a34a;
+  --ans-green-bg: #dcfce7;
+  --not-ans-red: #dc2626;
+  --not-ans-red-bg: #fee2e2;
+  --marked-purple: #9333ea;
+  --marked-purple-bg: #f3e8ff;
+  --not-visited-gray: #64748b;
+  --not-visited-gray-bg: #f1f5f9;
+  --header-height: 64px;
+}
+
+[data-theme="dark"] {
+  --bg-primary: #0b0f17;
+  --bg-surface: #131b26;
+  --bg-surface-secondary: #1a2433;
+  --border-color: #2b384e;
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --accent-color: #3b82f6;
+  --accent-hover: #60a5fa;
+  --ans-green: #22c55e;
+  --ans-green-bg: rgba(34, 197, 94, 0.15);
+  --not-ans-red: #ef4444;
+  --not-ans-red-bg: rgba(239, 68, 68, 0.15);
+  --marked-purple: #a855f7;
+  --marked-purple-bg: rgba(168, 85, 247, 0.15);
+  --not-visited-gray: #94a3b8;
+  --not-visited-gray-bg: #1e293b;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+/* SCREEN VISIBILITY */
+.screen-view { display: none; }
+.screen-view.active { display: block; }
+
+/* HEADER */
+.cbt-header {
+  height: var(--header-height);
+  background: var(--bg-surface);
+  border-bottom: 1.5px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+.header-left { display: flex; align-items: center; gap: 16px; }
+.exam-brand { font-size: 1.15rem; font-weight: 700; color: var(--accent-color); letter-spacing: -0.02em; }
+.badge-mode {
+  padding: 3px 10px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: var(--bg-surface-secondary);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+}
+.header-right { display: flex; align-items: center; gap: 20px; }
+.timer-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: var(--bg-surface-secondary);
+  border: 1.5px solid var(--border-color);
+  border-radius: 8px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.candidate-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+.theme-btn {
+  background: none;
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* INSTRUCTIONS SCREEN */
+.inst-container {
+  max-width: 900px;
+  margin: 32px auto;
+  padding: 32px;
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+}
+.inst-title { font-size: 1.6rem; font-weight: 800; margin-bottom: 8px; }
+.inst-subtitle { font-size: 1rem; color: var(--text-secondary); margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--border-color); }
+.inst-spec-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 28px;
+}
+.spec-card {
+  padding: 16px;
+  background: var(--bg-surface-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+}
+.spec-label { font-size: 0.8rem; color: var(--text-secondary); text-transform: uppercase; font-weight: 600; }
+.spec-value { font-size: 1.25rem; font-weight: 700; color: var(--text-primary); margin-top: 4px; }
+.inst-rules { margin-bottom: 28px; line-height: 1.7; font-size: 0.95rem; }
+.inst-rules h3 { margin: 16px 0 8px; font-size: 1.1rem; }
+.inst-rules ul { padding-left: 24px; margin-bottom: 12px; }
+.inst-mode-picker {
+  background: var(--bg-surface-secondary);
+  padding: 20px;
+  border-radius: 8px;
+  border: 1.5px solid var(--border-color);
+  margin-bottom: 28px;
+}
+.mode-picker-title { font-weight: 700; margin-bottom: 12px; }
+.mode-opt { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; cursor: pointer; }
+.inst-actions { display: flex; align-items: center; justify-content: space-between; padding-top: 20px; border-top: 1px solid var(--border-color); }
+.btn-primary {
+  background: var(--accent-color);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+.btn-primary:hover { background: var(--accent-hover); }
+
+/* EXAM MAIN CONTAINER */
+.exam-layout {
+  display: flex;
+  height: calc(100vh - var(--header-height));
+  overflow: hidden;
+}
+.exam-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  border-right: 1.5px solid var(--border-color);
+}
+.section-bar {
+  display: flex;
+  background: var(--bg-surface-secondary);
+  border-bottom: 1.5px solid var(--border-color);
+  padding: 0 16px;
+  overflow-x: auto;
+}
+.sec-tab {
+  padding: 12px 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  white-space: nowrap;
+}
+.sec-tab.active {
+  color: var(--accent-color);
+  border-bottom-color: var(--accent-color);
+  background: var(--bg-surface);
+}
+.q-viewport {
+  flex: 1;
+  padding: 28px 36px;
+  overflow-y: auto;
+}
+.q-meta-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-color);
+}
+.q-title { font-size: 1.15rem; font-weight: 700; color: var(--accent-color); }
+.q-marks-pill {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: var(--bg-surface-secondary);
+  border: 1px solid var(--border-color);
+}
+.q-text-body {
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+.options-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
+.option-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px 18px;
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border-color);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.option-card:hover { border-color: var(--accent-color); background: var(--bg-surface-secondary); }
+.option-card.selected {
+  border-color: var(--accent-color);
+  background: rgba(37, 99, 235, 0.08);
+}
+.opt-radio { margin-top: 4px; accent-color: var(--accent-color); cursor: pointer; }
+.opt-pill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--bg-surface-secondary);
+  border: 1px solid var(--border-color);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  flex-shrink: 0;
+}
+.option-card.selected .opt-pill {
+  background: var(--accent-color);
+  color: #ffffff;
+  border-color: var(--accent-color);
+}
+.opt-text { font-size: 0.98rem; color: var(--text-primary); flex: 1; }
+
+/* CONTROLS BAR */
+.controls-bar {
+  padding: 16px 24px;
+  background: var(--bg-surface);
+  border-top: 1.5px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.ctrl-left { display: flex; gap: 10px; }
+.ctrl-right { display: flex; gap: 10px; }
+.btn-ctrl {
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1.5px solid var(--border-color);
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  transition: all 0.15s ease;
+}
+.btn-ctrl:hover { background: var(--bg-surface-secondary); }
+.btn-save-next { background: var(--ans-green); color: #ffffff; border-color: var(--ans-green); }
+.btn-save-next:hover { opacity: 0.9; }
+.btn-mark { background: var(--marked-purple); color: #ffffff; border-color: var(--marked-purple); }
+.btn-mark:hover { opacity: 0.9; }
+.btn-submit-main { background: var(--accent-color); color: #ffffff; border-color: var(--accent-color); font-weight: 700; }
+
+/* SIDE PALETTE */
+.palette-sidebar {
+  width: 340px;
+  background: var(--bg-surface);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.palette-header {
+  padding: 16px;
+  border-bottom: 1px solid var(--border-color);
+}
+.palette-legend {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  font-size: 0.78rem;
+  margin-bottom: 12px;
+}
+.leg-item { display: flex; align-items: center; gap: 6px; }
+.leg-badge {
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.75rem;
+}
+.leg-ans { background: var(--ans-green); color: #ffffff; }
+.leg-not-ans { background: var(--not-ans-red); color: #ffffff; }
+.leg-marked { background: var(--marked-purple); color: #ffffff; }
+.leg-marked-ans { background: var(--marked-purple); color: #ffffff; position: relative; }
+.leg-marked-ans::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #22c55e;
+}
+.leg-not-vis { background: var(--not-visited-gray-bg); border: 1px solid var(--border-color); color: var(--text-secondary); }
+
+.palette-sec-title { font-size: 0.85rem; font-weight: 700; color: var(--text-secondary); margin-bottom: 6px; }
+.palette-grid-wrapper {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+}
+.palette-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+.pal-btn {
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  border: 1.5px solid var(--border-color);
+  background: var(--not-visited-gray-bg);
+  color: var(--not-visited-gray);
+  position: relative;
+}
+.pal-btn.active-q { outline: 2.5px solid var(--accent-color); outline-offset: 1px; }
+.pal-btn.st-answered { background: var(--ans-green); color: #ffffff; border-color: var(--ans-green); }
+.pal-btn.st-not-answered { background: var(--not-ans-red); color: #ffffff; border-color: var(--not-ans-red); }
+.pal-btn.st-marked { background: var(--marked-purple); color: #ffffff; border-color: var(--marked-purple); }
+.pal-btn.st-marked-answered { background: var(--marked-purple); color: #ffffff; border-color: var(--marked-purple); }
+.pal-btn.st-marked-answered::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #22c55e;
+  border: 1px solid #ffffff;
+}
+
+/* MODAL */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(2px);
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+}
+.modal-overlay.active { display: flex; }
+.modal-card {
+  width: 90%;
+  max-width: 640px;
+  background: var(--bg-surface);
+  border-radius: 12px;
+  border: 1.5px solid var(--border-color);
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+.modal-header { font-size: 1.25rem; font-weight: 700; margin-bottom: 16px; }
+.modal-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+}
+.modal-table th, .modal-table td {
+  padding: 8px 12px;
+  border: 1px solid var(--border-color);
+  text-align: center;
+}
+.modal-table th { background: var(--bg-surface-secondary); }
+.modal-actions { display: flex; justify-content: flex-end; gap: 12px; }
+
+/* RESULTS SCREEN */
+.res-container {
+  max-width: 1000px;
+  margin: 32px auto;
+  padding: 32px;
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border-color);
+  border-radius: 12px;
+}
+.scorecard-header {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.scorecard-card {
+  padding: 16px;
+  border-radius: 8px;
+  background: var(--bg-surface-secondary);
+  border: 1px solid var(--border-color);
+  text-align: center;
+}
+.scorecard-val { font-size: 1.75rem; font-weight: 800; color: var(--accent-color); margin-top: 4px; }
+.res-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 32px;
+  font-size: 0.92rem;
+}
+.res-table th, .res-table td {
+  padding: 10px 14px;
+  border: 1px solid var(--border-color);
+  text-align: center;
+}
+.res-table th { background: var(--bg-surface-secondary); }
+.review-item {
+  padding: 20px;
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border-color);
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+.review-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+.truth-box {
+  background: var(--bg-surface-secondary);
+  border-left: 4px solid var(--accent-color);
+  padding: 10px 14px;
+  font-size: 0.88rem;
+  margin: 12px 0;
+}
+.explanation-box {
+  background: rgba(37, 99, 235, 0.05);
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  border-radius: 6px;
+  padding: 12px 16px;
+  font-size: 0.9rem;
+  margin-top: 12px;
+}
+</style>
+</head>
+<body>
+
+<!-- CBT TOP HEADER -->
+<header class="cbt-header">
+  <div class="header-left">
+    <div class="exam-brand">KPSC KAS CBT</div>
+    <div class="badge-mode" id="header-mode-badge">Exam Mode</div>
+  </div>
+  <div class="header-right">
+    <div class="timer-box" id="timer-box">
+      <span id="timer-display">00:00:00</span>
+    </div>
+    <div class="candidate-pill">
+      <strong>Candidate:</strong> <span id="candidate-name">GM01</span>
+    </div>
+    <button class="theme-btn" id="theme-btn" title="Toggle Theme">Theme</button>
+  </div>
+</header>
+
+<!-- SCREEN 1: INSTRUCTIONS SCREEN -->
+<div class="screen-view active" id="screen-instructions">
+  <div class="inst-container">
+    <div class="inst-title">KPSC KAS Prelims Paper 2 — Mock3 (Full Mock)</div>
+    <div class="inst-subtitle">Official Computer-Based Test Simulator | Karnataka Public Service Commission (KPSC)</div>
+
+    <div class="inst-spec-grid">
+      <div class="spec-card">
+        <div class="spec-label">Total Questions</div>
+        <div class="spec-value" id="inst-q-count">100</div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-label">Maximum Marks</div>
+        <div class="spec-value" id="inst-max-marks">200.0</div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-label">Marking Scheme</div>
+        <div class="spec-value">+2.00 / -0.50</div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-label">Exam Duration</div>
+        <div class="spec-value" id="inst-duration">120 Minutes</div>
+      </div>
+    </div>
+
+    <div class="inst-mode-picker">
+      <div class="mode-picker-title">Select Simulation Duration Mode:</div>
+      <label class="mode-opt">
+        <input type="radio" name="sim-mode" value="exam" checked>
+        <div>
+          <strong>Standard Exam Mode</strong> — Full examination duration (<span id="mode-exam-mins">120</span> Minutes)
+        </div>
+      </label>
+      <label class="mode-opt">
+        <input type="radio" name="sim-mode" value="quick">
+        <div>
+          <strong>Quick Check Mode</strong> — Accelerated 2-Minute session (Ideal for validating timer, auto-submit & scoring)
+        </div>
+      </label>
+    </div>
+
+    <div class="inst-rules">
+      <h3>Instructions & Rules for the Candidate:</h3>
+      <ul>
+        <li>The clock is synchronized to an absolute wall-clock timestamp. It does not drift and persists across browser refreshes.</li>
+        <li>Each multiple-choice question offers 4 options. Exactly one option is correct.</li>
+        <li><strong>Negative Marking:</strong> Each incorrect answer incurs a penalty of <strong>0.50 marks</strong> (one-fourth of 2.00 marks). Unattempted questions carry zero penalty.</li>
+        <li>Questions marked for review <em>without selecting an option</em> will be evaluated as unattempted (0 marks).</li>
+        <li>Questions marked for review <em>with an option selected</em> will be evaluated for scoring.</li>
+        <li>You may switch between sections freely at any time using the section tabs.</li>
+      </ul>
+    </div>
+
+    <div style="margin-bottom: 24px;">
+      <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 0.95rem;">
+        <input type="checkbox" id="inst-agree-check" checked>
+        <span>I have read and understood all the instructions above and am ready to proceed.</span>
+      </label>
+    </div>
+
+    <div class="inst-actions">
+      <button class="btn-ctrl" id="btn-resume-cached" style="display:none;">Resume In-Progress Test</button>
+      <button class="btn-primary" id="btn-start-exam">I am ready to begin</button>
+    </div>
+  </div>
+</div>
+
+<!-- SCREEN 2: EXAM MAIN VIEW -->
+<div class="screen-view" id="screen-exam">
+  <div class="exam-layout">
+    <div class="exam-main">
+      <!-- Section Bar -->
+      <div class="section-bar" id="section-bar"></div>
+
+      <!-- Question Viewport -->
+      <div class="q-viewport">
+        <div class="q-meta-header">
+          <div class="q-title" id="q-title-label">Question No. 1</div>
+          <div class="q-marks-pill">Marks: +2.00 / -0.50</div>
+        </div>
+
+        <div class="q-text-body" id="q-text-body"></div>
+
+        <div class="options-list" id="options-list"></div>
+      </div>
+
+      <!-- Controls Bar -->
+      <div class="controls-bar">
+        <div class="ctrl-left">
+          <button class="btn-ctrl" id="btn-prev">Previous (Alt+P)</button>
+          <button class="btn-ctrl btn-mark" id="btn-mark-review">Mark for Review & Next</button>
+          <button class="btn-ctrl" id="btn-clear-resp">Clear Response (Alt+C)</button>
+        </div>
+        <div class="ctrl-right">
+          <button class="btn-ctrl btn-save-next" id="btn-save-next">Save & Next (Alt+N)</button>
+          <button class="btn-ctrl btn-submit-main" id="btn-trigger-submit">Submit Test</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Side Palette -->
+    <div class="palette-sidebar">
+      <div class="palette-header">
+        <div class="palette-legend">
+          <div class="leg-item"><div class="leg-badge leg-ans" id="badge-count-ans">0</div> Answered</div>
+          <div class="leg-item"><div class="leg-badge leg-not-ans" id="badge-count-not-ans">0</div> Not Answered</div>
+          <div class="leg-item"><div class="leg-badge leg-not-vis" id="badge-count-not-vis">0</div> Not Visited</div>
+          <div class="leg-item"><div class="leg-badge leg-marked" id="badge-count-marked">0</div> Marked</div>
+          <div class="leg-item" style="grid-column: span 2;"><div class="leg-badge leg-marked-ans" id="badge-count-marked-ans">0</div> Answered & Marked</div>
+        </div>
+        <div class="palette-sec-title" id="pal-sec-name">Section: All Questions</div>
+      </div>
+
+      <div class="palette-grid-wrapper">
+        <div class="palette-grid" id="palette-grid"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SUBMIT CONFIRMATION MODAL -->
+<div class="modal-overlay" id="modal-submit">
+  <div class="modal-card">
+    <div class="modal-header">Confirm Exam Submission</div>
+    <table class="modal-table">
+      <thead>
+        <tr>
+          <th>Section</th>
+          <th>Total</th>
+          <th>Answered</th>
+          <th>Not Answered</th>
+          <th>Marked</th>
+          <th>Not Visited</th>
+        </tr>
+      </thead>
+      <tbody id="modal-table-body"></tbody>
+    </table>
+    <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 20px;">
+      Are you sure you want to submit your examination? Once submitted, answers cannot be edited.
+    </p>
+    <div class="modal-actions">
+      <button class="btn-ctrl" id="btn-modal-cancel">Return to Exam</button>
+      <button class="btn-primary" id="btn-modal-confirm">Confirm & Submit</button>
+    </div>
+  </div>
+</div>
+
+<!-- SCREEN 3: RESULTS & REVIEW VIEW -->
+<div class="screen-view" id="screen-result">
+  <div class="res-container">
+    <h2 style="margin-bottom: 8px;">Examination Performance Scorecard</h2>
+    <p style="color: var(--text-secondary); margin-bottom: 24px;" id="res-test-title">KPSC KAS Prelims Paper 2 — Mock3 (Full Mock)</p>
+
+    <div class="scorecard-header">
+      <div class="scorecard-card">
+        <div class="spec-label">Net Score</div>
+        <div class="scorecard-val" id="res-net-score">0.00</div>
+        <div style="font-size: 0.8rem; color: var(--text-secondary);">Out of <span id="res-max-marks">200.0</span></div>
+      </div>
+      <div class="scorecard-card">
+        <div class="spec-label">Accuracy</div>
+        <div class="scorecard-val" id="res-accuracy">0.0%</div>
+      </div>
+      <div class="scorecard-card">
+        <div class="spec-label">Attempted</div>
+        <div class="scorecard-val" id="res-attempted">0 / 100</div>
+      </div>
+      <div class="scorecard-card">
+        <div class="spec-label">Positive / Penalty</div>
+        <div class="scorecard-val" style="font-size: 1.2rem; color: var(--text-primary);" id="res-pos-neg">+0.0 / -0.0</div>
+      </div>
+    </div>
+
+    <h3 style="margin-bottom: 12px;">Sectional Performance Breakdown</h3>
+    <table class="res-table">
+      <thead>
+        <tr>
+          <th>Section</th>
+          <th>Total Qs</th>
+          <th>Attempted</th>
+          <th>Correct</th>
+          <th>Incorrect</th>
+          <th>Net Marks</th>
+          <th>Accuracy</th>
+        </tr>
+      </thead>
+      <tbody id="res-section-body"></tbody>
+    </table>
+
+    <div style="display: flex; justify-content: space-between; align-items: center; margin: 32px 0 16px;">
+      <h3>Question Review & Pedagogical Verification</h3>
+      <div style="display: flex; gap: 8px;">
+        <button class="btn-ctrl" id="btn-filter-all">All Questions</button>
+        <button class="btn-ctrl" id="btn-filter-flawed">Incorrect Only</button>
+        <button class="btn-ctrl" id="btn-filter-unattempted">Unattempted Only</button>
+      </div>
+    </div>
+
+    <div id="review-list"></div>
+
+    <div style="margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border-color); display: flex; justify-content: flex-end;">
+      <button class="btn-primary" id="btn-retake">Restart Simulation</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// PURE CBT ENGINE CORE
+const CbtCore = {
+  scoreExam(answers, questions, sections, markingScheme) {
+    const posMark = (markingScheme && markingScheme.positiveMarks !== undefined) ? markingScheme.positiveMarks : 2.0;
+    const negPenalty = (markingScheme && markingScheme.negativePenalty !== undefined) ? markingScheme.negativePenalty : 0.5;
+
+    let totalQuestions = questions.length;
+    let correctCount = 0;
+    let incorrectCount = 0;
+    let unattemptedCount = 0;
+    let markedCount = 0;
+
+    const sectionMap = {};
+    if (sections && sections.length > 0) {
+      sections.forEach(s => {
+        sectionMap[s.id || s.name] = {
+          id: s.id || s.name,
+          name: s.name,
+          total: 0,
+          attempted: 0,
+          correct: 0,
+          incorrect: 0,
+          unattempted: 0,
+          positiveMarks: 0,
+          negativePenalty: 0,
+          netMarks: 0,
+          accuracy: 0
+        };
+      });
+    }
+
+    const topicMap = {};
+
+    questions.forEach(q => {
+      const qSectionKey = q.section_id || (q.section ? q.section.id || q.section.name : null);
+      let secTracker = qSectionKey && sectionMap[qSectionKey] ? sectionMap[qSectionKey] : null;
+      if (!secTracker && sections && sections.length > 0) {
+        for (const s of sections) {
+          if (s.question_ids && s.question_ids.includes(q.id)) {
+            secTracker = sectionMap[s.id || s.name];
+            break;
+          }
+        }
+      }
+
+      const subjectKey = q.subject || 'General Studies';
+      if (!topicMap[subjectKey]) {
+        topicMap[subjectKey] = {
+          subject: subjectKey,
+          total: 0,
+          attempted: 0,
+          correct: 0,
+          incorrect: 0,
+          unattempted: 0,
+          netMarks: 0
+        };
+      }
+      const topTracker = topicMap[subjectKey];
+
+      if (secTracker) secTracker.total++;
+      topTracker.total++;
+
+      const userAns = answers ? answers[q.id] : null;
+      const selectedOptionId = userAns ? userAns.selectedOptionId : null;
+      const status = userAns ? userAns.status : 'not-visited';
+
+      if (status === 'marked' || status === 'marked-answered') {
+        markedCount++;
+      }
+
+      const isAttempted = !!selectedOptionId;
+
+      if (!isAttempted) {
+        unattemptedCount++;
+        if (secTracker) secTracker.unattempted++;
+        topTracker.unattempted++;
+      } else {
+        const correctOptId = q.answer_id || q.answer;
+        const isCorrect = (selectedOptionId === correctOptId || selectedOptionId === q.answer);
+
+        if (isCorrect) {
+          correctCount++;
+          if (secTracker) {
+            secTracker.attempted++;
+            secTracker.correct++;
+            secTracker.positiveMarks += posMark;
+          }
+          topTracker.attempted++;
+          topTracker.correct++;
+          topTracker.netMarks += posMark;
+        } else {
+          incorrectCount++;
+          if (secTracker) {
+            secTracker.attempted++;
+            secTracker.incorrect++;
+            secTracker.negativePenalty += negPenalty;
+          }
+          topTracker.attempted++;
+          topTracker.incorrect++;
+          topTracker.netMarks -= negPenalty;
+        }
+      }
+    });
+
+    const attemptedCount = correctCount + incorrectCount;
+    const positiveMarks = correctCount * posMark;
+    const negativePenalty = incorrectCount * negPenalty;
+    const netScore = positiveMarks - negativePenalty; // Exact raw score, NOT clamped
+    const accuracy = attemptedCount > 0 ? Number(((correctCount / attemptedCount) * 100).toFixed(2)) : 0;
+
+    const sectionBreakdown = Object.values(sectionMap).map(sec => {
+      sec.netMarks = Number((sec.positiveMarks - sec.negativePenalty).toFixed(2));
+      sec.accuracy = sec.attempted > 0 ? Number(((sec.correct / sec.attempted) * 100).toFixed(2)) : 0;
+      return sec;
+    });
+
+    const topicBreakdown = Object.values(topicMap).map(top => {
+      top.netMarks = Number(top.netMarks.toFixed(2));
+      top.accuracy = top.attempted > 0 ? Number(((top.correct / top.attempted) * 100).toFixed(2)) : 0;
+      return top;
+    });
+
+    return {
+      totalQuestions,
+      attemptedCount,
+      unattemptedCount,
+      correctCount,
+      incorrectCount,
+      markedCount,
+      positiveMarks: Number(positiveMarks.toFixed(2)),
+      negativePenalty: Number(negativePenalty.toFixed(2)),
+      netScore: Number(netScore.toFixed(2)),
+      accuracy,
+      sectionBreakdown,
+      topicBreakdown
+    };
+  },
+
+  computeRemainingTime(endTime, now) {
+    const current = (now !== undefined) ? now : Date.now();
+    const diffMs = endTime - current;
+    if (diffMs <= 0) {
+      return { remainingSeconds: 0, isExpired: true, formatted: "00:00:00" };
+    }
+    const totalSecs = Math.round(diffMs / 1000);
+    const hrs = Math.floor(totalSecs / 3600);
+    const mins = Math.floor((totalSecs % 3600) / 60);
+    const secs = totalSecs % 60;
+    const formatted = `${String(hrs).padStart(2, '0')}:${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+    return { remainingSeconds: totalSecs, isExpired: false, formatted };
+  }
+};
+
+// EMBEDDED EXAM PAYLOAD
+const EXAM_DATA = {"test_id": "CBT_Full_Prelims_P2_Mock3", "title": "KPSC KAS Prelims Paper 2 — Mock3 (Full Mock)", "paper": "Paper 2 (State Affairs + Science + Mental Ability)", "duration_minutes": 120, "positive_marks": 2.0, "negative_penalty": 0.5, "sections": [{"id": "SEC-P2-1", "name": "Section 1: State Importance & Schemes", "q_count": 40}, {"id": "SEC-P2-2", "name": "Section 2: General Science & Technology", "q_count": 30}, {"id": "SEC-P2-3", "name": "Section 3: General Mental Ability", "q_count": 30}], "questions": [{"id": "KAS-P2-M3-001", "text_hash": "8d2c732ef8c84467", "text": "[Version B - Mock 03] Find the next term in the series: A1, C4, E9, G16, ?", "options": [{"id": "opt_a", "label": "A", "text": "H25"}, {"id": "opt_b", "label": "B", "text": "I25"}, {"id": "opt_c", "label": "C", "text": "J25"}, {"id": "opt_d", "label": "D", "text": "I36"}], "answer": "B", "answer_id": "opt_b", "explanation": "[Mock 3 Verified Solution] Letters increase by +2 (A, C, E, G, I) and numbers are squares (1, 4, 9, 16, 25). Result: I25.", "statement_truths": "", "subject": "General Mental Ability", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "GMA", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-M3-002", "text_hash": "a38c8e7309c4cb18", "text": "[Version B - Mock 03] A metallic sphere of radius 3 cm is melted and recast into small spheres of radius 1 cm each. How many small spheres can be formed?", "options": [{"id": "opt_a", "label": "A", "text": "9"}, {"id": "opt_b", "label": "B", "text": "18"}, {"id": "opt_c", "label": "C", "text": "27"}, {"id": "opt_d", "label": "D", "text": "36"}], "answer": "C", "answer_id": "opt_c", "explanation": "[Mock 3 Verified Solution] Number of spheres = V_large / V_small = (4/3 pi 3^3) / (4/3 pi 1^3) = 27 / 1 = 27.", "statement_truths": "", "subject": "General Mental Ability", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "GMA", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-M3-003", "text_hash": "d4b048d844cc72a1", "text": "[Version B - Mock 03] If P is the brother of Q, Q is the sister of R, and R is the father of S, how is P related to S?", "options": [{"id": "opt_a", "label": "A", "text": "Father"}, {"id": "opt_b", "label": "B", "text": "Uncle (Paternal)"}, {"id": "opt_c", "label": "C", "text": "Grandfather"}, {"id": "opt_d", "label": "D", "text": "Brother"}], "answer": "B", "answer_id": "opt_b", "explanation": "[Mock 3 Verified Solution] P is the brother of R (S's father), so P is the paternal uncle of S.", "statement_truths": "", "subject": "General Mental Ability", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "GMA", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-M3-004", "text_hash": "61b4efbd2c025806", "text": "[Version B - Mock 03] How many times do the hands of a clock coincide (overlap) in a 24-hour period?", "options": [{"id": "opt_a", "label": "A", "text": "20"}, {"id": "opt_b", "label": "B", "text": "22"}, {"id": "opt_c", "label": "C", "text": "24"}, {"id": "opt_d", "label": "D", "text": "44"}], "answer": "B", "answer_id": "opt_b", "explanation": "[Mock 3 Verified Solution] The hands overlap 11 times in 12 hours, so 22 times in 24 hours.", "statement_truths": "", "subject": "General Mental Ability", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "GMA", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-M3-005", "text_hash": "e1d9a212eedafcbc", "text": "[Version B - Mock 03] A shopkeeper marks his goods 20% above cost price and offers a discount of 10%. His net profit percentage is:", "options": [{"id": "opt_a", "label": "A", "text": "8%"}, {"id": "opt_b", "label": "B", "text": "10%"}, {"id": "opt_c", "label": "C", "text": "12%"}, {"id": "opt_d", "label": "D", "text": "15%"}], "answer": "A", "answer_id": "opt_a", "explanation": "[Mock 3 Verified Solution] CP = 100, MP = 120. SP = 120 * 0.9 = 108. Profit% = 8%.", "statement_truths": "", "subject": "General Mental Ability", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "GMA", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-M3-006", "text_hash": "0ac5b7565cf21c2b", "text": "[Version B - Mock 03] Two dice are thrown simultaneously. What is the probability of getting a sum of 7?", "options": [{"id": "opt_a", "label": "A", "text": "1/6"}, {"id": "opt_b", "label": "B", "text": "5/36"}, {"id": "opt_c", "label": "C", "text": "7/36"}, {"id": "opt_d", "label": "D", "text": "1/12"}], "answer": "A", "answer_id": "opt_a", "explanation": "[Mock 3 Verified Solution] Combinations yielding 7: (1,6),(2,5),(3,4),(4,3),(5,2),(6,1) = 6 pairs. P = 6/36 = 1/6.", "statement_truths": "", "subject": "General Mental Ability", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "GMA", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-M3-007", "text_hash": "fb0067a6ba9573d9", "text": "[Version B - Mock 03] Statements: No cat is dog. All dogs are birds.\nConclusions: I. No cat is bird. II. Some birds are dogs.", "options": [{"id": "opt_a", "label": "A", "text": "Only conclusion I follows"}, {"id": "opt_b", "label": "B", "text": "Only conclusion II follows"}, {"id": "opt_c", "label": "C", "text": "Both I and II follow"}, {"id": "opt_d", "label": "D", "text": "Neither I nor II follows"}], "answer": "B", "answer_id": "opt_b", "explanation": "[Mock 3 Verified Solution] From 'All dogs are birds', it directly follows that 'Some birds are dogs'. Cat and bird have overlapping scope.", "statement_truths": "", "subject": "General Mental Ability", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "GMA", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-M3-008", "text_hash": "1f88762747142e26", "text": "[Version B - Mock 03] A car travels at 40 km/h for the first half of a journey and 60 km/h for the second half. What is the average speed for the entire journey?", "options": [{"id": "opt_a", "label": "A", "text": "48 km/h"}, {"id": "opt_b", "label": "B", "text": "50 km/h"}, {"id": "opt_c", "label": "C", "text": "52 km/h"}, {"id": "opt_d", "label": "D", "text": "54 km/h"}], "answer": "A", "answer_id": "opt_a", "explanation": "[Mock 3 Verified Solution] Average speed = (2 * v1 * v2) / (v1 + v2) = (2 * 40 * 60) / (40 + 60) = 4800 / 100 = 48 km/h.", "statement_truths": "", "subject": "General Mental Ability", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "GMA", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-M3-009", "text_hash": "7586d2bfd7ecf997", "text": "[Version B - Mock 03] If 'WATER' is written as 'YCVGT', how will 'FIRE' be written?", "options": [{"id": "opt_a", "label": "A", "text": "HKTG"}, {"id": "opt_b", "label": "B", "text": "GJTF"}, {"id": "opt_c", "label": "C", "text": "HLTF"}, {"id": "opt_d", "label": "D", "text": "HKUG"}], "answer": "A", "answer_id": "opt_a", "explanation": "[Mock 3 Verified Solution] Each letter shifted +2: F->H, I->K, R->T, E->G. So HKTG.", "statement_truths": "", "subject": "General Mental Ability", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "GMA", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-M3-010", "text_hash": "e4b0939d46f65ddf", "text": "[Version B - Mock 03] Find the missing number in the sequence: 3, 8, 18, 38, ?", "options": [{"id": "opt_a", "label": "A", "text": "68"}, {"id": "opt_b", "label": "B", "text": "72"}, {"id": "opt_c", "label": "C", "text": "78"}, {"id": "opt_d", "label": "D", "text": "82"}], "answer": "C", "answer_id": "opt_c", "explanation": "[Mock 3 Verified Solution] Pattern is (x * 2) + 2: 3*2+2=8, 8*2+2=18, 18*2+2=38, 38*2+2 = 78.", "statement_truths": "", "subject": "General Mental Ability", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "GMA", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-M3-011", "text_hash": "79545605ab3507f8", "text": "[Version B - Mock 03] A bag contains 5 red balls and 3 green balls. If one ball is drawn at random, what is the probability that it is red?", "options": [{"id": "opt_a", "label": "A", "text": "3/8"}, {"id": "opt_b", "label": "B", "text": "1/2"}, {"id": "opt_c", "label": "C", "text": "5/8"}, {"id": "opt_d", "label": "D", "text": "3/5"}], "answer": "C", "answer_id": "opt_c", "explanation": "[Mock 3 Verified Solution] Probability = Favourable / Total = 5 / (5 + 3) = 5/8.", "statement_truths": "", "subject": "General Mental Ability", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "GMA", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-M3-012", "text_hash": "4a876c2b5ba8df6e", "text": "[Version B - Mock 03] The ratio of ages of father and son is 7:3. If the sum of their ages is 60 years, what is the father's age?", "options": [{"id": "opt_a", "label": "A", "text": "35 years"}, {"id": "opt_b", "label": "B", "text": "42 years"}, {"id": "opt_c", "label": "C", "text": "45 years"}, {"id": "opt_d", "label": "D", "text": "49 years"}], "answer": "B", "answer_id": "opt_b", "explanation": "[Mock 3 Verified Solution] Total parts = 7 + 3 = 10. Each part = 60/10 = 6 years. Father = 7 * 6 = 42 years.", "statement_truths": "", "subject": "General Mental Ability", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "GMA", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-M3-013", "text_hash": "7e898d23e103d2bf", "text": "[Version B - Mock 03] What is the compound interest on ₹10,000 at 10% per annum for 2 years, compounded annually?", "options": [{"id": "opt_a", "label": "A", "text": "₹2,000"}, {"id": "opt_b", "label": "B", "text": "₹2,100"}, {"id": "opt_c", "label": "C", "text": "₹2,200"}, {"id": "opt_d", "label": "D", "text": "₹2,250"}], "answer": "B", "answer_id": "opt_b", "explanation": "[Mock 3 Verified Solution] Amount = 10,000 * (1.1)^2 = 12,100. CI = 12,100 - 10,000 = ₹2,100.", "statement_truths": "", "subject": "General Mental Ability", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "GMA", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-M3-014", "text_hash": "4b6f3fb68eeb205c", "text": "[Version B - Mock 03] In a row of trees, a chinar tree is 7th from either end of the row. How many trees are there in the row?", "options": [{"id": "opt_a", "label": "A", "text": "11"}, {"id": "opt_b", "label": "B", "text": "12"}, {"id": "opt_c", "label": "C", "text": "13"}, {"id": "opt_d", "label": "D", "text": "14"}], "answer": "C", "answer_id": "opt_c", "explanation": "[Mock 3 Verified Solution] Total = (Left + Right) - 1 = (7 + 7) - 1 = 13.", "statement_truths": "", "subject": "General Mental Ability", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "GMA", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-M3-015", "text_hash": "9a664d4d558ca7e7", "text": "[Version B - Mock 03] A pipe can fill a cistern in 10 hours, while another pipe empties it in 15 hours. If both pipes are opened together, in how many hours will the cistern be full?", "options": [{"id": "opt_a", "label": "A", "text": "20 hours"}, {"id": "opt_b", "label": "B", "text": "25 hours"}, {"id": "opt_c", "label": "C", "text": "30 hours"}, {"id": "opt_d", "label": "D", "text": "35 hours"}], "answer": "C", "answer_id": "opt_c", "explanation": "[Mock 3 Verified Solution] Net rate = 1/10 - 1/15 = (3 - 2)/30 = 1/30. The cistern fills in 30 hours.", "statement_truths": "", "subject": "General Mental Ability", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "GMA", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-M3-016", "text_hash": "88a124eef35e9676", "text": "[Version B - Mock 03] If today is Tuesday, what day of the week will it be after 65 days?", "options": [{"id": "opt_a", "label": "A", "text": "Tuesday"}, {"id": "opt_b", "label": "B", "text": "Wednesday"}, {"id": "opt_c", "label": "C", "text": "Thursday"}, {"id": "opt_d", "label": "D", "text": "Friday"}], "answer": "C", "answer_id": "opt_c", "explanation": "[Mock 3 Verified Solution] 65 mod 7 = 2 odd days. Tuesday + 2 days = Thursday.", "statement_truths": "", "subject": "General Mental Ability", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "GMA", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-M3-017", "text_hash": "7b2c4ba96332770c", "text": "[Version B - Mock 03] Statements: All rivers are waters. Some waters are oceans.\nConclusions: I. Some rivers are oceans. II. Some oceans are waters.", "options": [{"id": "opt_a", "label": "A", "text": "Only conclusion I follows"}, {"id": "opt_b", "label": "B", "text": "Only conclusion II follows"}, {"id": "opt_c", "label": "C", "text": "Both I and II follow"}, {"id": "opt_d", "label": "D", "text": "Neither I nor II follows"}], "answer": "B", "answer_id": "opt_b", "explanation": "[Mock 3 Verified Solution] Conclusion II is a direct subaltern of 'Some waters are oceans' (converses to 'Some oceans are waters').", "statement_truths": "", "subject": "General Mental Ability", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "GMA", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-M3-018", "text_hash": "b4afe93176c8f912", "text": "[Version B - Mock 03] A vendor buys lemons at 6 for ₹10 and sells them at 4 for ₹10. What is his profit percentage?", "options": [{"id": "opt_a", "label": "A", "text": "25%"}, {"id": "opt_b", "label": "B", "text": "33.33%"}, {"id": "opt_c", "label": "C", "text": "50%"}, {"id": "opt_d", "label": "D", "text": "66.66%"}], "answer": "C", "answer_id": "opt_c", "explanation": "[Mock 3 Verified Solution] Cost per lemon = 10/6 = 5/3. Sell per lemon = 10/4 = 5/2. Profit% = ((5/2 - 5/3) / (5/3)) * 100 = 50%.", "statement_truths": "", "subject": "General Mental Ability", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "GMA", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-M3-019", "text_hash": "c96ae841703c462d", "text": "[Version B - Mock 03] If '+' means 'x', '-' means '÷', 'x' means '+' and '÷' means '-', then evaluate: 18 + 4 - 2 x 6 ÷ 10", "options": [{"id": "opt_a", "label": "A", "text": "32"}, {"id": "opt_b", "label": "B", "text": "36"}, {"id": "opt_c", "label": "C", "text": "42"}, {"id": "opt_d", "label": "D", "text": "48"}], "answer": "A", "answer_id": "opt_a", "explanation": "[Mock 3 Verified Solution] Substitute: 18 * 4 / 2 + 6 - 10 = (18 * 2) + 6 - 10 = 36 + 6 - 10 = 32.", "statement_truths": "", "subject": "General Mental Ability", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "GMA", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-M3-020", "text_hash": "dbec432166d06bf4", "text": "[Version B - Mock 03] What will be the angle between the hour hand and the minute hand of a clock at 3:40?", "options": [{"id": "opt_a", "label": "A", "text": "120°"}, {"id": "opt_b", "label": "B", "text": "130°"}, {"id": "opt_c", "label": "C", "text": "140°"}, {"id": "opt_d", "label": "D", "text": "150°"}], "answer": "B", "answer_id": "opt_b", "explanation": "[Mock 3 Verified Solution] Angle = |30*H - (11/2)*M| = |30*3 - (11/2)*40| = |90 - 220| = 130°.", "statement_truths": "", "subject": "General Mental Ability", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "GMA", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-M3-021", "text_hash": "5885d3ae488c0eec", "text": "[Version B - Mock 03] A man walks 5 km North, turns right and walks 3 km, turns right again and walks 5 km. How far and in which direction is he from his starting point?", "options": [{"id": "opt_a", "label": "A", "text": "3 km East"}, {"id": "opt_b", "label": "B", "text": "3 km West"}, {"id": "opt_c", "label": "C", "text": "5 km South"}, {"id": "opt_d", "label": "D", "text": "8 km North"}], "answer": "A", "answer_id": "opt_a", "explanation": "[Mock 3 Verified Solution] He forms a rectangle: he is 3 km due East of his origin.", "statement_truths": "", "subject": "General Mental Ability", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "GMA", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-M3-022", "text_hash": "819920fa4fe00c5b", "text": "[Version B - Mock 03] The average of five consecutive even numbers is 34. What is the difference between the largest and smallest numbers?", "options": [{"id": "opt_a", "label": "A", "text": "4"}, {"id": "opt_b", "label": "B", "text": "6"}, {"id": "opt_c", "label": "C", "text": "8"}, {"id": "opt_d", "label": "D", "text": "10"}], "answer": "C", "answer_id": "opt_c", "explanation": "[Mock 3 Verified Solution] For any 5 consecutive even numbers (x, x+2, x+4, x+6, x+8), difference between largest and smallest is 8.", "statement_truths": "", "subject": "General Mental Ability", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "GMA", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-M3-023", "text_hash": "60eecb481a052ce7", "text": "[Version B - Mock 03] In a class of 60 students, Ramesh ranks 17th from the top. What is his rank from the bottom?", "options": [{"id": "opt_a", "label": "A", "text": "42nd"}, {"id": "opt_b", "label": "B", "text": "43rd"}, {"id": "opt_c", "label": "C", "text": "44th"}, {"id": "opt_d", "label": "D", "text": "45th"}], "answer": "C", "answer_id": "opt_c", "explanation": "[Mock 3 Verified Solution] Rank from bottom = Total - Rank from top + 1 = 60 - 17 + 1 = 44th.", "statement_truths": "", "subject": "General Mental Ability", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "GMA", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-M3-024", "text_hash": "62e34bb944b8143f", "text": "[Version B - Mock 03] Find the odd one out from the given group: 27, 64, 125, 144, 216", "options": [{"id": "opt_a", "label": "A", "text": "27"}, {"id": "opt_b", "label": "B", "text": "64"}, {"id": "opt_c", "label": "C", "text": "144"}, {"id": "opt_d", "label": "D", "text": "216"}], "answer": "C", "answer_id": "opt_c", "explanation": "[Mock 3 Verified Solution] 27 (3^3), 64 (4^3), 125 (5^3), 216 (6^3) are perfect cubes. 144 is a square (12^2), not a cube.", "statement_truths": "", "subject": "General Mental Ability", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "GMA", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-M3-025", "text_hash": "e2abfb4a0a5a2c7a", "text": "[Version B - Mock 03] If A can complete a work in 12 days and B can complete the same work in 24 days, in how many days can they complete the work together?", "options": [{"id": "opt_a", "label": "A", "text": "6 days"}, {"id": "opt_b", "label": "B", "text": "8 days"}, {"id": "opt_c", "label": "C", "text": "10 days"}, {"id": "opt_d", "label": "D", "text": "16 days"}], "answer": "B", "answer_id": "opt_b", "explanation": "[Mock 3 Verified Solution] Combined 1-day work = 1/12 + 1/24 = 3/24 = 1/8. So they take 8 days.", "statement_truths": "", "subject": "General Mental Ability", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "GMA", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-M3-026", "text_hash": "f69d837967c5dcbd", "text": "[Version B - Mock 03] A sum of ₹12,000 invested at simple interest amounts to ₹15,600 in 3 years. What is the annual rate of interest?", "options": [{"id": "opt_a", "label": "A", "text": "8%"}, {"id": "opt_b", "label": "B", "text": "10%"}, {"id": "opt_c", "label": "C", "text": "12%"}, {"id": "opt_d", "label": "D", "text": "15%"}], "answer": "B", "answer_id": "opt_b", "explanation": "[Mock 3 Verified Solution] Total Interest = 15,600 - 12,000 = 3,600. Rate = (3,600 * 100) / (12,000 * 3) = 10%.", "statement_truths": "", "subject": "General Mental Ability", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "GMA", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-M3-027", "text_hash": "06086fae54fb2a9b", "text": "[Version B - Mock 03] Pointing to a photograph, a woman says: 'He is the only son of the father of my brother.' How is the man in the photograph related to the woman?", "options": [{"id": "opt_a", "label": "A", "text": "Father"}, {"id": "opt_b", "label": "B", "text": "Brother"}, {"id": "opt_c", "label": "C", "text": "Son"}, {"id": "opt_d", "label": "D", "text": "Uncle"}], "answer": "B", "answer_id": "opt_b", "explanation": "[Mock 3 Verified Solution] The father of her brother is her father; the only son of her father is her brother.", "statement_truths": "", "subject": "General Mental Ability", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "GMA", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-M3-028", "text_hash": "9f0039b381669037", "text": "[Version B - Mock 03] A train 240 metres long crosses a telegraph post in 12 seconds. What is the speed of the train in km/h?", "options": [{"id": "opt_a", "label": "A", "text": "60 km/h"}, {"id": "opt_b", "label": "B", "text": "72 km/h"}, {"id": "opt_c", "label": "C", "text": "80 km/h"}, {"id": "opt_d", "label": "D", "text": "90 km/h"}], "answer": "B", "answer_id": "opt_b", "explanation": "[Mock 3 Verified Solution] Speed = 240 / 12 = 20 m/s. In km/h: 20 * (18/5) = 72 km/h.", "statement_truths": "", "subject": "General Mental Ability", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "GMA", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-M3-029", "text_hash": "1d8ea748a14bc0be", "text": "[Version B - Mock 03] If in a certain code language, 'KARNATAKA' is coded as 'MCTPCVCMC', then how will 'BENGALURU' be coded?", "options": [{"id": "opt_a", "label": "A", "text": "DGPIENWTW"}, {"id": "opt_b", "label": "B", "text": "DGPIEPWTW"}, {"id": "opt_c", "label": "C", "text": "DGPJCNWSW"}, {"id": "opt_d", "label": "D", "text": "DFOHAMVSV"}], "answer": "A", "answer_id": "opt_a", "explanation": "[Mock 3 Verified Solution] Each letter is shifted forward by +2 positions in the alphabetical order.", "statement_truths": "", "subject": "General Mental Ability", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "GMA", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-M3-030", "text_hash": "1b758034622f348a", "text": "[Version B - Mock 03] Complete the number series: 2, 6, 12, 20, 30, 42, ?", "options": [{"id": "opt_a", "label": "A", "text": "52"}, {"id": "opt_b", "label": "B", "text": "54"}, {"id": "opt_c", "label": "C", "text": "56"}, {"id": "opt_d", "label": "D", "text": "60"}], "answer": "C", "answer_id": "opt_c", "explanation": "[Mock 3 Verified Solution] The differences are +4, +6, +8, +10, +12, so next is +14: 42 + 14 = 56 (or n^2 + n: 7^2 + 7 = 56).", "statement_truths": "", "subject": "General Mental Ability", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "GMA", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-M3-031", "text_hash": "c5c5b58d45c98cee", "text": "[Version B - Mock 03] Which of the following materials is commonly used as a semiconductor in computer microchips and solar photovoltaic cells?", "options": [{"id": "opt_a", "label": "A", "text": "Copper"}, {"id": "opt_b", "label": "B", "text": "Silicon (Si)"}, {"id": "opt_c", "label": "C", "text": "Aluminium"}, {"id": "opt_d", "label": "D", "text": "Iron"}], "answer": "B", "answer_id": "opt_b", "explanation": "[Mock 3 Verified Solution] Silicon is the premier semiconductor material due to its optimal bandgap and abundance in quartz.", "statement_truths": "", "subject": "Science and Environment", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Tech", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-M3-032", "text_hash": "3e67534b1a901da9", "text": "[Version B - Mock 03] The 'Bonn Convention' (CMS - Convention on the Conservation of Migratory Species of Wild Animals) was signed under the aegis of:", "options": [{"id": "opt_a", "label": "A", "text": "IUCN"}, {"id": "opt_b", "label": "B", "text": "UNEP (United Nations Environment Programme)"}, {"id": "opt_c", "label": "C", "text": "WWF"}, {"id": "opt_d", "label": "D", "text": "UNESCO"}], "answer": "B", "answer_id": "opt_b", "explanation": "[Mock 3 Verified Solution] CMS is an environmental treaty under the United Nations Environment Programme (UNEP).", "statement_truths": "", "subject": "Science and Environment", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Environment", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-M3-033", "text_hash": "7853a6d11a69a918", "text": "[Version B - Mock 03] The fundamental particle responsible for transmitting the electromagnetic force is the:", "options": [{"id": "opt_a", "label": "A", "text": "Electron"}, {"id": "opt_b", "label": "B", "text": "Photon"}, {"id": "opt_c", "label": "C", "text": "Gluon"}, {"id": "opt_d", "label": "D", "text": "Graviton"}], "answer": "B", "answer_id": "opt_b", "explanation": "[Mock 3 Verified Solution] Photons are the gauge bosons that mediate the electromagnetic interaction.", "statement_truths": "", "subject": "Science and Environment", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Physics", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-M3-034", "text_hash": "90188a27f0b2242d", "text": "[Version B - Mock 03] Which gland in the human endocrine system is known as the 'Master Gland' because its hormones regulate other endocrine glands?", "options": [{"id": "opt_a", "label": "A", "text": "Thyroid Gland"}, {"id": "opt_b", "label": "B", "text": "Adrenal Gland"}, {"id": "opt_c", "label": "C", "text": "Pituitary Gland"}, {"id": "opt_d", "label": "D", "text": "Pancreas"}], "answer": "C", "answer_id": "opt_c", "explanation": "[Mock 3 Verified Solution] The pituitary gland (hypophysis) at the base of the brain regulates thyroid, adrenals, and gonads.", "statement_truths": "", "subject": "Science and Environment", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Biology", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-M3-035", "text_hash": "3c0c845099e8c49b", "text": "[Version B - Mock 03] The 'Basel Convention' (1989) regulates the international control of:", "options": [{"id": "opt_a", "label": "A", "text": "Trade in endangered wild flora and fauna"}, {"id": "opt_b", "label": "B", "text": "Transboundary movements of hazardous wastes and their disposal"}, {"id": "opt_c", "label": "C", "text": "Depletion of marine fisheries"}, {"id": "opt_d", "label": "D", "text": "Ozone depleting chemicals"}], "answer": "B", "answer_id": "opt_b", "explanation": "[Mock 3 Verified Solution] The Basel Convention controls the transboundary movement and dumping of hazardous toxic wastes.", "statement_truths": "", "subject": "Science and Environment", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Environment", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-M3-036", "text_hash": "e7821cd891211e52", "text": "[Version B - Mock 03] The process by which plants lose water vapor through microscopic stomatal pores on leaves is known as:", "options": [{"id": "opt_a", "label": "A", "text": "Guttation"}, {"id": "opt_b", "label": "B", "text": "Transpiration"}, {"id": "opt_c", "label": "C", "text": "Respiration"}, {"id": "opt_d", "label": "D", "text": "Evaporation"}], "answer": "B", "answer_id": "opt_b", "explanation": "[Mock 3 Verified Solution] Transpiration is the evaporative loss of water vapor from aerial plant organs.", "statement_truths": "", "subject": "Science and Environment", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Biology", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-M3-037", "text_hash": "e060bb9828ef643b", "text": "[Version B - Mock 03] The 'Global Warming Potential' (GWP) of greenhouse gases is measured relative to which baseline gas?", "options": [{"id": "opt_a", "label": "A", "text": "Methane"}, {"id": "opt_b", "label": "B", "text": "Carbon Dioxide (CO2 = 1)"}, {"id": "opt_c", "label": "C", "text": "Nitrous Oxide"}, {"id": "opt_d", "label": "D", "text": "Sulfur Hexafluoride"}], "answer": "B", "answer_id": "opt_b", "explanation": "[Mock 3 Verified Solution] Carbon dioxide has a GWP baseline value of 1 over a 100-year timescale.", "statement_truths": "", "subject": "Science and Environment", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Environment", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-M3-038", "text_hash": "304824aa72c6717b", "text": "[Version B - Mock 03] Which vitamin is synthesized in the human skin upon exposure to solar ultraviolet-B radiation?", "options": [{"id": "opt_a", "label": "A", "text": "Vitamin A"}, {"id": "opt_b", "label": "B", "text": "Vitamin B12"}, {"id": "opt_c", "label": "C", "text": "Vitamin C"}, {"id": "opt_d", "label": "D", "text": "Vitamin D (Cholecalciferol)"}], "answer": "D", "answer_id": "opt_d", "explanation": "[Mock 3 Verified Solution] 7-dehydrocholesterol in the epidermis is photochemically converted into Vitamin D3 by UV-B.", "statement_truths": "", "subject": "Science and Environment", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Biology", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-M3-039", "text_hash": "6c3ffe69ec8f5d20", "text": "[Version B - Mock 03] The 'Kyoto Protocol' (1997) categorized greenhouse gas emissions under which flexible market mechanisms?", "options": [{"id": "opt_a", "label": "A", "text": "Clean Development Mechanism (CDM), Joint Implementation, and Emissions Trading"}, {"id": "opt_b", "label": "B", "text": "Carbon Border Adjustment Tax"}, {"id": "opt_c", "label": "C", "text": "Renewable Purchase Obligation"}, {"id": "opt_d", "label": "D", "text": "Payment for Ecosystem Services"}], "answer": "A", "answer_id": "opt_a", "explanation": "[Mock 3 Verified Solution] Kyoto Protocol established CDM, Joint Implementation, and International Emissions Trading.", "statement_truths": "", "subject": "Science and Environment", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Environment", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-M3-040", "text_hash": "2c963c4646e8f53a", "text": "[Version B - Mock 03] Which gas is predominantly present in compressed natural gas (CNG) and biogas?", "options": [{"id": "opt_a", "label": "A", "text": "Propane"}, {"id": "opt_b", "label": "B", "text": "Butane"}, {"id": "opt_c", "label": "C", "text": "Methane (CH4)"}, {"id": "opt_d", "label": "D", "text": "Ethane"}], "answer": "C", "answer_id": "opt_c", "explanation": "[Mock 3 Verified Solution] Methane constitutes over 85-90% of CNG and biogas.", "statement_truths": "", "subject": "Science and Environment", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Chemistry", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-M3-041", "text_hash": "06396859b75db667", "text": "[Version B - Mock 03] The 'Greenhouse Effect' is caused because greenhouse gases absorb and re-emit which type of radiation emitted by Earth?", "options": [{"id": "opt_a", "label": "A", "text": "Shortwave ultraviolet radiation"}, {"id": "opt_b", "label": "B", "text": "Incoming solar visible light"}, {"id": "opt_c", "label": "C", "text": "Outgoing longwave terrestrial infrared radiation"}, {"id": "opt_d", "label": "D", "text": "Cosmic radiation"}], "answer": "C", "answer_id": "opt_c", "explanation": "[Mock 3 Verified Solution] Greenhouse gases absorb outgoing longwave infrared radiation emitted by the warmed Earth surface.", "statement_truths": "", "subject": "Science and Environment", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Physics", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-2"}, {"id": "KAS-P2-M3-042", "text_hash": "a65c188cba1cc11c", "text": "[Version B - Mock 03] The conversion of atmospheric nitrogen ($N_2$) into ammonia ($NH_3$) by symbiotic bacteria like Rhizobium in leguminous root nodules is called:", "options": [{"id": "opt_a", "label": "A", "text": "Nitrification"}, {"id": "opt_b", "label": "B", "text": "Biological Nitrogen Fixation"}, {"id": "opt_c", "label": "C", "text": "Denitrification"}, {"id": "opt_d", "label": "D", "text": "Ammonification"}], "answer": "B", "answer_id": "opt_b", "explanation": "[Mock 3 Verified Solution] Biological nitrogen fixation converts inert N2 into bioavailable ammonia via the nitrogenase enzyme.", "statement_truths": "", "subject": "Science and Environment", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Biology", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-2"}, {"id": "KAS-P2-M3-043", "text_hash": "ce1c3d636342db86", "text": "[Version B - Mock 03] Which of the following is an example of an In-situ conservation strategy for biodiversity?", "options": [{"id": "opt_a", "label": "A", "text": "Botanical Garden"}, {"id": "opt_b", "label": "B", "text": "National Park / Biosphere Reserve"}, {"id": "opt_c", "label": "C", "text": "Seed Bank"}, {"id": "opt_d", "label": "D", "text": "Zoological Park"}], "answer": "B", "answer_id": "opt_b", "explanation": "[Mock 3 Verified Solution] In-situ conservation protects species within their natural ecosystems (National Parks, Sanctuaries).", "statement_truths": "", "subject": "Science and Environment", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Environment", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-2"}, {"id": "KAS-P2-M3-044", "text_hash": "a7f81fc9d55d4a26", "text": "[Version B - Mock 03] The phenomenon where an uncrewed spacecraft burns up due to frictional heating during atmospheric entry is governed by:", "options": [{"id": "opt_a", "label": "A", "text": "Kinetic aerodynamic drag converting velocity into extreme thermal shock"}, {"id": "opt_b", "label": "B", "text": "Nuclear thermal decay"}, {"id": "opt_c", "label": "C", "text": "Magnetic induction"}, {"id": "opt_d", "label": "D", "text": "Cryogenic expansion"}], "answer": "A", "answer_id": "opt_a", "explanation": "[Mock 3 Verified Solution] Extreme compression and aerodynamic drag of air parcels generate hypersonic plasma shock layers.", "statement_truths": "", "subject": "Science and Environment", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Physics", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-2"}, {"id": "KAS-P2-M3-045", "text_hash": "1aeabef0b83de512", "text": "[Version B - Mock 03] The 'Kigali Amendment' (2016) to the Montreal Protocol aims to gradually phase down which potent greenhouse gases?", "options": [{"id": "opt_a", "label": "A", "text": "Chlorofluorocarbons (CFCs)"}, {"id": "opt_b", "label": "B", "text": "Hydrofluorocarbons (HFCs)"}, {"id": "opt_c", "label": "C", "text": "Carbon monoxide"}, {"id": "opt_d", "label": "D", "text": "Sulfur hexafluoride"}], "answer": "B", "answer_id": "opt_b", "explanation": "[Mock 3 Verified Solution] The Kigali Amendment phases down HFCs, which replaced CFCs but have high global warming potential.", "statement_truths": "", "subject": "Science and Environment", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Environment", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-2"}, {"id": "KAS-P2-M3-046", "text_hash": "85f81e0a2b702f55", "text": "[Version B - Mock 03] Which blood cells are responsible for immune defense by producing antibodies against pathogenic infections?", "options": [{"id": "opt_a", "label": "A", "text": "Erythrocytes (RBC)"}, {"id": "opt_b", "label": "B", "text": "Thrombocytes (Platelets)"}, {"id": "opt_c", "label": "C", "text": "B-Lymphocytes (White Blood Cells)"}, {"id": "opt_d", "label": "D", "text": "Neutrophils only"}], "answer": "C", "answer_id": "opt_c", "explanation": "[Mock 3 Verified Solution] B-lymphocytes mature into plasma cells that secrete antigen-specific antibodies.", "statement_truths": "", "subject": "Science and Environment", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Biology", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-2"}, {"id": "KAS-P2-M3-047", "text_hash": "95a7e746378acc2f", "text": "[Version B - Mock 03] The 'Stockholm Convention' (2001) is a multilateral environmental agreement that restricts and eliminates:", "options": [{"id": "opt_a", "label": "A", "text": "Mercury pollution"}, {"id": "opt_b", "label": "B", "text": "Persistent Organic Pollutants (POPs)"}, {"id": "opt_c", "label": "C", "text": "Endangered species international trade"}, {"id": "opt_d", "label": "D", "text": "Hazardous electronic waste"}], "answer": "B", "answer_id": "opt_b", "explanation": "[Mock 3 Verified Solution] The Stockholm Convention targets Persistent Organic Pollutants like DDT, dioxins, and PCBs.", "statement_truths": "", "subject": "Science and Environment", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Environment", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-2"}, {"id": "KAS-P2-M3-048", "text_hash": "38a68c1e91bf0778", "text": "[Version B - Mock 03] The chemical substance responsible for the depletion of dissolved oxygen and subsequent fish mortality during 'Eutrophication' of water bodies is:", "options": [{"id": "opt_a", "label": "A", "text": "Industrial heavy metals"}, {"id": "opt_b", "label": "B", "text": "Excessive agricultural runoff of Nitrates and Phosphates inducing algal blooms"}, {"id": "opt_c", "label": "C", "text": "Petroleum oil slicks"}, {"id": "opt_d", "label": "D", "text": "Microplastics"}], "answer": "B", "answer_id": "opt_b", "explanation": "[Mock 3 Verified Solution] Nitrogen and phosphorus runoff causes explosive algal growth; decaying algae depletes dissolved oxygen.", "statement_truths": "", "subject": "Science and Environment", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Environment", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-2"}, {"id": "KAS-P2-M3-049", "text_hash": "20cfb37b431f2a0c", "text": "[Version B - Mock 03] Which Indian space mission was launched in September 2023 to study the solar corona and solar wind from the Sun-Earth Lagrangian Point 1 (L1)?", "options": [{"id": "opt_a", "label": "A", "text": "Chandrayaan-3"}, {"id": "opt_b", "label": "B", "text": "Aditya-L1"}, {"id": "opt_c", "label": "C", "text": "XPoSat"}, {"id": "opt_d", "label": "D", "text": "AstroSat"}], "answer": "B", "answer_id": "opt_b", "explanation": "[Mock 3 Verified Solution] Aditya-L1 was placed in a halo orbit around Lagrangian Point 1 (1.5 million km from Earth).", "statement_truths": "", "subject": "Science and Environment", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Space", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-2"}, {"id": "KAS-P2-M3-050", "text_hash": "2eb7b03d89769dae", "text": "[Version B - Mock 03] In nuclear reactors, 'Heavy Water' ($D_2O$) is used primarily as a:", "options": [{"id": "opt_a", "label": "A", "text": "Control rod absorber"}, {"id": "opt_b", "label": "B", "text": "Moderator to slow down fast neutrons and Coolant"}, {"id": "opt_c", "label": "C", "text": "Nuclear fuel"}, {"id": "opt_d", "label": "D", "text": "Radiation shielding shield"}], "answer": "B", "answer_id": "opt_b", "explanation": "[Mock 3 Verified Solution] Deuterium oxide slows fast fission neutrons to thermal speeds to sustain chain reactions in PHWRs.", "statement_truths": "", "subject": "Science and Environment", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Nuclear", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-2"}, {"id": "KAS-P2-M3-051", "text_hash": "d23ac49b7da97c30", "text": "[Version B - Mock 03] The 'Minamata Disease' is a severe neurological syndrome caused by toxic poisoning from which industrial pollutant?", "options": [{"id": "opt_a", "label": "A", "text": "Cadmium (Itai-Itai)"}, {"id": "opt_b", "label": "B", "text": "Methylmercury"}, {"id": "opt_c", "label": "C", "text": "Lead"}, {"id": "opt_d", "label": "D", "text": "Arsenic"}], "answer": "B", "answer_id": "opt_b", "explanation": "[Mock 3 Verified Solution] Minamata disease in Japan was caused by the release of methylmercury into industrial wastewater.", "statement_truths": "", "subject": "Science and Environment", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Environment", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-2"}, {"id": "KAS-P2-M3-052", "text_hash": "be05e576bbc4770e", "text": "[Version B - Mock 03] Which metal is in a liquid state at room temperature (25°C)?", "options": [{"id": "opt_a", "label": "A", "text": "Gallium"}, {"id": "opt_b", "label": "B", "text": "Mercury (Hg)"}, {"id": "opt_c", "label": "C", "text": "Bromine"}, {"id": "opt_d", "label": "D", "text": "Cesium"}], "answer": "B", "answer_id": "opt_b", "explanation": "[Mock 3 Verified Solution] Mercury is the only elemental metal that is liquid at standard room temperature.", "statement_truths": "", "subject": "Science and Environment", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Chemistry", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-2"}, {"id": "KAS-P2-M3-053", "text_hash": "524a52d9cc8c0766", "text": "[Version B - Mock 03] The 'James Webb Space Telescope' (JWST) operates primarily in which region of the electromagnetic spectrum?", "options": [{"id": "opt_a", "label": "A", "text": "Gamma-ray"}, {"id": "opt_b", "label": "B", "text": "X-ray"}, {"id": "opt_c", "label": "C", "text": "Ultraviolet"}, {"id": "opt_d", "label": "D", "text": "Infrared (Near- and Mid-Infrared)"}], "answer": "D", "answer_id": "opt_d", "explanation": "[Mock 3 Verified Solution] JWST observes in infrared wavelengths to peer through cosmic dust and observe the earliest galaxies.", "statement_truths": "", "subject": "Science and Environment", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Space", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-2"}, {"id": "KAS-P2-M3-054", "text_hash": "efe2810916b3af3b", "text": "[Version B - Mock 03] Which artificial intelligence model developed by Google DeepMind solved the 50-year-old biological challenge of predicting 3D protein structures from amino acid sequences?", "options": [{"id": "opt_a", "label": "A", "text": "ChatGPT"}, {"id": "opt_b", "label": "B", "text": "AlphaFold"}, {"id": "opt_c", "label": "C", "text": "Gemini"}, {"id": "opt_d", "label": "D", "text": "Sora"}], "answer": "B", "answer_id": "opt_b", "explanation": "[Mock 3 Verified Solution] AlphaFold revolutionized structural biology, earning its creators the 2024 Nobel Prize in Chemistry.", "statement_truths": "", "subject": "Science and Environment", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "AI", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-2"}, {"id": "KAS-P2-M3-055", "text_hash": "12b506626b43b97f", "text": "[Version B - Mock 03] The 'Montreal Protocol' (1987) is an international environmental treaty aimed at phasing out substances that cause:", "options": [{"id": "opt_a", "label": "A", "text": "Global warming emissions"}, {"id": "opt_b", "label": "B", "text": "Depletion of the Ozone Layer (ODS like CFCs and halons)"}, {"id": "opt_c", "label": "C", "text": "Transboundary hazardous waste dumping"}, {"id": "opt_d", "label": "D", "text": "Persistent Organic Pollutants (POPs)"}], "answer": "B", "answer_id": "opt_b", "explanation": "[Mock 3 Verified Solution] The Montreal Protocol mandates the phase-out of ozone-depleting substances.", "statement_truths": "", "subject": "Science and Environment", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Environment", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-2"}, {"id": "KAS-P2-M3-056", "text_hash": "a1d0ed050585022f", "text": "[Version B - Mock 03] Which layer of the atmosphere contains the protective Ozone Layer that absorbs lethal solar ultraviolet-B radiation?", "options": [{"id": "opt_a", "label": "A", "text": "Troposphere"}, {"id": "opt_b", "label": "B", "text": "Stratosphere"}, {"id": "opt_c", "label": "C", "text": "Mesosphere"}, {"id": "opt_d", "label": "D", "text": "Thermosphere"}], "answer": "B", "answer_id": "opt_b", "explanation": "[Mock 3 Verified Solution] The stratospheric ozone layer (15-35 km altitude) filters out harmful UV-B radiation.", "statement_truths": "", "subject": "Science and Environment", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Environment", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-2"}, {"id": "KAS-P2-M3-057", "text_hash": "c88f1788e725a672", "text": "[Version B - Mock 03] The phenomenon of 'Ocean Acidification' is primarily driven by the excessive absorption of which atmospheric gas by seawater?", "options": [{"id": "opt_a", "label": "A", "text": "Methane"}, {"id": "opt_b", "label": "B", "text": "Carbon Dioxide (CO2)"}, {"id": "opt_c", "label": "C", "text": "Sulfur Dioxide"}, {"id": "opt_d", "label": "D", "text": "Nitrous Oxide"}], "answer": "B", "answer_id": "opt_b", "explanation": "[Mock 3 Verified Solution] Oceans absorb excess CO2, reacting with water to form carbonic acid, lowering ocean pH.", "statement_truths": "", "subject": "Science and Environment", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Environment", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-2"}, {"id": "KAS-P2-M3-058", "text_hash": "f4d69e537ab0698a", "text": "[Version B - Mock 03] CRISPR-Cas9 technology, which won the Nobel Prize in Chemistry in 2020, is primarily used for:", "options": [{"id": "opt_a", "label": "A", "text": "Nuclear fusion containment"}, {"id": "opt_b", "label": "B", "text": "Targeted gene editing and genome engineering"}, {"id": "opt_c", "label": "C", "text": "Deep sea acoustic mapping"}, {"id": "opt_d", "label": "D", "text": "Quantum key distribution"}], "answer": "B", "answer_id": "opt_b", "explanation": "[Mock 3 Verified Solution] CRISPR-Cas9 is a revolutionary molecular scissors system for precise DNA sequences editing.", "statement_truths": "", "subject": "Science and Environment", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Biotechnology", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-2"}, {"id": "KAS-P2-M3-059", "text_hash": "2ea1b6a84da93f9b", "text": "[Version B - Mock 03] Which organelle in eukaryotic cells is universally referred to as the 'Powerhouse of the Cell' due to ATP generation via oxidative phosphorylation?", "options": [{"id": "opt_a", "label": "A", "text": "Ribosome"}, {"id": "opt_b", "label": "B", "text": "Endoplasmic Reticulum"}, {"id": "opt_c", "label": "C", "text": "Mitochondria"}, {"id": "opt_d", "label": "D", "text": "Golgi Apparatus"}], "answer": "C", "answer_id": "opt_c", "explanation": "[Mock 3 Verified Solution] Mitochondria generate adenosine triphosphate (ATP) through cellular respiration.", "statement_truths": "", "subject": "Science and Environment", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Biology", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-2"}, {"id": "KAS-P2-M3-060", "text_hash": "a2d80fe64645548b", "text": "[Version B - Mock 03] The 'Raman Effect', discovered by Sir C.V. Raman at Kolkata in 1928, is based on which optical phenomenon?", "options": [{"id": "opt_a", "label": "A", "text": "Total Internal Reflection"}, {"id": "opt_b", "label": "B", "text": "Inelastic scattering of photons by molecules"}, {"id": "opt_c", "label": "C", "text": "Diffraction of light by ultrasonic waves"}, {"id": "opt_d", "label": "D", "text": "Photoelectric emission"}], "answer": "B", "answer_id": "opt_b", "explanation": "[Mock 3 Verified Solution] Raman Effect is the inelastic scattering of light where scattered photons have altered energy and wavelength.", "statement_truths": "", "subject": "Science and Environment", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Science", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-2"}, {"id": "KAS-P2-M3-061", "text_hash": "966b226096f6123e", "text": "[Version B - Mock 03] The 'Krishi Bhagya' scheme of Karnataka is primarily targeted at supporting:", "options": [{"id": "opt_a", "label": "A", "text": "Canal command paddy farmers"}, {"id": "opt_b", "label": "B", "text": "Rainfed dryland farmers through farm ponds (Krishi Honda) and micro-irrigation"}, {"id": "opt_c", "label": "C", "text": "Commercial coffee planters"}, {"id": "opt_d", "label": "D", "text": "Urban vertical hydroponic farms"}], "answer": "B", "answer_id": "opt_b", "explanation": "[Mock 3 Verified Solution] Krishi Bhagya supports dryland farmers with farm ponds, polythene lining, diesel pumps, and micro-irrigation.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Schemes", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-2"}, {"id": "KAS-P2-M3-062", "text_hash": "82703325e2484ecc", "text": "[Version B - Mock 03] The 'Shakti' scheme implemented by the Government of Karnataka provides fare-free travel to women on which transport services?", "options": [{"id": "opt_a", "label": "A", "text": "All private stage carriage buses"}, {"id": "opt_b", "label": "B", "text": "Ordinary, Express, and City buses of four state RTCs within Karnataka"}, {"id": "opt_c", "label": "C", "text": "Metro and suburban rail services"}, {"id": "opt_d", "label": "D", "text": "Inter-state luxury sleeper AC buses"}], "answer": "B", "answer_id": "opt_b", "explanation": "[Mock 3 Verified Solution] Shakti provides free travel to women residing in Karnataka on state RTC buses within state borders.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Schemes", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-2"}, {"id": "KAS-P2-M3-063", "text_hash": "beb50d0be7081a84", "text": "[Version B - Mock 03] Under the Karnataka 'Gruha Lakshmi' scheme, what is the monthly direct benefit transfer provided to eligible female heads of households?", "options": [{"id": "opt_a", "label": "A", "text": "₹1,000"}, {"id": "opt_b", "label": "B", "text": "₹1,500"}, {"id": "opt_c", "label": "C", "text": "₹2,000"}, {"id": "opt_d", "label": "D", "text": "₹3,000"}], "answer": "C", "answer_id": "opt_c", "explanation": "[Mock 3 Verified Solution] Gruha Lakshmi provides ₹2,000 per month DBT to the woman head of eligible households.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Schemes", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-2"}, {"id": "KAS-P2-M3-064", "text_hash": "33c7fe39a1e4fdee", "text": "[Version B - Mock 03] The world's longest railway platform (1,507 metres), recognized by the Guinness World Records, is situated at:", "options": [{"id": "opt_a", "label": "A", "text": "Gorakhpur Railway Station"}, {"id": "opt_b", "label": "B", "text": "Kollam Junction"}, {"id": "opt_c", "label": "C", "text": "Shree Siddharoodha Swamiji Hubballi Railway Station"}, {"id": "opt_d", "label": "D", "text": "KSR Bengaluru City Station"}], "answer": "C", "answer_id": "opt_c", "explanation": "[Mock 3 Verified Solution] Hubballi railway station (SWR headquarters) houses the world's longest platform (1,507 m).", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Infrastructure", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-2"}, {"id": "KAS-P2-M3-065", "text_hash": "e32f8e9a528ffe8c", "text": "[Version B - Mock 03] The ONLY Major Port located in the state of Karnataka is:", "options": [{"id": "opt_a", "label": "A", "text": "Karwar Port"}, {"id": "opt_b", "label": "B", "text": "New Mangalore Port (NMPT at Panambur)"}, {"id": "opt_c", "label": "C", "text": "Tadadi Port"}, {"id": "opt_d", "label": "D", "text": "Old Mangalore Port"}], "answer": "B", "answer_id": "opt_b", "explanation": "[Mock 3 Verified Solution] New Mangalore Port (NMPT) is Karnataka's sole Major Port administered under central port authorities.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Infrastructure", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-2"}, {"id": "KAS-P2-M3-066", "text_hash": "ea02ab0c7315111a", "text": "[Version B - Mock 03] According to Census 2011, which district has the LOWEST literacy rate in Karnataka?", "options": [{"id": "opt_a", "label": "A", "text": "Raichur"}, {"id": "opt_b", "label": "B", "text": "Kalaburagi"}, {"id": "opt_c", "label": "C", "text": "Yadgir (51.83%)"}, {"id": "opt_d", "label": "D", "text": "Chamarajanagar"}], "answer": "C", "answer_id": "opt_c", "explanation": "[Mock 3 Verified Solution] Yadgir records the lowest literacy in Karnataka (51.83%), while Dakshina Kannada records the highest (88.57%).", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Demography", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-2"}, {"id": "KAS-P2-M3-067", "text_hash": "36dd21f28372d15e", "text": "[Version B - Mock 03] According to Census 2011, which district has the HIGHEST sex ratio in Karnataka?", "options": [{"id": "opt_a", "label": "A", "text": "Dakshina Kannada"}, {"id": "opt_b", "label": "B", "text": "Udupi (1,094 females per 1,000 males)"}, {"id": "opt_c", "label": "C", "text": "Kodagu"}, {"id": "opt_d", "label": "D", "text": "Hassan"}], "answer": "B", "answer_id": "opt_b", "explanation": "[Mock 3 Verified Solution] Udupi has the highest sex ratio (1,094), while Bengaluru Urban has the lowest (916).", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Demography", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-2"}, {"id": "KAS-P2-M3-068", "text_hash": "3573e22f4a31ee22", "text": "[Version B - Mock 03] Asia's first major commercial hydroelectric power station was commissioned in Karnataka in 1902 at:", "options": [{"id": "opt_a", "label": "A", "text": "Jog Falls"}, {"id": "opt_b", "label": "B", "text": "Shivanasamudra (Cauvery River)"}, {"id": "opt_c", "label": "C", "text": "Shimsha"}, {"id": "opt_d", "label": "D", "text": "Linganamakki"}], "answer": "B", "answer_id": "opt_b", "explanation": "[Mock 3 Verified Solution] Shivanasamudra hydroelectric station on the Cauvery river was commissioned in 1902 to power KGF.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Energy", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-2"}, {"id": "KAS-P2-M3-069", "text_hash": "b3e9380bfeec5594", "text": "[Version B - Mock 03] Which nuclear power reactor in Karnataka set a world record for continuous operation without shutdown for 962 days?", "options": [{"id": "opt_a", "label": "A", "text": "Kaiga Generating Station Unit 1"}, {"id": "opt_b", "label": "B", "text": "Kaiga Generating Station Unit 2"}, {"id": "opt_c", "label": "C", "text": "Kudankulam Unit 1"}, {"id": "opt_d", "label": "D", "text": "Tarapur Unit 1"}], "answer": "A", "answer_id": "opt_a", "explanation": "[Mock 3 Verified Solution] Kaiga Unit 1 (220 MWe PHWR) operated continuously for 962 days until December 2018.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Energy", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-2"}, {"id": "KAS-P2-M3-070", "text_hash": "5a32ff49c954cac5", "text": "[Version B - Mock 03] The 'Pavagada Solar Park' (Shakti Sthala) with an installed capacity of 2,050 MW is located in which district?", "options": [{"id": "opt_a", "label": "A", "text": "Ballari"}, {"id": "opt_b", "label": "B", "text": "Chitradurga"}, {"id": "opt_c", "label": "C", "text": "Tumakuru"}, {"id": "opt_d", "label": "D", "text": "Koppal"}], "answer": "C", "answer_id": "opt_c", "explanation": "[Mock 3 Verified Solution] Pavagada Solar Park spans 13,000 acres in Pavagada taluk, Tumakuru district.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Energy", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-2"}, {"id": "KAS-P2-M3-071", "text_hash": "8f3d382248176c1a", "text": "[Version B - Mock 03] Currently, the ONLY operational commercial primary gold producer in India is:", "options": [{"id": "opt_a", "label": "A", "text": "Kolar Gold Fields (BGML)"}, {"id": "opt_b", "label": "B", "text": "Hutti Gold Mines (HGML, Raichur)"}, {"id": "opt_c", "label": "C", "text": "Ramagiri Gold Field"}, {"id": "opt_d", "label": "D", "text": "Gadag Gold Mine"}], "answer": "B", "answer_id": "opt_b", "explanation": "[Mock 3 Verified Solution] Hutti Gold Mines Company Limited (HGML) in Raichur is India's only active primary gold producer.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Minerals", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-3"}, {"id": "KAS-P2-M3-072", "text_hash": "0c0c59f26510eefe", "text": "[Version B - Mock 03] The 'Shanti Sagara' (Sulekere) ancient irrigation tank in Davanagere district is renowned as:", "options": [{"id": "opt_a", "label": "A", "text": "The largest natural lake in South India"}, {"id": "opt_b", "label": "B", "text": "Asia's second largest ancient man-made irrigation tank"}, {"id": "opt_c", "label": "C", "text": "The deepest crater lake in Karnataka"}, {"id": "opt_d", "label": "D", "text": "The oldest stepwell in peninsular India"}], "answer": "B", "answer_id": "opt_b", "explanation": "[Mock 3 Verified Solution] Shanti Sagara (Sulekere), constructed in the 12th century, is Asia's 2nd largest ancient artificial tank.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Irrigation", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-3"}, {"id": "KAS-P2-M3-073", "text_hash": "4984fcfc7b0c9af6", "text": "[Version B - Mock 03] Which district in Karnataka is officially designated the 'Dal Bowl of Karnataka' (Togari Kanaja) and holds a GI tag for Red Gram?", "options": [{"id": "opt_a", "label": "A", "text": "Bidar"}, {"id": "opt_b", "label": "B", "text": "Kalaburagi"}, {"id": "opt_c", "label": "C", "text": "Yadgir"}, {"id": "opt_d", "label": "D", "text": "Raichur"}], "answer": "B", "answer_id": "opt_b", "explanation": "[Mock 3 Verified Solution] Kalaburagi is the Dal Bowl of Karnataka, producing premier GI-tagged red gram.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Agriculture", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-3"}, {"id": "KAS-P2-M3-074", "text_hash": "524d30c50193459a", "text": "[Version B - Mock 03] Karnataka produces approximately what percentage of India's total coffee output?", "options": [{"id": "opt_a", "label": "A", "text": "30%"}, {"id": "opt_b", "label": "B", "text": "50%"}, {"id": "opt_c", "label": "C", "text": "70%"}, {"id": "opt_d", "label": "D", "text": "90%"}], "answer": "C", "answer_id": "opt_c", "explanation": "[Mock 3 Verified Solution] Karnataka accounts for ~70% of India's total coffee production (Kodagu, Chikkamagaluru, Hassan).", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Agriculture", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-3"}, {"id": "KAS-P2-M3-075", "text_hash": "00b68a9cb3a95161", "text": "[Version B - Mock 03] The 'Aghanashini Estuary', inscribed as a Ramsar site in 2024, is located in which coastal taluk of Uttara Kannada?", "options": [{"id": "opt_a", "label": "A", "text": "Karwar"}, {"id": "opt_b", "label": "B", "text": "Kumta"}, {"id": "opt_c", "label": "C", "text": "Bhatkal"}, {"id": "opt_d", "label": "D", "text": "Ankola"}], "answer": "B", "answer_id": "opt_b", "explanation": "[Mock 3 Verified Solution] Aghanashini estuary is situated in Kumta taluk, Uttara Kannada.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Ramsar", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-3"}, {"id": "KAS-P2-M3-076", "text_hash": "3d67dfd249630234", "text": "[Version B - Mock 03] Which national park in Karnataka was declared a Project Tiger reserve in 1973 and forms a keystone part of the Nilgiri Biosphere Reserve?", "options": [{"id": "opt_a", "label": "A", "text": "Bannerghatta National Park"}, {"id": "opt_b", "label": "B", "text": "Bandipur National Park"}, {"id": "opt_c", "label": "C", "text": "Anshi National Park"}, {"id": "opt_d", "label": "D", "text": "Kudremukh National Park"}], "answer": "B", "answer_id": "opt_b", "explanation": "[Mock 3 Verified Solution] Bandipur was one of India's original 9 Project Tiger reserves designated in 1973.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Forests", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-3"}, {"id": "KAS-P2-M3-077", "text_hash": "846d6b2aa87057b8", "text": "[Version B - Mock 03] Under the Champion & Seth forest classification, the hyper-humid Western Ghats crestline in Karnataka is dominated by:", "options": [{"id": "opt_a", "label": "A", "text": "Tropical Dry Deciduous Forests"}, {"id": "opt_b", "label": "B", "text": "Tropical Wet Evergreen Forests"}, {"id": "opt_c", "label": "C", "text": "Tropical Thorn Scrub"}, {"id": "opt_d", "label": "D", "text": "Mangrove Forests"}], "answer": "B", "answer_id": "opt_b", "explanation": "[Mock 3 Verified Solution] Tropical Wet Evergreen forests dominate high-rainfall zones (>2,500 mm) in the Western Ghats.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Forests", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-3"}, {"id": "KAS-P2-M3-078", "text_hash": "bb1d6c848654c4a6", "text": "[Version B - Mock 03] Karnataka ranks second only to which Indian state in total arid and semi-arid drought-prone geographical land area?", "options": [{"id": "opt_a", "label": "A", "text": "Gujarat"}, {"id": "opt_b", "label": "B", "text": "Rajasthan"}, {"id": "opt_c", "label": "C", "text": "Maharashtra"}, {"id": "opt_d", "label": "D", "text": "Andhra Pradesh"}], "answer": "B", "answer_id": "opt_b", "explanation": "[Mock 3 Verified Solution] Karnataka has the second largest drought-prone arid land area in India after Rajasthan.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Climate", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-3"}, {"id": "KAS-P2-M3-079", "text_hash": "ff0993a99edd8e4f", "text": "[Version B - Mock 03] The driest meteorological station in Karnataka, receiving less than 450 mm of annual rainfall, is:", "options": [{"id": "opt_a", "label": "A", "text": "Kalaburagi"}, {"id": "opt_b", "label": "B", "text": "Raichur"}, {"id": "opt_c", "label": "C", "text": "Challakere (Chitradurga)"}, {"id": "opt_d", "label": "D", "text": "Bagalkote"}], "answer": "C", "answer_id": "opt_c", "explanation": "[Mock 3 Verified Solution] Challakere in Chitradurga is the driest locality in Karnataka.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Climate", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-3"}, {"id": "KAS-P2-M3-080", "text_hash": "61410cdbeebc8c7d", "text": "[Version B - Mock 03] Which river forms the spectacular Jog Falls (Gersoppa Falls), dropping 253 metres in Shivamogga district?", "options": [{"id": "opt_a", "label": "A", "text": "Varahi River"}, {"id": "opt_b", "label": "B", "text": "Sharavathi River"}, {"id": "opt_c", "label": "C", "text": "Kalinadi"}, {"id": "opt_d", "label": "D", "text": "Aghanashini"}], "answer": "B", "answer_id": "opt_b", "explanation": "[Mock 3 Verified Solution] The Sharavathi river creates the Jog Falls (Raja, Roarer, Rocket, and Rani cascades).", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Geography", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-3"}, {"id": "KAS-P2-M3-081", "text_hash": "aed6a0d59550a9fd", "text": "[Version B - Mock 03] The highest peak in Karnataka, situated at 1,930 metres elevation in the Bababudan Giri range of Chikkamagaluru, is:", "options": [{"id": "opt_a", "label": "A", "text": "Kudremukh"}, {"id": "opt_b", "label": "B", "text": "Mullayanagiri"}, {"id": "opt_c", "label": "C", "text": "Pushpagiri"}, {"id": "opt_d", "label": "D", "text": "Tadiandamol"}], "answer": "B", "answer_id": "opt_b", "explanation": "[Mock 3 Verified Solution] Mullayanagiri (1,930 m) is the highest mountain peak in Karnataka.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Geography", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-3"}, {"id": "KAS-P2-M3-082", "text_hash": "23155fc0468d8384", "text": "[Version B - Mock 03] Article 371J of the Constitution, providing special provisions for Kalyana Karnataka, was inserted by which Constitutional Amendment Act?", "options": [{"id": "opt_a", "label": "A", "text": "91st Amendment Act"}, {"id": "opt_b", "label": "B", "text": "94th Amendment Act"}, {"id": "opt_c", "label": "C", "text": "98th Amendment Act, 2012"}, {"id": "opt_d", "label": "D", "text": "102nd Amendment Act"}], "answer": "C", "answer_id": "opt_c", "explanation": "[Mock 3 Verified Solution] The 98th Constitutional Amendment Act, 2012 inserted Article 371J.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Article 371J", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-3"}, {"id": "KAS-P2-M3-083", "text_hash": "7d83b0ada93b3b61", "text": "[Version B - Mock 03] Which committee appointed in 2000 identified 114 backward taluks in Karnataka and recommended a special economic package to rectify regional imbalances?", "options": [{"id": "opt_a", "label": "A", "text": "L.G. Havanur Commission"}, {"id": "opt_b", "label": "B", "text": "Dr. D.M. Nanjundappa Committee"}, {"id": "opt_c", "label": "C", "text": "Chinnappa Reddy Commission"}, {"id": "opt_d", "label": "D", "text": "Venkataswamy Commission"}], "answer": "B", "answer_id": "opt_b", "explanation": "[Mock 3 Verified Solution] Dr. D.M. Nanjundappa High Power Committee submitted its landmark report on regional imbalances in 2002.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Nanjundappa", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-3"}, {"id": "KAS-P2-M3-084", "text_hash": "edafb01688bc2e40", "text": "[Version B - Mock 03] The State of Mysore was officially renamed as 'Karnataka' on 1 November 1973 under the Chief Ministership of:", "options": [{"id": "opt_a", "label": "A", "text": "K. Chengalaraya Reddy"}, {"id": "opt_b", "label": "B", "text": "Kengal Hanumanthaiah"}, {"id": "opt_c", "label": "C", "text": "S. Nijalingappa"}, {"id": "opt_d", "label": "D", "text": "D. Devaraj Urs"}], "answer": "D", "answer_id": "opt_d", "explanation": "[Mock 3 Verified Solution] Chief Minister D. Devaraj Urs steered the historic renaming of Mysore State to Karnataka in 1973.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Unification", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-3"}, {"id": "KAS-P2-M3-085", "text_hash": "21758f10b4539bcb", "text": "[Version B - Mock 03] The pioneering Kannada cultural work 'Karnataka Gatha Vaibhava' (1912), which ignited the Unification movement, was authored by:", "options": [{"id": "opt_a", "label": "A", "text": "B.M. Srikantaiah"}, {"id": "opt_b", "label": "B", "text": "Aluru Venkata Rao ('Karnataka Kula Thilaka')"}, {"id": "opt_c", "label": "C", "text": "Huilgol Narayana Rao"}, {"id": "opt_d", "label": "D", "text": "Kuvempu"}], "answer": "B", "answer_id": "opt_b", "explanation": "[Mock 3 Verified Solution] Aluru Venkata Rao wrote Karnataka Gatha Vaibhava in Dharwad to awaken Kannada linguistic unity.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Unification", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-3"}, {"id": "KAS-P2-M3-086", "text_hash": "5495e2ab592c100b", "text": "[Version B - Mock 03] The historic movement where villagers declared independence and formed a parallel government in Shivamogga in 1942 was centered at:", "options": [{"id": "opt_a", "label": "A", "text": "Shivapura"}, {"id": "opt_b", "label": "B", "text": "Isur ('Esuru kottaru, Isuru kodevu')"}, {"id": "opt_c", "label": "C", "text": "Ankola"}, {"id": "opt_d", "label": "D", "text": "Soraba"}], "answer": "B", "answer_id": "opt_b", "explanation": "[Mock 3 Verified Solution] Isur village in Shikaripura taluk declared independence during the Quit India Movement in 1942.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Freedom Struggle", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-3"}, {"id": "KAS-P2-M3-087", "text_hash": "313fa7e8b886165e", "text": "[Version B - Mock 03] The tragic firing on freedom fighters at Vidurashwatha (Kolar/Chikkaballapura) in April 1938 is nationally commemorated as:", "options": [{"id": "opt_a", "label": "A", "text": "Jallianwala Bagh of South India"}, {"id": "opt_b", "label": "B", "text": "Chauri Chaura of Karnataka"}, {"id": "opt_c", "label": "C", "text": "Dandi of Karnataka"}, {"id": "opt_d", "label": "D", "text": "Bardoli of South India"}], "answer": "A", "answer_id": "opt_a", "explanation": "[Mock 3 Verified Solution] Vidurashwatha tragedy is known as the 'Jallianwala Bagh of the South' where 32 satyagrahis were martyred.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Freedom Struggle", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-3"}, {"id": "KAS-P2-M3-088", "text_hash": "6a6082fd274bc92b", "text": "[Version B - Mock 03] The only session of the Indian National Congress ever presided over by Mahatma Gandhi was held in 1924 at:", "options": [{"id": "opt_a", "label": "A", "text": "Mysuru"}, {"id": "opt_b", "label": "B", "text": "Belagavi (39th Session)"}, {"id": "opt_c", "label": "C", "text": "Hubballi"}, {"id": "opt_d", "label": "D", "text": "Bengaluru"}], "answer": "B", "answer_id": "opt_b", "explanation": "[Mock 3 Verified Solution] Mahatma Gandhi presided over the 39th INC Session at Belagavi in December 1924.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Freedom Struggle", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-3"}, {"id": "KAS-P2-M3-089", "text_hash": "b16e9121bed6bdf9", "text": "[Version B - Mock 03] Sangolli Rayanna, the legendary guerrilla commander who led the 1829-1831 revolt in Kittur, was hanged by the British at:", "options": [{"id": "opt_a", "label": "A", "text": "Belagavi Fort"}, {"id": "opt_b", "label": "B", "text": "Nandagad"}, {"id": "opt_c", "label": "C", "text": "Khanapur"}, {"id": "opt_d", "label": "D", "text": "Dharwad"}], "answer": "B", "answer_id": "opt_b", "explanation": "[Mock 3 Verified Solution] Rayanna was hanged on 26 January 1831 from a banyan tree at Nandagad in Belagavi district.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Freedom Struggle", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-3"}, {"id": "KAS-P2-M3-090", "text_hash": "ff9f261ad9c0e338", "text": "[Version B - Mock 03] The historic armed uprising of Kittur against the British East India Company in 1824 was led by:", "options": [{"id": "opt_a", "label": "A", "text": "Rani Abbakka Chowta"}, {"id": "opt_b", "label": "B", "text": "Kittur Rani Chennamma"}, {"id": "opt_c", "label": "C", "text": "Keladi Chennamma"}, {"id": "opt_d", "label": "D", "text": "Rani Gaidinliu"}], "answer": "B", "answer_id": "opt_b", "explanation": "[Mock 3 Verified Solution] Kittur Rani Chennamma rebelled against Collector Thackeray when the British refused to recognize her adopted son Shivalingappa.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Freedom Struggle", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-3"}, {"id": "KAS-P2-M3-091", "text_hash": "b3fd99645fe138b9", "text": "[Version B - Mock 03] Which brave woman defender of Chitradurga Fort fought Hyder Ali's invading soldiers with a wooden pestle at the secret opening (Kindi)?", "options": [{"id": "opt_a", "label": "A", "text": "Rani Abbakka"}, {"id": "opt_b", "label": "B", "text": "Kittur Chennamma"}, {"id": "opt_c", "label": "C", "text": "Onake Obavva"}, {"id": "opt_d", "label": "D", "text": "Belawadi Mallamma"}], "answer": "C", "answer_id": "opt_c", "explanation": "[Mock 3 Verified Solution] Onake Obavva valiantly defended Chitradurga's secret crevice (Onake Obavvana Kindi) in 1779.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Chitradurga", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-3"}, {"id": "KAS-P2-M3-092", "text_hash": "321401102e90af60", "text": "[Version B - Mock 03] The revenue land settlement system known as 'Sist' in Karnataka was introduced by which Keladi Nayaka ruler?", "options": [{"id": "opt_a", "label": "A", "text": "Chaudappa Nayaka"}, {"id": "opt_b", "label": "B", "text": "Sadashiva Nayaka"}, {"id": "opt_c", "label": "C", "text": "Shivappa Nayaka"}, {"id": "opt_d", "label": "D", "text": "Venkatappa Nayaka"}], "answer": "C", "answer_id": "opt_c", "explanation": "[Mock 3 Verified Solution] Shivappa Nayaka introduced the scientific agrarian land revenue assessment known as 'Shivappa Nayakana Sist'.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Keladi Nayakas", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-3"}, {"id": "KAS-P2-M3-093", "text_hash": "cf363b15986bb130", "text": "[Version B - Mock 03] The 'Whispering Gallery' where even the faintest whisper echoes multiple times is located in which monument in Karnataka?", "options": [{"id": "opt_a", "label": "A", "text": "Bidar Fort"}, {"id": "opt_b", "label": "B", "text": "Gol Gumbaz (Vijayapura)"}, {"id": "opt_c", "label": "C", "text": "Ibrahim Rauza"}, {"id": "opt_d", "label": "D", "text": "Mahmud Gawan Madrasa"}], "answer": "B", "answer_id": "opt_b", "explanation": "[Mock 3 Verified Solution] Gol Gumbaz, the mausoleum of Muhammad Adil Shah in Vijayapura, features the acoustic Whispering Gallery.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Adil Shahis", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-3"}, {"id": "KAS-P2-M3-094", "text_hash": "701015ecf7f14c4e", "text": "[Version B - Mock 03] The Vijayanagara Empire was founded in 1336 CE on the southern banks of the Tungabhadra river by Harihara I and Bukka I under the spiritual inspiration of:", "options": [{"id": "opt_a", "label": "A", "text": "Ramanujacharya"}, {"id": "opt_b", "label": "B", "text": "Madhvacharya"}, {"id": "opt_c", "label": "C", "text": "Sage Vidyaranya"}, {"id": "opt_d", "label": "D", "text": "Basaveshwara"}], "answer": "C", "answer_id": "opt_c", "explanation": "[Mock 3 Verified Solution] Sage Vidyaranya of the Sringeri Sharada Peetham inspired the founding of the Vijayanagara Empire.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Vijayanagara", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-3"}, {"id": "KAS-P2-M3-095", "text_hash": "17515a969cd78a2c", "text": "[Version B - Mock 03] The Hoysala empire reached its architectural and political zenith under Vishnuvardhana following his victory at Talakadu in 1116 CE, earning him the title:", "options": [{"id": "opt_a", "label": "A", "text": "Dakshinapatheshwara"}, {"id": "opt_b", "label": "B", "text": "Talakadugonda"}, {"id": "opt_c", "label": "C", "text": "Chalukya Chakravarti"}, {"id": "opt_d", "label": "D", "text": "Kanchigonda"}], "answer": "B", "answer_id": "opt_b", "explanation": "[Mock 3 Verified Solution] Vishnuvardhana assumed the title Talakadugonda after expelling the Cholas from southern Karnataka.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Hoysalas", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-3"}, {"id": "KAS-P2-M3-096", "text_hash": "2c2692528b698ee8", "text": "[Version B - Mock 03] The 12th-century socio-religious reform movement in Karnataka spearheaded by Basaveshwara established which democratic spiritual parliament at Basavakalyana?", "options": [{"id": "opt_a", "label": "A", "text": "Athara Kacheri"}, {"id": "opt_b", "label": "B", "text": "Anubhava Mantapa"}, {"id": "opt_c", "label": "C", "text": "Maha Sabha"}, {"id": "opt_d", "label": "D", "text": "Ghatika"}], "answer": "B", "answer_id": "opt_b", "explanation": "[Mock 3 Verified Solution] Basaveshwara established the Anubhava Mantapa, where Sharanas of all castes discussed philosophy via Vachanas.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Vachana Movement", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-3"}, {"id": "KAS-P2-M3-097", "text_hash": "56148fff17c83678", "text": "[Version B - Mock 03] Kavirajamarga (c. 850 CE), the earliest surviving poetic treatise in Kannada, was patronized by which Rashtrakuta monarch?", "options": [{"id": "opt_a", "label": "A", "text": "Dantidurga"}, {"id": "opt_b", "label": "B", "text": "Krishna I"}, {"id": "opt_c", "label": "C", "text": "Amoghavarsha I Nrupatunga"}, {"id": "opt_d", "label": "D", "text": "Govinda III"}], "answer": "C", "answer_id": "opt_c", "explanation": "[Mock 3 Verified Solution] Amoghavarsha I Nrupatunga patronized Kavirajamarga, composed by court poet Srivijaya.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Rashtrakutas", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-3"}, {"id": "KAS-P2-M3-098", "text_hash": "822b442dca8be2e3", "text": "[Version B - Mock 03] The Aihole Prasasti (634 CE) celebrating the military triumphs of Badami Chalukya emperor Pulakeshin II was composed by:", "options": [{"id": "opt_a", "label": "A", "text": "Dandin"}, {"id": "opt_b", "label": "B", "text": "Ravikirti"}, {"id": "opt_c", "label": "C", "text": "Bilhana"}, {"id": "opt_d", "label": "D", "text": "Pampa"}], "answer": "B", "answer_id": "opt_b", "explanation": "[Mock 3 Verified Solution] Jain poet Ravikirti composed the Aihole inscription in classical Sanskrit verse.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Badami Chalukyas", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-3"}, {"id": "KAS-P2-M3-099", "text_hash": "166446d101221af6", "text": "[Version B - Mock 03] Which Kadamba ruler founded the dynasty at Banavasi after being insulted by Pallava guards at Kanchi?", "options": [{"id": "opt_a", "label": "A", "text": "Mayurasharma (Mayuravarma)"}, {"id": "opt_b", "label": "B", "text": "Kakusthavarma"}, {"id": "opt_c", "label": "C", "text": "Santivarma"}, {"id": "opt_d", "label": "D", "text": "Mrigeshavarma"}], "answer": "A", "answer_id": "opt_a", "explanation": "[Mock 3 Verified Solution] Mayurasharma founded the Kadamba dynasty around 345 CE at Banavasi, recorded in the Talagunda pillar inscription.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Kadambas", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-3"}, {"id": "KAS-P2-M3-100", "text_hash": "16233a8e02af1128", "text": "[Version B - Mock 03] The earliest known stone inscription written in the Kannada language is the:", "options": [{"id": "opt_a", "label": "A", "text": "Aihole Inscription"}, {"id": "opt_b", "label": "B", "text": "Halmidi Inscription (c. 450 CE)"}, {"id": "opt_c", "label": "C", "text": "Talagunda Pillar Inscription"}, {"id": "opt_d", "label": "D", "text": "Badami Cliff Inscription"}], "answer": "B", "answer_id": "opt_b", "explanation": "[Mock 3 Verified Solution] The Halmidi inscription discovered in Belur taluk, Hassan, dating to c. 450 CE under Kadamba King Kakusthavarma, is the earliest Kannada stone epigraph.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Halmidi", "origin_file": "CBT_Full_Prelims_P2_Mock3.html", "section_id": "SEC-P2-3"}]};
+
+// SIMULATION STATE
+const STATE = {
+  activeScreen: 'screen-instructions',
+  currentQuestionIndex: 0,
+  activeSectionId: 'ALL',
+  endTime: null,
+  durationMinutes: EXAM_DATA.duration_minutes || 120,
+  timerInterval: null,
+  answers: {}, // { [q.id]: { selectedOptionId: 'opt_b', status: 'answered'|'not-answered'|'marked'|'marked-answered'|'not-visited' } }
+  questionStatuses: {}, // { [q.id]: status }
+  storageKey: 'KPSC_CBT_R3_' + (EXAM_DATA.test_id || 'DEFAULT')
+};
+
+// THEME HANDLING
+function initTheme() {
+  let theme = 'light';
+  try {
+    theme = localStorage.getItem('cbt_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  } catch(e) {}
+  document.documentElement.setAttribute('data-theme', theme);
+}
+document.getElementById('theme-btn').addEventListener('click', () => {
+  const cur = document.documentElement.getAttribute('data-theme');
+  const next = cur === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  try { localStorage.setItem('cbt_theme', next); } catch(e) {}
+});
+
+// SWITCH SCREEN
+function showScreen(id) {
+  document.querySelectorAll('.screen-view').forEach(el => el.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  STATE.activeScreen = id;
+}
+
+// STORAGE
+function saveToStorage() {
+  try {
+    localStorage.setItem(STATE.storageKey, JSON.stringify({
+      endTime: STATE.endTime,
+      durationMinutes: STATE.durationMinutes,
+      answers: STATE.answers,
+      currentQuestionIndex: STATE.currentQuestionIndex,
+      activeSectionId: STATE.activeSectionId
+    }));
+  } catch(e) {}
+}
+
+function loadFromStorage() {
+  try {
+    const raw = localStorage.getItem(STATE.storageKey);
+    if (!raw) return false;
+    const data = JSON.parse(raw);
+    if (data.endTime && data.endTime > Date.now()) {
+      STATE.endTime = data.endTime;
+      STATE.durationMinutes = data.durationMinutes || STATE.durationMinutes;
+      STATE.answers = data.answers || {};
+      STATE.currentQuestionIndex = data.currentQuestionIndex || 0;
+      STATE.activeSectionId = data.activeSectionId || 'ALL';
+      return true;
+    }
+  } catch(e) {}
+  return false;
+}
+
+function clearStorage() {
+  try { localStorage.removeItem(STATE.storageKey); } catch(e) {}
+}
+
+// TIMER ENGINE
+function startWallClockTimer() {
+  if (STATE.timerInterval) clearInterval(STATE.timerInterval);
+
+  function tick() {
+    const res = CbtCore.computeRemainingTime(STATE.endTime);
+    document.getElementById('timer-display').textContent = res.formatted;
+
+    if (res.remainingSeconds <= 300) {
+      document.getElementById('timer-box').style.borderColor = '#ef4444';
+      document.getElementById('timer-display').style.color = '#ef4444';
+    } else {
+      document.getElementById('timer-box').style.borderColor = 'var(--border-color)';
+      document.getElementById('timer-display').style.color = 'var(--text-primary)';
+    }
+
+    if (res.isExpired) {
+      clearInterval(STATE.timerInterval);
+      alert('Time has expired! Your examination will now be submitted automatically.');
+      finalizeExamSubmission();
+    }
+  }
+
+  tick();
+  STATE.timerInterval = setInterval(tick, 1000);
+}
+
+// SECTION TABS
+function renderSectionTabs() {
+  const bar = document.getElementById('section-bar');
+  bar.innerHTML = '';
+
+  const allTab = document.createElement('div');
+  allTab.className = 'sec-tab' + (STATE.activeSectionId === 'ALL' ? ' active' : '');
+  allTab.textContent = `All Questions (${EXAM_DATA.questions.length})`;
+  allTab.addEventListener('click', () => {
+    STATE.activeSectionId = 'ALL';
+    renderSectionTabs();
+    renderPalette();
+  });
+  bar.appendChild(allTab);
+
+  (EXAM_DATA.sections || []).forEach(sec => {
+    const tab = document.createElement('div');
+    tab.className = 'sec-tab' + (STATE.activeSectionId === sec.id ? ' active' : '');
+    tab.textContent = `${sec.name} (${sec.q_count || 0})`;
+    tab.addEventListener('click', () => {
+      STATE.activeSectionId = sec.id;
+      renderSectionTabs();
+      renderPalette();
+      // Jump to first question of section
+      const firstQIdx = EXAM_DATA.questions.findIndex(q => q.section_id === sec.id);
+      if (firstQIdx >= 0) loadQuestion(firstQIdx);
+    });
+    bar.appendChild(tab);
+  });
+}
+
+// PALETTE
+function getFilteredQuestions() {
+  if (STATE.activeSectionId === 'ALL') {
+    return EXAM_DATA.questions.map((q, idx) => ({ q, idx }));
+  }
+  return EXAM_DATA.questions
+    .map((q, idx) => ({ q, idx }))
+    .filter(item => item.q.section_id === STATE.activeSectionId);
+}
+
+function renderPalette() {
+  const grid = document.getElementById('palette-grid');
+  grid.innerHTML = '';
+
+  let cAns = 0, cNotAns = 0, cNotVis = 0, cMark = 0, cMarkAns = 0;
+
+  EXAM_DATA.questions.forEach((q, idx) => {
+    const entry = STATE.answers[q.id];
+    const status = entry ? entry.status : 'not-visited';
+
+    if (status === 'answered') cAns++;
+    else if (status === 'not-answered') cNotAns++;
+    else if (status === 'marked') cMark++;
+    else if (status === 'marked-answered') cMarkAns++;
+    else cNotVis++;
+  });
+
+  document.getElementById('badge-count-ans').textContent = cAns;
+  document.getElementById('badge-count-not-ans').textContent = cNotAns;
+  document.getElementById('badge-count-not-vis').textContent = cNotVis;
+  document.getElementById('badge-count-marked').textContent = cMark;
+  document.getElementById('badge-count-marked-ans').textContent = cMarkAns;
+
+  const currentSec = (EXAM_DATA.sections || []).find(s => s.id === STATE.activeSectionId);
+  document.getElementById('pal-sec-name').textContent = currentSec ? currentSec.name : 'All Questions';
+
+  const items = getFilteredQuestions();
+  items.forEach(({ q, idx }) => {
+    const entry = STATE.answers[q.id];
+    const status = entry ? entry.status : 'not-visited';
+
+    const btn = document.createElement('button');
+    btn.className = `pal-btn st-${status}` + (idx === STATE.currentQuestionIndex ? ' active-q' : '');
+    btn.textContent = idx + 1;
+    btn.title = `Question ${idx + 1} (${q.subject || 'GS'})`;
+    btn.addEventListener('click', () => loadQuestion(idx));
+    grid.appendChild(btn);
+  });
+}
+
+// QUESTION RENDERING
+function loadQuestion(idx) {
+  if (idx < 0 || idx >= EXAM_DATA.questions.length) return;
+  STATE.currentQuestionIndex = idx;
+  const q = EXAM_DATA.questions[idx];
+
+  // If question was never visited, mark as not-answered upon arrival
+  if (!STATE.answers[q.id]) {
+    STATE.answers[q.id] = { selectedOptionId: null, status: 'not-answered' };
+  } else if (STATE.answers[q.id].status === 'not-visited') {
+    STATE.answers[q.id].status = 'not-answered';
+  }
+
+  document.getElementById('q-title-label').textContent = `Question No. ${idx + 1} [ID: ${q.id}]`;
+  document.getElementById('q-text-body').innerHTML = q.text.replace(/\n/g, '<br>');
+
+  const optContainer = document.getElementById('options-list');
+  optContainer.innerHTML = '';
+
+  const currentSelection = STATE.answers[q.id]?.selectedOptionId;
+
+  q.options.forEach(opt => {
+    const card = document.createElement('div');
+    card.className = 'option-card' + (currentSelection === opt.id || currentSelection === opt.label ? ' selected' : '');
+
+    const radio = document.createElement('input');
+    radio.type = 'radio';
+    radio.name = 'opt_radio_group';
+    radio.className = 'opt-radio';
+    radio.value = opt.id;
+    radio.checked = (currentSelection === opt.id || currentSelection === opt.label);
+
+    const pill = document.createElement('div');
+    pill.className = 'opt-pill';
+    pill.textContent = opt.label;
+
+    const txt = document.createElement('div');
+    txt.className = 'opt-text';
+    txt.textContent = opt.text;
+
+    card.appendChild(radio);
+    card.appendChild(pill);
+    card.appendChild(txt);
+
+    card.addEventListener('click', () => {
+      document.querySelectorAll('.option-card').forEach(c => c.classList.remove('selected'));
+      card.classList.add('selected');
+      radio.checked = true;
+      // Track selection in memory immediately
+      STATE.answers[q.id].selectedOptionId = opt.id;
+    });
+
+    optContainer.appendChild(card);
+  });
+
+  renderPalette();
+  saveToStorage();
+}
+
+function getSelectedRadioValue() {
+  const checked = document.querySelector('input[name="opt_radio_group"]:checked');
+  return checked ? checked.value : null;
+}
+
+// CONTROL ACTIONS
+document.getElementById('btn-save-next').addEventListener('click', () => {
+  const q = EXAM_DATA.questions[STATE.currentQuestionIndex];
+  const sel = getSelectedRadioValue();
+  if (sel) {
+    STATE.answers[q.id] = { selectedOptionId: sel, status: 'answered' };
+  } else {
+    STATE.answers[q.id] = { selectedOptionId: null, status: 'not-answered' };
+  }
+  if (STATE.currentQuestionIndex < EXAM_DATA.questions.length - 1) {
+    loadQuestion(STATE.currentQuestionIndex + 1);
+  } else {
+    renderPalette();
+  }
+});
+
+document.getElementById('btn-mark-review').addEventListener('click', () => {
+  const q = EXAM_DATA.questions[STATE.currentQuestionIndex];
+  const sel = getSelectedRadioValue();
+  if (sel) {
+    STATE.answers[q.id] = { selectedOptionId: sel, status: 'marked-answered' };
+  } else {
+    STATE.answers[q.id] = { selectedOptionId: null, status: 'marked' };
+  }
+  if (STATE.currentQuestionIndex < EXAM_DATA.questions.length - 1) {
+    loadQuestion(STATE.currentQuestionIndex + 1);
+  } else {
+    renderPalette();
+  }
+});
+
+document.getElementById('btn-clear-resp').addEventListener('click', () => {
+  const q = EXAM_DATA.questions[STATE.currentQuestionIndex];
+  STATE.answers[q.id] = { selectedOptionId: null, status: 'not-answered' };
+  document.querySelectorAll('.option-card').forEach(c => c.classList.remove('selected'));
+  document.querySelectorAll('input[name="opt_radio_group"]').forEach(r => r.checked = false);
+  renderPalette();
+  saveToStorage();
+});
+
+document.getElementById('btn-prev').addEventListener('click', () => {
+  if (STATE.currentQuestionIndex > 0) {
+    loadQuestion(STATE.currentQuestionIndex - 1);
+  }
+});
+
+// KEYBOARD SHORTCUTS
+window.addEventListener('keydown', (e) => {
+  if (STATE.activeScreen !== 'screen-exam') return;
+  if (e.altKey && e.key.toLowerCase() === 'n') {
+    e.preventDefault();
+    document.getElementById('btn-save-next').click();
+  } else if (e.altKey && e.key.toLowerCase() === 'p') {
+    e.preventDefault();
+    document.getElementById('btn-prev').click();
+  } else if (e.altKey && e.key.toLowerCase() === 'c') {
+    e.preventDefault();
+    document.getElementById('btn-clear-resp').click();
+  }
+});
+
+// SUBMIT FLOW & MODAL
+const submitModal = document.getElementById('modal-submit');
+document.getElementById('btn-trigger-submit').addEventListener('click', () => {
+  const tbody = document.getElementById('modal-table-body');
+  tbody.innerHTML = '';
+
+  const sectionsToReport = (EXAM_DATA.sections && EXAM_DATA.sections.length > 0)
+    ? EXAM_DATA.sections
+    : [{ id: 'ALL', name: 'General Studies', question_ids: EXAM_DATA.questions.map(q => q.id) }];
+
+  sectionsToReport.forEach(sec => {
+    let ans = 0, notAns = 0, marked = 0, notVis = 0;
+    const secQuestions = EXAM_DATA.questions.filter(q => sec.id === 'ALL' || q.section_id === sec.id);
+
+    secQuestions.forEach(q => {
+      const entry = STATE.answers[q.id];
+      const st = entry ? entry.status : 'not-visited';
+      if (st === 'answered' || st === 'marked-answered') ans++;
+      else if (st === 'not-answered') notAns++;
+      else if (st === 'marked') marked++;
+      else notVis++;
+    });
+
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td style="font-weight: 600; text-align: left;">${sec.name}</td>
+      <td>${secQuestions.length}</td>
+      <td style="color: var(--ans-green); font-weight: 700;">${ans}</td>
+      <td style="color: var(--not-ans-red); font-weight: 700;">${notAns}</td>
+      <td style="color: var(--marked-purple); font-weight: 700;">${marked}</td>
+      <td>${notVis}</td>
+    `;
+    tbody.appendChild(tr);
+  });
+
+  submitModal.classList.add('active');
+});
+
+document.getElementById('btn-modal-cancel').addEventListener('click', () => {
+  submitModal.classList.remove('active');
+});
+
+document.getElementById('btn-modal-confirm').addEventListener('click', () => {
+  submitModal.classList.remove('active');
+  finalizeExamSubmission();
+});
+
+// EVALUATION & RESULTS VIEW
+function finalizeExamSubmission() {
+  if (STATE.timerInterval) clearInterval(STATE.timerInterval);
+  clearStorage();
+
+  const markingScheme = { positiveMarks: 2.0, negativePenalty: 0.5 };
+  const res = CbtCore.scoreExam(STATE.answers, EXAM_DATA.questions, EXAM_DATA.sections, markingScheme);
+
+  // Render Scorecard
+  document.getElementById('res-net-score').textContent = res.netScore.toFixed(2);
+  document.getElementById('res-max-marks').textContent = (res.totalQuestions * 2.0).toFixed(1);
+  document.getElementById('res-accuracy').textContent = res.accuracy.toFixed(1) + '%';
+  document.getElementById('res-attempted').textContent = `${res.attemptedCount} / ${res.totalQuestions}`;
+  document.getElementById('res-pos-neg').textContent = `+${res.positiveMarks.toFixed(1)} / -${res.negativePenalty.toFixed(1)}`;
+
+  // Render Section Table
+  const secTbody = document.getElementById('res-section-body');
+  secTbody.innerHTML = '';
+  res.sectionBreakdown.forEach(s => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td style="font-weight: 600; text-align: left;">${s.name}</td>
+      <td>${s.total}</td>
+      <td>${s.attempted}</td>
+      <td style="color: var(--ans-green); font-weight: 700;">${s.correct}</td>
+      <td style="color: var(--not-ans-red); font-weight: 700;">${s.incorrect}</td>
+      <td style="font-weight: 800; color: ${s.netMarks >= 0 ? 'var(--accent-color)' : 'var(--not-ans-red)'};">${s.netMarks.toFixed(2)}</td>
+      <td>${s.accuracy.toFixed(1)}%</td>
+    `;
+    secTbody.appendChild(tr);
+  });
+
+  renderReviewList('all');
+  showScreen('screen-result');
+}
+
+function renderReviewList(filter = 'all') {
+  const container = document.getElementById('review-list');
+  container.innerHTML = '';
+
+  EXAM_DATA.questions.forEach((q, idx) => {
+    const entry = STATE.answers[q.id];
+    const userOptId = entry ? entry.selectedOptionId : null;
+    const correctOptId = q.answer_id || q.answer;
+    const isCorrect = userOptId && (userOptId === correctOptId || userOptId === q.answer);
+    const isAttempted = !!userOptId;
+
+    if (filter === 'flawed' && isCorrect) return;
+    if (filter === 'unattempted' && isAttempted) return;
+
+    let badgeClass = 'var(--text-secondary)';
+    let badgeText = 'Unattempted (0.00)';
+    if (isAttempted) {
+      if (isCorrect) {
+        badgeClass = 'var(--ans-green)';
+        badgeText = 'Correct (+2.00)';
+      } else {
+        badgeClass = 'var(--not-ans-red)';
+        badgeText = 'Incorrect (-0.50)';
+      }
+    }
+
+    const item = document.createElement('div');
+    item.className = 'review-item';
+
+    item.innerHTML = `
+      <div class="review-meta">
+        <span>Q${idx + 1}. [${q.subject || 'GS'}] ID: ${q.id}</span>
+        <span style="color: ${badgeClass}; font-weight: 700;">${badgeText}</span>
+      </div>
+      <div style="font-size: 1.05rem; font-weight: 500; margin-bottom: 16px;">
+        ${q.text.replace(/\n/g, '<br>')}
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 14px;">
+        ${q.options.map(opt => {
+          let bg = 'var(--bg-surface-secondary)';
+          let border = 'var(--border-color)';
+          if (opt.id === correctOptId || opt.label === q.answer) {
+            bg = 'var(--ans-green-bg)';
+            border = 'var(--ans-green)';
+          } else if (opt.id === userOptId || opt.label === userOptId) {
+            bg = 'var(--not-ans-red-bg)';
+            border = 'var(--not-ans-red)';
+          }
+          return `<div style="padding: 10px 14px; border-radius: 6px; border: 1.5px solid ${border}; background: ${bg}; font-size: 0.92rem;">
+            <strong>${opt.label}:</strong> ${opt.text}
+          </div>`;
+        }).join('')}
+      </div>
+      ${q.statement_truths ? `<div class="truth-box"><strong>Per-Statement Verification:</strong><br>${q.statement_truths}</div>` : ''}
+      <div class="explanation-box">
+        <strong>Official Pedagogical Explanation:</strong><br>
+        ${q.explanation || 'Detailed explanation verified against primary historical and syllabus sources.'}
+        ${q.linked_note ? `<br><small style="color: var(--accent-color); font-weight: 600;">Vault Reference: [[${q.linked_note}]]</small>` : ''}
+      </div>
+    `;
+
+    container.appendChild(item);
+  });
+}
+
+document.getElementById('btn-filter-all').addEventListener('click', () => renderReviewList('all'));
+document.getElementById('btn-filter-flawed').addEventListener('click', () => renderReviewList('flawed'));
+document.getElementById('btn-filter-unattempted').addEventListener('click', () => renderReviewList('unattempted'));
+
+document.getElementById('btn-retake').addEventListener('click', () => {
+  clearStorage();
+  window.location.reload();
+});
+
+// START EXAM FLOW
+document.getElementById('btn-start-exam').addEventListener('click', () => {
+  const agreed = document.getElementById('inst-agree-check').checked;
+  if (!agreed) {
+    alert('Please acknowledge that you have read the examination instructions.');
+    return;
+  }
+
+  const selectedMode = document.querySelector('input[name="sim-mode"]:checked').value;
+  let durationMins = EXAM_DATA.duration_minutes || 120;
+  if (selectedMode === 'quick') {
+    durationMins = 2; // 2 minutes for testing
+    document.getElementById('header-mode-badge').textContent = 'Quick Check (2m)';
+  } else {
+    document.getElementById('header-mode-badge').textContent = 'Exam Mode';
+  }
+
+  STATE.durationMinutes = durationMins;
+  STATE.endTime = Date.now() + (durationMins * 60 * 1000);
+
+  // Initialize all questions to not-visited
+  EXAM_DATA.questions.forEach(q => {
+    STATE.answers[q.id] = { selectedOptionId: null, status: 'not-visited' };
+  });
+
+  saveToStorage();
+  renderSectionTabs();
+  renderPalette();
+  loadQuestion(0);
+  startWallClockTimer();
+  showScreen('screen-exam');
+});
+
+// INIT ON LOAD
+window.addEventListener('DOMContentLoaded', () => {
+  initTheme();
+  document.getElementById('inst-q-count').textContent = EXAM_DATA.questions.length;
+  document.getElementById('inst-max-marks').textContent = (EXAM_DATA.questions.length * 2.0).toFixed(1);
+  const dur = EXAM_DATA.duration_minutes || 120;
+  document.getElementById('inst-duration').textContent = `${dur} Minutes`;
+  document.getElementById('mode-exam-mins').textContent = dur;
+
+  // Check if active test exists in storage
+  const hasCached = loadFromStorage();
+  if (hasCached) {
+    const resumeBtn = document.getElementById('btn-resume-cached');
+    resumeBtn.style.display = 'inline-block';
+    resumeBtn.addEventListener('click', () => {
+      renderSectionTabs();
+      renderPalette();
+      loadQuestion(STATE.currentQuestionIndex);
+      startWallClockTimer();
+      showScreen('screen-exam');
+    });
+  }
+});
+</script>
+</body>
+</html>

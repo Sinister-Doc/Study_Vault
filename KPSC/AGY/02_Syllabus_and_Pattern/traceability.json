@@ -1,0 +1,705 @@
+[
+  {
+    "id": "P1-S1.1",
+    "text": "Current events of National importance.",
+    "notes": [
+      "[[2026-02_February]]",
+      "[[2026-03_March]]",
+      "[[2026-04_April]]",
+      "[[2026-05_May]]",
+      "[[2026-06_June]]",
+      "[[2026-07_July]]",
+      "[[2026-08_August]]",
+      "[[2026-09_September]]",
+      "[[2026-10_October]]"
+    ],
+    "pyq": 4,
+    "expected": 36,
+    "status": "covered"
+  },
+  {
+    "id": "P1-S1.2",
+    "text": "Current events of International importance.",
+    "notes": [
+      "[[India_Foreign_Policy_and_IR]]",
+      "[[2026-02_February]]",
+      "[[2026-03_March]]",
+      "[[2026-04_April]]",
+      "[[2026-05_May]]",
+      "[[2026-06_June]]",
+      "[[2026-07_July]]",
+      "[[2026-08_August]]",
+      "[[2026-09_September]]",
+      "[[2026-10_October]]"
+    ],
+    "pyq": 0,
+    "expected": 0,
+    "status": "covered"
+  },
+  {
+    "id": "P1-S2.1",
+    "text": "Humanities – History of India: Broad general understanding of the subject in its social, economic, cultural and political aspects.",
+    "notes": [
+      "[[Badami_Chalukyas_Architecture_and_Empire]]",
+      "[[Bahmani_and_Adil_Shahi_Sultanates]]",
+      "[[Early_Dynasties_Kadambas_and_Gangas]]",
+      "[[Freedom_Struggle_and_Armed_Revolts_in_Karnataka]]",
+      "[[Hoysalas_of_Dwarasamudra_and_Seunas]]",
+      "[[Kalyana_Chalukyas_Kalachuris_and_Vachana_Movement]]",
+      "[[Karnataka_Unification_Social_Reforms_and_Culture]]",
+      "[[Mysore_Kingdom_Wodeyars_and_Dewans]]",
+      "[[Nayakas_of_Keladi_and_Chitradurga]]",
+      "[[Prehistory_and_Protohistory_Karnataka]]",
+      "[[Rashtrakutas_of_Manyakheta_and_Kavirajamarga]]",
+      "[[Vijayanagara_Empire_Polity_and_Culture]]",
+      "[[Karnataka_History_Hub]]",
+      "[[Early Karnataka Dynasties - Quick Revision]]",
+      "[[Freedom Struggle in Karnataka - Quick Revision]]",
+      "[[Karnataka Unification and Social Movements - Quick Revision]]",
+      "[[Vijayanagara and Mysore Kingdom - Quick Revision]]",
+      "[[Ancient_Indian_Culture]]",
+      "[[Indian_History_Overview]]",
+      "[[Post_Independence_India]]"
+    ],
+    "pyq": 60,
+    "expected": 0,
+    "status": "covered"
+  },
+  {
+    "id": "P1-S2.2",
+    "text": "Indian national movement with special emphasis on Karnataka.",
+    "notes": [
+      "[[Badami_Chalukyas_Architecture_and_Empire]]",
+      "[[Bahmani_and_Adil_Shahi_Sultanates]]",
+      "[[Early_Dynasties_Kadambas_and_Gangas]]",
+      "[[Freedom_Struggle_and_Armed_Revolts_in_Karnataka]]",
+      "[[Hoysalas_of_Dwarasamudra_and_Seunas]]",
+      "[[Kalyana_Chalukyas_Kalachuris_and_Vachana_Movement]]",
+      "[[Karnataka_Unification_Social_Reforms_and_Culture]]",
+      "[[Mysore_Kingdom_Wodeyars_and_Dewans]]",
+      "[[Nayakas_of_Keladi_and_Chitradurga]]",
+      "[[Prehistory_and_Protohistory_Karnataka]]",
+      "[[Rashtrakutas_of_Manyakheta_and_Kavirajamarga]]",
+      "[[Vijayanagara_Empire_Polity_and_Culture]]",
+      "[[Karnataka_History_Hub]]",
+      "[[Early Karnataka Dynasties - Quick Revision]]",
+      "[[Freedom Struggle in Karnataka - Quick Revision]]",
+      "[[Karnataka Unification and Social Movements - Quick Revision]]",
+      "[[Vijayanagara and Mysore Kingdom - Quick Revision]]",
+      "[[Indian_History_Overview]]"
+    ],
+    "pyq": 0,
+    "expected": 0,
+    "status": "covered"
+  },
+  {
+    "id": "P1-S2.3",
+    "text": "World Geography with broad physical, economic and environmental aspects.",
+    "notes": [
+      "[[World_Physical_Geography]]",
+      "[[Karnataka_Geography_Hub]]"
+    ],
+    "pyq": 0,
+    "expected": 0,
+    "status": "covered"
+  },
+  {
+    "id": "P1-S2.4",
+    "text": "Geography of India with a focus on Karnataka physiography, rivers, climate, soils and resources.",
+    "notes": [
+      "[[Karnataka_Agro_Climatic_Zones_and_Agriculture]]",
+      "[[Karnataka_Climate_and_Rainfall_Patterns]]",
+      "[[Karnataka_Demography_Urbanisation_and_Infrastructure]]",
+      "[[Karnataka_Drainage_and_River_Basins]]",
+      "[[Karnataka_Forests_Wildlife_and_Biodiversity]]",
+      "[[Karnataka_Location_Physiography_and_Geology]]",
+      "[[Karnataka_Mineral_Resources_and_Energy]]",
+      "[[Karnataka_Soils_and_Land_Degradation]]",
+      "[[Karnataka_Geography_Hub]]",
+      "[[Karnataka Physiography and Rivers - Quick Revision]]"
+    ],
+    "pyq": 0,
+    "expected": 0,
+    "status": "covered"
+  },
+  {
+    "id": "P1-S2.5",
+    "text": "Indian polity including the country's political system, constitutional framework, organs of government.",
+    "notes": [
+      "[[Indian_Constitutional_System]]",
+      "[[Lokayukta_RTI_and_Sakala_Karnataka]]",
+      "[[Panchayati_Raj_and_Decentralization_Karnataka]]",
+      "[[Public_Administration_and_Governance]]"
+    ],
+    "pyq": 0,
+    "expected": 0,
+    "status": "covered"
+  },
+  {
+    "id": "P1-S2.6",
+    "text": "Indian economy, planning and economic reforms in India - sustainable development, NITI Aayog.",
+    "notes": [
+      "[[Indian_Economic_Planning_and_Reforms]]"
+    ],
+    "pyq": 0,
+    "expected": 0,
+    "status": "covered"
+  },
+  {
+    "id": "P1-S2.7",
+    "text": "Rural development, poverty alleviation, employment generation initiatives in India and Karnataka.",
+    "notes": [
+      "[[Poverty_and_Rural_Development]]"
+    ],
+    "pyq": 0,
+    "expected": 0,
+    "status": "covered"
+  },
+  {
+    "id": "P1-S2.8",
+    "text": "Demographics, social changes, healthcare, education, and social sector initiatives.",
+    "notes": [
+      "[[Karnataka_Demography_Urbanisation_and_Infrastructure]]",
+      "[[Indian_Social_System]]",
+      "[[Social_Welfare_and_Justice_Karnataka]]",
+      "[[Demographics_and_Social_Initiatives]]"
+    ],
+    "pyq": 0,
+    "expected": 0,
+    "status": "covered"
+  },
+  {
+    "id": "P2-S1.1",
+    "text": "Current events of Karnataka State importance.",
+    "notes": [
+      "[[Karnataka_Budget_and_Economic_Survey]]",
+      "[[Karnataka_Industrial_Policy_and_Infrastructure]]",
+      "[[2026-02_February]]",
+      "[[2026-03_March]]",
+      "[[2026-04_April]]",
+      "[[2026-05_May]]",
+      "[[2026-06_June]]",
+      "[[2026-07_July]]",
+      "[[2026-08_August]]",
+      "[[2026-09_September]]",
+      "[[2026-10_October]]"
+    ],
+    "pyq": 17,
+    "expected": 23,
+    "status": "covered"
+  },
+  {
+    "id": "P2-S1.2",
+    "text": "Important Karnataka State Government programmes, policies, and welfare schemes.",
+    "notes": [
+      "[[Karnataka_Agriculture_and_Irrigation]]",
+      "[[Karnataka_Budget_and_Economic_Survey]]",
+      "[[Karnataka_Flagship_Schemes]]"
+    ],
+    "pyq": 0,
+    "expected": 0,
+    "status": "covered"
+  },
+  {
+    "id": "P2-S2.1",
+    "text": "General Science & Technology – contemporary developments in S&T and their implications including matters of everyday observations and experience.",
+    "notes": [
+      "[[Environment_Biodiversity_Climate]]",
+      "[[Karnataka_IT_BT_and_Innovation]]",
+      "[[Science_and_Technology_Developments]]"
+    ],
+    "pyq": 16,
+    "expected": 14,
+    "status": "covered"
+  },
+  {
+    "id": "P2-S2.2",
+    "text": "General issues on Health, environmental ecology, biodiversity and climate change that do not require subject specialization.",
+    "notes": [
+      "[[Karnataka_Forests_Wildlife_and_Biodiversity]]",
+      "[[Environment_Biodiversity_Climate]]",
+      "[[Karnataka_Biodiversity_and_Western_Ghats]]",
+      "[[Public_Health_and_Sanitation_Karnataka]]"
+    ],
+    "pyq": 0,
+    "expected": 0,
+    "status": "covered"
+  },
+  {
+    "id": "P2-S3.1",
+    "text": "Reading Comprehension (Class X / SSLC level).",
+    "notes": [
+      "[[Reading_Comprehension]]"
+    ],
+    "pyq": 0,
+    "expected": 0,
+    "status": "covered"
+  },
+  {
+    "id": "P2-S3.2",
+    "text": "Logical reasoning and Analytical ability.",
+    "notes": [
+      "[[Logical_and_Analytical_Reasoning]]"
+    ],
+    "pyq": 0,
+    "expected": 0,
+    "status": "covered"
+  },
+  {
+    "id": "P2-S3.3",
+    "text": "Decision making and problem solving in administrative scenarios.",
+    "notes": [
+      "[[Decision_Making_Problem_Solving]]"
+    ],
+    "pyq": 0,
+    "expected": 0,
+    "status": "covered"
+  },
+  {
+    "id": "P2-S3.4",
+    "text": "Basic numeracy (numbers and their relations, order of magnitude etc.) (Class X / SSLC level).",
+    "notes": [
+      "[[Basic_Numeracy]]"
+    ],
+    "pyq": 28,
+    "expected": 2,
+    "status": "covered"
+  },
+  {
+    "id": "P2-S3.5",
+    "text": "Data interpretation (charts, graphs, tables, data sufficiency etc.) (Class X / SSLC level).",
+    "notes": [
+      "[[Data_Interpretation]]"
+    ],
+    "pyq": 0,
+    "expected": 0,
+    "status": "covered"
+  },
+  {
+    "id": "M-KAN.1",
+    "text": "Kannada Comprehension, Précis writing, Vocabulary & grammar, Translation, and Short Essay (SSLC First Language Standard).",
+    "notes": [
+      "[[Qualifying_Kannada_Preparation]]"
+    ],
+    "pyq": 0,
+    "expected": 0,
+    "status": "covered"
+  },
+  {
+    "id": "M-ENG.1",
+    "text": "English Comprehension, Précis writing, Vocabulary & usage, Translation, and Short Essay (SSLC First Language Standard).",
+    "notes": [
+      "[[Qualifying_English_Preparation]]"
+    ],
+    "pyq": 0,
+    "expected": 0,
+    "status": "covered"
+  },
+  {
+    "id": "M-ESS.1",
+    "text": "Descriptive essay on National and International issues (political, economic, socio-cultural, philosophical, strategic).",
+    "notes": [
+      "[[Essay_Frameworks]]"
+    ],
+    "pyq": 0,
+    "expected": 0,
+    "status": "covered"
+  },
+  {
+    "id": "M-ESS.2",
+    "text": "Descriptive essay on State of Karnataka or Regional / Local issues (governance, culture, rural development, economic growth).",
+    "notes": [
+      "[[Essay_Frameworks]]"
+    ],
+    "pyq": 0,
+    "expected": 0,
+    "status": "covered"
+  },
+  {
+    "id": "M-GS1-S1.1",
+    "text": "Cultural heritage of India: Indus Valley, Vedic period, heterodox religions, art, architecture, literature and science.",
+    "notes": [
+      "[[Badami_Chalukyas_Architecture_and_Empire]]",
+      "[[Bahmani_and_Adil_Shahi_Sultanates]]",
+      "[[Early_Dynasties_Kadambas_and_Gangas]]",
+      "[[Freedom_Struggle_and_Armed_Revolts_in_Karnataka]]",
+      "[[Hoysalas_of_Dwarasamudra_and_Seunas]]",
+      "[[Kalyana_Chalukyas_Kalachuris_and_Vachana_Movement]]",
+      "[[Karnataka_Unification_Social_Reforms_and_Culture]]",
+      "[[Mysore_Kingdom_Wodeyars_and_Dewans]]",
+      "[[Nayakas_of_Keladi_and_Chitradurga]]",
+      "[[Prehistory_and_Protohistory_Karnataka]]",
+      "[[Rashtrakutas_of_Manyakheta_and_Kavirajamarga]]",
+      "[[Vijayanagara_Empire_Polity_and_Culture]]",
+      "[[Karnataka_History_Hub]]",
+      "[[Early Karnataka Dynasties - Quick Revision]]",
+      "[[Freedom Struggle in Karnataka - Quick Revision]]",
+      "[[Karnataka Unification and Social Movements - Quick Revision]]",
+      "[[Vijayanagara and Mysore Kingdom - Quick Revision]]",
+      "[[Ancient_Indian_Culture]]",
+      "[[2026-02_February]]",
+      "[[2026-03_March]]",
+      "[[2026-04_April]]",
+      "[[2026-05_May]]",
+      "[[2026-06_June]]",
+      "[[2026-07_July]]",
+      "[[2026-08_August]]",
+      "[[2026-09_September]]",
+      "[[2026-10_October]]"
+    ],
+    "pyq": 0,
+    "expected": 0,
+    "status": "covered"
+  },
+  {
+    "id": "M-GS1-S1.2",
+    "text": "Dynasties of Karnataka: Kadambas, Gangas, Chalukyas of Badami & Kalyana, Rashtrakutas, Hoysalas - polity, architecture and society.",
+    "notes": [
+      "[[Badami_Chalukyas_Architecture_and_Empire]]",
+      "[[Early_Dynasties_Kadambas_and_Gangas]]",
+      "[[Hoysalas_of_Dwarasamudra_and_Seunas]]",
+      "[[Kalyana_Chalukyas_Kalachuris_and_Vachana_Movement]]",
+      "[[Prehistory_and_Protohistory_Karnataka]]",
+      "[[Rashtrakutas_of_Manyakheta_and_Kavirajamarga]]",
+      "[[Karnataka_History_Hub]]",
+      "[[Early Karnataka Dynasties - Quick Revision]]"
+    ],
+    "pyq": 0,
+    "expected": 0,
+    "status": "covered"
+  },
+  {
+    "id": "M-GS1-S1.3",
+    "text": "Vijayanagara Empire, Bahmani Sultanate, Adil Shahis of Bijapur, Nayakas of Keladi, Kingdom of Mysore (Wodeyars, Hyder Ali, Tipu Sultan).",
+    "notes": [
+      "[[Bahmani_and_Adil_Shahi_Sultanates]]",
+      "[[Mysore_Kingdom_Wodeyars_and_Dewans]]",
+      "[[Nayakas_of_Keladi_and_Chitradurga]]",
+      "[[Vijayanagara_Empire_Polity_and_Culture]]",
+      "[[Karnataka_History_Hub]]",
+      "[[Vijayanagara and Mysore Kingdom - Quick Revision]]"
+    ],
+    "pyq": 0,
+    "expected": 0,
+    "status": "covered"
+  },
+  {
+    "id": "M-GS1-S1.4",
+    "text": "Resistance against British rule in Karnataka (Kittur Chennamma, Sangolli Rayanna, Halagali Bedas) and freedom struggle in Karnataka.",
+    "notes": [
+      "[[Freedom_Struggle_and_Armed_Revolts_in_Karnataka]]",
+      "[[Karnataka_History_Hub]]",
+      "[[Freedom Struggle in Karnataka - Quick Revision]]"
+    ],
+    "pyq": 0,
+    "expected": 0,
+    "status": "covered"
+  },
+  {
+    "id": "M-GS1-S1.5",
+    "text": "Karnataka Unification Movement (ಏಕೀಕರಣ ಚಳವಳಿ) and post-independence social movements (backward classes, Dalit and farmer movements).",
+    "notes": [
+      "[[Karnataka_Unification_Social_Reforms_and_Culture]]",
+      "[[Karnataka_History_Hub]]",
+      "[[Karnataka Unification and Social Movements - Quick Revision]]"
+    ],
+    "pyq": 0,
+    "expected": 0,
+    "status": "covered"
+  },
+  {
+    "id": "M-GS1-S2.1",
+    "text": "Post-independent India: Partition, integration of princely states, linguistic reorganization, nation building, socio-economic changes.",
+    "notes": [
+      "[[Post_Independence_India]]"
+    ],
+    "pyq": 0,
+    "expected": 0,
+    "status": "covered"
+  },
+  {
+    "id": "M-GS1-S2.2",
+    "text": "Indian Social System: Caste, class, joint family, marriage, religion, rural social structure and agrarian relations.",
+    "notes": [
+      "[[Indian_Social_System]]",
+      "[[Demographics_and_Social_Initiatives]]"
+    ],
+    "pyq": 0,
+    "expected": 0,
+    "status": "covered"
+  },
+  {
+    "id": "M-GS1-S2.3",
+    "text": "Social problems and welfare measures for SC/ST, OBC, minorities, women, and children; Land reforms in Karnataka.",
+    "notes": [
+      "[[Social_Welfare_and_Justice_Karnataka]]"
+    ],
+    "pyq": 0,
+    "expected": 0,
+    "status": "covered"
+  },
+  {
+    "id": "M-GS1-S3.1",
+    "text": "Indian economic structure, growth trends, LPG reforms (1991), fiscal and monetary policies, planning and NITI Aayog.",
+    "notes": [
+      "[[Indian_Economic_Planning_and_Reforms]]"
+    ],
+    "pyq": 0,
+    "expected": 0,
+    "status": "covered"
+  },
+  {
+    "id": "M-GS1-S3.2",
+    "text": "Rural development, poverty alleviation strategies, employment generation schemes (MGNREGA), rural infrastructure and SHGs.",
+    "notes": [
+      "[[Poverty_and_Rural_Development]]"
+    ],
+    "pyq": 0,
+    "expected": 0,
+    "status": "covered"
+  },
+  {
+    "id": "M-GS1-S3.3",
+    "text": "Data collection, analysis and interpretation: Frequency distribution, measures of central tendency, dispersion, graphical representation.",
+    "notes": [
+      "[[Data_Interpretation]]"
+    ],
+    "pyq": 0,
+    "expected": 0,
+    "status": "covered"
+  },
+  {
+    "id": "M-GS2-S1.1",
+    "text": "Physical geography of World and India: Geomorphology, climatology, oceanography, natural vegetation, soils, and mineral resources.",
+    "notes": [
+      "[[World_Physical_Geography]]",
+      "[[Karnataka_Geography_Hub]]",
+      "[[2026-02_February]]",
+      "[[2026-03_March]]",
+      "[[2026-04_April]]",
+      "[[2026-05_May]]",
+      "[[2026-06_June]]",
+      "[[2026-07_July]]",
+      "[[2026-08_August]]",
+      "[[2026-09_September]]",
+      "[[2026-10_October]]"
+    ],
+    "pyq": 0,
+    "expected": 0,
+    "status": "covered"
+  },
+  {
+    "id": "M-GS2-S1.2",
+    "text": "Geography of Karnataka: Physiographic divisions, river basins (Krishna, Cauvery), climate, soils, irrigation projects, minerals and forests.",
+    "notes": [
+      "[[Karnataka_Agro_Climatic_Zones_and_Agriculture]]",
+      "[[Karnataka_Climate_and_Rainfall_Patterns]]",
+      "[[Karnataka_Demography_Urbanisation_and_Infrastructure]]",
+      "[[Karnataka_Drainage_and_River_Basins]]",
+      "[[Karnataka_Forests_Wildlife_and_Biodiversity]]",
+      "[[Karnataka_Location_Physiography_and_Geology]]",
+      "[[Karnataka_Mineral_Resources_and_Energy]]",
+      "[[Karnataka_Soils_and_Land_Degradation]]",
+      "[[Karnataka_Geography_Hub]]",
+      "[[Karnataka Physiography and Rivers - Quick Revision]]"
+    ],
+    "pyq": 0,
+    "expected": 0,
+    "status": "covered"
+  },
+  {
+    "id": "M-GS2-S2.1",
+    "text": "Indian Constitution: Preamble, Fundamental Rights, DPSPs, Fundamental Duties, Union and State Executive, Legislature, Judiciary.",
+    "notes": [
+      "[[Indian_Constitutional_System]]"
+    ],
+    "pyq": 0,
+    "expected": 0,
+    "status": "covered"
+  },
+  {
+    "id": "M-GS2-S2.2",
+    "text": "Federal structure, Center-State relations, 73rd and 74th Amendments, Karnataka Gram Swaraj and Panchayat Raj Act, Urban Local Bodies.",
+    "notes": [
+      "[[Panchayati_Raj_and_Decentralization_Karnataka]]"
+    ],
+    "pyq": 0,
+    "expected": 0,
+    "status": "covered"
+  },
+  {
+    "id": "M-GS2-S3.1",
+    "text": "Public Administration: Concepts, theories, civil services in democracy, administrative accountability, good governance.",
+    "notes": [
+      "[[Public_Administration_and_Governance]]"
+    ],
+    "pyq": 0,
+    "expected": 0,
+    "status": "covered"
+  },
+  {
+    "id": "M-GS2-S3.2",
+    "text": "Right to Information (RTI Act 2005), Karnataka Lokayukta Act, Citizens' Charters, Karnataka Sakala Services Act, e-governance.",
+    "notes": [
+      "[[Lokayukta_RTI_and_Sakala_Karnataka]]"
+    ],
+    "pyq": 0,
+    "expected": 0,
+    "status": "covered"
+  },
+  {
+    "id": "M-GS2-S3.3",
+    "text": "India's foreign policy, relations with neighbors and major powers, international and regional organizations (UN, G20, BRICS, SCO).",
+    "notes": [
+      "[[India_Foreign_Policy_and_IR]]"
+    ],
+    "pyq": 0,
+    "expected": 0,
+    "status": "covered"
+  },
+  {
+    "id": "M-GS3-S1.1",
+    "text": "S&T policy in India, premiere research institutions (DRDO, CSIR, ISRO, DAE), energy technology, nuclear programme, renewable energy.",
+    "notes": [
+      "[[Karnataka_Mineral_Resources_and_Energy]]",
+      "[[Science_and_Technology_Developments]]",
+      "[[2026-02_February]]",
+      "[[2026-03_March]]",
+      "[[2026-04_April]]",
+      "[[2026-05_May]]",
+      "[[2026-06_June]]",
+      "[[2026-07_July]]",
+      "[[2026-08_August]]",
+      "[[2026-09_September]]",
+      "[[2026-10_October]]"
+    ],
+    "pyq": 0,
+    "expected": 0,
+    "status": "covered"
+  },
+  {
+    "id": "M-GS3-S1.2",
+    "text": "Information Technology, Artificial Intelligence, Biotechnology applications, Karnataka IT/BT policy, startup ecosystem.",
+    "notes": [
+      "[[Karnataka_IT_BT_and_Innovation]]"
+    ],
+    "pyq": 0,
+    "expected": 0,
+    "status": "covered"
+  },
+  {
+    "id": "M-GS3-S2.1",
+    "text": "Ecology, Western Ghats biodiversity hotspot, wildlife sanctuaries, national parks in Karnataka, climate change mitigation, pollution control.",
+    "notes": [
+      "[[Karnataka_Forests_Wildlife_and_Biodiversity]]",
+      "[[Karnataka_Biodiversity_and_Western_Ghats]]"
+    ],
+    "pyq": 0,
+    "expected": 0,
+    "status": "covered"
+  },
+  {
+    "id": "M-GS3-S2.2",
+    "text": "Public health, communicable diseases, health missions, maternal and child healthcare, malnutrition, healthcare infrastructure in Karnataka.",
+    "notes": [
+      "[[Public_Health_and_Sanitation_Karnataka]]"
+    ],
+    "pyq": 0,
+    "expected": 0,
+    "status": "covered"
+  },
+  {
+    "id": "M-GS3-S3.1",
+    "text": "Agriculture in Karnataka: Cropping patterns, agro-climatic zones, dryland farming, agricultural marketing, irrigation projects.",
+    "notes": [
+      "[[Karnataka_Agro_Climatic_Zones_and_Agriculture]]",
+      "[[Karnataka_Geography_Hub]]",
+      "[[Karnataka_Agriculture_and_Irrigation]]"
+    ],
+    "pyq": 0,
+    "expected": 0,
+    "status": "covered"
+  },
+  {
+    "id": "M-GS3-S3.2",
+    "text": "Karnataka GSDP, sectoral contributions, Karnataka Budget 2026-27, Economic Survey 2025-26, Five Guarantee Schemes.",
+    "notes": [
+      "[[Karnataka_Budget_and_Economic_Survey]]",
+      "[[Karnataka_Flagship_Schemes]]"
+    ],
+    "pyq": 0,
+    "expected": 0,
+    "status": "covered"
+  },
+  {
+    "id": "M-GS3-S3.3",
+    "text": "Industrial policies of Karnataka, industrial corridors, SEZs, transport and energy infrastructure, urban development.",
+    "notes": [
+      "[[Karnataka_Demography_Urbanisation_and_Infrastructure]]",
+      "[[Karnataka_Industrial_Policy_and_Infrastructure]]"
+    ],
+    "pyq": 0,
+    "expected": 0,
+    "status": "covered"
+  },
+  {
+    "id": "M-GS4-S1.1",
+    "text": "Ethics: Essence, determinants and consequences of ethics in human action; dimensions of ethics; private and public relationships.",
+    "notes": [
+      "[[Ethics_and_Human_Interface]]"
+    ],
+    "pyq": 0,
+    "expected": 0,
+    "status": "covered"
+  },
+  {
+    "id": "M-GS4-S1.2",
+    "text": "Role of family and society in inculcating values; teachings of reformers (Basaveshwara, Kanakadasa, Swami Vivekananda, Ambedkar).",
+    "notes": [
+      "[[Great_Reformers_and_Moral_Thinkers]]"
+    ],
+    "pyq": 0,
+    "expected": 0,
+    "status": "covered"
+  },
+  {
+    "id": "M-GS4-S2.1",
+    "text": "Attitude: Structure and function; Foundational values of Civil Service: Integrity, impartiality, objectivity, empathy, compassion towards weaker sections.",
+    "notes": [
+      "[[Attitude_and_Civil_Service_Values]]"
+    ],
+    "pyq": 0,
+    "expected": 0,
+    "status": "covered"
+  },
+  {
+    "id": "M-GS4-S2.2",
+    "text": "Emotional intelligence: Concepts, utilities, and application in governance and administration.",
+    "notes": [
+      "[[Emotional_Intelligence_in_Administration]]"
+    ],
+    "pyq": 0,
+    "expected": 0,
+    "status": "covered"
+  },
+  {
+    "id": "M-GS4-S3.1",
+    "text": "Ethical dilemmas in public administration, laws and conscience as sources of guidance, probity in governance, anti-corruption, citizen charters.",
+    "notes": [
+      "[[Probity_in_Governance_and_Public_Funds]]"
+    ],
+    "pyq": 0,
+    "expected": 0,
+    "status": "covered"
+  },
+  {
+    "id": "M-GS4-S3.2",
+    "text": "Case studies on ethical dilemmas, corruption, disaster management, conflict of interest, public trust, and administrative integrity.",
+    "notes": [
+      "[[Ethics_Case_Studies_Framework]]"
+    ],
+    "pyq": 0,
+    "expected": 0,
+    "status": "covered"
+  }
+]

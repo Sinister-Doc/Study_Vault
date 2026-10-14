@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KPSC KAS Prelims Paper 1 — Mock2 (Full Mock) - KPSC KAS CBT Simulator</title>
+<style>
+:root {
+  --bg-primary: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-surface-secondary: #f1f5f9;
+  --border-color: #cbd5e1;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --accent-color: #2563eb;
+  --accent-hover: #1d4ed8;
+  --ans-green: #16a34a;
+  --ans-green-bg: #dcfce7;
+  --not-ans-red: #dc2626;
+  --not-ans-red-bg: #fee2e2;
+  --marked-purple: #9333ea;
+  --marked-purple-bg: #f3e8ff;
+  --not-visited-gray: #64748b;
+  --not-visited-gray-bg: #f1f5f9;
+  --header-height: 64px;
+}
+
+[data-theme="dark"] {
+  --bg-primary: #0b0f17;
+  --bg-surface: #131b26;
+  --bg-surface-secondary: #1a2433;
+  --border-color: #2b384e;
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --accent-color: #3b82f6;
+  --accent-hover: #60a5fa;
+  --ans-green: #22c55e;
+  --ans-green-bg: rgba(34, 197, 94, 0.15);
+  --not-ans-red: #ef4444;
+  --not-ans-red-bg: rgba(239, 68, 68, 0.15);
+  --marked-purple: #a855f7;
+  --marked-purple-bg: rgba(168, 85, 247, 0.15);
+  --not-visited-gray: #94a3b8;
+  --not-visited-gray-bg: #1e293b;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+/* SCREEN VISIBILITY */
+.screen-view { display: none; }
+.screen-view.active { display: block; }
+
+/* HEADER */
+.cbt-header {
+  height: var(--header-height);
+  background: var(--bg-surface);
+  border-bottom: 1.5px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+.header-left { display: flex; align-items: center; gap: 16px; }
+.exam-brand { font-size: 1.15rem; font-weight: 700; color: var(--accent-color); letter-spacing: -0.02em; }
+.badge-mode {
+  padding: 3px 10px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: var(--bg-surface-secondary);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+}
+.header-right { display: flex; align-items: center; gap: 20px; }
+.timer-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: var(--bg-surface-secondary);
+  border: 1.5px solid var(--border-color);
+  border-radius: 8px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.candidate-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+.theme-btn {
+  background: none;
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* INSTRUCTIONS SCREEN */
+.inst-container {
+  max-width: 900px;
+  margin: 32px auto;
+  padding: 32px;
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+}
+.inst-title { font-size: 1.6rem; font-weight: 800; margin-bottom: 8px; }
+.inst-subtitle { font-size: 1rem; color: var(--text-secondary); margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--border-color); }
+.inst-spec-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 28px;
+}
+.spec-card {
+  padding: 16px;
+  background: var(--bg-surface-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+}
+.spec-label { font-size: 0.8rem; color: var(--text-secondary); text-transform: uppercase; font-weight: 600; }
+.spec-value { font-size: 1.25rem; font-weight: 700; color: var(--text-primary); margin-top: 4px; }
+.inst-rules { margin-bottom: 28px; line-height: 1.7; font-size: 0.95rem; }
+.inst-rules h3 { margin: 16px 0 8px; font-size: 1.1rem; }
+.inst-rules ul { padding-left: 24px; margin-bottom: 12px; }
+.inst-mode-picker {
+  background: var(--bg-surface-secondary);
+  padding: 20px;
+  border-radius: 8px;
+  border: 1.5px solid var(--border-color);
+  margin-bottom: 28px;
+}
+.mode-picker-title { font-weight: 700; margin-bottom: 12px; }
+.mode-opt { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; cursor: pointer; }
+.inst-actions { display: flex; align-items: center; justify-content: space-between; padding-top: 20px; border-top: 1px solid var(--border-color); }
+.btn-primary {
+  background: var(--accent-color);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+.btn-primary:hover { background: var(--accent-hover); }
+
+/* EXAM MAIN CONTAINER */
+.exam-layout {
+  display: flex;
+  height: calc(100vh - var(--header-height));
+  overflow: hidden;
+}
+.exam-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  border-right: 1.5px solid var(--border-color);
+}
+.section-bar {
+  display: flex;
+  background: var(--bg-surface-secondary);
+  border-bottom: 1.5px solid var(--border-color);
+  padding: 0 16px;
+  overflow-x: auto;
+}
+.sec-tab {
+  padding: 12px 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  white-space: nowrap;
+}
+.sec-tab.active {
+  color: var(--accent-color);
+  border-bottom-color: var(--accent-color);
+  background: var(--bg-surface);
+}
+.q-viewport {
+  flex: 1;
+  padding: 28px 36px;
+  overflow-y: auto;
+}
+.q-meta-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-color);
+}
+.q-title { font-size: 1.15rem; font-weight: 700; color: var(--accent-color); }
+.q-marks-pill {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: var(--bg-surface-secondary);
+  border: 1px solid var(--border-color);
+}
+.q-text-body {
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+.options-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
+.option-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px 18px;
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border-color);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.option-card:hover { border-color: var(--accent-color); background: var(--bg-surface-secondary); }
+.option-card.selected {
+  border-color: var(--accent-color);
+  background: rgba(37, 99, 235, 0.08);
+}
+.opt-radio { margin-top: 4px; accent-color: var(--accent-color); cursor: pointer; }
+.opt-pill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--bg-surface-secondary);
+  border: 1px solid var(--border-color);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  flex-shrink: 0;
+}
+.option-card.selected .opt-pill {
+  background: var(--accent-color);
+  color: #ffffff;
+  border-color: var(--accent-color);
+}
+.opt-text { font-size: 0.98rem; color: var(--text-primary); flex: 1; }
+
+/* CONTROLS BAR */
+.controls-bar {
+  padding: 16px 24px;
+  background: var(--bg-surface);
+  border-top: 1.5px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.ctrl-left { display: flex; gap: 10px; }
+.ctrl-right { display: flex; gap: 10px; }
+.btn-ctrl {
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1.5px solid var(--border-color);
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  transition: all 0.15s ease;
+}
+.btn-ctrl:hover { background: var(--bg-surface-secondary); }
+.btn-save-next { background: var(--ans-green); color: #ffffff; border-color: var(--ans-green); }
+.btn-save-next:hover { opacity: 0.9; }
+.btn-mark { background: var(--marked-purple); color: #ffffff; border-color: var(--marked-purple); }
+.btn-mark:hover { opacity: 0.9; }
+.btn-submit-main { background: var(--accent-color); color: #ffffff; border-color: var(--accent-color); font-weight: 700; }
+
+/* SIDE PALETTE */
+.palette-sidebar {
+  width: 340px;
+  background: var(--bg-surface);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.palette-header {
+  padding: 16px;
+  border-bottom: 1px solid var(--border-color);
+}
+.palette-legend {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  font-size: 0.78rem;
+  margin-bottom: 12px;
+}
+.leg-item { display: flex; align-items: center; gap: 6px; }
+.leg-badge {
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.75rem;
+}
+.leg-ans { background: var(--ans-green); color: #ffffff; }
+.leg-not-ans { background: var(--not-ans-red); color: #ffffff; }
+.leg-marked { background: var(--marked-purple); color: #ffffff; }
+.leg-marked-ans { background: var(--marked-purple); color: #ffffff; position: relative; }
+.leg-marked-ans::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #22c55e;
+}
+.leg-not-vis { background: var(--not-visited-gray-bg); border: 1px solid var(--border-color); color: var(--text-secondary); }
+
+.palette-sec-title { font-size: 0.85rem; font-weight: 700; color: var(--text-secondary); margin-bottom: 6px; }
+.palette-grid-wrapper {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+}
+.palette-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+.pal-btn {
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  border: 1.5px solid var(--border-color);
+  background: var(--not-visited-gray-bg);
+  color: var(--not-visited-gray);
+  position: relative;
+}
+.pal-btn.active-q { outline: 2.5px solid var(--accent-color); outline-offset: 1px; }
+.pal-btn.st-answered { background: var(--ans-green); color: #ffffff; border-color: var(--ans-green); }
+.pal-btn.st-not-answered { background: var(--not-ans-red); color: #ffffff; border-color: var(--not-ans-red); }
+.pal-btn.st-marked { background: var(--marked-purple); color: #ffffff; border-color: var(--marked-purple); }
+.pal-btn.st-marked-answered { background: var(--marked-purple); color: #ffffff; border-color: var(--marked-purple); }
+.pal-btn.st-marked-answered::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #22c55e;
+  border: 1px solid #ffffff;
+}
+
+/* MODAL */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(2px);
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+}
+.modal-overlay.active { display: flex; }
+.modal-card {
+  width: 90%;
+  max-width: 640px;
+  background: var(--bg-surface);
+  border-radius: 12px;
+  border: 1.5px solid var(--border-color);
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+.modal-header { font-size: 1.25rem; font-weight: 700; margin-bottom: 16px; }
+.modal-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+}
+.modal-table th, .modal-table td {
+  padding: 8px 12px;
+  border: 1px solid var(--border-color);
+  text-align: center;
+}
+.modal-table th { background: var(--bg-surface-secondary); }
+.modal-actions { display: flex; justify-content: flex-end; gap: 12px; }
+
+/* RESULTS SCREEN */
+.res-container {
+  max-width: 1000px;
+  margin: 32px auto;
+  padding: 32px;
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border-color);
+  border-radius: 12px;
+}
+.scorecard-header {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.scorecard-card {
+  padding: 16px;
+  border-radius: 8px;
+  background: var(--bg-surface-secondary);
+  border: 1px solid var(--border-color);
+  text-align: center;
+}
+.scorecard-val { font-size: 1.75rem; font-weight: 800; color: var(--accent-color); margin-top: 4px; }
+.res-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 32px;
+  font-size: 0.92rem;
+}
+.res-table th, .res-table td {
+  padding: 10px 14px;
+  border: 1px solid var(--border-color);
+  text-align: center;
+}
+.res-table th { background: var(--bg-surface-secondary); }
+.review-item {
+  padding: 20px;
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border-color);
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+.review-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+.truth-box {
+  background: var(--bg-surface-secondary);
+  border-left: 4px solid var(--accent-color);
+  padding: 10px 14px;
+  font-size: 0.88rem;
+  margin: 12px 0;
+}
+.explanation-box {
+  background: rgba(37, 99, 235, 0.05);
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  border-radius: 6px;
+  padding: 12px 16px;
+  font-size: 0.9rem;
+  margin-top: 12px;
+}
+</style>
+</head>
+<body>
+
+<!-- CBT TOP HEADER -->
+<header class="cbt-header">
+  <div class="header-left">
+    <div class="exam-brand">KPSC KAS CBT</div>
+    <div class="badge-mode" id="header-mode-badge">Exam Mode</div>
+  </div>
+  <div class="header-right">
+    <div class="timer-box" id="timer-box">
+      <span id="timer-display">00:00:00</span>
+    </div>
+    <div class="candidate-pill">
+      <strong>Candidate:</strong> <span id="candidate-name">GM01</span>
+    </div>
+    <button class="theme-btn" id="theme-btn" title="Toggle Theme">Theme</button>
+  </div>
+</header>
+
+<!-- SCREEN 1: INSTRUCTIONS SCREEN -->
+<div class="screen-view active" id="screen-instructions">
+  <div class="inst-container">
+    <div class="inst-title">KPSC KAS Prelims Paper 1 — Mock2 (Full Mock)</div>
+    <div class="inst-subtitle">Official Computer-Based Test Simulator | Karnataka Public Service Commission (KPSC)</div>
+
+    <div class="inst-spec-grid">
+      <div class="spec-card">
+        <div class="spec-label">Total Questions</div>
+        <div class="spec-value" id="inst-q-count">100</div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-label">Maximum Marks</div>
+        <div class="spec-value" id="inst-max-marks">200.0</div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-label">Marking Scheme</div>
+        <div class="spec-value">+2.00 / -0.50</div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-label">Exam Duration</div>
+        <div class="spec-value" id="inst-duration">120 Minutes</div>
+      </div>
+    </div>
+
+    <div class="inst-mode-picker">
+      <div class="mode-picker-title">Select Simulation Duration Mode:</div>
+      <label class="mode-opt">
+        <input type="radio" name="sim-mode" value="exam" checked>
+        <div>
+          <strong>Standard Exam Mode</strong> — Full examination duration (<span id="mode-exam-mins">120</span> Minutes)
+        </div>
+      </label>
+      <label class="mode-opt">
+        <input type="radio" name="sim-mode" value="quick">
+        <div>
+          <strong>Quick Check Mode</strong> — Accelerated 2-Minute session (Ideal for validating timer, auto-submit & scoring)
+        </div>
+      </label>
+    </div>
+
+    <div class="inst-rules">
+      <h3>Instructions & Rules for the Candidate:</h3>
+      <ul>
+        <li>The clock is synchronized to an absolute wall-clock timestamp. It does not drift and persists across browser refreshes.</li>
+        <li>Each multiple-choice question offers 4 options. Exactly one option is correct.</li>
+        <li><strong>Negative Marking:</strong> Each incorrect answer incurs a penalty of <strong>0.50 marks</strong> (one-fourth of 2.00 marks). Unattempted questions carry zero penalty.</li>
+        <li>Questions marked for review <em>without selecting an option</em> will be evaluated as unattempted (0 marks).</li>
+        <li>Questions marked for review <em>with an option selected</em> will be evaluated for scoring.</li>
+        <li>You may switch between sections freely at any time using the section tabs.</li>
+      </ul>
+    </div>
+
+    <div style="margin-bottom: 24px;">
+      <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 0.95rem;">
+        <input type="checkbox" id="inst-agree-check" checked>
+        <span>I have read and understood all the instructions above and am ready to proceed.</span>
+      </label>
+    </div>
+
+    <div class="inst-actions">
+      <button class="btn-ctrl" id="btn-resume-cached" style="display:none;">Resume In-Progress Test</button>
+      <button class="btn-primary" id="btn-start-exam">I am ready to begin</button>
+    </div>
+  </div>
+</div>
+
+<!-- SCREEN 2: EXAM MAIN VIEW -->
+<div class="screen-view" id="screen-exam">
+  <div class="exam-layout">
+    <div class="exam-main">
+      <!-- Section Bar -->
+      <div class="section-bar" id="section-bar"></div>
+
+      <!-- Question Viewport -->
+      <div class="q-viewport">
+        <div class="q-meta-header">
+          <div class="q-title" id="q-title-label">Question No. 1</div>
+          <div class="q-marks-pill">Marks: +2.00 / -0.50</div>
+        </div>
+
+        <div class="q-text-body" id="q-text-body"></div>
+
+        <div class="options-list" id="options-list"></div>
+      </div>
+
+      <!-- Controls Bar -->
+      <div class="controls-bar">
+        <div class="ctrl-left">
+          <button class="btn-ctrl" id="btn-prev">Previous (Alt+P)</button>
+          <button class="btn-ctrl btn-mark" id="btn-mark-review">Mark for Review & Next</button>
+          <button class="btn-ctrl" id="btn-clear-resp">Clear Response (Alt+C)</button>
+        </div>
+        <div class="ctrl-right">
+          <button class="btn-ctrl btn-save-next" id="btn-save-next">Save & Next (Alt+N)</button>
+          <button class="btn-ctrl btn-submit-main" id="btn-trigger-submit">Submit Test</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Side Palette -->
+    <div class="palette-sidebar">
+      <div class="palette-header">
+        <div class="palette-legend">
+          <div class="leg-item"><div class="leg-badge leg-ans" id="badge-count-ans">0</div> Answered</div>
+          <div class="leg-item"><div class="leg-badge leg-not-ans" id="badge-count-not-ans">0</div> Not Answered</div>
+          <div class="leg-item"><div class="leg-badge leg-not-vis" id="badge-count-not-vis">0</div> Not Visited</div>
+          <div class="leg-item"><div class="leg-badge leg-marked" id="badge-count-marked">0</div> Marked</div>
+          <div class="leg-item" style="grid-column: span 2;"><div class="leg-badge leg-marked-ans" id="badge-count-marked-ans">0</div> Answered & Marked</div>
+        </div>
+        <div class="palette-sec-title" id="pal-sec-name">Section: All Questions</div>
+      </div>
+
+      <div class="palette-grid-wrapper">
+        <div class="palette-grid" id="palette-grid"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SUBMIT CONFIRMATION MODAL -->
+<div class="modal-overlay" id="modal-submit">
+  <div class="modal-card">
+    <div class="modal-header">Confirm Exam Submission</div>
+    <table class="modal-table">
+      <thead>
+        <tr>
+          <th>Section</th>
+          <th>Total</th>
+          <th>Answered</th>
+          <th>Not Answered</th>
+          <th>Marked</th>
+          <th>Not Visited</th>
+        </tr>
+      </thead>
+      <tbody id="modal-table-body"></tbody>
+    </table>
+    <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 20px;">
+      Are you sure you want to submit your examination? Once submitted, answers cannot be edited.
+    </p>
+    <div class="modal-actions">
+      <button class="btn-ctrl" id="btn-modal-cancel">Return to Exam</button>
+      <button class="btn-primary" id="btn-modal-confirm">Confirm & Submit</button>
+    </div>
+  </div>
+</div>
+
+<!-- SCREEN 3: RESULTS & REVIEW VIEW -->
+<div class="screen-view" id="screen-result">
+  <div class="res-container">
+    <h2 style="margin-bottom: 8px;">Examination Performance Scorecard</h2>
+    <p style="color: var(--text-secondary); margin-bottom: 24px;" id="res-test-title">KPSC KAS Prelims Paper 1 — Mock2 (Full Mock)</p>
+
+    <div class="scorecard-header">
+      <div class="scorecard-card">
+        <div class="spec-label">Net Score</div>
+        <div class="scorecard-val" id="res-net-score">0.00</div>
+        <div style="font-size: 0.8rem; color: var(--text-secondary);">Out of <span id="res-max-marks">200.0</span></div>
+      </div>
+      <div class="scorecard-card">
+        <div class="spec-label">Accuracy</div>
+        <div class="scorecard-val" id="res-accuracy">0.0%</div>
+      </div>
+      <div class="scorecard-card">
+        <div class="spec-label">Attempted</div>
+        <div class="scorecard-val" id="res-attempted">0 / 100</div>
+      </div>
+      <div class="scorecard-card">
+        <div class="spec-label">Positive / Penalty</div>
+        <div class="scorecard-val" style="font-size: 1.2rem; color: var(--text-primary);" id="res-pos-neg">+0.0 / -0.0</div>
+      </div>
+    </div>
+
+    <h3 style="margin-bottom: 12px;">Sectional Performance Breakdown</h3>
+    <table class="res-table">
+      <thead>
+        <tr>
+          <th>Section</th>
+          <th>Total Qs</th>
+          <th>Attempted</th>
+          <th>Correct</th>
+          <th>Incorrect</th>
+          <th>Net Marks</th>
+          <th>Accuracy</th>
+        </tr>
+      </thead>
+      <tbody id="res-section-body"></tbody>
+    </table>
+
+    <div style="display: flex; justify-content: space-between; align-items: center; margin: 32px 0 16px;">
+      <h3>Question Review & Pedagogical Verification</h3>
+      <div style="display: flex; gap: 8px;">
+        <button class="btn-ctrl" id="btn-filter-all">All Questions</button>
+        <button class="btn-ctrl" id="btn-filter-flawed">Incorrect Only</button>
+        <button class="btn-ctrl" id="btn-filter-unattempted">Unattempted Only</button>
+      </div>
+    </div>
+
+    <div id="review-list"></div>
+
+    <div style="margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border-color); display: flex; justify-content: flex-end;">
+      <button class="btn-primary" id="btn-retake">Restart Simulation</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// PURE CBT ENGINE CORE
+const CbtCore = {
+  scoreExam(answers, questions, sections, markingScheme) {
+    const posMark = (markingScheme && markingScheme.positiveMarks !== undefined) ? markingScheme.positiveMarks : 2.0;
+    const negPenalty = (markingScheme && markingScheme.negativePenalty !== undefined) ? markingScheme.negativePenalty : 0.5;
+
+    let totalQuestions = questions.length;
+    let correctCount = 0;
+    let incorrectCount = 0;
+    let unattemptedCount = 0;
+    let markedCount = 0;
+
+    const sectionMap = {};
+    if (sections && sections.length > 0) {
+      sections.forEach(s => {
+        sectionMap[s.id || s.name] = {
+          id: s.id || s.name,
+          name: s.name,
+          total: 0,
+          attempted: 0,
+          correct: 0,
+          incorrect: 0,
+          unattempted: 0,
+          positiveMarks: 0,
+          negativePenalty: 0,
+          netMarks: 0,
+          accuracy: 0
+        };
+      });
+    }
+
+    const topicMap = {};
+
+    questions.forEach(q => {
+      const qSectionKey = q.section_id || (q.section ? q.section.id || q.section.name : null);
+      let secTracker = qSectionKey && sectionMap[qSectionKey] ? sectionMap[qSectionKey] : null;
+      if (!secTracker && sections && sections.length > 0) {
+        for (const s of sections) {
+          if (s.question_ids && s.question_ids.includes(q.id)) {
+            secTracker = sectionMap[s.id || s.name];
+            break;
+          }
+        }
+      }
+
+      const subjectKey = q.subject || 'General Studies';
+      if (!topicMap[subjectKey]) {
+        topicMap[subjectKey] = {
+          subject: subjectKey,
+          total: 0,
+          attempted: 0,
+          correct: 0,
+          incorrect: 0,
+          unattempted: 0,
+          netMarks: 0
+        };
+      }
+      const topTracker = topicMap[subjectKey];
+
+      if (secTracker) secTracker.total++;
+      topTracker.total++;
+
+      const userAns = answers ? answers[q.id] : null;
+      const selectedOptionId = userAns ? userAns.selectedOptionId : null;
+      const status = userAns ? userAns.status : 'not-visited';
+
+      if (status === 'marked' || status === 'marked-answered') {
+        markedCount++;
+      }
+
+      const isAttempted = !!selectedOptionId;
+
+      if (!isAttempted) {
+        unattemptedCount++;
+        if (secTracker) secTracker.unattempted++;
+        topTracker.unattempted++;
+      } else {
+        const correctOptId = q.answer_id || q.answer;
+        const isCorrect = (selectedOptionId === correctOptId || selectedOptionId === q.answer);
+
+        if (isCorrect) {
+          correctCount++;
+          if (secTracker) {
+            secTracker.attempted++;
+            secTracker.correct++;
+            secTracker.positiveMarks += posMark;
+          }
+          topTracker.attempted++;
+          topTracker.correct++;
+          topTracker.netMarks += posMark;
+        } else {
+          incorrectCount++;
+          if (secTracker) {
+            secTracker.attempted++;
+            secTracker.incorrect++;
+            secTracker.negativePenalty += negPenalty;
+          }
+          topTracker.attempted++;
+          topTracker.incorrect++;
+          topTracker.netMarks -= negPenalty;
+        }
+      }
+    });
+
+    const attemptedCount = correctCount + incorrectCount;
+    const positiveMarks = correctCount * posMark;
+    const negativePenalty = incorrectCount * negPenalty;
+    const netScore = positiveMarks - negativePenalty; // Exact raw score, NOT clamped
+    const accuracy = attemptedCount > 0 ? Number(((correctCount / attemptedCount) * 100).toFixed(2)) : 0;
+
+    const sectionBreakdown = Object.values(sectionMap).map(sec => {
+      sec.netMarks = Number((sec.positiveMarks - sec.negativePenalty).toFixed(2));
+      sec.accuracy = sec.attempted > 0 ? Number(((sec.correct / sec.attempted) * 100).toFixed(2)) : 0;
+      return sec;
+    });
+
+    const topicBreakdown = Object.values(topicMap).map(top => {
+      top.netMarks = Number(top.netMarks.toFixed(2));
+      top.accuracy = top.attempted > 0 ? Number(((top.correct / top.attempted) * 100).toFixed(2)) : 0;
+      return top;
+    });
+
+    return {
+      totalQuestions,
+      attemptedCount,
+      unattemptedCount,
+      correctCount,
+      incorrectCount,
+      markedCount,
+      positiveMarks: Number(positiveMarks.toFixed(2)),
+      negativePenalty: Number(negativePenalty.toFixed(2)),
+      netScore: Number(netScore.toFixed(2)),
+      accuracy,
+      sectionBreakdown,
+      topicBreakdown
+    };
+  },
+
+  computeRemainingTime(endTime, now) {
+    const current = (now !== undefined) ? now : Date.now();
+    const diffMs = endTime - current;
+    if (diffMs <= 0) {
+      return { remainingSeconds: 0, isExpired: true, formatted: "00:00:00" };
+    }
+    const totalSecs = Math.round(diffMs / 1000);
+    const hrs = Math.floor(totalSecs / 3600);
+    const mins = Math.floor((totalSecs % 3600) / 60);
+    const secs = totalSecs % 60;
+    const formatted = `${String(hrs).padStart(2, '0')}:${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+    return { remainingSeconds: totalSecs, isExpired: false, formatted };
+  }
+};
+
+// EMBEDDED EXAM PAYLOAD
+const EXAM_DATA = {"test_id": "CBT_Full_Prelims_P1_Mock2", "title": "KPSC KAS Prelims Paper 1 — Mock2 (Full Mock)", "paper": "Paper 1 (Current Events + Humanities)", "duration_minutes": 120, "positive_marks": 2.0, "negative_penalty": 0.5, "sections": [{"id": "SEC-P1-1", "name": "Section 1: Current Events (National & Int.)", "q_count": 40}, {"id": "SEC-P1-2", "name": "Section 2: Humanities (History, Geo, Polity, Econ)", "q_count": 60}], "questions": [{"id": "KAS-P1-M2-CA-001", "text_hash": "02221df0c78f7f87", "text": "In the landmark case of State of Punjab v. Davinder Singh (August 2024), a 7-judge Constitution Bench of the Supreme Court held that:", "options": [{"id": "opt_a", "label": "A", "text": "State governments have no power to create internal reservations within Scheduled Castes."}, {"id": "opt_b", "label": "B", "text": "State governments possess constitutional authority under Articles 15(4) and 16(4) to sub-classify Scheduled Castes based on empirical data."}, {"id": "opt_c", "label": "C", "text": "The creamy layer concept can never be applied to Scheduled Castes."}, {"id": "opt_d", "label": "D", "text": "E.V. Chinnaiah v. State of Andhra Pradesh was correctly decided."}], "answer": "B", "answer_id": "opt_b", "explanation": "The 7-judge bench by a 6-1 majority overruled E.V. Chinnaiah (2004) and held that states can sub-classify SCs.", "statement_truths": "Statement 1 is False; Statement 2 is True; Statement 3 is False.", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "2026-08_August", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-M2-CA-002", "text_hash": "f1c51a0c97394ae5", "text": "Which of the following statements regarding the Yettinahole Integrated Drinking Water Project is/are correct?\n1. It diverts excess monsoon runoff from 8 streams in the Netravati river basin.\n2. Phase 1 trial run was inaugurated in September 2024 at Sakleshpura.\n3. The project supplies drinking water exclusively to Coastal Karnataka.", "options": [{"id": "opt_a", "label": "A", "text": "1 and 2 only"}, {"id": "opt_b", "label": "B", "text": "2 and 3 only"}, {"id": "opt_c", "label": "C", "text": "1 and 3 only"}, {"id": "opt_d", "label": "D", "text": "1, 2 and 3"}], "answer": "A", "answer_id": "opt_a", "explanation": "Statement 3 is incorrect as the project supplies water to 7 drought-prone districts in South Interior Karnataka, not coastal areas.", "statement_truths": "1: True | 2: True | 3: False", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "2026-09_September", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-M2-CA-003", "text_hash": "b14252884cc98a36", "text": "The Trade and Economic Partnership Agreement (TEPA) signed between India and the European Free Trade Association (EFTA) in March 2024 features an investment commitment of:", "options": [{"id": "opt_a", "label": "A", "text": "$25 Billion over 5 years"}, {"id": "opt_b", "label": "B", "text": "$50 Billion over 10 years"}, {"id": "opt_c", "label": "C", "text": "$100 Billion over 15 years"}, {"id": "opt_d", "label": "D", "text": "$200 Billion over 20 years"}], "answer": "C", "answer_id": "opt_c", "explanation": "EFTA committed to invest $100 Billion in India over 15 years, creating 1 million direct jobs.", "statement_truths": "Factually verified via Commerce Ministry TEPA text.", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "2026-03_March", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-M2-CA-004", "text_hash": "42a36296243d9b44", "text": "Under the Bharatiya Nagarik Suraksha Sanhita (BNSS), 2023, which of the following is mandatory for crimes punishable by imprisonment of 7 years or more?", "options": [{"id": "opt_a", "label": "A", "text": "Trial by jury"}, {"id": "opt_b", "label": "B", "text": "Audio-video recording of search and seizure operations and forensic examination"}, {"id": "opt_c", "label": "C", "text": "Immediate death penalty without appeal"}, {"id": "opt_d", "label": "D", "text": "Bail without surety"}], "answer": "B", "answer_id": "opt_b", "explanation": "Section 105 BNSS mandates audio-video recording of searches and mandatory forensic collection.", "statement_truths": "BNSS statutory procedural requirement.", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "2026-07_July", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-M2-CA-005", "text_hash": "5dcb396bab5c30d7", "text": "Consider the following statements regarding the 2024 Bharat Ratna awards:\n1. A record five individuals were conferred the Bharat Ratna in 2024.\n2. L.K. Advani was the only living recipient among the five.\n3. Dr. M.S. Swaminathan was posthumously conferred the award.", "options": [{"id": "opt_a", "label": "A", "text": "1 and 2 only"}, {"id": "opt_b", "label": "B", "text": "2 and 3 only"}, {"id": "opt_c", "label": "C", "text": "1 and 3 only"}, {"id": "opt_d", "label": "D", "text": "1, 2 and 3"}], "answer": "D", "answer_id": "opt_d", "explanation": "All three statements are correct: Thakur, Advani, Rao, Singh, and Swaminathan received the award.", "statement_truths": "1: True | 2: True | 3: True", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "2026-02_February", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-M2-CA-006", "text_hash": "d12df8413679ac34", "text": "In the M.K. Ranjitsinh v. Union of India case (2024), the Supreme Court recognized the Right to be Free from Adverse Effects of Climate Change as grounded in:", "options": [{"id": "opt_a", "label": "A", "text": "Article 19(1)(a) only"}, {"id": "opt_b", "label": "B", "text": "Article 21 and Article 14"}, {"id": "opt_c", "label": "C", "text": "Article 32 and Article 226"}, {"id": "opt_d", "label": "D", "text": "Article 51A(g) alone"}], "answer": "B", "answer_id": "opt_b", "explanation": "The 3-judge bench led by CJI Chandrachud grounded climate resilience in the intersection of Art 21 and Art 14.", "statement_truths": "Direct Supreme Court constitutional ruling.", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "2026-04_April", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-M2-CA-007", "text_hash": "3187ee837e1ee6fa", "text": "India's second indigenous nuclear-powered ballistic missile submarine (SSBN) commissioned in August 2024 is:", "options": [{"id": "opt_a", "label": "A", "text": "INS Arihant"}, {"id": "opt_b", "label": "B", "text": "INS Arighat"}, {"id": "opt_c", "label": "C", "text": "INS Chakra"}, {"id": "opt_d", "label": "D", "text": "INS Kalvari"}], "answer": "B", "answer_id": "opt_b", "explanation": "INS Arighat (S3) was commissioned by Raksha Mantri Rajnath Singh on August 29, 2024.", "statement_truths": "Ministry of Defence communique.", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "2026-08_August", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-M2-CA-008", "text_hash": "f68f7055891c77ef", "text": "Which historical burial site from Assam was inscribed as India's 43rd UNESCO World Heritage Site in July 2024?", "options": [{"id": "opt_a", "label": "A", "text": "Majuli Island"}, {"id": "opt_b", "label": "B", "text": "Charaideo Moidams"}, {"id": "opt_c", "label": "C", "text": "Rang Ghar"}, {"id": "opt_d", "label": "D", "text": "Talatal Ghar"}], "answer": "B", "answer_id": "opt_b", "explanation": "Charaideo Moidams (Ahom dynasty royal burial mounds) became India's 43rd World Heritage site.", "statement_truths": "UNESCO 46th Session New Delhi.", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "2026-07_July", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-M2-CA-009", "text_hash": "f5313360729d3494", "text": "The Nobel Prize in Physics 2024 was awarded to John J. Hopfield and Geoffrey E. Hinton for:", "options": [{"id": "opt_a", "label": "A", "text": "Discovery of gravitational waves"}, {"id": "opt_b", "label": "B", "text": "Foundational discoveries that enable machine learning with artificial neural networks"}, {"id": "opt_c", "label": "C", "text": "Invention of blue light-emitting diodes"}, {"id": "opt_d", "label": "D", "text": "Discovery of the Higgs boson"}], "answer": "B", "answer_id": "opt_b", "explanation": "Nobel Foundation recognized Hopfield and Hinton for foundational artificial neural network work.", "statement_truths": "Nobel Prize official citation.", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "2026-10_October", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-M2-CA-010", "text_hash": "1f9905837c85565a", "text": "In the Sita Soren v. Union of India judgment (March 2024), a 7-judge bench of the Supreme Court held that:", "options": [{"id": "opt_a", "label": "A", "text": "MPs and MLAs are completely immune from bribery prosecution under Article 105 and 194."}, {"id": "opt_b", "label": "B", "text": "Parliamentary immunity does not protect legislators who accept bribes to cast a vote or give a speech."}, {"id": "opt_c", "label": "C", "text": "Only the Speaker has the power to try a bribe-taking legislator."}, {"id": "opt_d", "label": "D", "text": "P.V. Narasimha Rao (1998) was reaffirmed in full."}], "answer": "B", "answer_id": "opt_b", "explanation": "The 7-judge bench unanimously overruled the 1998 P.V. Narasimha Rao judgment.", "statement_truths": "Supreme Court constitutional bench ruling.", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "2026-03_March", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-M2-CA-011", "text_hash": "ad64845131376e0e", "text": "The 'Unified Pension Scheme' (UPS) approved by the Union Cabinet in August 2024 guarantees a pension of what percentage of average basic pay?", "options": [{"id": "opt_a", "label": "A", "text": "40%"}, {"id": "opt_b", "label": "B", "text": "50%"}, {"id": "opt_c", "label": "C", "text": "60%"}, {"id": "opt_d", "label": "D", "text": "75%"}], "answer": "B", "answer_id": "opt_b", "explanation": "The UPS guarantees 50% of the average basic pay drawn over the last 12 months for 25 years qualifying service.", "statement_truths": "2026-08_August", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-M2-CA-012", "text_hash": "f9dc8f702bfa0ba7", "text": "India won historic double gold medals in both Open and Women's categories at the 45th Chess Olympiad in 2024 held in which city?", "options": [{"id": "opt_a", "label": "A", "text": "Chennai, India"}, {"id": "opt_b", "label": "B", "text": "Budapest, Hungary"}, {"id": "opt_c", "label": "C", "text": "Baku, Azerbaijan"}, {"id": "opt_d", "label": "D", "text": "Batumi, Georgia"}], "answer": "B", "answer_id": "opt_b", "explanation": "The 45th FIDE Chess Olympiad was held in Budapest, Hungary.", "statement_truths": "2026-09_September", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-M2-CA-013", "text_hash": "6471caaacbd73a58", "text": "Under the Karnataka Platform-Based Gig Workers Bill 2024, the proposed welfare fee per transaction is:", "options": [{"id": "opt_a", "label": "A", "text": "0.1% to 0.5%"}, {"id": "opt_b", "label": "B", "text": "1% to 2%"}, {"id": "opt_c", "label": "C", "text": "5% to 7%"}, {"id": "opt_d", "label": "D", "text": "10% flat"}], "answer": "B", "answer_id": "opt_b", "explanation": "The bill specifies a transaction-level welfare fee of 1% to 2%.", "statement_truths": "2026-03_March", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-M2-CA-014", "text_hash": "26d19a996f141711", "text": "In March 2024, which country formally acceded to NATO as its 32nd member state?", "options": [{"id": "opt_a", "label": "A", "text": "Finland"}, {"id": "opt_b", "label": "B", "text": "Sweden"}, {"id": "opt_c", "label": "C", "text": "Ukraine"}, {"id": "opt_d", "label": "D", "text": "Georgia"}], "answer": "B", "answer_id": "opt_b", "explanation": "Sweden formally joined NATO on March 7, 2024 as the 32nd member state.", "statement_truths": "2026-03_March", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-M2-CA-015", "text_hash": "17449c3ece20777e", "text": "Which space tech startup launched 'Agnibaan SOrTeD', featuring the world's first single-piece 3D-printed engine, from a private launchpad at Sriharikota?", "options": [{"id": "opt_a", "label": "A", "text": "Skyroot Aerospace"}, {"id": "opt_b", "label": "B", "text": "Agnikul Cosmos"}, {"id": "opt_c", "label": "C", "text": "Pixxel"}, {"id": "opt_d", "label": "D", "text": "Bellatrix Aerospace"}], "answer": "B", "answer_id": "opt_b", "explanation": "Agnikul Cosmos launched Agnibaan SOrTeD from their Dhanush private pad.", "statement_truths": "2026-05_May", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-M2-CA-016", "text_hash": "6b2a3986cdfc04dc", "text": "Which of the following wetlands in Karnataka was inscribed as a Ramsar site in 2024 as a major wintering habitat for Bar-headed Geese?", "options": [{"id": "opt_a", "label": "A", "text": "Ranganathittu"}, {"id": "opt_b", "label": "B", "text": "Magadi Kere"}, {"id": "opt_c", "label": "C", "text": "Aghanashini Estuary"}, {"id": "opt_d", "label": "D", "text": "Karanji Lake"}], "answer": "B", "answer_id": "opt_b", "explanation": "Magadi Kere Conservation Reserve in Gadag was designated in 2024.", "statement_truths": "2026-02_February", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-M2-CA-017", "text_hash": "5480c16a3a87581f", "text": "The 50th G7 Summit in June 2024 was hosted in which Italian region?", "options": [{"id": "opt_a", "label": "A", "text": "Tuscany"}, {"id": "opt_b", "label": "B", "text": "Apulia (Borgo Egnazia)"}, {"id": "opt_c", "label": "C", "text": "Lombardy"}, {"id": "opt_d", "label": "D", "text": "Sicily"}], "answer": "B", "answer_id": "opt_b", "explanation": "The 50th G7 Summit took place in Borgo Egnazia, Apulia, Italy.", "statement_truths": "2026-06_June", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-M2-CA-018", "text_hash": "ba3f734f3b9e6f41", "text": "Who won the Best Actor Oscar at the 96th Academy Awards for his performance in 'Oppenheimer'?", "options": [{"id": "opt_a", "label": "A", "text": "Bradley Cooper"}, {"id": "opt_b", "label": "B", "text": "Cillian Murphy"}, {"id": "opt_c", "label": "C", "text": "Robert Downey Jr."}, {"id": "opt_d", "label": "D", "text": "Paul Giamatti"}], "answer": "B", "answer_id": "opt_b", "explanation": "Cillian Murphy won the Best Actor Oscar for Oppenheimer.", "statement_truths": "2026-03_March", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-M2-CA-019", "text_hash": "5d02c9f00030de3e", "text": "In the Supreme Court judgment of Mineral Area Development Authority v. SAIL (July 2024), the 9-judge bench held that:", "options": [{"id": "opt_a", "label": "A", "text": "Royalty is a tax under Entry 54 List I."}, {"id": "opt_b", "label": "B", "text": "Royalty is not a tax and States have legislative competence to tax mineral lands under Entry 49/50 List II."}, {"id": "opt_c", "label": "C", "text": "Only Parliament can levy taxes on minerals."}, {"id": "opt_d", "label": "D", "text": "The MMDR Act completely bars State taxation."}], "answer": "B", "answer_id": "opt_b", "explanation": "The 9-judge bench held 8-1 that royalty is not a tax and states can tax mineral lands.", "statement_truths": "2026-07_July", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-M2-CA-020", "text_hash": "520034d8c8e0ceed", "text": "Which Indian athlete won two medals in a single Olympic Games edition at Paris 2024?", "options": [{"id": "opt_a", "label": "A", "text": "Neeraj Chopra"}, {"id": "opt_b", "label": "B", "text": "Manu Bhaker"}, {"id": "opt_c", "label": "C", "text": "P.V. Sindhu"}, {"id": "opt_d", "label": "D", "text": "Swapnil Kusale"}], "answer": "B", "answer_id": "opt_b", "explanation": "Manu Bhaker won bronze in individual 10m Air Pistol and mixed team 10m Air Pistol.", "statement_truths": "2026-08_August", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-M2-CA-021", "text_hash": "05383648955b0951", "text": "What was the headline fiscal deficit target for FY 2024-25 in the Union Budget presented in July 2024?", "options": [{"id": "opt_a", "label": "A", "text": "5.8% of GDP"}, {"id": "opt_b", "label": "B", "text": "5.1% of GDP"}, {"id": "opt_c", "label": "C", "text": "4.9% of GDP"}, {"id": "opt_d", "label": "D", "text": "4.5% of GDP"}], "answer": "C", "answer_id": "opt_c", "explanation": "Budget 2024-25 lowered the fiscal deficit target to 4.9% of GDP.", "statement_truths": "2026-07_July", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-M2-CA-022", "text_hash": "3e325ace3e014e9e", "text": "The 'Angel Tax' in the Income Tax Act was completely abolished in July 2024 under which section?", "options": [{"id": "opt_a", "label": "A", "text": "Section 10(23C)"}, {"id": "opt_b", "label": "B", "text": "Section 56(2)(viib)"}, {"id": "opt_c", "label": "C", "text": "Section 80C"}, {"id": "opt_d", "label": "D", "text": "Section 115BAA"}], "answer": "B", "answer_id": "opt_b", "explanation": "Section 56(2)(viib) of the Income Tax Act was abolished for all classes of investors.", "statement_truths": "2026-07_July", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-M2-CA-023", "text_hash": "ac9f12fba8594c79", "text": "Who was sworn in as the Chief Adviser of the interim government in Bangladesh following Sheikh Hasina's resignation in August 2024?", "options": [{"id": "opt_a", "label": "A", "text": "Khaleda Zia"}, {"id": "opt_b", "label": "B", "text": "Muhammad Yunus"}, {"id": "opt_c", "label": "C", "text": "Tarique Rahman"}, {"id": "opt_d", "label": "D", "text": "General Waker-uz-Zaman"}], "answer": "B", "answer_id": "opt_b", "explanation": "Nobel laureate Prof. Muhammad Yunus took charge of the interim government.", "statement_truths": "2026-08_August", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-M2-CA-024", "text_hash": "a16d3c07e05fde81", "text": "The catastrophic landslide of July 30, 2024 that claimed over 400 lives occurred in which district of Kerala?", "options": [{"id": "opt_a", "label": "A", "text": "Idukki"}, {"id": "opt_b", "label": "B", "text": "Wayanad (Chooralmala/Mundakkai)"}, {"id": "opt_c", "label": "C", "text": "Pathanamthitta"}, {"id": "opt_d", "label": "D", "text": "Kottayam"}], "answer": "B", "answer_id": "opt_b", "explanation": "The disaster struck Chooralmala and Mundakkai in Wayanad district.", "statement_truths": "2026-07_July", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-M2-CA-025", "text_hash": "e5e31393329c7cb5", "text": "On October 13, 2024, SpaceX achieved which unprecedented aerospace engineering milestone during the Starship IFT-5 test?", "options": [{"id": "opt_a", "label": "A", "text": "First crewed landing on Mars"}, {"id": "opt_b", "label": "B", "text": "Catching the Super Heavy booster mid-air using mechanical chopstick arms at the launch tower"}, {"id": "opt_c", "label": "C", "text": "Deploying 1,000 Starlink satellites in a single launch"}, {"id": "opt_d", "label": "D", "text": "Soft landing on the lunar south pole"}], "answer": "B", "answer_id": "opt_b", "explanation": "Mechazilla tower arms caught the returning Super Heavy booster mid-air.", "statement_truths": "2026-10_October", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-M2-CA-026", "text_hash": "8d0d71afd55569bc", "text": "The 2024 Nobel Peace Prize was awarded to which organization?", "options": [{"id": "opt_a", "label": "A", "text": "UNHCR"}, {"id": "opt_b", "label": "B", "text": "Nihon Hidankyo"}, {"id": "opt_c", "label": "C", "text": "International Red Cross"}, {"id": "opt_d", "label": "D", "text": "Memorial"}], "answer": "B", "answer_id": "opt_b", "explanation": "Nihon Hidankyo (Japanese atomic bomb survivors grassroots movement) won the Nobel Peace Prize.", "statement_truths": "2026-10_October", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-M2-CA-027", "text_hash": "1dc90f3d39151614", "text": "Which author won the 2024 Nobel Prize in Literature, becoming the first South Korean author to win the prize?", "options": [{"id": "opt_a", "label": "A", "text": "Haruki Murakami"}, {"id": "opt_b", "label": "B", "text": "Han Kang"}, {"id": "opt_c", "label": "C", "text": "Ko Un"}, {"id": "opt_d", "label": "D", "text": "Bong Joon-ho"}], "answer": "B", "answer_id": "opt_b", "explanation": "Han Kang (author of The Vegetarian) won the 2024 Nobel Prize in Literature.", "statement_truths": "2026-10_October", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-M2-CA-028", "text_hash": "af002ed4185c89d7", "text": "In October 2024, the Reserve Bank of India shifted its monetary policy stance from 'withdrawal of accommodation' to:", "options": [{"id": "opt_a", "label": "A", "text": "Accommodative"}, {"id": "opt_b", "label": "B", "text": "Calibrated Tightening"}, {"id": "opt_c", "label": "C", "text": "Neutral"}, {"id": "opt_d", "label": "D", "text": "Hawkish"}], "answer": "C", "answer_id": "opt_c", "explanation": "The RBI MPC unanimously changed the policy stance to 'Neutral'.", "statement_truths": "2026-10_October", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-M2-CA-029", "text_hash": "3dc29048b35f0663", "text": "Which industrial icon and philanthropist passed away on October 9, 2024 in Mumbai at the age of 86?", "options": [{"id": "opt_a", "label": "A", "text": "Rahul Bajaj"}, {"id": "opt_b", "label": "B", "text": "Ratan Naval Tata"}, {"id": "opt_c", "label": "C", "text": "Keshub Mahindra"}, {"id": "opt_d", "label": "D", "text": "Pallonji Mistry"}], "answer": "B", "answer_id": "opt_b", "explanation": "Ratan Naval Tata, Chairman Emeritus of Tata Sons, passed away on October 9, 2024.", "statement_truths": "2026-10_October", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-M2-CA-030", "text_hash": "a935b8a844495eec", "text": "The 'Shinkun La Tunnel' project inaugurated in July 2024 provides all-weather connectivity between Ladakh and:", "options": [{"id": "opt_a", "label": "A", "text": "Jammu & Kashmir"}, {"id": "opt_b", "label": "B", "text": "Himachal Pradesh"}, {"id": "opt_c", "label": "C", "text": "Uttarakhand"}, {"id": "opt_d", "label": "D", "text": "Punjab"}], "answer": "B", "answer_id": "opt_b", "explanation": "The 4.1 km Shinkun La tunnel connects Himachal Pradesh (Lahaul) with Ladakh (Zanskar).", "statement_truths": "2026-07_July", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-M2-CA-031", "text_hash": "7a2489b131910ed1", "text": "Under the Supreme Court judgment on Section 6A of the Citizenship Act (October 2024), which cut-off date was upheld for Assam?", "options": [{"id": "opt_a", "label": "A", "text": "19 July 1948"}, {"id": "opt_b", "label": "B", "text": "26 January 1950"}, {"id": "opt_c", "label": "C", "text": "24 March 1971"}, {"id": "opt_d", "label": "D", "text": "31 December 2014"}], "answer": "C", "answer_id": "opt_c", "explanation": "The Supreme Court upheld 24 March 1971 as the valid cut-off date under the Assam Accord.", "statement_truths": "2026-10_October", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-M2-CA-032", "text_hash": "41594c98a294ec9d", "text": "The Cauvery Water Supply Scheme Stage V (CWSS Stage V) commissioned in October 2024 supplies how many MLD of water to Bengaluru?", "options": [{"id": "opt_a", "label": "A", "text": "250 MLD"}, {"id": "opt_b", "label": "B", "text": "500 MLD"}, {"id": "opt_c", "label": "C", "text": "775 MLD"}, {"id": "opt_d", "label": "D", "text": "1,200 MLD"}], "answer": "C", "answer_id": "opt_c", "explanation": "CWSS Stage V supplies 775 MLD from Torekadanahalli pumping station.", "statement_truths": "2026-10_October", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-M2-CA-033", "text_hash": "bac0d1ccc64b9518", "text": "The chain rupture of Crest Gate No. 19 in August 2024 occurred at which major reservoir in Karnataka?", "options": [{"id": "opt_a", "label": "A", "text": "Krishna Raja Sagara"}, {"id": "opt_b", "label": "B", "text": "Almatti Dam"}, {"id": "opt_c", "label": "C", "text": "Tungabhadra Dam (Hosapete)"}, {"id": "opt_d", "label": "D", "text": "Bhadra Dam"}], "answer": "C", "answer_id": "opt_c", "explanation": "The chain snap occurred at Tungabhadra Dam near Hosapete.", "statement_truths": "2026-08_August", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-M2-CA-034", "text_hash": "d9a46ede0b1bedbb", "text": "Which 17-year-old Indian Grandmaster became the youngest challenger in history to contest the World Chess Championship after winning Candidates 2024?", "options": [{"id": "opt_a", "label": "A", "text": "R. Praggnanandhaa"}, {"id": "opt_b", "label": "B", "text": "D. Gukesh"}, {"id": "opt_c", "label": "C", "text": "Arjun Erigaisi"}, {"id": "opt_d", "label": "D", "text": "Nihal Sarin"}], "answer": "B", "answer_id": "opt_b", "explanation": "Dommaraju Gukesh won the FIDE Candidates Tournament in Toronto.", "statement_truths": "2026-04_April", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-M2-CA-035", "text_hash": "d44558a323c08df9", "text": "The 10-year contract signed by India in May 2024 to operate the Shahid Beheshti terminal at Chabahar Port is with which country?", "options": [{"id": "opt_a", "label": "A", "text": "Oman"}, {"id": "opt_b", "label": "B", "text": "Iran"}, {"id": "opt_c", "label": "C", "text": "United Arab Emirates"}, {"id": "opt_d", "label": "D", "text": "Saudi Arabia"}], "answer": "B", "answer_id": "opt_b", "explanation": "India signed the contract with Iran to operate Chabahar's Shahid Beheshti terminal.", "statement_truths": "2026-05_May", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-M2-CA-036", "text_hash": "abbc0fe70913939d", "text": "The name 'Remal' for the Severe Cyclonic Storm that made landfall in the Bay of Bengal in May 2024 was contributed by:", "options": [{"id": "opt_a", "label": "A", "text": "Bangladesh"}, {"id": "opt_b", "label": "B", "text": "Oman"}, {"id": "opt_c", "label": "C", "text": "India"}, {"id": "opt_d", "label": "D", "text": "Maldives"}], "answer": "B", "answer_id": "opt_b", "explanation": "Oman contributed the name Remal (meaning sand in Arabic).", "statement_truths": "2026-05_May", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-M2-CA-037", "text_hash": "6dfc3e5aa6109545", "text": "Which country's lunar probe successfully returned the world's first samples from the Moon's far side in June 2024?", "options": [{"id": "opt_a", "label": "A", "text": "USA (Artemis)"}, {"id": "opt_b", "label": "B", "text": "India (Chandrayaan-3)"}, {"id": "opt_c", "label": "C", "text": "China (Chang'e-6)"}, {"id": "opt_d", "label": "D", "text": "Japan (SLIM)"}], "answer": "C", "answer_id": "opt_c", "explanation": "China's Chang'e-6 returned ~2 kg of samples from the South Pole-Aitken Basin.", "statement_truths": "2026-06_June", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-M2-CA-038", "text_hash": "edce37a280dca7e4", "text": "The 'Public Examinations (Prevention of Unfair Means) Act, 2024' prescribes a minimum fine of what amount for organized paper leak syndicates?", "options": [{"id": "opt_a", "label": "A", "text": "₹10 Lakh"}, {"id": "opt_b", "label": "B", "text": "₹50 Lakh"}, {"id": "opt_c", "label": "C", "text": "₹1 Crore"}, {"id": "opt_d", "label": "D", "text": "₹5 Crore"}], "answer": "C", "answer_id": "opt_c", "explanation": "The Act prescribes imprisonment of 5-10 years and a minimum fine of ₹1 Crore.", "statement_truths": "2026-06_June", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-M2-CA-039", "text_hash": "12444ef265d2f3e4", "text": "In the 18th Lok Sabha elections, who was officially recognized as the Leader of the Opposition (LoP) for the first time in 10 years?", "options": [{"id": "opt_a", "label": "A", "text": "Mallikarjun Kharge"}, {"id": "opt_b", "label": "B", "text": "Rahul Gandhi"}, {"id": "opt_c", "label": "C", "text": "Adhir Ranjan Chowdhury"}, {"id": "opt_d", "label": "D", "text": "Akhilesh Yadav"}], "answer": "B", "answer_id": "opt_b", "explanation": "Rahul Gandhi was designated Leader of the Opposition in the 18th Lok Sabha.", "statement_truths": "2026-06_June", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-M2-CA-040", "text_hash": "8f67a353ab843f8e", "text": "Which stadium was the venue where India defeated South Africa by 7 runs to win the ICC Men's T20 World Cup 2024?", "options": [{"id": "opt_a", "label": "A", "text": "Nassau County, New York"}, {"id": "opt_b", "label": "B", "text": "Kensington Oval, Barbados"}, {"id": "opt_c", "label": "C", "text": "Providence, Guyana"}, {"id": "opt_d", "label": "D", "text": "Sir Vivian Richards Stadium, Antigua"}], "answer": "B", "answer_id": "opt_b", "explanation": "The final took place at Kensington Oval, Bridgetown, Barbados.", "statement_truths": "2026-06_June", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-M2-HUM-001", "text_hash": "b7291624524a1bda", "text": "Which of the following writs literally means 'We Command' and is issued to enforce the performance of a public duty?", "options": [{"id": "opt_a", "label": "A", "text": "Habeas Corpus"}, {"id": "opt_b", "label": "B", "text": "Mandamus"}, {"id": "opt_c", "label": "C", "text": "Quo-Warranto"}, {"id": "opt_d", "label": "D", "text": "Certiorari"}], "answer": "B", "answer_id": "opt_b", "explanation": "Mandamus is a judicial command issued to a public authority to perform an official duty.", "statement_truths": "", "subject": "Polity", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Humanities", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-M2-HUM-002", "text_hash": "bf8a0f69bc386c7c", "text": "The concept of 'Procedure Established by Law' under Article 21 was interpreted by the Supreme Court to include 'Due Process of Law' in which landmark case?", "options": [{"id": "opt_a", "label": "A", "text": "A.K. Gopalan v. State of Madras (1950)"}, {"id": "opt_b", "label": "B", "text": "Maneka Gandhi v. Union of India (1978)"}, {"id": "opt_c", "label": "C", "text": "Kesavananda Bharati v. State of Kerala (1973)"}, {"id": "opt_d", "label": "D", "text": "Minerva Mills v. Union of India (1980)"}], "answer": "B", "answer_id": "opt_b", "explanation": "Maneka Gandhi (1978) ruled that procedure under Art 21 must be just, fair, and reasonable.", "statement_truths": "", "subject": "Polity", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Humanities", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-M2-HUM-003", "text_hash": "b80cce13c5242a71", "text": "Under Article 368, an amendment bill that affects the federal structure of the Constitution requires:", "options": [{"id": "opt_a", "label": "A", "text": "Simple majority of Parliament"}, {"id": "opt_b", "label": "B", "text": "Special majority of Parliament and ratification by not less than one-half of the State Legislatures"}, {"id": "opt_c", "label": "C", "text": "Three-fourths majority of both Houses"}, {"id": "opt_d", "label": "D", "text": "Ratification by all State Legislatures"}], "answer": "B", "answer_id": "opt_b", "explanation": "Federal amendments require a special majority in Parliament plus ratification by >=50% of states.", "statement_truths": "", "subject": "Polity", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Humanities", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-M2-HUM-004", "text_hash": "64f6f9838bb7e2dd", "text": "Which Constitutional Amendment Act substituted the word 'Armed Rebellion' for 'Internal Disturbance' in Article 352?", "options": [{"id": "opt_a", "label": "A", "text": "42nd Amendment Act, 1976"}, {"id": "opt_b", "label": "B", "text": "44th Amendment Act, 1978"}, {"id": "opt_c", "label": "C", "text": "52nd Amendment Act, 1985"}, {"id": "opt_d", "label": "D", "text": "86th Amendment Act, 2002"}], "answer": "B", "answer_id": "opt_b", "explanation": "The 44th Amendment Act (1978) introduced 'armed rebellion' to prevent abuse of emergency powers.", "statement_truths": "", "subject": "Polity", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Humanities", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-M2-HUM-005", "text_hash": "5f5915e2c091b23b", "text": "The Comptroller and Auditor General of India (CAG) submits audit reports relating to the accounts of the Union to:", "options": [{"id": "opt_a", "label": "A", "text": "The Prime Minister"}, {"id": "opt_b", "label": "B", "text": "The Finance Minister"}, {"id": "opt_c", "label": "C", "text": "The President of India"}, {"id": "opt_d", "label": "D", "text": "The Public Accounts Committee"}], "answer": "C", "answer_id": "opt_c", "explanation": "Under Article 151(1), the CAG submits reports to the President, who causes them to be laid before Parliament.", "statement_truths": "", "subject": "Polity", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Humanities", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-M2-HUM-006", "text_hash": "c6892a9a76f38f8e", "text": "The Seventh Schedule of the Indian Constitution distributes legislative powers between Union and States. Under which list is 'Public Health and Sanitation' placed?", "options": [{"id": "opt_a", "label": "A", "text": "Union List (List I)"}, {"id": "opt_b", "label": "B", "text": "State List (List II)"}, {"id": "opt_c", "label": "C", "text": "Concurrent List (List III)"}, {"id": "opt_d", "label": "D", "text": "Residuary Powers"}], "answer": "B", "answer_id": "opt_b", "explanation": "Public health and sanitation is Entry 6 in the State List (List II).", "statement_truths": "", "subject": "Polity", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Humanities", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-M2-HUM-007", "text_hash": "1911d41c9d3b4152", "text": "Which Article of the Constitution empowers the Supreme Court to issue directions, orders or writs for the enforcement of Fundamental Rights?", "options": [{"id": "opt_a", "label": "A", "text": "Article 31"}, {"id": "opt_b", "label": "B", "text": "Article 32"}, {"id": "opt_c", "label": "C", "text": "Article 136"}, {"id": "opt_d", "label": "D", "text": "Article 142"}], "answer": "B", "answer_id": "opt_b", "explanation": "Article 32 gives the right to move the Supreme Court for writ remedies; Dr. Ambedkar called it the heart and soul.", "statement_truths": "", "subject": "Polity", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Humanities", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-M2-HUM-008", "text_hash": "1642056f15aa793a", "text": "The Sarkaria Commission on Centre-State Relations was appointed in which year?", "options": [{"id": "opt_a", "label": "A", "text": "1969"}, {"id": "opt_b", "label": "B", "text": "1983"}, {"id": "opt_c", "label": "C", "text": "1998"}, {"id": "opt_d", "label": "D", "text": "2007"}], "answer": "B", "answer_id": "opt_b", "explanation": "The Sarkaria Commission was appointed in 1983 and submitted its final report in 1988.", "statement_truths": "", "subject": "Polity", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Humanities", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-M2-HUM-009", "text_hash": "8fa385e94f99df64", "text": "Under the Anti-Defection Law (Tenth Schedule), who decides the question of disqualification of a member of the Lok Sabha?", "options": [{"id": "opt_a", "label": "A", "text": "President of India"}, {"id": "opt_b", "label": "B", "text": "Election Commission of India"}, {"id": "opt_c", "label": "C", "text": "Speaker of the Lok Sabha"}, {"id": "opt_d", "label": "D", "text": "Supreme Court of India"}], "answer": "C", "answer_id": "opt_c", "explanation": "The Speaker of the Lok Sabha is the designated adjudicating authority under paragraph 6 of Tenth Schedule.", "statement_truths": "", "subject": "Polity", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Humanities", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-M2-HUM-010", "text_hash": "408b35a381deac44", "text": "Which of the following is NOT a constitutional body in India?", "options": [{"id": "opt_a", "label": "A", "text": "Finance Commission"}, {"id": "opt_b", "label": "B", "text": "Union Public Service Commission"}, {"id": "opt_c", "label": "C", "text": "NITI Aayog"}, {"id": "opt_d", "label": "D", "text": "Election Commission"}], "answer": "C", "answer_id": "opt_c", "explanation": "NITI Aayog is a non-constitutional, extra-statutory body created via an executive cabinet resolution in 2015.", "statement_truths": "", "subject": "Polity", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Humanities", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-M2-HUM-011", "text_hash": "42a80d570244ecc7", "text": "Which Article of the Constitution guarantees the Right against Self-Incrimination ('No person accused of an offence shall be compelled to be a witness against himself')?", "options": [{"id": "opt_a", "label": "A", "text": "Article 20(1)"}, {"id": "opt_b", "label": "B", "text": "Article 20(2)"}, {"id": "opt_c", "label": "C", "text": "Article 20(3)"}, {"id": "opt_d", "label": "D", "text": "Article 22(1)"}], "answer": "C", "answer_id": "opt_c", "explanation": "Article 20(3) protects an accused against self-incrimination.", "statement_truths": "", "subject": "Polity", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Humanities", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-M2-HUM-012", "text_hash": "c06bf6e4378286aa", "text": "Under Article 72, the pardoning power of the President of India is exercised on the advice of:", "options": [{"id": "opt_a", "label": "A", "text": "The Chief Justice of India"}, {"id": "opt_b", "label": "B", "text": "The Union Council of Ministers"}, {"id": "opt_c", "label": "C", "text": "The Attorney General of India"}, {"id": "opt_d", "label": "D", "text": "His sole personal discretion"}], "answer": "B", "answer_id": "opt_b", "explanation": "The President exercises pardoning power on the binding aid and advice of the Union Council of Ministers.", "statement_truths": "", "subject": "Polity", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Humanities", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-M2-HUM-013", "text_hash": "d2bba993f2e46fcd", "text": "Which schedule of the Indian Constitution contains provisions regarding the administration and control of Scheduled Areas and Scheduled Tribes (other than Assam, Meghalaya, Tripura, Mizoram)?", "options": [{"id": "opt_a", "label": "A", "text": "Fifth Schedule"}, {"id": "opt_b", "label": "B", "text": "Sixth Schedule"}, {"id": "opt_c", "label": "C", "text": "Seventh Schedule"}, {"id": "opt_d", "label": "D", "text": "Eighth Schedule"}], "answer": "A", "answer_id": "opt_a", "explanation": "The Fifth Schedule deals with Scheduled Areas; the Sixth Schedule deals with tribal areas in Assam, Meghalaya, Tripura, Mizoram.", "statement_truths": "", "subject": "Polity", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Humanities", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-M2-HUM-014", "text_hash": "06af2712674e85c5", "text": "The Joint Sitting of both Houses of Parliament is summoned by the President under which Article of the Constitution?", "options": [{"id": "opt_a", "label": "A", "text": "Article 105"}, {"id": "opt_b", "label": "B", "text": "Article 108"}, {"id": "opt_c", "label": "C", "text": "Article 110"}, {"id": "opt_d", "label": "D", "text": "Article 112"}], "answer": "B", "answer_id": "opt_b", "explanation": "Article 108 provides for a Joint Sitting summoned by the President and presided over by the Speaker of the Lok Sabha.", "statement_truths": "", "subject": "Polity", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Humanities", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-M2-HUM-015", "text_hash": "a6ad41c3eb878f03", "text": "A Money Bill can be introduced ONLY in:", "options": [{"id": "opt_a", "label": "A", "text": "The Rajya Sabha"}, {"id": "opt_b", "label": "B", "text": "The Lok Sabha"}, {"id": "opt_c", "label": "C", "text": "Either House of Parliament"}, {"id": "opt_d", "label": "D", "text": "A Joint Sitting of both Houses"}], "answer": "B", "answer_id": "opt_b", "explanation": "Under Article 109, a Money Bill can be introduced only in the Lok Sabha with the prior recommendation of the President.", "statement_truths": "", "subject": "Polity", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Humanities", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-M2-HUM-016", "text_hash": "1aa44a2011391d93", "text": "The concept of 'Basic Structure' of the Indian Constitution was propounded by the Supreme Court in:", "options": [{"id": "opt_a", "label": "A", "text": "Shankari Prasad Case (1951)"}, {"id": "opt_b", "label": "B", "text": "Golak Nath Case (1967)"}, {"id": "opt_c", "label": "C", "text": "Kesavananda Bharati Case (1973)"}, {"id": "opt_d", "label": "D", "text": "Minerva Mills Case (1980)"}], "answer": "C", "answer_id": "opt_c", "explanation": "The 13-judge bench in Kesavananda Bharati (1973) established the Basic Structure doctrine.", "statement_truths": "", "subject": "Polity", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Humanities", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-M2-HUM-017", "text_hash": "12be2050598f6f42", "text": "The minimum age required to become a member of the Rajya Sabha is:", "options": [{"id": "opt_a", "label": "A", "text": "21 years"}, {"id": "opt_b", "label": "B", "text": "25 years"}, {"id": "opt_c", "label": "C", "text": "30 years"}, {"id": "opt_d", "label": "D", "text": "35 years"}], "answer": "C", "answer_id": "opt_c", "explanation": "Under Article 84, the minimum age for Rajya Sabha is 30 years (25 years for Lok Sabha).", "statement_truths": "", "subject": "Polity", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Humanities", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-M2-HUM-018", "text_hash": "93d74b89b1d99275", "text": "The Finance Commission of India is constituted by the President every fifth year under:", "options": [{"id": "opt_a", "label": "A", "text": "Article 265"}, {"id": "opt_b", "label": "B", "text": "Article 280"}, {"id": "opt_c", "label": "C", "text": "Article 300A"}, {"id": "opt_d", "label": "D", "text": "Article 324"}], "answer": "B", "answer_id": "opt_b", "explanation": "Article 280 governs the constitution of the Finance Commission.", "statement_truths": "", "subject": "Polity", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Humanities", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-M2-HUM-019", "text_hash": "09e452b7eb48cd1d", "text": "Which constitutional body is responsible for superintending, directing, and controlling elections to Parliament, State Legislatures, and the offices of President and Vice-President?", "options": [{"id": "opt_a", "label": "A", "text": "Delimitation Commission"}, {"id": "opt_b", "label": "B", "text": "Election Commission of India (Article 324)"}, {"id": "opt_c", "label": "C", "text": "State Election Commission"}, {"id": "opt_d", "label": "D", "text": "National Electoral Council"}], "answer": "B", "answer_id": "opt_b", "explanation": "Article 324 vests election superintendence in the Election Commission of India.", "statement_truths": "", "subject": "Polity", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Humanities", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-M2-HUM-020", "text_hash": "75e55cd551fdb061", "text": "The power of Judicial Review in the Indian Constitution is fundamentally anchored in:", "options": [{"id": "opt_a", "label": "A", "text": "Article 13"}, {"id": "opt_b", "label": "B", "text": "Article 368"}, {"id": "opt_c", "label": "C", "text": "Article 143"}, {"id": "opt_d", "label": "D", "text": "Article 51A"}], "answer": "A", "answer_id": "opt_a", "explanation": "Article 13 declares any law inconsistent with or in derogation of Fundamental Rights to be void, anchoring judicial review.", "statement_truths": "", "subject": "Polity", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Humanities", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-M2-HUM-021", "text_hash": "63c27f093a34af81", "text": "The Indus Valley Civilization site of Lothal, famous for its tidal dockyard, is situated in which modern state?", "options": [{"id": "opt_a", "label": "A", "text": "Rajasthan"}, {"id": "opt_b", "label": "B", "text": "Gujarat"}, {"id": "opt_c", "label": "C", "text": "Haryana"}, {"id": "opt_d", "label": "D", "text": "Punjab"}], "answer": "B", "answer_id": "opt_b", "explanation": "Lothal is located along the Bhogava river in Ahmedabad district, Gujarat.", "statement_truths": "", "subject": "History", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Humanities", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-M2-HUM-022", "text_hash": "f593aa92270ed3a2", "text": "The famous 'Prayag Prashasti' (Allahabad Pillar Inscription) eulogizing the conquests of Samudragupta was composed by his court poet:", "options": [{"id": "opt_a", "label": "A", "text": "Kalidasa"}, {"id": "opt_b", "label": "B", "text": "Harishena"}, {"id": "opt_c", "label": "C", "text": "Banabhatta"}, {"id": "opt_d", "label": "D", "text": "Ravikirti"}], "answer": "B", "answer_id": "opt_b", "explanation": "Harishena composed the Prayag Prashasti in Sanskrit campu style.", "statement_truths": "", "subject": "History", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Humanities", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-M2-HUM-023", "text_hash": "d4650f7f50c7d3b6", "text": "Who among the following was the founder of the Nalanda Mahavihara university in ancient Magadha?", "options": [{"id": "opt_a", "label": "A", "text": "Chandragupta II"}, {"id": "opt_b", "label": "B", "text": "Kumaragupta I"}, {"id": "opt_c", "label": "C", "text": "Skandagupta"}, {"id": "opt_d", "label": "D", "text": "Harshavardhana"}], "answer": "B", "answer_id": "opt_b", "explanation": "Gupta emperor Kumaragupta I (Shakraditya) founded Nalanda in the 5th century CE.", "statement_truths": "", "subject": "History", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Humanities", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-M2-HUM-024", "text_hash": "e4c4ee6faa822666", "text": "The Battle of Tarain (Second, 1192 CE) was fought between Muhammad Ghori and:", "options": [{"id": "opt_a", "label": "A", "text": "Prithviraj Chauhan"}, {"id": "opt_b", "label": "B", "text": "Jaichand"}, {"id": "opt_c", "label": "C", "text": "Maharana Pratap"}, {"id": "opt_d", "label": "D", "text": "Rana Sanga"}], "answer": "B", "answer_id": "opt_b", "explanation": "Muhammad Ghori defeated Prithviraj Chauhan in the Second Battle of Tarain, inaugurating the Delhi Sultanate.", "statement_truths": "", "subject": "History", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Humanities", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-M2-HUM-025", "text_hash": "23f241854060be86", "text": "The revenue system known as 'Zabt' or 'Dahsala' in the Mughal Empire was introduced by Akbar with the assistance of his finance minister:", "options": [{"id": "opt_a", "label": "A", "text": "Birbal"}, {"id": "opt_b", "label": "B", "text": "Raja Todar Mal"}, {"id": "opt_c", "label": "C", "text": "Man Singh"}, {"id": "opt_d", "label": "D", "text": "Abul Fazl"}], "answer": "B", "answer_id": "opt_b", "explanation": "Raja Todar Mal introduced the Ain-i-Dahsala system in 1580 CE.", "statement_truths": "", "subject": "History", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Humanities", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-M2-HUM-026", "text_hash": "0b5349a641bdd644", "text": "The Treaty of Salbai (1782) brought an end to which Anglo-Maratha conflict?", "options": [{"id": "opt_a", "label": "A", "text": "First Anglo-Maratha War"}, {"id": "opt_b", "label": "B", "text": "Second Anglo-Maratha War"}, {"id": "opt_c", "label": "C", "text": "Third Anglo-Maratha War"}, {"id": "opt_d", "label": "D", "text": "Battle of Panipat"}], "answer": "A", "answer_id": "opt_a", "explanation": "The Treaty of Salbai in 1782 concluded the First Anglo-Maratha War, securing 20 years of mutual peace.", "statement_truths": "", "subject": "History", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Humanities", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-M2-HUM-027", "text_hash": "876c1e06230082bc", "text": "Who founded the 'Satya Shodhak Samaj' in Maharashtra in 1873 to liberate the lower castes from priestly exploitation?", "options": [{"id": "opt_a", "label": "A", "text": "B.R. Ambedkar"}, {"id": "opt_b", "label": "B", "text": "Jyotirao Phule"}, {"id": "opt_c", "label": "C", "text": "Gopal Ganesh Agarkar"}, {"id": "opt_d", "label": "D", "text": "Mahadev Govind Ranade"}], "answer": "B", "answer_id": "opt_b", "explanation": "Mahatma Jyotirao Phule established the Satya Shodhak Samaj in Pune in 1873.", "statement_truths": "", "subject": "History", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Humanities", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-M2-HUM-028", "text_hash": "e9374c84437357c8", "text": "The partition of Bengal (1905) by Lord Curzon led to which nationwide mass agitation?", "options": [{"id": "opt_a", "label": "A", "text": "Non-Cooperation Movement"}, {"id": "opt_b", "label": "B", "text": "Swadeshi Movement"}, {"id": "opt_c", "label": "C", "text": "Civil Disobedience Movement"}, {"id": "opt_d", "label": "D", "text": "Quit India Movement"}], "answer": "B", "answer_id": "opt_b", "explanation": "The Swadeshi and Boycott Movement erupted in August 1905 in response to Bengal's partition.", "statement_truths": "", "subject": "History", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Humanities", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-M2-HUM-029", "text_hash": "6f53c9bec48f1b1c", "text": "At the Lahore Session of the Indian National Congress in 1929, the resolution for 'Purna Swaraj' was passed under the presidency of:", "options": [{"id": "opt_a", "label": "A", "text": "Mahatma Gandhi"}, {"id": "opt_b", "label": "B", "text": "Jawaharlal Nehru"}, {"id": "opt_c", "label": "C", "text": "Subhas Chandra Bose"}, {"id": "opt_d", "label": "D", "text": "Sardar Vallabhbhai Patel"}], "answer": "B", "answer_id": "opt_b", "explanation": "Jawaharlal Nehru presided over the historic Lahore Congress in December 1929.", "statement_truths": "", "subject": "History", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Humanities", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-M2-HUM-030", "text_hash": "8e06fef7154c0154", "text": "The Cabinet Mission arrived in India in 1946. Who among the following was NOT a member of the Cabinet Mission?", "options": [{"id": "opt_a", "label": "A", "text": "Lord Pethick-Lawrence"}, {"id": "opt_b", "label": "B", "text": "Sir Stafford Cripps"}, {"id": "opt_c", "label": "C", "text": "A.V. Alexander"}, {"id": "opt_d", "label": "D", "text": "Lord Mountbatten"}], "answer": "D", "answer_id": "opt_d", "explanation": "The three members were Pethick-Lawrence, Cripps, and Alexander. Mountbatten arrived later in 1947.", "statement_truths": "", "subject": "History", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Humanities", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-M2-HUM-031", "text_hash": "e2a66b29d3119c5e", "text": "The famous Iron Pillar at Mehrauli, Delhi, renowned for its rust-resistant metallurgy, belongs to the reign of:", "options": [{"id": "opt_a", "label": "A", "text": "Ashoka"}, {"id": "opt_b", "label": "B", "text": "Chandragupta II (Vikramaditya)"}, {"id": "opt_c", "label": "C", "text": "Kanishka"}, {"id": "opt_d", "label": "D", "text": "Harshavardhana"}], "answer": "B", "answer_id": "opt_b", "explanation": "The Mehrauli iron pillar inscription mentions King Chandra, identified with Chandragupta II.", "statement_truths": "", "subject": "History", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Humanities", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-M2-HUM-032", "text_hash": "9b73d6c1b83507cf", "text": "The Buddhist Council where Buddhism split into Hinayana and Mahayana was held at Kundalavana (Kashmir) under the patronage of:", "options": [{"id": "opt_a", "label": "A", "text": "Ajatashatru"}, {"id": "opt_b", "label": "B", "text": "Kalashoka"}, {"id": "opt_c", "label": "C", "text": "Ashoka"}, {"id": "opt_d", "label": "D", "text": "Kanishka"}], "answer": "D", "answer_id": "opt_d", "explanation": "The Fourth Buddhist Council was held under Kushana emperor Kanishka in Kashmir, presided over by Vasumitra.", "statement_truths": "", "subject": "History", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Humanities", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-M2-HUM-033", "text_hash": "cde6ec677ea80ae0", "text": "Who was the founder of the Sayyid Dynasty in the Delhi Sultanate following Timur's invasion?", "options": [{"id": "opt_a", "label": "A", "text": "Khizr Khan"}, {"id": "opt_b", "label": "B", "text": "Mubarak Shah"}, {"id": "opt_c", "label": "C", "text": "Bahlul Lodi"}, {"id": "opt_d", "label": "D", "text": "Alam Shah"}], "answer": "A", "answer_id": "opt_a", "explanation": "Khizr Khan founded the Sayyid dynasty in 1414 CE after Timur appointed him governor of Multan.", "statement_truths": "", "subject": "History", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Humanities", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-M2-HUM-034", "text_hash": "be8cee9bbd2acee7", "text": "The 'Doctrine of Lapse' was aggressively implemented by which Governor-General to annex Satara, Sambalpur, Jhansi, and Nagpur?", "options": [{"id": "opt_a", "label": "A", "text": "Lord Wellesley"}, {"id": "opt_b", "label": "B", "text": "Lord Dalhousie"}, {"id": "opt_c", "label": "C", "text": "Lord Hastings"}, {"id": "opt_d", "label": "D", "text": "Lord William Bentinck"}], "answer": "B", "answer_id": "opt_b", "explanation": "Lord Dalhousie (1848-1856) used the Doctrine of Lapse to annex Indian princely states without natural male heirs.", "statement_truths": "", "subject": "History", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Humanities", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-M2-HUM-035", "text_hash": "6c67f1ffe3875df9", "text": "The Vernacular Press Act of 1878, which gagged Indian language newspapers, was enacted by Lord Lytton and repealed by:", "options": [{"id": "opt_a", "label": "A", "text": "Lord Ripon"}, {"id": "opt_b", "label": "B", "text": "Lord Dufferin"}, {"id": "opt_c", "label": "C", "text": "Lord Curzon"}, {"id": "opt_d", "label": "D", "text": "Lord Lansdowne"}], "answer": "A", "answer_id": "opt_a", "explanation": "Lord Ripon ('The Good') repealed the Vernacular Press Act in 1882.", "statement_truths": "", "subject": "History", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Humanities", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-M2-HUM-036", "text_hash": "5eff5a0b1278f105", "text": "Who was the author of the revolutionary book 'Poverty and Un-British Rule in India' that exposed the economic drain theory?", "options": [{"id": "opt_a", "label": "A", "text": "R.C. Dutt"}, {"id": "opt_b", "label": "B", "text": "Dadabhai Naoroji"}, {"id": "opt_c", "label": "C", "text": "G.K. Gokhale"}, {"id": "opt_d", "label": "D", "text": "M.G. Ranade"}], "answer": "B", "answer_id": "opt_b", "explanation": "Dadabhai Naoroji ('Grand Old Man of India') authored the book and propounded the Drain of Wealth theory.", "statement_truths": "", "subject": "History", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Humanities", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-M2-HUM-037", "text_hash": "89acdd66c8e2fd45", "text": "The Champaran Satyagraha of 1917, Mahatma Gandhi's first civil disobedience in India, was launched against which exploitative agrarian practice?", "options": [{"id": "opt_a", "label": "A", "text": "Ryotwari system"}, {"id": "opt_b", "label": "B", "text": "Tinkathia system (compulsory indigo cultivation on 3/20th land)"}, {"id": "opt_c", "label": "C", "text": "Mahalwari system"}, {"id": "opt_d", "label": "D", "text": "Permanent Settlement tax"}], "answer": "B", "answer_id": "opt_b", "explanation": "Gandhi protested against the Tinkathia system where European planters forced peasants to grow indigo.", "statement_truths": "", "subject": "History", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Humanities", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-M2-HUM-038", "text_hash": "ab6d89ecec2b5050", "text": "The Poona Pact of September 1932 was signed between Dr. B.R. Ambedkar and representatives of caste Hindus following Gandhi's fast against:", "options": [{"id": "opt_a", "label": "A", "text": "Rowlatt Act"}, {"id": "opt_b", "label": "B", "text": "Simon Commission"}, {"id": "opt_c", "label": "C", "text": "Communal Award of Ramsay MacDonald"}, {"id": "opt_d", "label": "D", "text": "Cripps Proposal"}], "answer": "C", "answer_id": "opt_c", "explanation": "The Poona Pact replaced separate electorates granted in the Communal Award with reserved joint electorates for Depressed Classes.", "statement_truths": "", "subject": "History", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Humanities", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-M2-HUM-039", "text_hash": "b44959173a20f9a1", "text": "Who among the following was the founder of the 'Forward Bloc' within the Indian National Congress in 1939?", "options": [{"id": "opt_a", "label": "A", "text": "Subhas Chandra Bose"}, {"id": "opt_b", "label": "B", "text": "Jawaharlal Nehru"}, {"id": "opt_c", "label": "C", "text": "Acharya Narendra Deva"}, {"id": "opt_d", "label": "D", "text": "Jayaprakash Narayan"}], "answer": "A", "answer_id": "opt_a", "explanation": "Netaji Subhas Chandra Bose resigned as Congress president in 1939 and established the Forward Bloc.", "statement_truths": "", "subject": "History", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Humanities", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-M2-HUM-040", "text_hash": "874194429ce9a328", "text": "The Bardoli Satyagraha of 1928, which gave Vallabhbhai Patel the title of 'Sardar', was organized against:", "options": [{"id": "opt_a", "label": "A", "text": "Salt Tax"}, {"id": "opt_b", "label": "B", "text": "Unjust enhancement of land revenue by 22%"}, {"id": "opt_c", "label": "C", "text": "Indigo plantation quotas"}, {"id": "opt_d", "label": "D", "text": "Forest laws"}], "answer": "B", "answer_id": "opt_b", "explanation": "Patel led Bardoli farmers against an arbitrary 22% hike in land revenue, which was successfully rolled back.", "statement_truths": "", "subject": "History", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Humanities", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-M2-HUM-041", "text_hash": "28c58e7e46b2f3b2", "text": "The boundary line separating India and China in the eastern sector (Arunachal Pradesh) is known as:", "options": [{"id": "opt_a", "label": "A", "text": "Radcliffe Line"}, {"id": "opt_b", "label": "B", "text": "McMahon Line"}, {"id": "opt_c", "label": "C", "text": "Durand Line"}, {"id": "opt_d", "label": "D", "text": "Sir Creek"}], "answer": "B", "answer_id": "opt_b", "explanation": "The McMahon Line was drawn during the 1914 Simla Convention between Britain and Tibet.", "statement_truths": "", "subject": "Geography", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Humanities", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-M2-HUM-042", "text_hash": "e1fbd22f081ac50c", "text": "Which of the following passes in the Himalayas connects Srinagar with Leh in Ladakh?", "options": [{"id": "opt_a", "label": "A", "text": "Nathu La"}, {"id": "opt_b", "label": "B", "text": "Zoji La"}, {"id": "opt_c", "label": "C", "text": "Shipki La"}, {"id": "opt_d", "label": "D", "text": "Rohtang Pass"}], "answer": "B", "answer_id": "opt_b", "explanation": "Zoji La in the Great Himalayas connects Srinagar and the Kashmir Valley with Kargil and Leh.", "statement_truths": "", "subject": "Geography", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Humanities", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-M2-HUM-043", "text_hash": "f992e8cf6194910d", "text": "The 'Ten Degree Channel' in the Indian Ocean separates:", "options": [{"id": "opt_a", "label": "A", "text": "Andaman Islands and Nicobar Islands"}, {"id": "opt_b", "label": "B", "text": "Minicoy and Maldives"}, {"id": "opt_c", "label": "C", "text": "India and Sri Lanka"}, {"id": "opt_d", "label": "D", "text": "Lakshadweep and Maldives"}], "answer": "A", "answer_id": "opt_a", "explanation": "The Ten Degree Channel separates Little Andaman from Car Nicobar.", "statement_truths": "", "subject": "Geography", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Humanities", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-M2-HUM-044", "text_hash": "5c8825551c43f25d", "text": "Majuli, the world's largest inhabited riverine island, is situated on which river?", "options": [{"id": "opt_a", "label": "A", "text": "Ganga"}, {"id": "opt_b", "label": "B", "text": "Brahmaputra"}, {"id": "opt_c", "label": "C", "text": "Godavari"}, {"id": "opt_d", "label": "D", "text": "Indus"}], "answer": "B", "answer_id": "opt_b", "explanation": "Majuli island is situated on the Brahmaputra river in Assam.", "statement_truths": "", "subject": "Geography", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Humanities", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-M2-HUM-045", "text_hash": "b3045bf79581354e", "text": "The phenomenon of 'Western Disturbances' that brings winter precipitation to North-West India originates in:", "options": [{"id": "opt_a", "label": "A", "text": "Arabian Sea"}, {"id": "opt_b", "label": "B", "text": "Bay of Bengal"}, {"id": "opt_c", "label": "C", "text": "Mediterranean Sea"}, {"id": "opt_d", "label": "D", "text": "Caspian Sea"}], "answer": "C", "answer_id": "opt_c", "explanation": "Western disturbances are extra-tropical cyclones originating over the Mediterranean Sea.", "statement_truths": "", "subject": "Geography", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Humanities", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-M2-HUM-046", "text_hash": "19c0210947c1ea2b", "text": "Which of the following states is the leading producer of bauxite in India?", "options": [{"id": "opt_a", "label": "A", "text": "Odisha"}, {"id": "opt_b", "label": "B", "text": "Jharkhand"}, {"id": "opt_c", "label": "C", "text": "Chhattisgarh"}, {"id": "opt_d", "label": "D", "text": "Gujarat"}], "answer": "A", "answer_id": "opt_a", "explanation": "Odisha accounts for over 50% of India's total bauxite reserves and production (Panchpatmali).", "statement_truths": "", "subject": "Geography", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Humanities", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-M2-HUM-047", "text_hash": "a737a3889fa5786f", "text": "The 'Silent Valley National Park', celebrated for sheltering the endangered Lion-tailed Macaque, is located in:", "options": [{"id": "opt_a", "label": "A", "text": "Kerala"}, {"id": "opt_b", "label": "B", "text": "Tamil Nadu"}, {"id": "opt_c", "label": "C", "text": "Karnataka"}, {"id": "opt_d", "label": "D", "text": "Andhra Pradesh"}], "answer": "A", "answer_id": "opt_a", "explanation": "Silent Valley is in Palakkad district of Kerala in the Kundali hills.", "statement_truths": "", "subject": "Geography", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Humanities", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-M2-HUM-048", "text_hash": "91bce1fd5d49ab7f", "text": "Which Indian state has the longest coastline in the country?", "options": [{"id": "opt_a", "label": "A", "text": "Tamil Nadu"}, {"id": "opt_b", "label": "B", "text": "Gujarat"}, {"id": "opt_c", "label": "C", "text": "Andhra Pradesh"}, {"id": "opt_d", "label": "D", "text": "Maharashtra"}], "answer": "B", "answer_id": "opt_b", "explanation": "Gujarat has the longest coastline in India (~1,600 km), followed by Andhra Pradesh (~974 km).", "statement_truths": "", "subject": "Geography", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Humanities", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-M2-HUM-049", "text_hash": "0a2a77c144977829", "text": "The Tropic of Cancer passes through how many Indian states?", "options": [{"id": "opt_a", "label": "A", "text": "6"}, {"id": "opt_b", "label": "B", "text": "7"}, {"id": "opt_c", "label": "C", "text": "8"}, {"id": "opt_d", "label": "D", "text": "9"}], "answer": "C", "answer_id": "opt_c", "explanation": "It passes through 8 states: Gujarat, Rajasthan, MP, Chhattisgarh, Jharkhand, West Bengal, Tripura, Mizoram.", "statement_truths": "", "subject": "Geography", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Humanities", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-M2-HUM-050", "text_hash": "bd9325e094170877", "text": "The Bhakra Nangal Dam is constructed across which river in India?", "options": [{"id": "opt_a", "label": "A", "text": "Chenab"}, {"id": "opt_b", "label": "B", "text": "Satluj"}, {"id": "opt_c", "label": "C", "text": "Ravi"}, {"id": "opt_d", "label": "D", "text": "Beas"}], "answer": "B", "answer_id": "opt_b", "explanation": "Bhakra Dam is a concrete gravity dam built across the Satluj river in Bilaspur, Himachal Pradesh.", "statement_truths": "", "subject": "Geography", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Humanities", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-M2-HUM-051", "text_hash": "762332e28e07e34d", "text": "Which mountain range acts as the water divide between the Ganga river system and the Indus river system?", "options": [{"id": "opt_a", "label": "A", "text": "Aravalli Range"}, {"id": "opt_b", "label": "B", "text": "Delhi Ridge / Ambala Divide"}, {"id": "opt_c", "label": "C", "text": "Satpura Range"}, {"id": "opt_d", "label": "D", "text": "Vindhya Range"}], "answer": "B", "answer_id": "opt_b", "explanation": "The Ambala ridge functions as the drainage divide between the Indus and Ganga basins.", "statement_truths": "", "subject": "Geography", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Humanities", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-M2-HUM-052", "text_hash": "cd462c27f6daa9f0", "text": "The 'Regur' soil of peninsular India is another name for:", "options": [{"id": "opt_a", "label": "A", "text": "Red Soil"}, {"id": "opt_b", "label": "B", "text": "Black Soil (Vertisols)"}, {"id": "opt_c", "label": "C", "text": "Laterite Soil"}, {"id": "opt_d", "label": "D", "text": "Alluvial Soil"}], "answer": "B", "answer_id": "opt_b", "explanation": "Black cotton soil is locally known as Regur, derived from basaltic Deccan lava.", "statement_truths": "", "subject": "Geography", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Humanities", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-M2-HUM-053", "text_hash": "0950a05605597f39", "text": "Which is the highest peak in the Western Ghats and Peninsular India?", "options": [{"id": "opt_a", "label": "A", "text": "Doda Betta"}, {"id": "opt_b", "label": "B", "text": "Anamudi"}, {"id": "opt_c", "label": "C", "text": "Mullayanagiri"}, {"id": "opt_d", "label": "D", "text": "Kalsubai"}], "answer": "B", "answer_id": "opt_b", "explanation": "Anamudi (2,695 m) in the Anaimalai Hills of Kerala is the highest peak in Peninsular India.", "statement_truths": "", "subject": "Geography", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Humanities", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-M2-HUM-054", "text_hash": "ea503e64fed89ebb", "text": "The 'Chambal River' is infamous for producing which severe land degradation feature?", "options": [{"id": "opt_a", "label": "A", "text": "Gully Erosion & Badland Ravines"}, {"id": "opt_b", "label": "B", "text": "Saline Alkali efflorescence"}, {"id": "opt_c", "label": "C", "text": "Desertification"}, {"id": "opt_d", "label": "D", "text": "Waterlogging"}], "answer": "A", "answer_id": "opt_a", "explanation": "Chambal river basin in MP and Rajasthan is characterized by intense gully erosion forming ravines.", "statement_truths": "", "subject": "Geography", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Humanities", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-M2-HUM-055", "text_hash": "8de84914cb85a2f6", "text": "The Palk Strait separates India from which neighboring country?", "options": [{"id": "opt_a", "label": "A", "text": "Maldives"}, {"id": "opt_b", "label": "B", "text": "Sri Lanka"}, {"id": "opt_c", "label": "C", "text": "Bangladesh"}, {"id": "opt_d", "label": "D", "text": "Myanmar"}], "answer": "B", "answer_id": "opt_b", "explanation": "Palk Strait and Gulf of Mannar separate Tamil Nadu in India from Sri Lanka.", "statement_truths": "", "subject": "Geography", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Humanities", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-M2-HUM-056", "text_hash": "3767867761c3d6b7", "text": "Which region in India is designated as the 'Cold Desert'?", "options": [{"id": "opt_a", "label": "A", "text": "Thar Desert"}, {"id": "opt_b", "label": "B", "text": "Ladakh"}, {"id": "opt_c", "label": "C", "text": "Rann of Kutch"}, {"id": "opt_d", "label": "D", "text": "Spiti Valley"}], "answer": "B", "answer_id": "opt_b", "explanation": "Ladakh is a high-altitude cold desert lying in the rain-shadow of the Greater Himalayas.", "statement_truths": "", "subject": "Geography", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Humanities", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-M2-HUM-057", "text_hash": "cf219be1a8be283a", "text": "The Nagarjuna Sagar Dam is constructed across which major river?", "options": [{"id": "opt_a", "label": "A", "text": "Cauvery"}, {"id": "opt_b", "label": "B", "text": "Godavari"}, {"id": "opt_c", "label": "C", "text": "Krishna"}, {"id": "opt_d", "label": "D", "text": "Mahanadi"}], "answer": "C", "answer_id": "opt_c", "explanation": "Nagarjuna Sagar Dam is built across the Krishna river between Telangana and Andhra Pradesh.", "statement_truths": "", "subject": "Geography", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Humanities", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-M2-HUM-058", "text_hash": "8823d12f58b950c7", "text": "The 'Kaziranga National Park' in Assam is globally famous for hosting two-thirds of the world's population of:", "options": [{"id": "opt_a", "label": "A", "text": "Bengal Tigers"}, {"id": "opt_b", "label": "B", "text": "Great Indian One-horned Rhinoceros"}, {"id": "opt_c", "label": "C", "text": "Asian Elephants"}, {"id": "opt_d", "label": "D", "text": "Wild Water Buffalo"}], "answer": "B", "answer_id": "opt_b", "explanation": "Kaziranga is famous for the Great Indian One-horned Rhinoceros (Rhinoceros unicornis).", "statement_truths": "", "subject": "Geography", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Humanities", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-M2-HUM-059", "text_hash": "60520dcaa425bb2b", "text": "Which cloud type is characterized as high-altitude, thin, wispy, and composed entirely of ice crystals?", "options": [{"id": "opt_a", "label": "A", "text": "Cumulonimbus"}, {"id": "opt_b", "label": "B", "text": "Cirrus"}, {"id": "opt_c", "label": "C", "text": "Stratus"}, {"id": "opt_d", "label": "D", "text": "Nimbostratus"}], "answer": "B", "answer_id": "opt_b", "explanation": "Cirrus clouds are feathery, high-altitude clouds formed at 8,000-12,000 m.", "statement_truths": "", "subject": "Geography", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Humanities", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-M2-HUM-060", "text_hash": "0afdc23c06459f33", "text": "The 'Suez Canal' connects which two major bodies of water?", "options": [{"id": "opt_a", "label": "A", "text": "Red Sea and Arabian Sea"}, {"id": "opt_b", "label": "B", "text": "Mediterranean Sea and Red Sea"}, {"id": "opt_c", "label": "C", "text": "Baltic Sea and North Sea"}, {"id": "opt_d", "label": "D", "text": "Black Sea and Aegean Sea"}], "answer": "B", "answer_id": "opt_b", "explanation": "The Suez Canal cuts through the Isthmus of Suez connecting the Mediterranean Sea and Red Sea.", "statement_truths": "", "subject": "Geography", "paper": "Paper 1", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Humanities", "origin_file": "CBT_Full_Prelims_P1_Mock2.html", "section_id": "SEC-P1-2"}]};
+
+// SIMULATION STATE
+const STATE = {
+  activeScreen: 'screen-instructions',
+  currentQuestionIndex: 0,
+  activeSectionId: 'ALL',
+  endTime: null,
+  durationMinutes: EXAM_DATA.duration_minutes || 120,
+  timerInterval: null,
+  answers: {}, // { [q.id]: { selectedOptionId: 'opt_b', status: 'answered'|'not-answered'|'marked'|'marked-answered'|'not-visited' } }
+  questionStatuses: {}, // { [q.id]: status }
+  storageKey: 'KPSC_CBT_R3_' + (EXAM_DATA.test_id || 'DEFAULT')
+};
+
+// THEME HANDLING
+function initTheme() {
+  let theme = 'light';
+  try {
+    theme = localStorage.getItem('cbt_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  } catch(e) {}
+  document.documentElement.setAttribute('data-theme', theme);
+}
+document.getElementById('theme-btn').addEventListener('click', () => {
+  const cur = document.documentElement.getAttribute('data-theme');
+  const next = cur === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  try { localStorage.setItem('cbt_theme', next); } catch(e) {}
+});
+
+// SWITCH SCREEN
+function showScreen(id) {
+  document.querySelectorAll('.screen-view').forEach(el => el.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  STATE.activeScreen = id;
+}
+
+// STORAGE
+function saveToStorage() {
+  try {
+    localStorage.setItem(STATE.storageKey, JSON.stringify({
+      endTime: STATE.endTime,
+      durationMinutes: STATE.durationMinutes,
+      answers: STATE.answers,
+      currentQuestionIndex: STATE.currentQuestionIndex,
+      activeSectionId: STATE.activeSectionId
+    }));
+  } catch(e) {}
+}
+
+function loadFromStorage() {
+  try {
+    const raw = localStorage.getItem(STATE.storageKey);
+    if (!raw) return false;
+    const data = JSON.parse(raw);
+    if (data.endTime && data.endTime > Date.now()) {
+      STATE.endTime = data.endTime;
+      STATE.durationMinutes = data.durationMinutes || STATE.durationMinutes;
+      STATE.answers = data.answers || {};
+      STATE.currentQuestionIndex = data.currentQuestionIndex || 0;
+      STATE.activeSectionId = data.activeSectionId || 'ALL';
+      return true;
+    }
+  } catch(e) {}
+  return false;
+}
+
+function clearStorage() {
+  try { localStorage.removeItem(STATE.storageKey); } catch(e) {}
+}
+
+// TIMER ENGINE
+function startWallClockTimer() {
+  if (STATE.timerInterval) clearInterval(STATE.timerInterval);
+
+  function tick() {
+    const res = CbtCore.computeRemainingTime(STATE.endTime);
+    document.getElementById('timer-display').textContent = res.formatted;
+
+    if (res.remainingSeconds <= 300) {
+      document.getElementById('timer-box').style.borderColor = '#ef4444';
+      document.getElementById('timer-display').style.color = '#ef4444';
+    } else {
+      document.getElementById('timer-box').style.borderColor = 'var(--border-color)';
+      document.getElementById('timer-display').style.color = 'var(--text-primary)';
+    }
+
+    if (res.isExpired) {
+      clearInterval(STATE.timerInterval);
+      alert('Time has expired! Your examination will now be submitted automatically.');
+      finalizeExamSubmission();
+    }
+  }
+
+  tick();
+  STATE.timerInterval = setInterval(tick, 1000);
+}
+
+// SECTION TABS
+function renderSectionTabs() {
+  const bar = document.getElementById('section-bar');
+  bar.innerHTML = '';
+
+  const allTab = document.createElement('div');
+  allTab.className = 'sec-tab' + (STATE.activeSectionId === 'ALL' ? ' active' : '');
+  allTab.textContent = `All Questions (${EXAM_DATA.questions.length})`;
+  allTab.addEventListener('click', () => {
+    STATE.activeSectionId = 'ALL';
+    renderSectionTabs();
+    renderPalette();
+  });
+  bar.appendChild(allTab);
+
+  (EXAM_DATA.sections || []).forEach(sec => {
+    const tab = document.createElement('div');
+    tab.className = 'sec-tab' + (STATE.activeSectionId === sec.id ? ' active' : '');
+    tab.textContent = `${sec.name} (${sec.q_count || 0})`;
+    tab.addEventListener('click', () => {
+      STATE.activeSectionId = sec.id;
+      renderSectionTabs();
+      renderPalette();
+      // Jump to first question of section
+      const firstQIdx = EXAM_DATA.questions.findIndex(q => q.section_id === sec.id);
+      if (firstQIdx >= 0) loadQuestion(firstQIdx);
+    });
+    bar.appendChild(tab);
+  });
+}
+
+// PALETTE
+function getFilteredQuestions() {
+  if (STATE.activeSectionId === 'ALL') {
+    return EXAM_DATA.questions.map((q, idx) => ({ q, idx }));
+  }
+  return EXAM_DATA.questions
+    .map((q, idx) => ({ q, idx }))
+    .filter(item => item.q.section_id === STATE.activeSectionId);
+}
+
+function renderPalette() {
+  const grid = document.getElementById('palette-grid');
+  grid.innerHTML = '';
+
+  let cAns = 0, cNotAns = 0, cNotVis = 0, cMark = 0, cMarkAns = 0;
+
+  EXAM_DATA.questions.forEach((q, idx) => {
+    const entry = STATE.answers[q.id];
+    const status = entry ? entry.status : 'not-visited';
+
+    if (status === 'answered') cAns++;
+    else if (status === 'not-answered') cNotAns++;
+    else if (status === 'marked') cMark++;
+    else if (status === 'marked-answered') cMarkAns++;
+    else cNotVis++;
+  });
+
+  document.getElementById('badge-count-ans').textContent = cAns;
+  document.getElementById('badge-count-not-ans').textContent = cNotAns;
+  document.getElementById('badge-count-not-vis').textContent = cNotVis;
+  document.getElementById('badge-count-marked').textContent = cMark;
+  document.getElementById('badge-count-marked-ans').textContent = cMarkAns;
+
+  const currentSec = (EXAM_DATA.sections || []).find(s => s.id === STATE.activeSectionId);
+  document.getElementById('pal-sec-name').textContent = currentSec ? currentSec.name : 'All Questions';
+
+  const items = getFilteredQuestions();
+  items.forEach(({ q, idx }) => {
+    const entry = STATE.answers[q.id];
+    const status = entry ? entry.status : 'not-visited';
+
+    const btn = document.createElement('button');
+    btn.className = `pal-btn st-${status}` + (idx === STATE.currentQuestionIndex ? ' active-q' : '');
+    btn.textContent = idx + 1;
+    btn.title = `Question ${idx + 1} (${q.subject || 'GS'})`;
+    btn.addEventListener('click', () => loadQuestion(idx));
+    grid.appendChild(btn);
+  });
+}
+
+// QUESTION RENDERING
+function loadQuestion(idx) {
+  if (idx < 0 || idx >= EXAM_DATA.questions.length) return;
+  STATE.currentQuestionIndex = idx;
+  const q = EXAM_DATA.questions[idx];
+
+  // If question was never visited, mark as not-answered upon arrival
+  if (!STATE.answers[q.id]) {
+    STATE.answers[q.id] = { selectedOptionId: null, status: 'not-answered' };
+  } else if (STATE.answers[q.id].status === 'not-visited') {
+    STATE.answers[q.id].status = 'not-answered';
+  }
+
+  document.getElementById('q-title-label').textContent = `Question No. ${idx + 1} [ID: ${q.id}]`;
+  document.getElementById('q-text-body').innerHTML = q.text.replace(/\n/g, '<br>');
+
+  const optContainer = document.getElementById('options-list');
+  optContainer.innerHTML = '';
+
+  const currentSelection = STATE.answers[q.id]?.selectedOptionId;
+
+  q.options.forEach(opt => {
+    const card = document.createElement('div');
+    card.className = 'option-card' + (currentSelection === opt.id || currentSelection === opt.label ? ' selected' : '');
+
+    const radio = document.createElement('input');
+    radio.type = 'radio';
+    radio.name = 'opt_radio_group';
+    radio.className = 'opt-radio';
+    radio.value = opt.id;
+    radio.checked = (currentSelection === opt.id || currentSelection === opt.label);
+
+    const pill = document.createElement('div');
+    pill.className = 'opt-pill';
+    pill.textContent = opt.label;
+
+    const txt = document.createElement('div');
+    txt.className = 'opt-text';
+    txt.textContent = opt.text;
+
+    card.appendChild(radio);
+    card.appendChild(pill);
+    card.appendChild(txt);
+
+    card.addEventListener('click', () => {
+      document.querySelectorAll('.option-card').forEach(c => c.classList.remove('selected'));
+      card.classList.add('selected');
+      radio.checked = true;
+      // Track selection in memory immediately
+      STATE.answers[q.id].selectedOptionId = opt.id;
+    });
+
+    optContainer.appendChild(card);
+  });
+
+  renderPalette();
+  saveToStorage();
+}
+
+function getSelectedRadioValue() {
+  const checked = document.querySelector('input[name="opt_radio_group"]:checked');
+  return checked ? checked.value : null;
+}
+
+// CONTROL ACTIONS
+document.getElementById('btn-save-next').addEventListener('click', () => {
+  const q = EXAM_DATA.questions[STATE.currentQuestionIndex];
+  const sel = getSelectedRadioValue();
+  if (sel) {
+    STATE.answers[q.id] = { selectedOptionId: sel, status: 'answered' };
+  } else {
+    STATE.answers[q.id] = { selectedOptionId: null, status: 'not-answered' };
+  }
+  if (STATE.currentQuestionIndex < EXAM_DATA.questions.length - 1) {
+    loadQuestion(STATE.currentQuestionIndex + 1);
+  } else {
+    renderPalette();
+  }
+});
+
+document.getElementById('btn-mark-review').addEventListener('click', () => {
+  const q = EXAM_DATA.questions[STATE.currentQuestionIndex];
+  const sel = getSelectedRadioValue();
+  if (sel) {
+    STATE.answers[q.id] = { selectedOptionId: sel, status: 'marked-answered' };
+  } else {
+    STATE.answers[q.id] = { selectedOptionId: null, status: 'marked' };
+  }
+  if (STATE.currentQuestionIndex < EXAM_DATA.questions.length - 1) {
+    loadQuestion(STATE.currentQuestionIndex + 1);
+  } else {
+    renderPalette();
+  }
+});
+
+document.getElementById('btn-clear-resp').addEventListener('click', () => {
+  const q = EXAM_DATA.questions[STATE.currentQuestionIndex];
+  STATE.answers[q.id] = { selectedOptionId: null, status: 'not-answered' };
+  document.querySelectorAll('.option-card').forEach(c => c.classList.remove('selected'));
+  document.querySelectorAll('input[name="opt_radio_group"]').forEach(r => r.checked = false);
+  renderPalette();
+  saveToStorage();
+});
+
+document.getElementById('btn-prev').addEventListener('click', () => {
+  if (STATE.currentQuestionIndex > 0) {
+    loadQuestion(STATE.currentQuestionIndex - 1);
+  }
+});
+
+// KEYBOARD SHORTCUTS
+window.addEventListener('keydown', (e) => {
+  if (STATE.activeScreen !== 'screen-exam') return;
+  if (e.altKey && e.key.toLowerCase() === 'n') {
+    e.preventDefault();
+    document.getElementById('btn-save-next').click();
+  } else if (e.altKey && e.key.toLowerCase() === 'p') {
+    e.preventDefault();
+    document.getElementById('btn-prev').click();
+  } else if (e.altKey && e.key.toLowerCase() === 'c') {
+    e.preventDefault();
+    document.getElementById('btn-clear-resp').click();
+  }
+});
+
+// SUBMIT FLOW & MODAL
+const submitModal = document.getElementById('modal-submit');
+document.getElementById('btn-trigger-submit').addEventListener('click', () => {
+  const tbody = document.getElementById('modal-table-body');
+  tbody.innerHTML = '';
+
+  const sectionsToReport = (EXAM_DATA.sections && EXAM_DATA.sections.length > 0)
+    ? EXAM_DATA.sections
+    : [{ id: 'ALL', name: 'General Studies', question_ids: EXAM_DATA.questions.map(q => q.id) }];
+
+  sectionsToReport.forEach(sec => {
+    let ans = 0, notAns = 0, marked = 0, notVis = 0;
+    const secQuestions = EXAM_DATA.questions.filter(q => sec.id === 'ALL' || q.section_id === sec.id);
+
+    secQuestions.forEach(q => {
+      const entry = STATE.answers[q.id];
+      const st = entry ? entry.status : 'not-visited';
+      if (st === 'answered' || st === 'marked-answered') ans++;
+      else if (st === 'not-answered') notAns++;
+      else if (st === 'marked') marked++;
+      else notVis++;
+    });
+
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td style="font-weight: 600; text-align: left;">${sec.name}</td>
+      <td>${secQuestions.length}</td>
+      <td style="color: var(--ans-green); font-weight: 700;">${ans}</td>
+      <td style="color: var(--not-ans-red); font-weight: 700;">${notAns}</td>
+      <td style="color: var(--marked-purple); font-weight: 700;">${marked}</td>
+      <td>${notVis}</td>
+    `;
+    tbody.appendChild(tr);
+  });
+
+  submitModal.classList.add('active');
+});
+
+document.getElementById('btn-modal-cancel').addEventListener('click', () => {
+  submitModal.classList.remove('active');
+});
+
+document.getElementById('btn-modal-confirm').addEventListener('click', () => {
+  submitModal.classList.remove('active');
+  finalizeExamSubmission();
+});
+
+// EVALUATION & RESULTS VIEW
+function finalizeExamSubmission() {
+  if (STATE.timerInterval) clearInterval(STATE.timerInterval);
+  clearStorage();
+
+  const markingScheme = { positiveMarks: 2.0, negativePenalty: 0.5 };
+  const res = CbtCore.scoreExam(STATE.answers, EXAM_DATA.questions, EXAM_DATA.sections, markingScheme);
+
+  // Render Scorecard
+  document.getElementById('res-net-score').textContent = res.netScore.toFixed(2);
+  document.getElementById('res-max-marks').textContent = (res.totalQuestions * 2.0).toFixed(1);
+  document.getElementById('res-accuracy').textContent = res.accuracy.toFixed(1) + '%';
+  document.getElementById('res-attempted').textContent = `${res.attemptedCount} / ${res.totalQuestions}`;
+  document.getElementById('res-pos-neg').textContent = `+${res.positiveMarks.toFixed(1)} / -${res.negativePenalty.toFixed(1)}`;
+
+  // Render Section Table
+  const secTbody = document.getElementById('res-section-body');
+  secTbody.innerHTML = '';
+  res.sectionBreakdown.forEach(s => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td style="font-weight: 600; text-align: left;">${s.name}</td>
+      <td>${s.total}</td>
+      <td>${s.attempted}</td>
+      <td style="color: var(--ans-green); font-weight: 700;">${s.correct}</td>
+      <td style="color: var(--not-ans-red); font-weight: 700;">${s.incorrect}</td>
+      <td style="font-weight: 800; color: ${s.netMarks >= 0 ? 'var(--accent-color)' : 'var(--not-ans-red)'};">${s.netMarks.toFixed(2)}</td>
+      <td>${s.accuracy.toFixed(1)}%</td>
+    `;
+    secTbody.appendChild(tr);
+  });
+
+  renderReviewList('all');
+  showScreen('screen-result');
+}
+
+function renderReviewList(filter = 'all') {
+  const container = document.getElementById('review-list');
+  container.innerHTML = '';
+
+  EXAM_DATA.questions.forEach((q, idx) => {
+    const entry = STATE.answers[q.id];
+    const userOptId = entry ? entry.selectedOptionId : null;
+    const correctOptId = q.answer_id || q.answer;
+    const isCorrect = userOptId && (userOptId === correctOptId || userOptId === q.answer);
+    const isAttempted = !!userOptId;
+
+    if (filter === 'flawed' && isCorrect) return;
+    if (filter === 'unattempted' && isAttempted) return;
+
+    let badgeClass = 'var(--text-secondary)';
+    let badgeText = 'Unattempted (0.00)';
+    if (isAttempted) {
+      if (isCorrect) {
+        badgeClass = 'var(--ans-green)';
+        badgeText = 'Correct (+2.00)';
+      } else {
+        badgeClass = 'var(--not-ans-red)';
+        badgeText = 'Incorrect (-0.50)';
+      }
+    }
+
+    const item = document.createElement('div');
+    item.className = 'review-item';
+
+    item.innerHTML = `
+      <div class="review-meta">
+        <span>Q${idx + 1}. [${q.subject || 'GS'}] ID: ${q.id}</span>
+        <span style="color: ${badgeClass}; font-weight: 700;">${badgeText}</span>
+      </div>
+      <div style="font-size: 1.05rem; font-weight: 500; margin-bottom: 16px;">
+        ${q.text.replace(/\n/g, '<br>')}
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 14px;">
+        ${q.options.map(opt => {
+          let bg = 'var(--bg-surface-secondary)';
+          let border = 'var(--border-color)';
+          if (opt.id === correctOptId || opt.label === q.answer) {
+            bg = 'var(--ans-green-bg)';
+            border = 'var(--ans-green)';
+          } else if (opt.id === userOptId || opt.label === userOptId) {
+            bg = 'var(--not-ans-red-bg)';
+            border = 'var(--not-ans-red)';
+          }
+          return `<div style="padding: 10px 14px; border-radius: 6px; border: 1.5px solid ${border}; background: ${bg}; font-size: 0.92rem;">
+            <strong>${opt.label}:</strong> ${opt.text}
+          </div>`;
+        }).join('')}
+      </div>
+      ${q.statement_truths ? `<div class="truth-box"><strong>Per-Statement Verification:</strong><br>${q.statement_truths}</div>` : ''}
+      <div class="explanation-box">
+        <strong>Official Pedagogical Explanation:</strong><br>
+        ${q.explanation || 'Detailed explanation verified against primary historical and syllabus sources.'}
+        ${q.linked_note ? `<br><small style="color: var(--accent-color); font-weight: 600;">Vault Reference: [[${q.linked_note}]]</small>` : ''}
+      </div>
+    `;
+
+    container.appendChild(item);
+  });
+}
+
+document.getElementById('btn-filter-all').addEventListener('click', () => renderReviewList('all'));
+document.getElementById('btn-filter-flawed').addEventListener('click', () => renderReviewList('flawed'));
+document.getElementById('btn-filter-unattempted').addEventListener('click', () => renderReviewList('unattempted'));
+
+document.getElementById('btn-retake').addEventListener('click', () => {
+  clearStorage();
+  window.location.reload();
+});
+
+// START EXAM FLOW
+document.getElementById('btn-start-exam').addEventListener('click', () => {
+  const agreed = document.getElementById('inst-agree-check').checked;
+  if (!agreed) {
+    alert('Please acknowledge that you have read the examination instructions.');
+    return;
+  }
+
+  const selectedMode = document.querySelector('input[name="sim-mode"]:checked').value;
+  let durationMins = EXAM_DATA.duration_minutes || 120;
+  if (selectedMode === 'quick') {
+    durationMins = 2; // 2 minutes for testing
+    document.getElementById('header-mode-badge').textContent = 'Quick Check (2m)';
+  } else {
+    document.getElementById('header-mode-badge').textContent = 'Exam Mode';
+  }
+
+  STATE.durationMinutes = durationMins;
+  STATE.endTime = Date.now() + (durationMins * 60 * 1000);
+
+  // Initialize all questions to not-visited
+  EXAM_DATA.questions.forEach(q => {
+    STATE.answers[q.id] = { selectedOptionId: null, status: 'not-visited' };
+  });
+
+  saveToStorage();
+  renderSectionTabs();
+  renderPalette();
+  loadQuestion(0);
+  startWallClockTimer();
+  showScreen('screen-exam');
+});
+
+// INIT ON LOAD
+window.addEventListener('DOMContentLoaded', () => {
+  initTheme();
+  document.getElementById('inst-q-count').textContent = EXAM_DATA.questions.length;
+  document.getElementById('inst-max-marks').textContent = (EXAM_DATA.questions.length * 2.0).toFixed(1);
+  const dur = EXAM_DATA.duration_minutes || 120;
+  document.getElementById('inst-duration').textContent = `${dur} Minutes`;
+  document.getElementById('mode-exam-mins').textContent = dur;
+
+  // Check if active test exists in storage
+  const hasCached = loadFromStorage();
+  if (hasCached) {
+    const resumeBtn = document.getElementById('btn-resume-cached');
+    resumeBtn.style.display = 'inline-block';
+    resumeBtn.addEventListener('click', () => {
+      renderSectionTabs();
+      renderPalette();
+      loadQuestion(STATE.currentQuestionIndex);
+      startWallClockTimer();
+      showScreen('screen-exam');
+    });
+  }
+});
+</script>
+</body>
+</html>

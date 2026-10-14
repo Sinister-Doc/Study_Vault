@@ -1,0 +1,82 @@
+{
+  "exam": "KPSC Gazetted Probationers (KAS)",
+  "body": "Karnataka Public Service Commission (KPSC)",
+  "notification": {
+    "name": "KPSC Gazetted Probationers 2026-27 Notification No. KPSCKA/EXA1/EXMF/9/2026-EXAM",
+    "date": "2026-07-31",
+    "url": "https://kpsc.kar.nic.in"
+  },
+  "format": "omr-style",
+  "languages": ["English"],
+  "alt_language": "kn",
+  "dropped_policy": "award_all",
+  "multiple": "wrong",
+  "papers": [
+    {
+      "id": "P1",
+      "name": "Preliminary Paper 1 (General Studies & Humanities)",
+      "duration_min": 120,
+      "qualifying": "Merit screening paper for admission to Main examination in 1:15 ratio",
+      "sections": [
+        {
+          "id": "S1",
+          "name": "Current Events of National and International Importance",
+          "subject": "Current Affairs",
+          "questions": 40,
+          "marks_correct": 2,
+          "negative": "0.5",
+          "blank": 0,
+          "multiple": "wrong"
+        },
+        {
+          "id": "S2",
+          "name": "Humanities (History, Geography, Polity & Economy with Karnataka focus)",
+          "subject": "Humanities",
+          "questions": 60,
+          "marks_correct": 2,
+          "negative": "0.5",
+          "blank": 0,
+          "multiple": "wrong"
+        }
+      ]
+    },
+    {
+      "id": "P2",
+      "name": "Preliminary Paper 2 (State Affairs, General Science & Mental Ability)",
+      "duration_min": 120,
+      "qualifying": "Merit screening paper for admission to Main examination in 1:15 ratio",
+      "sections": [
+        {
+          "id": "S1",
+          "name": "Current Events of State Importance and State Programmes",
+          "subject": "Karnataka Affairs",
+          "questions": 40,
+          "marks_correct": 2,
+          "negative": "0.5",
+          "blank": 0,
+          "multiple": "wrong"
+        },
+        {
+          "id": "S2",
+          "name": "General Science, Technology, Environment & Ecology",
+          "subject": "Science and Environment",
+          "questions": 30,
+          "marks_correct": 2,
+          "negative": "0.5",
+          "blank": 0,
+          "multiple": "wrong"
+        },
+        {
+          "id": "S3",
+          "name": "General Mental Ability (SSLC Level)",
+          "subject": "General Mental Ability",
+          "questions": 30,
+          "marks_correct": 2,
+          "negative": "0.5",
+          "blank": 0,
+          "multiple": "wrong"
+        }
+      ]
+    }
+  ]
+}

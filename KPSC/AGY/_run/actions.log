@@ -1,0 +1,387 @@
+[2026-10-13 08:15:28] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\test_file.tmp (17 chars)
+[2026-10-13 08:15:28] [SAFE_APPEND] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\test_file.tmp (17 chars)
+[2026-10-13 08:15:28] [SAFE_DELETE_FILE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\test_file.tmp
+[2026-10-13 08:15:28] [GUARD_EVENT] REFUSED outside-ROOT target: D:\outside.txt -> D:\outside.txt
+[2026-10-13 08:15:28] [GUARD_EVENT] REFUSED outside-ROOT target: C:\test.txt -> C:\test.txt
+[2026-10-13 08:15:28] [GUARD_EVENT] REFUSED outside-ROOT target: ..\outside.txt -> D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\outside.txt
+[2026-10-13 08:15:28] [GUARD_EVENT] REFUSED outside-ROOT target: D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\..\outside.txt -> D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\outside.txt
+[2026-10-13 08:15:28] [GUARD_EVENT] REFUSED outside-ROOT target: D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\outside.txt -> D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\outside.txt
+[2026-10-13 08:15:28] [GUARD_EVENT] REFUSED outside-ROOT target: D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY -> D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY
+[2026-10-13 08:15:28] [GUARD_EVENT] REFUSED deletion of protected file: D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\actions.log
+[2026-10-13 08:15:28] [GUARD_EVENT] REFUSED deletion of protected file: D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\PROMPT.md
+[2026-10-13 08:15:28] [GUARD_EVENT] REFUSED wildcard path: D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\test*.txt
+[2026-10-13 08:15:28] [GUARD_EVENT] REFUSED invalid path 'D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\test:stream.txt': Alternate data streams not permitted: D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\test:stream.txt
+[2026-10-13 08:15:28] [SELF_TEST] All safe_ops boundary checks passed.
+[2026-10-13 08:16:44] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\PROMPT.md (verbatim prompt saved)
+[2026-10-13 08:16:44] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\before_snapshot.json (580 chars)
+[2026-10-13 08:16:52] [SAFE_MKDIR] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\source
+[2026-10-13 08:16:52] [SAFE_COPY] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\KPSC KAS notification KPSCKA-EXA1-EXMF-9-2026-EXAM.pdf -> D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\source\notification.pdf
+[2026-10-13 08:16:52] [SAFE_COPY] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\KPSC KAS 2026-27 recruitment.pdf -> D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\source\application.pdf
+[2026-10-13 08:18:04] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\source\notification_raw.md (83184 chars)
+[2026-10-13 08:18:28] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\application_context.md (793 chars)
+[2026-10-13 08:18:28] [SAFE_DELETE_FILE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\source\application_raw.md
+[2026-10-13 08:18:28] [SAFE_DELETE_FILE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\source\application.pdf
+[2026-10-13 08:46:07] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\06_Science_Technology_Environment\Environment_Biodiversity_Climate.md (12808 chars)
+[2026-10-13 08:46:07] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\06_Science_Technology_Environment\Karnataka_IT_BT_and_Innovation.md (9480 chars)
+[2026-10-13 08:46:07] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\06_Science_Technology_Environment\Karnataka_Biodiversity_and_Western_Ghats.md (11186 chars)
+[2026-10-13 08:46:07] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\06_Science_Technology_Environment\Public_Health_and_Sanitation_Karnataka.md (10553 chars)
+[2026-10-13 08:47:29] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\07_General_Mental_Ability\Reading_Comprehension.md (5797 chars)
+[2026-10-13 08:47:29] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\07_General_Mental_Ability\Logical_and_Analytical_Reasoning.md (6327 chars)
+[2026-10-13 08:47:29] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\07_General_Mental_Ability\Decision_Making_Problem_Solving.md (7608 chars)
+[2026-10-13 08:47:29] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\07_General_Mental_Ability\Basic_Numeracy.md (5730 chars)
+[2026-10-13 08:47:29] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\07_General_Mental_Ability\Data_Interpretation.md (6590 chars)
+[2026-10-13 08:49:10] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\08_Ethics_Integrity_and_Aptitude\Ethics_and_Human_Interface.md (6354 chars)
+[2026-10-13 08:49:10] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\08_Ethics_Integrity_and_Aptitude\Great_Reformers_and_Moral_Thinkers.md (7570 chars)
+[2026-10-13 08:49:10] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\08_Ethics_Integrity_and_Aptitude\Attitude_and_Civil_Service_Values.md (6454 chars)
+[2026-10-13 08:49:10] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\08_Ethics_Integrity_and_Aptitude\Emotional_Intelligence_in_Administration.md (5606 chars)
+[2026-10-13 08:49:10] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\08_Ethics_Integrity_and_Aptitude\Probity_in_Governance_and_Public_Funds.md (6901 chars)
+[2026-10-13 08:49:10] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\08_Ethics_Integrity_and_Aptitude\Ethics_Case_Studies_Framework.md (8986 chars)
+[2026-10-13 08:50:07] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\09_Qualifying_Kannada_and_English\Qualifying_Kannada_Preparation.md (6838 chars)
+[2026-10-13 08:50:07] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\09_Qualifying_Kannada_and_English\Qualifying_English_Preparation.md (6551 chars)
+[2026-10-13 08:52:01] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\04_Current_Affairs_GK\01_Monthly_Digests_2025_2026\National_Current_Affairs.md (9167 chars)
+[2026-10-13 08:52:01] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\04_Current_Affairs_GK\01_Monthly_Digests_2025_2026\International_Current_Affairs.md (7879 chars)
+[2026-10-13 08:52:01] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\04_Current_Affairs_GK\01_Monthly_Digests_2025_2026\Karnataka_Current_Affairs.md (9195 chars)
+[2026-10-13 08:52:01] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\04_Current_Affairs_GK\02_Karnataka_State_Schemes_and_Policies\Karnataka_Flagship_Schemes.md (10547 chars)
+[2026-10-13 08:53:10] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\05_Resources\Mains_Frameworks\Essay_Frameworks.md (7257 chars)
+[2026-10-13 08:53:10] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\05_Resources\Mains_Frameworks\Mains_Question_Bank.md (9363 chars)
+[2026-10-13 08:53:10] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\05_Resources\Mains_Frameworks\Answer_Writing_Frameworks.md (7278 chars)
+[2026-10-13 08:58:13] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\05_Resources\Question_Bank\question_bank.json (175310 chars)
+[2026-10-13 08:58:43] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\05_Resources\Question_Bank\question_bank.json (176185 chars)
+[2026-10-13 09:04:16] [SAFE_MKDIR] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\reviews
+[2026-10-13 09:04:16] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\reviews\karn-hist-by-polity.md (1338 chars)
+[2026-10-13 09:04:16] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\reviews\ind-hist-by-karnhist.md (1036 chars)
+[2026-10-13 09:04:16] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\reviews\geo-by-science.md (958 chars)
+[2026-10-13 09:04:16] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\reviews\polity-by-economy.md (959 chars)
+[2026-10-13 09:04:16] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\reviews\econ-by-geography.md (868 chars)
+[2026-10-13 09:04:16] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\reviews\sci-by-history.md (1045 chars)
+[2026-10-13 09:04:16] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\reviews\gma-by-lead.md (824 chars)
+[2026-10-13 09:04:16] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\reviews\ethics-by-lead.md (844 chars)
+[2026-10-13 09:04:16] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\reviews\lang-by-factchecker.md (762 chars)
+[2026-10-13 09:04:16] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\reviews\ca-by-factchecker.md (883 chars)
+[2026-10-13 09:04:16] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\reviews\mocks-by-factchecker.md (824 chars)
+[2026-10-13 09:04:16] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\reviews\lead-by-factchecker.md (724 chars)
+[2026-10-13 09:04:16] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\07_Agent_Log\fact_check_ledger.md (6417 chars)
+[2026-10-13 09:07:13] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\after_snapshot.json (580 chars)
+[2026-10-13 09:07:13] [SNAPSHOT_VERIFIED] Parent KPSC directory untouched - 100% integrity match.
+[2026-10-13 20:04:02] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\test_file.tmp (17 chars)
+[2026-10-13 20:04:02] [SAFE_APPEND] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\test_file.tmp (17 chars)
+[2026-10-13 20:04:03] [SAFE_DELETE_FILE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\test_file.tmp
+[2026-10-13 20:04:03] [GUARD_EVENT] REFUSED outside-ROOT target: D:\outside.txt -> D:\outside.txt
+[2026-10-13 20:04:03] [GUARD_EVENT] REFUSED outside-ROOT target: C:\test.txt -> C:\test.txt
+[2026-10-13 20:04:03] [GUARD_EVENT] REFUSED outside-ROOT target: ..\outside.txt -> D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\outside.txt
+[2026-10-13 20:04:03] [GUARD_EVENT] REFUSED outside-ROOT target: D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\..\outside.txt -> D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\outside.txt
+[2026-10-13 20:04:03] [GUARD_EVENT] REFUSED outside-ROOT target: D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\outside.txt -> D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\outside.txt
+[2026-10-13 20:04:03] [GUARD_EVENT] REFUSED outside-ROOT target: D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY -> D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY
+[2026-10-13 20:04:03] [GUARD_EVENT] REFUSED deletion of protected file: D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\actions.log
+[2026-10-13 20:04:03] [GUARD_EVENT] REFUSED deletion of protected file: D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\PROMPT.md
+[2026-10-13 20:04:03] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\PROMPT_R2.md (15 chars)
+[2026-10-13 20:04:03] [GUARD_EVENT] REFUSED wildcard path: D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\test*.txt
+[2026-10-13 20:04:03] [GUARD_EVENT] REFUSED invalid path 'D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\test:stream.txt': Alternate data streams not permitted: D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\test:stream.txt
+[2026-10-13 20:04:03] [SELF_TEST_FAILED] safe_ops self-test encountered errors.
+[2026-10-13 20:04:40] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\test_file.tmp (17 chars)
+[2026-10-13 20:04:40] [SAFE_APPEND] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\test_file.tmp (17 chars)
+[2026-10-13 20:04:40] [SAFE_DELETE_FILE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\test_file.tmp
+[2026-10-13 20:04:40] [GUARD_EVENT] REFUSED outside-ROOT target: D:\outside.txt -> D:\outside.txt
+[2026-10-13 20:04:40] [GUARD_EVENT] REFUSED outside-ROOT target: C:\test.txt -> C:\test.txt
+[2026-10-13 20:04:40] [GUARD_EVENT] REFUSED outside-ROOT target: ..\outside.txt -> D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\outside.txt
+[2026-10-13 20:04:40] [GUARD_EVENT] REFUSED outside-ROOT target: D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\..\outside.txt -> D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\outside.txt
+[2026-10-13 20:04:40] [GUARD_EVENT] REFUSED outside-ROOT target: D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\outside.txt -> D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\outside.txt
+[2026-10-13 20:04:40] [GUARD_EVENT] REFUSED outside-ROOT target: D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY -> D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY
+[2026-10-13 20:04:40] [GUARD_EVENT] REFUSED deletion of protected file: D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\actions.log
+[2026-10-13 20:04:40] [GUARD_EVENT] REFUSED deletion of protected file: D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\PROMPT.md
+[2026-10-13 20:04:40] [GUARD_EVENT] REFUSED deletion of protected file: D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\PROMPT_R2.md
+[2026-10-13 20:04:40] [GUARD_EVENT] REFUSED wildcard path: D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\test*.txt
+[2026-10-13 20:04:40] [GUARD_EVENT] REFUSED invalid path 'D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\test:stream.txt': Alternate data streams not permitted: D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\test:stream.txt
+[2026-10-13 20:04:40] [GUARD_EVENT] REFUSED download outside magazines dir: D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\outside_mag.pdf
+[2026-10-13 20:04:40] [GUARD_EVENT] REFUSED non-http URL for download: ftp://example.com/test.pdf
+[2026-10-13 20:04:40] [SELF_TEST] All safe_ops boundary checks passed.
+[2026-10-13 20:04:48] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\before_snapshot_r2.json (580 chars)
+[2026-10-13 20:06:38] [INIT_R2] Preserved PROMPT_R2.md and recorded before_snapshot_r2.json
+[2026-10-13 20:08:35] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\AUDIT_R2.md (8394 chars)
+[2026-10-13 20:10:17] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\PLAN_R2.md (13668 chars)
+[2026-10-13 20:10:34] [SAFE_MKDIR] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\_src
+[2026-10-13 20:10:34] [SAFE_MKDIR] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys
+[2026-10-13 20:10:34] [SAFE_MKDIR] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_sources\magazines
+[2026-10-13 20:10:34] [SAFE_MKDIR] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\04_Current_Affairs_GK\Monthly_Digests_2026
+[2026-10-13 20:11:56] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\_src\cbt_engine_template.html (31132 chars)
+[2026-10-13 20:14:19] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\Prehistory_and_Protohistory_Karnataka.md (17930 chars)
+[2026-10-13 20:15:24] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\Early_Dynasties_Kadambas_and_Gangas.md (17703 chars)
+[2026-10-13 20:16:59] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\Badami_Chalukyas_Architecture_and_Empire.md (14455 chars)
+[2026-10-13 20:17:58] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\Rashtrakutas_of_Manyakheta_and_Kavirajamarga.md (16443 chars)
+[2026-10-13 20:19:13] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\Kalyana_Chalukyas_Kalachuris_and_Vachana_Movement.md (20942 chars)
+[2026-10-13 20:20:18] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\Hoysalas_of_Dwarasamudra_and_Seunas.md (17824 chars)
+[2026-10-13 20:21:46] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\Vijayanagara_Empire_Polity_and_Culture.md (19942 chars)
+[2026-10-13 20:22:46] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\Bahmani_and_Adil_Shahi_Sultanates.md (14249 chars)
+[2026-10-13 20:23:42] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\Nayakas_of_Keladi_and_Chitradurga.md (13638 chars)
+[2026-10-13 20:25:13] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\Mysore_Kingdom_Wodeyars_and_Dewans.md (20277 chars)
+[2026-10-13 20:26:39] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\Freedom_Struggle_and_Armed_Revolts_in_Karnataka.md (21679 chars)
+[2026-10-13 20:26:39] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\Freedom_Struggle_in_Karnataka.md (21679 chars)
+[2026-10-13 20:27:49] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\Karnataka_Unification_Social_Reforms_and_Culture.md (21196 chars)
+[2026-10-13 20:27:49] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\Karnataka_Unification_and_Social_Movements.md (21196 chars)
+[2026-10-13 20:29:06] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\03_Geography_Karnataka_and_World\Karnataka_Location_Physiography_and_Geology.md (17660 chars)
+[2026-10-13 20:29:06] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\03_Geography_Karnataka_and_World\Karnataka_Physiography_and_Rivers.md (17660 chars)
+[2026-10-13 20:30:16] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\03_Geography_Karnataka_and_World\Karnataka_Drainage_and_River_Basins.md (21525 chars)
+[2026-10-13 20:32:38] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\03_Geography_Karnataka_and_World\Karnataka_Climate_and_Rainfall_Patterns.md (14263 chars)
+[2026-10-13 20:32:38] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\03_Geography_Karnataka_and_World\Karnataka_Soils_and_Land_Degradation.md (17273 chars)
+[2026-10-13 20:35:54] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\03_Geography_Karnataka_and_World\Karnataka_Climate_and_Rainfall_Patterns.md (21895 chars)
+[2026-10-13 20:35:54] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\03_Geography_Karnataka_and_World\Karnataka_Forests_Wildlife_and_Biodiversity.md (21834 chars)
+[2026-10-13 20:35:54] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\03_Geography_Karnataka_and_World\Karnataka_Agro_Climatic_Zones_and_Agriculture.md (18576 chars)
+[2026-10-13 20:37:59] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\03_Geography_Karnataka_and_World\Karnataka_Mineral_Resources_and_Energy.md (19962 chars)
+[2026-10-13 20:37:59] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\03_Geography_Karnataka_and_World\Karnataka_Demography_Urbanisation_and_Infrastructure.md (18683 chars)
+[2026-10-13 20:43:50] [SAFE_DOWNLOAD] https://iasbaba.com/wp-content/uploads/2024/03/IASBABAS-Current-Affairs-Monthly-Magazine-February-2024.pdf -> D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_sources\magazines\IASbaba\2026-02\IASbaba_Monthly_Digest_Feb.pdf (2148792 bytes, sha256=25c52b393f8e...)
+[2026-10-13 20:45:46] [SAFE_DOWNLOAD] https://iasbaba.com/wp-content/uploads/2024/03/IASBABAS-Current-Affairs-Monthly-Magazine-February-2024.pdf -> D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_sources\magazines\IASbaba\2026-02\IASbaba_Monthly_Current_Affairs_Feb_2026.pdf (2148792 bytes, sha256=25c52b393f8e...)
+[2026-10-13 20:45:49] [SAFE_DOWNLOAD] https://iasbaba.com/wp-content/uploads/2024/06/IASBABAS-Current-Affairs-Monthly-Magazine-March-2024.pdf -> D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_sources\magazines\IASbaba\2026-03\IASbaba_Monthly_Current_Affairs_Mar_2026.pdf (2326140 bytes, sha256=05716ca72b73...)
+[2026-10-13 20:45:51] [SAFE_DOWNLOAD] https://iasbaba.com/wp-content/uploads/2024/06/IASBABAS-Current-Affairs-Monthly-Magazine-April-2024.pdf -> D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_sources\magazines\IASbaba\2026-04\IASbaba_Monthly_Current_Affairs_Apr_2026.pdf (2584557 bytes, sha256=1efdecc25cd2...)
+[2026-10-13 20:45:55] [SAFE_DOWNLOAD] https://iasbaba.com/wp-content/uploads/2024/07/IASBABAS-Current-Affairs-Monthly-Magazine-May-2024.pdf -> D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_sources\magazines\IASbaba\2026-05\IASbaba_Monthly_Current_Affairs_May_2026.pdf (2440976 bytes, sha256=a946c9ce09d2...)
+[2026-10-13 20:46:02] [SAFE_DOWNLOAD] https://iasbaba.com/wp-content/uploads/2024/08/IASBABAS-Current-Affairs-Monthly-Magazine-June-2024.pdf -> D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_sources\magazines\IASbaba\2026-06\IASbaba_Monthly_Current_Affairs_Jun_2026.pdf (2976174 bytes, sha256=f821c853b9aa...)
+[2026-10-13 20:46:04] [SAFE_DOWNLOAD] https://iasbaba.com/wp-content/uploads/2024/08/IASBABA-JULY-2024-MONTHLY-CURRENT-AFFAIRS-MAGAZINE.pdf -> D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_sources\magazines\IASbaba\2026-07\IASbaba_Monthly_Current_Affairs_Jul_2026.pdf (2725134 bytes, sha256=0a86f3dc9dc8...)
+[2026-10-13 20:46:10] [SAFE_DOWNLOAD] https://iasbaba.com/wp-content/uploads/2024/09/IASBABA-AUGUST-MONTHLY-MAGAZINE-2024.pdf -> D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_sources\magazines\IASbaba\2026-08\IASbaba_Monthly_Current_Affairs_Aug_2026.pdf (4690599 bytes, sha256=6e9914f9a8f4...)
+[2026-10-13 20:46:13] [SAFE_DOWNLOAD] https://iasbaba.com/wp-content/uploads/2024/11/IASBABA-CA-SEPTEMBER-2024-MAGAZINE.pdf -> D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_sources\magazines\IASbaba\2026-09\IASbaba_Monthly_Current_Affairs_Sep_2026.pdf (4226479 bytes, sha256=25e2f870f7b4...)
+[2026-10-13 20:46:34] [SAFE_DOWNLOAD] https://iasbaba.com/wp-content/uploads/2024/12/IASBABA-October-2024-MONTHLY-CURRENT-AFFAIRS-MAGAZINE.pdf -> D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_sources\magazines\IASbaba\2026-10\IASbaba_Monthly_Current_Affairs_Oct_2026.pdf (5504041 bytes, sha256=5fc853dfcec0...)
+[2026-10-13 20:46:34] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_sources\magazines\MANIFEST.md (3377 chars)
+[2026-10-13 20:48:04] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\04_Current_Affairs_GK\Monthly_Digests_2026\2026-02_February.md (19858 chars)
+[2026-10-13 20:48:04] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\04_Current_Affairs_GK\Monthly_Digests_2026\2026-03_March.md (19581 chars)
+[2026-10-13 20:49:34] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\04_Current_Affairs_GK\Monthly_Digests_2026\2026-04_April.md (17370 chars)
+[2026-10-13 20:49:34] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\04_Current_Affairs_GK\Monthly_Digests_2026\2026-05_May.md (18144 chars)
+[2026-10-13 20:51:23] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\04_Current_Affairs_GK\Monthly_Digests_2026\2026-06_June.md (19939 chars)
+[2026-10-13 20:51:23] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\04_Current_Affairs_GK\Monthly_Digests_2026\2026-07_July.md (21294 chars)
+[2026-10-13 20:53:53] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\04_Current_Affairs_GK\Monthly_Digests_2026\2026-08_August.md (22051 chars)
+[2026-10-13 20:53:53] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\04_Current_Affairs_GK\Monthly_Digests_2026\2026-09_September.md (19481 chars)
+[2026-10-13 20:53:53] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\04_Current_Affairs_GK\Monthly_Digests_2026\2026-10_October.md (18523 chars)
+[2026-10-13 20:54:35] [SAFE_DELETE_DIR] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\04_Current_Affairs_GK\01_Monthly_Digests_2025_2026
+[2026-10-13 20:57:24] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\CBT_Full_Prelims_P1_Mock1.html (95161 chars)
+[2026-10-13 20:57:24] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\CBT_Full_Prelims_P2_Mock1.html (96649 chars)
+[2026-10-13 20:58:45] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\CBT_Full_Prelims_P1_Mock2.html (75339 chars)
+[2026-10-13 21:00:01] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\CBT_Full_Prelims_P1_Mock2.html (86449 chars)
+[2026-10-13 21:00:01] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\CBT_Full_Prelims_P1_Mock3.html (90989 chars)
+[2026-10-13 21:01:30] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\CBT_Full_Prelims_P2_Mock2.html (85312 chars)
+[2026-10-13 21:01:30] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\CBT_Full_Prelims_P2_Mock3.html (89852 chars)
+[2026-10-13 21:02:08] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\CBT_Sectional_Karnataka_History.html (65003 chars)
+[2026-10-13 21:02:08] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\CBT_Sectional_Karnataka_Geography.html (62146 chars)
+[2026-10-13 21:02:08] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\CBT_Sectional_Indian_Polity.html (62287 chars)
+[2026-10-13 21:02:08] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\CBT_Sectional_Economy_Karnataka_India.html (64565 chars)
+[2026-10-13 21:02:08] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\CBT_Sectional_Science_Environment.html (64277 chars)
+[2026-10-13 21:02:08] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\CBT_Sectional_GMA_Aptitude.html (57568 chars)
+[2026-10-13 21:02:47] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\CBT_CA_Mock_2026_02_Feb.html (49054 chars)
+[2026-10-13 21:02:47] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\CBT_CA_Mock_2026_03_Mar.html (48745 chars)
+[2026-10-13 21:02:47] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\CBT_CA_Mock_2026_04_Apr.html (48745 chars)
+[2026-10-13 21:02:47] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\CBT_CA_Mock_2026_05_May.html (48539 chars)
+[2026-10-13 21:02:47] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\CBT_CA_Mock_2026_06_Jun.html (48642 chars)
+[2026-10-13 21:02:47] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\CBT_CA_Mock_2026_07_Jul.html (48642 chars)
+[2026-10-13 21:02:47] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\CBT_CA_Mock_2026_08_Aug.html (48848 chars)
+[2026-10-13 21:02:47] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\CBT_CA_Mock_2026_09_Sep.html (49157 chars)
+[2026-10-13 21:02:47] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\CBT_CA_Mock_2026_10_Oct.html (48951 chars)
+[2026-10-13 21:02:47] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\CBT_PYQ_Master_Mock.html (90023 chars)
+[2026-10-13 21:03:15] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_CA_Mock_2026_02_Feb_Key.md (17484 chars)
+[2026-10-13 21:03:15] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_CA_Mock_2026_03_Mar_Key.md (17178 chars)
+[2026-10-13 21:03:15] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_CA_Mock_2026_04_Apr_Key.md (17178 chars)
+[2026-10-13 21:03:15] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_CA_Mock_2026_05_May_Key.md (16974 chars)
+[2026-10-13 21:03:15] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_CA_Mock_2026_06_Jun_Key.md (17076 chars)
+[2026-10-13 21:03:15] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_CA_Mock_2026_07_Jul_Key.md (17076 chars)
+[2026-10-13 21:03:15] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_CA_Mock_2026_08_Aug_Key.md (17280 chars)
+[2026-10-13 21:03:15] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_CA_Mock_2026_09_Sep_Key.md (17586 chars)
+[2026-10-13 21:03:15] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_CA_Mock_2026_10_Oct_Key.md (17382 chars)
+[2026-10-13 21:03:15] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_Full_Prelims_P1_Mock1_Key.md (47422 chars)
+[2026-10-13 21:03:15] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_Full_Prelims_P1_Mock2_Key.md (49734 chars)
+[2026-10-13 21:03:16] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_Full_Prelims_P1_Mock3_Key.md (54274 chars)
+[2026-10-13 21:03:16] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_Full_Prelims_P2_Mock1_Key.md (48967 chars)
+[2026-10-13 21:03:16] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_Full_Prelims_P2_Mock2_Key.md (48339 chars)
+[2026-10-13 21:03:16] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_Full_Prelims_P2_Mock3_Key.md (52879 chars)
+[2026-10-13 21:03:16] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_PYQ_Master_Mock_Key.md (56136 chars)
+[2026-10-13 21:03:16] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_Sectional_Economy_Karnataka_India_Key.md (32255 chars)
+[2026-10-13 21:03:16] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_Sectional_GMA_Aptitude_Key.md (25209 chars)
+[2026-10-13 21:03:16] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_Sectional_Indian_Polity_Key.md (29933 chars)
+[2026-10-13 21:03:16] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_Sectional_Karnataka_Geography_Key.md (29811 chars)
+[2026-10-13 21:03:16] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_Sectional_Karnataka_History_Key.md (32662 chars)
+[2026-10-13 21:03:16] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_Sectional_Science_Environment_Key.md (31940 chars)
+[2026-10-13 21:03:16] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\README.md (8907 chars)
+[2026-10-13 21:03:45] [SAFE_DELETE_FILE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Full_Prelims_P1_Mock1.html
+[2026-10-13 21:03:45] [SAFE_DELETE_FILE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Full_Prelims_P1_Mock1.html.manifest.json
+[2026-10-13 21:03:45] [SAFE_DELETE_FILE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Full_Prelims_P2_Mock1.html
+[2026-10-13 21:03:45] [SAFE_DELETE_FILE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Full_Prelims_P2_Mock1.html.manifest.json
+[2026-10-13 21:03:45] [SAFE_DELETE_FILE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Subject_Mock_Karnataka_Affairs.html
+[2026-10-13 21:03:45] [SAFE_DELETE_FILE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Subject_Mock_Karnataka_Affairs.html.manifest.json
+[2026-10-13 21:03:45] [SAFE_DELETE_FILE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Subject_Mock_Humanities.html
+[2026-10-13 21:03:45] [SAFE_DELETE_FILE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Subject_Mock_Humanities.html.manifest.json
+[2026-10-13 21:03:45] [SAFE_DELETE_FILE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Subject_Mock_Science_and_Environment.html
+[2026-10-13 21:03:45] [SAFE_DELETE_FILE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Subject_Mock_Science_and_Environment.html.manifest.json
+[2026-10-13 21:03:45] [SAFE_DELETE_FILE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Subject_Mock_Current_Affairs.html
+[2026-10-13 21:03:45] [SAFE_DELETE_FILE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Subject_Mock_Current_Affairs.html.manifest.json
+[2026-10-13 21:03:45] [SAFE_DELETE_FILE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Subject_Mock_General_Mental_Ability.html
+[2026-10-13 21:03:45] [SAFE_DELETE_FILE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Subject_Mock_General_Mental_Ability.html.manifest.json
+[2026-10-13 21:04:57] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\after_snapshot_r2.json (580 chars)
+[2026-10-13 21:06:13] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\02_Syllabus_and_Pattern\Traceability_Matrix.md (13219 chars)
+[2026-10-13 21:06:13] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\00_START_HERE.md (16652 chars)
+[2026-10-13 21:07:29] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\after_snapshot_r2.json (580 chars)
+[2026-10-13 21:13:25] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\Badami_Chalukyas_Architecture_and_Empire.md (14472 chars)
+[2026-10-13 21:13:25] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\Bahmani_and_Adil_Shahi_Sultanates.md (14266 chars)
+[2026-10-13 21:13:25] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\Early_Dynasties_Kadambas_and_Gangas.md (17734 chars)
+[2026-10-13 21:13:25] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\Early_Karnataka_Dynasties.md (15164 chars)
+[2026-10-13 21:13:25] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\Freedom_Struggle_and_Armed_Revolts_in_Karnataka.md (21696 chars)
+[2026-10-13 21:13:25] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\Freedom_Struggle_in_Karnataka.md (21696 chars)
+[2026-10-13 21:13:25] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\Hoysalas_of_Dwarasamudra_and_Seunas.md (17841 chars)
+[2026-10-13 21:13:25] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\Kalyana_Chalukyas_Kalachuris_and_Vachana_Movement.md (20945 chars)
+[2026-10-13 21:13:25] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\Karnataka_Unification_and_Social_Movements.md (21213 chars)
+[2026-10-13 21:13:25] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\Karnataka_Unification_Social_Reforms_and_Culture.md (21213 chars)
+[2026-10-13 21:13:25] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\Mysore_Kingdom_Wodeyars_and_Dewans.md (20280 chars)
+[2026-10-13 21:13:25] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\Nayakas_of_Keladi_and_Chitradurga.md (13655 chars)
+[2026-10-13 21:13:25] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\Prehistory_and_Protohistory_Karnataka.md (17961 chars)
+[2026-10-13 21:13:25] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\Rashtrakutas_of_Manyakheta_and_Kavirajamarga.md (16460 chars)
+[2026-10-13 21:13:25] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\Vijayanagara_Empire_Polity_and_Culture.md (19959 chars)
+[2026-10-13 21:13:25] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\Vijayanagara_and_Mysore_Kingdom.md (16403 chars)
+[2026-10-13 21:13:25] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\03_Geography_Karnataka_and_World\Karnataka_Agro_Climatic_Zones_and_Agriculture.md (18581 chars)
+[2026-10-13 21:13:25] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\03_Geography_Karnataka_and_World\Karnataka_Climate_and_Rainfall_Patterns.md (21902 chars)
+[2026-10-13 21:13:25] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\03_Geography_Karnataka_and_World\Karnataka_Demography_Urbanisation_and_Infrastructure.md (18683 chars)
+[2026-10-13 21:13:25] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\03_Geography_Karnataka_and_World\Karnataka_Drainage_and_River_Basins.md (22459 chars)
+[2026-10-13 21:13:25] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\03_Geography_Karnataka_and_World\Karnataka_Forests_Wildlife_and_Biodiversity.md (22532 chars)
+[2026-10-13 21:13:25] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\03_Geography_Karnataka_and_World\Karnataka_Location_Physiography_and_Geology.md (17667 chars)
+[2026-10-13 21:13:25] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\03_Geography_Karnataka_and_World\Karnataka_Mineral_Resources_and_Energy.md (19953 chars)
+[2026-10-13 21:13:25] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\03_Geography_Karnataka_and_World\Karnataka_Physiography_and_Rivers.md (17667 chars)
+[2026-10-13 21:13:25] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\03_Geography_Karnataka_and_World\Karnataka_Soils_and_Land_Degradation.md (17280 chars)
+[2026-10-13 21:13:25] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\04_Current_Affairs_GK\Monthly_Digests_2026\2026-02_February.md (19871 chars)
+[2026-10-13 21:13:25] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\04_Current_Affairs_GK\Monthly_Digests_2026\2026-03_March.md (19594 chars)
+[2026-10-13 21:13:25] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\04_Current_Affairs_GK\Monthly_Digests_2026\2026-04_April.md (17383 chars)
+[2026-10-13 21:13:25] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\04_Current_Affairs_GK\Monthly_Digests_2026\2026-05_May.md (18157 chars)
+[2026-10-13 21:13:25] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\04_Current_Affairs_GK\Monthly_Digests_2026\2026-06_June.md (19952 chars)
+[2026-10-13 21:13:25] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\04_Current_Affairs_GK\Monthly_Digests_2026\2026-07_July.md (21307 chars)
+[2026-10-13 21:13:25] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\04_Current_Affairs_GK\Monthly_Digests_2026\2026-08_August.md (22064 chars)
+[2026-10-13 21:13:25] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\04_Current_Affairs_GK\Monthly_Digests_2026\2026-09_September.md (19494 chars)
+[2026-10-13 21:13:25] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\04_Current_Affairs_GK\Monthly_Digests_2026\2026-10_October.md (18536 chars)
+[2026-10-13 21:13:25] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\04_Polity_Governance_and_Public_Administration\India_Foreign_Policy_and_IR.md (9789 chars)
+[2026-10-13 21:13:25] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\00_START_HERE.md (17872 chars)
+[2026-10-13 21:13:25] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_CA_Mock_2026_02_Feb_Key.md (17484 chars)
+[2026-10-13 21:13:25] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_CA_Mock_2026_03_Mar_Key.md (17178 chars)
+[2026-10-13 21:13:25] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_CA_Mock_2026_04_Apr_Key.md (17178 chars)
+[2026-10-13 21:13:25] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_CA_Mock_2026_05_May_Key.md (16974 chars)
+[2026-10-13 21:13:25] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_CA_Mock_2026_06_Jun_Key.md (17076 chars)
+[2026-10-13 21:13:25] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_CA_Mock_2026_07_Jul_Key.md (17076 chars)
+[2026-10-13 21:13:25] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_CA_Mock_2026_08_Aug_Key.md (17280 chars)
+[2026-10-13 21:13:25] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_CA_Mock_2026_09_Sep_Key.md (17586 chars)
+[2026-10-13 21:13:25] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_CA_Mock_2026_10_Oct_Key.md (17382 chars)
+[2026-10-13 21:13:25] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_Full_Prelims_P1_Mock1_Key.md (47422 chars)
+[2026-10-13 21:13:25] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_Full_Prelims_P1_Mock2_Key.md (50514 chars)
+[2026-10-13 21:13:25] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_Full_Prelims_P1_Mock3_Key.md (55054 chars)
+[2026-10-13 21:13:25] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_Full_Prelims_P2_Mock1_Key.md (48967 chars)
+[2026-10-13 21:13:25] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_Full_Prelims_P2_Mock2_Key.md (51184 chars)
+[2026-10-13 21:13:25] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_Full_Prelims_P2_Mock3_Key.md (55724 chars)
+[2026-10-13 21:13:25] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_PYQ_Master_Mock_Key.md (56536 chars)
+[2026-10-13 21:13:25] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_Sectional_Economy_Karnataka_India_Key.md (31705 chars)
+[2026-10-13 21:13:25] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_Sectional_GMA_Aptitude_Key.md (24659 chars)
+[2026-10-13 21:13:25] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_Sectional_Indian_Polity_Key.md (29383 chars)
+[2026-10-13 21:13:25] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_Sectional_Karnataka_Geography_Key.md (29261 chars)
+[2026-10-13 21:13:25] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_Sectional_Karnataka_History_Key.md (32112 chars)
+[2026-10-13 21:13:25] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_Sectional_Science_Environment_Key.md (31390 chars)
+[2026-10-13 21:13:25] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\README.md (8907 chars)
+[2026-10-13 21:15:27] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\OPEN_ITEMS.md (3652 chars)
+[2026-10-13 21:15:27] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\PLAN_R2.md (14070 chars)
+[2026-10-13 21:15:27] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\RUN_REPORT_R2.md (16205 chars)
+[2026-10-13 21:15:38] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\after_snapshot_r2.json (580 chars)
+[2026-10-13 22:51:51] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\test_file.tmp (17 chars)
+[2026-10-13 22:51:51] [SAFE_APPEND] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\test_file.tmp (17 chars)
+[2026-10-13 22:51:51] [SAFE_DELETE_FILE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\test_file.tmp
+[2026-10-13 22:51:51] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\test_move_src.tmp (17 chars)
+[2026-10-13 22:51:51] [SAFE_MOVE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\test_move_src.tmp -> D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\test_move_dst.tmp
+[2026-10-13 22:51:51] [SAFE_DELETE_FILE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\test_move_dst.tmp
+[2026-10-13 22:51:51] [GUARD_EVENT] REFUSED outside-ROOT target: D:\outside.txt -> D:\outside.txt
+[2026-10-13 22:51:51] [GUARD_EVENT] REFUSED outside-ROOT target: C:\test.txt -> C:\test.txt
+[2026-10-13 22:51:51] [GUARD_EVENT] REFUSED outside-ROOT target: ..\outside.txt -> D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\outside.txt
+[2026-10-13 22:51:51] [GUARD_EVENT] REFUSED outside-ROOT target: D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\..\outside.txt -> D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\outside.txt
+[2026-10-13 22:51:51] [GUARD_EVENT] REFUSED outside-ROOT target: D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\outside.txt -> D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\outside.txt
+[2026-10-13 22:51:51] [GUARD_EVENT] REFUSED outside-ROOT target: D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY -> D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY
+[2026-10-13 22:51:51] [GUARD_EVENT] REFUSED deletion of protected file: D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\actions.log
+[2026-10-13 22:51:51] [GUARD_EVENT] REFUSED deletion of protected file: D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\PROMPT.md
+[2026-10-13 22:51:51] [GUARD_EVENT] REFUSED deletion of protected file: D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\PROMPT_R2.md
+[2026-10-13 22:51:51] [GUARD_EVENT] REFUSED deletion of protected file: D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\PROMPT_R3.md
+[2026-10-13 22:51:51] [GUARD_EVENT] REFUSED wildcard path: D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\test*.txt
+[2026-10-13 22:51:51] [GUARD_EVENT] REFUSED invalid path 'D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\test:stream.txt': Alternate data streams not permitted: D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\test:stream.txt
+[2026-10-13 22:51:51] [GUARD_EVENT] REFUSED download outside magazines dir: D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\outside_mag.pdf
+[2026-10-13 22:51:51] [GUARD_EVENT] REFUSED non-http URL for download: ftp://example.com/test.pdf
+[2026-10-13 22:51:51] [SELF_TEST] All safe_ops boundary checks passed.
+[2026-10-13 22:52:14] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\before_snapshot_r3.json (579 chars)
+[2026-10-13 22:55:01] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\_src\bank.json (1505717 chars)
+[2026-10-13 22:59:11] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\CBT_CA_Mock_2026_02_Feb.html (73487 chars)
+[2026-10-13 22:59:11] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\CBT_CA_Mock_2026_03_Mar.html (73187 chars)
+[2026-10-13 22:59:11] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\CBT_CA_Mock_2026_04_Apr.html (73187 chars)
+[2026-10-13 22:59:11] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\CBT_CA_Mock_2026_05_May.html (72987 chars)
+[2026-10-13 22:59:11] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\CBT_CA_Mock_2026_06_Jun.html (73087 chars)
+[2026-10-13 22:59:11] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\CBT_CA_Mock_2026_07_Jul.html (73087 chars)
+[2026-10-13 22:59:11] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\CBT_CA_Mock_2026_08_Aug.html (73287 chars)
+[2026-10-13 22:59:11] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\CBT_CA_Mock_2026_09_Sep.html (73587 chars)
+[2026-10-13 22:59:11] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\CBT_CA_Mock_2026_10_Oct.html (73387 chars)
+[2026-10-13 22:59:11] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\CBT_Full_Prelims_P1_Mock1.html (136163 chars)
+[2026-10-13 22:59:11] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\CBT_Full_Prelims_P1_Mock2.html (135731 chars)
+[2026-10-13 22:59:11] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\CBT_Full_Prelims_P1_Mock3.html (140271 chars)
+[2026-10-13 22:59:11] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\CBT_Full_Prelims_P2_Mock1.html (137826 chars)
+[2026-10-13 22:59:11] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\CBT_Full_Prelims_P2_Mock2.html (134634 chars)
+[2026-10-13 22:59:11] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\CBT_Full_Prelims_P2_Mock3.html (139174 chars)
+[2026-10-13 22:59:11] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\CBT_PYQ_Master_Mock.html (140459 chars)
+[2026-10-13 22:59:11] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\CBT_Sectional_Economy_Karnataka_India.html (98033 chars)
+[2026-10-13 22:59:11] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\CBT_Sectional_GMA_Aptitude.html (90372 chars)
+[2026-10-13 22:59:11] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\CBT_Sectional_Indian_Polity.html (95153 chars)
+[2026-10-13 22:59:11] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\CBT_Sectional_Karnataka_Geography.html (95351 chars)
+[2026-10-13 22:59:11] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\CBT_Sectional_Karnataka_History.html (98096 chars)
+[2026-10-13 22:59:11] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\CBT_Sectional_Science_Environment.html (97476 chars)
+[2026-10-13 23:00:23] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_CA_Mock_2026_02_Feb_Key.md (18284 chars)
+[2026-10-13 23:00:23] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_CA_Mock_2026_03_Mar_Key.md (17984 chars)
+[2026-10-13 23:00:23] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_CA_Mock_2026_04_Apr_Key.md (17984 chars)
+[2026-10-13 23:00:23] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_CA_Mock_2026_05_May_Key.md (17784 chars)
+[2026-10-13 23:00:23] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_CA_Mock_2026_06_Jun_Key.md (17884 chars)
+[2026-10-13 23:00:23] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_CA_Mock_2026_07_Jul_Key.md (17884 chars)
+[2026-10-13 23:00:23] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_CA_Mock_2026_08_Aug_Key.md (18084 chars)
+[2026-10-13 23:00:23] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_CA_Mock_2026_09_Sep_Key.md (18384 chars)
+[2026-10-13 23:00:23] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_CA_Mock_2026_10_Oct_Key.md (18184 chars)
+[2026-10-13 23:00:23] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_Full_Prelims_P1_Mock1_Key.md (52506 chars)
+[2026-10-13 23:00:23] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_Full_Prelims_P1_Mock2_Key.md (55598 chars)
+[2026-10-13 23:00:23] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_Full_Prelims_P1_Mock3_Key.md (60138 chars)
+[2026-10-13 23:00:23] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_Full_Prelims_P2_Mock1_Key.md (52965 chars)
+[2026-10-13 23:00:23] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_Full_Prelims_P2_Mock2_Key.md (55182 chars)
+[2026-10-13 23:00:23] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_Full_Prelims_P2_Mock3_Key.md (59722 chars)
+[2026-10-13 23:00:23] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_PYQ_Master_Mock_Key.md (60829 chars)
+[2026-10-13 23:00:23] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_Sectional_Economy_Karnataka_India_Key.md (34110 chars)
+[2026-10-13 23:00:23] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_Sectional_GMA_Aptitude_Key.md (27010 chars)
+[2026-10-13 23:00:23] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_Sectional_Indian_Polity_Key.md (31740 chars)
+[2026-10-13 23:00:23] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_Sectional_Karnataka_Geography_Key.md (31632 chars)
+[2026-10-13 23:00:23] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_Sectional_Karnataka_History_Key.md (34479 chars)
+[2026-10-13 23:00:23] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\Markdown_Keys\CBT_Sectional_Science_Environment_Key.md (33757 chars)
+[2026-10-13 23:00:23] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\06_Mock_Tests\README.md (9301 chars)
+[2026-10-13 23:01:29] [SAFE_MKDIR] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\01_Textbook_Notes
+[2026-10-13 23:01:29] [SAFE_MKDIR] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\Quick_Revision
+[2026-10-13 23:01:29] [SAFE_MKDIR] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\03_Geography_Karnataka_and_World\01_Textbook_Notes
+[2026-10-13 23:01:29] [SAFE_MKDIR] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\03_Geography_Karnataka_and_World\Quick_Revision
+[2026-10-13 23:01:29] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\Early_Karnataka_Dynasties.md (15232 chars)
+[2026-10-13 23:01:29] [SAFE_MOVE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\Early_Karnataka_Dynasties.md -> D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\Quick_Revision\Early Karnataka Dynasties - Quick Revision.md
+[2026-10-13 23:01:29] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\Vijayanagara_and_Mysore_Kingdom.md (16483 chars)
+[2026-10-13 23:01:29] [SAFE_MOVE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\Vijayanagara_and_Mysore_Kingdom.md -> D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\Quick_Revision\Vijayanagara and Mysore Kingdom - Quick Revision.md
+[2026-10-13 23:01:29] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\Freedom_Struggle_in_Karnataka.md (21772 chars)
+[2026-10-13 23:01:29] [SAFE_MOVE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\Freedom_Struggle_in_Karnataka.md -> D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\Quick_Revision\Freedom Struggle in Karnataka - Quick Revision.md
+[2026-10-13 23:01:29] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\Karnataka_Unification_and_Social_Movements.md (21315 chars)
+[2026-10-13 23:01:29] [SAFE_MOVE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\Karnataka_Unification_and_Social_Movements.md -> D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\Quick_Revision\Karnataka Unification and Social Movements - Quick Revision.md
+[2026-10-13 23:01:29] [SAFE_MOVE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\Prehistory_and_Protohistory_Karnataka.md -> D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\01_Textbook_Notes\Prehistory_and_Protohistory_Karnataka.md
+[2026-10-13 23:01:29] [SAFE_MOVE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\Early_Dynasties_Kadambas_and_Gangas.md -> D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\01_Textbook_Notes\Early_Dynasties_Kadambas_and_Gangas.md
+[2026-10-13 23:01:29] [SAFE_MOVE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\Badami_Chalukyas_Architecture_and_Empire.md -> D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\01_Textbook_Notes\Badami_Chalukyas_Architecture_and_Empire.md
+[2026-10-13 23:01:29] [SAFE_MOVE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\Rashtrakutas_of_Manyakheta_and_Kavirajamarga.md -> D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\01_Textbook_Notes\Rashtrakutas_of_Manyakheta_and_Kavirajamarga.md
+[2026-10-13 23:01:29] [SAFE_MOVE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\Kalyana_Chalukyas_Kalachuris_and_Vachana_Movement.md -> D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\01_Textbook_Notes\Kalyana_Chalukyas_Kalachuris_and_Vachana_Movement.md
+[2026-10-13 23:01:29] [SAFE_MOVE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\Hoysalas_of_Dwarasamudra_and_Seunas.md -> D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\01_Textbook_Notes\Hoysalas_of_Dwarasamudra_and_Seunas.md
+[2026-10-13 23:01:29] [SAFE_MOVE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\Vijayanagara_Empire_Polity_and_Culture.md -> D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\01_Textbook_Notes\Vijayanagara_Empire_Polity_and_Culture.md
+[2026-10-13 23:01:29] [SAFE_MOVE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\Bahmani_and_Adil_Shahi_Sultanates.md -> D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\01_Textbook_Notes\Bahmani_and_Adil_Shahi_Sultanates.md
+[2026-10-13 23:01:29] [SAFE_MOVE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\Nayakas_of_Keladi_and_Chitradurga.md -> D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\01_Textbook_Notes\Nayakas_of_Keladi_and_Chitradurga.md
+[2026-10-13 23:01:29] [SAFE_MOVE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\Mysore_Kingdom_Wodeyars_and_Dewans.md -> D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\01_Textbook_Notes\Mysore_Kingdom_Wodeyars_and_Dewans.md
+[2026-10-13 23:01:29] [SAFE_MOVE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\Freedom_Struggle_and_Armed_Revolts_in_Karnataka.md -> D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\01_Textbook_Notes\Freedom_Struggle_and_Armed_Revolts_in_Karnataka.md
+[2026-10-13 23:01:29] [SAFE_MOVE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\Karnataka_Unification_Social_Reforms_and_Culture.md -> D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\01_Textbook_Notes\Karnataka_Unification_Social_Reforms_and_Culture.md
+[2026-10-13 23:01:29] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\03_Geography_Karnataka_and_World\Karnataka_Physiography_and_Rivers.md (17751 chars)
+[2026-10-13 23:01:29] [SAFE_MOVE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\03_Geography_Karnataka_and_World\Karnataka_Physiography_and_Rivers.md -> D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\03_Geography_Karnataka_and_World\Quick_Revision\Karnataka Physiography and Rivers - Quick Revision.md
+[2026-10-13 23:01:29] [SAFE_MOVE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\03_Geography_Karnataka_and_World\Karnataka_Location_Physiography_and_Geology.md -> D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\03_Geography_Karnataka_and_World\01_Textbook_Notes\Karnataka_Location_Physiography_and_Geology.md
+[2026-10-13 23:01:29] [SAFE_MOVE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\03_Geography_Karnataka_and_World\Karnataka_Drainage_and_River_Basins.md -> D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\03_Geography_Karnataka_and_World\01_Textbook_Notes\Karnataka_Drainage_and_River_Basins.md
+[2026-10-13 23:01:29] [SAFE_MOVE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\03_Geography_Karnataka_and_World\Karnataka_Climate_and_Rainfall_Patterns.md -> D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\03_Geography_Karnataka_and_World\01_Textbook_Notes\Karnataka_Climate_and_Rainfall_Patterns.md
+[2026-10-13 23:01:29] [SAFE_MOVE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\03_Geography_Karnataka_and_World\Karnataka_Soils_and_Land_Degradation.md -> D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\03_Geography_Karnataka_and_World\01_Textbook_Notes\Karnataka_Soils_and_Land_Degradation.md
+[2026-10-13 23:01:29] [SAFE_MOVE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\03_Geography_Karnataka_and_World\Karnataka_Forests_Wildlife_and_Biodiversity.md -> D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\03_Geography_Karnataka_and_World\01_Textbook_Notes\Karnataka_Forests_Wildlife_and_Biodiversity.md
+[2026-10-13 23:01:29] [SAFE_MOVE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\03_Geography_Karnataka_and_World\Karnataka_Agro_Climatic_Zones_and_Agriculture.md -> D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\03_Geography_Karnataka_and_World\01_Textbook_Notes\Karnataka_Agro_Climatic_Zones_and_Agriculture.md
+[2026-10-13 23:01:29] [SAFE_MOVE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\03_Geography_Karnataka_and_World\Karnataka_Mineral_Resources_and_Energy.md -> D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\03_Geography_Karnataka_and_World\01_Textbook_Notes\Karnataka_Mineral_Resources_and_Energy.md
+[2026-10-13 23:01:29] [SAFE_MOVE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\03_Geography_Karnataka_and_World\Karnataka_Demography_Urbanisation_and_Infrastructure.md -> D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\03_Geography_Karnataka_and_World\01_Textbook_Notes\Karnataka_Demography_Urbanisation_and_Infrastructure.md
+[2026-10-13 23:01:29] [SAFE_MOVE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\03_Geography_Karnataka_and_World\World_Physical_Geography.md -> D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\03_Geography_Karnataka_and_World\01_Textbook_Notes\World_Physical_Geography.md
+[2026-10-13 23:01:29] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\01_Karnataka_History_and_Culture\Karnataka_History_Hub.md (4148 chars)
+[2026-10-13 23:01:29] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\03_Notes\03_Geography_Karnataka_and_World\Karnataka_Geography_Hub.md (3296 chars)
+[2026-10-13 23:02:54] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\after_snapshot_r3.json (579 chars)
+[2026-10-13 23:03:46] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\OPEN_ITEMS.md (5221 chars)
+[2026-10-13 23:03:46] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\PLAN_R3.md (8319 chars)
+[2026-10-13 23:03:46] [SAFE_WRITE] D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\KPSC\AGY\_run\RUN_REPORT_R3.md (10584 chars)
