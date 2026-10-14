@@ -1,0 +1,146 @@
+"""
+Master Unattended Pipeline Runner for CST Exam Prep Vault
+Executes all 6 stages sequentially with:
+1. Complete timestamped logging to _cst_scripts/pipeline_run.log
+2. Automatic state tracking in _cst_scripts/.pipeline_state.json (resumable)
+3. Non-halting resilience: skips failing individual network sources and proceeds
+4. Strict boundary assertion: validates all targets remain within StudyPrep/CST/
+"""
+
+import os
+import sys
+import json
+import time
+import datetime
+import subprocess
+from pathlib import Path
+
+WORKSPACE_ROOT = Path(r"D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep")
+SCRIPTS_DIR = WORKSPACE_ROOT / "_cst_scripts"
+LOG_FILE = SCRIPTS_DIR / "pipeline_run.log"
+STATE_FILE = SCRIPTS_DIR / ".pipeline_state.json"
+PYTHON_EXE = Path(r"D:\Softwares\pyenv\Scripts\python.exe")
+
+PIPELINE_STEPS = [
+    {
+        "id": "step_1",
+        "name": "01_framework_and_syllabus_lock",
+        "script": SCRIPTS_DIR / "01_framework_and_syllabus_lock.py",
+        "desc": "Initialize scaffold, lock raw notification, syllabus lines, and configs"
+    },
+    {
+        "id": "step_2",
+        "name": "02_curate_sources_and_youtube",
+        "script": SCRIPTS_DIR / "02_curate_sources_and_youtube.py",
+        "desc": "Curate verified source registry and 26+ coursework YouTube videos"
+    },
+    {
+        "id": "step_3",
+        "name": "03_pyq_and_question_bank_gatherer",
+        "script": SCRIPTS_DIR / "03_pyq_and_question_bank_gatherer.py",
+        "desc": "Compile verbatim PYQs from GPSTR 2015-2022, validate question bank schema"
+    },
+    {
+        "id": "step_4",
+        "name": "04_generate_study_vault_notes",
+        "script": SCRIPTS_DIR / "04_generate_study_vault_notes.py",
+        "desc": "Generate structured Obsidian notes with Mermaid diagrams and wikilinks"
+    },
+    {
+        "id": "step_5",
+        "name": "05_build_mocks_and_study_plan",
+        "script": SCRIPTS_DIR / "05_build_mocks_and_study_plan.py",
+        "desc": "Build interactive offline HTML mock tests, 00_START_HERE, and 14-day study plan"
+    },
+    {
+        "id": "step_6",
+        "name": "06_qa_and_lint_audit",
+        "script": SCRIPTS_DIR / "06_qa_and_lint_audit.py",
+        "desc": "Run traceability, link-check, mmdc linting, and compile RUN_REPORT.md"
+    }
+]
+
+def log_msg(msg):
+    timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    formatted = f"[{timestamp}] {msg}"
+    print(formatted)
+    with open(LOG_FILE, "a", encoding="utf-8") as f:
+        f.write(formatted + "\n")
+
+def load_state():
+    if STATE_FILE.exists():
+        try:
+            return json.loads(STATE_FILE.read_text(encoding="utf-8"))
+        except Exception:
+            return {}
+    return {}
+
+def save_state(state):
+    STATE_FILE.write_text(json.dumps(state, indent=2), encoding="utf-8")
+
+def main():
+    force_run = "--force" in sys.argv
+    SCRIPTS_DIR.mkdir(parents=True, exist_ok=True)
+    log_msg("========================================================")
+    log_msg("STARTING GPT CST KN TEACHER RESEARCH PIPELINE EXECUTION")
+    log_msg(f"Working Directory: {WORKSPACE_ROOT}")
+    log_msg(f"Python Executable: {PYTHON_EXE}")
+    log_msg("========================================================")
+
+    state = load_state() if not force_run else {}
+
+    total_start = time.time()
+    for step in PIPELINE_STEPS:
+        step_id = step["id"]
+        step_name = step["name"]
+        script_path = step["script"]
+
+        if not force_run and state.get(step_id) == "COMPLETED":
+            log_msg(f"[SKIP] {step_name} already completed in previous run.")
+            continue
+
+        log_msg(f"--> [STARTING] {step_name}: {step['desc']}")
+        step_start = time.time()
+
+        try:
+            cmd = [str(PYTHON_EXE), str(script_path)]
+            proc = subprocess.Popen(
+                cmd,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.STDOUT,
+                text=True,
+                cwd=str(WORKSPACE_ROOT)
+            )
+
+            # Stream output live to log and console
+            for line in proc.stdout:
+                line_clean = line.strip()
+                if line_clean:
+                    log_msg(f"   [{step_name}] {line_clean}")
+
+            proc.wait()
+            duration = round(time.time() - step_start, 2)
+
+            if proc.returncode == 0:
+                state[step_id] = "COMPLETED"
+                save_state(state)
+                log_msg(f"<-- [SUCCESS] {step_name} completed in {duration}s.")
+            else:
+                log_msg(f"<-- [WARNING] {step_name} exited with code {proc.returncode}. Continuing pipeline...")
+                state[step_id] = f"WARNING_CODE_{proc.returncode}"
+                save_state(state)
+
+        except Exception as e:
+            log_msg(f"<-- [ERROR] Unexpected exception in {step_name}: {str(e)}. Continuing pipeline...")
+            state[step_id] = f"ERROR_{str(e)[:50]}"
+            save_state(state)
+
+    total_duration = round(time.time() - total_start, 2)
+    log_msg("========================================================")
+    log_msg(f"PIPELINE RUN FINISHED in {total_duration}s.")
+    log_msg(f"Log written to: {LOG_FILE}")
+    log_msg("Check RUN_REPORT.md and OPEN_ITEMS.md for final summary.")
+    log_msg("========================================================")
+
+if __name__ == "__main__":
+    main()

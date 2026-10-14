@@ -1,0 +1,215 @@
+{
+  "exam": "Karnataka GPT CST Teacher Recruitment 2026",
+  "body": "Centralised Admission Cell (CAC), Department of School Education, Government of Karnataka",
+  "notification": {
+    "name": "Karnataka Education Department Services (Public Instruction Department) (Special Recruitment) Rules, 2026 - EP 80 DPI 2026",
+    "date": "2026-08-10",
+    "url": "https://schooleducation.karnataka.gov.in"
+  },
+  "format": "omr-style",
+  "languages": [
+    "English",
+    "Kannada"
+  ],
+  "alt_language": "kn",
+  "dropped_policy": "award_all",
+  "multiple": "wrong",
+  "papers": [
+    {
+      "id": "P1",
+      "name": "Paper 1 - General Paper",
+      "duration_min": 150,
+      "qualifying": "Minimum 50% aggregate (45% for SC/ST/Cat-I/PH)",
+      "sections": [
+        {
+          "id": "S1",
+          "name": "General Knowledge",
+          "subject": "General Knowledge",
+          "questions": 20,
+          "marks_correct": 1,
+          "negative": "0.25",
+          "blank": 0,
+          "multiple": "wrong"
+        },
+        {
+          "id": "S2",
+          "name": "Current Affairs",
+          "subject": "Current Affairs",
+          "questions": 15,
+          "marks_correct": 1,
+          "negative": "0.25",
+          "blank": 0,
+          "multiple": "wrong"
+        },
+        {
+          "id": "S3",
+          "name": "General Kannada",
+          "subject": "General Kannada",
+          "questions": 25,
+          "marks_correct": 1,
+          "negative": "0.25",
+          "blank": 0,
+          "multiple": "wrong"
+        },
+        {
+          "id": "S4",
+          "name": "General English",
+          "subject": "General English",
+          "questions": 25,
+          "marks_correct": 1,
+          "negative": "0.25",
+          "blank": 0,
+          "multiple": "wrong"
+        },
+        {
+          "id": "S5",
+          "name": "Educational Psychology",
+          "subject": "Educational Psychology",
+          "questions": 25,
+          "marks_correct": 1,
+          "negative": "0.25",
+          "blank": 0,
+          "multiple": "wrong"
+        },
+        {
+          "id": "S6",
+          "name": "Computer Literacy",
+          "subject": "Computer Literacy",
+          "questions": 20,
+          "marks_correct": 1,
+          "negative": "0.25",
+          "blank": 0,
+          "multiple": "wrong"
+        },
+        {
+          "id": "S7",
+          "name": "Health Education",
+          "subject": "Health Education",
+          "questions": 10,
+          "marks_correct": 1,
+          "negative": "0.25",
+          "blank": 0,
+          "multiple": "wrong"
+        },
+        {
+          "id": "S8",
+          "name": "Value Education",
+          "subject": "Value Education",
+          "questions": 10,
+          "marks_correct": 1,
+          "negative": "0.25",
+          "blank": 0,
+          "multiple": "wrong"
+        }
+      ]
+    },
+    {
+      "id": "P2",
+      "name": "Paper 2 - Computer Science Core",
+      "duration_min": 150,
+      "qualifying": "Minimum 50% aggregate (45% for SC/ST/Cat-I/PH)",
+      "sections": [
+        {
+          "id": "S1",
+          "name": "Unit 1: Fundamentals of Computers",
+          "subject": "Fundamentals of Computers",
+          "questions": 15,
+          "marks_correct": 1,
+          "negative": "0.25",
+          "blank": 0,
+          "multiple": "wrong"
+        },
+        {
+          "id": "S2",
+          "name": "Unit 2: Discrete Structures and Optimization",
+          "subject": "Discrete Structures",
+          "questions": 15,
+          "marks_correct": 1,
+          "negative": "0.25",
+          "blank": 0,
+          "multiple": "wrong"
+        },
+        {
+          "id": "S3",
+          "name": "Unit 3: Computer System Architecture",
+          "subject": "Computer Architecture",
+          "questions": 15,
+          "marks_correct": 1,
+          "negative": "0.25",
+          "blank": 0,
+          "multiple": "wrong"
+        },
+        {
+          "id": "S4",
+          "name": "Unit 4: Programming Languages and Computer Graphics",
+          "subject": "Programming and Graphics",
+          "questions": 15,
+          "marks_correct": 1,
+          "negative": "0.25",
+          "blank": 0,
+          "multiple": "wrong"
+        },
+        {
+          "id": "S5",
+          "name": "Unit 5: Database Management Systems",
+          "subject": "DBMS",
+          "questions": 15,
+          "marks_correct": 1,
+          "negative": "0.25",
+          "blank": 0,
+          "multiple": "wrong"
+        },
+        {
+          "id": "S6",
+          "name": "Unit 6: System Software and Operating Systems",
+          "subject": "Operating Systems",
+          "questions": 15,
+          "marks_correct": 1,
+          "negative": "0.25",
+          "blank": 0,
+          "multiple": "wrong"
+        },
+        {
+          "id": "S7",
+          "name": "Unit 7: Software Engineering",
+          "subject": "Software Engineering",
+          "questions": 15,
+          "marks_correct": 1,
+          "negative": "0.25",
+          "blank": 0,
+          "multiple": "wrong"
+        },
+        {
+          "id": "S8",
+          "name": "Unit 8: Data Structures and Algorithms",
+          "subject": "Data Structures and Algorithms",
+          "questions": 15,
+          "marks_correct": 1,
+          "negative": "0.25",
+          "blank": 0,
+          "multiple": "wrong"
+        },
+        {
+          "id": "S9",
+          "name": "Unit 9: Data Communication and Computer Networks",
+          "subject": "Computer Networks",
+          "questions": 15,
+          "marks_correct": 1,
+          "negative": "0.25",
+          "blank": 0,
+          "multiple": "wrong"
+        },
+        {
+          "id": "S10",
+          "name": "Unit 10: Artificial Intelligence",
+          "subject": "Artificial Intelligence",
+          "questions": 15,
+          "marks_correct": 1,
+          "negative": "0.25",
+          "blank": 0,
+          "multiple": "wrong"
+        }
+      ]
+    }
+  ]
+}

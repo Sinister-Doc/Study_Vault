@@ -1,0 +1,434 @@
+{
+  "exam": "Karnataka GPT CST Teacher Recruitment 2026",
+  "source_url": "https://schooleducation.karnataka.gov.in",
+  "retrieved": "2026-10-12",
+  "notification": {
+    "name": "EP 80 DPI 2026",
+    "date": "2026-08-10"
+  },
+  "lines": [
+    {
+      "id": "P1-1.1",
+      "paper": "P1",
+      "subject": "General Knowledge",
+      "unit": "Indian and Karnataka History",
+      "topic": "Indian and Karnataka History",
+      "text": "Ancient, medieval, modern history and Karnataka culture/art",
+      "priority": "high"
+    },
+    {
+      "id": "P1-1.2",
+      "paper": "P1",
+      "subject": "General Knowledge",
+      "unit": "Geography",
+      "topic": "Geography",
+      "text": "Physical geography, rivers, natural resources, crops, population",
+      "priority": "high"
+    },
+    {
+      "id": "P1-1.3",
+      "paper": "P1",
+      "subject": "General Knowledge",
+      "unit": "Indian Constitution",
+      "topic": "Indian Constitution",
+      "text": "Preamble, Fundamental Rights, Directive Principles, Executive, Judiciary",
+      "priority": "high"
+    },
+    {
+      "id": "P1-1.4",
+      "paper": "P1",
+      "subject": "General Knowledge",
+      "unit": "Indian Economy",
+      "topic": "Indian Economy",
+      "text": "Key economic indicators, public undertakings, planning, 5-year plans",
+      "priority": "medium"
+    },
+    {
+      "id": "P1-1.5",
+      "paper": "P1",
+      "subject": "General Knowledge",
+      "unit": "General Science",
+      "topic": "General Science",
+      "text": "Everyday physics, chemistry, biology, scientific inventions and discoveries",
+      "priority": "medium"
+    },
+    {
+      "id": "P1-2.1",
+      "paper": "P1",
+      "subject": "Current Affairs",
+      "unit": "National and International Affairs",
+      "topic": "National and International Affairs",
+      "text": "Key national events, international summits, treaties, Bilateral relations",
+      "priority": "high"
+    },
+    {
+      "id": "P1-2.2",
+      "paper": "P1",
+      "subject": "Current Affairs",
+      "unit": "State Government Schemes",
+      "topic": "State Government Schemes",
+      "text": "Karnataka state developmental schemes, welfare initiatives, budget highlights",
+      "priority": "high"
+    },
+    {
+      "id": "P1-2.3",
+      "paper": "P1",
+      "subject": "Current Affairs",
+      "unit": "Awards, Honours and Sports",
+      "topic": "Awards, Honours and Sports",
+      "text": "Nobel prizes, Jnanpith, Bharat Ratna, Olympic/national sports records",
+      "priority": "medium"
+    },
+    {
+      "id": "P1-3.1",
+      "paper": "P1",
+      "subject": "General Kannada",
+      "unit": "Vyakarna - Varnamale, Sandhi, Samasa",
+      "topic": "Vyakarna - Varnamale, Sandhi, Samasa",
+      "text": "\u0c95\u0ca8\u0ccd\u0ca8\u0ca1 \u0cb5\u0cb0\u0ccd\u0ca3\u0cae\u0cbe\u0cb2\u0cc6, \u0cb8\u0c82\u0ca7\u0cbf\u0c97\u0cb3\u0cc1, \u0cb8\u0cae\u0cbe\u0cb8\u0c97\u0cb3\u0cc1, \u0cb5\u0cbf\u0cad\u0c95\u0ccd\u0ca4\u0cbf \u0caa\u0ccd\u0cb0\u0ca4\u0ccd\u0caf\u0caf\u0c97\u0cb3\u0cc1",
+      "priority": "high"
+    },
+    {
+      "id": "P1-3.2",
+      "paper": "P1",
+      "subject": "General Kannada",
+      "unit": "Vocabulary & Idioms",
+      "topic": "Vocabulary & Idioms",
+      "text": "\u0cb8\u0cae\u0cbe\u0ca8\u0cbe\u0cb0\u0ccd\u0ca5\u0c95, \u0cb5\u0cbf\u0cb0\u0cc1\u0ca6\u0ccd\u0ca7\u0cbe\u0cb0\u0ccd\u0ca5\u0c95, \u0ca8\u0cbe\u0ca3\u0ccd\u0ca3\u0cc1\u0ca1\u0cbf\u0c97\u0cb3\u0cc1, \u0c97\u0cbe\u0ca6\u0cc6 \u0cae\u0cbe\u0ca4\u0cc1\u0c97\u0cb3\u0cc1",
+      "priority": "high"
+    },
+    {
+      "id": "P1-3.3",
+      "paper": "P1",
+      "subject": "General Kannada",
+      "unit": "Sahitya Charitre",
+      "topic": "Sahitya Charitre",
+      "text": "\u0cb9\u0cb3\u0c97\u0ca8\u0ccd\u0ca8\u0ca1 \u0cae\u0ca4\u0ccd\u0ca4\u0cc1 \u0cb9\u0cca\u0cb8\u0c97\u0ca8\u0ccd\u0ca8\u0ca1 \u0cb8\u0cbe\u0cb9\u0cbf\u0ca4\u0ccd\u0caf \u0c9a\u0cb0\u0cbf\u0ca4\u0ccd\u0cb0\u0cc6, \u0caa\u0ccd\u0cb0\u0cae\u0cc1\u0c96 \u0c95\u0cb5\u0cbf\u0c97\u0cb3\u0cc1 \u0cae\u0ca4\u0ccd\u0ca4\u0cc1 \u0c95\u0cc3\u0ca4\u0cbf\u0c97\u0cb3\u0cc1",
+      "priority": "medium"
+    },
+    {
+      "id": "P1-4.1",
+      "paper": "P1",
+      "subject": "General English",
+      "unit": "Grammar & Parts of Speech",
+      "topic": "Grammar & Parts of Speech",
+      "text": "Nouns, pronouns, verbs, tenses, active/passive voice, reported speech",
+      "priority": "high"
+    },
+    {
+      "id": "P1-4.2",
+      "paper": "P1",
+      "subject": "General English",
+      "unit": "Vocabulary & Comprehension",
+      "topic": "Vocabulary & Comprehension",
+      "text": "Synonyms, antonyms, idioms, phrasal verbs, unseen reading comprehension",
+      "priority": "high"
+    },
+    {
+      "id": "P1-5.1",
+      "paper": "P1",
+      "subject": "Educational Psychology",
+      "unit": "Growth & Development",
+      "topic": "Growth & Development",
+      "text": "Stages of development, physical, cognitive, emotional, social changes",
+      "priority": "high"
+    },
+    {
+      "id": "P1-5.2",
+      "paper": "P1",
+      "subject": "Educational Psychology",
+      "unit": "Learning Theories",
+      "topic": "Learning Theories",
+      "text": "Pavlov, Skinner, Thorndike, Piaget, Vygotsky, Bruner, Kohler",
+      "priority": "high"
+    },
+    {
+      "id": "P1-5.3",
+      "paper": "P1",
+      "subject": "Educational Psychology",
+      "unit": "Intelligence & Motivation",
+      "topic": "Intelligence & Motivation",
+      "text": "Theories of intelligence (Spearman, Gardner), Maslow's hierarchy, motivation",
+      "priority": "high"
+    },
+    {
+      "id": "P1-5.4",
+      "paper": "P1",
+      "subject": "Educational Psychology",
+      "unit": "Personality & Mental Health",
+      "topic": "Personality & Mental Health",
+      "text": "Freud's psychoanalysis, adjustment mechanisms, stress, defense mechanisms",
+      "priority": "medium"
+    },
+    {
+      "id": "P1-6.1",
+      "paper": "P1",
+      "subject": "Computer Literacy",
+      "unit": "Basics of Computer Systems",
+      "topic": "Basics of Computer Systems",
+      "text": "Hardware, software, operating systems (Windows, Linux), memory hierarchy",
+      "priority": "high"
+    },
+    {
+      "id": "P1-6.2",
+      "paper": "P1",
+      "subject": "Computer Literacy",
+      "unit": "Office & Kannada Typing Tools",
+      "topic": "Office & Kannada Typing Tools",
+      "text": "MS Word, Excel formulas, PowerPoint, Google Workspace, Nudi & Baraha fonts",
+      "priority": "high"
+    },
+    {
+      "id": "P1-6.3",
+      "paper": "P1",
+      "subject": "Computer Literacy",
+      "unit": "Internet & Cyber Security",
+      "topic": "Internet & Cyber Security",
+      "text": "Browsers, search engines, cybersecurity threats, malware, IT Act overview",
+      "priority": "medium"
+    },
+    {
+      "id": "P1-7.1",
+      "paper": "P1",
+      "subject": "Health Education",
+      "unit": "Health & Hygiene",
+      "topic": "Health & Hygiene",
+      "text": "Communicable/non-communicable diseases, nutrition, yoga, first aid",
+      "priority": "medium"
+    },
+    {
+      "id": "P1-8.1",
+      "paper": "P1",
+      "subject": "Value Education",
+      "unit": "Moral & Social Values",
+      "topic": "Moral & Social Values",
+      "text": "Universal, national, moral values, human rights, value integration in teaching",
+      "priority": "medium"
+    },
+    {
+      "id": "P2-1.1",
+      "paper": "P2",
+      "subject": "Fundamentals of Computers",
+      "unit": "Architecture & Evolution",
+      "topic": "Architecture & Evolution",
+      "text": "Functional components, Von Neumann architecture, computer generations, classification",
+      "priority": "high"
+    },
+    {
+      "id": "P2-1.2",
+      "paper": "P2",
+      "subject": "Fundamentals of Computers",
+      "unit": "Hardware & Assembly",
+      "topic": "Hardware & Assembly",
+      "text": "Motherboard components, BIOS, CMOS, memory hierarchy, system bus, PC assembly",
+      "priority": "high"
+    },
+    {
+      "id": "P2-2.1",
+      "paper": "P2",
+      "subject": "Discrete Structures",
+      "unit": "Mathematical Logic & Sets",
+      "topic": "Mathematical Logic & Sets",
+      "text": "Propositional & predicate logic, truth tables, normal forms, set relations, functions",
+      "priority": "high"
+    },
+    {
+      "id": "P2-2.2",
+      "paper": "P2",
+      "subject": "Discrete Structures",
+      "unit": "Graph Theory & Combinatorics",
+      "topic": "Graph Theory & Combinatorics",
+      "text": "Euler/Hamiltonian paths, planar graphs, trees, pigeonhole principle, recurrence relations",
+      "priority": "high"
+    },
+    {
+      "id": "P2-2.3",
+      "paper": "P2",
+      "subject": "Discrete Structures",
+      "unit": "Boolean Algebra",
+      "topic": "Boolean Algebra",
+      "text": "Boolean functions, canonical forms, Karnaugh maps, minimization",
+      "priority": "high"
+    },
+    {
+      "id": "P2-3.1",
+      "paper": "P2",
+      "subject": "Computer Architecture",
+      "unit": "Digital Logic",
+      "topic": "Digital Logic",
+      "text": "Logic gates, combinational circuits, multiplexers, decoders, sequential circuits, flip-flops, counters",
+      "priority": "high"
+    },
+    {
+      "id": "P2-3.2",
+      "paper": "P2",
+      "subject": "Computer Architecture",
+      "unit": "CPU & Instruction Formats",
+      "topic": "CPU & Instruction Formats",
+      "text": "Register transfer, instruction cycle, addressing modes, RISC vs CISC",
+      "priority": "high"
+    },
+    {
+      "id": "P2-3.3",
+      "paper": "P2",
+      "subject": "Computer Architecture",
+      "unit": "Memory & I/O",
+      "topic": "Memory & I/O",
+      "text": "Cache mapping techniques, virtual memory, paging, DMA, interrupts, bus arbitration",
+      "priority": "high"
+    },
+    {
+      "id": "P2-4.1",
+      "paper": "P2",
+      "subject": "Programming and Graphics",
+      "unit": "C & C++ Programming",
+      "topic": "C & C++ Programming",
+      "text": "Control flow, arrays, pointers, dynamic memory, structs, OOP concepts, polymorphism, templates",
+      "priority": "high"
+    },
+    {
+      "id": "P2-4.2",
+      "paper": "P2",
+      "subject": "Programming and Graphics",
+      "unit": "Web Technologies",
+      "topic": "Web Technologies",
+      "text": "HTML5, CSS3, JavaScript DOM, XML, client-side scripting basics",
+      "priority": "medium"
+    },
+    {
+      "id": "P2-5.1",
+      "paper": "P2",
+      "subject": "DBMS",
+      "unit": "Data Models & ER",
+      "topic": "Data Models & ER",
+      "text": "3-tier architecture, ER modeling, relational algebra, tuple calculus",
+      "priority": "high"
+    },
+    {
+      "id": "P2-5.2",
+      "paper": "P2",
+      "subject": "DBMS",
+      "unit": "SQL & Normalization",
+      "topic": "SQL & Normalization",
+      "text": "DDL, DML, joins, subqueries, ACID properties, functional dependencies, 1NF to BCNF",
+      "priority": "high"
+    },
+    {
+      "id": "P2-5.3",
+      "paper": "P2",
+      "subject": "DBMS",
+      "unit": "Transactions & Recovery",
+      "topic": "Transactions & Recovery",
+      "text": "Concurrency control, locks, two-phase locking, serializability, recovery techniques",
+      "priority": "medium"
+    },
+    {
+      "id": "P2-6.1",
+      "paper": "P2",
+      "subject": "Operating Systems",
+      "unit": "Process Management",
+      "topic": "Process Management",
+      "text": "Process states, PCB, CPU scheduling algorithms, threads, multithreading",
+      "priority": "high"
+    },
+    {
+      "id": "P2-6.2",
+      "paper": "P2",
+      "subject": "Operating Systems",
+      "unit": "Synchronization & Deadlocks",
+      "topic": "Synchronization & Deadlocks",
+      "text": "Critical section, semaphores, mutex, deadlock prevention, detection, Banker's algorithm",
+      "priority": "high"
+    },
+    {
+      "id": "P2-6.3",
+      "paper": "P2",
+      "subject": "Operating Systems",
+      "unit": "Memory & Storage",
+      "topic": "Memory & Storage",
+      "text": "Paging, segmentation, page replacement algorithms (FIFO, LRU), disk scheduling (SSTF, SCAN)",
+      "priority": "high"
+    },
+    {
+      "id": "P2-7.1",
+      "paper": "P2",
+      "subject": "Software Engineering",
+      "unit": "SDLC & Agile",
+      "topic": "SDLC & Agile",
+      "text": "Waterfall, Spiral, Agile Scrum, Sprint ceremonies, user stories",
+      "priority": "high"
+    },
+    {
+      "id": "P2-7.2",
+      "paper": "P2",
+      "subject": "Software Engineering",
+      "unit": "Testing & Design",
+      "topic": "Testing & Design",
+      "text": "Coupling & cohesion, Black-box & White-box testing, unit/integration/regression testing",
+      "priority": "high"
+    },
+    {
+      "id": "P2-8.1",
+      "paper": "P2",
+      "subject": "Data Structures and Algorithms",
+      "unit": "Linear & Non-linear Data Structures",
+      "topic": "Linear & Non-linear Data Structures",
+      "text": "Arrays, linked lists, stacks, queues, binary search trees, AVL trees, heaps",
+      "priority": "high"
+    },
+    {
+      "id": "P2-8.2",
+      "paper": "P2",
+      "subject": "Data Structures and Algorithms",
+      "unit": "Algorithm Design & Complexity",
+      "topic": "Algorithm Design & Complexity",
+      "text": "Asymptotic analysis (Big-O, Omega, Theta), Divide & Conquer, Greedy, Dynamic Programming, Graph algorithms",
+      "priority": "high"
+    },
+    {
+      "id": "P2-9.1",
+      "paper": "P2",
+      "subject": "Computer Networks",
+      "unit": "OSI & TCP/IP Reference Models",
+      "topic": "OSI & TCP/IP Reference Models",
+      "text": "Layer responsibilities, packet encapsulation, physical media, multiplexing",
+      "priority": "high"
+    },
+    {
+      "id": "P2-9.2",
+      "paper": "P2",
+      "subject": "Computer Networks",
+      "unit": "Network Layer & Routing",
+      "topic": "Network Layer & Routing",
+      "text": "IPv4/IPv6 addressing, subnetting, CIDR, ARP, routing protocols (distance vector, link state)",
+      "priority": "high"
+    },
+    {
+      "id": "P2-9.3",
+      "paper": "P2",
+      "subject": "Computer Networks",
+      "unit": "Transport & Application Protocols",
+      "topic": "Transport & Application Protocols",
+      "text": "TCP three-way handshake, UDP, flow control, DNS, HTTP, SMTP, network security & firewalls",
+      "priority": "high"
+    },
+    {
+      "id": "P2-10.1",
+      "paper": "P2",
+      "subject": "Artificial Intelligence",
+      "unit": "Search & Problem Solving",
+      "topic": "Search & Problem Solving",
+      "text": "State space search, BFS, DFS, Heuristic search (A*, Best-first), game playing (Minimax, Alpha-beta)",
+      "priority": "high"
+    },
+    {
+      "id": "P2-10.2",
+      "paper": "P2",
+      "subject": "Artificial Intelligence",
+      "unit": "Knowledge Representation & Machine Learning",
+      "topic": "Knowledge Representation & Machine Learning",
+      "text": "Propositional/predicate logic, expert systems, neural networks, supervised vs unsupervised learning",
+      "priority": "high"
+    }
+  ]
+}

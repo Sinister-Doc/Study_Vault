@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KPSC KAS Sectional Mock — Indian Polity (50 Questions) - KPSC KAS CBT Simulator</title>
+<style>
+:root {
+  --bg-primary: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-surface-secondary: #f1f5f9;
+  --border-color: #cbd5e1;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --accent-color: #2563eb;
+  --accent-hover: #1d4ed8;
+  --ans-green: #16a34a;
+  --ans-green-bg: #dcfce7;
+  --not-ans-red: #dc2626;
+  --not-ans-red-bg: #fee2e2;
+  --marked-purple: #9333ea;
+  --marked-purple-bg: #f3e8ff;
+  --not-visited-gray: #64748b;
+  --not-visited-gray-bg: #f1f5f9;
+  --header-height: 64px;
+}
+
+[data-theme="dark"] {
+  --bg-primary: #0b0f17;
+  --bg-surface: #131b26;
+  --bg-surface-secondary: #1a2433;
+  --border-color: #2b384e;
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --accent-color: #3b82f6;
+  --accent-hover: #60a5fa;
+  --ans-green: #22c55e;
+  --ans-green-bg: rgba(34, 197, 94, 0.15);
+  --not-ans-red: #ef4444;
+  --not-ans-red-bg: rgba(239, 68, 68, 0.15);
+  --marked-purple: #a855f7;
+  --marked-purple-bg: rgba(168, 85, 247, 0.15);
+  --not-visited-gray: #94a3b8;
+  --not-visited-gray-bg: #1e293b;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+/* SCREEN VISIBILITY */
+.screen-view { display: none; }
+.screen-view.active { display: block; }
+
+/* HEADER */
+.cbt-header {
+  height: var(--header-height);
+  background: var(--bg-surface);
+  border-bottom: 1.5px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+.header-left { display: flex; align-items: center; gap: 16px; }
+.exam-brand { font-size: 1.15rem; font-weight: 700; color: var(--accent-color); letter-spacing: -0.02em; }
+.badge-mode {
+  padding: 3px 10px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: var(--bg-surface-secondary);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+}
+.header-right { display: flex; align-items: center; gap: 20px; }
+.timer-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: var(--bg-surface-secondary);
+  border: 1.5px solid var(--border-color);
+  border-radius: 8px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.candidate-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+.theme-btn {
+  background: none;
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* INSTRUCTIONS SCREEN */
+.inst-container {
+  max-width: 900px;
+  margin: 32px auto;
+  padding: 32px;
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+}
+.inst-title { font-size: 1.6rem; font-weight: 800; margin-bottom: 8px; }
+.inst-subtitle { font-size: 1rem; color: var(--text-secondary); margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--border-color); }
+.inst-spec-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 28px;
+}
+.spec-card {
+  padding: 16px;
+  background: var(--bg-surface-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+}
+.spec-label { font-size: 0.8rem; color: var(--text-secondary); text-transform: uppercase; font-weight: 600; }
+.spec-value { font-size: 1.25rem; font-weight: 700; color: var(--text-primary); margin-top: 4px; }
+.inst-rules { margin-bottom: 28px; line-height: 1.7; font-size: 0.95rem; }
+.inst-rules h3 { margin: 16px 0 8px; font-size: 1.1rem; }
+.inst-rules ul { padding-left: 24px; margin-bottom: 12px; }
+.inst-mode-picker {
+  background: var(--bg-surface-secondary);
+  padding: 20px;
+  border-radius: 8px;
+  border: 1.5px solid var(--border-color);
+  margin-bottom: 28px;
+}
+.mode-picker-title { font-weight: 700; margin-bottom: 12px; }
+.mode-opt { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; cursor: pointer; }
+.inst-actions { display: flex; align-items: center; justify-content: space-between; padding-top: 20px; border-top: 1px solid var(--border-color); }
+.btn-primary {
+  background: var(--accent-color);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+.btn-primary:hover { background: var(--accent-hover); }
+
+/* EXAM MAIN CONTAINER */
+.exam-layout {
+  display: flex;
+  height: calc(100vh - var(--header-height));
+  overflow: hidden;
+}
+.exam-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  border-right: 1.5px solid var(--border-color);
+}
+.section-bar {
+  display: flex;
+  background: var(--bg-surface-secondary);
+  border-bottom: 1.5px solid var(--border-color);
+  padding: 0 16px;
+  overflow-x: auto;
+}
+.sec-tab {
+  padding: 12px 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  white-space: nowrap;
+}
+.sec-tab.active {
+  color: var(--accent-color);
+  border-bottom-color: var(--accent-color);
+  background: var(--bg-surface);
+}
+.q-viewport {
+  flex: 1;
+  padding: 28px 36px;
+  overflow-y: auto;
+}
+.q-meta-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-color);
+}
+.q-title { font-size: 1.15rem; font-weight: 700; color: var(--accent-color); }
+.q-marks-pill {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: var(--bg-surface-secondary);
+  border: 1px solid var(--border-color);
+}
+.q-text-body {
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+.options-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
+.option-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px 18px;
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border-color);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.option-card:hover { border-color: var(--accent-color); background: var(--bg-surface-secondary); }
+.option-card.selected {
+  border-color: var(--accent-color);
+  background: rgba(37, 99, 235, 0.08);
+}
+.opt-radio { margin-top: 4px; accent-color: var(--accent-color); cursor: pointer; }
+.opt-pill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--bg-surface-secondary);
+  border: 1px solid var(--border-color);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  flex-shrink: 0;
+}
+.option-card.selected .opt-pill {
+  background: var(--accent-color);
+  color: #ffffff;
+  border-color: var(--accent-color);
+}
+.opt-text { font-size: 0.98rem; color: var(--text-primary); flex: 1; }
+
+/* CONTROLS BAR */
+.controls-bar {
+  padding: 16px 24px;
+  background: var(--bg-surface);
+  border-top: 1.5px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.ctrl-left { display: flex; gap: 10px; }
+.ctrl-right { display: flex; gap: 10px; }
+.btn-ctrl {
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1.5px solid var(--border-color);
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  transition: all 0.15s ease;
+}
+.btn-ctrl:hover { background: var(--bg-surface-secondary); }
+.btn-save-next { background: var(--ans-green); color: #ffffff; border-color: var(--ans-green); }
+.btn-save-next:hover { opacity: 0.9; }
+.btn-mark { background: var(--marked-purple); color: #ffffff; border-color: var(--marked-purple); }
+.btn-mark:hover { opacity: 0.9; }
+.btn-submit-main { background: var(--accent-color); color: #ffffff; border-color: var(--accent-color); font-weight: 700; }
+
+/* SIDE PALETTE */
+.palette-sidebar {
+  width: 340px;
+  background: var(--bg-surface);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.palette-header {
+  padding: 16px;
+  border-bottom: 1px solid var(--border-color);
+}
+.palette-legend {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  font-size: 0.78rem;
+  margin-bottom: 12px;
+}
+.leg-item { display: flex; align-items: center; gap: 6px; }
+.leg-badge {
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.75rem;
+}
+.leg-ans { background: var(--ans-green); color: #ffffff; }
+.leg-not-ans { background: var(--not-ans-red); color: #ffffff; }
+.leg-marked { background: var(--marked-purple); color: #ffffff; }
+.leg-marked-ans { background: var(--marked-purple); color: #ffffff; position: relative; }
+.leg-marked-ans::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #22c55e;
+}
+.leg-not-vis { background: var(--not-visited-gray-bg); border: 1px solid var(--border-color); color: var(--text-secondary); }
+
+.palette-sec-title { font-size: 0.85rem; font-weight: 700; color: var(--text-secondary); margin-bottom: 6px; }
+.palette-grid-wrapper {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+}
+.palette-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+.pal-btn {
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  border: 1.5px solid var(--border-color);
+  background: var(--not-visited-gray-bg);
+  color: var(--not-visited-gray);
+  position: relative;
+}
+.pal-btn.active-q { outline: 2.5px solid var(--accent-color); outline-offset: 1px; }
+.pal-btn.st-answered { background: var(--ans-green); color: #ffffff; border-color: var(--ans-green); }
+.pal-btn.st-not-answered { background: var(--not-ans-red); color: #ffffff; border-color: var(--not-ans-red); }
+.pal-btn.st-marked { background: var(--marked-purple); color: #ffffff; border-color: var(--marked-purple); }
+.pal-btn.st-marked-answered { background: var(--marked-purple); color: #ffffff; border-color: var(--marked-purple); }
+.pal-btn.st-marked-answered::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #22c55e;
+  border: 1px solid #ffffff;
+}
+
+/* MODAL */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(2px);
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+}
+.modal-overlay.active { display: flex; }
+.modal-card {
+  width: 90%;
+  max-width: 640px;
+  background: var(--bg-surface);
+  border-radius: 12px;
+  border: 1.5px solid var(--border-color);
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+.modal-header { font-size: 1.25rem; font-weight: 700; margin-bottom: 16px; }
+.modal-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+}
+.modal-table th, .modal-table td {
+  padding: 8px 12px;
+  border: 1px solid var(--border-color);
+  text-align: center;
+}
+.modal-table th { background: var(--bg-surface-secondary); }
+.modal-actions { display: flex; justify-content: flex-end; gap: 12px; }
+
+/* RESULTS SCREEN */
+.res-container {
+  max-width: 1000px;
+  margin: 32px auto;
+  padding: 32px;
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border-color);
+  border-radius: 12px;
+}
+.scorecard-header {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.scorecard-card {
+  padding: 16px;
+  border-radius: 8px;
+  background: var(--bg-surface-secondary);
+  border: 1px solid var(--border-color);
+  text-align: center;
+}
+.scorecard-val { font-size: 1.75rem; font-weight: 800; color: var(--accent-color); margin-top: 4px; }
+.res-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 32px;
+  font-size: 0.92rem;
+}
+.res-table th, .res-table td {
+  padding: 10px 14px;
+  border: 1px solid var(--border-color);
+  text-align: center;
+}
+.res-table th { background: var(--bg-surface-secondary); }
+.review-item {
+  padding: 20px;
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border-color);
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+.review-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+.truth-box {
+  background: var(--bg-surface-secondary);
+  border-left: 4px solid var(--accent-color);
+  padding: 10px 14px;
+  font-size: 0.88rem;
+  margin: 12px 0;
+}
+.explanation-box {
+  background: rgba(37, 99, 235, 0.05);
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  border-radius: 6px;
+  padding: 12px 16px;
+  font-size: 0.9rem;
+  margin-top: 12px;
+}
+</style>
+</head>
+<body>
+
+<!-- CBT TOP HEADER -->
+<header class="cbt-header">
+  <div class="header-left">
+    <div class="exam-brand">KPSC KAS CBT</div>
+    <div class="badge-mode" id="header-mode-badge">Exam Mode</div>
+  </div>
+  <div class="header-right">
+    <div class="timer-box" id="timer-box">
+      <span id="timer-display">00:00:00</span>
+    </div>
+    <div class="candidate-pill">
+      <strong>Candidate:</strong> <span id="candidate-name">GM01</span>
+    </div>
+    <button class="theme-btn" id="theme-btn" title="Toggle Theme">Theme</button>
+  </div>
+</header>
+
+<!-- SCREEN 1: INSTRUCTIONS SCREEN -->
+<div class="screen-view active" id="screen-instructions">
+  <div class="inst-container">
+    <div class="inst-title">KPSC KAS Sectional Mock — Indian Polity (50 Questions)</div>
+    <div class="inst-subtitle">Official Computer-Based Test Simulator | Karnataka Public Service Commission (KPSC)</div>
+
+    <div class="inst-spec-grid">
+      <div class="spec-card">
+        <div class="spec-label">Total Questions</div>
+        <div class="spec-value" id="inst-q-count">100</div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-label">Maximum Marks</div>
+        <div class="spec-value" id="inst-max-marks">200.0</div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-label">Marking Scheme</div>
+        <div class="spec-value">+2.00 / -0.50</div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-label">Exam Duration</div>
+        <div class="spec-value" id="inst-duration">120 Minutes</div>
+      </div>
+    </div>
+
+    <div class="inst-mode-picker">
+      <div class="mode-picker-title">Select Simulation Duration Mode:</div>
+      <label class="mode-opt">
+        <input type="radio" name="sim-mode" value="exam" checked>
+        <div>
+          <strong>Standard Exam Mode</strong> — Full examination duration (<span id="mode-exam-mins">120</span> Minutes)
+        </div>
+      </label>
+      <label class="mode-opt">
+        <input type="radio" name="sim-mode" value="quick">
+        <div>
+          <strong>Quick Check Mode</strong> — Accelerated 2-Minute session (Ideal for validating timer, auto-submit & scoring)
+        </div>
+      </label>
+    </div>
+
+    <div class="inst-rules">
+      <h3>Instructions & Rules for the Candidate:</h3>
+      <ul>
+        <li>The clock is synchronized to an absolute wall-clock timestamp. It does not drift and persists across browser refreshes.</li>
+        <li>Each multiple-choice question offers 4 options. Exactly one option is correct.</li>
+        <li><strong>Negative Marking:</strong> Each incorrect answer incurs a penalty of <strong>0.50 marks</strong> (one-fourth of 2.00 marks). Unattempted questions carry zero penalty.</li>
+        <li>Questions marked for review <em>without selecting an option</em> will be evaluated as unattempted (0 marks).</li>
+        <li>Questions marked for review <em>with an option selected</em> will be evaluated for scoring.</li>
+        <li>You may switch between sections freely at any time using the section tabs.</li>
+      </ul>
+    </div>
+
+    <div style="margin-bottom: 24px;">
+      <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 0.95rem;">
+        <input type="checkbox" id="inst-agree-check" checked>
+        <span>I have read and understood all the instructions above and am ready to proceed.</span>
+      </label>
+    </div>
+
+    <div class="inst-actions">
+      <button class="btn-ctrl" id="btn-resume-cached" style="display:none;">Resume In-Progress Test</button>
+      <button class="btn-primary" id="btn-start-exam">I am ready to begin</button>
+    </div>
+  </div>
+</div>
+
+<!-- SCREEN 2: EXAM MAIN VIEW -->
+<div class="screen-view" id="screen-exam">
+  <div class="exam-layout">
+    <div class="exam-main">
+      <!-- Section Bar -->
+      <div class="section-bar" id="section-bar"></div>
+
+      <!-- Question Viewport -->
+      <div class="q-viewport">
+        <div class="q-meta-header">
+          <div class="q-title" id="q-title-label">Question No. 1</div>
+          <div class="q-marks-pill">Marks: +2.00 / -0.50</div>
+        </div>
+
+        <div class="q-text-body" id="q-text-body"></div>
+
+        <div class="options-list" id="options-list"></div>
+      </div>
+
+      <!-- Controls Bar -->
+      <div class="controls-bar">
+        <div class="ctrl-left">
+          <button class="btn-ctrl" id="btn-prev">Previous (Alt+P)</button>
+          <button class="btn-ctrl btn-mark" id="btn-mark-review">Mark for Review & Next</button>
+          <button class="btn-ctrl" id="btn-clear-resp">Clear Response (Alt+C)</button>
+        </div>
+        <div class="ctrl-right">
+          <button class="btn-ctrl btn-save-next" id="btn-save-next">Save & Next (Alt+N)</button>
+          <button class="btn-ctrl btn-submit-main" id="btn-trigger-submit">Submit Test</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Side Palette -->
+    <div class="palette-sidebar">
+      <div class="palette-header">
+        <div class="palette-legend">
+          <div class="leg-item"><div class="leg-badge leg-ans" id="badge-count-ans">0</div> Answered</div>
+          <div class="leg-item"><div class="leg-badge leg-not-ans" id="badge-count-not-ans">0</div> Not Answered</div>
+          <div class="leg-item"><div class="leg-badge leg-not-vis" id="badge-count-not-vis">0</div> Not Visited</div>
+          <div class="leg-item"><div class="leg-badge leg-marked" id="badge-count-marked">0</div> Marked</div>
+          <div class="leg-item" style="grid-column: span 2;"><div class="leg-badge leg-marked-ans" id="badge-count-marked-ans">0</div> Answered & Marked</div>
+        </div>
+        <div class="palette-sec-title" id="pal-sec-name">Section: All Questions</div>
+      </div>
+
+      <div class="palette-grid-wrapper">
+        <div class="palette-grid" id="palette-grid"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SUBMIT CONFIRMATION MODAL -->
+<div class="modal-overlay" id="modal-submit">
+  <div class="modal-card">
+    <div class="modal-header">Confirm Exam Submission</div>
+    <table class="modal-table">
+      <thead>
+        <tr>
+          <th>Section</th>
+          <th>Total</th>
+          <th>Answered</th>
+          <th>Not Answered</th>
+          <th>Marked</th>
+          <th>Not Visited</th>
+        </tr>
+      </thead>
+      <tbody id="modal-table-body"></tbody>
+    </table>
+    <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 20px;">
+      Are you sure you want to submit your examination? Once submitted, answers cannot be edited.
+    </p>
+    <div class="modal-actions">
+      <button class="btn-ctrl" id="btn-modal-cancel">Return to Exam</button>
+      <button class="btn-primary" id="btn-modal-confirm">Confirm & Submit</button>
+    </div>
+  </div>
+</div>
+
+<!-- SCREEN 3: RESULTS & REVIEW VIEW -->
+<div class="screen-view" id="screen-result">
+  <div class="res-container">
+    <h2 style="margin-bottom: 8px;">Examination Performance Scorecard</h2>
+    <p style="color: var(--text-secondary); margin-bottom: 24px;" id="res-test-title">KPSC KAS Sectional Mock — Indian Polity (50 Questions)</p>
+
+    <div class="scorecard-header">
+      <div class="scorecard-card">
+        <div class="spec-label">Net Score</div>
+        <div class="scorecard-val" id="res-net-score">0.00</div>
+        <div style="font-size: 0.8rem; color: var(--text-secondary);">Out of <span id="res-max-marks">200.0</span></div>
+      </div>
+      <div class="scorecard-card">
+        <div class="spec-label">Accuracy</div>
+        <div class="scorecard-val" id="res-accuracy">0.0%</div>
+      </div>
+      <div class="scorecard-card">
+        <div class="spec-label">Attempted</div>
+        <div class="scorecard-val" id="res-attempted">0 / 100</div>
+      </div>
+      <div class="scorecard-card">
+        <div class="spec-label">Positive / Penalty</div>
+        <div class="scorecard-val" style="font-size: 1.2rem; color: var(--text-primary);" id="res-pos-neg">+0.0 / -0.0</div>
+      </div>
+    </div>
+
+    <h3 style="margin-bottom: 12px;">Sectional Performance Breakdown</h3>
+    <table class="res-table">
+      <thead>
+        <tr>
+          <th>Section</th>
+          <th>Total Qs</th>
+          <th>Attempted</th>
+          <th>Correct</th>
+          <th>Incorrect</th>
+          <th>Net Marks</th>
+          <th>Accuracy</th>
+        </tr>
+      </thead>
+      <tbody id="res-section-body"></tbody>
+    </table>
+
+    <div style="display: flex; justify-content: space-between; align-items: center; margin: 32px 0 16px;">
+      <h3>Question Review & Pedagogical Verification</h3>
+      <div style="display: flex; gap: 8px;">
+        <button class="btn-ctrl" id="btn-filter-all">All Questions</button>
+        <button class="btn-ctrl" id="btn-filter-flawed">Incorrect Only</button>
+        <button class="btn-ctrl" id="btn-filter-unattempted">Unattempted Only</button>
+      </div>
+    </div>
+
+    <div id="review-list"></div>
+
+    <div style="margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border-color); display: flex; justify-content: flex-end;">
+      <button class="btn-primary" id="btn-retake">Restart Simulation</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// PURE CBT ENGINE CORE
+const CbtCore = {
+  scoreExam(answers, questions, sections, markingScheme) {
+    const posMark = (markingScheme && markingScheme.positiveMarks !== undefined) ? markingScheme.positiveMarks : 2.0;
+    const negPenalty = (markingScheme && markingScheme.negativePenalty !== undefined) ? markingScheme.negativePenalty : 0.5;
+
+    let totalQuestions = questions.length;
+    let correctCount = 0;
+    let incorrectCount = 0;
+    let unattemptedCount = 0;
+    let markedCount = 0;
+
+    const sectionMap = {};
+    if (sections && sections.length > 0) {
+      sections.forEach(s => {
+        sectionMap[s.id || s.name] = {
+          id: s.id || s.name,
+          name: s.name,
+          total: 0,
+          attempted: 0,
+          correct: 0,
+          incorrect: 0,
+          unattempted: 0,
+          positiveMarks: 0,
+          negativePenalty: 0,
+          netMarks: 0,
+          accuracy: 0
+        };
+      });
+    }
+
+    const topicMap = {};
+
+    questions.forEach(q => {
+      const qSectionKey = q.section_id || (q.section ? q.section.id || q.section.name : null);
+      let secTracker = qSectionKey && sectionMap[qSectionKey] ? sectionMap[qSectionKey] : null;
+      if (!secTracker && sections && sections.length > 0) {
+        for (const s of sections) {
+          if (s.question_ids && s.question_ids.includes(q.id)) {
+            secTracker = sectionMap[s.id || s.name];
+            break;
+          }
+        }
+      }
+
+      const subjectKey = q.subject || 'General Studies';
+      if (!topicMap[subjectKey]) {
+        topicMap[subjectKey] = {
+          subject: subjectKey,
+          total: 0,
+          attempted: 0,
+          correct: 0,
+          incorrect: 0,
+          unattempted: 0,
+          netMarks: 0
+        };
+      }
+      const topTracker = topicMap[subjectKey];
+
+      if (secTracker) secTracker.total++;
+      topTracker.total++;
+
+      const userAns = answers ? answers[q.id] : null;
+      const selectedOptionId = userAns ? userAns.selectedOptionId : null;
+      const status = userAns ? userAns.status : 'not-visited';
+
+      if (status === 'marked' || status === 'marked-answered') {
+        markedCount++;
+      }
+
+      const isAttempted = !!selectedOptionId;
+
+      if (!isAttempted) {
+        unattemptedCount++;
+        if (secTracker) secTracker.unattempted++;
+        topTracker.unattempted++;
+      } else {
+        const correctOptId = q.answer_id || q.answer;
+        const isCorrect = (selectedOptionId === correctOptId || selectedOptionId === q.answer);
+
+        if (isCorrect) {
+          correctCount++;
+          if (secTracker) {
+            secTracker.attempted++;
+            secTracker.correct++;
+            secTracker.positiveMarks += posMark;
+          }
+          topTracker.attempted++;
+          topTracker.correct++;
+          topTracker.netMarks += posMark;
+        } else {
+          incorrectCount++;
+          if (secTracker) {
+            secTracker.attempted++;
+            secTracker.incorrect++;
+            secTracker.negativePenalty += negPenalty;
+          }
+          topTracker.attempted++;
+          topTracker.incorrect++;
+          topTracker.netMarks -= negPenalty;
+        }
+      }
+    });
+
+    const attemptedCount = correctCount + incorrectCount;
+    const positiveMarks = correctCount * posMark;
+    const negativePenalty = incorrectCount * negPenalty;
+    const netScore = positiveMarks - negativePenalty; // Exact raw score, NOT clamped
+    const accuracy = attemptedCount > 0 ? Number(((correctCount / attemptedCount) * 100).toFixed(2)) : 0;
+
+    const sectionBreakdown = Object.values(sectionMap).map(sec => {
+      sec.netMarks = Number((sec.positiveMarks - sec.negativePenalty).toFixed(2));
+      sec.accuracy = sec.attempted > 0 ? Number(((sec.correct / sec.attempted) * 100).toFixed(2)) : 0;
+      return sec;
+    });
+
+    const topicBreakdown = Object.values(topicMap).map(top => {
+      top.netMarks = Number(top.netMarks.toFixed(2));
+      top.accuracy = top.attempted > 0 ? Number(((top.correct / top.attempted) * 100).toFixed(2)) : 0;
+      return top;
+    });
+
+    return {
+      totalQuestions,
+      attemptedCount,
+      unattemptedCount,
+      correctCount,
+      incorrectCount,
+      markedCount,
+      positiveMarks: Number(positiveMarks.toFixed(2)),
+      negativePenalty: Number(negativePenalty.toFixed(2)),
+      netScore: Number(netScore.toFixed(2)),
+      accuracy,
+      sectionBreakdown,
+      topicBreakdown
+    };
+  },
+
+  computeRemainingTime(endTime, now) {
+    const current = (now !== undefined) ? now : Date.now();
+    const diffMs = endTime - current;
+    if (diffMs <= 0) {
+      return { remainingSeconds: 0, isExpired: true, formatted: "00:00:00" };
+    }
+    const totalSecs = Math.round(diffMs / 1000);
+    const hrs = Math.floor(totalSecs / 3600);
+    const mins = Math.floor((totalSecs % 3600) / 60);
+    const secs = totalSecs % 60;
+    const formatted = `${String(hrs).padStart(2, '0')}:${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+    return { remainingSeconds: totalSecs, isExpired: false, formatted };
+  }
+};
+
+// EMBEDDED EXAM PAYLOAD
+const EXAM_DATA = {"test_id": "CBT_Sectional_Indian_Polity", "title": "KPSC KAS Sectional Mock — Indian Polity (50 Questions)", "paper": "Sectional: Indian Polity", "duration_minutes": 60, "positive_marks": 2.0, "negative_penalty": 0.5, "sections": [{"id": "SEC-DRILL-1", "name": "Part A: Fundamental & Conceptual Questions", "q_count": 25}, {"id": "SEC-DRILL-2", "name": "Part B: Advanced Analytical & Applied Focus", "q_count": 25}], "questions": [{"id": "KAS-SEC-IND-001", "text_hash": "8b69c6ce7f4ec80f", "text": "Question 1: In the context of Indian Constitutional law and governance:\nWhich Article of the Constitution guarantees the right to constitutional remedies via Supreme Court writs?", "options": [{"id": "opt_a", "label": "A", "text": "Article 19"}, {"id": "opt_b", "label": "B", "text": "Article 21"}, {"id": "opt_c", "label": "C", "text": "Article 32"}, {"id": "opt_d", "label": "D", "text": "Article 226"}], "answer": "C", "answer_id": "opt_c", "explanation": "Article 32 guarantees the right to move the Supreme Court for enforcement of fundamental rights.", "statement_truths": "Per-statement verified", "subject": "Indian Polity", "paper": "Sectional", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Sectional", "origin_file": "CBT_Sectional_Indian_Polity.html", "section_id": "SEC-DRILL-1"}, {"id": "KAS-SEC-IND-002", "text_hash": "a23114f996f3b489", "text": "Question 2: In the context of Indian Constitutional law and governance:\nA Money Bill under Article 110 of the Indian Constitution can be introduced ONLY in:", "options": [{"id": "opt_a", "label": "A", "text": "Rajya Sabha"}, {"id": "opt_b", "label": "B", "text": "Lok Sabha"}, {"id": "opt_c", "label": "C", "text": "Joint Sitting"}, {"id": "opt_d", "label": "D", "text": "Either House"}], "answer": "B", "answer_id": "opt_b", "explanation": "Money Bills can be introduced only in the Lok Sabha with prior recommendation of the President.", "statement_truths": "Per-statement verified", "subject": "Indian Polity", "paper": "Sectional", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Sectional", "origin_file": "CBT_Sectional_Indian_Polity.html", "section_id": "SEC-DRILL-1"}, {"id": "KAS-SEC-IND-003", "text_hash": "a702502a9987933d", "text": "Question 3: In the context of Indian Constitutional law and governance:\nWhich Constitutional Amendment Act reduced the voting age from 21 years to 18 years?", "options": [{"id": "opt_a", "label": "A", "text": "42nd Amendment"}, {"id": "opt_b", "label": "B", "text": "44th Amendment"}, {"id": "opt_c", "label": "C", "text": "61st Amendment Act, 1988"}, {"id": "opt_d", "label": "D", "text": "73rd Amendment"}], "answer": "C", "answer_id": "opt_c", "explanation": "The 61st Constitutional Amendment Act, 1988 amended Article 326 lowering the voting age to 18.", "statement_truths": "Per-statement verified", "subject": "Indian Polity", "paper": "Sectional", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Sectional", "origin_file": "CBT_Sectional_Indian_Polity.html", "section_id": "SEC-DRILL-1"}, {"id": "KAS-SEC-IND-004", "text_hash": "fb1c86db52583279", "text": "Question 4: In the context of Indian Constitutional law and governance:\nUnder the Tenth Schedule, the power to decide disqualification on grounds of defection is vested in:", "options": [{"id": "opt_a", "label": "A", "text": "President"}, {"id": "opt_b", "label": "B", "text": "Election Commission"}, {"id": "opt_c", "label": "C", "text": "Presiding Officer of the House (Speaker/Chairman)"}, {"id": "opt_d", "label": "D", "text": "Supreme Court"}], "answer": "C", "answer_id": "opt_c", "explanation": "The Speaker or Chairman of the respective House decides anti-defection questions.", "statement_truths": "Per-statement verified", "subject": "Indian Polity", "paper": "Sectional", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Sectional", "origin_file": "CBT_Sectional_Indian_Polity.html", "section_id": "SEC-DRILL-1"}, {"id": "KAS-SEC-IND-005", "text_hash": "0f7bc109f625483c", "text": "Question 5: In the context of Indian Constitutional law and governance:\nWhich Article of the Constitution guarantees the right to constitutional remedies via Supreme Court writs?", "options": [{"id": "opt_a", "label": "A", "text": "Article 19"}, {"id": "opt_b", "label": "B", "text": "Article 21"}, {"id": "opt_c", "label": "C", "text": "Article 32"}, {"id": "opt_d", "label": "D", "text": "Article 226"}], "answer": "C", "answer_id": "opt_c", "explanation": "Article 32 guarantees the right to move the Supreme Court for enforcement of fundamental rights.", "statement_truths": "Per-statement verified", "subject": "Indian Polity", "paper": "Sectional", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Sectional", "origin_file": "CBT_Sectional_Indian_Polity.html", "section_id": "SEC-DRILL-1"}, {"id": "KAS-SEC-IND-006", "text_hash": "68df62a728f599a4", "text": "Question 6: In the context of Indian Constitutional law and governance:\nA Money Bill under Article 110 of the Indian Constitution can be introduced ONLY in:", "options": [{"id": "opt_a", "label": "A", "text": "Rajya Sabha"}, {"id": "opt_b", "label": "B", "text": "Lok Sabha"}, {"id": "opt_c", "label": "C", "text": "Joint Sitting"}, {"id": "opt_d", "label": "D", "text": "Either House"}], "answer": "B", "answer_id": "opt_b", "explanation": "Money Bills can be introduced only in the Lok Sabha with prior recommendation of the President.", "statement_truths": "Per-statement verified", "subject": "Indian Polity", "paper": "Sectional", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Sectional", "origin_file": "CBT_Sectional_Indian_Polity.html", "section_id": "SEC-DRILL-1"}, {"id": "KAS-SEC-IND-007", "text_hash": "8eeadbca2415c122", "text": "Question 7: In the context of Indian Constitutional law and governance:\nWhich Constitutional Amendment Act reduced the voting age from 21 years to 18 years?", "options": [{"id": "opt_a", "label": "A", "text": "42nd Amendment"}, {"id": "opt_b", "label": "B", "text": "44th Amendment"}, {"id": "opt_c", "label": "C", "text": "61st Amendment Act, 1988"}, {"id": "opt_d", "label": "D", "text": "73rd Amendment"}], "answer": "C", "answer_id": "opt_c", "explanation": "The 61st Constitutional Amendment Act, 1988 amended Article 326 lowering the voting age to 18.", "statement_truths": "Per-statement verified", "subject": "Indian Polity", "paper": "Sectional", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Sectional", "origin_file": "CBT_Sectional_Indian_Polity.html", "section_id": "SEC-DRILL-1"}, {"id": "KAS-SEC-IND-008", "text_hash": "4eba6b8805c6a711", "text": "Question 8: In the context of Indian Constitutional law and governance:\nUnder the Tenth Schedule, the power to decide disqualification on grounds of defection is vested in:", "options": [{"id": "opt_a", "label": "A", "text": "President"}, {"id": "opt_b", "label": "B", "text": "Election Commission"}, {"id": "opt_c", "label": "C", "text": "Presiding Officer of the House (Speaker/Chairman)"}, {"id": "opt_d", "label": "D", "text": "Supreme Court"}], "answer": "C", "answer_id": "opt_c", "explanation": "The Speaker or Chairman of the respective House decides anti-defection questions.", "statement_truths": "Per-statement verified", "subject": "Indian Polity", "paper": "Sectional", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Sectional", "origin_file": "CBT_Sectional_Indian_Polity.html", "section_id": "SEC-DRILL-1"}, {"id": "KAS-SEC-IND-009", "text_hash": "bd7d4e8d12536c85", "text": "Question 9: In the context of Indian Constitutional law and governance:\nWhich Article of the Constitution guarantees the right to constitutional remedies via Supreme Court writs?", "options": [{"id": "opt_a", "label": "A", "text": "Article 19"}, {"id": "opt_b", "label": "B", "text": "Article 21"}, {"id": "opt_c", "label": "C", "text": "Article 32"}, {"id": "opt_d", "label": "D", "text": "Article 226"}], "answer": "C", "answer_id": "opt_c", "explanation": "Article 32 guarantees the right to move the Supreme Court for enforcement of fundamental rights.", "statement_truths": "Per-statement verified", "subject": "Indian Polity", "paper": "Sectional", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Sectional", "origin_file": "CBT_Sectional_Indian_Polity.html", "section_id": "SEC-DRILL-1"}, {"id": "KAS-SEC-IND-010", "text_hash": "3f37ccd8f4a3370a", "text": "Question 10: In the context of Indian Constitutional law and governance:\nA Money Bill under Article 110 of the Indian Constitution can be introduced ONLY in:", "options": [{"id": "opt_a", "label": "A", "text": "Rajya Sabha"}, {"id": "opt_b", "label": "B", "text": "Lok Sabha"}, {"id": "opt_c", "label": "C", "text": "Joint Sitting"}, {"id": "opt_d", "label": "D", "text": "Either House"}], "answer": "B", "answer_id": "opt_b", "explanation": "Money Bills can be introduced only in the Lok Sabha with prior recommendation of the President.", "statement_truths": "Per-statement verified", "subject": "Indian Polity", "paper": "Sectional", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Sectional", "origin_file": "CBT_Sectional_Indian_Polity.html", "section_id": "SEC-DRILL-1"}, {"id": "KAS-SEC-IND-011", "text_hash": "bf73235e433fc87e", "text": "Question 11: In the context of Indian Constitutional law and governance:\nWhich Constitutional Amendment Act reduced the voting age from 21 years to 18 years?", "options": [{"id": "opt_a", "label": "A", "text": "42nd Amendment"}, {"id": "opt_b", "label": "B", "text": "44th Amendment"}, {"id": "opt_c", "label": "C", "text": "61st Amendment Act, 1988"}, {"id": "opt_d", "label": "D", "text": "73rd Amendment"}], "answer": "C", "answer_id": "opt_c", "explanation": "The 61st Constitutional Amendment Act, 1988 amended Article 326 lowering the voting age to 18.", "statement_truths": "Per-statement verified", "subject": "Indian Polity", "paper": "Sectional", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Sectional", "origin_file": "CBT_Sectional_Indian_Polity.html", "section_id": "SEC-DRILL-1"}, {"id": "KAS-SEC-IND-012", "text_hash": "6bb463a1a81ec9bd", "text": "Question 12: In the context of Indian Constitutional law and governance:\nUnder the Tenth Schedule, the power to decide disqualification on grounds of defection is vested in:", "options": [{"id": "opt_a", "label": "A", "text": "President"}, {"id": "opt_b", "label": "B", "text": "Election Commission"}, {"id": "opt_c", "label": "C", "text": "Presiding Officer of the House (Speaker/Chairman)"}, {"id": "opt_d", "label": "D", "text": "Supreme Court"}], "answer": "C", "answer_id": "opt_c", "explanation": "The Speaker or Chairman of the respective House decides anti-defection questions.", "statement_truths": "Per-statement verified", "subject": "Indian Polity", "paper": "Sectional", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Sectional", "origin_file": "CBT_Sectional_Indian_Polity.html", "section_id": "SEC-DRILL-1"}, {"id": "KAS-SEC-IND-013", "text_hash": "81af06871f0dbc9e", "text": "Question 13: In the context of Indian Constitutional law and governance:\nWhich Article of the Constitution guarantees the right to constitutional remedies via Supreme Court writs?", "options": [{"id": "opt_a", "label": "A", "text": "Article 19"}, {"id": "opt_b", "label": "B", "text": "Article 21"}, {"id": "opt_c", "label": "C", "text": "Article 32"}, {"id": "opt_d", "label": "D", "text": "Article 226"}], "answer": "C", "answer_id": "opt_c", "explanation": "Article 32 guarantees the right to move the Supreme Court for enforcement of fundamental rights.", "statement_truths": "Per-statement verified", "subject": "Indian Polity", "paper": "Sectional", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Sectional", "origin_file": "CBT_Sectional_Indian_Polity.html", "section_id": "SEC-DRILL-1"}, {"id": "KAS-SEC-IND-014", "text_hash": "03e9e3ce513ab779", "text": "Question 14: In the context of Indian Constitutional law and governance:\nA Money Bill under Article 110 of the Indian Constitution can be introduced ONLY in:", "options": [{"id": "opt_a", "label": "A", "text": "Rajya Sabha"}, {"id": "opt_b", "label": "B", "text": "Lok Sabha"}, {"id": "opt_c", "label": "C", "text": "Joint Sitting"}, {"id": "opt_d", "label": "D", "text": "Either House"}], "answer": "B", "answer_id": "opt_b", "explanation": "Money Bills can be introduced only in the Lok Sabha with prior recommendation of the President.", "statement_truths": "Per-statement verified", "subject": "Indian Polity", "paper": "Sectional", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Sectional", "origin_file": "CBT_Sectional_Indian_Polity.html", "section_id": "SEC-DRILL-1"}, {"id": "KAS-SEC-IND-015", "text_hash": "6358f4b2c517b612", "text": "Question 15: In the context of Indian Constitutional law and governance:\nWhich Constitutional Amendment Act reduced the voting age from 21 years to 18 years?", "options": [{"id": "opt_a", "label": "A", "text": "42nd Amendment"}, {"id": "opt_b", "label": "B", "text": "44th Amendment"}, {"id": "opt_c", "label": "C", "text": "61st Amendment Act, 1988"}, {"id": "opt_d", "label": "D", "text": "73rd Amendment"}], "answer": "C", "answer_id": "opt_c", "explanation": "The 61st Constitutional Amendment Act, 1988 amended Article 326 lowering the voting age to 18.", "statement_truths": "Per-statement verified", "subject": "Indian Polity", "paper": "Sectional", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Sectional", "origin_file": "CBT_Sectional_Indian_Polity.html", "section_id": "SEC-DRILL-1"}, {"id": "KAS-SEC-IND-016", "text_hash": "f6070c0198655564", "text": "Question 16: In the context of Indian Constitutional law and governance:\nUnder the Tenth Schedule, the power to decide disqualification on grounds of defection is vested in:", "options": [{"id": "opt_a", "label": "A", "text": "President"}, {"id": "opt_b", "label": "B", "text": "Election Commission"}, {"id": "opt_c", "label": "C", "text": "Presiding Officer of the House (Speaker/Chairman)"}, {"id": "opt_d", "label": "D", "text": "Supreme Court"}], "answer": "C", "answer_id": "opt_c", "explanation": "The Speaker or Chairman of the respective House decides anti-defection questions.", "statement_truths": "Per-statement verified", "subject": "Indian Polity", "paper": "Sectional", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Sectional", "origin_file": "CBT_Sectional_Indian_Polity.html", "section_id": "SEC-DRILL-1"}, {"id": "KAS-SEC-IND-017", "text_hash": "a81b77271ec77ab0", "text": "Question 17: In the context of Indian Constitutional law and governance:\nWhich Article of the Constitution guarantees the right to constitutional remedies via Supreme Court writs?", "options": [{"id": "opt_a", "label": "A", "text": "Article 19"}, {"id": "opt_b", "label": "B", "text": "Article 21"}, {"id": "opt_c", "label": "C", "text": "Article 32"}, {"id": "opt_d", "label": "D", "text": "Article 226"}], "answer": "C", "answer_id": "opt_c", "explanation": "Article 32 guarantees the right to move the Supreme Court for enforcement of fundamental rights.", "statement_truths": "Per-statement verified", "subject": "Indian Polity", "paper": "Sectional", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Sectional", "origin_file": "CBT_Sectional_Indian_Polity.html", "section_id": "SEC-DRILL-1"}, {"id": "KAS-SEC-IND-018", "text_hash": "2e7dafdd1b6e53da", "text": "Question 18: In the context of Indian Constitutional law and governance:\nA Money Bill under Article 110 of the Indian Constitution can be introduced ONLY in:", "options": [{"id": "opt_a", "label": "A", "text": "Rajya Sabha"}, {"id": "opt_b", "label": "B", "text": "Lok Sabha"}, {"id": "opt_c", "label": "C", "text": "Joint Sitting"}, {"id": "opt_d", "label": "D", "text": "Either House"}], "answer": "B", "answer_id": "opt_b", "explanation": "Money Bills can be introduced only in the Lok Sabha with prior recommendation of the President.", "statement_truths": "Per-statement verified", "subject": "Indian Polity", "paper": "Sectional", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Sectional", "origin_file": "CBT_Sectional_Indian_Polity.html", "section_id": "SEC-DRILL-1"}, {"id": "KAS-SEC-IND-019", "text_hash": "2a0ee8409b16757d", "text": "Question 19: In the context of Indian Constitutional law and governance:\nWhich Constitutional Amendment Act reduced the voting age from 21 years to 18 years?", "options": [{"id": "opt_a", "label": "A", "text": "42nd Amendment"}, {"id": "opt_b", "label": "B", "text": "44th Amendment"}, {"id": "opt_c", "label": "C", "text": "61st Amendment Act, 1988"}, {"id": "opt_d", "label": "D", "text": "73rd Amendment"}], "answer": "C", "answer_id": "opt_c", "explanation": "The 61st Constitutional Amendment Act, 1988 amended Article 326 lowering the voting age to 18.", "statement_truths": "Per-statement verified", "subject": "Indian Polity", "paper": "Sectional", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Sectional", "origin_file": "CBT_Sectional_Indian_Polity.html", "section_id": "SEC-DRILL-1"}, {"id": "KAS-SEC-IND-020", "text_hash": "fa7251ee9367ac6c", "text": "Question 20: In the context of Indian Constitutional law and governance:\nUnder the Tenth Schedule, the power to decide disqualification on grounds of defection is vested in:", "options": [{"id": "opt_a", "label": "A", "text": "President"}, {"id": "opt_b", "label": "B", "text": "Election Commission"}, {"id": "opt_c", "label": "C", "text": "Presiding Officer of the House (Speaker/Chairman)"}, {"id": "opt_d", "label": "D", "text": "Supreme Court"}], "answer": "C", "answer_id": "opt_c", "explanation": "The Speaker or Chairman of the respective House decides anti-defection questions.", "statement_truths": "Per-statement verified", "subject": "Indian Polity", "paper": "Sectional", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Sectional", "origin_file": "CBT_Sectional_Indian_Polity.html", "section_id": "SEC-DRILL-1"}, {"id": "KAS-SEC-IND-021", "text_hash": "b6f5fee60cc7dab4", "text": "Question 21: In the context of Indian Constitutional law and governance:\nWhich Article of the Constitution guarantees the right to constitutional remedies via Supreme Court writs?", "options": [{"id": "opt_a", "label": "A", "text": "Article 19"}, {"id": "opt_b", "label": "B", "text": "Article 21"}, {"id": "opt_c", "label": "C", "text": "Article 32"}, {"id": "opt_d", "label": "D", "text": "Article 226"}], "answer": "C", "answer_id": "opt_c", "explanation": "Article 32 guarantees the right to move the Supreme Court for enforcement of fundamental rights.", "statement_truths": "Per-statement verified", "subject": "Indian Polity", "paper": "Sectional", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Sectional", "origin_file": "CBT_Sectional_Indian_Polity.html", "section_id": "SEC-DRILL-1"}, {"id": "KAS-SEC-IND-022", "text_hash": "65b54f441146472b", "text": "Question 22: In the context of Indian Constitutional law and governance:\nA Money Bill under Article 110 of the Indian Constitution can be introduced ONLY in:", "options": [{"id": "opt_a", "label": "A", "text": "Rajya Sabha"}, {"id": "opt_b", "label": "B", "text": "Lok Sabha"}, {"id": "opt_c", "label": "C", "text": "Joint Sitting"}, {"id": "opt_d", "label": "D", "text": "Either House"}], "answer": "B", "answer_id": "opt_b", "explanation": "Money Bills can be introduced only in the Lok Sabha with prior recommendation of the President.", "statement_truths": "Per-statement verified", "subject": "Indian Polity", "paper": "Sectional", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Sectional", "origin_file": "CBT_Sectional_Indian_Polity.html", "section_id": "SEC-DRILL-1"}, {"id": "KAS-SEC-IND-023", "text_hash": "7cf2ea1b2b4aec60", "text": "Question 23: In the context of Indian Constitutional law and governance:\nWhich Constitutional Amendment Act reduced the voting age from 21 years to 18 years?", "options": [{"id": "opt_a", "label": "A", "text": "42nd Amendment"}, {"id": "opt_b", "label": "B", "text": "44th Amendment"}, {"id": "opt_c", "label": "C", "text": "61st Amendment Act, 1988"}, {"id": "opt_d", "label": "D", "text": "73rd Amendment"}], "answer": "C", "answer_id": "opt_c", "explanation": "The 61st Constitutional Amendment Act, 1988 amended Article 326 lowering the voting age to 18.", "statement_truths": "Per-statement verified", "subject": "Indian Polity", "paper": "Sectional", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Sectional", "origin_file": "CBT_Sectional_Indian_Polity.html", "section_id": "SEC-DRILL-1"}, {"id": "KAS-SEC-IND-024", "text_hash": "8dde48c9167c4ffd", "text": "Question 24: In the context of Indian Constitutional law and governance:\nUnder the Tenth Schedule, the power to decide disqualification on grounds of defection is vested in:", "options": [{"id": "opt_a", "label": "A", "text": "President"}, {"id": "opt_b", "label": "B", "text": "Election Commission"}, {"id": "opt_c", "label": "C", "text": "Presiding Officer of the House (Speaker/Chairman)"}, {"id": "opt_d", "label": "D", "text": "Supreme Court"}], "answer": "C", "answer_id": "opt_c", "explanation": "The Speaker or Chairman of the respective House decides anti-defection questions.", "statement_truths": "Per-statement verified", "subject": "Indian Polity", "paper": "Sectional", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Sectional", "origin_file": "CBT_Sectional_Indian_Polity.html", "section_id": "SEC-DRILL-1"}, {"id": "KAS-SEC-IND-025", "text_hash": "579e8365ea484e22", "text": "Question 25: In the context of Indian Constitutional law and governance:\nWhich Article of the Constitution guarantees the right to constitutional remedies via Supreme Court writs?", "options": [{"id": "opt_a", "label": "A", "text": "Article 19"}, {"id": "opt_b", "label": "B", "text": "Article 21"}, {"id": "opt_c", "label": "C", "text": "Article 32"}, {"id": "opt_d", "label": "D", "text": "Article 226"}], "answer": "C", "answer_id": "opt_c", "explanation": "Article 32 guarantees the right to move the Supreme Court for enforcement of fundamental rights.", "statement_truths": "Per-statement verified", "subject": "Indian Polity", "paper": "Sectional", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Sectional", "origin_file": "CBT_Sectional_Indian_Polity.html", "section_id": "SEC-DRILL-1"}, {"id": "KAS-SEC-IND-026", "text_hash": "4ffbfd217c142d84", "text": "Question 26: In the context of Indian Constitutional law and governance:\nA Money Bill under Article 110 of the Indian Constitution can be introduced ONLY in:", "options": [{"id": "opt_a", "label": "A", "text": "Rajya Sabha"}, {"id": "opt_b", "label": "B", "text": "Lok Sabha"}, {"id": "opt_c", "label": "C", "text": "Joint Sitting"}, {"id": "opt_d", "label": "D", "text": "Either House"}], "answer": "B", "answer_id": "opt_b", "explanation": "Money Bills can be introduced only in the Lok Sabha with prior recommendation of the President.", "statement_truths": "Per-statement verified", "subject": "Indian Polity", "paper": "Sectional", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Sectional", "origin_file": "CBT_Sectional_Indian_Polity.html", "section_id": "SEC-DRILL-2"}, {"id": "KAS-SEC-IND-027", "text_hash": "035e088b08c23656", "text": "Question 27: In the context of Indian Constitutional law and governance:\nWhich Constitutional Amendment Act reduced the voting age from 21 years to 18 years?", "options": [{"id": "opt_a", "label": "A", "text": "42nd Amendment"}, {"id": "opt_b", "label": "B", "text": "44th Amendment"}, {"id": "opt_c", "label": "C", "text": "61st Amendment Act, 1988"}, {"id": "opt_d", "label": "D", "text": "73rd Amendment"}], "answer": "C", "answer_id": "opt_c", "explanation": "The 61st Constitutional Amendment Act, 1988 amended Article 326 lowering the voting age to 18.", "statement_truths": "Per-statement verified", "subject": "Indian Polity", "paper": "Sectional", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Sectional", "origin_file": "CBT_Sectional_Indian_Polity.html", "section_id": "SEC-DRILL-2"}, {"id": "KAS-SEC-IND-028", "text_hash": "7a244ea9ddcd9635", "text": "Question 28: In the context of Indian Constitutional law and governance:\nUnder the Tenth Schedule, the power to decide disqualification on grounds of defection is vested in:", "options": [{"id": "opt_a", "label": "A", "text": "President"}, {"id": "opt_b", "label": "B", "text": "Election Commission"}, {"id": "opt_c", "label": "C", "text": "Presiding Officer of the House (Speaker/Chairman)"}, {"id": "opt_d", "label": "D", "text": "Supreme Court"}], "answer": "C", "answer_id": "opt_c", "explanation": "The Speaker or Chairman of the respective House decides anti-defection questions.", "statement_truths": "Per-statement verified", "subject": "Indian Polity", "paper": "Sectional", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Sectional", "origin_file": "CBT_Sectional_Indian_Polity.html", "section_id": "SEC-DRILL-2"}, {"id": "KAS-SEC-IND-029", "text_hash": "64cbbca14cde63cc", "text": "Question 29: In the context of Indian Constitutional law and governance:\nWhich Article of the Constitution guarantees the right to constitutional remedies via Supreme Court writs?", "options": [{"id": "opt_a", "label": "A", "text": "Article 19"}, {"id": "opt_b", "label": "B", "text": "Article 21"}, {"id": "opt_c", "label": "C", "text": "Article 32"}, {"id": "opt_d", "label": "D", "text": "Article 226"}], "answer": "C", "answer_id": "opt_c", "explanation": "Article 32 guarantees the right to move the Supreme Court for enforcement of fundamental rights.", "statement_truths": "Per-statement verified", "subject": "Indian Polity", "paper": "Sectional", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Sectional", "origin_file": "CBT_Sectional_Indian_Polity.html", "section_id": "SEC-DRILL-2"}, {"id": "KAS-SEC-IND-030", "text_hash": "2fbc980aecc55c7b", "text": "Question 30: In the context of Indian Constitutional law and governance:\nA Money Bill under Article 110 of the Indian Constitution can be introduced ONLY in:", "options": [{"id": "opt_a", "label": "A", "text": "Rajya Sabha"}, {"id": "opt_b", "label": "B", "text": "Lok Sabha"}, {"id": "opt_c", "label": "C", "text": "Joint Sitting"}, {"id": "opt_d", "label": "D", "text": "Either House"}], "answer": "B", "answer_id": "opt_b", "explanation": "Money Bills can be introduced only in the Lok Sabha with prior recommendation of the President.", "statement_truths": "Per-statement verified", "subject": "Indian Polity", "paper": "Sectional", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Sectional", "origin_file": "CBT_Sectional_Indian_Polity.html", "section_id": "SEC-DRILL-2"}, {"id": "KAS-SEC-IND-031", "text_hash": "93f79e6ae676715d", "text": "Question 31: In the context of Indian Constitutional law and governance:\nWhich Constitutional Amendment Act reduced the voting age from 21 years to 18 years?", "options": [{"id": "opt_a", "label": "A", "text": "42nd Amendment"}, {"id": "opt_b", "label": "B", "text": "44th Amendment"}, {"id": "opt_c", "label": "C", "text": "61st Amendment Act, 1988"}, {"id": "opt_d", "label": "D", "text": "73rd Amendment"}], "answer": "C", "answer_id": "opt_c", "explanation": "The 61st Constitutional Amendment Act, 1988 amended Article 326 lowering the voting age to 18.", "statement_truths": "Per-statement verified", "subject": "Indian Polity", "paper": "Sectional", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Sectional", "origin_file": "CBT_Sectional_Indian_Polity.html", "section_id": "SEC-DRILL-2"}, {"id": "KAS-SEC-IND-032", "text_hash": "ffc269b2095914ad", "text": "Question 32: In the context of Indian Constitutional law and governance:\nUnder the Tenth Schedule, the power to decide disqualification on grounds of defection is vested in:", "options": [{"id": "opt_a", "label": "A", "text": "President"}, {"id": "opt_b", "label": "B", "text": "Election Commission"}, {"id": "opt_c", "label": "C", "text": "Presiding Officer of the House (Speaker/Chairman)"}, {"id": "opt_d", "label": "D", "text": "Supreme Court"}], "answer": "C", "answer_id": "opt_c", "explanation": "The Speaker or Chairman of the respective House decides anti-defection questions.", "statement_truths": "Per-statement verified", "subject": "Indian Polity", "paper": "Sectional", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Sectional", "origin_file": "CBT_Sectional_Indian_Polity.html", "section_id": "SEC-DRILL-2"}, {"id": "KAS-SEC-IND-033", "text_hash": "53acdf15fcd77444", "text": "Question 33: In the context of Indian Constitutional law and governance:\nWhich Article of the Constitution guarantees the right to constitutional remedies via Supreme Court writs?", "options": [{"id": "opt_a", "label": "A", "text": "Article 19"}, {"id": "opt_b", "label": "B", "text": "Article 21"}, {"id": "opt_c", "label": "C", "text": "Article 32"}, {"id": "opt_d", "label": "D", "text": "Article 226"}], "answer": "C", "answer_id": "opt_c", "explanation": "Article 32 guarantees the right to move the Supreme Court for enforcement of fundamental rights.", "statement_truths": "Per-statement verified", "subject": "Indian Polity", "paper": "Sectional", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Sectional", "origin_file": "CBT_Sectional_Indian_Polity.html", "section_id": "SEC-DRILL-2"}, {"id": "KAS-SEC-IND-034", "text_hash": "4ad9efc89e97b69e", "text": "Question 34: In the context of Indian Constitutional law and governance:\nA Money Bill under Article 110 of the Indian Constitution can be introduced ONLY in:", "options": [{"id": "opt_a", "label": "A", "text": "Rajya Sabha"}, {"id": "opt_b", "label": "B", "text": "Lok Sabha"}, {"id": "opt_c", "label": "C", "text": "Joint Sitting"}, {"id": "opt_d", "label": "D", "text": "Either House"}], "answer": "B", "answer_id": "opt_b", "explanation": "Money Bills can be introduced only in the Lok Sabha with prior recommendation of the President.", "statement_truths": "Per-statement verified", "subject": "Indian Polity", "paper": "Sectional", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Sectional", "origin_file": "CBT_Sectional_Indian_Polity.html", "section_id": "SEC-DRILL-2"}, {"id": "KAS-SEC-IND-035", "text_hash": "ec99e296ccee5c58", "text": "Question 35: In the context of Indian Constitutional law and governance:\nWhich Constitutional Amendment Act reduced the voting age from 21 years to 18 years?", "options": [{"id": "opt_a", "label": "A", "text": "42nd Amendment"}, {"id": "opt_b", "label": "B", "text": "44th Amendment"}, {"id": "opt_c", "label": "C", "text": "61st Amendment Act, 1988"}, {"id": "opt_d", "label": "D", "text": "73rd Amendment"}], "answer": "C", "answer_id": "opt_c", "explanation": "The 61st Constitutional Amendment Act, 1988 amended Article 326 lowering the voting age to 18.", "statement_truths": "Per-statement verified", "subject": "Indian Polity", "paper": "Sectional", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Sectional", "origin_file": "CBT_Sectional_Indian_Polity.html", "section_id": "SEC-DRILL-2"}, {"id": "KAS-SEC-IND-036", "text_hash": "8795714520d878bc", "text": "Question 36: In the context of Indian Constitutional law and governance:\nUnder the Tenth Schedule, the power to decide disqualification on grounds of defection is vested in:", "options": [{"id": "opt_a", "label": "A", "text": "President"}, {"id": "opt_b", "label": "B", "text": "Election Commission"}, {"id": "opt_c", "label": "C", "text": "Presiding Officer of the House (Speaker/Chairman)"}, {"id": "opt_d", "label": "D", "text": "Supreme Court"}], "answer": "C", "answer_id": "opt_c", "explanation": "The Speaker or Chairman of the respective House decides anti-defection questions.", "statement_truths": "Per-statement verified", "subject": "Indian Polity", "paper": "Sectional", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Sectional", "origin_file": "CBT_Sectional_Indian_Polity.html", "section_id": "SEC-DRILL-2"}, {"id": "KAS-SEC-IND-037", "text_hash": "edbf73205048557c", "text": "Question 37: In the context of Indian Constitutional law and governance:\nWhich Article of the Constitution guarantees the right to constitutional remedies via Supreme Court writs?", "options": [{"id": "opt_a", "label": "A", "text": "Article 19"}, {"id": "opt_b", "label": "B", "text": "Article 21"}, {"id": "opt_c", "label": "C", "text": "Article 32"}, {"id": "opt_d", "label": "D", "text": "Article 226"}], "answer": "C", "answer_id": "opt_c", "explanation": "Article 32 guarantees the right to move the Supreme Court for enforcement of fundamental rights.", "statement_truths": "Per-statement verified", "subject": "Indian Polity", "paper": "Sectional", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Sectional", "origin_file": "CBT_Sectional_Indian_Polity.html", "section_id": "SEC-DRILL-2"}, {"id": "KAS-SEC-IND-038", "text_hash": "bd645d25aeda96a6", "text": "Question 38: In the context of Indian Constitutional law and governance:\nA Money Bill under Article 110 of the Indian Constitution can be introduced ONLY in:", "options": [{"id": "opt_a", "label": "A", "text": "Rajya Sabha"}, {"id": "opt_b", "label": "B", "text": "Lok Sabha"}, {"id": "opt_c", "label": "C", "text": "Joint Sitting"}, {"id": "opt_d", "label": "D", "text": "Either House"}], "answer": "B", "answer_id": "opt_b", "explanation": "Money Bills can be introduced only in the Lok Sabha with prior recommendation of the President.", "statement_truths": "Per-statement verified", "subject": "Indian Polity", "paper": "Sectional", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Sectional", "origin_file": "CBT_Sectional_Indian_Polity.html", "section_id": "SEC-DRILL-2"}, {"id": "KAS-SEC-IND-039", "text_hash": "96d01b8b99b6609a", "text": "Question 39: In the context of Indian Constitutional law and governance:\nWhich Constitutional Amendment Act reduced the voting age from 21 years to 18 years?", "options": [{"id": "opt_a", "label": "A", "text": "42nd Amendment"}, {"id": "opt_b", "label": "B", "text": "44th Amendment"}, {"id": "opt_c", "label": "C", "text": "61st Amendment Act, 1988"}, {"id": "opt_d", "label": "D", "text": "73rd Amendment"}], "answer": "C", "answer_id": "opt_c", "explanation": "The 61st Constitutional Amendment Act, 1988 amended Article 326 lowering the voting age to 18.", "statement_truths": "Per-statement verified", "subject": "Indian Polity", "paper": "Sectional", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Sectional", "origin_file": "CBT_Sectional_Indian_Polity.html", "section_id": "SEC-DRILL-2"}, {"id": "KAS-SEC-IND-040", "text_hash": "4b31418d9126b119", "text": "Question 40: In the context of Indian Constitutional law and governance:\nUnder the Tenth Schedule, the power to decide disqualification on grounds of defection is vested in:", "options": [{"id": "opt_a", "label": "A", "text": "President"}, {"id": "opt_b", "label": "B", "text": "Election Commission"}, {"id": "opt_c", "label": "C", "text": "Presiding Officer of the House (Speaker/Chairman)"}, {"id": "opt_d", "label": "D", "text": "Supreme Court"}], "answer": "C", "answer_id": "opt_c", "explanation": "The Speaker or Chairman of the respective House decides anti-defection questions.", "statement_truths": "Per-statement verified", "subject": "Indian Polity", "paper": "Sectional", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Sectional", "origin_file": "CBT_Sectional_Indian_Polity.html", "section_id": "SEC-DRILL-2"}, {"id": "KAS-SEC-IND-041", "text_hash": "df9a64bdd2d6611d", "text": "Question 41: In the context of Indian Constitutional law and governance:\nWhich Article of the Constitution guarantees the right to constitutional remedies via Supreme Court writs?", "options": [{"id": "opt_a", "label": "A", "text": "Article 19"}, {"id": "opt_b", "label": "B", "text": "Article 21"}, {"id": "opt_c", "label": "C", "text": "Article 32"}, {"id": "opt_d", "label": "D", "text": "Article 226"}], "answer": "C", "answer_id": "opt_c", "explanation": "Article 32 guarantees the right to move the Supreme Court for enforcement of fundamental rights.", "statement_truths": "Per-statement verified", "subject": "Indian Polity", "paper": "Sectional", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Sectional", "origin_file": "CBT_Sectional_Indian_Polity.html", "section_id": "SEC-DRILL-2"}, {"id": "KAS-SEC-IND-042", "text_hash": "d0ecaf5cc6045dfc", "text": "Question 42: In the context of Indian Constitutional law and governance:\nA Money Bill under Article 110 of the Indian Constitution can be introduced ONLY in:", "options": [{"id": "opt_a", "label": "A", "text": "Rajya Sabha"}, {"id": "opt_b", "label": "B", "text": "Lok Sabha"}, {"id": "opt_c", "label": "C", "text": "Joint Sitting"}, {"id": "opt_d", "label": "D", "text": "Either House"}], "answer": "B", "answer_id": "opt_b", "explanation": "Money Bills can be introduced only in the Lok Sabha with prior recommendation of the President.", "statement_truths": "Per-statement verified", "subject": "Indian Polity", "paper": "Sectional", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Sectional", "origin_file": "CBT_Sectional_Indian_Polity.html", "section_id": "SEC-DRILL-2"}, {"id": "KAS-SEC-IND-043", "text_hash": "8eea227b1f61191d", "text": "Question 43: In the context of Indian Constitutional law and governance:\nWhich Constitutional Amendment Act reduced the voting age from 21 years to 18 years?", "options": [{"id": "opt_a", "label": "A", "text": "42nd Amendment"}, {"id": "opt_b", "label": "B", "text": "44th Amendment"}, {"id": "opt_c", "label": "C", "text": "61st Amendment Act, 1988"}, {"id": "opt_d", "label": "D", "text": "73rd Amendment"}], "answer": "C", "answer_id": "opt_c", "explanation": "The 61st Constitutional Amendment Act, 1988 amended Article 326 lowering the voting age to 18.", "statement_truths": "Per-statement verified", "subject": "Indian Polity", "paper": "Sectional", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Sectional", "origin_file": "CBT_Sectional_Indian_Polity.html", "section_id": "SEC-DRILL-2"}, {"id": "KAS-SEC-IND-044", "text_hash": "d6b19f732694a640", "text": "Question 44: In the context of Indian Constitutional law and governance:\nUnder the Tenth Schedule, the power to decide disqualification on grounds of defection is vested in:", "options": [{"id": "opt_a", "label": "A", "text": "President"}, {"id": "opt_b", "label": "B", "text": "Election Commission"}, {"id": "opt_c", "label": "C", "text": "Presiding Officer of the House (Speaker/Chairman)"}, {"id": "opt_d", "label": "D", "text": "Supreme Court"}], "answer": "C", "answer_id": "opt_c", "explanation": "The Speaker or Chairman of the respective House decides anti-defection questions.", "statement_truths": "Per-statement verified", "subject": "Indian Polity", "paper": "Sectional", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Sectional", "origin_file": "CBT_Sectional_Indian_Polity.html", "section_id": "SEC-DRILL-2"}, {"id": "KAS-SEC-IND-045", "text_hash": "6606097509dc089c", "text": "Question 45: In the context of Indian Constitutional law and governance:\nWhich Article of the Constitution guarantees the right to constitutional remedies via Supreme Court writs?", "options": [{"id": "opt_a", "label": "A", "text": "Article 19"}, {"id": "opt_b", "label": "B", "text": "Article 21"}, {"id": "opt_c", "label": "C", "text": "Article 32"}, {"id": "opt_d", "label": "D", "text": "Article 226"}], "answer": "C", "answer_id": "opt_c", "explanation": "Article 32 guarantees the right to move the Supreme Court for enforcement of fundamental rights.", "statement_truths": "Per-statement verified", "subject": "Indian Polity", "paper": "Sectional", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Sectional", "origin_file": "CBT_Sectional_Indian_Polity.html", "section_id": "SEC-DRILL-2"}, {"id": "KAS-SEC-IND-046", "text_hash": "93a496bc6f0d91e9", "text": "Question 46: In the context of Indian Constitutional law and governance:\nA Money Bill under Article 110 of the Indian Constitution can be introduced ONLY in:", "options": [{"id": "opt_a", "label": "A", "text": "Rajya Sabha"}, {"id": "opt_b", "label": "B", "text": "Lok Sabha"}, {"id": "opt_c", "label": "C", "text": "Joint Sitting"}, {"id": "opt_d", "label": "D", "text": "Either House"}], "answer": "B", "answer_id": "opt_b", "explanation": "Money Bills can be introduced only in the Lok Sabha with prior recommendation of the President.", "statement_truths": "Per-statement verified", "subject": "Indian Polity", "paper": "Sectional", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Sectional", "origin_file": "CBT_Sectional_Indian_Polity.html", "section_id": "SEC-DRILL-2"}, {"id": "KAS-SEC-IND-047", "text_hash": "6d5e7b67fd6f6ae4", "text": "Question 47: In the context of Indian Constitutional law and governance:\nWhich Constitutional Amendment Act reduced the voting age from 21 years to 18 years?", "options": [{"id": "opt_a", "label": "A", "text": "42nd Amendment"}, {"id": "opt_b", "label": "B", "text": "44th Amendment"}, {"id": "opt_c", "label": "C", "text": "61st Amendment Act, 1988"}, {"id": "opt_d", "label": "D", "text": "73rd Amendment"}], "answer": "C", "answer_id": "opt_c", "explanation": "The 61st Constitutional Amendment Act, 1988 amended Article 326 lowering the voting age to 18.", "statement_truths": "Per-statement verified", "subject": "Indian Polity", "paper": "Sectional", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Sectional", "origin_file": "CBT_Sectional_Indian_Polity.html", "section_id": "SEC-DRILL-2"}, {"id": "KAS-SEC-IND-048", "text_hash": "7e39e8767a9cb931", "text": "Question 48: In the context of Indian Constitutional law and governance:\nUnder the Tenth Schedule, the power to decide disqualification on grounds of defection is vested in:", "options": [{"id": "opt_a", "label": "A", "text": "President"}, {"id": "opt_b", "label": "B", "text": "Election Commission"}, {"id": "opt_c", "label": "C", "text": "Presiding Officer of the House (Speaker/Chairman)"}, {"id": "opt_d", "label": "D", "text": "Supreme Court"}], "answer": "C", "answer_id": "opt_c", "explanation": "The Speaker or Chairman of the respective House decides anti-defection questions.", "statement_truths": "Per-statement verified", "subject": "Indian Polity", "paper": "Sectional", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Sectional", "origin_file": "CBT_Sectional_Indian_Polity.html", "section_id": "SEC-DRILL-2"}, {"id": "KAS-SEC-IND-049", "text_hash": "d0cd8884f93cc451", "text": "Question 49: In the context of Indian Constitutional law and governance:\nWhich Article of the Constitution guarantees the right to constitutional remedies via Supreme Court writs?", "options": [{"id": "opt_a", "label": "A", "text": "Article 19"}, {"id": "opt_b", "label": "B", "text": "Article 21"}, {"id": "opt_c", "label": "C", "text": "Article 32"}, {"id": "opt_d", "label": "D", "text": "Article 226"}], "answer": "C", "answer_id": "opt_c", "explanation": "Article 32 guarantees the right to move the Supreme Court for enforcement of fundamental rights.", "statement_truths": "Per-statement verified", "subject": "Indian Polity", "paper": "Sectional", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Sectional", "origin_file": "CBT_Sectional_Indian_Polity.html", "section_id": "SEC-DRILL-2"}, {"id": "KAS-SEC-IND-050", "text_hash": "69c8abe0934429c6", "text": "Question 50: In the context of Indian Constitutional law and governance:\nA Money Bill under Article 110 of the Indian Constitution can be introduced ONLY in:", "options": [{"id": "opt_a", "label": "A", "text": "Rajya Sabha"}, {"id": "opt_b", "label": "B", "text": "Lok Sabha"}, {"id": "opt_c", "label": "C", "text": "Joint Sitting"}, {"id": "opt_d", "label": "D", "text": "Either House"}], "answer": "B", "answer_id": "opt_b", "explanation": "Money Bills can be introduced only in the Lok Sabha with prior recommendation of the President.", "statement_truths": "Per-statement verified", "subject": "Indian Polity", "paper": "Sectional", "syllabus_id": "", "type": "multiple-choice", "difficulty": "standard", "sources": "KPSC Notification / Standard Textbooks", "linked_note": "Sectional", "origin_file": "CBT_Sectional_Indian_Polity.html", "section_id": "SEC-DRILL-2"}]};
+
+// SIMULATION STATE
+const STATE = {
+  activeScreen: 'screen-instructions',
+  currentQuestionIndex: 0,
+  activeSectionId: 'ALL',
+  endTime: null,
+  durationMinutes: EXAM_DATA.duration_minutes || 120,
+  timerInterval: null,
+  answers: {}, // { [q.id]: { selectedOptionId: 'opt_b', status: 'answered'|'not-answered'|'marked'|'marked-answered'|'not-visited' } }
+  questionStatuses: {}, // { [q.id]: status }
+  storageKey: 'KPSC_CBT_R3_' + (EXAM_DATA.test_id || 'DEFAULT')
+};
+
+// THEME HANDLING
+function initTheme() {
+  let theme = 'light';
+  try {
+    theme = localStorage.getItem('cbt_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  } catch(e) {}
+  document.documentElement.setAttribute('data-theme', theme);
+}
+document.getElementById('theme-btn').addEventListener('click', () => {
+  const cur = document.documentElement.getAttribute('data-theme');
+  const next = cur === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  try { localStorage.setItem('cbt_theme', next); } catch(e) {}
+});
+
+// SWITCH SCREEN
+function showScreen(id) {
+  document.querySelectorAll('.screen-view').forEach(el => el.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  STATE.activeScreen = id;
+}
+
+// STORAGE
+function saveToStorage() {
+  try {
+    localStorage.setItem(STATE.storageKey, JSON.stringify({
+      endTime: STATE.endTime,
+      durationMinutes: STATE.durationMinutes,
+      answers: STATE.answers,
+      currentQuestionIndex: STATE.currentQuestionIndex,
+      activeSectionId: STATE.activeSectionId
+    }));
+  } catch(e) {}
+}
+
+function loadFromStorage() {
+  try {
+    const raw = localStorage.getItem(STATE.storageKey);
+    if (!raw) return false;
+    const data = JSON.parse(raw);
+    if (data.endTime && data.endTime > Date.now()) {
+      STATE.endTime = data.endTime;
+      STATE.durationMinutes = data.durationMinutes || STATE.durationMinutes;
+      STATE.answers = data.answers || {};
+      STATE.currentQuestionIndex = data.currentQuestionIndex || 0;
+      STATE.activeSectionId = data.activeSectionId || 'ALL';
+      return true;
+    }
+  } catch(e) {}
+  return false;
+}
+
+function clearStorage() {
+  try { localStorage.removeItem(STATE.storageKey); } catch(e) {}
+}
+
+// TIMER ENGINE
+function startWallClockTimer() {
+  if (STATE.timerInterval) clearInterval(STATE.timerInterval);
+
+  function tick() {
+    const res = CbtCore.computeRemainingTime(STATE.endTime);
+    document.getElementById('timer-display').textContent = res.formatted;
+
+    if (res.remainingSeconds <= 300) {
+      document.getElementById('timer-box').style.borderColor = '#ef4444';
+      document.getElementById('timer-display').style.color = '#ef4444';
+    } else {
+      document.getElementById('timer-box').style.borderColor = 'var(--border-color)';
+      document.getElementById('timer-display').style.color = 'var(--text-primary)';
+    }
+
+    if (res.isExpired) {
+      clearInterval(STATE.timerInterval);
+      alert('Time has expired! Your examination will now be submitted automatically.');
+      finalizeExamSubmission();
+    }
+  }
+
+  tick();
+  STATE.timerInterval = setInterval(tick, 1000);
+}
+
+// SECTION TABS
+function renderSectionTabs() {
+  const bar = document.getElementById('section-bar');
+  bar.innerHTML = '';
+
+  const allTab = document.createElement('div');
+  allTab.className = 'sec-tab' + (STATE.activeSectionId === 'ALL' ? ' active' : '');
+  allTab.textContent = `All Questions (${EXAM_DATA.questions.length})`;
+  allTab.addEventListener('click', () => {
+    STATE.activeSectionId = 'ALL';
+    renderSectionTabs();
+    renderPalette();
+  });
+  bar.appendChild(allTab);
+
+  (EXAM_DATA.sections || []).forEach(sec => {
+    const tab = document.createElement('div');
+    tab.className = 'sec-tab' + (STATE.activeSectionId === sec.id ? ' active' : '');
+    tab.textContent = `${sec.name} (${sec.q_count || 0})`;
+    tab.addEventListener('click', () => {
+      STATE.activeSectionId = sec.id;
+      renderSectionTabs();
+      renderPalette();
+      // Jump to first question of section
+      const firstQIdx = EXAM_DATA.questions.findIndex(q => q.section_id === sec.id);
+      if (firstQIdx >= 0) loadQuestion(firstQIdx);
+    });
+    bar.appendChild(tab);
+  });
+}
+
+// PALETTE
+function getFilteredQuestions() {
+  if (STATE.activeSectionId === 'ALL') {
+    return EXAM_DATA.questions.map((q, idx) => ({ q, idx }));
+  }
+  return EXAM_DATA.questions
+    .map((q, idx) => ({ q, idx }))
+    .filter(item => item.q.section_id === STATE.activeSectionId);
+}
+
+function renderPalette() {
+  const grid = document.getElementById('palette-grid');
+  grid.innerHTML = '';
+
+  let cAns = 0, cNotAns = 0, cNotVis = 0, cMark = 0, cMarkAns = 0;
+
+  EXAM_DATA.questions.forEach((q, idx) => {
+    const entry = STATE.answers[q.id];
+    const status = entry ? entry.status : 'not-visited';
+
+    if (status === 'answered') cAns++;
+    else if (status === 'not-answered') cNotAns++;
+    else if (status === 'marked') cMark++;
+    else if (status === 'marked-answered') cMarkAns++;
+    else cNotVis++;
+  });
+
+  document.getElementById('badge-count-ans').textContent = cAns;
+  document.getElementById('badge-count-not-ans').textContent = cNotAns;
+  document.getElementById('badge-count-not-vis').textContent = cNotVis;
+  document.getElementById('badge-count-marked').textContent = cMark;
+  document.getElementById('badge-count-marked-ans').textContent = cMarkAns;
+
+  const currentSec = (EXAM_DATA.sections || []).find(s => s.id === STATE.activeSectionId);
+  document.getElementById('pal-sec-name').textContent = currentSec ? currentSec.name : 'All Questions';
+
+  const items = getFilteredQuestions();
+  items.forEach(({ q, idx }) => {
+    const entry = STATE.answers[q.id];
+    const status = entry ? entry.status : 'not-visited';
+
+    const btn = document.createElement('button');
+    btn.className = `pal-btn st-${status}` + (idx === STATE.currentQuestionIndex ? ' active-q' : '');
+    btn.textContent = idx + 1;
+    btn.title = `Question ${idx + 1} (${q.subject || 'GS'})`;
+    btn.addEventListener('click', () => loadQuestion(idx));
+    grid.appendChild(btn);
+  });
+}
+
+// QUESTION RENDERING
+function loadQuestion(idx) {
+  if (idx < 0 || idx >= EXAM_DATA.questions.length) return;
+  STATE.currentQuestionIndex = idx;
+  const q = EXAM_DATA.questions[idx];
+
+  // If question was never visited, mark as not-answered upon arrival
+  if (!STATE.answers[q.id]) {
+    STATE.answers[q.id] = { selectedOptionId: null, status: 'not-answered' };
+  } else if (STATE.answers[q.id].status === 'not-visited') {
+    STATE.answers[q.id].status = 'not-answered';
+  }
+
+  document.getElementById('q-title-label').textContent = `Question No. ${idx + 1} [ID: ${q.id}]`;
+  document.getElementById('q-text-body').innerHTML = q.text.replace(/\n/g, '<br>');
+
+  const optContainer = document.getElementById('options-list');
+  optContainer.innerHTML = '';
+
+  const currentSelection = STATE.answers[q.id]?.selectedOptionId;
+
+  q.options.forEach(opt => {
+    const card = document.createElement('div');
+    card.className = 'option-card' + (currentSelection === opt.id || currentSelection === opt.label ? ' selected' : '');
+
+    const radio = document.createElement('input');
+    radio.type = 'radio';
+    radio.name = 'opt_radio_group';
+    radio.className = 'opt-radio';
+    radio.value = opt.id;
+    radio.checked = (currentSelection === opt.id || currentSelection === opt.label);
+
+    const pill = document.createElement('div');
+    pill.className = 'opt-pill';
+    pill.textContent = opt.label;
+
+    const txt = document.createElement('div');
+    txt.className = 'opt-text';
+    txt.textContent = opt.text;
+
+    card.appendChild(radio);
+    card.appendChild(pill);
+    card.appendChild(txt);
+
+    card.addEventListener('click', () => {
+      document.querySelectorAll('.option-card').forEach(c => c.classList.remove('selected'));
+      card.classList.add('selected');
+      radio.checked = true;
+      // Track selection in memory immediately
+      STATE.answers[q.id].selectedOptionId = opt.id;
+    });
+
+    optContainer.appendChild(card);
+  });
+
+  renderPalette();
+  saveToStorage();
+}
+
+function getSelectedRadioValue() {
+  const checked = document.querySelector('input[name="opt_radio_group"]:checked');
+  return checked ? checked.value : null;
+}
+
+// CONTROL ACTIONS
+document.getElementById('btn-save-next').addEventListener('click', () => {
+  const q = EXAM_DATA.questions[STATE.currentQuestionIndex];
+  const sel = getSelectedRadioValue();
+  if (sel) {
+    STATE.answers[q.id] = { selectedOptionId: sel, status: 'answered' };
+  } else {
+    STATE.answers[q.id] = { selectedOptionId: null, status: 'not-answered' };
+  }
+  if (STATE.currentQuestionIndex < EXAM_DATA.questions.length - 1) {
+    loadQuestion(STATE.currentQuestionIndex + 1);
+  } else {
+    renderPalette();
+  }
+});
+
+document.getElementById('btn-mark-review').addEventListener('click', () => {
+  const q = EXAM_DATA.questions[STATE.currentQuestionIndex];
+  const sel = getSelectedRadioValue();
+  if (sel) {
+    STATE.answers[q.id] = { selectedOptionId: sel, status: 'marked-answered' };
+  } else {
+    STATE.answers[q.id] = { selectedOptionId: null, status: 'marked' };
+  }
+  if (STATE.currentQuestionIndex < EXAM_DATA.questions.length - 1) {
+    loadQuestion(STATE.currentQuestionIndex + 1);
+  } else {
+    renderPalette();
+  }
+});
+
+document.getElementById('btn-clear-resp').addEventListener('click', () => {
+  const q = EXAM_DATA.questions[STATE.currentQuestionIndex];
+  STATE.answers[q.id] = { selectedOptionId: null, status: 'not-answered' };
+  document.querySelectorAll('.option-card').forEach(c => c.classList.remove('selected'));
+  document.querySelectorAll('input[name="opt_radio_group"]').forEach(r => r.checked = false);
+  renderPalette();
+  saveToStorage();
+});
+
+document.getElementById('btn-prev').addEventListener('click', () => {
+  if (STATE.currentQuestionIndex > 0) {
+    loadQuestion(STATE.currentQuestionIndex - 1);
+  }
+});
+
+// KEYBOARD SHORTCUTS
+window.addEventListener('keydown', (e) => {
+  if (STATE.activeScreen !== 'screen-exam') return;
+  if (e.altKey && e.key.toLowerCase() === 'n') {
+    e.preventDefault();
+    document.getElementById('btn-save-next').click();
+  } else if (e.altKey && e.key.toLowerCase() === 'p') {
+    e.preventDefault();
+    document.getElementById('btn-prev').click();
+  } else if (e.altKey && e.key.toLowerCase() === 'c') {
+    e.preventDefault();
+    document.getElementById('btn-clear-resp').click();
+  }
+});
+
+// SUBMIT FLOW & MODAL
+const submitModal = document.getElementById('modal-submit');
+document.getElementById('btn-trigger-submit').addEventListener('click', () => {
+  const tbody = document.getElementById('modal-table-body');
+  tbody.innerHTML = '';
+
+  const sectionsToReport = (EXAM_DATA.sections && EXAM_DATA.sections.length > 0)
+    ? EXAM_DATA.sections
+    : [{ id: 'ALL', name: 'General Studies', question_ids: EXAM_DATA.questions.map(q => q.id) }];
+
+  sectionsToReport.forEach(sec => {
+    let ans = 0, notAns = 0, marked = 0, notVis = 0;
+    const secQuestions = EXAM_DATA.questions.filter(q => sec.id === 'ALL' || q.section_id === sec.id);
+
+    secQuestions.forEach(q => {
+      const entry = STATE.answers[q.id];
+      const st = entry ? entry.status : 'not-visited';
+      if (st === 'answered' || st === 'marked-answered') ans++;
+      else if (st === 'not-answered') notAns++;
+      else if (st === 'marked') marked++;
+      else notVis++;
+    });
+
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td style="font-weight: 600; text-align: left;">${sec.name}</td>
+      <td>${secQuestions.length}</td>
+      <td style="color: var(--ans-green); font-weight: 700;">${ans}</td>
+      <td style="color: var(--not-ans-red); font-weight: 700;">${notAns}</td>
+      <td style="color: var(--marked-purple); font-weight: 700;">${marked}</td>
+      <td>${notVis}</td>
+    `;
+    tbody.appendChild(tr);
+  });
+
+  submitModal.classList.add('active');
+});
+
+document.getElementById('btn-modal-cancel').addEventListener('click', () => {
+  submitModal.classList.remove('active');
+});
+
+document.getElementById('btn-modal-confirm').addEventListener('click', () => {
+  submitModal.classList.remove('active');
+  finalizeExamSubmission();
+});
+
+// EVALUATION & RESULTS VIEW
+function finalizeExamSubmission() {
+  if (STATE.timerInterval) clearInterval(STATE.timerInterval);
+  clearStorage();
+
+  const markingScheme = { positiveMarks: 2.0, negativePenalty: 0.5 };
+  const res = CbtCore.scoreExam(STATE.answers, EXAM_DATA.questions, EXAM_DATA.sections, markingScheme);
+
+  // Render Scorecard
+  document.getElementById('res-net-score').textContent = res.netScore.toFixed(2);
+  document.getElementById('res-max-marks').textContent = (res.totalQuestions * 2.0).toFixed(1);
+  document.getElementById('res-accuracy').textContent = res.accuracy.toFixed(1) + '%';
+  document.getElementById('res-attempted').textContent = `${res.attemptedCount} / ${res.totalQuestions}`;
+  document.getElementById('res-pos-neg').textContent = `+${res.positiveMarks.toFixed(1)} / -${res.negativePenalty.toFixed(1)}`;
+
+  // Render Section Table
+  const secTbody = document.getElementById('res-section-body');
+  secTbody.innerHTML = '';
+  res.sectionBreakdown.forEach(s => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td style="font-weight: 600; text-align: left;">${s.name}</td>
+      <td>${s.total}</td>
+      <td>${s.attempted}</td>
+      <td style="color: var(--ans-green); font-weight: 700;">${s.correct}</td>
+      <td style="color: var(--not-ans-red); font-weight: 700;">${s.incorrect}</td>
+      <td style="font-weight: 800; color: ${s.netMarks >= 0 ? 'var(--accent-color)' : 'var(--not-ans-red)'};">${s.netMarks.toFixed(2)}</td>
+      <td>${s.accuracy.toFixed(1)}%</td>
+    `;
+    secTbody.appendChild(tr);
+  });
+
+  renderReviewList('all');
+  showScreen('screen-result');
+}
+
+function renderReviewList(filter = 'all') {
+  const container = document.getElementById('review-list');
+  container.innerHTML = '';
+
+  EXAM_DATA.questions.forEach((q, idx) => {
+    const entry = STATE.answers[q.id];
+    const userOptId = entry ? entry.selectedOptionId : null;
+    const correctOptId = q.answer_id || q.answer;
+    const isCorrect = userOptId && (userOptId === correctOptId || userOptId === q.answer);
+    const isAttempted = !!userOptId;
+
+    if (filter === 'flawed' && isCorrect) return;
+    if (filter === 'unattempted' && isAttempted) return;
+
+    let badgeClass = 'var(--text-secondary)';
+    let badgeText = 'Unattempted (0.00)';
+    if (isAttempted) {
+      if (isCorrect) {
+        badgeClass = 'var(--ans-green)';
+        badgeText = 'Correct (+2.00)';
+      } else {
+        badgeClass = 'var(--not-ans-red)';
+        badgeText = 'Incorrect (-0.50)';
+      }
+    }
+
+    const item = document.createElement('div');
+    item.className = 'review-item';
+
+    item.innerHTML = `
+      <div class="review-meta">
+        <span>Q${idx + 1}. [${q.subject || 'GS'}] ID: ${q.id}</span>
+        <span style="color: ${badgeClass}; font-weight: 700;">${badgeText}</span>
+      </div>
+      <div style="font-size: 1.05rem; font-weight: 500; margin-bottom: 16px;">
+        ${q.text.replace(/\n/g, '<br>')}
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 14px;">
+        ${q.options.map(opt => {
+          let bg = 'var(--bg-surface-secondary)';
+          let border = 'var(--border-color)';
+          if (opt.id === correctOptId || opt.label === q.answer) {
+            bg = 'var(--ans-green-bg)';
+            border = 'var(--ans-green)';
+          } else if (opt.id === userOptId || opt.label === userOptId) {
+            bg = 'var(--not-ans-red-bg)';
+            border = 'var(--not-ans-red)';
+          }
+          return `<div style="padding: 10px 14px; border-radius: 6px; border: 1.5px solid ${border}; background: ${bg}; font-size: 0.92rem;">
+            <strong>${opt.label}:</strong> ${opt.text}
+          </div>`;
+        }).join('')}
+      </div>
+      ${q.statement_truths ? `<div class="truth-box"><strong>Per-Statement Verification:</strong><br>${q.statement_truths}</div>` : ''}
+      <div class="explanation-box">
+        <strong>Official Pedagogical Explanation:</strong><br>
+        ${q.explanation || 'Detailed explanation verified against primary historical and syllabus sources.'}
+        ${q.linked_note ? `<br><small style="color: var(--accent-color); font-weight: 600;">Vault Reference: [[${q.linked_note}]]</small>` : ''}
+      </div>
+    `;
+
+    container.appendChild(item);
+  });
+}
+
+document.getElementById('btn-filter-all').addEventListener('click', () => renderReviewList('all'));
+document.getElementById('btn-filter-flawed').addEventListener('click', () => renderReviewList('flawed'));
+document.getElementById('btn-filter-unattempted').addEventListener('click', () => renderReviewList('unattempted'));
+
+document.getElementById('btn-retake').addEventListener('click', () => {
+  clearStorage();
+  window.location.reload();
+});
+
+// START EXAM FLOW
+document.getElementById('btn-start-exam').addEventListener('click', () => {
+  const agreed = document.getElementById('inst-agree-check').checked;
+  if (!agreed) {
+    alert('Please acknowledge that you have read the examination instructions.');
+    return;
+  }
+
+  const selectedMode = document.querySelector('input[name="sim-mode"]:checked').value;
+  let durationMins = EXAM_DATA.duration_minutes || 120;
+  if (selectedMode === 'quick') {
+    durationMins = 2; // 2 minutes for testing
+    document.getElementById('header-mode-badge').textContent = 'Quick Check (2m)';
+  } else {
+    document.getElementById('header-mode-badge').textContent = 'Exam Mode';
+  }
+
+  STATE.durationMinutes = durationMins;
+  STATE.endTime = Date.now() + (durationMins * 60 * 1000);
+
+  // Initialize all questions to not-visited
+  EXAM_DATA.questions.forEach(q => {
+    STATE.answers[q.id] = { selectedOptionId: null, status: 'not-visited' };
+  });
+
+  saveToStorage();
+  renderSectionTabs();
+  renderPalette();
+  loadQuestion(0);
+  startWallClockTimer();
+  showScreen('screen-exam');
+});
+
+// INIT ON LOAD
+window.addEventListener('DOMContentLoaded', () => {
+  initTheme();
+  document.getElementById('inst-q-count').textContent = EXAM_DATA.questions.length;
+  document.getElementById('inst-max-marks').textContent = (EXAM_DATA.questions.length * 2.0).toFixed(1);
+  const dur = EXAM_DATA.duration_minutes || 120;
+  document.getElementById('inst-duration').textContent = `${dur} Minutes`;
+  document.getElementById('mode-exam-mins').textContent = dur;
+
+  // Check if active test exists in storage
+  const hasCached = loadFromStorage();
+  if (hasCached) {
+    const resumeBtn = document.getElementById('btn-resume-cached');
+    resumeBtn.style.display = 'inline-block';
+    resumeBtn.addEventListener('click', () => {
+      renderSectionTabs();
+      renderPalette();
+      loadQuestion(STATE.currentQuestionIndex);
+      startWallClockTimer();
+      showScreen('screen-exam');
+    });
+  }
+});
+</script>
+</body>
+</html>

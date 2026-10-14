@@ -1,0 +1,1574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Karnataka GPT CST Exam 2026 - Paper 1 (CBT Mock Test 2)</title>
+<style>
+:root {
+  --bg-primary: #f0f2f5;
+  --bg-card: #ffffff;
+  --text-main: #1f2937;
+  --text-muted: #6b7280;
+  --primary-blue: #1e40af;
+  --primary-hover: #1d4ed8;
+  --cbt-header: #0f172a;
+  
+  /* CBT Palette Standard Colors */
+  --cbt-answered: #22c55e;        /* Green */
+  --cbt-not-answered: #ef4444;    /* Red */
+  --cbt-not-visited: #9ca3af;     /* Gray */
+  --cbt-marked: #a855f7;          /* Purple */
+  --cbt-ans-marked: #7e22ce;      /* Dark Purple */
+  --cbt-border: #e2e8f0;
+
+  /* Review Specific Colors */
+  --rev-correct: #16a34a;
+  --rev-incorrect: #dc2626;
+  --rev-unatt: #64748b;
+  --rev-marked: #9333ea;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+body { background-color: var(--bg-primary); color: var(--text-main); height: 100vh; display: flex; flex-direction: column; overflow: hidden; }
+
+/* Top Header */
+.cbt-header {
+  background: var(--cbt-header);
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid #3b82f6;
+  flex-shrink: 0;
+}
+.exam-title-box h1 { font-size: 1.15rem; font-weight: 700; color: #f8fafc; letter-spacing: 0.3px; }
+.exam-title-box p { font-size: 0.8rem; color: #94a3b8; margin-top: 2px; }
+
+.timer-candidate-box { display: flex; align-items: center; gap: 20px; }
+.timer-container {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 6px;
+  padding: 6px 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.timer-label { font-size: 0.75rem; text-transform: uppercase; color: #94a3b8; font-weight: 600; }
+.timer-display { font-family: "Courier New", Courier, monospace; font-size: 1.3rem; font-weight: 800; color: #38bdf8; }
+.timer-display.danger { color: #f87171; animation: pulse 1s infinite; }
+@keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
+
+.speed-toggle {
+  background: #334155;
+  color: #cbd5e1;
+  border: 1px solid #475569;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  padding: 4px 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.speed-toggle:hover { background: #475569; color: white; }
+
+.candidate-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #1e293b;
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid #334155;
+}
+.cand-avatar { width: 32px; height: 32px; border-radius: 50%; background: #3b82f6; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.8rem; }
+.cand-details { font-size: 0.75rem; line-height: 1.2; }
+.cand-name { font-weight: 600; color: #f1f5f9; }
+.cand-roll { color: #94a3b8; font-size: 0.7rem; }
+
+/* Section Bar */
+.section-nav-bar {
+  background: #ffffff;
+  border-bottom: 1px solid var(--cbt-border);
+  display: flex;
+  overflow-x: auto;
+  padding: 0 16px;
+  flex-shrink: 0;
+}
+.section-tab {
+  padding: 10px 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.15s ease-in-out;
+}
+.section-tab:hover { color: var(--primary-blue); background: #f8fafc; }
+.section-tab.active { color: var(--primary-blue); border-bottom-color: var(--primary-blue); background: #eff6ff; }
+.section-count-badge { background: #e2e8f0; color: #475569; padding: 2px 6px; border-radius: 10px; font-size: 0.72rem; }
+.section-tab.active .section-count-badge { background: #dbeafe; color: var(--primary-blue); }
+
+/* Main Layout Split */
+.cbt-body-wrapper {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  height: calc(100vh - 110px);
+}
+
+/* Left Question Panel */
+.question-pane {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border-right: 1px solid var(--cbt-border);
+  overflow: hidden;
+}
+
+.question-meta-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  background: #f8fafc;
+  border-bottom: 1px solid var(--cbt-border);
+  flex-shrink: 0;
+}
+.q-number-box { font-size: 1rem; font-weight: 700; color: var(--text-main); display: flex; align-items: center; gap: 8px; }
+.q-meta-tags { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.badge { padding: 3px 8px; border-radius: 4px; font-size: 0.72rem; font-weight: 600; text-transform: uppercase; }
+.badge-marks { background: #e0e7ff; color: #3730a3; }
+.badge-origin { background: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
+.badge-diff-easy { background: #dcfce7; color: #166534; }
+.badge-diff-med { background: #fef9c3; color: #854d0e; }
+.badge-diff-hard { background: #fee2e2; color: #991b1b; }
+.badge-reviewed { background: #f3e8ff; color: #6b21a8; border: 1px solid #d8b4fe; font-weight: 700; }
+
+.question-content-scroll {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+}
+
+.q-text-en { font-size: 1.05rem; line-height: 1.55; font-weight: 500; color: #0f172a; margin-bottom: 14px; }
+.q-text-alt { font-size: 0.98rem; line-height: 1.5; color: #334155; background: #f1f5f9; padding: 10px 14px; border-radius: 6px; border-left: 4px solid #3b82f6; margin-bottom: 20px; font-family: "Nirmala UI", "Tunga", sans-serif; }
+
+.options-container { display: flex; flex-direction: column; gap: 10px; margin-top: 10px; }
+.option-label-card {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+  background: #ffffff;
+}
+.option-label-card:hover { border-color: #93c5fd; background: #f8fafc; }
+.option-label-card.selected { border-color: var(--primary-blue); background: #eff6ff; box-shadow: 0 0 0 1px var(--primary-blue); }
+.option-radio { margin-right: 14px; width: 18px; height: 18px; accent-color: var(--primary-blue); }
+.option-label-letter { font-weight: 700; width: 24px; color: #475569; }
+.option-text { font-size: 0.95rem; line-height: 1.4; color: #1e293b; }
+
+/* Bottom Controls */
+.question-footer-controls {
+  padding: 12px 24px;
+  background: #f8fafc;
+  border-top: 1px solid var(--cbt-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+}
+.btn {
+  padding: 8px 18px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.btn-secondary { background: #e2e8f0; color: #334155; }
+.btn-secondary:hover { background: #cbd5e1; }
+.btn-warning { background: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
+.btn-warning:hover { background: #fde68a; }
+.btn-review { background: #f3e8ff; color: #6b21a8; border: 1px solid #e9d5ff; }
+.btn-review:hover { background: #e9d5ff; }
+.btn-primary { background: var(--primary-blue); color: #ffffff; }
+.btn-primary:hover { background: var(--primary-hover); }
+.btn-success { background: #16a34a; color: white; }
+.btn-success:hover { background: #15803d; }
+.btn-purple { background: #9333ea; color: white; }
+.btn-purple:hover { background: #7e22ce; }
+
+/* Right Sidebar: Palette */
+.palette-pane {
+  width: 340px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.palette-status-summary {
+  padding: 12px 14px;
+  background: #f8fafc;
+  border-bottom: 1px solid var(--cbt-border);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  font-size: 0.72rem;
+  flex-shrink: 0;
+}
+.legend-item { display: flex; align-items: center; gap: 6px; }
+.legend-badge {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 0.68rem;
+}
+.bg-ans { background: var(--cbt-answered); }
+.bg-not-ans { background: var(--cbt-not-answered); }
+.bg-not-vis { background: var(--cbt-not-visited); }
+.bg-marked { background: var(--cbt-marked); }
+.bg-ans-marked { background: var(--cbt-ans-marked); position: relative; }
+.bg-ans-marked::after { content: ''; position: absolute; bottom: 2px; right: 2px; width: 5px; height: 5px; background: #22c55e; border-radius: 50%; }
+
+.palette-grid-scroll {
+  flex: 1;
+  padding: 14px;
+  overflow-y: auto;
+}
+.palette-grid-title { font-size: 0.8rem; font-weight: 700; color: #64748b; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+.palette-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+.pal-btn {
+  aspect-ratio: 1;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  background: #f1f5f9;
+  color: #334155;
+  font-weight: 700;
+  font-size: 0.82rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.1s;
+  position: relative;
+}
+.pal-btn:hover { border-color: var(--primary-blue); transform: scale(1.04); }
+.pal-btn.current { box-shadow: 0 0 0 2.5px #2563eb !important; border-color: transparent !important; }
+
+/* Palette Status Applied */
+.pal-btn.not-visited { background: #f1f5f9; color: #64748b; }
+.pal-btn.not-answered { background: var(--cbt-not-answered); color: white; border-color: transparent; }
+.pal-btn.answered { background: var(--cbt-answered); color: white; border-color: transparent; }
+.pal-btn.marked { background: var(--cbt-marked); color: white; border-color: transparent; }
+.pal-btn.ans-marked { background: var(--cbt-ans-marked); color: white; border-color: transparent; }
+.pal-btn.ans-marked::after { content: ''; position: absolute; bottom: 3px; right: 3px; width: 6px; height: 6px; background: #22c55e; border-radius: 50%; }
+
+.palette-submit-bar {
+  padding: 14px;
+  background: #f8fafc;
+  border-top: 1px solid var(--cbt-border);
+  flex-shrink: 0;
+}
+.btn-submit-exam {
+  width: 100%;
+  padding: 10px;
+  background: #2563eb;
+  color: white;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.btn-submit-exam:hover { background: #1d4ed8; }
+
+/* Submit Modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.65);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(3px);
+}
+.modal-card {
+  background: white;
+  width: 480px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+.modal-header { background: #0f172a; color: white; padding: 16px 20px; font-size: 1rem; font-weight: 700; }
+.modal-body { padding: 20px; }
+.summary-table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 0.85rem; }
+.summary-table th, .summary-table td { border: 1px solid #e2e8f0; padding: 8px 12px; }
+.summary-table th { background: #f8fafc; text-align: left; }
+.modal-actions { padding: 14px 20px; background: #f8fafc; display: flex; justify-content: flex-end; gap: 10px; border-top: 1px solid var(--cbt-border); }
+
+/* =====================================================================
+   RESULTS PHASE 1: Executive Scorecard Dashboard
+===================================================================== */
+.results-dashboard {
+  position: fixed;
+  inset: 0;
+  background: #f8fafc;
+  display: none;
+  flex-direction: column;
+  z-index: 2000;
+  overflow-y: auto;
+}
+.dash-header {
+  background: #0f172a;
+  color: white;
+  padding: 16px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid #3b82f6;
+}
+.dash-content { max-width: 1120px; margin: 26px auto; padding: 0 20px; width: 100%; }
+.scorecard-banner {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+  margin-bottom: 22px;
+}
+.score-box {
+  background: white;
+  padding: 18px 14px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+.score-box-title { font-size: 0.75rem; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; }
+.score-box-val { font-size: 1.8rem; font-weight: 800; color: #0f172a; margin-top: 4px; }
+.score-box-val.score-green { color: #16a34a; }
+.score-box-val.score-blue { color: #2563eb; }
+.score-box-val.score-purple { color: #9333ea; }
+
+/* Action Hub on Results Dashboard */
+.action-hub-card {
+  background: white;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 18px 24px;
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+.action-hub-text h3 { font-size: 1.15rem; font-weight: 800; color: #0f172a; }
+.action-hub-text p { font-size: 0.85rem; color: #475569; margin-top: 3px; }
+.action-hub-buttons { display: flex; gap: 10px; flex-wrap: wrap; }
+
+.sec-breakdown-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 26px;
+}
+.sec-breakdown-table th, .sec-breakdown-table td { padding: 10px 14px; font-size: 0.85rem; border-bottom: 1px solid #f1f5f9; }
+.sec-breakdown-table th { background: #f8fafc; text-align: left; font-weight: 700; color: #475569; }
+
+/* =====================================================================
+   RESULTS PHASE 2: Interactive Question-by-Question CBT Review Mode
+===================================================================== */
+.review-mode-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--bg-primary);
+  display: none;
+  flex-direction: column;
+  z-index: 3000;
+  overflow: hidden;
+}
+
+.rev-header {
+  background: #0f172a;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid #10b981;
+  flex-shrink: 0;
+}
+.rev-header-left h2 { font-size: 1.1rem; font-weight: 800; color: #f8fafc; }
+.rev-header-left p { font-size: 0.78rem; color: #94a3b8; }
+
+.rev-filter-bar {
+  background: #ffffff;
+  border-bottom: 1px solid var(--cbt-border);
+  padding: 8px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-shrink: 0;
+}
+.rev-filters-group { display: flex; gap: 8px; align-items: center; overflow-x: auto; }
+.rev-filter-pill {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  border: 1px solid #cbd5e1;
+  background: white;
+  color: #334155;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.15s;
+}
+.rev-filter-pill:hover { background: #f8fafc; border-color: #94a3b8; }
+.rev-filter-pill.active { background: #0f172a; color: white; border-color: #0f172a; }
+.rev-filter-pill.pill-marked.active { background: #7e22ce; color: white; border-color: #7e22ce; }
+.rev-filter-pill.pill-correct.active { background: #16a34a; color: white; border-color: #16a34a; }
+.rev-filter-pill.pill-incorrect.active { background: #dc2626; color: white; border-color: #dc2626; }
+.pill-count {
+  background: rgba(0,0,0,0.1);
+  padding: 1px 6px;
+  border-radius: 10px;
+  font-size: 0.7rem;
+}
+.rev-filter-pill.active .pill-count { background: rgba(255,255,255,0.25); color: white; }
+
+/* Review Workspace Split (Identical to Test Phase) */
+.rev-body-wrapper {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  height: calc(100vh - 105px);
+}
+
+.rev-question-pane {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border-right: 1px solid var(--cbt-border);
+  overflow: hidden;
+}
+
+.rev-question-content {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+}
+
+/* Outcome Status Banner */
+.rev-status-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+.rev-status-banner.status-correct { background: #dcfce7; color: #166534; border: 1px solid #86efac; }
+.rev-status-banner.status-incorrect { background: #fee2e2; color: #991b1b; border: 1px solid #fca5a5; }
+.rev-status-banner.status-unattempted { background: #f1f5f9; color: #475569; border: 1px solid #cbd5e1; }
+
+/* Option Cards in Review Mode */
+.rev-option-card {
+  display: flex;
+  align-items: flex-start;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1.5px solid #e2e8f0;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  background: #ffffff;
+}
+.rev-option-card.is-official-correct {
+  background: #f0fdf4;
+  border-color: #22c55e;
+  box-shadow: 0 0 0 1px #22c55e;
+}
+.rev-option-card.is-user-incorrect {
+  background: #fef2f2;
+  border-color: #ef4444;
+  box-shadow: 0 0 0 1px #ef4444;
+}
+.rev-option-badge {
+  margin-left: auto;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+.badge-rev-correct { background: #22c55e; color: white; }
+.badge-rev-wrong { background: #ef4444; color: white; }
+.badge-rev-user { background: #3b82f6; color: white; }
+
+/* Explanation / Rationale Card */
+.rev-rationale-box {
+  margin-top: 20px;
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-left: 5px solid #2563eb;
+  border-radius: 8px;
+  padding: 16px 20px;
+}
+.rev-rationale-title {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #1e3a8a;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.rev-rationale-text {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #334155;
+}
+
+/* Review Palette Sidebar */
+.rev-palette-pane {
+  width: 340px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.rev-pal-legend {
+  padding: 12px 14px;
+  background: #f8fafc;
+  border-bottom: 1px solid var(--cbt-border);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  font-size: 0.72rem;
+  flex-shrink: 0;
+}
+.rev-pal-btn {
+  aspect-ratio: 1;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.82rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.1s;
+  position: relative;
+}
+.rev-pal-btn:hover { transform: scale(1.04); }
+.rev-pal-btn.current { box-shadow: 0 0 0 3px #0284c7 !important; }
+.rev-pal-btn.btn-rev-correct { background: var(--rev-correct); color: white; border-color: transparent; }
+.rev-pal-btn.btn-rev-incorrect { background: var(--rev-incorrect); color: white; border-color: transparent; }
+.rev-pal-btn.btn-rev-unatt { background: #e2e8f0; color: #475569; border-color: #cbd5e1; }
+.rev-pal-btn.was-marked::after {
+  content: '★';
+  position: absolute;
+  top: 1px;
+  right: 2px;
+  font-size: 0.65rem;
+  color: #fef08a;
+}
+.rev-pal-btn.is-dimmed { opacity: 0.25; filter: grayscale(50%); }
+
+/* Full List Review (Alternative Scrollable View) */
+.full-list-container { display: none; margin-top: 20px; }
+.list-q-card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+}
+.list-q-card.correct { border-left: 5px solid #22c55e; }
+.list-q-card.incorrect { border-left: 5px solid #ef4444; }
+.list-q-card.unattempted { border-left: 5px solid #9ca3af; }
+</style>
+</head>
+<body>
+
+<!-- ===================================================================
+     PHASE 1: LIVE TEST TAKING INTERFACE
+=================================================================== -->
+<header class="cbt-header">
+  <div class="exam-title-box">
+    <h1>Karnataka GPT CST Exam 2026 - Paper 1 (CBT Mock Test 2)</h1>
+    <p>Department of School Education Karnataka • GPT CST Recruitment Examination</p>
+  </div>
+  <div class="timer-candidate-box">
+    <div class="timer-container">
+      <span class="timer-label">Time Left</span>
+      <span class="timer-display" id="timeDisplay">150:00</span>
+      <button class="speed-toggle" id="btnSpeedToggle" title="Toggle 10x Speed for quick practice">1x Speed</button>
+    </div>
+    <div class="candidate-badge">
+      <div class="cand-avatar">ST</div>
+      <div class="cand-details">
+        <div class="cand-name">Candidate 2026</div>
+        <div class="cand-roll">Roll: CST-P1-MOCK2-8812</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Section Navigation Tabs -->
+<nav class="section-nav-bar" id="sectionTabsContainer"></nav>
+
+<!-- Main Test Body Wrapper -->
+<div class="cbt-body-wrapper" id="testTakingWorkspace">
+  <!-- Left: Question Workspace -->
+  <main class="question-pane">
+    <div class="question-meta-bar">
+      <div class="q-number-box">
+        <span id="qDisplayNum">Question No. 1</span>
+        <span class="badge badge-marks">+1.00 / -0.25</span>
+      </div>
+      <div class="q-meta-tags">
+        <span class="badge badge-origin" id="qOriginTag">Mock</span>
+        <span class="badge" id="qDiffTag">Medium</span>
+        <span class="badge" style="background:#f1f5f9; color:#475569;" id="qSyllabusTag">Ref</span>
+      </div>
+    </div>
+    <div class="question-content-scroll">
+      <div class="q-text-en" id="qTextEn">Loading Question...</div>
+      <div class="q-text-alt" id="qTextAlt" style="display:none;"></div>
+      <div class="options-container" id="optionsContainer"></div>
+    </div>
+    <footer class="question-footer-controls">
+      <div style="display:flex; gap:10px;">
+        <button class="btn btn-review" id="btnMarkReview">Mark for Review & Next</button>
+        <button class="btn btn-warning" id="btnClearResponse">Clear Response</button>
+      </div>
+      <div style="display:flex; gap:10px;">
+        <button class="btn btn-secondary" id="btnPrev">Previous</button>
+        <button class="btn btn-primary" id="btnSaveNext">Save & Next</button>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Right: Palette Sidebar -->
+  <aside class="palette-pane">
+    <div class="palette-status-summary">
+      <div class="legend-item"><div class="legend-badge bg-ans" id="badgeCountAns">0</div> Answered</div>
+      <div class="legend-item"><div class="legend-badge bg-not-ans" id="badgeCountNotAns">0</div> Not Answered</div>
+      <div class="legend-item"><div class="legend-badge bg-not-vis" id="badgeCountNotVis">0</div> Not Visited</div>
+      <div class="legend-item"><div class="legend-badge bg-marked" id="badgeCountMarked">0</div> Marked Review</div>
+      <div class="legend-item" style="grid-column: span 2;"><div class="legend-badge bg-ans-marked" id="badgeCountAnsMarked">0</div> Ans & Marked for Review</div>
+    </div>
+    <div class="palette-grid-scroll">
+      <div class="palette-grid-title" id="currentSectionTitle">SECTION: ALL</div>
+      <div class="palette-grid" id="paletteGrid"></div>
+    </div>
+    <div class="palette-submit-bar">
+      <button class="btn-submit-exam" id="btnOpenSubmitModal">Submit Test</button>
+    </div>
+  </aside>
+</div>
+
+<!-- Submit Confirmation Modal -->
+<div class="modal-overlay" id="submitModal">
+  <div class="modal-card">
+    <div class="modal-header">Confirm Exam Submission</div>
+    <div class="modal-body">
+      <p style="font-size:0.9rem; color:#475569; margin-bottom:12px;">Are you sure you want to end the test? Here is the summary of your session:</p>
+      <table class="summary-table">
+        <tr><th>Total Questions</th><td id="mTotalQs">150</td></tr>
+        <tr><th style="color:#16a34a;">Answered</th><td id="mAnsQs">0</td></tr>
+        <tr><th style="color:#dc2626;">Not Answered</th><td id="mNotAnsQs">0</td></tr>
+        <tr><th style="color:#7c3aed;">Marked for Review</th><td id="mMarkedQs">0</td></tr>
+        <tr><th style="color:#64748b;">Not Visited</th><td id="mNotVisQs">0</td></tr>
+      </table>
+      <p style="font-size:0.8rem; color:#94a3b8; margin-top:12px;">No further changes can be made after submitting.</p>
+    </div>
+    <div class="modal-actions">
+      <button class="btn btn-secondary" id="btnCancelModal">Resume Test</button>
+      <button class="btn btn-success" id="btnConfirmSubmit">Confirm & Submit</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===================================================================
+     POST-TEST PHASE 1: Executive Scorecard Dashboard
+=================================================================== -->
+<div class="results-dashboard" id="resultsDashboard">
+  <header class="dash-header">
+    <div>
+      <h2 style="font-size:1.3rem; font-weight:800;">Exam Performance & Solution Analytics</h2>
+      <p style="font-size:0.82rem; color:#94a3b8;">Karnataka GPT CST Exam 2026 - Paper 1 (CBT Mock Test 2)</p>
+    </div>
+    <div style="display:flex; gap:10px;">
+      <button class="btn btn-primary" id="btnStartInteractiveReviewTop">Start Interactive CBT Review</button>
+      <button class="btn btn-secondary" onclick="window.print()">Print / Save PDF</button>
+    </div>
+  </header>
+  <div class="dash-content">
+    <div class="scorecard-banner">
+      <div class="score-box">
+        <div class="score-box-title">Total Marks</div>
+        <div class="score-box-val score-green" id="dashTotalScore">0.00 / 150</div>
+      </div>
+      <div class="score-box">
+        <div class="score-box-title">Accuracy</div>
+        <div class="score-box-val score-blue" id="dashAccuracy">0%</div>
+      </div>
+      <div class="score-box">
+        <div class="score-box-title">Attempted</div>
+        <div class="score-box-val" id="dashAttempted">0 / 150</div>
+      </div>
+      <div class="score-box">
+        <div class="score-box-title">Marked for Review</div>
+        <div class="score-box-val score-purple" id="dashMarkedReview">0</div>
+      </div>
+      <div class="score-box">
+        <div class="score-box-title">Qualifying Status</div>
+        <div class="score-box-val" id="dashStatus" style="font-size:1.25rem; line-height:2.2;">QUALIFIED</div>
+      </div>
+    </div>
+
+    <!-- Action Hub Card: Launches interactive review by filter -->
+    <div class="action-hub-card">
+      <div class="action-hub-text">
+        <h3>Question-by-Question CBT Review Mode</h3>
+        <p>Review solutions in the authentic CBT interface with verified rationales, candidate response comparison, and instant palette jumps.</p>
+      </div>
+      <div class="action-hub-buttons">
+        <button class="btn btn-primary" id="btnStartInteractiveReview">Review All (150)</button>
+        <button class="btn btn-warning" id="btnReviewIncorrectOnly">Review Incorrect</button>
+        <button class="btn btn-purple" id="btnReviewMarkedOnly">Review Marked for Review</button>
+        <button class="btn btn-secondary" id="btnToggleListSolutions">Expand Full List</button>
+      </div>
+    </div>
+
+    <h3 style="font-size:1.05rem; font-weight:700; color:#1e293b; margin-bottom:12px;">Section-wise Performance Breakdown</h3>
+    <table class="sec-breakdown-table" id="dashSectionTable">
+      <thead>
+        <tr>
+          <th>Section</th>
+          <th>Total Qs</th>
+          <th>Attempted</th>
+          <th>Correct</th>
+          <th>Incorrect</th>
+          <th>Score</th>
+          <th>Accuracy</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <!-- Full scrollable solution list container (collapsible) -->
+    <div class="full-list-container" id="fullListSolutionsContainer">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+        <h3 style="font-size:1.05rem; font-weight:700; color:#1e293b;">Complete Solutions & Rationales List</h3>
+        <button class="btn btn-secondary" id="btnCloseListSolutions">Collapse List</button>
+      </div>
+      <div id="solutionReviewContainer"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================================================================
+     POST-TEST PHASE 2: Interactive Question-by-Question CBT Review
+=================================================================== -->
+<div class="review-mode-overlay" id="interactiveReviewMode">
+  <header class="rev-header">
+    <div class="rev-header-left">
+      <h2>CBT Solution Review • Karnataka GPT CST Exam 2026 - Paper 1 (CBT Mock Test 2)</h2>
+      <p id="revScoreSubtitle">Score: 0 / 150 | Accuracy: 0%</p>
+    </div>
+    <div style="display:flex; gap:10px;">
+      <button class="btn btn-secondary" id="btnBackToDashboard">Back to Score Summary</button>
+    </div>
+  </header>
+
+  <!-- Review Filter Bar -->
+  <nav class="rev-filter-bar">
+    <div class="rev-filters-group">
+      <span style="font-size:0.75rem; font-weight:700; color:#64748b; text-transform:uppercase;">Filter:</span>
+      <button class="rev-filter-pill active" data-rev-filter="all">All <span class="pill-count" id="revPillAll">150</span></button>
+      <button class="rev-filter-pill pill-correct" data-rev-filter="correct">Correct <span class="pill-count" id="revPillCorrect">0</span></button>
+      <button class="rev-filter-pill pill-incorrect" data-rev-filter="incorrect">Incorrect <span class="pill-count" id="revPillIncorrect">0</span></button>
+      <button class="rev-filter-pill" data-rev-filter="unattempted">Unattempted <span class="pill-count" id="revPillUnatt">0</span></button>
+      <button class="rev-filter-pill pill-marked" data-rev-filter="marked">Marked for Review <span class="pill-count" id="revPillMarked">0</span></button>
+    </div>
+    <div style="font-size:0.8rem; font-weight:600; color:#475569;" id="revFilterStatusInfo">Showing All 150 Questions</div>
+  </nav>
+
+  <!-- Review Body Split (Same CBT Layout) -->
+  <div class="rev-body-wrapper">
+    <!-- Left Review Pane -->
+    <main class="rev-question-pane">
+      <div class="question-meta-bar">
+        <div class="q-number-box">
+          <span id="revDisplayNum">Question No. 1</span>
+          <span id="revMarksBadge" class="badge badge-marks">+1.00 Marks</span>
+        </div>
+        <div class="q-meta-tags">
+          <span class="badge badge-origin" id="revOriginTag">PYQ</span>
+          <span class="badge" id="revDiffTag">Medium</span>
+          <span class="badge" style="background:#f1f5f9; color:#475569;" id="revSyllabusTag">Ref</span>
+          <span class="badge badge-reviewed" id="revMarkedBadge" style="display:none;">★ Marked for Review</span>
+        </div>
+      </div>
+
+      <div class="rev-question-content">
+        <!-- Result status banner (Correct / Incorrect / Unattempted) -->
+        <div class="rev-status-banner" id="revStatusBanner">
+          <span id="revStatusBannerText">Outcome</span>
+          <span id="revCandidateChoiceText">Your Choice: A | Key: A</span>
+        </div>
+
+        <div class="q-text-en" id="revTextEn">Loading Question...</div>
+        <div class="q-text-alt" id="revTextAlt" style="display:none;"></div>
+
+        <div class="options-container" id="revOptionsContainer"></div>
+
+        <!-- Verified Rationale Card -->
+        <div class="rev-rationale-box">
+          <div class="rev-rationale-title">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Verified Rationale & Core Concepts
+          </div>
+          <div class="rev-rationale-text" id="revRationaleText">Detailed explanation...</div>
+        </div>
+      </div>
+
+      <footer class="question-footer-controls">
+        <div style="display:flex; gap:10px;">
+          <button class="btn btn-secondary" id="btnRevPrev">Previous</button>
+          <button class="btn btn-primary" id="btnRevNext">Next</button>
+        </div>
+        <div style="display:flex; gap:10px;">
+          <button class="btn btn-secondary" id="btnRevJumpToSummary">Back to Scorecard</button>
+        </div>
+      </footer>
+    </main>
+
+    <!-- Right Review Palette Pane -->
+    <aside class="rev-palette-pane">
+      <div class="rev-pal-legend">
+        <div class="legend-item"><div class="legend-badge" style="background:var(--rev-correct);">✓</div> Correct</div>
+        <div class="legend-item"><div class="legend-badge" style="background:var(--rev-incorrect);">✗</div> Incorrect</div>
+        <div class="legend-item"><div class="legend-badge" style="background:var(--rev-unatt);">-</div> Unattempted</div>
+        <div class="legend-item"><div class="legend-badge" style="background:var(--rev-marked);">★</div> Was Marked</div>
+      </div>
+      <div class="palette-grid-scroll">
+        <div class="palette-grid-title" id="revPaletteTitle">SOLUTION PALETTE (ALL)</div>
+        <div class="palette-grid" id="revPaletteGrid"></div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<script>
+const QUESTIONS = [{"id": "P1-T2-GK-01", "paper": 1, "section_id": "S1", "subject": "General Knowledge", "syllabus_id": "P1-1.1", "origin_tag": "PYQ - GPSTR 2019", "label": "PYQ", "difficulty": "medium", "text": "The magnificent monolithic rock-cut Kailasanatha temple at Ellora (Cave 16) was excavated during the reign of which Rashtrakuta monarch?", "text_alt": "ಎಲ್ಲೋರಾದ ಭವ್ಯ ಏಕಶಿಲಾ ಕೈಲಾಸನಾಥ ದೇವಾಲಯವನ್ನು (ಗುಹೆ 16) ಯಾವ ರಾಷ್ಟ್ರಕೂಟ ದೊರೆಯ ಆಳ್ವಿಕೆಯಲ್ಲಿ ನಿರ್ಮಿಸಲಾಯಿತು?", "options": [{"label": "A", "text": "Dantidurga"}, {"label": "B", "text": "Krishna I"}, {"label": "C", "text": "Dhruva Dharavarsha"}, {"label": "D", "text": "Govinda III"}], "answer": "B", "explanation": "Rashtrakuta king Krishna I (756–774 CE) commissioned the monolithic rock-cut Kailasa temple at Ellora, carved top-to-bottom from a single basalt cliff.", "verbatim": true, "year": 2019, "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 1}, {"id": "P1-T2-GK-02", "paper": 1, "section_id": "S1", "subject": "General Knowledge", "syllabus_id": "P1-1.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "easy", "text": "Which ancient capital city was founded by Pulakeshin I as the seat of the Early Chalukya dynasty in 543 CE?", "text_alt": "ಕ್ರಿ.ಶ. 543 ರಲ್ಲಿ ಆರಂಭಿಕ ಚಾಲುಕ್ಯ ರಾಜವಂಶದ ರಾಜಧಾನಿಯಾಗಿ ಒಂದನೇ ಪುಲಕೇಶಿ ಸ್ಥಾಪಿಸಿದ ಐತಿಹಾಸಿಕ ನಗರ ಯಾವುದು?", "options": [{"label": "A", "text": "Vatapi (Badami)"}, {"label": "B", "text": "Kalyana"}, {"label": "C", "text": "Aihole"}, {"label": "D", "text": "Pattadakal"}], "answer": "A", "explanation": "Pulakeshin I established his capital at Vatapi (modern Badami in Bagalkote district) and performed the Ashvamedha sacrifice to assert sovereign power.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-GK-03", "paper": 1, "section_id": "S1", "subject": "General Knowledge", "syllabus_id": "P1-1.1", "origin_tag": "PYQ - GPSTR 2017", "label": "PYQ", "difficulty": "medium", "text": "The world-famous 57-foot monolithic statue of Lord Gommateshwara (Bahubali) at Shravanabelagola was consecrated in 981 CE by which Western Ganga prime minister?", "text_alt": "ಶ್ರವಣಬೆಳಗೊಳದ ಪ್ರಸಿದ್ಧ 57 ಅಡಿ ಎತ್ತರದ ಗೊಮ್ಮಟೇಶ್ವರ ಏಕಶಿಲಾ ವಿಗ್ರಹವನ್ನು ಕ್ರಿ.ಶ. 981 ರಲ್ಲಿ ಕೆತ್ತಿಸಿ ಪ್ರತಿಷ್ಠಾಪಿಸಿದ ಪಶ್ಚಿಮ ಗಂಗರ ಮಂತ್ರಿ ಯಾರು?", "options": [{"label": "A", "text": "Chavundaraya"}, {"label": "B", "text": "Marasimha II"}, {"label": "C", "text": "Durvinita"}, {"label": "D", "text": "Madhavavarma"}], "answer": "A", "explanation": "Chavundaraya, military commander and prime minister to Ganga king Rachamalla IV, consecrated the Gommateshwara colossus atop Vindhyagiri hill in 981 CE.", "verbatim": true, "year": 2017, "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 1}, {"id": "P1-T2-GK-04", "paper": 1, "section_id": "S1", "subject": "General Knowledge", "syllabus_id": "P1-1.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "hard", "text": "The twin-temple Hoysaleshwara temple at Halebidu, famous for its intricate soapstone relief friezes, was dedicated to Lord Shiva during the reign of which king?", "text_alt": "ಸೋಪಸ್ಟೋನ್ ಶಿಲ್ಪಕಲೆಗೆ ಹೆಸರಾದ ಹಳೇಬೀಡಿನ ಹೊಯ್ಸಳೇಶ್ವರ ಜೋಡಿ ದೇವಾಲಯವನ್ನು ಯಾವ ರಾಜನ ಆಳ್ವಿಕೆಯಲ್ಲಿ ನಿರ್ಮಿಸಲಾಯಿತು?", "options": [{"label": "A", "text": "King Vishnuvardhana"}, {"label": "B", "text": "Veera Ballala II"}, {"label": "C", "text": "Narasimha III"}, {"label": "D", "text": "Somesvara"}], "answer": "A", "explanation": "The Hoysaleshwara temple at Halebidu (Dorasamudra) was initiated under King Vishnuvardhana around 1121 CE by his noble Ketamalla and chief architect Kedaroja.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-GK-05", "paper": 1, "section_id": "S1", "subject": "General Knowledge", "syllabus_id": "P1-1.1", "origin_tag": "PYQ - GPSTR 2022", "label": "PYQ", "difficulty": "medium", "text": "The Vijayanagara monarch Krishnadevaraya authored which classical political treatise in Telugu describing statecraft and kingly duties?", "text_alt": "ವಿಜಯನಗರದ ಸಾರ್ವಭೌಮ ಶ್ರೀ ಕೃಷ್ಣದೇವರಾಯರು ರಾಜಧರ್ಮ ಮತ್ತು ಆಡಳಿತವನ್ನು ವಿವರಿಸುವ ಯಾವ ಪ್ರಸಿದ್ಧ ತೆಲುಗು ಕೃತಿಯನ್ನು ರಚಿಸಿದರು?", "options": [{"label": "A", "text": "Amuktamalyada"}, {"label": "B", "text": "Jambavati Kalyanam"}, {"label": "C", "text": "Usha Parinayam"}, {"label": "D", "text": "Madura Vijayam"}], "answer": "A", "explanation": "Krishnadevaraya authored 'Amuktamalyada' in Telugu celebrating Andal's life and detailing statecraft, while his Sanskrit works include 'Jambavati Kalyanam'.", "verbatim": true, "year": 2022, "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 1}, {"id": "P1-T2-GK-06", "paper": 1, "section_id": "S1", "subject": "General Knowledge", "syllabus_id": "P1-1.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "Gol Gumbaz in Vijayapura, famous for its unsupported dome and acoustical Whispering Gallery, is the mausoleum of which Adil Shahi sultan?", "text_alt": "ಪ್ರಪಂಚದ ಎರಡನೇ ಅತಿ ದೊಡ್ಡ ಗುಮ್ಮಟ ಹಾಗೂ ಪ್ರತಿಧ್ವನಿ ದ್ವಾರ ಹೊಂದಿರುವ ವಿಜಯಪುರದ ಗೋಲ್ ಗುಂಬಜ್ ಯಾವ ಆದಿಲ್ ಶಾಹಿ ಸುಲ್ತಾನನ ಸಮಾಧಿಯಾಗಿದೆ?", "options": [{"label": "A", "text": "Ibrahim Adil Shah II"}, {"label": "B", "text": "Mohammed Adil Shah"}, {"label": "C", "text": "Ali Adil Shah I"}, {"label": "D", "text": "Yusuf Adil Shah"}], "answer": "B", "explanation": "Constructed in 1656 CE by master architect Yaqut of Dabul, Gol Gumbaz houses the mortal remains of Mohammed Adil Shah.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-GK-07", "paper": 1, "section_id": "S1", "subject": "General Knowledge", "syllabus_id": "P1-1.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "hard", "text": "Which Mysore ruler established the royal tradition of celebrating the grand Mysore Dasara festival at Srirangapatna in 1610 CE?", "text_alt": "ಕ್ರಿ.ಶ. 1610 ರಲ್ಲಿ ಶ್ರೀರಂಗಪಟ್ಟಣದಲ್ಲಿ ಅದ್ಧೂರಿ ಮೈಸೂರು ದಸರಾ ಮಹೋತ್ಸವದ ಸಂಪ್ರದಾಯವನ್ನು ಆರಂಭಿಸಿದ ಮೈಸೂರಿನ ಒಡೆಯರ್ ದೊರೆ ಯಾರು?", "options": [{"label": "A", "text": "Raja Wodeyar I"}, {"label": "B", "text": "Ranadheera Kanteerava Narasaraja"}, {"label": "C", "text": "Chikka Devaraja Wodeyar"}, {"label": "D", "text": "Mummadi Krishnaraja Wodeyar"}], "answer": "A", "explanation": "Raja Wodeyar I seized Srirangapatna from the Vijayanagara viceroy Tirumala in 1610 and decreed that the Navaratri / Dasara festival be celebrated annually with royal grandeur.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-GK-08", "paper": 1, "section_id": "S1", "subject": "General Knowledge", "syllabus_id": "P1-1.1", "origin_tag": "PYQ - GPSTR 2019", "label": "PYQ", "difficulty": "medium", "text": "Under the Treaty of Seringapatam (1792) that ended the Third Anglo-Mysore War, Tipu Sultan ceded which territory to the British East India Company?", "text_alt": "ಮೂರನೇ ಆಂಗ್ಲೋ-ಮೈಸೂರು ಯುದ್ಧವನ್ನು ಕೊನೆಗೊಳಿಸಿದ ಶ್ರೀರಂಗಪಟ್ಟಣ ಒಪ್ಪಂದದ (1792) ಅನ್ವಯ ಟಿಪ್ಪು ಸುಲ್ತಾನ್ ಬ್ರಿಟಿಷರಿಗೆ ಬಿಟ್ಟುಕೊಟ್ಟ ಪ್ರದೇಶ ಯಾವುದು?", "options": [{"label": "A", "text": "Malabar, Dindigul, and Baramahal"}, {"label": "B", "text": "Raichur Doab"}, {"label": "C", "text": "Northern Circars"}, {"label": "D", "text": "Thanjavur and Madurai"}], "answer": "A", "explanation": "Lord Cornwallis forced Tipu Sultan to surrender half his kingdom (including Malabar coast, Coorg protectorate, Dindigul, and Baramahal) and pay 3 crore rupees in indemnity.", "verbatim": true, "year": 2019, "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 1}, {"id": "P1-T2-GK-09", "paper": 1, "section_id": "S1", "subject": "General Knowledge", "syllabus_id": "P1-1.1", "origin_tag": "PYQ - GPSTR 2022", "label": "PYQ", "difficulty": "easy", "text": "The heroic freedom fighter Sangolli Rayanna, who continued armed guerrilla warfare after the fall of Kittur, was captured through betrayal and hanged at:", "text_alt": "ಕಿತ್ತೂರಿನ ಪತನದ ನಂತರವೂ ಬ್ರಿಟಿಷರ ವಿರುದ್ಧ ಗೆರಿಲ್ಲಾ ಹೋರಾಟ ಮುಂದುವರಿಸಿದ ಕ್ರಾಂತಿವೀರ ಸಂಗೊಳ್ಳಿ ರಾಯಣ್ಣನನ್ನು ಎಲ್ಲಿ ಗಲ್ಲಿಗೇರಿಸಲಾಯಿತು?", "options": [{"label": "A", "text": "Nandagad (Belagavi)"}, {"label": "B", "text": "Khanapur"}, {"label": "C", "text": "Bailhongal"}, {"label": "D", "text": "Soundatti"}], "answer": "A", "explanation": "Sangolli Rayanna was captured by British treacherous machinations and hanged from a banyan tree at Nandagad in Belagavi district on 26 January 1831.", "verbatim": true, "year": 2022, "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 1}, {"id": "P1-T2-GK-10", "paper": 1, "section_id": "S1", "subject": "General Knowledge", "syllabus_id": "P1-1.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "hard", "text": "The armed rebellion of the Bedas of Halagali in Mudhol state against British rule in November 1857 was provoked by which oppressive legislation?", "text_alt": "1857 ರ ನವೆಂಬರ್‌ನಲ್ಲಿ ಮುಧೋಳ ಸಂಸ್ಥಾನದ ಹಲಗಲಿ ಬೇಡರು ಬ್ರಿಟಿಷರ ವಿರುದ್ಧ ನಡೆಸಿದ ಸಶಸ್ತ್ರ ದಂಗೆಗೆ ಕಾರಣವಾದ ಬ್ರಿಟಿಷ್ ಕಾಯ್ದೆ ಯಾವುದು?", "options": [{"label": "A", "text": "Disarming Act of 1857"}, {"label": "B", "text": "Doctrine of Lapse"}, {"label": "C", "text": "Vernacular Press Act"}, {"label": "D", "text": "Salt Tax Regulation"}], "answer": "A", "explanation": "The Disarming Act of 1857 required all Indians to surrender their traditional weapons and firearms; the hunting martial Bedas of Halagali heroically refused and revolted.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-GK-11", "paper": 1, "section_id": "S1", "subject": "General Knowledge", "syllabus_id": "P1-1.1", "origin_tag": "PYQ - GPSTR 2022", "label": "PYQ", "difficulty": "easy", "text": "The unified state of Mysore was officially renamed as 'Karnataka' on 1 November 1973 under the tenure of which Chief Minister?", "text_alt": "ವಿಶಾಲ ಮೈಸೂರು ರಾಜ್ಯವನ್ನು 1973 ರ ನವೆಂಬರ್ 1 ರಂದು ಅಧಿಕೃತವಾಗಿ 'ಕರ್ನಾಟಕ' ಎಂದು ಮರುನಾಮಕರಣ ಮಾಡಿದ ಮುಖ್ಯಮಂತ್ರಿ ಯಾರು?", "options": [{"label": "A", "text": "D. Devaraj Urs"}, {"label": "B", "text": "Kengal Hanumanthaiah"}, {"label": "C", "text": "S. Nijalingappa"}, {"label": "D", "text": "B. D. Jatti"}], "answer": "A", "explanation": "Chief Minister D. Devaraj Urs spearheaded the historic legislative declaration on November 1, 1973, renaming Mysore State to Karnataka.", "verbatim": true, "year": 2022, "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 1}, {"id": "P1-T2-GK-12", "paper": 1, "section_id": "S1", "subject": "General Knowledge", "syllabus_id": "P1-1.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "What is the total coastline length of Karnataka stretching along the Arabian Sea from Karwar to Mangaluru?", "text_alt": "ಕಾರವಾರದಿಂದ ಮಂಗಳೂರಿನವರೆಗೆ ಅರಬ್ಬಿ ಸಮುದ್ರದ ತೀರದಲ್ಲಿ ಹರಡಿರುವ ಕರ್ನಾಟಕದ ಕರಾವಳಿ ತೀರದ ಒಟ್ಟು ಉದ್ದ ಎಷ್ಟು?", "options": [{"label": "A", "text": "320 kilometers"}, {"label": "B", "text": "450 kilometers"}, {"label": "C", "text": "210 kilometers"}, {"label": "D", "text": "560 kilometers"}], "answer": "A", "explanation": "Karnataka's coastal belt (Karavali / Canara) stretches approximately 320 km across three coastal districts: Uttara Kannada, Udupi, and Dakshina Kannada.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-GK-13", "paper": 1, "section_id": "S1", "subject": "General Knowledge", "syllabus_id": "P1-1.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "Which of the following is NOT a right-bank tributary of the Krishna river flowing through Karnataka?", "text_alt": "ಕರ್ನಾಟಕದಲ್ಲಿ ಹರಿಯುವ ಕೃಷ್ಣಾ ನದಿಯ ಬಲದಂಡೆಯ ಉಪನದಿಯಲ್ಲದ ನದಿ ಯಾವುದು?", "options": [{"label": "A", "text": "Bhima"}, {"label": "B", "text": "Ghataprabha"}, {"label": "C", "text": "Malaprabha"}, {"label": "D", "text": "Tungabhadra"}], "answer": "A", "explanation": "Bhima is the major left-bank tributary of Krishna; Ghataprabha, Malaprabha, and Tungabhadra are right-bank tributaries.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-GK-14", "paper": 1, "section_id": "S1", "subject": "General Knowledge", "syllabus_id": "P1-1.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "The Donimalai and Sandur hill ranges in Ballari district are world-famous for their high-grade reserves of:", "text_alt": "ಬಳ್ಳಾರಿ ಜಿಲ್ಲೆಯ ದೋಣಿಮಲೈ ಮತ್ತು ಸಂಡೂರು ಬೆಟ್ಟಗಳು ಯಾವ ಉತ್ತಮ ದರ್ಜೆಯ ಅದಿರಿನ ನಿಕ್ಷೇಪಗಳಿಗೆ ಪ್ರಸಿದ್ಧವಾಗಿವೆ?", "options": [{"label": "A", "text": "Hematite Iron Ore"}, {"label": "B", "text": "Bauxite"}, {"label": "C", "text": "Mica"}, {"label": "D", "text": "Uranium"}], "answer": "A", "explanation": "The Sandur-Hospete-Ballari mineral belt possesses abundant rich reserves of high-grade hematite iron ore (NMDC operates Donimalai iron mines).", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-GK-15", "paper": 1, "section_id": "S1", "subject": "General Knowledge", "syllabus_id": "P1-1.2", "origin_tag": "PYQ - GPSTR 2017", "label": "PYQ", "difficulty": "easy", "text": "Which National Park in Karnataka, situated across Mysuru and Kodagu districts, is also designated as the Rajiv Gandhi National Park?", "text_alt": "ಮೈಸೂರು ಮತ್ತು ಕೊಡಗು ಜಿಲ್ಲೆಗಳಲ್ಲಿ ಹರಡಿರುವ ಹಾಗೂ ರಾಜೀವ್ ಗಾಂಧಿ ರಾಷ್ಟ್ರೀಯ ಉದ್ಯಾನವನವೆಂದು ಕರೆಯಲ್ಪಡುವ ಕರ್ನಾಟಕದ ರಾಷ್ಟ್ರೀಯ ಉದ್ಯಾನ ಯಾವುದು?", "options": [{"label": "A", "text": "Nagarahole National Park"}, {"label": "B", "text": "Bandipur National Park"}, {"label": "C", "text": "Kudremukh National Park"}, {"label": "D", "text": "Anshi National Park"}], "answer": "A", "explanation": "Nagarahole National Park was renamed Rajiv Gandhi National Park in 1992 and forms a core part of the Nilgiri Biosphere Reserve.", "verbatim": true, "year": 2017, "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 1}, {"id": "P1-T2-GK-16", "paper": 1, "section_id": "S1", "subject": "General Knowledge", "syllabus_id": "P1-1.3", "origin_tag": "PYQ - GPSTR 2019", "label": "PYQ", "difficulty": "easy", "text": "Which three words were added to the Preamble of the Indian Constitution by the 42nd Constitutional Amendment Act of 1976?", "text_alt": "1976 ರ 42 ನೇ ಸಂವಿಧಾನ ತಿದ್ದುಪಡಿ ಕಾಯ್ದೆಯ ಮೂಲಕ ಭಾರತ ಸಂವಿಧಾನದ ಪ್ರಸ್ತಾವನೆಗೆ ಸೇರಿಸಲಾದ ಮೂರು ಪದಗಳು ಯಾವುವು?", "options": [{"label": "A", "text": "Socialist, Secular, Integrity (ಸಮಾಜವಾದಿ, ಜಾತ್ಯತೀತ, ಸಮಗ್ರತೆ)"}, {"label": "B", "text": "Liberty, Equality, Fraternity"}, {"label": "C", "text": "Justice, Democracy, Republic"}, {"label": "D", "text": "Sovereign, Federal, Parliamentary"}], "answer": "A", "explanation": "The 42nd Amendment Act (1976) amended the Preamble to change 'Sovereign Democratic Republic' to 'Sovereign Socialist Secular Democratic Republic' and added 'and integrity'.", "verbatim": true, "year": 2019, "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 1}, {"id": "P1-T2-GK-17", "paper": 1, "section_id": "S1", "subject": "General Knowledge", "syllabus_id": "P1-1.3", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "The Supreme Court of India held that the Right to Privacy is an intrinsic part of the Right to Life and Personal Liberty under Article 21 in which landmark verdict?", "text_alt": "ಖಾಸಗಿತನದ ಹಕ್ಕು (Right to Privacy) 21 ನೇ ವಿಧಿಯಡಿ ಜೀವಿಸುವ ಹಕ್ಕಿನ ಮೂಲಭೂತ ಭಾಗವೆಂದು ಸುಪ್ರೀಂ ಕೋರ್ಟ್ ಯಾವ ಮಹತ್ವದ ತೀರ್ಪಿನಲ್ಲಿ ಎತ್ತಿಹಿಡಿಯಿತು?", "options": [{"label": "A", "text": "Justice K. S. Puttaswamy v. Union of India (2017)"}, {"label": "B", "text": "Kesavananda Bharati v. State of Kerala (1973)"}, {"label": "C", "text": "Maneka Gandhi v. Union of India (1978)"}, {"label": "D", "text": "Navtej Singh Johar v. Union of India (2018)"}], "answer": "A", "explanation": "In Justice K. S. Puttaswamy (Retd.) v. Union of India (2017), a unanimous 9-judge Constitution Bench held that Privacy is protected under Article 21 and Part III.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-GK-18", "paper": 1, "section_id": "S1", "subject": "General Knowledge", "syllabus_id": "P1-1.3", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "Under Article 51A of the Indian Constitution, how many Fundamental Duties are currently enshrined for every Indian citizen?", "text_alt": "ಭಾರತದ ಸಂವಿಧಾನದ 51ಎ ವಿಧಿಯ ಅಡಿಯಲ್ಲಿ ಪ್ರಸ್ತುತ ಪ್ರತಿಯೊಬ್ಬ ಭಾರತೀಯ ನಾಗರಿಕನಿಗೆ ಎಷ್ಟು ಮೂಲಭೂತ ಕರ್ತವ್ಯಗಳಿವೆ?", "options": [{"label": "A", "text": "10"}, {"label": "B", "text": "11"}, {"label": "C", "text": "12"}, {"label": "D", "text": "9"}], "answer": "B", "explanation": "Originally 10 Fundamental Duties were added by the 42nd Amendment in 1976; the 11th duty (education for children 6-14 yrs) was added by the 86th Amendment in 2002.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-GK-19", "paper": 1, "section_id": "S1", "subject": "General Knowledge", "syllabus_id": "P1-1.3", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "hard", "text": "Who participates in the Electoral College for the election of the President of India under Article 54?", "text_alt": "54 ನೇ ವಿಧಿಯ ಅನ್ವಯ ಭಾರತದ ರಾಷ್ಟ್ರಪತಿಗಳ ಚುನಾವಣೆಯಲ್ಲಿ ಮತ ಚಲಾಯಿಸುವ ಚುನಾವಣಾ ಗಣದಲ್ಲಿ (Electoral College) ಭಾಗವಹಿಸುವವರು ಯಾರು?", "options": [{"label": "A", "text": "Elected members of both Houses of Parliament and elected members of State Legislative Assemblies"}, {"label": "B", "text": "All members of Lok Sabha, Rajya Sabha, and Legislative Councils"}, {"label": "C", "text": "Elected members of Lok Sabha only"}, {"label": "D", "text": "Governors of all States and Union Cabinet Ministers"}], "answer": "A", "explanation": "Article 54 provides that the Electoral College consists of elected members of Lok Sabha, Rajya Sabha, and Legislative Assemblies of States, including Delhi and Puducherry.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-GK-20", "paper": 1, "section_id": "S1", "subject": "General Knowledge", "syllabus_id": "P1-1.3", "origin_tag": "Synthesized - Hard", "label": "expected", "difficulty": "hard", "text": "The 73rd Constitutional Amendment Act of 1992 inserted which Schedule into the Indian Constitution containing 29 functional items for Panchayati Raj institutions?", "text_alt": "1992 ರ 73 ನೇ ಸಂವಿಧಾನ ತಿದ್ದುಪಡಿ ಕಾಯ್ದೆಯು ಪಂಚಾಯತ್ ರಾಜ್ ಸಂಸ್ಥೆಗಳಿಗೆ 29 ಕಾರ್ಯಾತ್ಮಕ ವಿಷಯಗಳನ್ನು ನೀಡುವ ಯಾವ ಅನುಸೂಚಿಯನ್ನು ಸಂವಿಧಾನಕ್ಕೆ ಸೇರಿಸಿತು?", "options": [{"label": "A", "text": "10th Schedule"}, {"label": "B", "text": "11th Schedule"}, {"label": "C", "text": "12th Schedule"}, {"label": "D", "text": "9th Schedule"}], "answer": "B", "explanation": "The 73rd Amendment inserted Part IX and the 11th Schedule (29 matters for Panchayats); the 74th Amendment inserted the 12th Schedule (18 matters for Municipalities).", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-CA-21", "paper": 1, "section_id": "S2", "subject": "Current Affairs", "syllabus_id": "P1-2.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "Under the Gruha Lakshmi guarantee scheme in Karnataka, which category of women is strictly ineligible to receive the ₹2,000 monthly financial aid?", "text_alt": "ಕರ್ನಾಟಕದ ಗೃಹಲಕ್ಷ್ಮಿ ಯೋಜನೆಯಡಿ ತಿಂಗಳಿಗೆ ₹2,000 ಪಡೆಯಲು ಯಾವ ವರ್ಗದ ಮಹಿಳೆಯರು ಅರ್ಹರಲ್ಲ?", "options": [{"label": "A", "text": "Women who are income tax payers or whose husbands file income tax/GST"}, {"label": "B", "text": "Women holding Antyodaya ration cards"}, {"label": "C", "text": "Widows receiving Sandhya Suraksha pension"}, {"label": "D", "text": "Unemployed housewives in rural areas"}], "answer": "A", "explanation": "Women heads of households (or their spouses) who pay Income Tax or file Goods and Services Tax (GST) returns are excluded from Gruha Lakshmi benefits.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-CA-22", "paper": 1, "section_id": "S2", "subject": "Current Affairs", "syllabus_id": "P1-2.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "easy", "text": "The Shakti scheme launched by the Government of Karnataka grants free bus travel to domicile women across all of the following EXCEPT:", "text_alt": "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ ಶಕ್ತಿ ಯೋಜನೆಯು ರಾಜ್ಯದ ಮಹಿಳೆಯರಿಗೆ ಈ ಕೆಳಗಿನ ಯಾವ ಬಸ್ ಸೇವೆಗಳಲ್ಲಿ ಉಚಿತ ಪ್ರಯಾಣವನ್ನು ಕಲ್ಪಿಸುವುದಿಲ್ಲ?", "options": [{"label": "A", "text": "KSRTC Rajahamsa and Airavat Club Class buses"}, {"label": "B", "text": "BMTC Ordinary City buses"}, {"label": "C", "text": "NWKRTC ordinary express buses"}, {"label": "D", "text": "KKRTC ordinary rural buses"}], "answer": "A", "explanation": "Shakti scheme covers ordinary city, suburban, and rural express buses of KSRTC, BMTC, NWKRTC, and KKRTC, but excludes luxury, AC, sleeper, Rajahamsa, and Airavat coaches.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-CA-23", "paper": 1, "section_id": "S2", "subject": "Current Affairs", "syllabus_id": "P1-2.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "Under the Gruha Jyothi scheme, how is the entitlement of free domestic power calculated for an eligible household?", "text_alt": "ಗೃಹಜ್ಯೋತಿ ಯೋಜನೆಯಡಿ ಗೃಹಬಳಕೆಯ ಉಚಿತ ವಿದ್ಯುತ್ ಅರ್ಹತೆಯನ್ನು ಹೇಗೆ ಲೆಕ್ಕಹಾಕಲಾಗುತ್ತದೆ?", "options": [{"label": "A", "text": "Average monthly consumption of previous 12 months + 10% buffer, subject to a maximum cap of 200 units"}, {"label": "B", "text": "Flat 300 units for every consumer irrespective of past usage"}, {"label": "C", "text": "100 units for urban areas and 50 units for rural areas"}, {"label": "D", "text": "Calculated on number of family members multiplied by 20 units"}], "answer": "A", "explanation": "Gruha Jyothi entitles domestic consumers to free electricity calculated as their average monthly usage over the previous fiscal year plus a 10% buffer, capped at 200 units/month.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-CA-24", "paper": 1, "section_id": "S2", "subject": "Current Affairs", "syllabus_id": "P1-2.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "Under the Anna Bhagya scheme, when physical rice procurement was constrained, what cash DBT rate per kilogram was transferred directly to BPL beneficiaries in lieu of the additional 5 kg rice?", "text_alt": "ಅನ್ನಭಾಗ್ಯ ಯೋಜನೆಯಡಿ ಅಕ್ಕಿಯ ಕೊರತೆ ಉಂಟಾದಾಗ ಹೆಚ್ಚುವರಿ 5 ಕೆಜಿ ಅಕ್ಕಿಯ ಬದಲಾಗಿ ಪ್ರತಿ ಕೆಜಿಗೆ ಎಷ್ಟು ದರದಲ್ಲಿ ನಗದು ಡಿಬಿಟಿ ಜಮೆ ಮಾಡಲಾಯಿತು?", "options": [{"label": "A", "text": "₹34 per kg"}, {"label": "B", "text": "₹25 per kg"}, {"label": "C", "text": "₹40 per kg"}, {"label": "D", "text": "₹50 per kg"}], "answer": "A", "explanation": "The Karnataka government initiated direct cash transfer of ₹170 per person per month (at ₹34/kg for 5 kg) into the bank accounts of BPL cardholders.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-CA-25", "paper": 1, "section_id": "S2", "subject": "Current Affairs", "syllabus_id": "P1-2.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "What is the maximum duration for which an eligible unemployed degree holder can receive the ₹3,000 monthly allowance under the Yuva Nidhi scheme?", "text_alt": "ಯುವನಿಧಿ ಯೋಜನೆಯಡಿ ನಿರುದ್ಯೋಗಿ ಪದವೀಧರರು ಗರಿಷ್ಠ ಎಷ್ಟು ಅವಧಿಯವರೆಗೆ ತಿಂಗಳಿಗೆ ₹3,000 ಭತ್ಯೆಯನ್ನು ಪಡೆಯಬಹುದು?", "options": [{"label": "A", "text": "2 years (or until employment is secured, whichever is earlier)"}, {"label": "B", "text": "5 years"}, {"label": "C", "text": "1 year"}, {"label": "D", "text": "Until age 35"}], "answer": "A", "explanation": "Yuva Nidhi is tenable for a maximum period of 2 years from the date of enrollment or until the beneficiary secures employment/self-employment.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-CA-26", "paper": 1, "section_id": "S2", "subject": "Current Affairs", "syllabus_id": "P1-2.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "hard", "text": "In the Bharatiya Nyaya Sanhita (BNS 2023) enforced on 1 July 2024, the colonial offense of 'Sedition' (Section 124A of IPC) was repealed and replaced by Section 152 penalizing:", "text_alt": "2024 ರ ಜುಲೈ 1 ರಿಂದ ಜಾರಿಗೆ ಬಂದ ಭಾರತೀಯ ನ್ಯಾಯ ಸಂಹಿತೆಯಲ್ಲಿ (ಬಿಎನ್‌ಎಸ್) ರಾಜದ್ರೋಹವನ್ನು ರದ್ದುಗೊಳಿಸಿ 152 ನೇ ಸೆಕ್ಷನ್‌ನಲ್ಲಿ ಯಾವ ಕೃತ್ಯವನ್ನು ಶಿಕ್ಷಾರ್ಹಗೊಳಿಸಲಾಗಿದೆ?", "options": [{"label": "A", "text": "Acts endangering sovereignty, unity, and integrity of India"}, {"label": "B", "text": "Contempt of Parliament"}, {"label": "C", "text": "Defamation of public servants"}, {"label": "D", "text": "Criticism of foreign diplomatic missions"}], "answer": "A", "explanation": "Section 152 of BNS penalizes acts endangering the sovereignty, unity, and integrity of India, eliminating the colonial term 'sedition' and protecting legitimate speech.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-CA-27", "paper": 1, "section_id": "S2", "subject": "Current Affairs", "syllabus_id": "P1-2.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "Which landmark procedural reform has been codified under Section 173 of the Bharatiya Nagarik Suraksha Sanhita (BNSS 2023), allowing citizens to lodge complaints at any police station irrespective of jurisdiction?", "text_alt": "ಭಾರತೀಯ ನಾಗರಿಕ ಸುರಕ್ಷಾ ಸಂಹಿತೆಯಡಿ (ಬಿಎನ್‌ಎಸ್‌ಎಸ್) ಯಾವುದೇ ಪೊಲೀಸ್ ಠಾಣೆಯಲ್ಲೂ ನ್ಯಾಯವ್ಯಾಪ್ತಿಯ ಹಂಗಿಲ್ಲದೆ ದೂರು ದಾಖಲಿಸಲು ಅವಕಾಶ ಕಲ್ಪಿಸಿದ ಸುಧಾರಣೆ ಯಾವುದು?", "options": [{"label": "A", "text": "Zero FIR"}, {"label": "B", "text": "Anticipatory Bail"}, {"label": "C", "text": "Habeas Corpus Petition"}, {"label": "D", "text": "Suo Motu Cognitive Cognizance"}], "answer": "A", "explanation": "BNSS 2023 formally mandates 'Zero FIR', requiring police to register an FIR for cognizable offenses anywhere and subsequently transfer it to the jurisdictional station.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-CA-28", "paper": 1, "section_id": "S2", "subject": "Current Affairs", "syllabus_id": "P1-2.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "The Constitution (106th Amendment) Act, 2023, widely known as Nari Shakti Vandan Adhiniyam, provides what percentage of reservation for women in Lok Sabha and State Legislative Assemblies?", "text_alt": "ನಾರಿ ಶಕ್ತಿ ವಂದನ್ ಅಧಿನಿಯಮ (106 ನೇ ಸಂವಿಧಾನ ತಿದ್ದುಪಡಿ ಕಾಯ್ದೆ 2023) ಲೋಕಸಭೆ ಮತ್ತು ರಾಜ್ಯ ವಿಧಾನಸಭೆಗಳಲ್ಲಿ ಮಹಿಳೆಯರಿಗೆ ಎಷ್ಟು ಶೇಕಡಾ ಮೀಸಲಾತಿ ನೀಡುತ್ತದೆ?", "options": [{"label": "A", "text": "33% (One-third of total seats)"}, {"label": "B", "text": "50%"}, {"label": "C", "text": "25%"}, {"label": "D", "text": "27%"}], "answer": "A", "explanation": "The 106th Amendment reserves 33% (one-third) of seats for women in Lok Sabha, State Legislative Assemblies, and NCT of Delhi, effective after census and delimitation.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-CA-29", "paper": 1, "section_id": "S2", "subject": "Current Affairs", "syllabus_id": "P1-2.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "easy", "text": "Who headed the High-Level Committee on 'One Nation, One Election' that submitted its recommendations to the President of India in March 2024?", "text_alt": "2024 ರ ಮಾರ್ಚ್‌ನಲ್ಲಿ ಭಾರತದ ರಾಷ್ಟ್ರಪತಿಗಳಿಗೆ ತನ್ನ ವರದಿಯನ್ನು ಸಲ್ಲಿಸಿದ 'ಒಂದು ರಾಷ್ಟ್ರ, ಒಂದು ಚುನಾವಣೆ' ಉನ್ನತ ಮಟ್ಟದ ಸಮಿತಿಯ ಅಧ್ಯಕ್ಷರು ಯಾರು?", "options": [{"label": "A", "text": "Shri Ram Nath Kovind (Former President of India)"}, {"label": "B", "text": "Justice N. V. Ramana"}, {"label": "C", "text": "Shri N. K. Singh"}, {"label": "D", "text": "Shri Suresh Prabhu"}], "answer": "A", "explanation": "Former President of India Ram Nath Kovind chaired the 8-member High-Level Committee on Simultaneous Elections recommending a two-phase synchronization.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-CA-30", "paper": 1, "section_id": "S2", "subject": "Current Affairs", "syllabus_id": "P1-2.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "Who was appointed as the Chairman of the 16th Finance Commission constituted by the President of India under Article 280?", "text_alt": "280 ನೇ ವಿಧಿಯಡಿ ರಚಿಸಲಾದ 16 ನೇ ಹಣಕಾಸು ಆಯೋಗದ ಅಧ್ಯಕ್ಷರಾಗಿ ನೇಮಕಗೊಂಡ ಪ್ರಸಿದ್ಧ ಅರ್ಥಶಾಸ್ತ್ರಜ್ಞರು ಯಾರು?", "options": [{"label": "A", "text": "Dr. Arvind Panagariya"}, {"label": "B", "text": "Shri N. K. Singh"}, {"label": "C", "text": "Dr. Y. V. Reddy"}, {"label": "D", "text": "Dr. Vijay Kelkar"}], "answer": "A", "explanation": "Dr. Arvind Panagariya (former Vice Chairman of NITI Aayog) was appointed Chairman of the 16th Finance Commission for the award period 2026–2031.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-CA-31", "paper": 1, "section_id": "S2", "subject": "Current Affairs", "syllabus_id": "P1-2.3", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "easy", "text": "What official name was designated by Prime Minister Narendra Modi for the lunar south pole touchdown location of Chandrayaan-3's Vikram Lander?", "text_alt": "ಚಂದ್ರಯಾನ-3 ರ ವಿಕ್ರಮ್ ಲ್ಯಾಂಡರ್ ಇಳಿದ ಚಂದ್ರನ ದಕ್ಷಿಣ ಧ್ರುವದ ಸ್ಥಳಕ್ಕೆ ಪ್ರಧಾನಿ ನರೇಂದ್ರ ಮೋದಿಯವರು ನೀಡಿದ ಅಧಿಕೃತ ಹೆಸರೇನು?", "options": [{"label": "A", "text": "Shiv Shakti Point"}, {"label": "B", "text": "Tiranga Point"}, {"label": "C", "text": "Jawahar Point"}, {"label": "D", "text": "Atal Point"}], "answer": "A", "explanation": "The Chandrayaan-3 landing site was named 'Shiv Shakti Point', while the Chandrayaan-2 impact spot was named 'Tiranga Point'; August 23 is National Space Day.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-CA-32", "paper": 1, "section_id": "S2", "subject": "Current Affairs", "syllabus_id": "P1-2.3", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "India's first dedicated solar observatory satellite Aditya-L1 was successfully placed into halo orbit around which point located ~1.5 million km from Earth?", "text_alt": "ಭೂಮಿಯಿಂದ ಸುಮಾರು 15 ಲಕ್ಷ ಕಿ.ಮೀ ದೂರದಲ್ಲಿರುವ ಯಾವ ಹಾಲೋ ಕಕ್ಷೆಗೆ ಭಾರತದ ಪ್ರಥಮ ಸೌರ ವೀಕ್ಷಣಾಲಯ ಆದಿತ್ಯ-ಎಲ್1 ನ್ನು ಸೇರಿಸಲಾಯಿತು?", "options": [{"label": "A", "text": "Sun-Earth Lagrangian Point 1 (L1)"}, {"label": "B", "text": "Lagrangian Point 2 (L2)"}, {"label": "C", "text": "Geostationary Transfer Orbit"}, {"label": "D", "text": "Lunar Orbit"}], "answer": "A", "explanation": "Aditya-L1 was placed in a halo orbit around Lagrangian Point 1 (L1) on 6 January 2024, enabling unhindered 24/7 continuous view of the Sun.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-CA-33", "paper": 1, "section_id": "S2", "subject": "Current Affairs", "syllabus_id": "P1-2.3", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "hard", "text": "Which Indian Air Force test pilot, among the four designated Gaganyaan astronaut-elects, was chosen to fly to the International Space Station (ISS) on the Axiom-4 mission?", "text_alt": "ಗಗನ್‌ಯಾನ್‌ನ ನಾಲ್ಕು ಗಗನಯಾತ್ರಿಗಳಲ್ಲಿ ಅಮೆರಿಕದ ಆಕ್ಸಿಯಂ-4 ಮಿಷನ್ ಮೂಲಕ ಅಂತರರಾಷ್ಟ್ರೀಯ ಬಾಹ್ಯಾಕಾಶ ನಿಲ್ದಾಣಕ್ಕೆ (ಐಎಸ್‌ಎಸ್) ಪ್ರಯಾಣಿಸಲು ಆಯ್ಕೆಯಾದ ಐಎಎಫ್ ಪೈಲಟ್ ಯಾರು?", "options": [{"label": "A", "text": "Wing Commander Shubhanshu Shukla"}, {"label": "B", "text": "Group Captain Prashanth Nair"}, {"label": "C", "text": "Group Captain Ajit Krishnan"}, {"label": "D", "text": "Group Captain Angad Pratap"}], "answer": "A", "explanation": "Wing Commander Shubhanshu Shukla was selected as prime astronaut for the joint Indo-US Axiom-4 commercial mission to the International Space Station.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-CA-34", "paper": 1, "section_id": "S2", "subject": "Current Affairs", "syllabus_id": "P1-2.3", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "Who among the following agricultural scientists was posthumously conferred the Bharat Ratna in 2024 for pioneering India's Green Revolution?", "text_alt": "2024 ರಲ್ಲಿ ಭಾರತದ ಹಸಿರು ಕ್ರಾಂತಿಯ ಹರಿಕಾರರಾದ ಯಾವ ಕೃಷಿ ವಿಜ್ಞಾನಿಗಳಿಗೆ ಮರಣೋತ್ತರವಾಗಿ 'ಭಾರತ ರತ್ನ' ಪ್ರಶಸ್ತಿ ನೀಡಿ ಗೌರವಿಸಲಾಯಿತು?", "options": [{"label": "A", "text": "Dr. M. S. Swaminathan"}, {"label": "B", "text": "Dr. Verghese Kurien"}, {"label": "C", "text": "Dr. Norman Borlaug"}, {"label": "D", "text": "Dr. Homi Bhabha"}], "answer": "A", "explanation": "Dr. M. S. Swaminathan was posthumously conferred the Bharat Ratna in 2024 alongside Karpoori Thakur, P. V. Narasimha Rao, Chaudhary Charan Singh, and L. K. Advani.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-CA-35", "paper": 1, "section_id": "S2", "subject": "Current Affairs", "syllabus_id": "P1-2.3", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "The 58th Jnanpith Award (for 2023) was jointly conferred upon celebrated Urdu poet Gulzar and which eminent Sanskrit scholar?", "text_alt": "58 ನೇ ಜ್ಞಾನಪೀಠ ಪ್ರಶಸ್ತಿಯನ್ನು ಪ್ರಸಿದ್ಧ ಉರ್ದು ಕವಿ ಗುಲ್ಜಾರ್ ಅವರೊಂದಿಗೆ ಯಾವ ಸಂಸ್ಕೃತ ವಿದ್ವಾಂಸರಿಗೆ ಜಂಟಿಯಾಗಿ ನೀಡಲಾಯಿತು?", "options": [{"label": "A", "text": "Jagadguru Rambhadracharya"}, {"label": "B", "text": "Acharya Vidyanand"}, {"label": "C", "text": "Pandit Ravi Shankar"}, {"label": "D", "text": "Sri Sri Ravi Shankar"}], "answer": "A", "explanation": "The 58th Jnanpith Award was jointly awarded to renowned lyricist/filmmaker Gulzar (Urdu) and Sanskrit polymath Jagadguru Rambhadracharya.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-KAN-36", "paper": 1, "section_id": "S3", "subject": "General Kannada", "syllabus_id": "P1-3.1", "origin_tag": "PYQ - GPSTR 2019", "label": "PYQ", "difficulty": "easy", "text": "ಕನ್ನಡ ವರ್ಣಮಾಲೆಯಲ್ಲಿರುವ ಯೋಗವಾಹಗಳ ಒಟ್ಟು ಸಂಖ್ಯೆ ಎಷ್ಟು?", "options": [{"label": "A", "text": "೨ (ಅನುಸ್ವಾರ ಮತ್ತು ವಿಸರ್ಗ)"}, {"label": "B", "text": "೪"}, {"label": "C", "text": "೯"}, {"label": "D", "text": "೨೫"}], "answer": "A", "explanation": "ಯೋಗವಾಹಗಳು ಎರಡು: ಅನುಸ್ವಾರ (o) ಮತ್ತು ವಿಸರ್ಗ (:). ಇವು ಸ್ವತಂತ್ರವಾಗಿ ಉಚ್ಚಾರವಾಗದೆ ಸ್ವರದ ಸಹಾಯದಿಂದ ಉಚ್ಚಾರವಾಗುತ್ತವೆ.", "verbatim": true, "year": 2019, "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 1}, {"id": "P1-T2-KAN-37", "paper": 1, "section_id": "S3", "subject": "General Kannada", "syllabus_id": "P1-3.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "easy", "text": "ಕನ್ನಡ ವರ್ಣಮಾಲೆಯಲ್ಲಿರುವ ಹ್ರಸ್ವ ಸ್ವರಗಳ ಸಂಖ್ಯೆ ಎಷ್ಟು?", "options": [{"label": "A", "text": "೬ (ಅ, ಇ, ಉ, ಋ, ಎ, ಒ)"}, {"label": "B", "text": "೭"}, {"label": "C", "text": "೮"}, {"label": "D", "text": "೫"}], "answer": "A", "explanation": "ಒಂದು ಮಾತ್ರಾ ಕಾಲದಲ್ಲಿ ಉಚ್ಚರಿಸಲಾಗುವ ಸ್ವರಗಳಿಗೆ ಹ್ರಸ್ವ ಸ್ವರಗಳೆನ್ನುವರು. ಅವು ೬: ಅ, ಇ, ಉ, ಋ, ಎ, ಒ.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-KAN-38", "paper": 1, "section_id": "S3", "subject": "General Kannada", "syllabus_id": "P1-3.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "easy", "text": "ಕನ್ನಡ ವರ್ಣಮಾಲೆಯಲ್ಲಿರುವ ಒಟ್ಟು ವರ್ಗೀಯ ವ್ಯಂಜನಗಳ ಸಂಖ್ಯೆ ಎಷ್ಟು?", "options": [{"label": "A", "text": "೨೫"}, {"label": "B", "text": "೩೪"}, {"label": "C", "text": "೯"}, {"label": "D", "text": "೧೪"}], "answer": "A", "explanation": "ಕ-ವರ್ಗದಿಂದ ಮ-ವರ್ಗದವರೆಗೆ ಇರುವ ೨೫ ವ್ಯಂಜನಗಳನ್ನು ವರ್ಗೀಯ ವ್ಯಂಜನಗಳೆಂದು ಕರೆಯಲಾಗುತ್ತದೆ.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-KAN-39", "paper": 1, "section_id": "S3", "subject": "General Kannada", "syllabus_id": "P1-3.1", "origin_tag": "PYQ - GPSTR 2017", "label": "PYQ", "difficulty": "medium", "text": "'ಊರಲ್ಲಿ' (ಊರು + ಅಲ್ಲಿ) - ಈ ಪದದಲ್ಲಿ ಆಗಿರುವ ಸಂಧಿ ಯಾವುದು?", "options": [{"label": "A", "text": "ಲೋಪ ಸಂಧಿ"}, {"label": "B", "text": "ಆಗಮ ಸಂಧಿ"}, {"label": "C", "text": "ಆದೇಶ ಸಂಧಿ"}, {"label": "D", "text": "ಗುಣ ಸಂಧಿ"}], "answer": "A", "explanation": "ಊರು (ಉ) + ಅಲ್ಲಿ (ಅ) = ಊರಲ್ಲಿ. ಪೂರ್ವಪದದ ಅಂತ್ಯದಲ್ಲಿರುವ 'ಉ' ಸ್ವರವು ಲೋಪವಾಗಿರುವುದರಿಂದ ಇದು ಲೋಪ ಸಂಧಿ.", "verbatim": true, "year": 2017, "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 1}, {"id": "P1-T2-KAN-40", "paper": 1, "section_id": "S3", "subject": "General Kannada", "syllabus_id": "P1-3.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "'ಮನೆಯನ್ನು' (ಮನೆ + ಅನ್ನು) - ಈ ಪದದಲ್ಲಿ ಆಗಿರುವ ಸಂಧಿ ಯಾವುದು?", "options": [{"label": "A", "text": "ಯಕಾರಾಗಮ ಸಂಧಿ"}, {"label": "B", "text": "ವಕಾರಾಗಮ ಸಂಧಿ"}, {"label": "C", "text": "ಲೋಪ ಸಂಧಿ"}, {"label": "D", "text": "ಆದೇಶ ಸಂಧಿ"}], "answer": "A", "explanation": "ಮನೆ (ಎ) + ಅನ್ನು = ಮನೆಯನ್ನು. ಪೂರ್ವಪದದ ಅಂತ್ಯದಲ್ಲಿ ಎ/ಏ/ಐ ಸ್ವರಗಳಿದ್ದು ಉತ್ತರಪದದಲ್ಲಿ ಸ್ವರ ಪರವಾದಾಗ 'ಯ್' ಆಗಮವಾಗುವುದು ಯಕಾರಾಗಮ ಸಂಧಿ.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-KAN-41", "paper": 1, "section_id": "S3", "subject": "General Kannada", "syllabus_id": "P1-3.1", "origin_tag": "PYQ - GPSTR 2022", "label": "PYQ", "difficulty": "medium", "text": "'ಮಳೆಗಾಲ' (ಮಳೆ + ಕಾಲ) - ಈ ಪದದಲ್ಲಿ ಯಾವ ಸಂಧಿಕಾರ್ಯ ನಡೆದಿದೆ?", "options": [{"label": "A", "text": "ಆದೇಶ ಸಂಧಿ (ಕ-ಕಾರಕ್ಕೆ ಗ-ಕಾರ ಆದೇಶ)"}, {"label": "B", "text": "ಲೋಪ ಸಂಧಿ"}, {"label": "C", "text": "ಆಗಮ ಸಂಧಿ"}, {"label": "D", "text": "ಗುಣ ಸಂಧಿ"}], "answer": "A", "explanation": "ಉತ್ತರಪದದ ಆದಿಯಲ್ಲಿರುವ ಕ, ತ, ಪ ವ್ಯಂಜನಗಳಿಗೆ ಕ್ರಮವಾಗಿ ಗ, ದ, ಬ ಗಳು ಆದೇಶವಾಗಿ ಬರುವುದು ಆದೇಶ ಸಂಧಿ (ಕಾಲ $\to$ ಗಾಲ).", "verbatim": true, "year": 2022, "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 1}, {"id": "P1-T2-KAN-42", "paper": 1, "section_id": "S3", "subject": "General Kannada", "syllabus_id": "P1-3.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "'ದೇವೇಂದ್ರ' (ದೇವ + ಇಂದ್ರ) - ಈ ಪದವು ಯಾವ ಸಂಸ್ಕೃತ ಸಂಧಿಗೆ ಉದಾಹರಣೆಯಾಗಿದೆ?", "options": [{"label": "A", "text": "ಗುಣ ಸಂಧಿ"}, {"label": "B", "text": "ಸವರ್ಣದೀರ್ಘ ಸಂಧಿ"}, {"label": "C", "text": "ವೃದ್ಧಿ ಸಂಧಿ"}, {"label": "D", "text": "ಯಣ್ ಸಂಧಿ"}], "answer": "A", "explanation": "ಅ/ಆ ಕಾರಗಳಿಗೆ ಇ/ಈ ಕಾರಗಳು ಪರವಾದಾಗ 'ಏ' ಕಾರ ಬರುವುದು ಗುಣ ಸಂಧಿ (ದೇವ + ಇಂದ್ರ = ದೇವೇಂದ್ರ).", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-KAN-43", "paper": 1, "section_id": "S3", "subject": "General Kannada", "syllabus_id": "P1-3.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "'ಏಕೈಕ' (ಏಕ + ಏಕ) - ಈ ಪದದಲ್ಲಿ ಆಗಿರುವ ಸಂಧಿ ಯಾವುದು?", "options": [{"label": "A", "text": "ವೃದ್ಧಿ ಸಂಧಿ"}, {"label": "B", "text": "ಗುಣ ಸಂಧಿ"}, {"label": "C", "text": "ಯಣ್ ಸಂಧಿ"}, {"label": "D", "text": "ಸವರ್ಣದೀರ್ಘ ಸಂಧಿ"}], "answer": "A", "explanation": "ಅ/ಆ ಕಾರಗಳಿಗೆ ಏ/ಐ ಕಾರಗಳು ಪರವಾದಾಗ 'ಐ' ಕಾರವೂ, ಓ/ಔ ಪರವಾದಾಗ 'ಔ' ಕಾರವೂ ಬರುವುದು ವೃದ್ಧಿ ಸಂಧಿ.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-KAN-44", "paper": 1, "section_id": "S3", "subject": "General Kannada", "syllabus_id": "P1-3.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "hard", "text": "'ಪ್ರತ್ಯುತ್ತರ' (ಪ್ರತಿ + ಉತ್ತರ) - ಈ ಪದದಲ್ಲಿ ಆಗಿರುವ ಸಂಧಿ ಯಾವುದು?", "options": [{"label": "A", "text": "ಯಣ್ ಸಂಧಿ"}, {"label": "B", "text": "ಗುಣ ಸಂಧಿ"}, {"label": "C", "text": "ವೃದ್ಧಿ ಸಂಧಿ"}, {"label": "D", "text": "ಸವರ್ಣದೀರ್ಘ ಸಂಧಿ"}], "answer": "A", "explanation": "ಇ, ಈ ಕಾರಗಳಿಗೆ ಅನ್ಯಸ್ವರ ಪರವಾದಾಗ 'ಯ್' ಕಾರ ಬರುವುದು ಯಣ್ ಸಂಧಿ (ಪ್ರತಿ + ಉತ್ತರ = ಪ್ರತ್ಯುತ್ತರ).", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-KAN-45", "paper": 1, "section_id": "S3", "subject": "General Kannada", "syllabus_id": "P1-3.1", "origin_tag": "PYQ - GPSTR 2015", "label": "PYQ", "difficulty": "easy", "text": "'ವಿದ್ಯಾಭ್ಯಾಸ' (ವಿದ್ಯಾ + ಅಭ್ಯಾಸ) - ಈ ಪದವು ಯಾವ ಸಂಧಿಗೆ ಉದಾಹರಣೆ?", "options": [{"label": "A", "text": "ಸವರ್ಣದೀರ್ಘ ಸಂಧಿ"}, {"label": "B", "text": "ಗುಣ ಸಂಧಿ"}, {"label": "C", "text": "ಯಣ್ ಸಂಧಿ"}, {"label": "D", "text": "ವೃದ್ಧಿ ಸಂಧಿ"}], "answer": "A", "explanation": "ಸವರ್ಣ ಸ್ವರಗಳು ಪರವಾದಾಗ ಅದೇ ಜಾತಿಯ ದೀರ್ಘ ಸ್ವರ ಬರುವುದು ಸವರ್ಣದೀರ್ಘ ಸಂಧಿ (ವಿದ್ಯಾ + ಅಭ್ಯಾಸ = ವಿದ್ಯಾಭ್ಯಾಸ).", "verbatim": true, "year": 2015, "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 1}, {"id": "P1-T2-KAN-46", "paper": 1, "section_id": "S3", "subject": "General Kannada", "syllabus_id": "P1-3.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "'ಬೆಟ್ಟಾವರೆ' (ಬೆಟ್ಟದ + ತಾವರೆ) - ಇದು ಯಾವ ಸಮಾಸಕ್ಕೆ ಉದಾಹರಣೆಯಾಗಿದೆ?", "options": [{"label": "A", "text": "ತತ್ಪುರುಷ ಸಮಾಸ"}, {"label": "B", "text": "ಕರ್ಮಧಾರಯ ಸಮಾಸ"}, {"label": "C", "text": "ದ್ವಿಗು ಸಮಾಸ"}, {"label": "D", "text": "ಬಹುಬ್ರೀಹಿ ಸಮಾಸ"}], "answer": "A", "explanation": "ಉತ್ತರಪದದ ಅರ್ಥವು ಪ್ರಧಾನವಾಗಿರುವ ಸಮಾಸವೇ ತತ್ಪುರುಷ ಸಮಾಸ (ಬೆಟ್ಟದ + ತಾವರೆ = ಬೆಟ್ಟಾವರೆ).", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-KAN-47", "paper": 1, "section_id": "S3", "subject": "General Kannada", "syllabus_id": "P1-3.2", "origin_tag": "PYQ - GPSTR 2019", "label": "PYQ", "difficulty": "medium", "text": "'ಹೆಜ್ಜೇನು' (ಹಿರಿದು + ಜೇನು) - ಇದು ಯಾವ ಸಮಾಸಕ್ಕೆ ಉದಾಹರಣೆಯಾಗಿದೆ?", "options": [{"label": "A", "text": "ಕರ್ಮಧಾರಯ ಸಮಾಸ"}, {"label": "B", "text": "ತತ್ಪುರುಷ ಸಮಾಸ"}, {"label": "C", "text": "ಗಮಕ ಸಮಾಸ"}, {"label": "D", "text": "ದ್ವಂದ್ವ ಸಮಾಸ"}], "answer": "A", "explanation": "ಪೂರ್ವಪದವು ವಿಶೇಷಣವಾಗಿಯೂ, ಉತ್ತರಪದವು ವಿಶೇಷ್ಯವಾಗಿಯೂ ಇರುವ ಸಮಾಸವು ಕರ್ಮಧಾರಯ ಸಮಾಸ (ಹಿರಿದು + ಜೇನು = ಹೆಜ್ಜೇನು).", "verbatim": true, "year": 2019, "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 1}, {"id": "P1-T2-KAN-48", "paper": 1, "section_id": "S3", "subject": "General Kannada", "syllabus_id": "P1-3.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "easy", "text": "'ಮುಲ್ಲೋಕ' (ಮೂರು + ಲೋಕ) - ಪೂರ್ವಪದವು ಸಂಖ್ಯಾವಾಚಕವಾಗಿರುವ ಈ ಸಮಾಸ ಯಾವುದು?", "options": [{"label": "A", "text": "ದ್ವಿಗು ಸಮಾಸ"}, {"label": "B", "text": "ದ್ವಂದ್ವ ಸಮಾಸ"}, {"label": "C", "text": "ತತ್ಪುರುಷ ಸಮಾಸ"}, {"label": "D", "text": "ಬಹುಬ್ರೀಹಿ ಸಮಾಸ"}], "answer": "A", "explanation": "ಪೂರ್ವಪದವು ಸಂಖ್ಯಾವಾಚಕವಾಗಿದ್ದು ನಾಮಪದದೊಂದಿಗೆ ಸೇರಿ ಆಗುವ ಸಮಾಸವೇ ದ್ವಿಗು ಸಮಾಸ.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-KAN-49", "paper": 1, "section_id": "S3", "subject": "General Kannada", "syllabus_id": "P1-3.2", "origin_tag": "PYQ - GPSTR 2022", "label": "PYQ", "difficulty": "medium", "text": "'ಮುಕ್ಕಣ್ಣ' (ಮೂರು ಕಣ್ಣುಗಳುಳ್ಳವನು - ಶಿವ) - ಅನ್ಯಪದದ ಅರ್ಥ ಪ್ರಧಾನವಾಗಿರುವ ಈ ಸಮಾಸ ಯಾವುದು?", "options": [{"label": "A", "text": "ಬಹುಬ್ರೀಹಿ ಸಮಾಸ"}, {"label": "B", "text": "ಕರ್ಮಧಾರಯ ಸಮಾಸ"}, {"label": "C", "text": "ದ್ವಿಗು ಸಮಾಸ"}, {"label": "D", "text": "ತತ್ಪುರುಷ ಸಮಾಸ"}], "answer": "A", "explanation": "ಸಮಸ್ತಪದದಲ್ಲಿರುವ ಪದಗಳ ಅರ್ಥವಲ್ಲದೆ ಬೇರೊಂದು ಅನ್ಯಪದದ ಅರ್ಥ ಪ್ರಧಾನವಾಗಿದ್ದರೆ ಅದು ಬಹುಬ್ರೀಹಿ ಸಮಾಸ.", "verbatim": true, "year": 2022, "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 1}, {"id": "P1-T2-KAN-50", "paper": 1, "section_id": "S3", "subject": "General Kannada", "syllabus_id": "P1-3.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "easy", "text": "'ಗಿಡಮರಬಳ್ಳಿಗಳು' - ಎಲ್ಲಾ ಪದಗಳ ಅರ್ಥವೂ ಪ್ರಧಾನವಾಗಿರುವ ಈ ಸಮಾಸ ಯಾವುದು?", "options": [{"label": "A", "text": "ದ್ವಂದ್ವ ಸಮಾಸ"}, {"label": "B", "text": "ದ್ವಿಗು ಸಮಾಸ"}, {"label": "C", "text": "ಬಹುಬ್ರೀಹಿ ಸಮಾಸ"}, {"label": "D", "text": "ಕ್ರಿಯಾ ಸಮಾಸ"}], "answer": "A", "explanation": "ಉಭಯಪದಗಳ ಅಥವಾ ಎಲ್ಲಾ ಪದಗಳ ಅರ್ಥವು ಸಮಾನ ಪ್ರಾಧಾನ್ಯ ಪಡೆದಿರುವ ಸಮಾಸವೇ ದ್ವಂದ್ವ ಸಮಾಸ.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-KAN-51", "paper": 1, "section_id": "S3", "subject": "General Kannada", "syllabus_id": "P1-3.2", "origin_tag": "Synthesized - Hard", "label": "expected", "difficulty": "hard", "text": "'ಅಕ್ಕಲ್ಲು' (ಆ + ಕಲ್ಲು) - ಪೂರ್ವಪದವು ಸರ್ವನಾಮವಾಗಿದ್ದು ಉತ್ತರಪದವು ನಾಮಪದವಾಗಿರುವ ಈ ಸಮಾಸ ಯಾವುದು?", "options": [{"label": "A", "text": "ಗಮಕ ಸಮಾಸ"}, {"label": "B", "text": "ಸಂಧಿ ಸಮಾಸ"}, {"label": "C", "text": "ಕ್ರಿಯಾ ಸಮಾಸ"}, {"label": "D", "text": "ಕರ್ಮಧಾರಯ ಸಮಾಸ"}], "answer": "A", "explanation": "ಪೂರ್ವಪದವು ಸರ್ವನಾಮ ಅಥವಾ ಕೃದಂತವಾಗಿದ್ದು, ಉತ್ತರಪದವು ನಾಮಪದವಾಗಿರುವ ಸಮಾಸಕ್ಕೆ ಗಮಕ ಸಮಾಸವೆನ್ನುತ್ತಾರೆ.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-KAN-52", "paper": 1, "section_id": "S3", "subject": "General Kannada", "syllabus_id": "P1-3.2", "origin_tag": "PYQ - GPSTR 2019", "label": "PYQ", "difficulty": "medium", "text": "ಕನ್ನಡದ 'ಪಂಚಮೀ ವಿಭಕ್ತಿ'ಯ ಪ್ರತ್ಯಯ ಮತ್ತು ಕಾರಕಾರ್ಥ ಯಾವುದು?", "options": [{"label": "A", "text": "'ದೆಸೆಯಿಂದ' - ಅಪಾದಾನ ಕಾರಕ"}, {"label": "B", "text": "'ಅನ್ನು' - ಕರ್ಮ ಕಾರಕ"}, {"label": "C", "text": "'ಇಂದ' - ಕರಣ ಕಾರಕ"}, {"label": "D", "text": "'ಅಲ್ಲಿ' - ಅಧಿಕರಣ ಕಾರಕ"}], "answer": "A", "explanation": "ಪಂಚಮೀ ವಿಭಕ್ತಿಯ ಪ್ರತ್ಯಯ 'ದೆಸೆಯಿಂದ', ಇದರ ಕಾರಕಾರ್ಥ ಅಪಾದಾನ (ಒಂದರಿಂದ ಇನ್ನೊಂದು ಅಗಲುವಿಕೆ/ಬೇರ್ಪಡುವಿಕೆ).", "verbatim": true, "year": 2019, "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 1}, {"id": "P1-T2-KAN-53", "paper": 1, "section_id": "S3", "subject": "General Kannada", "syllabus_id": "P1-3.3", "origin_tag": "PYQ - GPSTR 2017", "label": "PYQ", "difficulty": "easy", "text": "'ವರ್ಷ' ಎಂಬ ಸಂಸ್ಕೃತ ತತ್ಸಮ ಪದದ ಸರಿಯಾದ ತದ್ಭವ ರೂಪ ಯಾವುದು?", "options": [{"label": "A", "text": "ವರುಷ"}, {"label": "B", "text": "ಬರಿಸ"}, {"label": "C", "text": "ವಾರ"}, {"label": "D", "text": "ವಾಸ"}], "answer": "A", "explanation": "ತತ್ಸಮ 'ವರ್ಷ' ಪದದ ತದ್ಭವ ರೂಪ 'ವರುಷ' (ಅಥವಾ ವರುಷಂ).", "verbatim": true, "year": 2017, "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 1}, {"id": "P1-T2-KAN-54", "paper": 1, "section_id": "S3", "subject": "General Kannada", "syllabus_id": "P1-3.3", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "'ಕಾರ್ಯ' ಎಂಬ ತತ್ಸಮ ಪದದ ಸರಿಯಾದ ತದ್ಭವ ರೂಪ ಯಾವುದು?", "options": [{"label": "A", "text": "ಕಜ್ಜ"}, {"label": "B", "text": "ಕರ"}, {"label": "C", "text": "ಕಾರು"}, {"label": "D", "text": "ಕಸುಬು"}], "answer": "A", "explanation": "'ಕಾರ್ಯ' ಪದದ ಕನ್ನಡ ತದ್ಭವ ರೂಪ 'ಕಜ್ಜ'.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-KAN-55", "paper": 1, "section_id": "S3", "subject": "General Kannada", "syllabus_id": "P1-3.3", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "'ಅರ್ಥ' ಎಂಬ ಪದಕ್ಕಿರುವ ನಾನಾರ್ಥಗಳನ್ನು ಗುರುತಿಸಿ:", "options": [{"label": "A", "text": "ಹೊನ್ನು, ಧನ, ಕಾರಣ, ತಾತ್ಪರ್ಯ"}, {"label": "B", "text": "ಅರ್ಧ, ಕಾಲು, ಮುಕ್ಕಾಲು"}, {"label": "C", "text": "ಆಕಾಶ, ಭೂಮಿ, ಪಾತಾಳ"}, {"label": "D", "text": "ಸ್ವರ, ವ್ಯಂಜನ, ಮಾತ್ರಾ"}], "answer": "A", "explanation": "'ಅರ್ಥ' ಪದವು ಧನ/ಸಂಪತ್ತು (ಅರ್ಥಶಾಸ್ತ್ರ), ಕಾರಣ/ಉದ್ದೇಶ, ಹಾಗೂ ತಾತ್ಪರ್ಯ/ಅಭಿಪ್ರಾಯ ಎಂಬ ನಾನಾರ್ಥಗಳನ್ನು ಹೊಂದಿದೆ.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-KAN-56", "paper": 1, "section_id": "S3", "subject": "General Kannada", "syllabus_id": "P1-3.3", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "easy", "text": "'ಅಂಬರ' ಎಂಬ ಪದದ ಸಮಾನಾರ್ಥಕ ಪದ ಯಾವುದು?", "options": [{"label": "A", "text": "ಆಕಾಶ (ಗಗನ) / ವಸ್ತ್ರ"}, {"label": "B", "text": "ಸಮುದ್ರ"}, {"label": "C", "text": "ಪರ್ವತ"}, {"label": "D", "text": "ಅಗ್ನಿ"}], "answer": "A", "explanation": "'ಅಂಬರ' ಎಂದರೆ ಆಕಾಶ (ಆಕಾಶ ನೀಲಿ) ಹಾಗೂ ಬಟ್ಟೆ/ವಸ್ತ್ರ (ಪೀತಾಂಬರ) ಎಂದರ್ಥ.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-KAN-57", "paper": 1, "section_id": "S3", "subject": "General Kannada", "syllabus_id": "P1-3.3", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "easy", "text": "'ಪ್ರತ್ಯಕ್ಷ' ಪದದ ಸರಿಯಾದ ವಿರುದ್ಧ ಪದ ಯಾವುದು?", "options": [{"label": "A", "text": "ಪರೋಕ್ಷ"}, {"label": "B", "text": "ಅಪ್ರತ್ಯಕ್ಷ"}, {"label": "C", "text": "ಅಪರೋಕ್ಷ"}, {"label": "D", "text": "ವಿಪರೀತ"}], "answer": "A", "explanation": "'ಪ್ರತ್ಯಕ್ಷ' (ಕಣ್ಣಿಗೆ ಕಾಣುವಂತಹುದು) ಪದದ ಸರಿಯಾದ ವ್ಯಾಕರಣಬದ್ಧ ವಿರುದ್ಧ ಪದ 'ಪರೋಕ್ಷ'.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-KAN-58", "paper": 1, "section_id": "S3", "subject": "General Kannada", "syllabus_id": "P1-3.3", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "easy", "text": "'ಉಪ್ಪಿಗಿಂತ ರುಚಿಯಿಲ್ಲ, ___________ ಬಂಧುವಿಲ್ಲ' - ಈ ಗಾದೆ ಮಾತಿನ ಬಿಟ್ಟ ಪದವನ್ನು ಭರ್ತಿ ಮಾಡಿ:", "options": [{"label": "A", "text": "ತಾಯಿಗಿಂತ"}, {"label": "B", "text": "ತಂದೆಗಿಂತ"}, {"label": "C", "text": "ಗುರುವಿಗಿಂತ"}, {"label": "D", "text": "ಅಣ್ಣನಿಗಿಂತ"}], "answer": "A", "explanation": "ಪ್ರಸಿದ್ಧ ಕನ್ನಡ ಗಾದೆ: 'ಉಪ್ಪಿಗಿಂತ ರುಚಿಯಿಲ್ಲ, ತಾಯಿಗಿಂತ ಬಂಧುವಿಲ್ಲ'.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-KAN-59", "paper": 1, "section_id": "S3", "subject": "General Kannada", "syllabus_id": "P1-3.3", "origin_tag": "Synthesized - Hard", "label": "expected", "difficulty": "hard", "text": "'ಮುಖವು ಕಮಲದಂತೆ ಸುಂದರವಾಗಿದೆ' - ಈ ವಾಕ್ಯದಲ್ಲಿರುವ ಉಪಮಾನ ಯಾವುದು?", "options": [{"label": "A", "text": "ಕಮಲ"}, {"label": "B", "text": "ಮುಖ"}, {"label": "C", "text": "ಅಂತೆ"}, {"label": "D", "text": "ಸುಂದರವಾಗಿದೆ"}], "answer": "A", "explanation": "ಹೋಲಿಕೆಗೆ ಬಳಸಲಾದ ಪ್ರಸಿದ್ಧ ವಸ್ತು 'ಕಮಲ' ಉಪಮಾನ; ಹೋಲಿಸಲ್ಪಡುವ ವಸ್ತು 'ಮುಖ' ಉಪಮೇಯ; 'ಅಂತೆ' ಉಪಮಾವಾಚಕ; 'ಸುಂದರ' ಸಮಾನಧರ್ಮ.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-KAN-60", "paper": 1, "section_id": "S3", "subject": "General Kannada", "syllabus_id": "P1-3.3", "origin_tag": "Synthesized - Hard", "label": "expected", "difficulty": "hard", "text": "ಕಂದ ಪದ್ಯದಲ್ಲಿರುವ ನಾಲ್ಕು ಪಾದಗಳ ಒಟ್ಟು ಮಾತ್ರಾ ಸಂಖ್ಯೆ ಎಷ್ಟು?", "options": [{"label": "A", "text": "೬೪ ಮಾತ್ರಾಗಳು (೧೨ + ೨೦ + ೧೨ + ೨೦)"}, {"label": "B", "text": "೬೦ ಮಾತ್ರಾಗಳು"}, {"label": "C", "text": "೪೮ ಮಾತ್ರಾಗಳು"}, {"label": "D", "text": "೭೨ ಮಾತ್ರಾಗಳು"}], "answer": "A", "explanation": "ಕಂದ ಪದ್ಯದ ೧ ಮತ್ತು ೩ ನೇ ಪಾದಗಳಲ್ಲಿ ತಲಾ ೧೨ ಮಾತ್ರಾಗಳು (೩ ಚತುರ್ಮಾತ್ರೆಗಳು), ೨ ಮತ್ತು ೪ ನೇ ಪಾದಗಳಲ್ಲಿ ತಲಾ ೨೦ ಮಾತ್ರಾಗಳು (೫ ಚತುರ್ಮಾತ್ರೆಗಳು) ಒಟ್ಟು ೬೪ ಮಾತ್ರಾಗಳಿರುತ್ತವೆ.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-ENG-61", "paper": 1, "section_id": "S4", "subject": "General English", "syllabus_id": "P1-4.1", "origin_tag": "PYQ - GPSTR 2019", "label": "PYQ", "difficulty": "medium", "text": "Neither the teacher nor the students _______ present in the laboratory yesterday.", "options": [{"label": "A", "text": "were"}, {"label": "B", "text": "was"}, {"label": "C", "text": "is"}, {"label": "D", "text": "are"}], "answer": "A", "explanation": "When two subjects are joined by 'neither... nor', the verb agrees with the closer subject ('the students', plural), hence 'were'.", "verbatim": true, "year": 2019, "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 1}, {"id": "P1-T2-ENG-62", "paper": 1, "section_id": "S4", "subject": "General English", "syllabus_id": "P1-4.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "hard", "text": "If she _______ studied diligently, she would have passed the teacher recruitment examination.", "options": [{"label": "A", "text": "had"}, {"label": "B", "text": "has"}, {"label": "C", "text": "have"}, {"label": "D", "text": "would have"}], "answer": "A", "explanation": "Third conditional structure requires 'If + past perfect (had + V3), ... would have + V3'.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-ENG-63", "paper": 1, "section_id": "S4", "subject": "General English", "syllabus_id": "P1-4.1", "origin_tag": "PYQ - GPSTR 2022", "label": "PYQ", "difficulty": "medium", "text": "Convert into Passive Voice: 'The committee has submitted the evaluation report.'", "options": [{"label": "A", "text": "The evaluation report has been submitted by the committee."}, {"label": "B", "text": "The evaluation report had been submitted by the committee."}, {"label": "C", "text": "The evaluation report was submitted by the committee."}, {"label": "D", "text": "The evaluation report is submitted by the committee."}], "answer": "A", "explanation": "Present perfect active ('has submitted') changes to passive with 'has been submitted'.", "verbatim": true, "year": 2022, "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 1}, {"id": "P1-T2-ENG-64", "paper": 1, "section_id": "S4", "subject": "General English", "syllabus_id": "P1-4.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "Convert into Indirect Speech: He said, 'I am working on my lesson plan.'", "options": [{"label": "A", "text": "He said that he was working on his lesson plan."}, {"label": "B", "text": "He said that I am working on my lesson plan."}, {"label": "C", "text": "He told that he is working on his lesson plan."}, {"label": "D", "text": "He said that he had been working on his lesson plan."}], "answer": "A", "explanation": "Present continuous ('am working') shifts to past continuous ('was working') in reported speech.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-ENG-65", "paper": 1, "section_id": "S4", "subject": "General English", "syllabus_id": "P1-4.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "easy", "text": "The headmaster is very proud _______ his school's academic achievements.", "options": [{"label": "A", "text": "of"}, {"label": "B", "text": "on"}, {"label": "C", "text": "at"}, {"label": "D", "text": "for"}], "answer": "A", "explanation": "The adjective 'proud' takes the fixed preposition 'of' ('proud of something').", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-ENG-66", "paper": 1, "section_id": "S4", "subject": "General English", "syllabus_id": "P1-4.1", "origin_tag": "PYQ - GPSTR 2017", "label": "PYQ", "difficulty": "medium", "text": "Choose the correct article: 'He is _______ European scholar visiting our university.'", "options": [{"label": "A", "text": "a"}, {"label": "B", "text": "an"}, {"label": "C", "text": "the"}, {"label": "D", "text": "no article"}], "answer": "A", "explanation": "'European' begins with the consonant sound /j/ (yoo-ro-pee-an), hence takes the indefinite article 'a'.", "verbatim": true, "year": 2017, "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 1}, {"id": "P1-T2-ENG-67", "paper": 1, "section_id": "S4", "subject": "General English", "syllabus_id": "P1-4.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "What is the meaning of the idiom 'To burn the candle at both ends'?", "options": [{"label": "A", "text": "To work excessively hard from early morning until late night"}, {"label": "B", "text": "To waste money recklessly"}, {"label": "C", "text": "To cause accidental fire"}, {"label": "D", "text": "To be very generous"}], "answer": "A", "explanation": "'To burn the candle at both ends' means exhausting oneself by working early and late without rest.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-ENG-68", "paper": 1, "section_id": "S4", "subject": "General English", "syllabus_id": "P1-4.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "easy", "text": "Choose the synonym of the word 'METICULOUS':", "options": [{"label": "A", "text": "Careful and thorough"}, {"label": "B", "text": "Careless"}, {"label": "C", "text": "Rapid"}, {"label": "D", "text": "Stubborn"}], "answer": "A", "explanation": "'Meticulous' means showing great attention to detail; very careful and precise.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-ENG-69", "paper": 1, "section_id": "S4", "subject": "General English", "syllabus_id": "P1-4.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "easy", "text": "Choose the antonym of the word 'OBSOLETE':", "options": [{"label": "A", "text": "Modern / Contemporary"}, {"label": "B", "text": "Ancient"}, {"label": "C", "text": "Outdated"}, {"label": "D", "text": "Extinct"}], "answer": "A", "explanation": "'Obsolete' means no longer produced or used (out of date); its antonym is 'modern' or 'current'.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-ENG-70", "paper": 1, "section_id": "S4", "subject": "General English", "syllabus_id": "P1-4.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "Identify the correctly spelt word:", "options": [{"label": "A", "text": "Accommodation"}, {"label": "B", "text": "Accomodation"}, {"label": "C", "text": "Acommodation"}, {"label": "D", "text": "Accomadation"}], "answer": "A", "explanation": "'Accommodation' is spelled with double 'c' and double 'm'.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-ENG-71", "paper": 1, "section_id": "S4", "subject": "General English", "syllabus_id": "P1-4.1", "origin_tag": "PYQ - GPSTR 2019", "label": "PYQ", "difficulty": "medium", "text": "Find the error in: 'Each of the girls (A) / have brought (B) / their homework (C) / No error (D)'", "options": [{"label": "A", "text": "Part B ('have brought' should be 'has brought')"}, {"label": "B", "text": "Part A"}, {"label": "C", "text": "Part C"}, {"label": "D", "text": "Part D"}], "answer": "A", "explanation": "'Each' takes a singular verb, so 'have brought' must be replaced by 'has brought'.", "verbatim": true, "year": 2019, "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 1}, {"id": "P1-T2-ENG-72", "paper": 1, "section_id": "S4", "subject": "General English", "syllabus_id": "P1-4.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "The phrasal verb 'call off' means:", "options": [{"label": "A", "text": "To cancel"}, {"label": "B", "text": "To postpone"}, {"label": "C", "text": "To shout loudly"}, {"label": "D", "text": "To visit unexpectedly"}], "answer": "A", "explanation": "'To call off' means to cancel an event or arrangement ('The strike was called off').", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-ENG-73", "paper": 1, "section_id": "S4", "subject": "General English", "syllabus_id": "P1-4.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "easy", "text": "Scarcely had the teacher entered the classroom _______ the bell rang.", "options": [{"label": "A", "text": "when"}, {"label": "B", "text": "than"}, {"label": "C", "text": "then"}, {"label": "D", "text": "that"}], "answer": "A", "explanation": "'Scarcely... when' and 'Hardly... when' are standard correlative conjunction pairs ('No sooner... than').", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-ENG-74", "paper": 1, "section_id": "S4", "subject": "General English", "syllabus_id": "P1-4.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "A person who loves and collects books is called a:", "options": [{"label": "A", "text": "Bibliophile"}, {"label": "B", "text": "Philatelist"}, {"label": "C", "text": "Numismatist"}, {"label": "D", "text": "Polyglot"}], "answer": "A", "explanation": "A 'bibliophile' is a lover and collector of books (philatelist collects stamps; numismatist collects coins).", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-ENG-75", "paper": 1, "section_id": "S4", "subject": "General English", "syllabus_id": "P1-4.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "hard", "text": "Identify the figure of speech in: 'The classroom was a zoo during the lunch break.'", "options": [{"label": "A", "text": "Metaphor"}, {"label": "B", "text": "Simile"}, {"label": "C", "text": "Personification"}, {"label": "D", "text": "Oxymoron"}], "answer": "A", "explanation": "A direct comparison equating the classroom to a zoo without 'like' or 'as' is a Metaphor.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-ENG-76", "paper": 1, "section_id": "S4", "subject": "General English", "syllabus_id": "P1-4.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "Select the correct tag question: 'She plays the veena exceptionally well, _______?'", "options": [{"label": "A", "text": "doesn't she?"}, {"label": "B", "text": "does she?"}, {"label": "C", "text": "isn't she?"}, {"label": "D", "text": "won't she?"}], "answer": "A", "explanation": "Positive present simple with third person singular takes the negative question tag 'doesn't she?'.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-ENG-77", "paper": 1, "section_id": "S4", "subject": "General English", "syllabus_id": "P1-4.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "He has been absent from school _______ Monday last.", "options": [{"label": "A", "text": "since"}, {"label": "B", "text": "for"}, {"label": "C", "text": "from"}, {"label": "D", "text": "in"}], "answer": "A", "explanation": "'Since' denotes a specific point in past time from which an action has continued up to the present.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-ENG-78", "paper": 1, "section_id": "S4", "subject": "General English", "syllabus_id": "P1-4.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "easy", "text": "What is the antonym of 'BENEVOLENT'?", "options": [{"label": "A", "text": "Malevolent"}, {"label": "B", "text": "Generous"}, {"label": "C", "text": "Charitable"}, {"label": "D", "text": "Helpful"}], "answer": "A", "explanation": "'Benevolent' means well-meaning and kindly; 'Malevolent' means having or showing a wish to do evil.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-ENG-79", "paper": 1, "section_id": "S4", "subject": "General English", "syllabus_id": "P1-4.1", "origin_tag": "PYQ - GPSTR 2017", "label": "PYQ", "difficulty": "medium", "text": "Identify the part of speech of the underlined word: 'The brave soldier fought *courageously*.'", "options": [{"label": "A", "text": "Adverb"}, {"label": "B", "text": "Adjective"}, {"label": "C", "text": "Noun"}, {"label": "D", "text": "Verb"}], "answer": "A", "explanation": "'Courageously' modifies the verb 'fought', describing how the soldier fought, hence an Adverb.", "verbatim": true, "year": 2017, "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 1}, {"id": "P1-T2-ENG-80", "paper": 1, "section_id": "S4", "subject": "General English", "syllabus_id": "P1-4.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "easy", "text": "Choose the correct collective noun: 'A _______ of wolves was spotted near the forest reserve.'", "options": [{"label": "A", "text": "pack"}, {"label": "B", "text": "herd"}, {"label": "C", "text": "flock"}, {"label": "D", "text": "swarm"}], "answer": "A", "explanation": "Wolves assemble in a 'pack' (birds in a flock, cattle in a herd, bees in a swarm).", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-ENG-81", "paper": 1, "section_id": "S4", "subject": "General English", "syllabus_id": "P1-4.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "Which sentence is grammatically correct?", "options": [{"label": "A", "text": "One of my friends is an engineer."}, {"label": "B", "text": "One of my friend are an engineer."}, {"label": "C", "text": "One of my friends are an engineer."}, {"label": "D", "text": "One of my friend is an engineer."}], "answer": "A", "explanation": "'One of + plural noun' takes a singular verb: 'One of my friends is an engineer'.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-ENG-82", "paper": 1, "section_id": "S4", "subject": "General English", "syllabus_id": "P1-4.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "What does the Latin phrase 'DE FACTO' mean?", "options": [{"label": "A", "text": "In reality / in practice (whether by right or not)"}, {"label": "B", "text": "According to lawful decree"}, {"label": "C", "text": "For the public good"}, {"label": "D", "text": "Without prior preparation"}], "answer": "A", "explanation": "'De facto' denotes existing in actual fact or practice, distinct from 'de jure' (according to law).", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-ENG-83", "paper": 1, "section_id": "S4", "subject": "General English", "syllabus_id": "P1-4.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "The teacher told the students that oil _______ on water.", "options": [{"label": "A", "text": "floats"}, {"label": "B", "text": "floated"}, {"label": "C", "text": "was floating"}, {"label": "D", "text": "had floated"}], "answer": "A", "explanation": "Universal truths and scientific facts remain in the simple present tense even in indirect speech.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-ENG-84", "paper": 1, "section_id": "S4", "subject": "General English", "syllabus_id": "P1-4.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "easy", "text": "Choose the synonym of 'CANDID':", "options": [{"label": "A", "text": "Frank and outspoken"}, {"label": "B", "text": "Deceitful"}, {"label": "C", "text": "Shy"}, {"label": "D", "text": "Arrogant"}], "answer": "A", "explanation": "'Candid' means truthful, straightforward, and sincere in expression.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-ENG-85", "paper": 1, "section_id": "S4", "subject": "General English", "syllabus_id": "P1-4.1", "origin_tag": "Synthesized - Hard", "label": "expected", "difficulty": "hard", "text": "Identify the clause type of the underlined group: 'I do not know *where he lives*.'", "options": [{"label": "A", "text": "Noun clause (Object of the verb 'know')"}, {"label": "B", "text": "Adverb clause of place"}, {"label": "C", "text": "Adjective clause"}, {"label": "D", "text": "Prepositional clause"}], "answer": "A", "explanation": "'Where he lives' functions as the direct object of the transitive verb 'know', hence it is a Noun clause.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-PSY-86", "paper": 1, "section_id": "S5", "subject": "Educational Psychology", "syllabus_id": "P1-5.1", "origin_tag": "PYQ - GPSTR 2019", "label": "PYQ", "difficulty": "medium", "text": "According to Jean Piaget, the cognitive ability of 'Conservation' (understanding that quantity remains unchanged despite perceptual alterations in shape) develops during which stage?", "text_alt": "ಜೀನ್ ಪಿಯಾಜೆ ಪ್ರಕಾರ, ಆಕಾರ ಬದಲಾದರೂ ಪ್ರಮಾಣ ಬದಲಾಗುವುದಿಲ್ಲ ಎಂಬ 'ಸಂರಕ್ಷಣಾ' (Conservation) ಪರಿಕಲ್ಪನೆ ಯಾವ ಹಂತದಲ್ಲಿ ವಿಕಾಸಗೊಳ್ಳುತ್ತದೆ?", "options": [{"label": "A", "text": "Concrete Operational Stage (7–11 years)"}, {"label": "B", "text": "Sensorimotor Stage (0–2 years)"}, {"label": "C", "text": "Pre-operational Stage (2–7 years)"}, {"label": "D", "text": "Formal Operational Stage (11+ years)"}], "answer": "A", "explanation": "Conservation and reversibility emerge during the Concrete Operational Stage (7–11 years), whereas centration dominates the Pre-operational stage.", "verbatim": true, "year": 2019, "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 1}, {"id": "P1-T2-PSY-87", "paper": 1, "section_id": "S5", "subject": "Educational Psychology", "syllabus_id": "P1-5.1", "origin_tag": "PYQ - GPSTR 2022", "label": "PYQ", "difficulty": "medium", "text": "In Lev Vygotsky's socio-cultural theory, the gap between what a child can do independently and what they can achieve with guidance is termed:", "text_alt": "ವೈಗೋಟ್ಸ್ಕಿ ಸಿದ್ಧಾಂತದಲ್ಲಿ ಮಗು ಸ್ವತಂತ್ರವಾಗಿ ಮಾಡಬಲ್ಲ ಮತ್ತು ಹಿರಿಯರ ಮಾರ್ಗದರ್ಶನದಲ್ಲಿ ಸಾಧಿಸಬಹುದಾದ ಕಲಿಕೆಯ ನಡುವಿನ ಅಂತರವೇನು?", "options": [{"label": "A", "text": "Zone of Proximal Development (ZPD)"}, {"label": "B", "text": "Schema"}, {"label": "C", "text": "Equilibration"}, {"label": "D", "text": "Metacognition"}], "answer": "A", "explanation": "ZPD represents the learning sweet spot where scaffolding from a More Knowledgeable Other (MKO) facilitates mastery.", "verbatim": true, "year": 2022, "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 1}, {"id": "P1-T2-PSY-88", "paper": 1, "section_id": "S5", "subject": "Educational Psychology", "syllabus_id": "P1-5.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "In Lawrence Kohlberg's theory of moral development, universal ethical principles and conscience belong to which moral level?", "text_alt": "ಕೊಹ್ಲ್‌ಬರ್ಗ್ ನೈತಿಕ ವಿಕಾಸ ಸಿದ್ಧಾಂತದಲ್ಲಿ ಸಾರ್ವತ್ರಿಕ ನೈತಿಕ ತತ್ವಗಳು ಮತ್ತು ಆತ್ಮಸಾಕ್ಷಿಯ ತೀರ್ಪುಗಳು ಯಾವ ಹಂತಕ್ಕೆ ಸೇರುತ್ತವೆ?", "options": [{"label": "A", "text": "Post-conventional Morality"}, {"label": "B", "text": "Pre-conventional Morality"}, {"label": "C", "text": "Conventional Morality"}, {"label": "D", "text": "Heteronomous Morality"}], "answer": "A", "explanation": "Stage 6 (Universal Ethical Principles) is the highest stage of Post-conventional morality, transcending social laws when laws conflict with justice.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-PSY-89", "paper": 1, "section_id": "S5", "subject": "Educational Psychology", "syllabus_id": "P1-5.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "According to Erik Erikson's psychosocial theory, which developmental crisis characterizes adolescence (12–18 years)?", "text_alt": "ಎರಿಕ್ ಎರಿಕ್ಸನ್ ಸಿದ್ಧಾಂತದ ಪ್ರಕಾರ ಹದಿಹರೆಯದಲ್ಲಿ (12-18 ವರ್ಷ) ಉಂಟಾಗುವ ಮಾನಸಿಕ-ಸಾಮಾಜಿಕ ಬಿಕ್ಕಟ್ಟು ಯಾವುದು?", "options": [{"label": "A", "text": "Identity vs. Role Confusion"}, {"label": "B", "text": "Trust vs. Mistrust"}, {"label": "C", "text": "Industry vs. Inferiority"}, {"label": "D", "text": "Intimacy vs. Isolation"}], "answer": "A", "explanation": "Adolescents explore personal identity and values; failure to resolve this stage leads to role confusion and lack of direction.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-PSY-90", "paper": 1, "section_id": "S5", "subject": "Educational Psychology", "syllabus_id": "P1-5.2", "origin_tag": "PYQ - GPSTR 2017", "label": "PYQ", "difficulty": "medium", "text": "Howard Gardner's Theory of Multiple Intelligences identifies eight distinct intelligences. The ability to understand others' motives and moods is called:", "text_alt": "ಗಾರ್ಡ್ನರ್ ಬಹುಮುಖಿ ಬುದ್ಧಿಶಕ್ತಿ ಸಿದ್ಧಾಂತದಲ್ಲಿ ಇತರರ ಭಾವನೆಗಳು, ಪ್ರೇರಣೆಗಳು ಮತ್ತು ಮನಸ್ಥಿತಿಯನ್ನು ಗ್ರಹಿಸುವ ಸಾಮರ್ಥ್ಯಕ್ಕೆ ಏನೆನ್ನುತ್ತಾರೆ?", "options": [{"label": "A", "text": "Interpersonal Intelligence"}, {"label": "B", "text": "Intrapersonal Intelligence"}, {"label": "C", "text": "Spatial Intelligence"}, {"label": "D", "text": "Linguistic Intelligence"}], "answer": "A", "explanation": "Interpersonal intelligence relates to understanding other people; Intrapersonal intelligence is self-awareness of one's own feelings and goals.", "verbatim": true, "year": 2017, "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 1}, {"id": "P1-T2-PSY-91", "paper": 1, "section_id": "S5", "subject": "Educational Psychology", "syllabus_id": "P1-5.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "In Robert Sternberg's Triarchic Theory of Intelligence, which three components constitute human intelligence?", "text_alt": "ರಾಬರ್ಟ್ ಸ್ಟರ್ನ್‌ಬರ್ಗ್ ಅವರ ಬುದ್ಧಿಶಕ್ತಿ ಸಿದ್ಧಾಂತದಲ್ಲಿ ಪ್ರತಿಪಾದಿಸಲಾದ ಮೂರು ಅಂಶಗಳು ಯಾವುವು?", "options": [{"label": "A", "text": "Analytical, Creative, and Practical Intelligence"}, {"label": "B", "text": "Verbal, Mathematical, and Spatial"}, {"label": "C", "text": "Fluid, Crystallized, and General"}, {"label": "D", "text": "Cognitive, Affective, and Psychomotor"}], "answer": "A", "explanation": "Sternberg's Triarchic Theory posits Componential (Analytical), Experiential (Creative), and Contextual (Practical) intelligence.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-PSY-92", "paper": 1, "section_id": "S5", "subject": "Educational Psychology", "syllabus_id": "P1-5.3", "origin_tag": "PYQ - GPSTR 2019", "label": "PYQ", "difficulty": "easy", "text": "Edward Thorndike's primary law of learning stating that responses followed by satisfaction are strengthened is known as the:", "text_alt": "ತೃಪ್ತಿಯನ್ನು ನೀಡುವ ಪ್ರತಿಕ್ರಿಯೆಗಳು ಬಲಗೊಳ್ಳುತ್ತವೆ ಎಂದು ಪ್ರತಿಪಾದಿಸುವ ಥಾರ್ನ್‌ಡೈಕ್ ಕಲಿಕಾ ನಿಯಮ ಯಾವುದು?", "options": [{"label": "A", "text": "Law of Effect (ಪರಿಣಾಮ ನಿಯಮ)"}, {"label": "B", "text": "Law of Readiness (ಸಿದ್ಧತಾ ನಿಯಮ)"}, {"label": "C", "text": "Law of Exercise (ಅಭ್ಯಾಸ ನಿಯಮ)"}, {"label": "D", "text": "Law of Associative Shifting"}], "answer": "A", "explanation": "The Law of Effect posits that behavior followed by satisfying consequences tends to be repeated, while annoying consequences weaken it.", "verbatim": true, "year": 2019, "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 1}, {"id": "P1-T2-PSY-93", "paper": 1, "section_id": "S5", "subject": "Educational Psychology", "syllabus_id": "P1-5.3", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "hard", "text": "In B. F. Skinner's Operant Conditioning, which reinforcement schedule produces the highest resistance to extinction (as seen in slot machines)?", "text_alt": "ಸ್ಕಿನ್ನರ್ ಅವರ ಕಾರ್ಯಾತ್ಮಕ ಅಭಿವರ್ತನೆಯಲ್ಲಿ ನಷ್ಟವಾಗುವುದನ್ನು ಹೆಚ್ಚು ತಡೆಯುವ ಮತ್ತು ಅತಿ ಹೆಚ್ಚು ಪ್ರತಿಕ್ರಿಯೆ ನೀಡುವ ಬಲವರ್ಧನಾ ವೇಳಾಪಟ್ಟಿ ಯಾವುದು?", "options": [{"label": "A", "text": "Variable Ratio Schedule"}, {"label": "B", "text": "Fixed Interval Schedule"}, {"label": "C", "text": "Fixed Ratio Schedule"}, {"label": "D", "text": "Continuous Reinforcement"}], "answer": "A", "explanation": "Variable Ratio (VR) reinforcement provides rewards after an unpredictable number of responses, yielding steady, rapid rates resistant to extinction.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-PSY-94", "paper": 1, "section_id": "S5", "subject": "Educational Psychology", "syllabus_id": "P1-5.3", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "Ivan Pavlov's classical conditioning demonstrated that presenting a conditioned stimulus repeatedly without the unconditioned stimulus leads to:", "text_alt": "ಪಾವ್ಲೋವ್ ಅವರ ಅಭಿಜಾತ ಅಭಿವರ್ತನೆಯಲ್ಲಿ ಪ್ರಚೋದಕವನ್ನು ಪುನರಾವರ್ತಿಸಿದಾಗ ಬಲವರ್ಧನೆ ಇಲ್ಲದಿದ್ದರೆ ಉಂಟಾಗುವ ಪ್ರಕ್ರಿಯೆ ಯಾವುದು?", "options": [{"label": "A", "text": "Extinction (ಲೋಪ/ನಷ್ಟ)"}, {"label": "B", "text": "Spontaneous Recovery"}, {"label": "C", "text": "Generalization"}, {"label": "D", "text": "Discrimination"}], "answer": "A", "explanation": "Extinction occurs when the conditioned stimulus (bell) is repeatedly presented without the unconditioned stimulus (food), causing the response to decline.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-PSY-95", "paper": 1, "section_id": "S5", "subject": "Educational Psychology", "syllabus_id": "P1-5.3", "origin_tag": "PYQ - GPSTR 2022", "label": "PYQ", "difficulty": "medium", "text": "Albert Bandura's Social Learning Theory emphasizes that learning occurs through observation and modeling. What are the four observational processes in order?", "text_alt": "ಬಂಡೂರ ಅವರ ಸಾಮಾಜಿಕ ಕಲಿಕಾ ಸಿದ್ಧಾಂತದಲ್ಲಿ ಮಾದರಿ ವೀಕ್ಷಣಾ ಕಲಿಕೆಯ ನಾಲ್ಕು ಹಂತಗಳು ಕ್ರಮವಾಗಿ ಯಾವುವು?", "options": [{"label": "A", "text": "Attention $\\to$ Retention $\\to$ Reproduction $\\to$ Motivation"}, {"label": "B", "text": "Motivation $\\to$ Attention $\\to$ Retention $\\to$ Action"}, {"label": "C", "text": "Retention $\\to$ Attention $\\to$ Reinforcement $\\to$ Recall"}, {"label": "D", "text": "Stimulus $\\to$ Response $\\to$ Practice $\\to$ Reward"}], "answer": "A", "explanation": "Bandura's four observational learning sub-processes are: Attention (observing), Retention (remembering), Production/Motor Reproduction, and Motivation.", "verbatim": true, "year": 2022, "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 1}, {"id": "P1-T2-PSY-96", "paper": 1, "section_id": "S5", "subject": "Educational Psychology", "syllabus_id": "P1-5.4", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "Under the Rights of Persons with Disabilities (RPwD) Act, 2016, how many categories of disabilities are officially recognized in India?", "text_alt": "ಅಂಗವಿಕಲರ ಹಕ್ಕುಗಳ ಕಾಯ್ದೆ 2016 ರ (RPwD Act) ಅನ್ವಯ ಭಾರತದಲ್ಲಿ ಅಧಿಕೃತವಾಗಿ ಗುರುತಿಸಲಾದ ನ್ಯೂನತೆಗಳ/ಅಂಗವೈಕಲ್ಯಗಳ ಸಂಖ್ಯೆ ಎಷ್ಟು?", "options": [{"label": "A", "text": "21 categories"}, {"label": "B", "text": "7 categories"}, {"label": "C", "text": "14 categories"}, {"label": "D", "text": "28 categories"}], "answer": "A", "explanation": "The RPwD Act 2016 expanded recognized disabilities from 7 to 21, including autism, intellectual disability, acid attack survivors, and specific learning disabilities.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-PSY-97", "paper": 1, "section_id": "S5", "subject": "Educational Psychology", "syllabus_id": "P1-5.4", "origin_tag": "PYQ - GPSTR 2017", "label": "PYQ", "difficulty": "easy", "text": "A specific learning disability primarily characterized by persistent difficulties in reading decoding, spelling, and word recognition is called:", "text_alt": "ಓದುವಿಕೆ, ಕಾಗುಣಿತ ಮತ್ತು ಪದಗಳನ್ನು ಗುರುತಿಸುವಲ್ಲಿ ನಿರಂತರ ತೊಂದರೆ ಪಡುವ ಕಲಿಕಾ ನ್ಯೂನತೆ ಯಾವುದು?", "options": [{"label": "A", "text": "Dyslexia (ಡಿಸ್ಲೆಕ್ಸಿಯಾ)"}, {"label": "B", "text": "Dyscalculia (ಡಿಸ್ಕ್ಯಾಲ್ಕುಲಿಯಾ)"}, {"label": "C", "text": "Dysgraphia (ಡಿಸ್ಗ್ರಾಫಿಯಾ)"}, {"label": "D", "text": "Dyspraxia (ಡಿಸ್ಪ್ರ್ಯಾಕ್ಸಿಯಾ)"}], "answer": "A", "explanation": "Dyslexia affects reading decoding; Dyscalculia affects mathematical calculations; Dysgraphia impairs handwriting and fine motor transcription.", "verbatim": true, "year": 2017, "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 1}, {"id": "P1-T2-PSY-98", "paper": 1, "section_id": "S5", "subject": "Educational Psychology", "syllabus_id": "P1-5.4", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "Section 12(1)(c) of the Right to Education (RTE) Act, 2009 mandates what percentage of reservation in private unaided schools for children from disadvantaged groups?", "text_alt": "ಶಿಕ್ಷಣ ಹಕ್ಕು ಕಾಯ್ದೆ 2009 ರ ಕಲಂ 12(1)(c) ಅನ್ವಯ ಖಾಸಗಿ ಅನುದಾನರಹಿತ ಶಾಲೆಗಳಲ್ಲಿ ಹಿಂದುಳಿದ ವರ್ಗದ ಮಕ್ಕಳಿಗೆ ಎಷ್ಟು ಶೇಕಡಾ ಸೀಟುಗಳನ್ನು ಮೀಸಲಿಡಬೇಕು?", "options": [{"label": "A", "text": "25%"}, {"label": "B", "text": "33%"}, {"label": "C", "text": "50%"}, {"label": "D", "text": "15%"}], "answer": "A", "explanation": "RTE Section 12(1)(c) requires private unaided schools to admit at least 25% children from weaker sections and disadvantaged groups in Grade 1/pre-primary.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-PSY-99", "paper": 1, "section_id": "S5", "subject": "Educational Psychology", "syllabus_id": "P1-5.5", "origin_tag": "PYQ - GPSTR 2019", "label": "PYQ", "difficulty": "medium", "text": "In the revised Bloom's Taxonomy of educational objectives (Anderson & Krathwohl, 2001), what is the highest cognitive process level?", "text_alt": "ಆ್ಯಂಡರ್ಸನ್ ಮತ್ತು ಕ್ರಾತ್‌ವೋಲ್ ಅವರ ಪರಿಷ್ಕೃತ ಬ್ಲೂಮ್ಸ್ ವರ್ಗೀಕರಣದಲ್ಲಿ ಅತಿ ಉನ್ನತ ಮಟ್ಟದ ಜ್ಞಾನಾತ್ಮಕ ಪ್ರಕ್ರಿಯೆ ಯಾವುದು?", "options": [{"label": "A", "text": "Creating (ಸೃಷ್ಟಿಸುವುದು)"}, {"label": "B", "text": "Evaluating (ಮೌಲ್ಯಮಾಪನ)"}, {"label": "C", "text": "Analyzing (ವಿಶ್ಲೇಷಿಸುವುದು)"}, {"label": "D", "text": "Applying (ಅನ್ವಯಿಸುವುದು)"}], "answer": "A", "explanation": "Revised Bloom's taxonomy hierarchy (bottom to top): Remembering $\\to$ Understanding $\\to$ Applying $\\to$ Analyzing $\\to$ Evaluating $\\to$ Creating.", "verbatim": true, "year": 2019, "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 1}, {"id": "P1-T2-PSY-100", "paper": 1, "section_id": "S5", "subject": "Educational Psychology", "syllabus_id": "P1-5.5", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "easy", "text": "Assessment conducted continuously during instructional teaching to diagnose learning gaps and adapt classroom pedagogy is called:", "text_alt": "ಬೋಧನಾ ಅವಧಿಯಲ್ಲಿ ಕಲಿಕಾ ನ್ಯೂನತೆಗಳನ್ನು ಗುರುತಿಸಿ ಬೋಧನೆಯನ್ನು ಸುಧಾರಿಸಲು ನಿರಂತರವಾಗಿ ನಡೆಸುವ ಮೌಲ್ಯಮಾಪನ ಯಾವುದು?", "options": [{"label": "A", "text": "Formative Assessment (ರೂಪಣಾತ್ಮಕ ಮೌಲ್ಯಮಾಪನ)"}, {"label": "B", "text": "Summative Assessment (ಸಂಕಲನಾತ್ಮಕ ಮೌಲ್ಯಮಾಪನ)"}, {"label": "C", "text": "Norm-Referenced Assessment"}, {"label": "D", "text": "Standardized Testing"}], "answer": "A", "explanation": "Formative assessment ('assessment for learning') occurs during instruction to provide constructive developmental feedback.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-PSY-101", "paper": 1, "section_id": "S5", "subject": "Educational Psychology", "syllabus_id": "P1-5.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "hard", "text": "According to Carl Rogers' Humanistic Theory of Personality, healthy personal growth and self-actualization require:", "text_alt": "ಕಾರ್ಲ್ ರೋಜರ್ಸ್ ಅವರ ಮಾನವತಾವಾದಿ ಸಿದ್ಧಾಂತದ ಪ್ರಕಾರ ವ್ಯಕ್ತಿಯ ಆತ್ಮಸಾಕ್ಷಾತ್ಕಾರ ಮತ್ತು ನೈಜ ಬೆಳವಣಿಗೆಗೆ ಅತ್ಯಗತ್ಯವಾದ ವಾತಾವರಣ ಯಾವುದು?", "options": [{"label": "A", "text": "Unconditional Positive Regard (ಷರತ್ತುರಹಿತ ಸಕಾರಾತ್ಮಕ ಗೌರವ)"}, {"label": "B", "text": "Strict Discipline and Punishment"}, {"label": "C", "text": "Competitive Comparison with Peers"}, {"label": "D", "text": "Fixed Behaviorist Conditioning"}], "answer": "A", "explanation": "Carl Rogers highlighted that congruence and unconditional positive regard create a safe psychological environment for self-actualization.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-PSY-102", "paper": 1, "section_id": "S5", "subject": "Educational Psychology", "syllabus_id": "P1-5.3", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "The psychological phenomenon where previous learning hinders or interferes with the acquisition of new material is known as:", "text_alt": "ಹಿಂದಿನ ಕಲಿಕೆಯು ಹೊಸ ವಿಷಯವನ್ನು ಕಲಿಯಲು ಅಡ್ಡಿಯಾಗುವ ಪ್ರಕ್ರಿಯೆಗೆ ಏನೆನ್ನುತ್ತಾರೆ?", "options": [{"label": "A", "text": "Proactive Interference (ಪೂರ್ವಾನ್ವಯ ಪ್ರತಿಬಂಧ)"}, {"label": "B", "text": "Retroactive Interference (ಪಶ್ಚಾತ್ತಾಪ ಪ್ರತಿಬಂಧ)"}, {"label": "C", "text": "Positive Transfer of Learning"}, {"label": "D", "text": "Bilateral Transfer"}], "answer": "A", "explanation": "Proactive interference occurs when old memories disrupt the retrieval of newly acquired information (e.g. typing old password instead of new).", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-PSY-103", "paper": 1, "section_id": "S5", "subject": "Educational Psychology", "syllabus_id": "P1-5.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "In psychoanalytic theory, Sigmund Freud conceptualized the moral regulator of personality acting on the 'morality principle' as the:", "text_alt": "ಸಿಗ್ಮಂಡ್ ಫ್ರಾಯ್ಡ್ ಅವರ ಮನೋವಿಶ್ಲೇಷಣಾ ಸಿದ್ಧಾಂತದಲ್ಲಿ ನೈತಿಕ ತತ್ವಗಳ ಆಧಾರದ ಮೇಲೆ ನಿಯಂತ್ರಿಸುವ ವ್ಯಕ್ತಿತ್ವದ ಭಾಗ ಯಾವುದು?", "options": [{"label": "A", "text": "Superego (ಸೂಪರ್ ಈಗೋ)"}, {"label": "B", "text": "Id (ಇದಮ್)"}, {"label": "C", "text": "Ego (ಈಗೋ)"}, {"label": "D", "text": "Libido"}], "answer": "A", "explanation": "Id operates on pleasure principle; Ego on reality principle; Superego represents internalized moral ideals and guilt (morality principle).", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-PSY-104", "paper": 1, "section_id": "S5", "subject": "Educational Psychology", "syllabus_id": "P1-5.2", "origin_tag": "PYQ - GPSTR 2017", "label": "PYQ", "difficulty": "easy", "text": "The formula to calculate Intelligence Quotient (IQ) introduced by William Stern and standardized by Lewis Terman is:", "text_alt": "ವಿಲಿಯಂ ಸ್ಟರ್ನ್ ನೀಡಿದ ಮತ್ತು ಟರ್ಮನ್ ಪ್ರಮಾಣೀಕರಿಸಿದ ಬುದ್ಧಿಶಕ್ತಿ ಲಬ್ಧಾಂಕದ (IQ) ಸೂತ್ರ ಯಾವುದು?", "options": [{"label": "A", "text": "IQ = (Mental Age / Chronological Age) × 100"}, {"label": "B", "text": "IQ = (Chronological Age / Mental Age) × 100"}, {"label": "C", "text": "IQ = Mental Age × Chronological Age"}, {"label": "D", "text": "IQ = (Mental Age + Chronological Age) / 2"}], "answer": "A", "explanation": "IQ = (MA / CA) × 100, where MA is Mental Age determined by standardized testing and CA is actual chronological age.", "verbatim": true, "year": 2017, "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 1}, {"id": "P1-T2-PSY-105", "paper": 1, "section_id": "S5", "subject": "Educational Psychology", "syllabus_id": "P1-5.3", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "Wolfgang Köhler's famous experiments with chimpanzees (Sultan) demonstrated learning by:", "text_alt": "ಸುಲ್ತಾನ್ ಎಂಬ ಚಿಂಪಾಂಜಿಯ ಮೇಲೆ ಕೊಹ್ಲರ್ ನಡೆಸಿದ ಪ್ರಸಿದ್ಧ ಪ್ರಯೋಗಗಳು ಯಾವ ಕಲಿಕೆಯನ್ನು ಸಾಬೀತುಪಡಿಸುತ್ತವೆ?", "options": [{"label": "A", "text": "Insightful Learning (ಒಳನೋಟ ಕಲಿಕೆ)"}, {"label": "B", "text": "Trial and Error Learning"}, {"label": "C", "text": "Conditioned Reflex"}, {"label": "D", "text": "Rote Memorization"}], "answer": "A", "explanation": "Köhler's Gestalt research demonstrated Insight Learning (the 'Aha!' phenomenon), where the learner suddenly reorganizes perceptual fields to solve a problem.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-PSY-106", "paper": 1, "section_id": "S5", "subject": "Educational Psychology", "syllabus_id": "P1-5.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "Carol Gilligan criticized Lawrence Kohlberg's theory of moral development primarily on the grounds of:", "text_alt": "ಕ್ಯಾರೊಲ್ ಗಿಲ್ಲಿಗನ್ ಕೊಹ್ಲ್‌ಬರ್ಗ್ ಅವರ ನೈತಿಕ ವಿಕಾಸ ಸಿದ್ಧಾಂತವನ್ನು ಮುಖ್ಯವಾಗಿ ಯಾವ ಕಾರಣಕ್ಕಾಗಿ ಟೀಕಿಸಿದರು?", "options": [{"label": "A", "text": "Gender bias ignoring the feminine 'Ethic of Care'"}, {"label": "B", "text": "Ignoring cultural differences in Asia"}, {"label": "C", "text": "Overemphasizing early childhood"}, {"label": "D", "text": "Lack of empirical data"}], "answer": "A", "explanation": "Gilligan argued Kohlberg's all-male sample overvalued abstract male 'justice' morality while neglecting female relationship-oriented 'care' morality.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-PSY-107", "paper": 1, "section_id": "S5", "subject": "Educational Psychology", "syllabus_id": "P1-5.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "A student who attributes academic failure to 'bad luck' or an 'unfair question paper' exhibits an:", "text_alt": "ಪರೀಕ್ಷೆಯಲ್ಲಿ ಅನುತ್ತೀರ್ಣನಾದಾಗ 'ಪತ್ರಿಕೆ ಕಠಿಣವಾಗಿತ್ತು' ಅಥವಾ 'ದುರದೃಷ್ಟ' ಎಂದು ಆರೋಪಿಸುವ ವಿದ್ಯಾರ್ಥಿಯ ನಿಯಂತ್ರಣ ಕೇಂದ್ರ ಯಾವುದು?", "options": [{"label": "A", "text": "External Locus of Control"}, {"label": "B", "text": "Internal Locus of Control"}, {"label": "C", "text": "Self-Efficacy Mastery"}, {"label": "D", "text": "Intrinsic Motivation"}], "answer": "A", "explanation": "Julian Rotter's locus of control posits that external locus attributes outcomes to environmental forces, while internal locus attributes results to personal effort.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-PSY-108", "paper": 1, "section_id": "S5", "subject": "Educational Psychology", "syllabus_id": "P1-5.4", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "easy", "text": "Under the RPwD Act 2016, what percentage of reservation in government jobs is provided for persons with benchmark disabilities?", "text_alt": "RPwD ಕಾಯ್ದೆ 2016 ರ ಅನ್ವಯ ಸರ್ಕಾರಿ ಉದ್ಯೋಗಗಳಲ್ಲಿ ಅಂಗವಿಕಲರಿಗೆ ಎಷ್ಟು ಶೇಕಡಾ ಮೀಸಲಾತಿ ನಿಗದಿಪಡಿಸಲಾಗಿದೆ?", "options": [{"label": "A", "text": "4% (increased from 3%)"}, {"label": "B", "text": "5%"}, {"label": "C", "text": "10%"}, {"label": "D", "text": "2%"}], "answer": "A", "explanation": "The 2016 Act increased the reservation quota in government employment from 3% to 4%, and in higher education institutions to 5%.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-PSY-109", "paper": 1, "section_id": "S5", "subject": "Educational Psychology", "syllabus_id": "P1-5.5", "origin_tag": "Synthesized - Hard", "label": "expected", "difficulty": "hard", "text": "In diagnostic educational evaluation, a test designed to compare a student's score against a pre-established performance standard rather than other peers is a:", "text_alt": "ವಿದ್ಯಾರ್ಥಿಯ ಸಾಧನೆಯನ್ನು ಇತರ ವಿದ್ಯಾರ್ಥಿಗಳ ಬದಲಾಗಿ ಮೊದಲೇ ನಿಗದಿತ ಮಾನದಂಡಕ್ಕೆ ಹೋಲಿಸಿ ಮೌಲ್ಯಮಾಪನ ಮಾಡುವ ಪರೀಕ್ಷೆ ಯಾವುದು?", "options": [{"label": "A", "text": "Criterion-Referenced Test (ಮಾನದಂಡ ಆಧಾರಿತ ಪರೀಕ್ಷೆ)"}, {"label": "B", "text": "Norm-Referenced Test"}, {"label": "C", "text": "Ipsative Assessment"}, {"label": "D", "text": "Aptitude Test"}], "answer": "A", "explanation": "Criterion-referenced assessment measures student performance against explicit learning objectives or criteria (e.g. achieving 75%), not peer ranks.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-PSY-110", "paper": 1, "section_id": "S5", "subject": "Educational Psychology", "syllabus_id": "P1-5.3", "origin_tag": "Synthesized - Hard", "label": "expected", "difficulty": "hard", "text": "According to David Ausubel's Meaningful Verbal Learning theory, instructional material presented prior to the learning task to bridge existing cognitive schemas with new information is called an:", "text_alt": "ಆಸುಬೆಲ್ ಸಿದ್ಧಾಂತದಲ್ಲಿ ಹೊಸ ವಿಷಯವನ್ನು ಕಲಿಯುವ ಮುನ್ನ ಹಿಂದಿನ ಜ್ಞಾನದೊಂದಿಗೆ ಬೆಸೆಯಲು ಶಿಕ್ಷಕರು ನೀಡುವ ಪರಿಕಲ್ಪನಾ ಚೌಕಟ್ಟಿಗೆ ಏನೆನ್ನುತ್ತಾರೆ?", "options": [{"label": "A", "text": "Advance Organizer (ಮುಂಚಿತ ಸಂಘಟಕ)"}, {"label": "B", "text": "Concept Map"}, {"label": "C", "text": "Operant Reinforcer"}, {"label": "D", "text": "Mnemonic Device"}], "answer": "A", "explanation": "David Ausubel introduced 'Advance Organizers' (comparative or expository) to anchor new learning into existing cognitive schema hierarchically.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-COMP-111", "paper": 1, "section_id": "S6", "subject": "Computer Literacy", "syllabus_id": "P1-6.1", "origin_tag": "PYQ - GPSTR 2019", "label": "PYQ", "difficulty": "easy", "text": "Which register in the Central Processing Unit (CPU) holds the memory address of the next instruction to be fetched and executed?", "text_alt": "ಸಿಪಿಯು ನಲ್ಲಿ ಮುಂದಿನ ಆದೇಶವನ್ನು ತರಲು ಮೆಮೊರಿ ವಿಳಾಸವನ್ನು ಹೊಂದಿರುವ ರಿಜಿಸ್ಟರ್ ಯಾವುದು?", "options": [{"label": "A", "text": "Program Counter (PC)"}, {"label": "B", "text": "Instruction Register (IR)"}, {"label": "C", "text": "Memory Buffer Register (MBR)"}, {"label": "D", "text": "Accumulator (AC)"}], "answer": "A", "explanation": "The Program Counter (PC) automatically increments to hold the memory address of the next consecutive instruction to be executed.", "verbatim": true, "year": 2019, "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 1}, {"id": "P1-T2-COMP-112", "paper": 1, "section_id": "S6", "subject": "Computer Literacy", "syllabus_id": "P1-6.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "easy", "text": "Which of the following primary storage media is non-volatile and permanently stores the basic bootstrap startup instructions (BIOS)?", "text_alt": "ಕಂಪ್ಯೂಟರ್ ಪ್ರಾರಂಭವಾಗಲು ಅಗತ್ಯವಾದ ಮೂಲ ಬೂಟ್‌ಸ್ಟ್ರ್ಯಾಪ್ (BIOS) ಪ್ರೋಗ್ರಾಂ ಅನ್ನು ಶಾಶ್ವತವಾಗಿ ಸಂಗ್ರಹಿಸುವ ಮೆಮೊರಿ ಯಾವುದು?", "options": [{"label": "A", "text": "ROM (Read Only Memory)"}, {"label": "B", "text": "RAM"}, {"label": "C", "text": "SRAM"}, {"label": "D", "text": "Cache"}], "answer": "A", "explanation": "ROM retains its stored firmware permanently even when the power is turned off (non-volatile), housing the BIOS bootstrap program.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-COMP-113", "paper": 1, "section_id": "S6", "subject": "Computer Literacy", "syllabus_id": "P1-6.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "Solid-State Drives (SSDs) are much faster than traditional Hard Disk Drives (HDDs) because they utilize:", "text_alt": "ಹಾರ್ಡ್ ಡಿಸ್ಕ್‌ಗಳಿಗಿಂತ ಎಸ್‌ಎಸ್‌ಡಿ ಗಳು ಅತಿ ವೇಗವಾಗಿರಲು ಕಾರಣ ಅವುಗಳಲ್ಲಿ ಬಳಸಲಾಗುವ ತಂತ್ರಜ್ಞಾನ ಯಾವುದು?", "options": [{"label": "A", "text": "NAND Flash Memory chips with no moving mechanical parts"}, {"label": "B", "text": "Magnetic spinning platters"}, {"label": "C", "text": "Optical laser beams"}, {"label": "D", "text": "Liquid cooling tubes"}], "answer": "A", "explanation": "SSDs use semiconductor non-volatile NAND flash memory chips, eliminating mechanical seek times and rotating latency of HDDs.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-COMP-114", "paper": 1, "section_id": "S6", "subject": "Computer Literacy", "syllabus_id": "P1-6.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "easy", "text": "In Microsoft Windows, which keyboard shortcut allows a user to lock the computer screen instantly?", "text_alt": "ವಿಂಡೋಸ್ ಆಪರೇಟಿಂಗ್ ಸಿಸ್ಟಮ್‌ನಲ್ಲಿ ಕಂಪ್ಯೂಟರ್ ಪರದೆಯನ್ನು ತಕ್ಷಣ ಲಾಕ್ ಮಾಡಲು ಬಳಸುವ ಶಾರ್ಟ್‌ಕಟ್ ಕೀ ಯಾವುದು?", "options": [{"label": "A", "text": "Windows Key + L"}, {"label": "B", "text": "Ctrl + Shift + Esc"}, {"label": "C", "text": "Alt + F4"}, {"label": "D", "text": "Windows Key + D"}], "answer": "A", "explanation": "Windows Key + L immediately locks the computer session; Windows Key + D toggles desktop display.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-COMP-115", "paper": 1, "section_id": "S6", "subject": "Computer Literacy", "syllabus_id": "P1-6.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "In the Linux file system hierarchy, which directory contains essential system configuration files including user passwords and network setups?", "text_alt": "ಲಿನಕ್ಸ್ ಫೈಲ್ ಸಿಸ್ಟಮ್‌ನಲ್ಲಿ ಬಳಕೆದಾರರ ಪಾಸ್‌ವರ್ಡ್ ಹಾಗೂ ಸಿಸ್ಟಮ್ ಕಾನ್ಫಿಗರೇಶನ್ ಫೈಲ್‌ಗಳನ್ನು ಹೊಂದಿರುವ ಡೈರೆಕ್ಟರಿ ಯಾವುದು?", "options": [{"label": "A", "text": "/etc"}, {"label": "B", "text": "/bin"}, {"label": "C", "text": "/home"}, {"label": "D", "text": "/dev"}], "answer": "A", "explanation": "The `/etc` directory in Linux contains system-wide configuration files (such as `/etc/passwd`, `/etc/network/interfaces`).", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-COMP-116", "paper": 1, "section_id": "S6", "subject": "Computer Literacy", "syllabus_id": "P1-6.2", "origin_tag": "PYQ - GPSTR 2017", "label": "PYQ", "difficulty": "easy", "text": "In Microsoft Word, what is the default keyboard shortcut to open the 'Find and Replace' dialog box?", "text_alt": "ಮೈಕ್ರೋಸಾಫ್ಟ್ ವರ್ಡ್‌ನಲ್ಲಿ 'ಫೈಂಡ್ ಆಂಡ್ ರಿಪ್ಲೇಸ್' ಸಂವಾದ ಪೆಟ್ಟಿಗೆಯನ್ನು ತೆರೆಯಲು ಬಳಸುವ ಕೀಲಿ ಯಾವುದು?", "options": [{"label": "A", "text": "Ctrl + H"}, {"label": "B", "text": "Ctrl + F"}, {"label": "C", "text": "Ctrl + R"}, {"label": "D", "text": "Ctrl + G"}], "answer": "A", "explanation": "Ctrl + H opens Find and Replace; Ctrl + F opens Navigation/Find; Ctrl + K inserts Hyperlink.", "verbatim": true, "year": 2017, "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 1}, {"id": "P1-T2-COMP-117", "paper": 1, "section_id": "S6", "subject": "Computer Literacy", "syllabus_id": "P1-6.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "In Microsoft Excel, what symbol is prefixed to create an absolute cell reference that does not change when copied across rows or columns?", "text_alt": "ಎಂಎಸ್ ಎಕ್ಸೆಲ್‌ನಲ್ಲಿ ಫಾರ್ಮುಲಾವನ್ನು ಕಾಪಿ ಮಾಡಿದಾಗ ಸೆಲ್ ವಿಳಾಸ ಬದಲಾಗದಂತೆ ಮಾಡಲು ಯಾವ ಚಿಹ್ನೆಯನ್ನು ಬಳಸಲಾಗುತ್ತದೆ?", "options": [{"label": "A", "text": "$ (Dollar symbol, e.g., $A$1)"}, {"label": "B", "text": "# (Hash symbol)"}, {"label": "C", "text": "& (Ampersand)"}, {"label": "D", "text": "@ (At symbol)"}], "answer": "A", "explanation": "The dollar sign (`$`) locks rows and columns to create absolute references (`$A$1`), toggleable with the F4 key.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-COMP-118", "paper": 1, "section_id": "S6", "subject": "Computer Literacy", "syllabus_id": "P1-6.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "In Microsoft Excel, which function searches for a value in the leftmost column of a table and returns a value in the same row from a specified column?", "text_alt": "ಎಂಎಸ್ ಎಕ್ಸೆಲ್‌ನಲ್ಲಿ ಮೊದಲ ಕಾಲಂನಲ್ಲಿ ಮೌಲ್ಯವನ್ನು ಹುಡುಕಿ ಅದೇ ಅಡ್ಡಸಾಲಿನ ಮತ್ತೊಂದು ಕಾಲಂನ ಮೌಲ್ಯವನ್ನು ಪಡೆಯುವ ಫಂಕ್ಷನ್ ಯಾವುದು?", "options": [{"label": "A", "text": "VLOOKUP"}, {"label": "B", "text": "HLOOKUP"}, {"label": "C", "text": "COUNTIF"}, {"label": "D", "text": "CONCATENATE"}], "answer": "A", "explanation": "VLOOKUP (Vertical Lookup) searches for a key in column 1 of a table array and retrieves data from column index `n`.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-COMP-119", "paper": 1, "section_id": "S6", "subject": "Computer Literacy", "syllabus_id": "P1-6.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "easy", "text": "In Microsoft PowerPoint, which feature allows consistent formatting, fonts, and logos across all slides in a presentation?", "text_alt": "ಪವರ್ ಪಾಯಿಂಟ್‌ನಲ್ಲಿ ಎಲ್ಲಾ ಸ್ಲೈಡ್‌ಗಳಲ್ಲೂ ಏಕರೂಪದ ಫಾಂಟ್, ಬಣ್ಣ ಮತ್ತು ಲೋಗೋ ಅನ್ವಯಿಸಲು ಬಳಸುವ ವೈಶಿಷ್ಟ್ಯ ಯಾವುದು?", "options": [{"label": "A", "text": "Slide Master"}, {"label": "B", "text": "Animation Pane"}, {"label": "C", "text": "Slide Sorter"}, {"label": "D", "text": "Format Painter"}], "answer": "A", "explanation": "The Slide Master is the top slide in a hierarchy that stores information about the theme, fonts, and layout across the entire deck.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-COMP-120", "paper": 1, "section_id": "S6", "subject": "Computer Literacy", "syllabus_id": "P1-6.3", "origin_tag": "PYQ - GPSTR 2019", "label": "PYQ", "difficulty": "medium", "text": "Which network topology connects all client nodes directly to a central hub or switch?", "text_alt": "ಎಲ್ಲಾ ಕಂಪ್ಯೂಟರ್‌ಗಳನ್ನು ಒಂದು ಕೇಂದ್ರ ಸ್ವಿಚ್ ಅಥವಾ ಹಬ್‌ಗೆ ನೇರವಾಗಿ ಸಂಪರ್ಕಿಸುವ ನೆಟ್‌ವರ್ಕ್ ಟೋಪಾಲಜಿ ಯಾವುದು?", "options": [{"label": "A", "text": "Star Topology"}, {"label": "B", "text": "Ring Topology"}, {"label": "C", "text": "Bus Topology"}, {"label": "D", "text": "Mesh Topology"}], "answer": "A", "explanation": "In a Star topology, all devices connect to a central controller (switch); cable failure in one node does not disrupt the rest of the network.", "verbatim": true, "year": 2019, "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 1}, {"id": "P1-T2-COMP-121", "paper": 1, "section_id": "S6", "subject": "Computer Literacy", "syllabus_id": "P1-6.3", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "How many bits are used in IPv4 and IPv6 internet addresses respectively?", "text_alt": "IPv4 ಮತ್ತು IPv6 ಇಂಟರ್ನೆಟ್ ವಿಳಾಸಗಳು ಕ್ರಮವಾಗಿ ಎಷ್ಟು ಬಿಟ್‌ಗಳನ್ನು ಹೊಂದಿರುತ್ತವೆ?", "options": [{"label": "A", "text": "32 bits and 128 bits"}, {"label": "B", "text": "64 bits and 256 bits"}, {"label": "C", "text": "16 bits and 64 bits"}, {"label": "D", "text": "32 bits and 64 bits"}], "answer": "A", "explanation": "IPv4 addresses are 32 bits long (e.g. 192.168.1.1); IPv6 addresses are 128 bits long (represented as 8 hexadecimal groups).", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-COMP-122", "paper": 1, "section_id": "S6", "subject": "Computer Literacy", "syllabus_id": "P1-6.3", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "easy", "text": "The protocol responsible for translating human-readable domain names (like www.google.com) into numerical IP addresses is:", "text_alt": "ವೆಬ್‌ಸೈಟ್ ಹೆಸರುಗಳನ್ನು ಕಂಪ್ಯೂಟರ್‌ಗೆ ಅರ್ಥವಾಗುವ ಸಂಖ್ಯಾತ್ಮಕ ಐಪಿ ವಿಳಾಸಗಳಿಗೆ ಪರಿವರ್ತಿಸುವ ಪ್ರೋಟೋಕಾಲ್ ಯಾವುದು?", "options": [{"label": "A", "text": "DNS (Domain Name System)"}, {"label": "B", "text": "DHCP"}, {"label": "C", "text": "FTP"}, {"label": "D", "text": "SMTP"}], "answer": "A", "explanation": "DNS translates domain names into numerical IP addresses; DHCP dynamically assigns IP addresses to hosts.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-COMP-123", "paper": 1, "section_id": "S6", "subject": "Computer Literacy", "syllabus_id": "P1-6.3", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "What does the 'S' stand for in HTTPS protocol used in secure web browsing?", "text_alt": "ಸುರಕ್ಷಿತ ವೆಬ್ ಬ್ರೌಸಿಂಗ್‌ನಲ್ಲಿ ಬಳಸಲಾಗುವ HTTPS ನ 'S' ಅಕ್ಷರದ ಅರ್ಥವೇನು?", "options": [{"label": "A", "text": "Secure (utilizing SSL/TLS encryption)"}, {"label": "B", "text": "System"}, {"label": "C", "text": "Standard"}, {"label": "D", "text": "Socket"}], "answer": "A", "explanation": "HTTPS stands for HyperText Transfer Protocol Secure, encrypting HTTP traffic over Transport Layer Security (TLS/SSL).", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-COMP-124", "paper": 1, "section_id": "S6", "subject": "Computer Literacy", "syllabus_id": "P1-6.4", "origin_tag": "PYQ - GPSTR 2022", "label": "PYQ", "difficulty": "easy", "text": "A cyberattack that uses deceptive emails mimicking trusted banks to trick victims into revealing sensitive passwords and OTPs is known as:", "text_alt": "ಬ್ಯಾಂಕ್ ಅಥವಾ ವಿಶ್ವಾಸಾರ್ಹ ಸಂಸ್ಥೆಯ ಹೆಸರಿನಲ್ಲಿ ನಕಲಿ ಇಮೇಲ್ ಕಳುಹಿಸಿ ಪಾಸ್‌ವರ್ಡ್ ಕದಿಯುವ ಸೈಬರ್ ವಂಚನೆ ಯಾವುದು?", "options": [{"label": "A", "text": "Phishing"}, {"label": "B", "text": "Spooling"}, {"label": "C", "text": "Paging"}, {"label": "D", "text": "Defragmentation"}], "answer": "A", "explanation": "Phishing is social engineering using spoofed communications to harvest credentials; Ransomware encrypts files for extortion.", "verbatim": true, "year": 2022, "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 1}, {"id": "P1-T2-COMP-125", "paper": 1, "section_id": "S6", "subject": "Computer Literacy", "syllabus_id": "P1-6.4", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "Malware that encrypts a victim's files and demands payment in cryptocurrency to provide the decryption key is termed:", "text_alt": "ಬಳಕೆದಾರರ ಫೈಲ್‌ಗಳನ್ನು ಲಾಕ್ ಮಾಡಿ ಬಿಡುಗಡೆ ಮಾಡಲು ಹಣಕ್ಕೆ ಬೇಡಿಕೆ ಇಡುವ ಮಾಲ್‌ವೇರ್ ಯಾವುದು?", "options": [{"label": "A", "text": "Ransomware"}, {"label": "B", "text": "Spyware"}, {"label": "C", "text": "Adware"}, {"label": "D", "text": "Worm"}], "answer": "A", "explanation": "Ransomware (e.g. WannaCry) encrypts user storage and demands ransom payments in untraceable cryptocurrency.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-COMP-126", "paper": 1, "section_id": "S6", "subject": "Computer Literacy", "syllabus_id": "P1-6.4", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "easy", "text": "A security device that monitors and filters incoming and outgoing network traffic based on predefined security rules is a:", "text_alt": "ಅನಧಿಕೃತ ಪ್ರವೇಶವನ್ನು ತಡೆಗಟ್ಟಲು ಕಂಪ್ಯೂಟರ್ ನೆಟ್‌ವರ್ಕ್‌ನಲ್ಲಿ ಟ್ರಾಫಿಕ್ ಅನ್ನು ಪರಿಶೀಲಿಸುವ ಭದ್ರತಾ ತಂತ್ರಜ್ಞಾನ ಯಾವುದು?", "options": [{"label": "A", "text": "Firewall"}, {"label": "B", "text": "Modem"}, {"label": "C", "text": "Repeater"}, {"label": "D", "text": "Gateway"}], "answer": "A", "explanation": "A Firewall acts as a security barrier filtering packets between trusted internal networks and untrusted external networks.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-COMP-127", "paper": 1, "section_id": "S6", "subject": "Computer Literacy", "syllabus_id": "P1-6.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "easy", "text": "How many Bytes are there in exactly One Kilobyte (1 KB) in binary computing storage?", "text_alt": "ಕಂಪ್ಯೂಟರ್ ಮೆಮೊರಿ ಲೆಕ್ಕಾಚಾರದಲ್ಲಿ 1 ಕಿಲೋಬೈಟ್ (1 KB) ನಲ್ಲಿರುವ ಒಟ್ಟು ಬೈಟ್‌ಗಳು ಎಷ್ಟು?", "options": [{"label": "A", "text": "1024 Bytes"}, {"label": "B", "text": "1000 Bytes"}, {"label": "C", "text": "1048 Bytes"}, {"label": "D", "text": "512 Bytes"}], "answer": "A", "explanation": "Binary storage uses powers of 2: 1 KB = $2^{10}$ = 1024 Bytes; 1 MB = $2^{20}$ Bytes; 1 GB = $2^{30}$ Bytes.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-COMP-128", "paper": 1, "section_id": "S6", "subject": "Computer Literacy", "syllabus_id": "P1-6.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "Which port number is standardly used by unencrypted HyperText Transfer Protocol (HTTP)?", "text_alt": "ಎನ್‌ಕ್ರಿಪ್ಟ್ ಮಾಡದ ಹೆಚ್‌ಟಿಟಿಪಿ (HTTP) ಸಂವಹನಕ್ಕೆ ಬಳಸಲಾಗುವ ಪ್ರಮಾಣಿತ ಪೋರ್ಟ್ ಸಂಖ್ಯೆ ಯಾವುದು?", "options": [{"label": "A", "text": "Port 80"}, {"label": "B", "text": "Port 443"}, {"label": "C", "text": "Port 21"}, {"label": "D", "text": "Port 25"}], "answer": "A", "explanation": "HTTP standardly uses Port 80; HTTPS uses Port 443; FTP uses Port 21; SMTP uses Port 25.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-COMP-129", "paper": 1, "section_id": "S6", "subject": "Computer Literacy", "syllabus_id": "P1-6.4", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "easy", "text": "What does Two-Factor Authentication (2FA) require to verify user identity securely?", "text_alt": "ಟು-ಫ್ಯಾಕ್ಟರ್ ಅಥೆಂಟಿಕೇಶನ್‌ನಲ್ಲಿ (2FA) ಬಳಕೆದಾರರ ದೃಢೀಕರಣಕ್ಕೆ ಯಾವ ಎರಡು ಅಂಶಗಳನ್ನು ಬಳಸಲಾಗುತ್ತದೆ?", "options": [{"label": "A", "text": "Something you know (password) and something you have (OTP / authenticator token)"}, {"label": "B", "text": "Two separate passwords"}, {"label": "C", "text": "Password and security question only"}, {"label": "D", "text": "User name and email address"}], "answer": "A", "explanation": "Multi-factor authentication combines two distinct factors: knowledge (password/PIN), possession (smartphone/OTP token), or inherence (fingerprint).", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-COMP-130", "paper": 1, "section_id": "S6", "subject": "Computer Literacy", "syllabus_id": "P1-6.3", "origin_tag": "Synthesized - Hard", "label": "expected", "difficulty": "hard", "text": "Which wireless network standard operates on IEEE 802.11 specifications?", "text_alt": "IEEE 802.11 ವಿಶೇಷಣಗಳ ಅಡಿಯಲ್ಲಿ ಕಾರ್ಯನಿರ್ವಹಿಸುವ ವೈರ್‌ಲೆಸ್ ನೆಟ್‌ವರ್ಕ್ ಯಾವುದು?", "options": [{"label": "A", "text": "Wi-Fi"}, {"label": "B", "text": "Bluetooth (802.15)"}, {"label": "C", "text": "Ethernet (802.3)"}, {"label": "D", "text": "Zigbee"}], "answer": "A", "explanation": "IEEE 802.11 specifies Wireless LAN (Wi-Fi); IEEE 802.3 specifies Ethernet; IEEE 802.15 specifies Bluetooth personal area networks.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-HLT-131", "paper": 1, "section_id": "S7", "subject": "Health Education", "syllabus_id": "P1-7.1", "origin_tag": "PYQ - GPSTR 2019", "label": "PYQ", "difficulty": "easy", "text": "Which of the following vitamins is water-soluble and must be regularly replenished through daily diet?", "text_alt": "ನೀರಿನಲ್ಲಿ ಕರಗುವ ಮತ್ತು ದೈನಂದಿನ ಆಹಾರದ ಮೂಲಕ ನಿಯಮಿತವಾಗಿ ಸೇವಿಸಬೇಕಾದ ವಿಟಮಿನ್ ಯಾವುದು?", "options": [{"label": "A", "text": "Vitamin C (Ascorbic Acid)"}, {"label": "B", "text": "Vitamin A (Retinol)"}, {"label": "C", "text": "Vitamin D (Calciferol)"}, {"label": "D", "text": "Vitamin K"}], "answer": "A", "explanation": "Vitamins B and C are water-soluble; Vitamins A, D, E, and K are fat-soluble and stored in liver and adipose tissue.", "verbatim": true, "year": 2019, "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 1}, {"id": "P1-T2-HLT-132", "paper": 1, "section_id": "S7", "subject": "Health Education", "syllabus_id": "P1-7.1", "origin_tag": "PYQ - GPSTR 2017", "label": "PYQ", "difficulty": "easy", "text": "Bleeding gums, delayed wound healing, and painful joints are hallmark clinical symptoms of which deficiency disease?", "text_alt": "ವಸಡಿನಿಂದ ರಕ್ತ ಸುರಿಯುವುದು ಮತ್ತು ಗಾಯಗಳು ಬೇಗ ಗುಣವಾಗದಿರುವುದು ಯಾವ ಕೊರತೆಯ ಲಕ್ಷಣ?", "options": [{"label": "A", "text": "Scurvy (Vitamin C deficiency)"}, {"label": "B", "text": "Rickets (Vitamin D deficiency)"}, {"label": "C", "text": "Beri-Beri (Vitamin B1 deficiency)"}, {"label": "D", "text": "Night Blindness"}], "answer": "A", "explanation": "Scurvy is caused by Vitamin C deficiency, which impairs collagen synthesis essential for blood vessels and connective tissues.", "verbatim": true, "year": 2017, "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 1}, {"id": "P1-T2-HLT-133", "paper": 1, "section_id": "S7", "subject": "Health Education", "syllabus_id": "P1-7.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "Nutritional anemia commonly observed among adolescent school girls in India is primarily caused by dietary deficiency of:", "text_alt": "ಹದಿಹರೆಯದ ಶಾಲಾ ಬಾಲಕಿಯರಲ್ಲಿ ಸಾಮಾನ್ಯವಾಗಿ ಕಂಡುಬರುವ ರಕ್ತಹೀನತೆಗೆ (ಅನೀಮಿಯಾ) ಮುಖ್ಯ ಕಾರಣವಾದ ಪೋಷಕಾಂಶ ಯಾವುದು?", "options": [{"label": "A", "text": "Iron and Folic Acid"}, {"label": "B", "text": "Calcium"}, {"label": "C", "text": "Sodium"}, {"label": "D", "text": "Potassium"}], "answer": "A", "explanation": "Iron deficiency impairs hemoglobin synthesis, causing microcytic anemia, addressed under the National Iron Plus Initiative.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-HLT-134", "paper": 1, "section_id": "S7", "subject": "Health Education", "syllabus_id": "P1-7.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "easy", "text": "Which of the following is a non-communicable, chronic lifestyle disease?", "text_alt": "ಈ ಕೆಳಗಿನವುಗಳಲ್ಲಿ ಸಾಂಕ್ರಾಮಿಕವಲ್ಲದ ದೀರ್ಘಕಾಲಿಕ ಜೀವನಶೈಲಿಯ ಕಾಯಿಲೆ ಯಾವುದು?", "options": [{"label": "A", "text": "Type 2 Diabetes Mellitus"}, {"label": "B", "text": "Tuberculosis"}, {"label": "C", "text": "Cholera"}, {"label": "D", "text": "Malaria"}], "answer": "A", "explanation": "Type 2 Diabetes, hypertension, and cardiovascular diseases are non-communicable; Tuberculosis is bacterial and Malaria is parasitic.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-HLT-135", "paper": 1, "section_id": "S7", "subject": "Health Education", "syllabus_id": "P1-7.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "In First Aid for acute muscle sprains and soft tissue sports injuries, what does the clinical acronym 'RICE' stand for?", "text_alt": "ಕ್ರೀಡಾ ಗಾಯಗಳು ಮತ್ತು ಸ್ನಾಯು ಉಳುಕುಗಳಿಗೆ ನೀಡುವ ಪ್ರಥಮ ಚಿಕಿತ್ಸೆಯಲ್ಲಿ 'RICE' ನ ವಿಸ್ತೃತ ರೂಪವೇನು?", "options": [{"label": "A", "text": "Rest, Ice, Compression, Elevation"}, {"label": "B", "text": "Run, Inhale, Clean, Exercise"}, {"label": "C", "text": "Rub, Immobilize, Cool, Examine"}, {"label": "D", "text": "Rescue, Inject, Calm, Evacuate"}], "answer": "A", "explanation": "RICE protocol minimizes swelling and pain: Rest the injured area, apply Ice packs, Compress with bandage, and Elevate above heart level.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-HLT-136", "paper": 1, "section_id": "S7", "subject": "Health Education", "syllabus_id": "P1-7.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "How is Body Mass Index (BMI) standardly calculated for physical fitness evaluation?", "text_alt": "ದೈಹಿಕ ಸಾಮರ್ಥ್ಯ ಮೌಲ್ಯಮಾಪನಕ್ಕಾಗಿ ಬಾಡಿ ಮಾಸ್ ಇಂಡೆಕ್ಸ್ (BMI) ಲೆಕ್ಕಾಚಾರ ಮಾಡುವ ಸೂತ್ರ ಯಾವುದು?", "options": [{"label": "A", "text": "Weight in kilograms divided by height in meters squared (kg/m²)"}, {"label": "B", "text": "Height in meters divided by weight in kg"}, {"label": "C", "text": "Weight in kg multiplied by height in cm"}, {"label": "D", "text": "Weight in pounds divided by age in years"}], "answer": "A", "explanation": "BMI = weight (kg) / [height (m)]². Normal BMI range is 18.5 to 24.9; ≥ 25 is overweight; ≥ 30 is obese.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-HLT-137", "paper": 1, "section_id": "S7", "subject": "Health Education", "syllabus_id": "P1-7.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "easy", "text": "Under the PM POSHAN (Mid-Day Meal) scheme, what is the mandatory nutritional norm per day for upper primary students (Classes 6–8)?", "text_alt": "ಪಿಎಂ ಪೋಷಣ್ (ಬಿಸಿಯೂಟ) ಯೋಜನೆಯಡಿ 6-8 ನೇ ತರಗತಿಯ ಹಿರಿಯ ಪ್ರಾಥಮಿಕ ವಿದ್ಯಾರ್ಥಿಗಳಿಗೆ ದಿನಕ್ಕೆ ನಿಗದಿಪಡಿಸಲಾದ ಪೌಷ್ಟಿಕಾಂಶದ ಪ್ರಮಾಣವೆಷ್ಟು?", "options": [{"label": "A", "text": "700 Calories and 20 grams of Protein"}, {"label": "B", "text": "450 Calories and 12 grams of Protein"}, {"label": "C", "text": "1000 Calories and 35 grams of Protein"}, {"label": "D", "text": "500 Calories and 15 grams of Protein"}], "answer": "A", "explanation": "PM POSHAN prescribes: Primary (Classes 1–5): 450 calories and 12g protein; Upper Primary (Classes 6–8): 700 calories and 20g protein.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-HLT-138", "paper": 1, "section_id": "S7", "subject": "Health Education", "syllabus_id": "P1-7.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "Which chemical compound is standardly added in drinking water treatment to destroy pathogenic bacteria through chlorination?", "text_alt": "ಕುಡಿಯುವ ನೀರಿನಲ್ಲಿ ರೋಗಾಣುಗಳನ್ನು ನಾಶಪಡಿಸಲು ಜಲ ಶುದ್ಧೀಕರಣದಲ್ಲಿ ಸೇರಿಸುವ ರಾಸಾಯನಿಕ ಯಾವುದು?", "options": [{"label": "A", "text": "Bleaching powder / Chlorine gas"}, {"label": "B", "text": "Alum (Potash alum) only"}, {"label": "C", "text": "Sodium chloride"}, {"label": "D", "text": "Calcium carbonate"}], "answer": "A", "explanation": "Chlorine (or calcium hypochlorite/bleaching powder) is the primary disinfectant killing waterborne pathogens.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-HLT-139", "paper": 1, "section_id": "S7", "subject": "Health Education", "syllabus_id": "P1-7.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "easy", "text": "Goitre, characterized by enlargement of the thyroid gland in the neck, is caused by nutritional deficiency of:", "text_alt": "ಥೈರಾಯ್ಡ್ ಗ್ರಂಥಿ ಊದಿಕೊಳ್ಳುವ ಗಳಗಂಡ (Goitre) ರೋಗವು ಯಾವ ಪೋಷಕಾಂಶದ ಕೊರತೆಯಿಂದ ಉಂಟಾಗುತ್ತದೆ?", "options": [{"label": "A", "text": "Iodine"}, {"label": "B", "text": "Iron"}, {"label": "C", "text": "Zinc"}, {"label": "D", "text": "Fluoride"}], "answer": "A", "explanation": "Iodine deficiency causes hypothyroid enlargement (Goitre) and mental retardation; combated through iodized salt.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-HLT-140", "paper": 1, "section_id": "S7", "subject": "Health Education", "syllabus_id": "P1-7.2", "origin_tag": "Synthesized - Hard", "label": "expected", "difficulty": "hard", "text": "Cardiopulmonary Resuscitation (CPR) performed on an unresponsive non-breathing individual follows which recommended ratio of chest compressions to rescue breaths?", "text_alt": "ಉಸಿರಾಟ ನಿಂತ ವ್ಯಕ್ತಿಗೆ ಸಿಪಿಆರ್ (CPR) ಮಾಡುವಾಗ ಎದೆ ಒತ್ತಡ (Chest Compressions) ಮತ್ತು ಕೃತಕ ಉಸಿರಾಟದ ಶಿಫಾರಸು ಅನುಪಾತ ಯಾವುದು?", "options": [{"label": "A", "text": "30 compressions to 2 rescue breaths"}, {"label": "B", "text": "15 compressions to 5 rescue breaths"}, {"label": "C", "text": "10 compressions to 1 rescue breath"}, {"label": "D", "text": "50 compressions to 2 rescue breaths"}], "answer": "A", "explanation": "Standard CPR protocol (American Heart Association & Red Cross) recommends 30 chest compressions followed by 2 rescue breaths at 100–120 bpm.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-VAL-141", "paper": 1, "section_id": "S8", "subject": "Value Education", "syllabus_id": "P1-8.1", "origin_tag": "PYQ - GPSTR 2019", "label": "PYQ", "difficulty": "medium", "text": "Article 51A(h) of the Constitution of India identifies which of the following as a Fundamental Duty of every Indian citizen?", "text_alt": "ಭಾರತ ಸಂವಿಧಾನದ 51ಎ(ಹೆಚ್) ವಿಧಿಯ ಪ್ರಕಾರ ಪ್ರತಿಯೊಬ್ಬ ನಾಗರಿಕನ ಮೂಲಭೂತ ಕರ್ತವ್ಯ ಯಾವುದು?", "options": [{"label": "A", "text": "To develop the scientific temper, humanism and the spirit of inquiry and reform"}, {"label": "B", "text": "To promote industrial growth"}, {"label": "C", "text": "To participate in competitive politics"}, {"label": "D", "text": "To pay taxes regularly"}], "answer": "A", "explanation": "Article 51A(h) enjoins citizens 'to develop the scientific temper, humanism and the spirit of inquiry and reform'.", "verbatim": true, "year": 2019, "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 1}, {"id": "P1-T2-VAL-142", "paper": 1, "section_id": "S8", "subject": "Value Education", "syllabus_id": "P1-8.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "easy", "text": "The Code of Professional Ethics for School Teachers formulated by the National Council for Teacher Education (NCTE) requires teachers to:", "text_alt": "ರಾಷ್ಟ್ರೀಯ ಶಿಕ್ಷಕರ ಶಿಕ್ಷಣ ಮಂಡಳಿಯು (NCTE) ರೂಪಿಸಿದ ವೃತ್ತಿಪರ ನೀತಿ ಸಂಹಿತೆಯ ಪ್ರಕಾರ ಶಿಕ್ಷಕರು ಪಾಲಿಸಬೇಕಾದ ಮುಖ್ಯ ಕರ್ತವ್ಯ ಯಾವುದು?", "options": [{"label": "A", "text": "Treat all students with equality, respect, and zero discrimination on caste, creed, or gender"}, {"label": "B", "text": "Compel students to attend private tuitions"}, {"label": "C", "text": "Prioritize only high-scoring students"}, {"label": "D", "text": "Use physical force to maintain discipline"}], "answer": "A", "explanation": "NCTE professional ethics mandate equitable treatment, non-discrimination, confidentiality, and nurturing student dignity.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-VAL-143", "paper": 1, "section_id": "S8", "subject": "Value Education", "syllabus_id": "P1-8.1", "origin_tag": "PYQ - GPSTR 2022", "label": "PYQ", "difficulty": "easy", "text": "Section 17 of the Right to Education (RTE) Act, 2009 strictly prohibits:", "text_alt": "ಶಿಕ್ಷಣ ಹಕ್ಕು ಕಾಯ್ದೆ 2009 ರ ಕಲಂ 17 ಕಟ್ಟುನಿಟ್ಟಾಗಿ ಏನನ್ನು ನಿಷೇಧಿಸುತ್ತದೆ?", "options": [{"label": "A", "text": "Physical punishment and mental harassment of children in schools"}, {"label": "B", "text": "Co-curricular activities"}, {"label": "C", "text": "Periodic parent-teacher meetings"}, {"label": "D", "text": "Mid-day meal distribution"}], "answer": "A", "explanation": "Section 17 of RTE completely bans corporal punishment and mental harassment, making it a punishable disciplinary offense.", "verbatim": true, "year": 2022, "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 1}, {"id": "P1-T2-VAL-144", "paper": 1, "section_id": "S8", "subject": "Value Education", "syllabus_id": "P1-8.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "Under Section 19 of the POCSO Act (Protection of Children from Sexual Offences Act, 2012), what is the legal obligation of a school teacher who suspects child sexual abuse?", "text_alt": "ಪೋಕ್ಸೋ ಕಾಯ್ದೆ 2012 ರ ಸೆಕ್ಷನ್ 19 ರ ಪ್ರಕಾರ ಶಾಲಾ ಶಿಕ್ಷಕರಿಗೆ ಮಕ್ಕಳ ಲೈಂಗಿಕ ದೌರ್ಜನ್ಯದ ಬಗ್ಗೆ ಮಾಹಿತಿ ತಿಳಿದಾಗ ಅವರ ಕಾನೂನುಬದ್ಧ ಕರ್ತವ್ಯವೇನು?", "options": [{"label": "A", "text": "Mandatory reporting immediately to the Special Juvenile Police Unit or local police"}, {"label": "B", "text": "Keep the matter confidential without informing authorities"}, {"label": "C", "text": "Settle the dispute informally with parents"}, {"label": "D", "text": "Wait until the end of the academic year"}], "answer": "A", "explanation": "Section 19 mandates immediate reporting of suspected child abuse; failure to report is a cognizable punishable offense under Section 21.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-VAL-145", "paper": 1, "section_id": "S8", "subject": "Value Education", "syllabus_id": "P1-8.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "The famous Appiko environmental conservation movement in Karnataka, inspired by the Himalayan Chipko movement, was launched in 1983 in which district?", "text_alt": "1983 ರಲ್ಲಿ ಹಿಮಾಲಯದ ಚಿಪ್ಕೋ ಚಳವಳಿಯಿಂದ ಪ್ರೇರಿತಗೊಂಡು ಕರ್ನಾಟಕದಲ್ಲಿ ಆರಂಭವಾದ ಪ್ರಸಿದ್ಧ 'ಅಪ್ಪಿಕೋ ಚಳವಳಿ' ಯಾವ ಜಿಲ್ಲೆಯಲ್ಲಿ ನಡೆಯಿತು?", "options": [{"label": "A", "text": "Uttara Kannada (Gubbigadde, Salkani forest)"}, {"label": "B", "text": "Kodagu"}, {"label": "C", "text": "Chikkamagaluru"}, {"label": "D", "text": "Shivamogga"}], "answer": "A", "explanation": "Pandurang Hegde led the Appiko movement in Uttara Kannada district in September 1983 to embrace and protect Western Ghats forests from logging.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-VAL-146", "paper": 1, "section_id": "S8", "subject": "Value Education", "syllabus_id": "P1-8.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "easy", "text": "Which core value involves putting oneself in another person's shoes and understanding their feelings from their perspective?", "text_alt": "ಇನ್ನೊಬ್ಬರ ಪರಿಸ್ಥಿತಿಯನ್ನು ಅವರ ದೃಷ್ಟಿಕೋನದಿಂದ ಅರ್ಥಮಾಡಿಕೊಂಡು ಅನುಭವಿಸುವ ಉನ್ನತ ನೈತಿಕ ಮೌಲ್ಯ ಯಾವುದು?", "options": [{"label": "A", "text": "Empathy (ಸಹಾನುಭೂತಿ)"}, {"label": "B", "text": "Apathy (ನಿರಾಸಕ್ತಿ)"}, {"label": "C", "text": "Selfishness"}, {"label": "D", "text": "Arrogance"}], "answer": "A", "explanation": "Empathy is cognitive and affective understanding of another's lived experience, deeper than sympathy (which is merely feeling pity).", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-VAL-147", "paper": 1, "section_id": "S8", "subject": "Value Education", "syllabus_id": "P1-8.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "Which philosophy of value education advocates that values are best caught through teacher modeling and school climate rather than rote textbook lectures?", "text_alt": "ಮೌಲ್ಯಗಳನ್ನು ಬಾಯಿಪಾಠ ಮಾಡುವ ಬದಲು ಶಿಕ್ಷಕರ ಆದರ್ಶ ನಡವಳಿಕೆ ಮತ್ತು ಶಾಲಾ ವಾತಾವರಣದ ಮೂಲಕ ಮೈಗೂಡಿಸಿಕೊಳ್ಳಬೇಕು ಎಂದು ಪ್ರತಿಪಾದಿಸುವ ತತ್ವ ಯಾವುದು?", "options": [{"label": "A", "text": "Values are caught, not taught"}, {"label": "B", "text": "Rote conditioning"}, {"label": "C", "text": "Dogmatic indoctrination"}, {"label": "D", "text": "Authoritarian obedience"}], "answer": "A", "explanation": "'Values are caught, not taught' emphasizes experiential learning, teacher modeling, restorative justice, and an inclusive school culture.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-VAL-148", "paper": 1, "section_id": "S8", "subject": "Value Education", "syllabus_id": "P1-8.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "easy", "text": "Gender sensitization in school classrooms is best promoted by:", "text_alt": "ಶಾಲಾ ತರಗತಿಯಲ್ಲಿ ಲಿಂಗ ಸಂವೇದನೆಯನ್ನು (Gender Sensitization) ಉತ್ತೇಜಿಸುವ ಅತ್ಯುತ್ತಮ ವಿಧಾನ ಯಾವುದು?", "options": [{"label": "A", "text": "Assigning sports, leadership, and tasks equally to boys and girls without gender stereotypes"}, {"label": "B", "text": "Assigning cleaning only to girls and heavy lifting only to boys"}, {"label": "C", "text": "Segregating seating in all academic activities"}, {"label": "D", "text": "Encouraging gender-biased textbook depictions"}], "answer": "A", "explanation": "Gender equity deconstructs stereotypes by ensuring equal opportunity in leadership, participation, sports, and collaborative learning.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-VAL-149", "paper": 1, "section_id": "S8", "subject": "Value Education", "syllabus_id": "P1-8.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "The Universal Declaration of Human Rights (UDHR) was adopted by the United Nations General Assembly on which historic date observed annually as Human Rights Day?", "text_alt": "ವಿಶ್ವ ಮಾನವ ಹಕ್ಕುಗಳ ದಿನವನ್ನು ಪ್ರತಿವರ್ಷ ಯಾವ ದಿನಾಂಕದಂದು ಆಚರಿಸಲಾಗುತ್ತದೆ?", "options": [{"label": "A", "text": "10 December (1948)"}, {"label": "B", "text": "24 October"}, {"label": "C", "text": "5 June"}, {"label": "D", "text": "8 March"}], "answer": "A", "explanation": "The UN General Assembly adopted the UDHR on 10 December 1948 in Paris, observed worldwide as International Human Rights Day.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}, {"id": "P1-T2-VAL-150", "paper": 1, "section_id": "S8", "subject": "Value Education", "syllabus_id": "P1-8.1", "origin_tag": "Synthesized - Hard", "label": "expected", "difficulty": "hard", "text": "Dr. B. R. Ambedkar emphasized that political democracy cannot last unless there lies at the base of it:", "text_alt": "ಡಾ. ಬಿ. ಆರ್. ಅಂಬೇಡ್ಕರ್ ಅವರು ರಾಜಕೀಯ ಪ್ರಜಾಪ್ರಭುತ್ವವು ಶಾಶ್ವತವಾಗಿ ಉಳಿಯಲು ಅದರ ತಳಹದಿಯಲ್ಲಿ ಯಾವುದು ಅತ್ಯಗತ್ಯ ಎಂದು ಪ್ರತಿಪಾದಿಸಿದರು?", "options": [{"label": "A", "text": "Social Democracy recognizing liberty, equality, and fraternity as principles of life"}, {"label": "B", "text": "Military strength"}, {"label": "C", "text": "Monetary capitalism"}, {"label": "D", "text": "Religious orthodoxy"}], "answer": "A", "explanation": "Dr. Ambedkar stated: 'Political democracy cannot last unless there lies at the base of it social democracy, which recognizes liberty, equality and fraternity as a trinity'.", "source_url": "https://schooleducation.karnataka.gov.in", "source_tier": 2}];
+const SECTIONS = [{"id": "S1", "name": "General Knowledge", "count": 20}, {"id": "S2", "name": "Current Affairs", "count": 15}, {"id": "S3", "name": "General Kannada", "count": 25}, {"id": "S4", "name": "General English", "count": 25}, {"id": "S5", "name": "Educational Psychology", "count": 25}, {"id": "S6", "name": "Computer Literacy", "count": 20}, {"id": "S7", "name": "Health Education", "count": 10}, {"id": "S8", "name": "Value Education", "count": 10}];
+const TOTAL_QS = QUESTIONS.length;
+const INITIAL_DURATION_SEC = 150 * 60;
+
+// Test Taking State
+let currentIndex = 0;
+let userAnswers = new Array(TOTAL_QS).fill(null); // 'A', 'B', 'C', 'D' or null
+let questionStatus = new Array(TOTAL_QS).fill('not-visited'); // 'not-visited','not-answered','answered','marked','ans-marked'
+let wasEverMarked = new Array(TOTAL_QS).fill(false); // boolean tracking if marked for review at any point
+let remainingSeconds = INITIAL_DURATION_SEC;
+let timerSpeedMultiplier = 1;
+let timerInterval = null;
+
+// Review Mode State
+let reviewCurrentIndex = 0;
+let activeReviewFilter = 'all'; // 'all', 'correct', 'incorrect', 'unattempted', 'marked'
+let reviewQuestionIndices = []; // indices matching current review filter
+
+// Initialize on load
+document.addEventListener("DOMContentLoaded", () => {
+  initSectionTabs();
+  initPaletteGrid();
+  loadQuestion(0);
+  startTimer();
+  setupTestEventListeners();
+  updatePaletteCounts();
+});
+
+function initSectionTabs() {
+  const container = document.getElementById("sectionTabsContainer");
+  container.innerHTML = "";
+  SECTIONS.forEach((sec, idx) => {
+    const tab = document.createElement("div");
+    tab.className = `section-tab ${idx === 0 ? 'active' : ''}`;
+    tab.id = `tab-${sec.id}`;
+    tab.innerHTML = `${sec.name} <span class="section-count-badge">${sec.count}</span>`;
+    tab.onclick = () => jumpToSection(sec.id);
+    container.appendChild(tab);
+  });
+}
+
+function initPaletteGrid() {
+  const grid = document.getElementById("paletteGrid");
+  grid.innerHTML = "";
+  for (let i = 0; i < TOTAL_QS; i++) {
+    const btn = document.createElement("button");
+    btn.className = "pal-btn not-visited";
+    btn.id = `pal-${i}`;
+    btn.innerText = i + 1;
+    btn.onclick = () => {
+      markCurrentStateBeforeLeave();
+      loadQuestion(i);
+    };
+    grid.appendChild(btn);
+  }
+}
+
+function loadQuestion(idx) {
+  currentIndex = idx;
+  const q = QUESTIONS[idx];
+  
+  if (questionStatus[idx] === 'not-visited') {
+    questionStatus[idx] = 'not-answered';
+  }
+
+  document.querySelectorAll(".pal-btn").forEach(b => b.classList.remove("current"));
+  const currentPal = document.getElementById(`pal-${idx}`);
+  if (currentPal) currentPal.classList.add("current");
+
+  document.getElementById("qDisplayNum").innerText = `Question No. ${idx + 1} of ${TOTAL_QS}`;
+  document.getElementById("qOriginTag").innerText = q.origin_tag || (q.label || "Mock");
+  
+  const diffTag = document.getElementById("qDiffTag");
+  diffTag.innerText = (q.difficulty || "medium").toUpperCase();
+  diffTag.className = `badge badge-diff-${(q.difficulty || "medium").toLowerCase().slice(0,4)}`;
+
+  document.getElementById("qSyllabusTag").innerText = q.syllabus_id || "";
+
+  document.getElementById("qTextEn").innerText = q.text;
+  const altBox = document.getElementById("qTextAlt");
+  if (q.text_alt) {
+    altBox.innerText = q.text_alt;
+    altBox.style.display = "block";
+  } else {
+    altBox.style.display = "none";
+  }
+
+  const optContainer = document.getElementById("optionsContainer");
+  optContainer.innerHTML = "";
+  const selectedAns = userAnswers[idx];
+
+  q.options.forEach(opt => {
+    const card = document.createElement("label");
+    card.className = `option-label-card ${selectedAns === opt.label ? 'selected' : ''}`;
+    card.innerHTML = `
+      <input type="radio" name="opt_choice" value="${opt.label}" class="option-radio" ${selectedAns === opt.label ? 'checked' : ''}>
+      <span class="option-label-letter">${opt.label}.</span>
+      <span class="option-text">${opt.text}</span>
+    `;
+    card.onclick = () => {
+      document.querySelectorAll(".option-label-card").forEach(c => c.classList.remove("selected"));
+      card.classList.add("selected");
+      card.querySelector("input").checked = true;
+    };
+    optContainer.appendChild(card);
+  });
+
+  const sec = SECTIONS.find(s => s.id === q.section_id) || SECTIONS[0];
+  document.querySelectorAll(".section-tab").forEach(t => t.classList.remove("active"));
+  const secTab = document.getElementById(`tab-${sec.id}`);
+  if (secTab) secTab.classList.add("active");
+  document.getElementById("currentSectionTitle").innerText = `SECTION: ${sec.name.toUpperCase()}`;
+
+  updatePaletteButton(idx);
+  updatePaletteCounts();
+}
+
+function markCurrentStateBeforeLeave() {
+  const selectedRadio = document.querySelector('input[name="opt_choice"]:checked');
+  if (selectedRadio) {
+    userAnswers[currentIndex] = selectedRadio.value;
+  }
+}
+
+function updatePaletteButton(idx) {
+  const btn = document.getElementById(`pal-${idx}`);
+  if (!btn) return;
+  btn.className = `pal-btn ${questionStatus[idx]} ${currentIndex === idx ? 'current' : ''}`;
+}
+
+function updatePaletteCounts() {
+  let ans = 0, notAns = 0, notVis = 0, marked = 0, ansMarked = 0;
+  for (let s of questionStatus) {
+    if (s === 'answered') ans++;
+    else if (s === 'not-answered') notAns++;
+    else if (s === 'not-visited') notVis++;
+    else if (s === 'marked') marked++;
+    else if (s === 'ans-marked') ansMarked++;
+  }
+  document.getElementById("badgeCountAns").innerText = ans;
+  document.getElementById("badgeCountNotAns").innerText = notAns;
+  document.getElementById("badgeCountNotVis").innerText = notVis;
+  document.getElementById("badgeCountMarked").innerText = marked;
+  document.getElementById("badgeCountAnsMarked").innerText = ansMarked;
+}
+
+function jumpToSection(secId) {
+  markCurrentStateBeforeLeave();
+  const firstIdx = QUESTIONS.findIndex(q => q.section_id === secId);
+  if (firstIdx !== -1) {
+    loadQuestion(firstIdx);
+  }
+}
+
+function setupTestEventListeners() {
+  document.getElementById("btnSaveNext").onclick = () => {
+    const selected = document.querySelector('input[name="opt_choice"]:checked');
+    if (selected) {
+      userAnswers[currentIndex] = selected.value;
+      questionStatus[currentIndex] = 'answered';
+    } else {
+      userAnswers[currentIndex] = null;
+      questionStatus[currentIndex] = 'not-answered';
+    }
+    updatePaletteButton(currentIndex);
+    if (currentIndex < TOTAL_QS - 1) {
+      loadQuestion(currentIndex + 1);
+    } else {
+      updatePaletteCounts();
+    }
+  };
+
+  document.getElementById("btnMarkReview").onclick = () => {
+    const selected = document.querySelector('input[name="opt_choice"]:checked');
+    wasEverMarked[currentIndex] = true;
+    if (selected) {
+      userAnswers[currentIndex] = selected.value;
+      questionStatus[currentIndex] = 'ans-marked';
+    } else {
+      userAnswers[currentIndex] = null;
+      questionStatus[currentIndex] = 'marked';
+    }
+    updatePaletteButton(currentIndex);
+    if (currentIndex < TOTAL_QS - 1) {
+      loadQuestion(currentIndex + 1);
+    } else {
+      updatePaletteCounts();
+    }
+  };
+
+  document.getElementById("btnClearResponse").onclick = () => {
+    userAnswers[currentIndex] = null;
+    questionStatus[currentIndex] = 'not-answered';
+    document.querySelectorAll(".option-label-card").forEach(c => c.classList.remove("selected"));
+    const checked = document.querySelector('input[name="opt_choice"]:checked');
+    if (checked) checked.checked = false;
+    updatePaletteButton(currentIndex);
+    updatePaletteCounts();
+  };
+
+  document.getElementById("btnPrev").onclick = () => {
+    markCurrentStateBeforeLeave();
+    if (currentIndex > 0) loadQuestion(currentIndex - 1);
+  };
+
+  document.getElementById("btnSpeedToggle").onclick = (e) => {
+    if (timerSpeedMultiplier === 1) {
+      timerSpeedMultiplier = 10;
+      e.target.innerText = "10x Fast";
+      e.target.style.background = "#0284c7";
+    } else {
+      timerSpeedMultiplier = 1;
+      e.target.innerText = "1x Speed";
+      e.target.style.background = "#334155";
+    }
+  };
+
+  document.getElementById("btnOpenSubmitModal").onclick = () => openSubmitModal();
+  document.getElementById("btnCancelModal").onclick = () => document.getElementById("submitModal").style.display = "none";
+  document.getElementById("btnConfirmSubmit").onclick = () => {
+    document.getElementById("submitModal").style.display = "none";
+    finishExam();
+  };
+}
+
+function openSubmitModal() {
+  markCurrentStateBeforeLeave();
+  let ans = 0, notAns = 0, marked = 0, notVis = 0;
+  for (let i = 0; i < TOTAL_QS; i++) {
+    if (userAnswers[i] !== null) ans++;
+    else if (questionStatus[i] === 'not-visited') notVis++;
+    else if (questionStatus[i] === 'marked') marked++;
+    else notAns++;
+  }
+  document.getElementById("mTotalQs").innerText = TOTAL_QS;
+  document.getElementById("mAnsQs").innerText = ans;
+  document.getElementById("mNotAnsQs").innerText = notAns;
+  document.getElementById("mMarkedQs").innerText = marked;
+  document.getElementById("mNotVisQs").innerText = notVis;
+  document.getElementById("submitModal").style.display = "flex";
+}
+
+function startTimer() {
+  const disp = document.getElementById("timeDisplay");
+  timerInterval = setInterval(() => {
+    remainingSeconds -= timerSpeedMultiplier;
+    if (remainingSeconds <= 0) {
+      remainingSeconds = 0;
+      clearInterval(timerInterval);
+      disp.innerText = "00:00";
+      alert("Time is up! Submitting exam automatically.");
+      finishExam();
+      return;
+    }
+    const m = Math.floor(remainingSeconds / 60);
+    const s = remainingSeconds % 60;
+    disp.innerText = `${m < 10 ? '0' : ''}${m}:${s < 10 ? '0' : ''}${s}`;
+    if (remainingSeconds <= 300) disp.classList.add("danger");
+  }, 1000);
+}
+
+/* =====================================================================
+   FINISH EXAM & LAUNCH RESULTS
+===================================================================== */
+function finishExam() {
+  clearInterval(timerInterval);
+  markCurrentStateBeforeLeave();
+
+  let correctCount = 0;
+  let incorrectCount = 0;
+  let unattemptedCount = 0;
+  let markedCount = 0;
+  let secStats = {};
+  SECTIONS.forEach(s => { secStats[s.id] = { name: s.name, total: 0, attempted: 0, correct: 0, incorrect: 0 }; });
+
+  QUESTIONS.forEach((q, idx) => {
+    const secId = q.section_id || SECTIONS[0].id;
+    if (!secStats[secId]) secStats[secId] = { name: secId, total: 0, attempted: 0, correct: 0, incorrect: 0 };
+    secStats[secId].total++;
+
+    if (wasEverMarked[idx] || questionStatus[idx] === 'marked' || questionStatus[idx] === 'ans-marked') {
+      wasEverMarked[idx] = true;
+      markedCount++;
+    }
+
+    const userAns = userAnswers[idx];
+    if (userAns === null) {
+      unattemptedCount++;
+    } else if (userAns === q.answer) {
+      correctCount++;
+      secStats[secId].attempted++;
+      secStats[secId].correct++;
+    } else {
+      incorrectCount++;
+      secStats[secId].attempted++;
+      secStats[secId].incorrect++;
+    }
+  });
+
+  const totalScore = (correctCount * 1.0) - (incorrectCount * 0.25);
+  const attemptedTotal = correctCount + incorrectCount;
+  const accuracy = attemptedTotal > 0 ? ((correctCount / attemptedTotal) * 100).toFixed(1) : 0;
+  const percentage = ((Math.max(0, totalScore) / TOTAL_QS) * 100).toFixed(1);
+
+  // Populate Dashboard Banner
+  document.getElementById("dashTotalScore").innerText = `${totalScore.toFixed(2)} / ${TOTAL_QS} (${percentage}%)`;
+  document.getElementById("dashAccuracy").innerText = `${accuracy}%`;
+  document.getElementById("dashAttempted").innerText = `${attemptedTotal} / ${TOTAL_QS} (${unattemptedCount} Unattempted)`;
+  document.getElementById("dashMarkedReview").innerText = markedCount;
+  
+  const statusElem = document.getElementById("dashStatus");
+  if (totalScore >= (TOTAL_QS * 0.50)) {
+    statusElem.innerText = "QUALIFIED (≥50%)";
+    statusElem.style.color = "#16a34a";
+  } else {
+    statusElem.innerText = "NEEDS REVISION (<50%)";
+    statusElem.style.color = "#dc2626";
+  }
+
+  // Subtitle in Review Mode
+  document.getElementById("revScoreSubtitle").innerText = `Score: ${totalScore.toFixed(2)} / ${TOTAL_QS} | Accuracy: ${accuracy}% | Attempted: ${attemptedTotal}/${TOTAL_QS}`;
+
+  // Populate Review Filter Counts
+  document.getElementById("revPillAll").innerText = TOTAL_QS;
+  document.getElementById("revPillCorrect").innerText = correctCount;
+  document.getElementById("revPillIncorrect").innerText = incorrectCount;
+  document.getElementById("revPillUnatt").innerText = unattemptedCount;
+  document.getElementById("revPillMarked").innerText = markedCount;
+
+  // Populate Section Table
+  const tbody = document.querySelector("#dashSectionTable tbody");
+  tbody.innerHTML = "";
+  Object.values(secStats).forEach(s => {
+    const sScore = (s.correct * 1.0) - (s.incorrect * 0.25);
+    const sAcc = s.attempted > 0 ? ((s.correct / s.attempted) * 100).toFixed(1) + "%" : "0%";
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td><strong>${s.name}</strong></td>
+      <td>${s.total}</td>
+      <td>${s.attempted}</td>
+      <td style="color:#16a34a; font-weight:700;">${s.correct}</td>
+      <td style="color:#dc2626;">${s.incorrect}</td>
+      <td><strong>${sScore.toFixed(2)}</strong></td>
+      <td>${sAcc}</td>
+    `;
+    tbody.appendChild(tr);
+  });
+
+  // Render Full Solution List (for optional scrollable view)
+  renderFullListSolutions();
+
+  // Setup Result Dashboard Button Actions
+  document.getElementById("btnStartInteractiveReview").onclick = () => openInteractiveReview("all");
+  document.getElementById("btnStartInteractiveReviewTop").onclick = () => openInteractiveReview("all");
+  document.getElementById("btnReviewIncorrectOnly").onclick = () => openInteractiveReview("incorrect");
+  document.getElementById("btnReviewMarkedOnly").onclick = () => openInteractiveReview("marked");
+
+  const listContainer = document.getElementById("fullListSolutionsContainer");
+  document.getElementById("btnToggleListSolutions").onclick = () => {
+    listContainer.style.display = listContainer.style.display === "block" ? "none" : "block";
+  };
+  document.getElementById("btnCloseListSolutions").onclick = () => {
+    listContainer.style.display = "none";
+  };
+
+  // Show Dashboard
+  document.getElementById("resultsDashboard").style.display = "flex";
+}
+
+/* =====================================================================
+   INTERACTIVE REVIEW MODE ENGINE
+===================================================================== */
+function openInteractiveReview(filter = "all") {
+  document.getElementById("resultsDashboard").style.display = "none";
+  document.getElementById("interactiveReviewMode").style.display = "flex";
+  
+  setupReviewEventListeners();
+  initReviewPalette();
+  setReviewFilter(filter);
+}
+
+function setupReviewEventListeners() {
+  document.getElementById("btnBackToDashboard").onclick = () => {
+    document.getElementById("interactiveReviewMode").style.display = "none";
+    document.getElementById("resultsDashboard").style.display = "flex";
+  };
+  document.getElementById("btnRevJumpToSummary").onclick = () => {
+    document.getElementById("interactiveReviewMode").style.display = "none";
+    document.getElementById("resultsDashboard").style.display = "flex";
+  };
+
+  // Filter Pills click handlers
+  document.querySelectorAll(".rev-filter-pill").forEach(pill => {
+    pill.onclick = () => {
+      setReviewFilter(pill.dataset.revFilter);
+    };
+  });
+
+  // Prev / Next in Review Mode
+  document.getElementById("btnRevPrev").onclick = () => {
+    const pos = reviewQuestionIndices.indexOf(reviewCurrentIndex);
+    if (pos > 0) {
+      loadReviewQuestion(reviewQuestionIndices[pos - 1]);
+    }
+  };
+
+  document.getElementById("btnRevNext").onclick = () => {
+    const pos = reviewQuestionIndices.indexOf(reviewCurrentIndex);
+    if (pos !== -1 && pos < reviewQuestionIndices.length - 1) {
+      loadReviewQuestion(reviewQuestionIndices[pos + 1]);
+    }
+  };
+}
+
+function initReviewPalette() {
+  const grid = document.getElementById("revPaletteGrid");
+  grid.innerHTML = "";
+  for (let i = 0; i < TOTAL_QS; i++) {
+    const q = QUESTIONS[i];
+    const uAns = userAnswers[i];
+    const btn = document.createElement("button");
+    btn.className = "rev-pal-btn";
+    btn.id = `rev-pal-${i}`;
+    btn.innerText = i + 1;
+
+    if (uAns === null) {
+      btn.classList.add("btn-rev-unatt");
+    } else if (uAns === q.answer) {
+      btn.classList.add("btn-rev-correct");
+    } else {
+      btn.classList.add("btn-rev-incorrect");
+    }
+
+    if (wasEverMarked[i]) {
+      btn.classList.add("was-marked");
+    }
+
+    btn.onclick = () => loadReviewQuestion(i);
+    grid.appendChild(btn);
+  }
+}
+
+function setReviewFilter(filter) {
+  activeReviewFilter = filter;
+  
+  // Highlight active pill
+  document.querySelectorAll(".rev-filter-pill").forEach(pill => {
+    if (pill.dataset.revFilter === filter) {
+      pill.classList.add("active");
+    } else {
+      pill.classList.remove("active");
+    }
+  });
+
+  // Compute matching indices
+  reviewQuestionIndices = [];
+  QUESTIONS.forEach((q, idx) => {
+    const uAns = userAnswers[idx];
+    const isCorrect = uAns === q.answer;
+    const isUnatt = uAns === null;
+    const isMarked = wasEverMarked[idx];
+
+    let match = false;
+    if (filter === "all") match = true;
+    else if (filter === "correct" && isCorrect) match = true;
+    else if (filter === "incorrect" && (!isCorrect && !isUnatt)) match = true;
+    else if (filter === "unattempted" && isUnatt) match = true;
+    else if (filter === "marked" && isMarked) match = true;
+
+    if (match) reviewQuestionIndices.push(idx);
+
+    // Dim non-matching buttons in review palette
+    const palBtn = document.getElementById(`rev-pal-${idx}`);
+    if (palBtn) {
+      if (match) palBtn.classList.remove("is-dimmed");
+      else palBtn.classList.add("is-dimmed");
+    }
+  });
+
+  // Update Status text
+  const filterNames = {
+    all: "All Questions",
+    correct: "Correct Answers",
+    incorrect: "Incorrect Answers",
+    unattempted: "Unattempted Questions",
+    marked: "Marked for Review"
+  };
+  document.getElementById("revFilterStatusInfo").innerText = 
+    `Filter: ${filterNames[filter]} (${reviewQuestionIndices.length} of ${TOTAL_QS} questions)`;
+  document.getElementById("revPaletteTitle").innerText = `PALETTE: ${filterNames[filter].toUpperCase()}`;
+
+  // Load first matching question
+  if (reviewQuestionIndices.length > 0) {
+    const targetIdx = reviewQuestionIndices.includes(reviewCurrentIndex) ? reviewCurrentIndex : reviewQuestionIndices[0];
+    loadReviewQuestion(targetIdx);
+  } else {
+    alert(`No questions found under filter: "${filterNames[filter]}"`);
+    setReviewFilter("all");
+  }
+}
+
+function loadReviewQuestion(idx) {
+  reviewCurrentIndex = idx;
+  const q = QUESTIONS[idx];
+  const uAns = userAnswers[idx];
+  const isCorrect = uAns === q.answer;
+  const isUnatt = uAns === null;
+  const isMarked = wasEverMarked[idx];
+
+  // Palette current highlight
+  document.querySelectorAll(".rev-pal-btn").forEach(b => b.classList.remove("current"));
+  const curBtn = document.getElementById(`rev-pal-${idx}`);
+  if (curBtn) curBtn.classList.add("current");
+
+  // Meta bar
+  document.getElementById("revDisplayNum").innerText = `Question No. ${idx + 1} of ${TOTAL_QS}`;
+  document.getElementById("revOriginTag").innerText = q.origin_tag || (q.label || "Mock");
+  
+  const diffTag = document.getElementById("revDiffTag");
+  diffTag.innerText = (q.difficulty || "medium").toUpperCase();
+  diffTag.className = `badge badge-diff-${(q.difficulty || "medium").toLowerCase().slice(0,4)}`;
+
+  document.getElementById("revSyllabusTag").innerText = q.syllabus_id || "";
+
+  const markedBadge = document.getElementById("revMarkedBadge");
+  if (isMarked) {
+    markedBadge.style.display = "inline-block";
+  } else {
+    markedBadge.style.display = "none";
+  }
+
+  // Status Banner
+  const banner = document.getElementById("revStatusBanner");
+  const bannerText = document.getElementById("revStatusBannerText");
+  const choiceText = document.getElementById("revCandidateChoiceText");
+  const marksBadge = document.getElementById("revMarksBadge");
+
+  if (isCorrect) {
+    banner.className = "rev-status-banner status-correct";
+    bannerText.innerHTML = "✓ Correct Answer (+1.00 Marks)";
+    marksBadge.innerText = "+1.00 Marks";
+    marksBadge.style.background = "#dcfce7";
+    marksBadge.style.color = "#166534";
+  } else if (isUnatt) {
+    banner.className = "rev-status-banner status-unattempted";
+    bannerText.innerHTML = "○ Unattempted (0.00 Marks)";
+    marksBadge.innerText = "0.00 Marks";
+    marksBadge.style.background = "#f1f5f9";
+    marksBadge.style.color = "#475569";
+  } else {
+    banner.className = "rev-status-banner status-incorrect";
+    bannerText.innerHTML = "✗ Incorrect Answer (-0.25 Negative Marking)";
+    marksBadge.innerText = "-0.25 Marks";
+    marksBadge.style.background = "#fee2e2";
+    marksBadge.style.color = "#991b1b";
+  }
+
+  choiceText.innerHTML = `Your Choice: <strong>${uAns ? uAns : 'None'}</strong> | Official Key: <strong>${q.answer}</strong>`;
+
+  // Question statements
+  document.getElementById("revTextEn").innerText = q.text;
+  const altBox = document.getElementById("revTextAlt");
+  if (q.text_alt) {
+    altBox.innerText = q.text_alt;
+    altBox.style.display = "block";
+  } else {
+    altBox.style.display = "none";
+  }
+
+  // Option Cards rendering with clear badges
+  const optContainer = document.getElementById("revOptionsContainer");
+  optContainer.innerHTML = "";
+
+  q.options.forEach(opt => {
+    const isThisOfficial = opt.label === q.answer;
+    const isThisUserChoice = opt.label === uAns;
+
+    const card = document.createElement("div");
+    card.className = "rev-option-card";
+
+    let badgeHtml = "";
+    if (isThisOfficial && isThisUserChoice) {
+      card.classList.add("is-official-correct");
+      badgeHtml = `<span class="rev-option-badge badge-rev-correct">✓ Your Choice (Correct Key)</span>`;
+    } else if (isThisOfficial) {
+      card.classList.add("is-official-correct");
+      badgeHtml = `<span class="rev-option-badge badge-rev-correct">✓ Official Key</span>`;
+    } else if (isThisUserChoice) {
+      card.classList.add("is-user-incorrect");
+      badgeHtml = `<span class="rev-option-badge badge-rev-wrong">✗ Your Choice (Incorrect)</span>`;
+    }
+
+    card.innerHTML = `
+      <span class="option-label-letter" style="font-weight:700; width:28px;">${opt.label}.</span>
+      <span class="option-text" style="flex:1;">${opt.text}</span>
+      ${badgeHtml}
+    `;
+    optContainer.appendChild(card);
+  });
+
+  // Rationale box
+  document.getElementById("revRationaleText").innerHTML = q.explanation || "No explanation provided.";
+
+  // Update Prev / Next button states
+  const pos = reviewQuestionIndices.indexOf(idx);
+  document.getElementById("btnRevPrev").disabled = (pos <= 0);
+  document.getElementById("btnRevNext").disabled = (pos >= reviewQuestionIndices.length - 1);
+}
+
+/* =====================================================================
+   FULL PRINTABLE SOLUTION LIST
+===================================================================== */
+function renderFullListSolutions() {
+  const container = document.getElementById("solutionReviewContainer");
+  container.innerHTML = "";
+
+  QUESTIONS.forEach((q, idx) => {
+    const userAns = userAnswers[idx];
+    const isCorrect = userAns === q.answer;
+    const isUnattempted = userAns === null;
+    const isMarked = wasEverMarked[idx];
+
+    const card = document.createElement("div");
+    card.className = `list-q-card ${isCorrect ? 'correct' : (isUnattempted ? 'unattempted' : 'incorrect')}`;
+    
+    let optHtml = "";
+    q.options.forEach(o => {
+      let style = "padding:6px 12px; margin:4px 0; border-radius:4px; font-size:0.88rem;";
+      if (o.label === q.answer && o.label === userAns) {
+        style += " background:#dcfce7; color:#166534; font-weight:700; border:1.5px solid #22c55e;";
+      } else if (o.label === q.answer) {
+        style += " background:#dcfce7; color:#166534; font-weight:700; border:1px solid #86efac;";
+      } else if (o.label === userAns) {
+        style += " background:#fee2e2; color:#991b1b; font-weight:700; border:1px solid #fca5a5;";
+      } else {
+        style += " background:#f8fafc; color:#475569;";
+      }
+      optHtml += `<div style="${style}">${o.label}. ${o.text}</div>`;
+    });
+
+    card.innerHTML = `
+      <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+        <span style="font-weight:700; font-size:0.95rem;">Q${idx + 1}. (${q.subject || ''})</span>
+        <div>
+          ${isMarked ? '<span class="badge badge-reviewed" style="margin-right:6px;">★ Marked Review</span>' : ''}
+          <span class="badge badge-origin">${q.origin_tag || (q.label || 'Mock')}</span>
+        </div>
+      </div>
+      <div style="font-size:0.98rem; font-weight:600; margin-bottom:8px; color:#0f172a;">${q.text}</div>
+      ${q.text_alt ? `<div style="font-size:0.88rem; color:#475569; margin-bottom:10px;">${q.text_alt}</div>` : ''}
+      <div style="margin:10px 0;">${optHtml}</div>
+      <div style="font-size:0.84rem; margin-top:8px;">
+        <strong>Your Choice:</strong> ${userAns ? userAns : '<span style="color:#64748b;">Not Attempted</span>'} |
+        <strong style="color:#16a34a;">Official Key:</strong> ${q.answer}
+      </div>
+      <div class="rev-rationale-box" style="margin-top:10px;">
+        <div class="rev-rationale-title">Verified Explanation</div>
+        <div class="rev-rationale-text">${q.explanation || 'No detailed explanation provided.'}</div>
+      </div>
+    `;
+    container.appendChild(card);
+  });
+}
+</script>
+</body>
+</html>

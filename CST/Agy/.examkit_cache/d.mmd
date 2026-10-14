@@ -1,0 +1,5 @@
+flowchart LR
+    P1["Process P1"] -->|"Holds"| R1["Resource R1"]
+    R1 -->|"Requested by"| P2["Process P2"]
+    P2 -->|"Holds"| R2["Resource R2"]
+    R2 -->|"Requested by"| P1

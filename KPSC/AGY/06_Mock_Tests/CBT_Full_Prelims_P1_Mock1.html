@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KPSC KAS Prelims Paper 1 — Mock1 (Full Mock) - KPSC KAS CBT Simulator</title>
+<style>
+:root {
+  --bg-primary: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-surface-secondary: #f1f5f9;
+  --border-color: #cbd5e1;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --accent-color: #2563eb;
+  --accent-hover: #1d4ed8;
+  --ans-green: #16a34a;
+  --ans-green-bg: #dcfce7;
+  --not-ans-red: #dc2626;
+  --not-ans-red-bg: #fee2e2;
+  --marked-purple: #9333ea;
+  --marked-purple-bg: #f3e8ff;
+  --not-visited-gray: #64748b;
+  --not-visited-gray-bg: #f1f5f9;
+  --header-height: 64px;
+}
+
+[data-theme="dark"] {
+  --bg-primary: #0b0f17;
+  --bg-surface: #131b26;
+  --bg-surface-secondary: #1a2433;
+  --border-color: #2b384e;
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --accent-color: #3b82f6;
+  --accent-hover: #60a5fa;
+  --ans-green: #22c55e;
+  --ans-green-bg: rgba(34, 197, 94, 0.15);
+  --not-ans-red: #ef4444;
+  --not-ans-red-bg: rgba(239, 68, 68, 0.15);
+  --marked-purple: #a855f7;
+  --marked-purple-bg: rgba(168, 85, 247, 0.15);
+  --not-visited-gray: #94a3b8;
+  --not-visited-gray-bg: #1e293b;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+/* SCREEN VISIBILITY */
+.screen-view { display: none; }
+.screen-view.active { display: block; }
+
+/* HEADER */
+.cbt-header {
+  height: var(--header-height);
+  background: var(--bg-surface);
+  border-bottom: 1.5px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+.header-left { display: flex; align-items: center; gap: 16px; }
+.exam-brand { font-size: 1.15rem; font-weight: 700; color: var(--accent-color); letter-spacing: -0.02em; }
+.badge-mode {
+  padding: 3px 10px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: var(--bg-surface-secondary);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+}
+.header-right { display: flex; align-items: center; gap: 20px; }
+.timer-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: var(--bg-surface-secondary);
+  border: 1.5px solid var(--border-color);
+  border-radius: 8px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.candidate-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+.theme-btn {
+  background: none;
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* INSTRUCTIONS SCREEN */
+.inst-container {
+  max-width: 900px;
+  margin: 32px auto;
+  padding: 32px;
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+}
+.inst-title { font-size: 1.6rem; font-weight: 800; margin-bottom: 8px; }
+.inst-subtitle { font-size: 1rem; color: var(--text-secondary); margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--border-color); }
+.inst-spec-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 28px;
+}
+.spec-card {
+  padding: 16px;
+  background: var(--bg-surface-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+}
+.spec-label { font-size: 0.8rem; color: var(--text-secondary); text-transform: uppercase; font-weight: 600; }
+.spec-value { font-size: 1.25rem; font-weight: 700; color: var(--text-primary); margin-top: 4px; }
+.inst-rules { margin-bottom: 28px; line-height: 1.7; font-size: 0.95rem; }
+.inst-rules h3 { margin: 16px 0 8px; font-size: 1.1rem; }
+.inst-rules ul { padding-left: 24px; margin-bottom: 12px; }
+.inst-mode-picker {
+  background: var(--bg-surface-secondary);
+  padding: 20px;
+  border-radius: 8px;
+  border: 1.5px solid var(--border-color);
+  margin-bottom: 28px;
+}
+.mode-picker-title { font-weight: 700; margin-bottom: 12px; }
+.mode-opt { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; cursor: pointer; }
+.inst-actions { display: flex; align-items: center; justify-content: space-between; padding-top: 20px; border-top: 1px solid var(--border-color); }
+.btn-primary {
+  background: var(--accent-color);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+.btn-primary:hover { background: var(--accent-hover); }
+
+/* EXAM MAIN CONTAINER */
+.exam-layout {
+  display: flex;
+  height: calc(100vh - var(--header-height));
+  overflow: hidden;
+}
+.exam-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  border-right: 1.5px solid var(--border-color);
+}
+.section-bar {
+  display: flex;
+  background: var(--bg-surface-secondary);
+  border-bottom: 1.5px solid var(--border-color);
+  padding: 0 16px;
+  overflow-x: auto;
+}
+.sec-tab {
+  padding: 12px 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  white-space: nowrap;
+}
+.sec-tab.active {
+  color: var(--accent-color);
+  border-bottom-color: var(--accent-color);
+  background: var(--bg-surface);
+}
+.q-viewport {
+  flex: 1;
+  padding: 28px 36px;
+  overflow-y: auto;
+}
+.q-meta-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-color);
+}
+.q-title { font-size: 1.15rem; font-weight: 700; color: var(--accent-color); }
+.q-marks-pill {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: var(--bg-surface-secondary);
+  border: 1px solid var(--border-color);
+}
+.q-text-body {
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+.options-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
+.option-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px 18px;
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border-color);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.option-card:hover { border-color: var(--accent-color); background: var(--bg-surface-secondary); }
+.option-card.selected {
+  border-color: var(--accent-color);
+  background: rgba(37, 99, 235, 0.08);
+}
+.opt-radio { margin-top: 4px; accent-color: var(--accent-color); cursor: pointer; }
+.opt-pill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--bg-surface-secondary);
+  border: 1px solid var(--border-color);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  flex-shrink: 0;
+}
+.option-card.selected .opt-pill {
+  background: var(--accent-color);
+  color: #ffffff;
+  border-color: var(--accent-color);
+}
+.opt-text { font-size: 0.98rem; color: var(--text-primary); flex: 1; }
+
+/* CONTROLS BAR */
+.controls-bar {
+  padding: 16px 24px;
+  background: var(--bg-surface);
+  border-top: 1.5px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.ctrl-left { display: flex; gap: 10px; }
+.ctrl-right { display: flex; gap: 10px; }
+.btn-ctrl {
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1.5px solid var(--border-color);
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  transition: all 0.15s ease;
+}
+.btn-ctrl:hover { background: var(--bg-surface-secondary); }
+.btn-save-next { background: var(--ans-green); color: #ffffff; border-color: var(--ans-green); }
+.btn-save-next:hover { opacity: 0.9; }
+.btn-mark { background: var(--marked-purple); color: #ffffff; border-color: var(--marked-purple); }
+.btn-mark:hover { opacity: 0.9; }
+.btn-submit-main { background: var(--accent-color); color: #ffffff; border-color: var(--accent-color); font-weight: 700; }
+
+/* SIDE PALETTE */
+.palette-sidebar {
+  width: 340px;
+  background: var(--bg-surface);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.palette-header {
+  padding: 16px;
+  border-bottom: 1px solid var(--border-color);
+}
+.palette-legend {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  font-size: 0.78rem;
+  margin-bottom: 12px;
+}
+.leg-item { display: flex; align-items: center; gap: 6px; }
+.leg-badge {
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.75rem;
+}
+.leg-ans { background: var(--ans-green); color: #ffffff; }
+.leg-not-ans { background: var(--not-ans-red); color: #ffffff; }
+.leg-marked { background: var(--marked-purple); color: #ffffff; }
+.leg-marked-ans { background: var(--marked-purple); color: #ffffff; position: relative; }
+.leg-marked-ans::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #22c55e;
+}
+.leg-not-vis { background: var(--not-visited-gray-bg); border: 1px solid var(--border-color); color: var(--text-secondary); }
+
+.palette-sec-title { font-size: 0.85rem; font-weight: 700; color: var(--text-secondary); margin-bottom: 6px; }
+.palette-grid-wrapper {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+}
+.palette-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+.pal-btn {
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  border: 1.5px solid var(--border-color);
+  background: var(--not-visited-gray-bg);
+  color: var(--not-visited-gray);
+  position: relative;
+}
+.pal-btn.active-q { outline: 2.5px solid var(--accent-color); outline-offset: 1px; }
+.pal-btn.st-answered { background: var(--ans-green); color: #ffffff; border-color: var(--ans-green); }
+.pal-btn.st-not-answered { background: var(--not-ans-red); color: #ffffff; border-color: var(--not-ans-red); }
+.pal-btn.st-marked { background: var(--marked-purple); color: #ffffff; border-color: var(--marked-purple); }
+.pal-btn.st-marked-answered { background: var(--marked-purple); color: #ffffff; border-color: var(--marked-purple); }
+.pal-btn.st-marked-answered::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #22c55e;
+  border: 1px solid #ffffff;
+}
+
+/* MODAL */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(2px);
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+}
+.modal-overlay.active { display: flex; }
+.modal-card {
+  width: 90%;
+  max-width: 640px;
+  background: var(--bg-surface);
+  border-radius: 12px;
+  border: 1.5px solid var(--border-color);
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+.modal-header { font-size: 1.25rem; font-weight: 700; margin-bottom: 16px; }
+.modal-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+}
+.modal-table th, .modal-table td {
+  padding: 8px 12px;
+  border: 1px solid var(--border-color);
+  text-align: center;
+}
+.modal-table th { background: var(--bg-surface-secondary); }
+.modal-actions { display: flex; justify-content: flex-end; gap: 12px; }
+
+/* RESULTS SCREEN */
+.res-container {
+  max-width: 1000px;
+  margin: 32px auto;
+  padding: 32px;
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border-color);
+  border-radius: 12px;
+}
+.scorecard-header {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.scorecard-card {
+  padding: 16px;
+  border-radius: 8px;
+  background: var(--bg-surface-secondary);
+  border: 1px solid var(--border-color);
+  text-align: center;
+}
+.scorecard-val { font-size: 1.75rem; font-weight: 800; color: var(--accent-color); margin-top: 4px; }
+.res-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 32px;
+  font-size: 0.92rem;
+}
+.res-table th, .res-table td {
+  padding: 10px 14px;
+  border: 1px solid var(--border-color);
+  text-align: center;
+}
+.res-table th { background: var(--bg-surface-secondary); }
+.review-item {
+  padding: 20px;
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border-color);
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+.review-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+.truth-box {
+  background: var(--bg-surface-secondary);
+  border-left: 4px solid var(--accent-color);
+  padding: 10px 14px;
+  font-size: 0.88rem;
+  margin: 12px 0;
+}
+.explanation-box {
+  background: rgba(37, 99, 235, 0.05);
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  border-radius: 6px;
+  padding: 12px 16px;
+  font-size: 0.9rem;
+  margin-top: 12px;
+}
+</style>
+</head>
+<body>
+
+<!-- CBT TOP HEADER -->
+<header class="cbt-header">
+  <div class="header-left">
+    <div class="exam-brand">KPSC KAS CBT</div>
+    <div class="badge-mode" id="header-mode-badge">Exam Mode</div>
+  </div>
+  <div class="header-right">
+    <div class="timer-box" id="timer-box">
+      <span id="timer-display">00:00:00</span>
+    </div>
+    <div class="candidate-pill">
+      <strong>Candidate:</strong> <span id="candidate-name">GM01</span>
+    </div>
+    <button class="theme-btn" id="theme-btn" title="Toggle Theme">Theme</button>
+  </div>
+</header>
+
+<!-- SCREEN 1: INSTRUCTIONS SCREEN -->
+<div class="screen-view active" id="screen-instructions">
+  <div class="inst-container">
+    <div class="inst-title">KPSC KAS Prelims Paper 1 — Mock1 (Full Mock)</div>
+    <div class="inst-subtitle">Official Computer-Based Test Simulator | Karnataka Public Service Commission (KPSC)</div>
+
+    <div class="inst-spec-grid">
+      <div class="spec-card">
+        <div class="spec-label">Total Questions</div>
+        <div class="spec-value" id="inst-q-count">100</div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-label">Maximum Marks</div>
+        <div class="spec-value" id="inst-max-marks">200.0</div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-label">Marking Scheme</div>
+        <div class="spec-value">+2.00 / -0.50</div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-label">Exam Duration</div>
+        <div class="spec-value" id="inst-duration">120 Minutes</div>
+      </div>
+    </div>
+
+    <div class="inst-mode-picker">
+      <div class="mode-picker-title">Select Simulation Duration Mode:</div>
+      <label class="mode-opt">
+        <input type="radio" name="sim-mode" value="exam" checked>
+        <div>
+          <strong>Standard Exam Mode</strong> — Full examination duration (<span id="mode-exam-mins">120</span> Minutes)
+        </div>
+      </label>
+      <label class="mode-opt">
+        <input type="radio" name="sim-mode" value="quick">
+        <div>
+          <strong>Quick Check Mode</strong> — Accelerated 2-Minute session (Ideal for validating timer, auto-submit & scoring)
+        </div>
+      </label>
+    </div>
+
+    <div class="inst-rules">
+      <h3>Instructions & Rules for the Candidate:</h3>
+      <ul>
+        <li>The clock is synchronized to an absolute wall-clock timestamp. It does not drift and persists across browser refreshes.</li>
+        <li>Each multiple-choice question offers 4 options. Exactly one option is correct.</li>
+        <li><strong>Negative Marking:</strong> Each incorrect answer incurs a penalty of <strong>0.50 marks</strong> (one-fourth of 2.00 marks). Unattempted questions carry zero penalty.</li>
+        <li>Questions marked for review <em>without selecting an option</em> will be evaluated as unattempted (0 marks).</li>
+        <li>Questions marked for review <em>with an option selected</em> will be evaluated for scoring.</li>
+        <li>You may switch between sections freely at any time using the section tabs.</li>
+      </ul>
+    </div>
+
+    <div style="margin-bottom: 24px;">
+      <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 0.95rem;">
+        <input type="checkbox" id="inst-agree-check" checked>
+        <span>I have read and understood all the instructions above and am ready to proceed.</span>
+      </label>
+    </div>
+
+    <div class="inst-actions">
+      <button class="btn-ctrl" id="btn-resume-cached" style="display:none;">Resume In-Progress Test</button>
+      <button class="btn-primary" id="btn-start-exam">I am ready to begin</button>
+    </div>
+  </div>
+</div>
+
+<!-- SCREEN 2: EXAM MAIN VIEW -->
+<div class="screen-view" id="screen-exam">
+  <div class="exam-layout">
+    <div class="exam-main">
+      <!-- Section Bar -->
+      <div class="section-bar" id="section-bar"></div>
+
+      <!-- Question Viewport -->
+      <div class="q-viewport">
+        <div class="q-meta-header">
+          <div class="q-title" id="q-title-label">Question No. 1</div>
+          <div class="q-marks-pill">Marks: +2.00 / -0.50</div>
+        </div>
+
+        <div class="q-text-body" id="q-text-body"></div>
+
+        <div class="options-list" id="options-list"></div>
+      </div>
+
+      <!-- Controls Bar -->
+      <div class="controls-bar">
+        <div class="ctrl-left">
+          <button class="btn-ctrl" id="btn-prev">Previous (Alt+P)</button>
+          <button class="btn-ctrl btn-mark" id="btn-mark-review">Mark for Review & Next</button>
+          <button class="btn-ctrl" id="btn-clear-resp">Clear Response (Alt+C)</button>
+        </div>
+        <div class="ctrl-right">
+          <button class="btn-ctrl btn-save-next" id="btn-save-next">Save & Next (Alt+N)</button>
+          <button class="btn-ctrl btn-submit-main" id="btn-trigger-submit">Submit Test</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Side Palette -->
+    <div class="palette-sidebar">
+      <div class="palette-header">
+        <div class="palette-legend">
+          <div class="leg-item"><div class="leg-badge leg-ans" id="badge-count-ans">0</div> Answered</div>
+          <div class="leg-item"><div class="leg-badge leg-not-ans" id="badge-count-not-ans">0</div> Not Answered</div>
+          <div class="leg-item"><div class="leg-badge leg-not-vis" id="badge-count-not-vis">0</div> Not Visited</div>
+          <div class="leg-item"><div class="leg-badge leg-marked" id="badge-count-marked">0</div> Marked</div>
+          <div class="leg-item" style="grid-column: span 2;"><div class="leg-badge leg-marked-ans" id="badge-count-marked-ans">0</div> Answered & Marked</div>
+        </div>
+        <div class="palette-sec-title" id="pal-sec-name">Section: All Questions</div>
+      </div>
+
+      <div class="palette-grid-wrapper">
+        <div class="palette-grid" id="palette-grid"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SUBMIT CONFIRMATION MODAL -->
+<div class="modal-overlay" id="modal-submit">
+  <div class="modal-card">
+    <div class="modal-header">Confirm Exam Submission</div>
+    <table class="modal-table">
+      <thead>
+        <tr>
+          <th>Section</th>
+          <th>Total</th>
+          <th>Answered</th>
+          <th>Not Answered</th>
+          <th>Marked</th>
+          <th>Not Visited</th>
+        </tr>
+      </thead>
+      <tbody id="modal-table-body"></tbody>
+    </table>
+    <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 20px;">
+      Are you sure you want to submit your examination? Once submitted, answers cannot be edited.
+    </p>
+    <div class="modal-actions">
+      <button class="btn-ctrl" id="btn-modal-cancel">Return to Exam</button>
+      <button class="btn-primary" id="btn-modal-confirm">Confirm & Submit</button>
+    </div>
+  </div>
+</div>
+
+<!-- SCREEN 3: RESULTS & REVIEW VIEW -->
+<div class="screen-view" id="screen-result">
+  <div class="res-container">
+    <h2 style="margin-bottom: 8px;">Examination Performance Scorecard</h2>
+    <p style="color: var(--text-secondary); margin-bottom: 24px;" id="res-test-title">KPSC KAS Prelims Paper 1 — Mock1 (Full Mock)</p>
+
+    <div class="scorecard-header">
+      <div class="scorecard-card">
+        <div class="spec-label">Net Score</div>
+        <div class="scorecard-val" id="res-net-score">0.00</div>
+        <div style="font-size: 0.8rem; color: var(--text-secondary);">Out of <span id="res-max-marks">200.0</span></div>
+      </div>
+      <div class="scorecard-card">
+        <div class="spec-label">Accuracy</div>
+        <div class="scorecard-val" id="res-accuracy">0.0%</div>
+      </div>
+      <div class="scorecard-card">
+        <div class="spec-label">Attempted</div>
+        <div class="scorecard-val" id="res-attempted">0 / 100</div>
+      </div>
+      <div class="scorecard-card">
+        <div class="spec-label">Positive / Penalty</div>
+        <div class="scorecard-val" style="font-size: 1.2rem; color: var(--text-primary);" id="res-pos-neg">+0.0 / -0.0</div>
+      </div>
+    </div>
+
+    <h3 style="margin-bottom: 12px;">Sectional Performance Breakdown</h3>
+    <table class="res-table">
+      <thead>
+        <tr>
+          <th>Section</th>
+          <th>Total Qs</th>
+          <th>Attempted</th>
+          <th>Correct</th>
+          <th>Incorrect</th>
+          <th>Net Marks</th>
+          <th>Accuracy</th>
+        </tr>
+      </thead>
+      <tbody id="res-section-body"></tbody>
+    </table>
+
+    <div style="display: flex; justify-content: space-between; align-items: center; margin: 32px 0 16px;">
+      <h3>Question Review & Pedagogical Verification</h3>
+      <div style="display: flex; gap: 8px;">
+        <button class="btn-ctrl" id="btn-filter-all">All Questions</button>
+        <button class="btn-ctrl" id="btn-filter-flawed">Incorrect Only</button>
+        <button class="btn-ctrl" id="btn-filter-unattempted">Unattempted Only</button>
+      </div>
+    </div>
+
+    <div id="review-list"></div>
+
+    <div style="margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border-color); display: flex; justify-content: flex-end;">
+      <button class="btn-primary" id="btn-retake">Restart Simulation</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// PURE CBT ENGINE CORE
+const CbtCore = {
+  scoreExam(answers, questions, sections, markingScheme) {
+    const posMark = (markingScheme && markingScheme.positiveMarks !== undefined) ? markingScheme.positiveMarks : 2.0;
+    const negPenalty = (markingScheme && markingScheme.negativePenalty !== undefined) ? markingScheme.negativePenalty : 0.5;
+
+    let totalQuestions = questions.length;
+    let correctCount = 0;
+    let incorrectCount = 0;
+    let unattemptedCount = 0;
+    let markedCount = 0;
+
+    const sectionMap = {};
+    if (sections && sections.length > 0) {
+      sections.forEach(s => {
+        sectionMap[s.id || s.name] = {
+          id: s.id || s.name,
+          name: s.name,
+          total: 0,
+          attempted: 0,
+          correct: 0,
+          incorrect: 0,
+          unattempted: 0,
+          positiveMarks: 0,
+          negativePenalty: 0,
+          netMarks: 0,
+          accuracy: 0
+        };
+      });
+    }
+
+    const topicMap = {};
+
+    questions.forEach(q => {
+      const qSectionKey = q.section_id || (q.section ? q.section.id || q.section.name : null);
+      let secTracker = qSectionKey && sectionMap[qSectionKey] ? sectionMap[qSectionKey] : null;
+      if (!secTracker && sections && sections.length > 0) {
+        for (const s of sections) {
+          if (s.question_ids && s.question_ids.includes(q.id)) {
+            secTracker = sectionMap[s.id || s.name];
+            break;
+          }
+        }
+      }
+
+      const subjectKey = q.subject || 'General Studies';
+      if (!topicMap[subjectKey]) {
+        topicMap[subjectKey] = {
+          subject: subjectKey,
+          total: 0,
+          attempted: 0,
+          correct: 0,
+          incorrect: 0,
+          unattempted: 0,
+          netMarks: 0
+        };
+      }
+      const topTracker = topicMap[subjectKey];
+
+      if (secTracker) secTracker.total++;
+      topTracker.total++;
+
+      const userAns = answers ? answers[q.id] : null;
+      const selectedOptionId = userAns ? userAns.selectedOptionId : null;
+      const status = userAns ? userAns.status : 'not-visited';
+
+      if (status === 'marked' || status === 'marked-answered') {
+        markedCount++;
+      }
+
+      const isAttempted = !!selectedOptionId;
+
+      if (!isAttempted) {
+        unattemptedCount++;
+        if (secTracker) secTracker.unattempted++;
+        topTracker.unattempted++;
+      } else {
+        const correctOptId = q.answer_id || q.answer;
+        const isCorrect = (selectedOptionId === correctOptId || selectedOptionId === q.answer);
+
+        if (isCorrect) {
+          correctCount++;
+          if (secTracker) {
+            secTracker.attempted++;
+            secTracker.correct++;
+            secTracker.positiveMarks += posMark;
+          }
+          topTracker.attempted++;
+          topTracker.correct++;
+          topTracker.netMarks += posMark;
+        } else {
+          incorrectCount++;
+          if (secTracker) {
+            secTracker.attempted++;
+            secTracker.incorrect++;
+            secTracker.negativePenalty += negPenalty;
+          }
+          topTracker.attempted++;
+          topTracker.incorrect++;
+          topTracker.netMarks -= negPenalty;
+        }
+      }
+    });
+
+    const attemptedCount = correctCount + incorrectCount;
+    const positiveMarks = correctCount * posMark;
+    const negativePenalty = incorrectCount * negPenalty;
+    const netScore = positiveMarks - negativePenalty; // Exact raw score, NOT clamped
+    const accuracy = attemptedCount > 0 ? Number(((correctCount / attemptedCount) * 100).toFixed(2)) : 0;
+
+    const sectionBreakdown = Object.values(sectionMap).map(sec => {
+      sec.netMarks = Number((sec.positiveMarks - sec.negativePenalty).toFixed(2));
+      sec.accuracy = sec.attempted > 0 ? Number(((sec.correct / sec.attempted) * 100).toFixed(2)) : 0;
+      return sec;
+    });
+
+    const topicBreakdown = Object.values(topicMap).map(top => {
+      top.netMarks = Number(top.netMarks.toFixed(2));
+      top.accuracy = top.attempted > 0 ? Number(((top.correct / top.attempted) * 100).toFixed(2)) : 0;
+      return top;
+    });
+
+    return {
+      totalQuestions,
+      attemptedCount,
+      unattemptedCount,
+      correctCount,
+      incorrectCount,
+      markedCount,
+      positiveMarks: Number(positiveMarks.toFixed(2)),
+      negativePenalty: Number(negativePenalty.toFixed(2)),
+      netScore: Number(netScore.toFixed(2)),
+      accuracy,
+      sectionBreakdown,
+      topicBreakdown
+    };
+  },
+
+  computeRemainingTime(endTime, now) {
+    const current = (now !== undefined) ? now : Date.now();
+    const diffMs = endTime - current;
+    if (diffMs <= 0) {
+      return { remainingSeconds: 0, isExpired: true, formatted: "00:00:00" };
+    }
+    const totalSecs = Math.round(diffMs / 1000);
+    const hrs = Math.floor(totalSecs / 3600);
+    const mins = Math.floor((totalSecs % 3600) / 60);
+    const secs = totalSecs % 60;
+    const formatted = `${String(hrs).padStart(2, '0')}:${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+    return { remainingSeconds: totalSecs, isExpired: false, formatted };
+  }
+};
+
+// EMBEDDED EXAM PAYLOAD
+const EXAM_DATA = {"test_id": "CBT_Full_Prelims_P1_Mock1", "title": "KPSC KAS Prelims Paper 1 — Mock1 (Full Mock)", "paper": "Paper 1 (Current Events + Humanities)", "duration_minutes": 120, "positive_marks": 2.0, "negative_penalty": 0.5, "sections": [{"id": "SEC-P1-1", "name": "Section 1: Current Events (National & Int.)", "q_count": 40}, {"id": "SEC-P1-2", "name": "Section 2: Humanities (History, Geo, Polity, Econ)", "q_count": 60}], "questions": [{"id": "KAS-P1-CA-001", "text_hash": "d82e7ffab1d094cb", "text": "The Bharatiya Nyaya Sanhita (BNS), 2023 officially came into legal enforcement across India on which date?", "options": [{"id": "opt_a", "label": "A", "text": "1 January 2024"}, {"id": "opt_b", "label": "B", "text": "1 July 2024"}, {"id": "opt_c", "label": "C", "text": "15 August 2024"}, {"id": "opt_d", "label": "D", "text": "2 October 2024"}], "answer": "B", "answer_id": "opt_b", "explanation": "The Bharatiya Nyaya Sanhita (BNS), Bharatiya Nagarik Suraksha Sanhita (BNSS), and Bharatiya Sakshya Adhiniyam (BSA) came into force on 1 July 2024.", "statement_truths": "", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "P1-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-CA-002", "text_hash": "6310990542ff5a85", "text": "Under the Bharatiya Nyaya Sanhita, 2023, which of the following novel statutory punishments has been introduced for petty offenses?", "options": [{"id": "opt_a", "label": "A", "text": "Public reprimand"}, {"id": "opt_b", "label": "B", "text": "Community Service"}, {"id": "opt_c", "label": "C", "text": "Asset freezing"}, {"id": "opt_d", "label": "D", "text": "Solitary confinement"}], "answer": "B", "answer_id": "opt_b", "explanation": "Community Service has been introduced as a formal penal punishment for specific petty offenses in BNS.", "statement_truths": "", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "P1-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-CA-003", "text_hash": "aa72c186c777d946", "text": "The 106th Constitutional Amendment Act, 2023 provides for what percentage of reservation for women in the Lok Sabha and State Legislative Assemblies?", "options": [{"id": "opt_a", "label": "A", "text": "25%"}, {"id": "opt_b", "label": "B", "text": "30%"}, {"id": "opt_c", "label": "C", "text": "33%"}, {"id": "opt_d", "label": "D", "text": "50%"}], "answer": "C", "answer_id": "opt_c", "explanation": "The Nari Shakti Vandan Adhiniyam (106th Amendment Act) reserves one-third (33%) of seats for women.", "statement_truths": "", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "P1-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-CA-004", "text_hash": "8f7fa9a7e5465c87", "text": "Under the Chief Election Commissioner and other ECs Act, 2023, who among the following is NOT a member of the Selection Committee?", "options": [{"id": "opt_a", "label": "A", "text": "Prime Minister of India"}, {"id": "opt_b", "label": "B", "text": "Chief Justice of India"}, {"id": "opt_c", "label": "C", "text": "Leader of Opposition in Lok Sabha"}, {"id": "opt_d", "label": "D", "text": "A Union Cabinet Minister nominated by PM"}], "answer": "B", "answer_id": "opt_b", "explanation": "The CJI was substituted by a Union Cabinet Minister nominated by the Prime Minister in the Selection Committee.", "statement_truths": "", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "P1-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-CA-005", "text_hash": "5f4a50b787ecf48f", "text": "Mission Divyastra, successfully flight-tested by DRDO in March 2024, demonstrated which advanced capability on the Agni-5 missile?", "options": [{"id": "opt_a", "label": "A", "text": "Hypersonic Scramjet cruise flight"}, {"id": "opt_b", "label": "B", "text": "Multiple Independently Targetable Re-entry Vehicle (MIRV)"}, {"id": "opt_c", "label": "C", "text": "Submarine launch from underwater silo"}, {"id": "opt_d", "label": "D", "text": "Directed Energy Laser weapon"}], "answer": "B", "answer_id": "opt_b", "explanation": "Mission Divyastra proved indigenous MIRV technology on Agni-5, allowing multiple warheads to hit distinct targets.", "statement_truths": "", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "P1-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-CA-006", "text_hash": "e1413cae1a250c00", "text": "Which indigenously built nuclear-powered ballistic missile submarine (SSBN) was commissioned into the Indian Navy in August 2024 at Visakhapatnam?", "options": [{"id": "opt_a", "label": "A", "text": "INS Khanderi"}, {"id": "opt_b", "label": "B", "text": "INS Arighat"}, {"id": "opt_c", "label": "C", "text": "INS Vikrant"}, {"id": "opt_d", "label": "D", "text": "INS Vagir"}], "answer": "B", "answer_id": "opt_b", "explanation": "INS Arighat is India's second indigenous nuclear-powered ballistic missile submarine (SSBN) after INS Arihant.", "statement_truths": "", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "P1-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-CA-007", "text_hash": "34fa316ae0ae088d", "text": "What is the primary target domain of the National Quantum Mission (NQM) approved by the Union Cabinet?", "options": [{"id": "opt_a", "label": "A", "text": "Deep-sea polymetallic nodule mining"}, {"id": "opt_b", "label": "B", "text": "Intermediate-scale quantum computers with 50-1000 physical qubits"}, {"id": "opt_c", "label": "C", "text": "Fusion energy reactors"}, {"id": "opt_d", "label": "D", "text": "Graphene supercapacitors"}], "answer": "B", "answer_id": "opt_b", "explanation": "NQM targets 50-1000 physical qubit quantum computing, quantum communications, and quantum cryptography.", "statement_truths": "", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "P1-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-CA-008", "text_hash": "260e51ab0fb71287", "text": "With the addition of three new wetland sites in 2024, what is the total count of designated Ramsar sites in India as of late 2024?", "options": [{"id": "opt_a", "label": "A", "text": "75 sites"}, {"id": "opt_b", "label": "B", "text": "80 sites"}, {"id": "opt_c", "label": "C", "text": "85 sites"}, {"id": "opt_d", "label": "D", "text": "90 sites"}], "answer": "C", "answer_id": "opt_c", "explanation": "India's total Ramsar site tally reached 85 sites in 2024.", "statement_truths": "", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "P1-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-CA-009", "text_hash": "86432d47a060fd50", "text": "Who among the following was NOT conferred the Bharat Ratna award in the year 2024?", "options": [{"id": "opt_a", "label": "A", "text": "Dr. M. S. Swaminathan"}, {"id": "opt_b", "label": "B", "text": "Karpoori Thakur"}, {"id": "opt_c", "label": "C", "text": "Atal Bihari Vajpayee"}, {"id": "opt_d", "label": "D", "text": "Chaudhary Charan Singh"}], "answer": "C", "answer_id": "opt_c", "explanation": "Atal Bihari Vajpayee was conferred the Bharat Ratna in 2015. The 2024 recipients were Karpoori Thakur, L.K. Advani, P.V. Narasimha Rao, Charan Singh, and M.S. Swaminathan.", "statement_truths": "", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "P1-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-CA-010", "text_hash": "4ddb2cc92b4170e1", "text": "Late Karpoori Thakur, awarded the Bharat Ratna posthumously in 2024, was the former Chief Minister of which Indian State?", "options": [{"id": "opt_a", "label": "A", "text": "Uttar Pradesh"}, {"id": "opt_b", "label": "B", "text": "Bihar"}, {"id": "opt_c", "label": "C", "text": "Madhya Pradesh"}, {"id": "opt_d", "label": "D", "text": "Rajasthan"}], "answer": "B", "answer_id": "opt_b", "explanation": "Karpoori Thakur (Jan Nayak) was a two-time Chief Minister of Bihar and pioneer of backward classes empowerment.", "statement_truths": "", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "P1-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-CA-011", "text_hash": "80ff5ae31fcdd24a", "text": "Which of the following nations formally declined to join the BRICS grouping on 1 January 2024 despite being invited at the 15th Johannesburg Summit?", "options": [{"id": "opt_a", "label": "A", "text": "Saudi Arabia"}, {"id": "opt_b", "label": "B", "text": "Argentina"}, {"id": "opt_c", "label": "C", "text": "Egypt"}, {"id": "opt_d", "label": "D", "text": "United Arab Emirates"}], "answer": "B", "answer_id": "opt_b", "explanation": "Argentina under President Javier Milei formally declined to join BRICS on 1 January 2024.", "statement_truths": "", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "P1-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-CA-012", "text_hash": "347116aec4c5de20", "text": "How many new member countries officially became full members of BRICS on 1 January 2024?", "options": [{"id": "opt_a", "label": "A", "text": "3 countries"}, {"id": "opt_b", "label": "B", "text": "5 countries"}, {"id": "opt_c", "label": "C", "text": "7 countries"}, {"id": "opt_d", "label": "D", "text": "10 countries"}], "answer": "B", "answer_id": "opt_b", "explanation": "Five countries joined as full members: Egypt, Ethiopia, Iran, Saudi Arabia, and the United Arab Emirates.", "statement_truths": "", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "P1-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-CA-013", "text_hash": "1f16ef16c82874f4", "text": "Under India's G20 Presidency at the New Delhi Summit, which regional organization was admitted as a permanent full member of the G20?", "options": [{"id": "opt_a", "label": "A", "text": "ASEAN"}, {"id": "opt_b", "label": "B", "text": "African Union"}, {"id": "opt_c", "label": "C", "text": "European Free Trade Association"}, {"id": "opt_d", "label": "D", "text": "BIMSTEC"}], "answer": "B", "answer_id": "opt_b", "explanation": "The African Union, representing 55 African nations, was admitted as a permanent member of the G20.", "statement_truths": "", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "P1-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-CA-014", "text_hash": "7c3568fb79e1361f", "text": "Under the Trade and Economic Partnership Agreement (TEPA) signed in March 2024, which economic bloc committed to invest $100 Billion into India over 15 years?", "options": [{"id": "opt_a", "label": "A", "text": "European Union (EU)"}, {"id": "opt_b", "label": "B", "text": "European Free Trade Association (EFTA)"}, {"id": "opt_c", "label": "C", "text": "Mercosur"}, {"id": "opt_d", "label": "D", "text": "Gulf Cooperation Council (GCC)"}], "answer": "B", "answer_id": "opt_b", "explanation": "The European Free Trade Association (Switzerland, Norway, Iceland, Liechtenstein) signed TEPA with India.", "statement_truths": "", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "P1-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-CA-015", "text_hash": "ce25841e15c7080e", "text": "The COP28 UN Climate Conference was hosted in which city where the landmark 'UAE Consensus' on transitioning away from fossil fuels was adopted?", "options": [{"id": "opt_a", "label": "A", "text": "Sharm el-Sheikh"}, {"id": "opt_b", "label": "B", "text": "Glasgow"}, {"id": "opt_c", "label": "C", "text": "Dubai"}, {"id": "opt_d", "label": "D", "text": "Baku"}], "answer": "C", "answer_id": "opt_c", "explanation": "COP28 was held in Dubai, UAE in December 2023.", "statement_truths": "", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "P1-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-CA-016", "text_hash": "012018b9a358ca1e", "text": "The COP29 United Nations Climate Change Conference is hosted in which world capital city?", "options": [{"id": "opt_a", "label": "A", "text": "Baku (Azerbaijan)"}, {"id": "opt_b", "label": "B", "text": "Belém (Brazil)"}, {"id": "opt_c", "label": "C", "text": "Doha (Qatar)"}, {"id": "opt_d", "label": "D", "text": "Nairobi (Kenya)"}], "answer": "A", "answer_id": "opt_a", "explanation": "COP29 is hosted in Baku, Azerbaijan.", "statement_truths": "", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "P1-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-CA-017", "text_hash": "927b6857b87fe674", "text": "The India-Middle East-Europe Economic Corridor (IMEC) unveiled at the G20 Summit features which Mediterranean port terminal as a primary node connecting Europe?", "options": [{"id": "opt_a", "label": "A", "text": "Rotterdam Port"}, {"id": "opt_b", "label": "B", "text": "Haifa Port"}, {"id": "opt_c", "label": "C", "text": "Alexandria Port"}, {"id": "opt_d", "label": "D", "text": "Marseille Port"}], "answer": "B", "answer_id": "opt_b", "explanation": "IMEC's northern corridor routes from Arabian Gulf rail to Haifa Port in Israel before shipping to Europe.", "statement_truths": "", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "P1-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-CA-018", "text_hash": "8ad7dfda9a14cb1e", "text": "What was India's rank on the Global Innovation Index (GII) 2024 published by the World Intellectual Property Organization (WIPO)?", "options": [{"id": "opt_a", "label": "A", "text": "40th"}, {"id": "opt_b", "label": "B", "text": "39th"}, {"id": "opt_c", "label": "C", "text": "48th"}, {"id": "opt_d", "label": "D", "text": "52nd"}], "answer": "B", "answer_id": "opt_b", "explanation": "India ranked 39th out of 133 economies in the Global Innovation Index 2024.", "statement_truths": "", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "P1-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-CA-019", "text_hash": "15cf7e583b929235", "text": "According to the UNDP Human Development Report 2023-24, what is India's global rank in the Human Development Index (HDI)?", "options": [{"id": "opt_a", "label": "A", "text": "128th"}, {"id": "opt_b", "label": "B", "text": "131st"}, {"id": "opt_c", "label": "C", "text": "134th"}, {"id": "opt_d", "label": "D", "text": "142nd"}], "answer": "C", "answer_id": "opt_c", "explanation": "India ranked 134th out of 193 countries on HDI with a score of 0.644.", "statement_truths": "", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "P1-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-CA-020", "text_hash": "818056aef82ed664", "text": "Which country's spacecraft became the first in human history to land on the far side of the Moon and retrieve lunar soil samples back to Earth in June 2024?", "options": [{"id": "opt_a", "label": "A", "text": "USA (Artemis)"}, {"id": "opt_b", "label": "B", "text": "Japan (SLIM)"}, {"id": "opt_c", "label": "C", "text": "China (Chang'e-6)"}, {"id": "opt_d", "label": "D", "text": "India (Chandrayaan-3)"}], "answer": "C", "answer_id": "opt_c", "explanation": "China's Chang'e-6 mission retrieved the first-ever physical samples from the lunar far side (South Pole-Aitken basin).", "statement_truths": "", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "P1-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-CA-021", "text_hash": "d841fcb59a03df2f", "text": "Which city hosted the 14th BRICS Summit in virtual format under China's chairmanship?", "options": [{"id": "opt_a", "label": "A", "text": "Johannesburg"}, {"id": "opt_b", "label": "B", "text": "Beijing"}, {"id": "opt_c", "label": "C", "text": "Brasilia"}, {"id": "opt_d", "label": "D", "text": "New Delhi"}], "answer": "B", "answer_id": "opt_b", "explanation": "The 14th BRICS summit was chaired virtually by Beijing, China.", "statement_truths": "", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "P1-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-CA-022", "text_hash": "73e2e028ad3e4792", "text": "Who was appointed as the first Chief of Defence Staff (CDS) of the Indian Armed Forces?", "options": [{"id": "opt_a", "label": "A", "text": "General M. M. Naravane"}, {"id": "opt_b", "label": "B", "text": "General Bipin Rawat"}, {"id": "opt_c", "label": "C", "text": "General Dalbir Singh Suhag"}, {"id": "opt_d", "label": "D", "text": "Admiral Sunil Lanba"}], "answer": "B", "answer_id": "opt_b", "explanation": "General Bipin Rawat was appointed India's first Chief of Defence Staff (CDS) in December 2019.", "statement_truths": "", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "P1-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-CA-023", "text_hash": "8f681004b3298e6e", "text": "The Nobel Peace Prize 2023 was conferred upon which human rights defender from Iran?", "options": [{"id": "opt_a", "label": "A", "text": "Ales Bialiatski"}, {"id": "opt_b", "label": "B", "text": "Narges Mohammadi"}, {"id": "opt_c", "label": "C", "text": "Malala Yousafzai"}, {"id": "opt_d", "label": "D", "text": "Maria Ressa"}], "answer": "B", "answer_id": "opt_b", "explanation": "Narges Mohammadi was awarded the Nobel Peace Prize 2023 for her fight against the oppression of women in Iran.", "statement_truths": "", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "P1-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-CA-024", "text_hash": "0d26a900e81822ed", "text": "Which constitutional article was amended to implement the Goods and Services Tax (GST) in India via the 101st Constitutional Amendment?", "options": [{"id": "opt_a", "label": "A", "text": "Article 246A"}, {"id": "opt_b", "label": "B", "text": "Article 268A"}, {"id": "opt_c", "label": "C", "text": "Article 270A"}, {"id": "opt_d", "label": "D", "text": "Article 282A"}], "answer": "A", "answer_id": "opt_a", "explanation": "Article 246A was inserted by the 101st Amendment to grant concurrent taxing power over GST to Parliament and State Legislatures.", "statement_truths": "", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "P1-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-CA-025", "text_hash": "44661f9cd6fe5ca4", "text": "The headquarters of the International Big Cat Alliance (IBCA) established in 2024 is located in which country?", "options": [{"id": "opt_a", "label": "A", "text": "Kenya"}, {"id": "opt_b", "label": "B", "text": "India"}, {"id": "opt_c", "label": "C", "text": "South Africa"}, {"id": "opt_d", "label": "D", "text": "Brazil"}], "answer": "B", "answer_id": "opt_b", "explanation": "The International Big Cat Alliance (IBCA) is headquartered in India with budgetary backing approved in 2024.", "statement_truths": "", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "P1-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-CA-026", "text_hash": "56b515bf56d86910", "text": "Operation Kaveri was launched by the Government of India in 2023 to evacuate Indian citizens from which conflict-ridden nation?", "options": [{"id": "opt_a", "label": "A", "text": "Ukraine"}, {"id": "opt_b", "label": "B", "text": "Sudan"}, {"id": "opt_c", "label": "C", "text": "Israel"}, {"id": "opt_d", "label": "D", "text": "Yemen"}], "answer": "B", "answer_id": "opt_b", "explanation": "Operation Kaveri evacuated over 3,800 Indian citizens from Sudan following civil armed conflict in April 2023.", "statement_truths": "", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "P1-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-CA-027", "text_hash": "6184addac2c4dddb", "text": "Operation Ajay was launched by India in October 2023 to facilitate the return of Indian citizens from which region?", "options": [{"id": "opt_a", "label": "A", "text": "Ukraine"}, {"id": "opt_b", "label": "B", "text": "Israel and Palestine"}, {"id": "opt_c", "label": "C", "text": "Gaza Strip"}, {"id": "opt_d", "label": "D", "text": "Afghanistan"}], "answer": "B", "answer_id": "opt_b", "explanation": "Operation Ajay was launched to evacuate Indian citizens from Israel following the October 2023 conflict outbreak.", "statement_truths": "", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "P1-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-CA-028", "text_hash": "6f7bbca45cacdd52", "text": "Which Indian state hosted the Khelo India Youth Games 2024 across four cities (Chennai, Madurai, Trichy, Coimbatore)?", "options": [{"id": "opt_a", "label": "A", "text": "Karnataka"}, {"id": "opt_b", "label": "B", "text": "Tamil Nadu"}, {"id": "opt_c", "label": "C", "text": "Maharashtra"}, {"id": "opt_d", "label": "D", "text": "Haryana"}], "answer": "B", "answer_id": "opt_b", "explanation": "The 6th Khelo India Youth Games was held in Tamil Nadu in January 2024.", "statement_truths": "", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "P1-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-CA-029", "text_hash": "57a0fe3e301bb83a", "text": "The Dadasaheb Phalke Lifetime Achievement Award for 2021 (conferred in late 2023) was awarded to which legendary actress?", "options": [{"id": "opt_a", "label": "A", "text": "Asha Parekh"}, {"id": "opt_b", "label": "B", "text": "Waheeda Rehman"}, {"id": "opt_c", "label": "C", "text": "Hema Malini"}, {"id": "opt_d", "label": "D", "text": "Rekha"}], "answer": "B", "answer_id": "opt_b", "explanation": "Veteran actress Waheeda Rehman was honored with the Dadasaheb Phalke Lifetime Achievement Award.", "statement_truths": "", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "P1-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-CA-030", "text_hash": "6cc93da97ae3590b", "text": "Which island territory of India saw the commissioning of INS Jatayu naval base in March 2024 to bolster Indian Navy's surveillance in the Arabian Sea?", "options": [{"id": "opt_a", "label": "A", "text": "Andaman and Nicobar Islands"}, {"id": "opt_b", "label": "B", "text": "Minicoy Island (Lakshadweep)"}, {"id": "opt_c", "label": "C", "text": "Diu Island"}, {"id": "opt_d", "label": "D", "text": "Pamban Island"}], "answer": "B", "answer_id": "opt_b", "explanation": "INS Jatayu was commissioned on Minicoy Island in Lakshadweep, boosting security across the Sea Lines of Communication.", "statement_truths": "", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "P1-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-CA-031", "text_hash": "07b92c2098b14c54", "text": "Under the PM-Surya Ghar: Muft Bijli Yojana launched in 2024, how many units of free electricity per month are targeted for 1 crore households via rooftop solar?", "options": [{"id": "opt_a", "label": "A", "text": "Up to 100 units"}, {"id": "opt_b", "label": "B", "text": "Up to 200 units"}, {"id": "opt_c", "label": "C", "text": "Up to 300 units"}, {"id": "opt_d", "label": "D", "text": "Up to 400 units"}], "answer": "C", "answer_id": "opt_c", "explanation": "PM Surya Ghar Yojana targets up to 300 units of free power monthly for 1 crore households.", "statement_truths": "", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "P1-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-CA-032", "text_hash": "b4b44f274499aba6", "text": "Which national park in Madhya Pradesh is the second relocation site chosen for the introduction of African cheetahs under Project Cheetah?", "options": [{"id": "opt_a", "label": "A", "text": "Bandhavgarh National Park"}, {"id": "opt_b", "label": "B", "text": "Gandhi Sagar Wildlife Sanctuary"}, {"id": "opt_c", "label": "C", "text": "Kanha National Park"}, {"id": "opt_d", "label": "D", "text": "Pench National Park"}], "answer": "B", "answer_id": "opt_b", "explanation": "Gandhi Sagar Wildlife Sanctuary in Madhya Pradesh is prepared as the second home for cheetahs after Kuno NP.", "statement_truths": "", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "P1-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-CA-033", "text_hash": "66915e6b1d84cacf", "text": "The 'Loss and Damage Fund' to assist developing nations vulnerable to climate change was formally operationalized at which COP summit?", "options": [{"id": "opt_a", "label": "A", "text": "COP26 Glasgow"}, {"id": "opt_b", "label": "B", "text": "COP27 Sharm el-Sheikh"}, {"id": "opt_c", "label": "C", "text": "COP28 Dubai"}, {"id": "opt_d", "label": "D", "text": "COP21 Paris"}], "answer": "C", "answer_id": "opt_c", "explanation": "The Loss and Damage Fund was formally adopted and operationalized on Day 1 of COP28 in Dubai (2023).", "statement_truths": "", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "P1-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-CA-034", "text_hash": "6ea5f8b6c283bbcb", "text": "Who is the Chief Justice of India as of mid-2024, heading the Supreme Court of India?", "options": [{"id": "opt_a", "label": "A", "text": "Justice N. V. Ramana"}, {"id": "opt_b", "label": "B", "text": "Justice U. U. Lalit"}, {"id": "opt_c", "label": "C", "text": "Justice D. Y. Chandrachud"}, {"id": "opt_d", "label": "D", "text": "Justice Sanjiv Khanna"}], "answer": "C", "answer_id": "opt_c", "explanation": "Justice D. Y. Chandrachud served as the 50th Chief Justice of India (November 2022 to November 2024).", "statement_truths": "", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "P1-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-CA-035", "text_hash": "d30675755548dab3", "text": "Which public sector aerospace undertaking in Bengaluru manufactures the Light Combat Aircraft (LCA) Tejas for the Indian Air Force?", "options": [{"id": "opt_a", "label": "A", "text": "BHEL"}, {"id": "opt_b", "label": "B", "text": "HAL (Hindustan Aeronautics Limited)"}, {"id": "opt_c", "label": "C", "text": "BEL"}, {"id": "opt_d", "label": "D", "text": "BEML"}], "answer": "B", "answer_id": "opt_b", "explanation": "Hindustan Aeronautics Limited (HAL) headquartered in Bengaluru manufactures the LCA Tejas.", "statement_truths": "", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "P1-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-CA-036", "text_hash": "237ae7fb5f1af102", "text": "The Anusandhan National Research Foundation (ANRF) Act, 2023 repealed and replaced which statutory scientific funding body?", "options": [{"id": "opt_a", "label": "A", "text": "CSIR"}, {"id": "opt_b", "label": "B", "text": "Science and Engineering Research Board (SERB)"}, {"id": "opt_c", "label": "C", "text": "ICAR"}, {"id": "opt_d", "label": "D", "text": "ICMR"}], "answer": "B", "answer_id": "opt_b", "explanation": "ANRF repealed the Science and Engineering Research Board (SERB) Act, 2008 to create a Rs. 50,000 Crore research foundation.", "statement_truths": "", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "P1-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-CA-037", "text_hash": "f63e066ac627e514", "text": "What is the primary objective of the PM Vishwakarma Scheme launched by the Central Government?", "options": [{"id": "opt_a", "label": "A", "text": "Promoting AI startups"}, {"id": "opt_b", "label": "B", "text": "End-to-end support to traditional artisans and craftspeople"}, {"id": "opt_c", "label": "C", "text": "Subsidizing electric tractor purchases"}, {"id": "opt_d", "label": "D", "text": "Free health insurance to gig workers"}], "answer": "B", "answer_id": "opt_b", "explanation": "PM Vishwakarma provides collateral-free loans, skill training, and toolkits to traditional craftspeople across 18 trades.", "statement_truths": "", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "P1-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-CA-038", "text_hash": "1764f290cc466019", "text": "Which country hosted the G7 Leaders' Summit 2024 in the Apulia region?", "options": [{"id": "opt_a", "label": "A", "text": "Germany"}, {"id": "opt_b", "label": "B", "text": "Japan"}, {"id": "opt_c", "label": "C", "text": "Italy"}, {"id": "opt_d", "label": "D", "text": "United Kingdom"}], "answer": "C", "answer_id": "opt_c", "explanation": "The 50th G7 summit was hosted by Italy in Borgo Egnazia, Apulia in June 2024.", "statement_truths": "", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "P1-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-CA-039", "text_hash": "ac3624aa3ebbbf86", "text": "The North Atlantic Treaty Organization (NATO) welcomed which Nordic nation as its 32nd member country in March 2024?", "options": [{"id": "opt_a", "label": "A", "text": "Finland"}, {"id": "opt_b", "label": "B", "text": "Sweden"}, {"id": "opt_c", "label": "C", "text": "Ukraine"}, {"id": "opt_d", "label": "D", "text": "Ireland"}], "answer": "B", "answer_id": "opt_b", "explanation": "Sweden officially became the 32nd member of NATO in March 2024 (Finland joined as the 31st member in 2023).", "statement_truths": "", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "P1-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-CA-040", "text_hash": "89e4d05e2cc99dd4", "text": "Who won the ICC Men's T20 World Cup 2024 held in the West Indies and USA?", "options": [{"id": "opt_a", "label": "A", "text": "South Africa"}, {"id": "opt_b", "label": "B", "text": "Australia"}, {"id": "opt_c", "label": "C", "text": "India"}, {"id": "opt_d", "label": "D", "text": "England"}], "answer": "C", "answer_id": "opt_c", "explanation": "India defeated South Africa in the final in Bridgetown, Barbados to win the Men's T20 World Cup 2024.", "statement_truths": "", "subject": "Current Affairs", "paper": "Paper 1", "syllabus_id": "P1-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-1"}, {"id": "KAS-P1-HUM-001", "text_hash": "8aaab4d7a191a9df", "text": "Who was the founder of the Kadamba dynasty of Banavasi and the author of the Chandravalli inscription?", "options": [{"id": "opt_a", "label": "A", "text": "Mayurasharma"}, {"id": "opt_b", "label": "B", "text": "Kakusthavarma"}, {"id": "opt_c", "label": "C", "text": "Ravivarma"}, {"id": "opt_d", "label": "D", "text": "Santivarma"}], "answer": "A", "answer_id": "opt_a", "explanation": "Mayurasharma founded the Kadamba dynasty at Banavasi around 345 CE after overcoming the Pallavas.", "statement_truths": "", "subject": "Humanities", "paper": "Paper 1", "syllabus_id": "P1-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-HUM-002", "text_hash": "6d4d44fa2837aeee", "text": "The Halmidi Inscription (ಹಾಲ್ಮಿಡಿ ಶಾಸನ), dated to c. 450 CE, was discovered in which modern district of Karnataka?", "options": [{"id": "opt_a", "label": "A", "text": "Shivamogga"}, {"id": "opt_b", "label": "B", "text": "Hassan"}, {"id": "opt_c", "label": "C", "text": "Chikkamagaluru"}, {"id": "opt_d", "label": "D", "text": "Mandya"}], "answer": "B", "answer_id": "opt_b", "explanation": "The Halmidi inscription, the earliest recorded stone inscription in Kannada script, was found in Belur taluk, Hassan district.", "statement_truths": "", "subject": "Humanities", "paper": "Paper 1", "syllabus_id": "P1-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-HUM-003", "text_hash": "9e95d1bdcb41994f", "text": "Which Badami Chalukyan emperor assumed the title 'Parameshwara' after defeating Harsha on the banks of river Narmada?", "options": [{"id": "opt_a", "label": "A", "text": "Pulakeshin I"}, {"id": "opt_b", "label": "B", "text": "Pulakeshin II"}, {"id": "opt_c", "label": "C", "text": "Kirtivarman I"}, {"id": "opt_d", "label": "D", "text": "Vikramaditya I"}], "answer": "B", "answer_id": "opt_b", "explanation": "Pulakeshin II defeated Emperor Harsha on the banks of the Narmada in 618 CE, recorded in the Aihole Inscription by Ravikirti.", "statement_truths": "", "subject": "Humanities", "paper": "Paper 1", "syllabus_id": "P1-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-HUM-004", "text_hash": "6b61e0ad23c55160", "text": "The magnificent monolithic statue of Gommateshwara at Shravanabelagola was consecrated in 981 CE by which Ganga general?", "options": [{"id": "opt_a", "label": "A", "text": "Chavundaraya"}, {"id": "opt_b", "label": "B", "text": "Marasimha II"}, {"id": "opt_c", "label": "C", "text": "Durvinita"}, {"id": "opt_d", "label": "D", "text": "Sripurusha"}], "answer": "A", "answer_id": "opt_a", "explanation": "Chavundaraya, the military commander of Western Ganga King Rachamalla IV, commissioned the 57-foot Gommateshwara monolith.", "statement_truths": "", "subject": "Humanities", "paper": "Paper 1", "syllabus_id": "P1-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-HUM-005", "text_hash": "b87b0e1456f62972", "text": "The rock-cut monolithic Kailasa temple at Ellora (Cave 16) was excavated during the reign of which Rashtrakuta king?", "options": [{"id": "opt_a", "label": "A", "text": "Dantidurga"}, {"id": "opt_b", "label": "B", "text": "Krishna I"}, {"id": "opt_c", "label": "C", "text": "Amoghavarsha I"}, {"id": "opt_d", "label": "D", "text": "Govinda III"}], "answer": "B", "answer_id": "opt_b", "explanation": "Rashtrakuta King Krishna I (c. 756-774 CE) excavated the monolithic Kailasa temple at Ellora.", "statement_truths": "", "subject": "Humanities", "paper": "Paper 1", "syllabus_id": "P1-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-HUM-006", "text_hash": "28f170fe6df7f7f5", "text": "The celebrated Kannada literary work 'Kavirajamarga' was composed during the reign of which monarch?", "options": [{"id": "opt_a", "label": "A", "text": "Pulakeshin II"}, {"id": "opt_b", "label": "B", "text": "Amoghavarsha Nrupathunga"}, {"id": "opt_c", "label": "C", "text": "Vikramaditya VI"}, {"id": "opt_d", "label": "D", "text": "Vishnuvardhana"}], "answer": "B", "answer_id": "opt_b", "explanation": "Kavirajamarga (c. 850 CE) was patronized by Rashtrakuta King Amoghavarsha I Nrupathunga and authored by Sri Vijaya.", "statement_truths": "", "subject": "Humanities", "paper": "Paper 1", "syllabus_id": "P1-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-HUM-007", "text_hash": "d0113cf1eca79c17", "text": "Which Hoysala king constructed the renowned Chennakeshava Temple at Belur in 1117 CE to commemorate his victory over the Cholas?", "options": [{"id": "opt_a", "label": "A", "text": "Bittideva (Vishnuvardhana)"}, {"id": "opt_b", "label": "B", "text": "Veera Ballala II"}, {"id": "opt_c", "label": "C", "text": "Narasimha I"}, {"id": "opt_d", "label": "D", "text": "Veera Ballala III"}], "answer": "A", "answer_id": "opt_a", "explanation": "King Vishnuvardhana (formerly Bittideva) built the Belur Chennakeshava temple after winning the Battle of Talakadu.", "statement_truths": "", "subject": "Humanities", "paper": "Paper 1", "syllabus_id": "P1-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-HUM-008", "text_hash": "ad3c8095a3210274", "text": "The Persian ambassador Abdur Razzak visited the Vijayanagara Empire during the reign of which emperor?", "options": [{"id": "opt_a", "label": "A", "text": "Harihara II"}, {"id": "opt_b", "label": "B", "text": "Devaraya II (Praudha Devaraya)"}, {"id": "opt_c", "label": "C", "text": "Krishnadevaraya"}, {"id": "opt_d", "label": "D", "text": "Achyuta Devaraya"}], "answer": "B", "answer_id": "opt_b", "explanation": "Abdur Razzak visited Vijayanagara in 1443 CE during the reign of Sangama ruler Devaraya II.", "statement_truths": "", "subject": "Humanities", "paper": "Paper 1", "syllabus_id": "P1-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-HUM-009", "text_hash": "788bb593fbfd51ed", "text": "The historic Battle of Talikota (Rakkasa-Tangadi), which led to the sacking of Vijayanagara, took place in which year?", "options": [{"id": "opt_a", "label": "A", "text": "1526 CE"}, {"id": "opt_b", "label": "B", "text": "1556 CE"}, {"id": "opt_c", "label": "C", "text": "1565 CE"}, {"id": "opt_d", "label": "D", "text": "1576 CE"}], "answer": "C", "answer_id": "opt_c", "explanation": "The Battle of Talikota took place on 23 January 1565 CE between the Vijayanagara army under Aliya Rama Raya and the combined Deccan Sultanates.", "statement_truths": "", "subject": "Humanities", "paper": "Paper 1", "syllabus_id": "P1-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-HUM-010", "text_hash": "dd633acad4578ada", "text": "Which brave queen of Keladi Nayakas provided asylum to Rajaram, son of Chhatrapati Shivaji, defying the Mughal Emperor Aurangzeb?", "options": [{"id": "opt_a", "label": "A", "text": "Rani Chennamma of Kittur"}, {"id": "opt_b", "label": "B", "text": "Keladi Rani Chennamma"}, {"id": "opt_c", "label": "C", "text": "Keladi Abbakka Rani"}, {"id": "opt_d", "label": "D", "text": "Rani Mangammal"}], "answer": "B", "answer_id": "opt_b", "explanation": "Keladi Rani Chennamma gave shelter to Rajaram in 1689 and defeated the Mughal forces sent by Aurangzeb.", "statement_truths": "", "subject": "Humanities", "paper": "Paper 1", "syllabus_id": "P1-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-HUM-011", "text_hash": "8407447290a54853", "text": "Kittur Rani Chennamma led an armed rebellion against the British East India Company in 1824 opposing which British policy?", "options": [{"id": "opt_a", "label": "A", "text": "Subsidiary Alliance"}, {"id": "opt_b", "label": "B", "text": "Doctrine of Lapse"}, {"id": "opt_c", "label": "C", "text": "Permanent Settlement"}, {"id": "opt_d", "label": "D", "text": "Rowlatt Act"}], "answer": "B", "answer_id": "opt_b", "explanation": "Rani Chennamma revolted in 1824 when British Collector St. John Thackeray refused to recognize her adopted son Shivalingappa under the Doctrine of Lapse.", "statement_truths": "", "subject": "Humanities", "paper": "Paper 1", "syllabus_id": "P1-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-HUM-012", "text_hash": "cbcab16c44fbce2d", "text": "Sangolli Rayanna, the legendary military commander who fought guerrilla warfare against the British, was executed by hanging in 1831 at which place?", "options": [{"id": "opt_a", "label": "A", "text": "Kittur"}, {"id": "opt_b", "label": "B", "text": "Nandagad"}, {"id": "opt_c", "label": "C", "text": "Belagavi"}, {"id": "opt_d", "label": "D", "text": "Dharwad"}], "answer": "B", "answer_id": "opt_b", "explanation": "Sangolli Rayanna was captured through treachery and hanged by the British at Nandagad on 26 January 1831.", "statement_truths": "", "subject": "Humanities", "paper": "Paper 1", "syllabus_id": "P1-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-HUM-013", "text_hash": "c70f0bbd74bcd372", "text": "The Halagali Bedas uprising of 1857 in Karnataka was triggered by resistance to which British regulation?", "options": [{"id": "opt_a", "label": "A", "text": "The Inam Commission"}, {"id": "opt_b", "label": "B", "text": "The Disarming Act of 1857"}, {"id": "opt_c", "label": "C", "text": "Salt Tax Regulations"}, {"id": "opt_d", "label": "D", "text": "Forest Rights Restriction"}], "answer": "B", "answer_id": "opt_b", "explanation": "The hunters and martial Bedas of Halagali (Mudhol) revolted when the British ordered them to surrender their traditional firearms under the Disarming Act.", "statement_truths": "", "subject": "Humanities", "paper": "Paper 1", "syllabus_id": "P1-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-HUM-014", "text_hash": "afdf738545925310", "text": "The only Indian National Congress (INC) Annual Session ever presided over by Mahatma Gandhi was held in 1924 in which Karnataka town?", "options": [{"id": "opt_a", "label": "A", "text": "Bengaluru"}, {"id": "opt_b", "label": "B", "text": "Belagavi (Belgaum)"}, {"id": "opt_c", "label": "C", "text": "Mysuru"}, {"id": "opt_d", "label": "D", "text": "Hubballi"}], "answer": "B", "answer_id": "opt_b", "explanation": "Mahatma Gandhi presided over the 39th Session of the INC held at Belagavi in December 1924.", "statement_truths": "", "subject": "Humanities", "paper": "Paper 1", "syllabus_id": "P1-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-HUM-015", "text_hash": "203d85095e2c22e5", "text": "The tragic Vidurashwatha incident (Gowribidanur taluk) of April 1938, where police firing killed 10 Congress satyagrahis, is known as:", "options": [{"id": "opt_a", "label": "A", "text": "Karnataka's Chauri Chaura"}, {"id": "opt_b", "label": "B", "text": "Jallianwala Bagh of Karnataka"}, {"id": "opt_c", "label": "C", "text": "Mysore Salt March"}, {"id": "opt_d", "label": "D", "text": "Dharwad Firing"}], "answer": "B", "answer_id": "opt_b", "explanation": "Vidurashwatha is commemorated as the 'Jallianwala Bagh of Karnataka' for the unprovoked firing on satyagrahis hoisting the national tricolor.", "statement_truths": "", "subject": "Humanities", "paper": "Paper 1", "syllabus_id": "P1-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-HUM-016", "text_hash": "ddb58c6c75af3633", "text": "In which ancient Ashokan edict site in Karnataka was a unique carved stone portrait of Emperor Ashoka inscribed with 'Ranyo Asoko' discovered?", "options": [{"id": "opt_a", "label": "A", "text": "Maski"}, {"id": "opt_b", "label": "B", "text": "Sannati (Kanaganahalli)"}, {"id": "opt_c", "label": "C", "text": "Brahmagiri"}, {"id": "opt_d", "label": "D", "text": "Nittur"}], "answer": "B", "answer_id": "opt_b", "explanation": "At Kanaganahalli near Sannati in Kalaburagi district, a limestone relief sculpture of Emperor Ashoka inscribed with 'Ranyo Asoko' was excavated.", "statement_truths": "", "subject": "Humanities", "paper": "Paper 1", "syllabus_id": "P1-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-HUM-017", "text_hash": "e09bfc7494ae7032", "text": "The Maski edict of Emperor Ashoka holds immense historical significance because it was the first inscription to:", "options": [{"id": "opt_a", "label": "A", "text": "Mention the Battle of Kalinga"}, {"id": "opt_b", "label": "B", "text": "Mention Ashoka by his personal name rather than merely 'Devanampiya Piyadassi'"}, {"id": "opt_c", "label": "C", "text": "Use Greek script"}, {"id": "opt_d", "label": "D", "text": "Record Ashoka's conversion to Jainism"}], "answer": "B", "answer_id": "opt_b", "explanation": "The Maski edict in Raichur (discovered by C. Beadon in 1915) explicitly identified 'Devanampiya Ashoka', confirming Ashoka's identity.", "statement_truths": "", "subject": "Humanities", "paper": "Paper 1", "syllabus_id": "P1-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-HUM-018", "text_hash": "c05adee0c027b6b1", "text": "The Indus Valley Civilization site of Lothal, renowned for its tidal dockyard, is located in which modern state?", "options": [{"id": "opt_a", "label": "A", "text": "Rajasthan"}, {"id": "opt_b", "label": "B", "text": "Gujarat"}, {"id": "opt_c", "label": "C", "text": "Haryana"}, {"id": "opt_d", "label": "D", "text": "Punjab"}], "answer": "B", "answer_id": "opt_b", "explanation": "Lothal is located along the Bhogava river in the Gulf of Khambhat in Gujarat.", "statement_truths": "", "subject": "Humanities", "paper": "Paper 1", "syllabus_id": "P1-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-HUM-019", "text_hash": "f683e3f0063acf93", "text": "The Fourth Buddhist Council was convened during the reign of which Kushana monarch at Kundalavana in Kashmir?", "options": [{"id": "opt_a", "label": "A", "text": "Kanishka I"}, {"id": "opt_b", "label": "B", "text": "Huvishka"}, {"id": "opt_c", "label": "C", "text": "Vima Kadphises"}, {"id": "opt_d", "label": "D", "text": "Vasudeva"}], "answer": "A", "answer_id": "opt_a", "explanation": "Kanishka I convened the 4th Buddhist Council presided over by Vasumitra with Asvaghosa as deputy, where Buddhism split into Hinayana and Mahayana.", "statement_truths": "", "subject": "Humanities", "paper": "Paper 1", "syllabus_id": "P1-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-HUM-020", "text_hash": "aa72b5f036da781d", "text": "The Iron Pillar at Mehrauli in Delhi, renowned for its rustless metallurgy, bears an inscription belonging to which Gupta monarch?", "options": [{"id": "opt_a", "label": "A", "text": "Samudragupta"}, {"id": "opt_b", "label": "B", "text": "Chandragupta II (Chandragupta Vikramaditya)"}, {"id": "opt_c", "label": "C", "text": "Kumaragupta I"}, {"id": "opt_d", "label": "D", "text": "Skandagupta"}], "answer": "B", "answer_id": "opt_b", "explanation": "The Mehrauli pillar commemorates King 'Chandra', identified by historians as Chandragupta II Vikramaditya.", "statement_truths": "", "subject": "Humanities", "paper": "Paper 1", "syllabus_id": "P1-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-HUM-021", "text_hash": "951c24f5fd99dd63", "text": "Who among the following Delhi Sultans introduced the market control regulations and price rationing system?", "options": [{"id": "opt_a", "label": "A", "text": "Balban"}, {"id": "opt_b", "label": "B", "text": "Alauddin Khilji"}, {"id": "opt_c", "label": "C", "text": "Muhammad bin Tughlaq"}, {"id": "opt_d", "label": "D", "text": "Feroz Shah Tughlaq"}], "answer": "A", "answer_id": "opt_a", "explanation": "Alauddin Khilji introduced strict market control mechanisms, setting up Shahna-i-Mandi to control prices of grains, cloth, and horses.", "statement_truths": "", "subject": "Humanities", "paper": "Paper 1", "syllabus_id": "P1-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-HUM-022", "text_hash": "e8e2f924f91fdf4b", "text": "The Mansabdari administrative system was instituted by which Mughal emperor?", "options": [{"id": "opt_a", "label": "A", "text": "Babur"}, {"id": "opt_b", "label": "B", "text": "Akbar"}, {"id": "opt_c", "label": "C", "text": "Jahangir"}, {"id": "opt_d", "label": "D", "text": "Shah Jahan"}], "answer": "B", "answer_id": "opt_b", "explanation": "Akbar introduced the Mansabdari system in 1571 CE, classifying military and civil officials by Zat (personal rank) and Sawar (cavalry quota).", "statement_truths": "", "subject": "Humanities", "paper": "Paper 1", "syllabus_id": "P1-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-HUM-023", "text_hash": "e1e4cb0a1cabfcd1", "text": "The Council of Eight Ministers known as the 'Ashtapradhan' assisted the administration of which ruler?", "options": [{"id": "opt_a", "label": "A", "text": "Krishnadevaraya"}, {"id": "opt_b", "label": "B", "text": "Chhatrapati Shivaji Maharaj"}, {"id": "opt_c", "label": "C", "text": "Raja Man Singh"}, {"id": "opt_d", "label": "D", "text": "Tipu Sultan"}], "answer": "B", "answer_id": "opt_b", "explanation": "Chhatrapati Shivaji's administration was guided by the Ashtapradhan, headed by the Peshwa (Prime Minister).", "statement_truths": "", "subject": "Humanities", "paper": "Paper 1", "syllabus_id": "P1-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-HUM-024", "text_hash": "0b71aa8705178015", "text": "The Permanent Settlement (Zamindari System) of 1793 was introduced in Bengal and Bihar by which Governor-General?", "options": [{"id": "opt_a", "label": "A", "text": "Warren Hastings"}, {"id": "opt_b", "label": "B", "text": "Lord Cornwallis"}, {"id": "opt_c", "label": "C", "text": "Lord Wellesley"}, {"id": "opt_d", "label": "D", "text": "Lord Dalhousie"}], "answer": "B", "answer_id": "opt_b", "explanation": "Lord Cornwallis introduced the Permanent Settlement in 1793 with zamindars recognized as permanent hereditary owners of land.", "statement_truths": "", "subject": "Humanities", "paper": "Paper 1", "syllabus_id": "P1-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-HUM-025", "text_hash": "0fea0c995791db2c", "text": "The Ryotwari land revenue settlement was first conceptualized and implemented in the Madras Presidency by:", "options": [{"id": "opt_a", "label": "A", "text": "Lord Cornwallis"}, {"id": "opt_b", "label": "B", "text": "Thomas Munro and Alexander Read"}, {"id": "opt_c", "label": "C", "text": "Holt Mackenzie"}, {"id": "opt_d", "label": "D", "text": "Lord William Bentinck"}], "answer": "B", "answer_id": "opt_b", "explanation": "Sir Thomas Munro and Captain Alexander Read introduced the Ryotwari system, directly contracting with the individual peasant cultivator (ryot).", "statement_truths": "", "subject": "Humanities", "paper": "Paper 1", "syllabus_id": "P1-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-HUM-026", "text_hash": "04c0d58a2ecd2745", "text": "Who founded the 'Brahmo Samaj' in Calcutta in 1828 to promote monotheism and oppose sati and idolatry?", "options": [{"id": "opt_a", "label": "A", "text": "Swami Dayananda Saraswati"}, {"id": "opt_b", "label": "B", "text": "Raja Ram Mohan Roy"}, {"id": "opt_c", "label": "C", "text": "Ishwar Chandra Vidyasagar"}, {"id": "opt_d", "label": "D", "text": "Keshab Chandra Sen"}], "answer": "B", "answer_id": "opt_b", "explanation": "Raja Ram Mohan Roy established the Brahmo Samaj in 1828.", "statement_truths": "", "subject": "Humanities", "paper": "Paper 1", "syllabus_id": "P1-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-HUM-027", "text_hash": "00b341093db876bb", "text": "The Satyashodhak Samaj was founded in Maharashtra in 1873 by which social reformer to challenge Brahminical dominance and uplift non-Brahmins and women?", "options": [{"id": "opt_a", "label": "A", "text": "Jyotirao Phule"}, {"id": "opt_b", "label": "B", "text": "Gopal Hari Deshmukh"}, {"id": "opt_c", "label": "C", "text": "Dr. B. R. Ambedkar"}, {"id": "opt_d", "label": "D", "text": "Mahadev Govind Ranade"}], "answer": "A", "answer_id": "opt_a", "explanation": "Mahatma Jyotirao Phule founded the Satyashodhak Samaj (Truth Seekers' Society) in 1873.", "statement_truths": "", "subject": "Humanities", "paper": "Paper 1", "syllabus_id": "P1-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-HUM-028", "text_hash": "bc7a87238b30ad9e", "text": "The partition of Bengal in 1905 was enacted during the viceroyalty of which British administrator?", "options": [{"id": "opt_a", "label": "A", "text": "Lord Ripon"}, {"id": "opt_b", "label": "B", "text": "Lord Curzon"}, {"id": "opt_c", "label": "C", "text": "Lord Minto"}, {"id": "opt_d", "label": "D", "text": "Lord Hardinge"}], "answer": "B", "answer_id": "opt_b", "explanation": "Lord Curzon partitioned Bengal in October 1905 on administrative grounds, triggering the nationwide Swadeshi and Boycott Movement.", "statement_truths": "", "subject": "Humanities", "paper": "Paper 1", "syllabus_id": "P1-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-HUM-029", "text_hash": "e9993bc362fd54e8", "text": "Who was chosen by Mahatma Gandhi as the first Individual Satyagrahi in October 1940?", "options": [{"id": "opt_a", "label": "A", "text": "Jawaharlal Nehru"}, {"id": "opt_b", "label": "B", "text": "Acharya Vinoba Bhave"}, {"id": "opt_c", "label": "C", "text": "Brahma Dutt"}, {"id": "opt_d", "label": "D", "text": "Sardar Vallabhbhai Patel"}], "answer": "B", "answer_id": "opt_b", "explanation": "Acharya Vinoba Bhave was chosen as the first individual satyagrahi; Jawaharlal Nehru was the second.", "statement_truths": "", "subject": "Humanities", "paper": "Paper 1", "syllabus_id": "P1-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-HUM-030", "text_hash": "bbb9b4f444ebc165", "text": "The historic 'Purna Swaraj' (Complete Independence) resolution was adopted at which annual session of the Indian National Congress in 1929?", "options": [{"id": "opt_a", "label": "A", "text": "Calcutta Session"}, {"id": "opt_b", "label": "B", "text": "Lahore Session"}, {"id": "opt_c", "label": "C", "text": "Karachi Session"}, {"id": "opt_d", "label": "D", "text": "Madras Session"}], "answer": "B", "answer_id": "opt_b", "explanation": "The Lahore Session of INC (December 1929) presided over by Jawaharlal Nehru declared Purna Swaraj as the ultimate goal.", "statement_truths": "", "subject": "Humanities", "paper": "Paper 1", "syllabus_id": "P1-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-HUM-031", "text_hash": "7de623c817652caf", "text": "Which is the highest peak in Karnataka, situated in the Western Ghats of Chikkamagaluru district?", "options": [{"id": "opt_a", "label": "A", "text": "Kudremukh"}, {"id": "opt_b", "label": "B", "text": "Mullayanagiri"}, {"id": "opt_c", "label": "C", "text": "Pushpagiri"}, {"id": "opt_d", "label": "D", "text": "Tadiandamol"}], "answer": "B", "answer_id": "opt_b", "explanation": "Mullayanagiri in the Baba Budan range of Chikkamagaluru is the highest mountain peak in Karnataka at 1,930 meters (6,332 ft).", "statement_truths": "", "subject": "Humanities", "paper": "Paper 1", "syllabus_id": "P1-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-HUM-032", "text_hash": "240354e758b8509b", "text": "The world-famous Jog Falls (Gersoppa Falls) in Shivamogga district is formed by which west-flowing river?", "options": [{"id": "opt_a", "label": "A", "text": "Netravati"}, {"id": "opt_b", "label": "B", "text": "Sharavathi"}, {"id": "opt_c", "label": "C", "text": "Kali"}, {"id": "opt_d", "label": "D", "text": "Varahi"}], "answer": "B", "answer_id": "opt_b", "explanation": "Jog Falls (253 meters high, comprising Raja, Roarer, Rocket, and Rani cascades) is formed by the Sharavathi River.", "statement_truths": "", "subject": "Humanities", "paper": "Paper 1", "syllabus_id": "P1-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-HUM-033", "text_hash": "6f762d8592444ff1", "text": "The Krishna Water Disputes Tribunal-II (KWDT-II) gave its final award under the chairmanship of which judge?", "options": [{"id": "opt_a", "label": "A", "text": "Justice R. S. Bachawat"}, {"id": "opt_b", "label": "B", "text": "Justice Brijesh Kumar"}, {"id": "opt_c", "label": "C", "text": "Justice A. S. Anand"}, {"id": "opt_d", "label": "D", "text": "Justice Markandey Katju"}], "answer": "B", "answer_id": "opt_b", "explanation": "KWDT-II was headed by Justice Brijesh Kumar (KWDT-I was headed by Justice R.S. Bachawat).", "statement_truths": "", "subject": "Humanities", "paper": "Paper 1", "syllabus_id": "P1-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-HUM-034", "text_hash": "7b89ed4159ffb21a", "text": "Which district in Karnataka is famously known as the 'Coffee Land of India' as coffee was first introduced here at Baba Budan Giri?", "options": [{"id": "opt_a", "label": "A", "text": "Kodagu"}, {"id": "opt_b", "label": "B", "text": "Chikkamagaluru"}, {"id": "opt_c", "label": "C", "text": "Hassan"}, {"id": "opt_d", "label": "D", "text": "Shivamogga"}], "answer": "B", "answer_id": "opt_b", "explanation": "Sufi saint Baba Budan brought seven raw coffee beans from Mocha (Yemen) and planted them in the Chandradrona hills of Chikkamagaluru in the 17th century.", "statement_truths": "", "subject": "Humanities", "paper": "Paper 1", "syllabus_id": "P1-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-HUM-035", "text_hash": "1a2140d4996dc8b9", "text": "The boundary line separating the Earth's Crust and Mantle is known as:", "options": [{"id": "opt_a", "label": "A", "text": "Gutenberg Discontinuity"}, {"id": "opt_b", "label": "B", "text": "Mohorovicic (Moho) Discontinuity"}, {"id": "opt_c", "label": "C", "text": "Lehmann Discontinuity"}, {"id": "opt_d", "label": "D", "text": "Conrad Discontinuity"}], "answer": "B", "answer_id": "opt_b", "explanation": "The Mohorovicic (Moho) discontinuity marks the boundary between the crust and the upper mantle.", "statement_truths": "", "subject": "Humanities", "paper": "Paper 1", "syllabus_id": "P1-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-HUM-036", "text_hash": "2628b08c94916ba3", "text": "Which of the following ocean currents is a COLD current flowing along the western coast of South America?", "options": [{"id": "opt_a", "label": "A", "text": "Gulf Stream"}, {"id": "opt_b", "label": "B", "text": "Kuroshio Current"}, {"id": "opt_c", "label": "C", "text": "Humboldt (Peru) Current"}, {"id": "opt_d", "label": "D", "text": "Brazil Current"}], "answer": "C", "answer_id": "opt_c", "explanation": "The Humboldt (Peru) Current is a cold, low-salinity ocean current that flows north along the western coast of South America.", "statement_truths": "", "subject": "Humanities", "paper": "Paper 1", "syllabus_id": "P1-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-HUM-037", "text_hash": "30bc96ae537a17ad", "text": "The subtropical high-pressure belts situated between 30° and 35° North and South latitudes are popularly called:", "options": [{"id": "opt_a", "label": "A", "text": "Doldrums"}, {"id": "opt_b", "label": "B", "text": "Horse Latitudes"}, {"id": "opt_c", "label": "C", "text": "Roaring Forties"}, {"id": "opt_d", "label": "D", "text": "Polar Fronts"}], "answer": "B", "answer_id": "opt_b", "explanation": "The calm, dry subtropical high-pressure belts are historically known as the 'Horse Latitudes'.", "statement_truths": "", "subject": "Humanities", "paper": "Paper 1", "syllabus_id": "P1-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-HUM-038", "text_hash": "a6636fbe5b938d6a", "text": "Which port is known as the 'Gateway of Karnataka', handling iron ore and coffee exports on the Arabian Sea coast?", "options": [{"id": "opt_a", "label": "A", "text": "Karwar Port"}, {"id": "opt_b", "label": "B", "text": "New Mangalore Port (NMPT)"}, {"id": "opt_c", "label": "C", "text": "Malpe Port"}, {"id": "opt_d", "label": "D", "text": "Bhatkal Port"}], "answer": "B", "answer_id": "opt_b", "explanation": "New Mangalore Port (Panambur) is Karnataka's only major all-weather port, commissioned in 1974.", "statement_truths": "", "subject": "Humanities", "paper": "Paper 1", "syllabus_id": "P1-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-HUM-039", "text_hash": "aa22d4c666380e94", "text": "The tropical cyclone measuring scale that categorizes hurricanes from Category 1 to 5 based on sustained wind speeds is:", "options": [{"id": "opt_a", "label": "A", "text": "Richter Scale"}, {"id": "opt_b", "label": "B", "text": "Saffir-Simpson Scale"}, {"id": "opt_c", "label": "C", "text": "Beaufort Scale"}, {"id": "opt_d", "label": "D", "text": "Fujita Scale"}], "answer": "B", "answer_id": "opt_b", "explanation": "The Saffir-Simpson Hurricane Wind Scale classifies hurricanes from Category 1 to 5.", "statement_truths": "", "subject": "Humanities", "paper": "Paper 1", "syllabus_id": "P1-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-HUM-040", "text_hash": "e38ba93a5280931c", "text": "Under the UN Convention on the Law of the Sea (UNCLOS), the Exclusive Economic Zone (EEZ) of a coastal state extends up to:", "options": [{"id": "opt_a", "label": "A", "text": "12 nautical miles"}, {"id": "opt_b", "label": "B", "text": "24 nautical miles"}, {"id": "opt_c", "label": "C", "text": "200 nautical miles"}, {"id": "opt_d", "label": "D", "text": "350 nautical miles"}], "answer": "C", "answer_id": "opt_c", "explanation": "The EEZ extends up to 200 nautical miles (370.4 km) from the coastal baseline.", "statement_truths": "", "subject": "Humanities", "paper": "Paper 1", "syllabus_id": "P1-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-HUM-041", "text_hash": "8d8d10d47945452e", "text": "Which plateau in Karnataka is formed predominantly of Archaean Dharwar schist rocks rich in gold, iron ore, and manganese?", "options": [{"id": "opt_a", "label": "A", "text": "Deccan Traps Plateau"}, {"id": "opt_b", "label": "B", "text": "Karnataka (Mysore) Plateau"}, {"id": "opt_c", "label": "C", "text": "Chota Nagpur Plateau"}, {"id": "opt_d", "label": "D", "text": "Malwa Plateau"}], "answer": "B", "answer_id": "opt_b", "explanation": "The Karnataka Plateau contains ancient Dharwar schists (Dharwar Craton) rich in Kolar/Hutti gold and Kudremukh/Sandur iron ores.", "statement_truths": "", "subject": "Humanities", "paper": "Paper 1", "syllabus_id": "P1-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-HUM-042", "text_hash": "dec7c8dc3c5e8faf", "text": "Which river basin dispute involves the states of Karnataka, Goa, and Maharashtra over the Kalasa-Banduri Nala drinking water diversion project?", "options": [{"id": "opt_a", "label": "A", "text": "Cauvery river"}, {"id": "opt_b", "label": "B", "text": "Mahadayi (Mandovi) river"}, {"id": "opt_c", "label": "C", "text": "Krishna river"}, {"id": "opt_d", "label": "D", "text": "Godavari river"}], "answer": "B", "answer_id": "opt_b", "explanation": "The Mahadayi River Water Disputes Tribunal adjudicated the water-sharing dispute between Karnataka, Goa, and Maharashtra.", "statement_truths": "", "subject": "Humanities", "paper": "Paper 1", "syllabus_id": "P1-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-HUM-043", "text_hash": "5b6ce339396da438", "text": "The phenomenon of temperature inversion in the troposphere occurs when:", "options": [{"id": "opt_a", "label": "A", "text": "Temperature decreases with increasing altitude"}, {"id": "opt_b", "label": "B", "text": "Temperature increases with increasing altitude"}, {"id": "opt_c", "label": "C", "text": "Temperature remains absolutely constant"}, {"id": "opt_d", "label": "D", "text": "Pressure falls to absolute zero"}], "answer": "B", "answer_id": "opt_b", "explanation": "Temperature inversion is a reversal of normal lapse rate, where warm air lies over cold air, causing temperature to increase with height.", "statement_truths": "", "subject": "Humanities", "paper": "Paper 1", "syllabus_id": "P1-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-HUM-044", "text_hash": "03f8b9b1afb81bad", "text": "Which Ramsar wetland in Mandya district of Karnataka is situated on an island in the Cauvery River and is a renowned bird sanctuary?", "options": [{"id": "opt_a", "label": "A", "text": "Karanji Lake"}, {"id": "opt_b", "label": "B", "text": "Ranganathittu Bird Sanctuary"}, {"id": "opt_c", "label": "C", "text": "Ankasamudra Reserve"}, {"id": "opt_d", "label": "D", "text": "Magadi Lake"}], "answer": "B", "answer_id": "opt_b", "explanation": "Ranganathittu Bird Sanctuary in Mandya was declared Karnataka's first Ramsar site in 2022.", "statement_truths": "", "subject": "Humanities", "paper": "Paper 1", "syllabus_id": "P1-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-HUM-045", "text_hash": "6878d0bbadcae7fe", "text": "The 'El Nino' weather phenomenon is characterized by which anomalous oceanic condition in the equatorial Pacific Ocean?", "options": [{"id": "opt_a", "label": "A", "text": "Abnormal cooling of central and eastern Pacific waters"}, {"id": "opt_b", "label": "B", "text": "Abnormal warming of central and eastern Pacific waters"}, {"id": "opt_c", "label": "C", "text": "Intensification of trade winds"}, {"id": "opt_d", "label": "D", "text": "Enhanced upwelling along Peruvian coast"}], "answer": "B", "answer_id": "opt_b", "explanation": "El Nino involves periodic warming of sea surface temperatures across the central and east-central equatorial Pacific.", "statement_truths": "", "subject": "Humanities", "paper": "Paper 1", "syllabus_id": "P1-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-HUM-046", "text_hash": "22f35dfd44150ff2", "text": "Which article of the Constitution of India provides for the writ jurisdiction of the Supreme Court for enforcement of Fundamental Rights?", "options": [{"id": "opt_a", "label": "A", "text": "Article 32"}, {"id": "opt_b", "label": "B", "text": "Article 131"}, {"id": "opt_c", "label": "C", "text": "Article 143"}, {"id": "opt_d", "label": "D", "text": "Article 226"}], "answer": "A", "answer_id": "opt_a", "explanation": "Article 32 guarantees the right to constitutional remedies via the Supreme Court (Dr. Ambedkar called it the 'Heart and Soul' of the Constitution).", "statement_truths": "", "subject": "Humanities", "paper": "Paper 1", "syllabus_id": "P1-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-HUM-047", "text_hash": "f5214c66f92bdbf1", "text": "Under which constitutional amendment was Article 371J inserted to provide special provisions and reservations for the Kalyana Karnataka (Hyderabad-Karnataka) region?", "options": [{"id": "opt_a", "label": "A", "text": "98th Constitutional Amendment Act, 2012"}, {"id": "opt_b", "label": "B", "text": "99th Constitutional Amendment Act, 2014"}, {"id": "opt_c", "label": "C", "text": "100th Constitutional Amendment Act, 2015"}, {"id": "opt_d", "label": "D", "text": "101st Constitutional Amendment Act, 2016"}], "answer": "A", "answer_id": "opt_a", "explanation": "The 98th Constitutional Amendment Act inserted Article 371J, empowering the Governor to establish development boards and quotas for the 6 backward districts.", "statement_truths": "", "subject": "Humanities", "paper": "Paper 1", "syllabus_id": "P1-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-HUM-048", "text_hash": "d6334935109669f0", "text": "The concept of 'Basic Structure' of the Indian Constitution was propounded by the Supreme Court in which landmark case?", "options": [{"id": "opt_a", "label": "A", "text": "Golaknath v. State of Punjab (1967)"}, {"id": "opt_b", "label": "B", "text": "Kesavananda Bharati v. State of Kerala (1973)"}, {"id": "opt_c", "label": "C", "text": "Minerva Mills v. Union of India (1980)"}, {"id": "opt_d", "label": "D", "text": "Maneka Gandhi v. Union of India (1978)"}], "answer": "B", "answer_id": "opt_b", "explanation": "The 13-judge bench in Kesavananda Bharati (24 April 1973) held that Parliament cannot alter the basic structure of the Constitution.", "statement_truths": "", "subject": "Humanities", "paper": "Paper 1", "syllabus_id": "P1-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-HUM-049", "text_hash": "2eacde3680606433", "text": "Karnataka was the pioneer in passing the historic Panchayati Raj Act in 1983 based on the Ashok Mehta Committee model under which visionary Rural Development Minister?", "options": [{"id": "opt_a", "label": "A", "text": "D. Devaraj Urs"}, {"id": "opt_b", "label": "B", "text": "Abdul Nazir Sab"}, {"id": "opt_c", "label": "C", "text": "Ramakrishna Hegde"}, {"id": "opt_d", "label": "D", "text": "S. R. Bommai"}], "answer": "B", "answer_id": "opt_b", "explanation": "Abdul Nazir Sab ('Neeru Nazir Sab') conceptualized and enacted the revolutionary 1983 Karnataka Zilla Parishads and Mandal Panchayats Act.", "statement_truths": "", "subject": "Humanities", "paper": "Paper 1", "syllabus_id": "P1-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-HUM-050", "text_hash": "3f726b8855581814", "text": "In August 2022, the High Court of Karnataka delivered a historic verdict in the Chidananda Urs case, ruling that:", "options": [{"id": "opt_a", "label": "A", "text": "The Anti-Corruption Bureau (ACB) was unconstitutional and all powers and pending inquiries were restored to the Karnataka Lokayukta"}, {"id": "opt_b", "label": "B", "text": "SAKALA mission was non-statutory"}, {"id": "opt_c", "label": "C", "text": "Local reservation in private IT firms was void"}, {"id": "opt_d", "label": "D", "text": "RTI did not apply to ministers"}], "answer": "A", "answer_id": "opt_a", "explanation": "The HC abolished the ACB created in 2016 and restored complete police and prosecuting powers back to the Karnataka Lokayukta.", "statement_truths": "", "subject": "Humanities", "paper": "Paper 1", "syllabus_id": "P1-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-HUM-051", "text_hash": "bb84d735247aeb29", "text": "The Karnataka Guarantee of Services to Citizens Act (SAKALA) was enacted in which year?", "options": [{"id": "opt_a", "label": "A", "text": "2008"}, {"id": "opt_b", "label": "B", "text": "2011"}, {"id": "opt_c", "label": "C", "text": "2014"}, {"id": "opt_d", "label": "D", "text": "2016"}], "answer": "B", "answer_id": "opt_b", "explanation": "SAKALA was enacted in 2011 to provide guarantee of services within prescribed time limits to citizens of Karnataka.", "statement_truths": "", "subject": "Humanities", "paper": "Paper 1", "syllabus_id": "P1-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-HUM-052", "text_hash": "e1aa64269f8bccd0", "text": "Who is the ex-officio Chairman of the NITI Aayog (National Institution for Transforming India)?", "options": [{"id": "opt_a", "label": "A", "text": "Minister of Finance"}, {"id": "opt_b", "label": "B", "text": "Prime Minister of India"}, {"id": "opt_c", "label": "C", "text": "Governor of RBI"}, {"id": "opt_d", "label": "D", "text": "Vice-President of India"}], "answer": "B", "answer_id": "opt_b", "explanation": "The Prime Minister of India serves as the ex-officio Chairman of NITI Aayog.", "statement_truths": "", "subject": "Humanities", "paper": "Paper 1", "syllabus_id": "P1-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-HUM-053", "text_hash": "a91df00d7fe156e8", "text": "The Monetary Policy Committee (MPC) in India operates under the mandate of targeting consumer price inflation (CPI) at what rate?", "options": [{"id": "opt_a", "label": "A", "text": "2% with a +/- 1% tolerance band"}, {"id": "opt_b", "label": "B", "text": "4% with a +/- 2% tolerance band"}, {"id": "opt_c", "label": "C", "text": "5% fixed rate"}, {"id": "opt_d", "label": "D", "text": "6% ceiling limit"}], "answer": "B", "answer_id": "opt_b", "explanation": "Under Section 45ZB of the RBI Act, the inflation target is 4% CPI inflation with an upper tolerance of 6% and lower tolerance of 2%.", "statement_truths": "", "subject": "Humanities", "paper": "Paper 1", "syllabus_id": "P1-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-HUM-054", "text_hash": "fa173c5d5dd40e86", "text": "The High-Power Committee for Redressal of Regional Imbalances in Karnataka, which submitted its landmark report in 2002, was headed by:", "options": [{"id": "opt_a", "label": "A", "text": "Dr. L. G. Havanur"}, {"id": "opt_b", "label": "B", "text": "Dr. D. M. Nanjundappa"}, {"id": "opt_c", "label": "C", "text": "Justice Venkataswami"}, {"id": "opt_d", "label": "D", "text": "Justice Sadashiva"}], "answer": "B", "answer_id": "opt_b", "explanation": "The Dr. D.M. Nanjundappa Committee identified 114 backward taluks (most in North Karnataka) and formulated the Special Development Plan.", "statement_truths": "", "subject": "Humanities", "paper": "Paper 1", "syllabus_id": "P1-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-HUM-055", "text_hash": "71e27dbbff9fe907", "text": "Under the Karnataka Fiscal Responsibility Act (KFRA), 2002, what is the statutory ceiling for the state's Fiscal Deficit as a percentage of GSDP?", "options": [{"id": "opt_a", "label": "A", "text": "2.0% of GSDP"}, {"id": "opt_b", "label": "B", "text": "3.0% of GSDP"}, {"id": "opt_c", "label": "C", "text": "4.5% of GSDP"}, {"id": "opt_d", "label": "D", "text": "5.0% of GSDP"}], "answer": "B", "answer_id": "opt_b", "explanation": "KFRA mandates that the state fiscal deficit must be contained within 3% of Gross State Domestic Product (GSDP).", "statement_truths": "", "subject": "Humanities", "paper": "Paper 1", "syllabus_id": "P1-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-HUM-056", "text_hash": "a29433896358253d", "text": "The Multidimensional Poverty Index (MPI) published by NITI Aayog measures acute deprivations across how many core dimensions?", "options": [{"id": "opt_a", "label": "A", "text": "Two (Income and Wealth)"}, {"id": "opt_b", "label": "B", "text": "Three (Health, Education, and Standard of Living)"}, {"id": "opt_c", "label": "C", "text": "Four (Food, Housing, Health, Water)"}, {"id": "opt_d", "label": "D", "text": "Five (Human capital indicators)"}], "answer": "B", "answer_id": "opt_b", "explanation": "The MPI adopts the Alkire-Foster methodology across 3 dimensions: Health, Education, and Standard of Living, spanning 12 indicators.", "statement_truths": "", "subject": "Humanities", "paper": "Paper 1", "syllabus_id": "P1-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-HUM-057", "text_hash": "8d35b4de205ce016", "text": "Which constitutional amendment introduced the Goods and Services Tax (GST) regime in India?", "options": [{"id": "opt_a", "label": "A", "text": "99th Amendment Act"}, {"id": "opt_b", "label": "B", "text": "100th Amendment Act"}, {"id": "opt_c", "label": "C", "text": "101st Amendment Act"}, {"id": "opt_d", "label": "D", "text": "103rd Amendment Act"}], "answer": "C", "answer_id": "opt_c", "explanation": "The 101st Constitutional Amendment Act, 2016 introduced GST across India with effect from 1 July 2017.", "statement_truths": "", "subject": "Humanities", "paper": "Paper 1", "syllabus_id": "P1-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-HUM-058", "text_hash": "5fb92795de50caf4", "text": "The concept of 'Dominant Caste' in Indian sociology was formulated by which eminent Karnataka-born sociologist based on studies in Rampura village?", "options": [{"id": "opt_a", "label": "A", "text": "G. S. Ghurye"}, {"id": "opt_b", "label": "B", "text": "M. N. Srinivas"}, {"id": "opt_c", "label": "C", "text": "Andre Beteille"}, {"id": "opt_d", "label": "D", "text": "Irawati Karve"}], "answer": "B", "answer_id": "opt_b", "explanation": "Prof. M. N. Srinivas formulated the concepts of 'Dominant Caste' and 'Sanskritization' from field work in Rampura (Mandya district).", "statement_truths": "", "subject": "Humanities", "paper": "Paper 1", "syllabus_id": "P1-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-HUM-059", "text_hash": "a461d1f8df34f332", "text": "Under the Karnataka Scheduled Castes Sub-Allocation and Tribal Sub-Allocation (SCSP/TSP) Act, 2013, what percentage of total state plan outlay is mandatorily earmarked for SC/ST welfare?", "options": [{"id": "opt_a", "label": "A", "text": "18%"}, {"id": "opt_b", "label": "B", "text": "20%"}, {"id": "opt_c", "label": "C", "text": "24.1%"}, {"id": "opt_d", "label": "D", "text": "30%"}], "answer": "C", "answer_id": "opt_c", "explanation": "The SCSP/TSP Act mandates 24.1% of the state budget (proportionate to SC 17.15% and ST 6.95% population share) for dedicated welfare.", "statement_truths": "", "subject": "Humanities", "paper": "Paper 1", "syllabus_id": "P1-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-2"}, {"id": "KAS-P1-HUM-060", "text_hash": "0272e16e1ca2ec41", "text": "Which expert committee recommended the four-tier internal reservation classification (Left, Right, Touchables, and Others) for Scheduled Castes in Karnataka?", "options": [{"id": "opt_a", "label": "A", "text": "Justice Sadashiva Inquiry Commission"}, {"id": "opt_b", "label": "B", "text": "Justice H. N. Nagamohan Das Commission"}, {"id": "opt_c", "label": "C", "text": "Justice Venkataswamy Commission"}, {"id": "opt_d", "label": "D", "text": "Chinnappa Reddy Commission"}], "answer": "A", "answer_id": "opt_a", "explanation": "The Justice A. J. Sadashiva Inquiry Commission (submitted 2012) recommended internal reservation to redress uneven benefits among 101 SC castes.", "statement_truths": "", "subject": "Humanities", "paper": "Paper 1", "syllabus_id": "P1-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P1_Mock1.html", "section_id": "SEC-P1-2"}]};
+
+// SIMULATION STATE
+const STATE = {
+  activeScreen: 'screen-instructions',
+  currentQuestionIndex: 0,
+  activeSectionId: 'ALL',
+  endTime: null,
+  durationMinutes: EXAM_DATA.duration_minutes || 120,
+  timerInterval: null,
+  answers: {}, // { [q.id]: { selectedOptionId: 'opt_b', status: 'answered'|'not-answered'|'marked'|'marked-answered'|'not-visited' } }
+  questionStatuses: {}, // { [q.id]: status }
+  storageKey: 'KPSC_CBT_R3_' + (EXAM_DATA.test_id || 'DEFAULT')
+};
+
+// THEME HANDLING
+function initTheme() {
+  let theme = 'light';
+  try {
+    theme = localStorage.getItem('cbt_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  } catch(e) {}
+  document.documentElement.setAttribute('data-theme', theme);
+}
+document.getElementById('theme-btn').addEventListener('click', () => {
+  const cur = document.documentElement.getAttribute('data-theme');
+  const next = cur === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  try { localStorage.setItem('cbt_theme', next); } catch(e) {}
+});
+
+// SWITCH SCREEN
+function showScreen(id) {
+  document.querySelectorAll('.screen-view').forEach(el => el.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  STATE.activeScreen = id;
+}
+
+// STORAGE
+function saveToStorage() {
+  try {
+    localStorage.setItem(STATE.storageKey, JSON.stringify({
+      endTime: STATE.endTime,
+      durationMinutes: STATE.durationMinutes,
+      answers: STATE.answers,
+      currentQuestionIndex: STATE.currentQuestionIndex,
+      activeSectionId: STATE.activeSectionId
+    }));
+  } catch(e) {}
+}
+
+function loadFromStorage() {
+  try {
+    const raw = localStorage.getItem(STATE.storageKey);
+    if (!raw) return false;
+    const data = JSON.parse(raw);
+    if (data.endTime && data.endTime > Date.now()) {
+      STATE.endTime = data.endTime;
+      STATE.durationMinutes = data.durationMinutes || STATE.durationMinutes;
+      STATE.answers = data.answers || {};
+      STATE.currentQuestionIndex = data.currentQuestionIndex || 0;
+      STATE.activeSectionId = data.activeSectionId || 'ALL';
+      return true;
+    }
+  } catch(e) {}
+  return false;
+}
+
+function clearStorage() {
+  try { localStorage.removeItem(STATE.storageKey); } catch(e) {}
+}
+
+// TIMER ENGINE
+function startWallClockTimer() {
+  if (STATE.timerInterval) clearInterval(STATE.timerInterval);
+
+  function tick() {
+    const res = CbtCore.computeRemainingTime(STATE.endTime);
+    document.getElementById('timer-display').textContent = res.formatted;
+
+    if (res.remainingSeconds <= 300) {
+      document.getElementById('timer-box').style.borderColor = '#ef4444';
+      document.getElementById('timer-display').style.color = '#ef4444';
+    } else {
+      document.getElementById('timer-box').style.borderColor = 'var(--border-color)';
+      document.getElementById('timer-display').style.color = 'var(--text-primary)';
+    }
+
+    if (res.isExpired) {
+      clearInterval(STATE.timerInterval);
+      alert('Time has expired! Your examination will now be submitted automatically.');
+      finalizeExamSubmission();
+    }
+  }
+
+  tick();
+  STATE.timerInterval = setInterval(tick, 1000);
+}
+
+// SECTION TABS
+function renderSectionTabs() {
+  const bar = document.getElementById('section-bar');
+  bar.innerHTML = '';
+
+  const allTab = document.createElement('div');
+  allTab.className = 'sec-tab' + (STATE.activeSectionId === 'ALL' ? ' active' : '');
+  allTab.textContent = `All Questions (${EXAM_DATA.questions.length})`;
+  allTab.addEventListener('click', () => {
+    STATE.activeSectionId = 'ALL';
+    renderSectionTabs();
+    renderPalette();
+  });
+  bar.appendChild(allTab);
+
+  (EXAM_DATA.sections || []).forEach(sec => {
+    const tab = document.createElement('div');
+    tab.className = 'sec-tab' + (STATE.activeSectionId === sec.id ? ' active' : '');
+    tab.textContent = `${sec.name} (${sec.q_count || 0})`;
+    tab.addEventListener('click', () => {
+      STATE.activeSectionId = sec.id;
+      renderSectionTabs();
+      renderPalette();
+      // Jump to first question of section
+      const firstQIdx = EXAM_DATA.questions.findIndex(q => q.section_id === sec.id);
+      if (firstQIdx >= 0) loadQuestion(firstQIdx);
+    });
+    bar.appendChild(tab);
+  });
+}
+
+// PALETTE
+function getFilteredQuestions() {
+  if (STATE.activeSectionId === 'ALL') {
+    return EXAM_DATA.questions.map((q, idx) => ({ q, idx }));
+  }
+  return EXAM_DATA.questions
+    .map((q, idx) => ({ q, idx }))
+    .filter(item => item.q.section_id === STATE.activeSectionId);
+}
+
+function renderPalette() {
+  const grid = document.getElementById('palette-grid');
+  grid.innerHTML = '';
+
+  let cAns = 0, cNotAns = 0, cNotVis = 0, cMark = 0, cMarkAns = 0;
+
+  EXAM_DATA.questions.forEach((q, idx) => {
+    const entry = STATE.answers[q.id];
+    const status = entry ? entry.status : 'not-visited';
+
+    if (status === 'answered') cAns++;
+    else if (status === 'not-answered') cNotAns++;
+    else if (status === 'marked') cMark++;
+    else if (status === 'marked-answered') cMarkAns++;
+    else cNotVis++;
+  });
+
+  document.getElementById('badge-count-ans').textContent = cAns;
+  document.getElementById('badge-count-not-ans').textContent = cNotAns;
+  document.getElementById('badge-count-not-vis').textContent = cNotVis;
+  document.getElementById('badge-count-marked').textContent = cMark;
+  document.getElementById('badge-count-marked-ans').textContent = cMarkAns;
+
+  const currentSec = (EXAM_DATA.sections || []).find(s => s.id === STATE.activeSectionId);
+  document.getElementById('pal-sec-name').textContent = currentSec ? currentSec.name : 'All Questions';
+
+  const items = getFilteredQuestions();
+  items.forEach(({ q, idx }) => {
+    const entry = STATE.answers[q.id];
+    const status = entry ? entry.status : 'not-visited';
+
+    const btn = document.createElement('button');
+    btn.className = `pal-btn st-${status}` + (idx === STATE.currentQuestionIndex ? ' active-q' : '');
+    btn.textContent = idx + 1;
+    btn.title = `Question ${idx + 1} (${q.subject || 'GS'})`;
+    btn.addEventListener('click', () => loadQuestion(idx));
+    grid.appendChild(btn);
+  });
+}
+
+// QUESTION RENDERING
+function loadQuestion(idx) {
+  if (idx < 0 || idx >= EXAM_DATA.questions.length) return;
+  STATE.currentQuestionIndex = idx;
+  const q = EXAM_DATA.questions[idx];
+
+  // If question was never visited, mark as not-answered upon arrival
+  if (!STATE.answers[q.id]) {
+    STATE.answers[q.id] = { selectedOptionId: null, status: 'not-answered' };
+  } else if (STATE.answers[q.id].status === 'not-visited') {
+    STATE.answers[q.id].status = 'not-answered';
+  }
+
+  document.getElementById('q-title-label').textContent = `Question No. ${idx + 1} [ID: ${q.id}]`;
+  document.getElementById('q-text-body').innerHTML = q.text.replace(/\n/g, '<br>');
+
+  const optContainer = document.getElementById('options-list');
+  optContainer.innerHTML = '';
+
+  const currentSelection = STATE.answers[q.id]?.selectedOptionId;
+
+  q.options.forEach(opt => {
+    const card = document.createElement('div');
+    card.className = 'option-card' + (currentSelection === opt.id || currentSelection === opt.label ? ' selected' : '');
+
+    const radio = document.createElement('input');
+    radio.type = 'radio';
+    radio.name = 'opt_radio_group';
+    radio.className = 'opt-radio';
+    radio.value = opt.id;
+    radio.checked = (currentSelection === opt.id || currentSelection === opt.label);
+
+    const pill = document.createElement('div');
+    pill.className = 'opt-pill';
+    pill.textContent = opt.label;
+
+    const txt = document.createElement('div');
+    txt.className = 'opt-text';
+    txt.textContent = opt.text;
+
+    card.appendChild(radio);
+    card.appendChild(pill);
+    card.appendChild(txt);
+
+    card.addEventListener('click', () => {
+      document.querySelectorAll('.option-card').forEach(c => c.classList.remove('selected'));
+      card.classList.add('selected');
+      radio.checked = true;
+      // Track selection in memory immediately
+      STATE.answers[q.id].selectedOptionId = opt.id;
+    });
+
+    optContainer.appendChild(card);
+  });
+
+  renderPalette();
+  saveToStorage();
+}
+
+function getSelectedRadioValue() {
+  const checked = document.querySelector('input[name="opt_radio_group"]:checked');
+  return checked ? checked.value : null;
+}
+
+// CONTROL ACTIONS
+document.getElementById('btn-save-next').addEventListener('click', () => {
+  const q = EXAM_DATA.questions[STATE.currentQuestionIndex];
+  const sel = getSelectedRadioValue();
+  if (sel) {
+    STATE.answers[q.id] = { selectedOptionId: sel, status: 'answered' };
+  } else {
+    STATE.answers[q.id] = { selectedOptionId: null, status: 'not-answered' };
+  }
+  if (STATE.currentQuestionIndex < EXAM_DATA.questions.length - 1) {
+    loadQuestion(STATE.currentQuestionIndex + 1);
+  } else {
+    renderPalette();
+  }
+});
+
+document.getElementById('btn-mark-review').addEventListener('click', () => {
+  const q = EXAM_DATA.questions[STATE.currentQuestionIndex];
+  const sel = getSelectedRadioValue();
+  if (sel) {
+    STATE.answers[q.id] = { selectedOptionId: sel, status: 'marked-answered' };
+  } else {
+    STATE.answers[q.id] = { selectedOptionId: null, status: 'marked' };
+  }
+  if (STATE.currentQuestionIndex < EXAM_DATA.questions.length - 1) {
+    loadQuestion(STATE.currentQuestionIndex + 1);
+  } else {
+    renderPalette();
+  }
+});
+
+document.getElementById('btn-clear-resp').addEventListener('click', () => {
+  const q = EXAM_DATA.questions[STATE.currentQuestionIndex];
+  STATE.answers[q.id] = { selectedOptionId: null, status: 'not-answered' };
+  document.querySelectorAll('.option-card').forEach(c => c.classList.remove('selected'));
+  document.querySelectorAll('input[name="opt_radio_group"]').forEach(r => r.checked = false);
+  renderPalette();
+  saveToStorage();
+});
+
+document.getElementById('btn-prev').addEventListener('click', () => {
+  if (STATE.currentQuestionIndex > 0) {
+    loadQuestion(STATE.currentQuestionIndex - 1);
+  }
+});
+
+// KEYBOARD SHORTCUTS
+window.addEventListener('keydown', (e) => {
+  if (STATE.activeScreen !== 'screen-exam') return;
+  if (e.altKey && e.key.toLowerCase() === 'n') {
+    e.preventDefault();
+    document.getElementById('btn-save-next').click();
+  } else if (e.altKey && e.key.toLowerCase() === 'p') {
+    e.preventDefault();
+    document.getElementById('btn-prev').click();
+  } else if (e.altKey && e.key.toLowerCase() === 'c') {
+    e.preventDefault();
+    document.getElementById('btn-clear-resp').click();
+  }
+});
+
+// SUBMIT FLOW & MODAL
+const submitModal = document.getElementById('modal-submit');
+document.getElementById('btn-trigger-submit').addEventListener('click', () => {
+  const tbody = document.getElementById('modal-table-body');
+  tbody.innerHTML = '';
+
+  const sectionsToReport = (EXAM_DATA.sections && EXAM_DATA.sections.length > 0)
+    ? EXAM_DATA.sections
+    : [{ id: 'ALL', name: 'General Studies', question_ids: EXAM_DATA.questions.map(q => q.id) }];
+
+  sectionsToReport.forEach(sec => {
+    let ans = 0, notAns = 0, marked = 0, notVis = 0;
+    const secQuestions = EXAM_DATA.questions.filter(q => sec.id === 'ALL' || q.section_id === sec.id);
+
+    secQuestions.forEach(q => {
+      const entry = STATE.answers[q.id];
+      const st = entry ? entry.status : 'not-visited';
+      if (st === 'answered' || st === 'marked-answered') ans++;
+      else if (st === 'not-answered') notAns++;
+      else if (st === 'marked') marked++;
+      else notVis++;
+    });
+
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td style="font-weight: 600; text-align: left;">${sec.name}</td>
+      <td>${secQuestions.length}</td>
+      <td style="color: var(--ans-green); font-weight: 700;">${ans}</td>
+      <td style="color: var(--not-ans-red); font-weight: 700;">${notAns}</td>
+      <td style="color: var(--marked-purple); font-weight: 700;">${marked}</td>
+      <td>${notVis}</td>
+    `;
+    tbody.appendChild(tr);
+  });
+
+  submitModal.classList.add('active');
+});
+
+document.getElementById('btn-modal-cancel').addEventListener('click', () => {
+  submitModal.classList.remove('active');
+});
+
+document.getElementById('btn-modal-confirm').addEventListener('click', () => {
+  submitModal.classList.remove('active');
+  finalizeExamSubmission();
+});
+
+// EVALUATION & RESULTS VIEW
+function finalizeExamSubmission() {
+  if (STATE.timerInterval) clearInterval(STATE.timerInterval);
+  clearStorage();
+
+  const markingScheme = { positiveMarks: 2.0, negativePenalty: 0.5 };
+  const res = CbtCore.scoreExam(STATE.answers, EXAM_DATA.questions, EXAM_DATA.sections, markingScheme);
+
+  // Render Scorecard
+  document.getElementById('res-net-score').textContent = res.netScore.toFixed(2);
+  document.getElementById('res-max-marks').textContent = (res.totalQuestions * 2.0).toFixed(1);
+  document.getElementById('res-accuracy').textContent = res.accuracy.toFixed(1) + '%';
+  document.getElementById('res-attempted').textContent = `${res.attemptedCount} / ${res.totalQuestions}`;
+  document.getElementById('res-pos-neg').textContent = `+${res.positiveMarks.toFixed(1)} / -${res.negativePenalty.toFixed(1)}`;
+
+  // Render Section Table
+  const secTbody = document.getElementById('res-section-body');
+  secTbody.innerHTML = '';
+  res.sectionBreakdown.forEach(s => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td style="font-weight: 600; text-align: left;">${s.name}</td>
+      <td>${s.total}</td>
+      <td>${s.attempted}</td>
+      <td style="color: var(--ans-green); font-weight: 700;">${s.correct}</td>
+      <td style="color: var(--not-ans-red); font-weight: 700;">${s.incorrect}</td>
+      <td style="font-weight: 800; color: ${s.netMarks >= 0 ? 'var(--accent-color)' : 'var(--not-ans-red)'};">${s.netMarks.toFixed(2)}</td>
+      <td>${s.accuracy.toFixed(1)}%</td>
+    `;
+    secTbody.appendChild(tr);
+  });
+
+  renderReviewList('all');
+  showScreen('screen-result');
+}
+
+function renderReviewList(filter = 'all') {
+  const container = document.getElementById('review-list');
+  container.innerHTML = '';
+
+  EXAM_DATA.questions.forEach((q, idx) => {
+    const entry = STATE.answers[q.id];
+    const userOptId = entry ? entry.selectedOptionId : null;
+    const correctOptId = q.answer_id || q.answer;
+    const isCorrect = userOptId && (userOptId === correctOptId || userOptId === q.answer);
+    const isAttempted = !!userOptId;
+
+    if (filter === 'flawed' && isCorrect) return;
+    if (filter === 'unattempted' && isAttempted) return;
+
+    let badgeClass = 'var(--text-secondary)';
+    let badgeText = 'Unattempted (0.00)';
+    if (isAttempted) {
+      if (isCorrect) {
+        badgeClass = 'var(--ans-green)';
+        badgeText = 'Correct (+2.00)';
+      } else {
+        badgeClass = 'var(--not-ans-red)';
+        badgeText = 'Incorrect (-0.50)';
+      }
+    }
+
+    const item = document.createElement('div');
+    item.className = 'review-item';
+
+    item.innerHTML = `
+      <div class="review-meta">
+        <span>Q${idx + 1}. [${q.subject || 'GS'}] ID: ${q.id}</span>
+        <span style="color: ${badgeClass}; font-weight: 700;">${badgeText}</span>
+      </div>
+      <div style="font-size: 1.05rem; font-weight: 500; margin-bottom: 16px;">
+        ${q.text.replace(/\n/g, '<br>')}
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 14px;">
+        ${q.options.map(opt => {
+          let bg = 'var(--bg-surface-secondary)';
+          let border = 'var(--border-color)';
+          if (opt.id === correctOptId || opt.label === q.answer) {
+            bg = 'var(--ans-green-bg)';
+            border = 'var(--ans-green)';
+          } else if (opt.id === userOptId || opt.label === userOptId) {
+            bg = 'var(--not-ans-red-bg)';
+            border = 'var(--not-ans-red)';
+          }
+          return `<div style="padding: 10px 14px; border-radius: 6px; border: 1.5px solid ${border}; background: ${bg}; font-size: 0.92rem;">
+            <strong>${opt.label}:</strong> ${opt.text}
+          </div>`;
+        }).join('')}
+      </div>
+      ${q.statement_truths ? `<div class="truth-box"><strong>Per-Statement Verification:</strong><br>${q.statement_truths}</div>` : ''}
+      <div class="explanation-box">
+        <strong>Official Pedagogical Explanation:</strong><br>
+        ${q.explanation || 'Detailed explanation verified against primary historical and syllabus sources.'}
+        ${q.linked_note ? `<br><small style="color: var(--accent-color); font-weight: 600;">Vault Reference: [[${q.linked_note}]]</small>` : ''}
+      </div>
+    `;
+
+    container.appendChild(item);
+  });
+}
+
+document.getElementById('btn-filter-all').addEventListener('click', () => renderReviewList('all'));
+document.getElementById('btn-filter-flawed').addEventListener('click', () => renderReviewList('flawed'));
+document.getElementById('btn-filter-unattempted').addEventListener('click', () => renderReviewList('unattempted'));
+
+document.getElementById('btn-retake').addEventListener('click', () => {
+  clearStorage();
+  window.location.reload();
+});
+
+// START EXAM FLOW
+document.getElementById('btn-start-exam').addEventListener('click', () => {
+  const agreed = document.getElementById('inst-agree-check').checked;
+  if (!agreed) {
+    alert('Please acknowledge that you have read the examination instructions.');
+    return;
+  }
+
+  const selectedMode = document.querySelector('input[name="sim-mode"]:checked').value;
+  let durationMins = EXAM_DATA.duration_minutes || 120;
+  if (selectedMode === 'quick') {
+    durationMins = 2; // 2 minutes for testing
+    document.getElementById('header-mode-badge').textContent = 'Quick Check (2m)';
+  } else {
+    document.getElementById('header-mode-badge').textContent = 'Exam Mode';
+  }
+
+  STATE.durationMinutes = durationMins;
+  STATE.endTime = Date.now() + (durationMins * 60 * 1000);
+
+  // Initialize all questions to not-visited
+  EXAM_DATA.questions.forEach(q => {
+    STATE.answers[q.id] = { selectedOptionId: null, status: 'not-visited' };
+  });
+
+  saveToStorage();
+  renderSectionTabs();
+  renderPalette();
+  loadQuestion(0);
+  startWallClockTimer();
+  showScreen('screen-exam');
+});
+
+// INIT ON LOAD
+window.addEventListener('DOMContentLoaded', () => {
+  initTheme();
+  document.getElementById('inst-q-count').textContent = EXAM_DATA.questions.length;
+  document.getElementById('inst-max-marks').textContent = (EXAM_DATA.questions.length * 2.0).toFixed(1);
+  const dur = EXAM_DATA.duration_minutes || 120;
+  document.getElementById('inst-duration').textContent = `${dur} Minutes`;
+  document.getElementById('mode-exam-mins').textContent = dur;
+
+  // Check if active test exists in storage
+  const hasCached = loadFromStorage();
+  if (hasCached) {
+    const resumeBtn = document.getElementById('btn-resume-cached');
+    resumeBtn.style.display = 'inline-block';
+    resumeBtn.addEventListener('click', () => {
+      renderSectionTabs();
+      renderPalette();
+      loadQuestion(STATE.currentQuestionIndex);
+      startWallClockTimer();
+      showScreen('screen-exam');
+    });
+  }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KPSC KAS Prelims Paper 2 — Mock1 (Full Mock) - KPSC KAS CBT Simulator</title>
+<style>
+:root {
+  --bg-primary: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-surface-secondary: #f1f5f9;
+  --border-color: #cbd5e1;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --accent-color: #2563eb;
+  --accent-hover: #1d4ed8;
+  --ans-green: #16a34a;
+  --ans-green-bg: #dcfce7;
+  --not-ans-red: #dc2626;
+  --not-ans-red-bg: #fee2e2;
+  --marked-purple: #9333ea;
+  --marked-purple-bg: #f3e8ff;
+  --not-visited-gray: #64748b;
+  --not-visited-gray-bg: #f1f5f9;
+  --header-height: 64px;
+}
+
+[data-theme="dark"] {
+  --bg-primary: #0b0f17;
+  --bg-surface: #131b26;
+  --bg-surface-secondary: #1a2433;
+  --border-color: #2b384e;
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --accent-color: #3b82f6;
+  --accent-hover: #60a5fa;
+  --ans-green: #22c55e;
+  --ans-green-bg: rgba(34, 197, 94, 0.15);
+  --not-ans-red: #ef4444;
+  --not-ans-red-bg: rgba(239, 68, 68, 0.15);
+  --marked-purple: #a855f7;
+  --marked-purple-bg: rgba(168, 85, 247, 0.15);
+  --not-visited-gray: #94a3b8;
+  --not-visited-gray-bg: #1e293b;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+/* SCREEN VISIBILITY */
+.screen-view { display: none; }
+.screen-view.active { display: block; }
+
+/* HEADER */
+.cbt-header {
+  height: var(--header-height);
+  background: var(--bg-surface);
+  border-bottom: 1.5px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+.header-left { display: flex; align-items: center; gap: 16px; }
+.exam-brand { font-size: 1.15rem; font-weight: 700; color: var(--accent-color); letter-spacing: -0.02em; }
+.badge-mode {
+  padding: 3px 10px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: var(--bg-surface-secondary);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+}
+.header-right { display: flex; align-items: center; gap: 20px; }
+.timer-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: var(--bg-surface-secondary);
+  border: 1.5px solid var(--border-color);
+  border-radius: 8px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.candidate-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+.theme-btn {
+  background: none;
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* INSTRUCTIONS SCREEN */
+.inst-container {
+  max-width: 900px;
+  margin: 32px auto;
+  padding: 32px;
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+}
+.inst-title { font-size: 1.6rem; font-weight: 800; margin-bottom: 8px; }
+.inst-subtitle { font-size: 1rem; color: var(--text-secondary); margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--border-color); }
+.inst-spec-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 28px;
+}
+.spec-card {
+  padding: 16px;
+  background: var(--bg-surface-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+}
+.spec-label { font-size: 0.8rem; color: var(--text-secondary); text-transform: uppercase; font-weight: 600; }
+.spec-value { font-size: 1.25rem; font-weight: 700; color: var(--text-primary); margin-top: 4px; }
+.inst-rules { margin-bottom: 28px; line-height: 1.7; font-size: 0.95rem; }
+.inst-rules h3 { margin: 16px 0 8px; font-size: 1.1rem; }
+.inst-rules ul { padding-left: 24px; margin-bottom: 12px; }
+.inst-mode-picker {
+  background: var(--bg-surface-secondary);
+  padding: 20px;
+  border-radius: 8px;
+  border: 1.5px solid var(--border-color);
+  margin-bottom: 28px;
+}
+.mode-picker-title { font-weight: 700; margin-bottom: 12px; }
+.mode-opt { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; cursor: pointer; }
+.inst-actions { display: flex; align-items: center; justify-content: space-between; padding-top: 20px; border-top: 1px solid var(--border-color); }
+.btn-primary {
+  background: var(--accent-color);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+.btn-primary:hover { background: var(--accent-hover); }
+
+/* EXAM MAIN CONTAINER */
+.exam-layout {
+  display: flex;
+  height: calc(100vh - var(--header-height));
+  overflow: hidden;
+}
+.exam-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  border-right: 1.5px solid var(--border-color);
+}
+.section-bar {
+  display: flex;
+  background: var(--bg-surface-secondary);
+  border-bottom: 1.5px solid var(--border-color);
+  padding: 0 16px;
+  overflow-x: auto;
+}
+.sec-tab {
+  padding: 12px 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  white-space: nowrap;
+}
+.sec-tab.active {
+  color: var(--accent-color);
+  border-bottom-color: var(--accent-color);
+  background: var(--bg-surface);
+}
+.q-viewport {
+  flex: 1;
+  padding: 28px 36px;
+  overflow-y: auto;
+}
+.q-meta-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-color);
+}
+.q-title { font-size: 1.15rem; font-weight: 700; color: var(--accent-color); }
+.q-marks-pill {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: var(--bg-surface-secondary);
+  border: 1px solid var(--border-color);
+}
+.q-text-body {
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+.options-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
+.option-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px 18px;
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border-color);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.option-card:hover { border-color: var(--accent-color); background: var(--bg-surface-secondary); }
+.option-card.selected {
+  border-color: var(--accent-color);
+  background: rgba(37, 99, 235, 0.08);
+}
+.opt-radio { margin-top: 4px; accent-color: var(--accent-color); cursor: pointer; }
+.opt-pill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--bg-surface-secondary);
+  border: 1px solid var(--border-color);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  flex-shrink: 0;
+}
+.option-card.selected .opt-pill {
+  background: var(--accent-color);
+  color: #ffffff;
+  border-color: var(--accent-color);
+}
+.opt-text { font-size: 0.98rem; color: var(--text-primary); flex: 1; }
+
+/* CONTROLS BAR */
+.controls-bar {
+  padding: 16px 24px;
+  background: var(--bg-surface);
+  border-top: 1.5px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.ctrl-left { display: flex; gap: 10px; }
+.ctrl-right { display: flex; gap: 10px; }
+.btn-ctrl {
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1.5px solid var(--border-color);
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  transition: all 0.15s ease;
+}
+.btn-ctrl:hover { background: var(--bg-surface-secondary); }
+.btn-save-next { background: var(--ans-green); color: #ffffff; border-color: var(--ans-green); }
+.btn-save-next:hover { opacity: 0.9; }
+.btn-mark { background: var(--marked-purple); color: #ffffff; border-color: var(--marked-purple); }
+.btn-mark:hover { opacity: 0.9; }
+.btn-submit-main { background: var(--accent-color); color: #ffffff; border-color: var(--accent-color); font-weight: 700; }
+
+/* SIDE PALETTE */
+.palette-sidebar {
+  width: 340px;
+  background: var(--bg-surface);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.palette-header {
+  padding: 16px;
+  border-bottom: 1px solid var(--border-color);
+}
+.palette-legend {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  font-size: 0.78rem;
+  margin-bottom: 12px;
+}
+.leg-item { display: flex; align-items: center; gap: 6px; }
+.leg-badge {
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.75rem;
+}
+.leg-ans { background: var(--ans-green); color: #ffffff; }
+.leg-not-ans { background: var(--not-ans-red); color: #ffffff; }
+.leg-marked { background: var(--marked-purple); color: #ffffff; }
+.leg-marked-ans { background: var(--marked-purple); color: #ffffff; position: relative; }
+.leg-marked-ans::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #22c55e;
+}
+.leg-not-vis { background: var(--not-visited-gray-bg); border: 1px solid var(--border-color); color: var(--text-secondary); }
+
+.palette-sec-title { font-size: 0.85rem; font-weight: 700; color: var(--text-secondary); margin-bottom: 6px; }
+.palette-grid-wrapper {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+}
+.palette-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+.pal-btn {
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  border: 1.5px solid var(--border-color);
+  background: var(--not-visited-gray-bg);
+  color: var(--not-visited-gray);
+  position: relative;
+}
+.pal-btn.active-q { outline: 2.5px solid var(--accent-color); outline-offset: 1px; }
+.pal-btn.st-answered { background: var(--ans-green); color: #ffffff; border-color: var(--ans-green); }
+.pal-btn.st-not-answered { background: var(--not-ans-red); color: #ffffff; border-color: var(--not-ans-red); }
+.pal-btn.st-marked { background: var(--marked-purple); color: #ffffff; border-color: var(--marked-purple); }
+.pal-btn.st-marked-answered { background: var(--marked-purple); color: #ffffff; border-color: var(--marked-purple); }
+.pal-btn.st-marked-answered::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #22c55e;
+  border: 1px solid #ffffff;
+}
+
+/* MODAL */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(2px);
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+}
+.modal-overlay.active { display: flex; }
+.modal-card {
+  width: 90%;
+  max-width: 640px;
+  background: var(--bg-surface);
+  border-radius: 12px;
+  border: 1.5px solid var(--border-color);
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+.modal-header { font-size: 1.25rem; font-weight: 700; margin-bottom: 16px; }
+.modal-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+}
+.modal-table th, .modal-table td {
+  padding: 8px 12px;
+  border: 1px solid var(--border-color);
+  text-align: center;
+}
+.modal-table th { background: var(--bg-surface-secondary); }
+.modal-actions { display: flex; justify-content: flex-end; gap: 12px; }
+
+/* RESULTS SCREEN */
+.res-container {
+  max-width: 1000px;
+  margin: 32px auto;
+  padding: 32px;
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border-color);
+  border-radius: 12px;
+}
+.scorecard-header {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.scorecard-card {
+  padding: 16px;
+  border-radius: 8px;
+  background: var(--bg-surface-secondary);
+  border: 1px solid var(--border-color);
+  text-align: center;
+}
+.scorecard-val { font-size: 1.75rem; font-weight: 800; color: var(--accent-color); margin-top: 4px; }
+.res-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 32px;
+  font-size: 0.92rem;
+}
+.res-table th, .res-table td {
+  padding: 10px 14px;
+  border: 1px solid var(--border-color);
+  text-align: center;
+}
+.res-table th { background: var(--bg-surface-secondary); }
+.review-item {
+  padding: 20px;
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border-color);
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+.review-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+.truth-box {
+  background: var(--bg-surface-secondary);
+  border-left: 4px solid var(--accent-color);
+  padding: 10px 14px;
+  font-size: 0.88rem;
+  margin: 12px 0;
+}
+.explanation-box {
+  background: rgba(37, 99, 235, 0.05);
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  border-radius: 6px;
+  padding: 12px 16px;
+  font-size: 0.9rem;
+  margin-top: 12px;
+}
+</style>
+</head>
+<body>
+
+<!-- CBT TOP HEADER -->
+<header class="cbt-header">
+  <div class="header-left">
+    <div class="exam-brand">KPSC KAS CBT</div>
+    <div class="badge-mode" id="header-mode-badge">Exam Mode</div>
+  </div>
+  <div class="header-right">
+    <div class="timer-box" id="timer-box">
+      <span id="timer-display">00:00:00</span>
+    </div>
+    <div class="candidate-pill">
+      <strong>Candidate:</strong> <span id="candidate-name">GM01</span>
+    </div>
+    <button class="theme-btn" id="theme-btn" title="Toggle Theme">Theme</button>
+  </div>
+</header>
+
+<!-- SCREEN 1: INSTRUCTIONS SCREEN -->
+<div class="screen-view active" id="screen-instructions">
+  <div class="inst-container">
+    <div class="inst-title">KPSC KAS Prelims Paper 2 — Mock1 (Full Mock)</div>
+    <div class="inst-subtitle">Official Computer-Based Test Simulator | Karnataka Public Service Commission (KPSC)</div>
+
+    <div class="inst-spec-grid">
+      <div class="spec-card">
+        <div class="spec-label">Total Questions</div>
+        <div class="spec-value" id="inst-q-count">100</div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-label">Maximum Marks</div>
+        <div class="spec-value" id="inst-max-marks">200.0</div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-label">Marking Scheme</div>
+        <div class="spec-value">+2.00 / -0.50</div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-label">Exam Duration</div>
+        <div class="spec-value" id="inst-duration">120 Minutes</div>
+      </div>
+    </div>
+
+    <div class="inst-mode-picker">
+      <div class="mode-picker-title">Select Simulation Duration Mode:</div>
+      <label class="mode-opt">
+        <input type="radio" name="sim-mode" value="exam" checked>
+        <div>
+          <strong>Standard Exam Mode</strong> — Full examination duration (<span id="mode-exam-mins">120</span> Minutes)
+        </div>
+      </label>
+      <label class="mode-opt">
+        <input type="radio" name="sim-mode" value="quick">
+        <div>
+          <strong>Quick Check Mode</strong> — Accelerated 2-Minute session (Ideal for validating timer, auto-submit & scoring)
+        </div>
+      </label>
+    </div>
+
+    <div class="inst-rules">
+      <h3>Instructions & Rules for the Candidate:</h3>
+      <ul>
+        <li>The clock is synchronized to an absolute wall-clock timestamp. It does not drift and persists across browser refreshes.</li>
+        <li>Each multiple-choice question offers 4 options. Exactly one option is correct.</li>
+        <li><strong>Negative Marking:</strong> Each incorrect answer incurs a penalty of <strong>0.50 marks</strong> (one-fourth of 2.00 marks). Unattempted questions carry zero penalty.</li>
+        <li>Questions marked for review <em>without selecting an option</em> will be evaluated as unattempted (0 marks).</li>
+        <li>Questions marked for review <em>with an option selected</em> will be evaluated for scoring.</li>
+        <li>You may switch between sections freely at any time using the section tabs.</li>
+      </ul>
+    </div>
+
+    <div style="margin-bottom: 24px;">
+      <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 0.95rem;">
+        <input type="checkbox" id="inst-agree-check" checked>
+        <span>I have read and understood all the instructions above and am ready to proceed.</span>
+      </label>
+    </div>
+
+    <div class="inst-actions">
+      <button class="btn-ctrl" id="btn-resume-cached" style="display:none;">Resume In-Progress Test</button>
+      <button class="btn-primary" id="btn-start-exam">I am ready to begin</button>
+    </div>
+  </div>
+</div>
+
+<!-- SCREEN 2: EXAM MAIN VIEW -->
+<div class="screen-view" id="screen-exam">
+  <div class="exam-layout">
+    <div class="exam-main">
+      <!-- Section Bar -->
+      <div class="section-bar" id="section-bar"></div>
+
+      <!-- Question Viewport -->
+      <div class="q-viewport">
+        <div class="q-meta-header">
+          <div class="q-title" id="q-title-label">Question No. 1</div>
+          <div class="q-marks-pill">Marks: +2.00 / -0.50</div>
+        </div>
+
+        <div class="q-text-body" id="q-text-body"></div>
+
+        <div class="options-list" id="options-list"></div>
+      </div>
+
+      <!-- Controls Bar -->
+      <div class="controls-bar">
+        <div class="ctrl-left">
+          <button class="btn-ctrl" id="btn-prev">Previous (Alt+P)</button>
+          <button class="btn-ctrl btn-mark" id="btn-mark-review">Mark for Review & Next</button>
+          <button class="btn-ctrl" id="btn-clear-resp">Clear Response (Alt+C)</button>
+        </div>
+        <div class="ctrl-right">
+          <button class="btn-ctrl btn-save-next" id="btn-save-next">Save & Next (Alt+N)</button>
+          <button class="btn-ctrl btn-submit-main" id="btn-trigger-submit">Submit Test</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Side Palette -->
+    <div class="palette-sidebar">
+      <div class="palette-header">
+        <div class="palette-legend">
+          <div class="leg-item"><div class="leg-badge leg-ans" id="badge-count-ans">0</div> Answered</div>
+          <div class="leg-item"><div class="leg-badge leg-not-ans" id="badge-count-not-ans">0</div> Not Answered</div>
+          <div class="leg-item"><div class="leg-badge leg-not-vis" id="badge-count-not-vis">0</div> Not Visited</div>
+          <div class="leg-item"><div class="leg-badge leg-marked" id="badge-count-marked">0</div> Marked</div>
+          <div class="leg-item" style="grid-column: span 2;"><div class="leg-badge leg-marked-ans" id="badge-count-marked-ans">0</div> Answered & Marked</div>
+        </div>
+        <div class="palette-sec-title" id="pal-sec-name">Section: All Questions</div>
+      </div>
+
+      <div class="palette-grid-wrapper">
+        <div class="palette-grid" id="palette-grid"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SUBMIT CONFIRMATION MODAL -->
+<div class="modal-overlay" id="modal-submit">
+  <div class="modal-card">
+    <div class="modal-header">Confirm Exam Submission</div>
+    <table class="modal-table">
+      <thead>
+        <tr>
+          <th>Section</th>
+          <th>Total</th>
+          <th>Answered</th>
+          <th>Not Answered</th>
+          <th>Marked</th>
+          <th>Not Visited</th>
+        </tr>
+      </thead>
+      <tbody id="modal-table-body"></tbody>
+    </table>
+    <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 20px;">
+      Are you sure you want to submit your examination? Once submitted, answers cannot be edited.
+    </p>
+    <div class="modal-actions">
+      <button class="btn-ctrl" id="btn-modal-cancel">Return to Exam</button>
+      <button class="btn-primary" id="btn-modal-confirm">Confirm & Submit</button>
+    </div>
+  </div>
+</div>
+
+<!-- SCREEN 3: RESULTS & REVIEW VIEW -->
+<div class="screen-view" id="screen-result">
+  <div class="res-container">
+    <h2 style="margin-bottom: 8px;">Examination Performance Scorecard</h2>
+    <p style="color: var(--text-secondary); margin-bottom: 24px;" id="res-test-title">KPSC KAS Prelims Paper 2 — Mock1 (Full Mock)</p>
+
+    <div class="scorecard-header">
+      <div class="scorecard-card">
+        <div class="spec-label">Net Score</div>
+        <div class="scorecard-val" id="res-net-score">0.00</div>
+        <div style="font-size: 0.8rem; color: var(--text-secondary);">Out of <span id="res-max-marks">200.0</span></div>
+      </div>
+      <div class="scorecard-card">
+        <div class="spec-label">Accuracy</div>
+        <div class="scorecard-val" id="res-accuracy">0.0%</div>
+      </div>
+      <div class="scorecard-card">
+        <div class="spec-label">Attempted</div>
+        <div class="scorecard-val" id="res-attempted">0 / 100</div>
+      </div>
+      <div class="scorecard-card">
+        <div class="spec-label">Positive / Penalty</div>
+        <div class="scorecard-val" style="font-size: 1.2rem; color: var(--text-primary);" id="res-pos-neg">+0.0 / -0.0</div>
+      </div>
+    </div>
+
+    <h3 style="margin-bottom: 12px;">Sectional Performance Breakdown</h3>
+    <table class="res-table">
+      <thead>
+        <tr>
+          <th>Section</th>
+          <th>Total Qs</th>
+          <th>Attempted</th>
+          <th>Correct</th>
+          <th>Incorrect</th>
+          <th>Net Marks</th>
+          <th>Accuracy</th>
+        </tr>
+      </thead>
+      <tbody id="res-section-body"></tbody>
+    </table>
+
+    <div style="display: flex; justify-content: space-between; align-items: center; margin: 32px 0 16px;">
+      <h3>Question Review & Pedagogical Verification</h3>
+      <div style="display: flex; gap: 8px;">
+        <button class="btn-ctrl" id="btn-filter-all">All Questions</button>
+        <button class="btn-ctrl" id="btn-filter-flawed">Incorrect Only</button>
+        <button class="btn-ctrl" id="btn-filter-unattempted">Unattempted Only</button>
+      </div>
+    </div>
+
+    <div id="review-list"></div>
+
+    <div style="margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border-color); display: flex; justify-content: flex-end;">
+      <button class="btn-primary" id="btn-retake">Restart Simulation</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// PURE CBT ENGINE CORE
+const CbtCore = {
+  scoreExam(answers, questions, sections, markingScheme) {
+    const posMark = (markingScheme && markingScheme.positiveMarks !== undefined) ? markingScheme.positiveMarks : 2.0;
+    const negPenalty = (markingScheme && markingScheme.negativePenalty !== undefined) ? markingScheme.negativePenalty : 0.5;
+
+    let totalQuestions = questions.length;
+    let correctCount = 0;
+    let incorrectCount = 0;
+    let unattemptedCount = 0;
+    let markedCount = 0;
+
+    const sectionMap = {};
+    if (sections && sections.length > 0) {
+      sections.forEach(s => {
+        sectionMap[s.id || s.name] = {
+          id: s.id || s.name,
+          name: s.name,
+          total: 0,
+          attempted: 0,
+          correct: 0,
+          incorrect: 0,
+          unattempted: 0,
+          positiveMarks: 0,
+          negativePenalty: 0,
+          netMarks: 0,
+          accuracy: 0
+        };
+      });
+    }
+
+    const topicMap = {};
+
+    questions.forEach(q => {
+      const qSectionKey = q.section_id || (q.section ? q.section.id || q.section.name : null);
+      let secTracker = qSectionKey && sectionMap[qSectionKey] ? sectionMap[qSectionKey] : null;
+      if (!secTracker && sections && sections.length > 0) {
+        for (const s of sections) {
+          if (s.question_ids && s.question_ids.includes(q.id)) {
+            secTracker = sectionMap[s.id || s.name];
+            break;
+          }
+        }
+      }
+
+      const subjectKey = q.subject || 'General Studies';
+      if (!topicMap[subjectKey]) {
+        topicMap[subjectKey] = {
+          subject: subjectKey,
+          total: 0,
+          attempted: 0,
+          correct: 0,
+          incorrect: 0,
+          unattempted: 0,
+          netMarks: 0
+        };
+      }
+      const topTracker = topicMap[subjectKey];
+
+      if (secTracker) secTracker.total++;
+      topTracker.total++;
+
+      const userAns = answers ? answers[q.id] : null;
+      const selectedOptionId = userAns ? userAns.selectedOptionId : null;
+      const status = userAns ? userAns.status : 'not-visited';
+
+      if (status === 'marked' || status === 'marked-answered') {
+        markedCount++;
+      }
+
+      const isAttempted = !!selectedOptionId;
+
+      if (!isAttempted) {
+        unattemptedCount++;
+        if (secTracker) secTracker.unattempted++;
+        topTracker.unattempted++;
+      } else {
+        const correctOptId = q.answer_id || q.answer;
+        const isCorrect = (selectedOptionId === correctOptId || selectedOptionId === q.answer);
+
+        if (isCorrect) {
+          correctCount++;
+          if (secTracker) {
+            secTracker.attempted++;
+            secTracker.correct++;
+            secTracker.positiveMarks += posMark;
+          }
+          topTracker.attempted++;
+          topTracker.correct++;
+          topTracker.netMarks += posMark;
+        } else {
+          incorrectCount++;
+          if (secTracker) {
+            secTracker.attempted++;
+            secTracker.incorrect++;
+            secTracker.negativePenalty += negPenalty;
+          }
+          topTracker.attempted++;
+          topTracker.incorrect++;
+          topTracker.netMarks -= negPenalty;
+        }
+      }
+    });
+
+    const attemptedCount = correctCount + incorrectCount;
+    const positiveMarks = correctCount * posMark;
+    const negativePenalty = incorrectCount * negPenalty;
+    const netScore = positiveMarks - negativePenalty; // Exact raw score, NOT clamped
+    const accuracy = attemptedCount > 0 ? Number(((correctCount / attemptedCount) * 100).toFixed(2)) : 0;
+
+    const sectionBreakdown = Object.values(sectionMap).map(sec => {
+      sec.netMarks = Number((sec.positiveMarks - sec.negativePenalty).toFixed(2));
+      sec.accuracy = sec.attempted > 0 ? Number(((sec.correct / sec.attempted) * 100).toFixed(2)) : 0;
+      return sec;
+    });
+
+    const topicBreakdown = Object.values(topicMap).map(top => {
+      top.netMarks = Number(top.netMarks.toFixed(2));
+      top.accuracy = top.attempted > 0 ? Number(((top.correct / top.attempted) * 100).toFixed(2)) : 0;
+      return top;
+    });
+
+    return {
+      totalQuestions,
+      attemptedCount,
+      unattemptedCount,
+      correctCount,
+      incorrectCount,
+      markedCount,
+      positiveMarks: Number(positiveMarks.toFixed(2)),
+      negativePenalty: Number(negativePenalty.toFixed(2)),
+      netScore: Number(netScore.toFixed(2)),
+      accuracy,
+      sectionBreakdown,
+      topicBreakdown
+    };
+  },
+
+  computeRemainingTime(endTime, now) {
+    const current = (now !== undefined) ? now : Date.now();
+    const diffMs = endTime - current;
+    if (diffMs <= 0) {
+      return { remainingSeconds: 0, isExpired: true, formatted: "00:00:00" };
+    }
+    const totalSecs = Math.round(diffMs / 1000);
+    const hrs = Math.floor(totalSecs / 3600);
+    const mins = Math.floor((totalSecs % 3600) / 60);
+    const secs = totalSecs % 60;
+    const formatted = `${String(hrs).padStart(2, '0')}:${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+    return { remainingSeconds: totalSecs, isExpired: false, formatted };
+  }
+};
+
+// EMBEDDED EXAM PAYLOAD
+const EXAM_DATA = {"test_id": "CBT_Full_Prelims_P2_Mock1", "title": "KPSC KAS Prelims Paper 2 — Mock1 (Full Mock)", "paper": "Paper 2 (State Affairs + Science + Mental Ability)", "duration_minutes": 120, "positive_marks": 2.0, "negative_penalty": 0.5, "sections": [{"id": "SEC-P2-1", "name": "Section 1: State Importance & Schemes", "q_count": 40}, {"id": "SEC-P2-2", "name": "Section 2: General Science & Technology", "q_count": 30}, {"id": "SEC-P2-3", "name": "Section 3: General Mental Ability", "q_count": 30}], "questions": [{"id": "KAS-P2-KA-001", "text_hash": "72abd64a37b6bc3b", "text": "Under the Gruha Lakshmi Scheme in Karnataka, what is the monthly financial assistance deposited via DBT to eligible women?", "options": [{"id": "opt_a", "label": "A", "text": "Rs. 1,000"}, {"id": "opt_b", "label": "B", "text": "Rs. 1,500"}, {"id": "opt_c", "label": "C", "text": "Rs. 2,000"}, {"id": "opt_d", "label": "D", "text": "Rs. 2,500"}], "answer": "C", "answer_id": "opt_c", "explanation": "Gruha Lakshmi provides Rs. 2,000 per month DBT to the designated female head of the household.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "P2-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-KA-002", "text_hash": "da72789285623ab1", "text": "Who among the following is EXCLUDED from receiving monthly benefits under the Gruha Lakshmi Scheme?", "options": [{"id": "opt_a", "label": "A", "text": "Women residing in rented houses"}, {"id": "opt_b", "label": "B", "text": "Women who are themselves or whose husbands are Income Tax or GST assessees"}, {"id": "opt_c", "label": "C", "text": "Women without higher education"}, {"id": "opt_d", "label": "D", "text": "Widows and elderly women"}], "answer": "B", "answer_id": "opt_b", "explanation": "Women or their spouses paying Income Tax or GST are excluded from Gruha Lakshmi.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "P2-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-KA-003", "text_hash": "4ca5bb616a6eb330", "text": "Under the Gruha Jyothi scheme, what is the maximum ceiling of free monthly domestic electricity units allowed per household?", "options": [{"id": "opt_a", "label": "A", "text": "100 units"}, {"id": "opt_b", "label": "B", "text": "150 units"}, {"id": "opt_c", "label": "C", "text": "200 units"}, {"id": "opt_d", "label": "D", "text": "250 units"}], "answer": "C", "answer_id": "opt_c", "explanation": "Gruha Jyothi provides free electricity up to an absolute ceiling of 200 units per month.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "P2-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-KA-004", "text_hash": "a727c7cda5a9e67c", "text": "How is the entitled free electricity quota determined for a domestic consumer under Gruha Jyothi?", "options": [{"id": "opt_a", "label": "A", "text": "Fixed 200 units for everyone"}, {"id": "opt_b", "label": "B", "text": "Past 12-month average consumption + 10% buffer"}, {"id": "opt_c", "label": "C", "text": "Based on household square footage"}, {"id": "opt_d", "label": "D", "text": "Based on number of family members"}], "answer": "B", "answer_id": "opt_b", "explanation": "Entitled units are calculated as the consumer's average monthly consumption of the past 12 months plus a 10% buffer.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "P2-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-KA-005", "text_hash": "a58ea6a95c6fbaeb", "text": "Under the Yuva Nidhi scheme, what is the monthly unemployment stipend provided to unemployed Graduates and Diploma holders respectively?", "options": [{"id": "opt_a", "label": "A", "text": "Graduates: Rs. 2,000; Diploma: Rs. 1,000"}, {"id": "opt_b", "label": "B", "text": "Graduates: Rs. 3,000; Diploma: Rs. 1,500"}, {"id": "opt_c", "label": "C", "text": "Graduates: Rs. 4,000; Diploma: Rs. 2,000"}, {"id": "opt_d", "label": "D", "text": "Graduates: Rs. 5,000; Diploma: Rs. 2,500"}], "answer": "B", "answer_id": "opt_b", "explanation": "Yuva Nidhi provides Rs. 3,000/month for graduates and Rs. 1,500/month for diploma holders.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "P2-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-KA-006", "text_hash": "594c3c50a2ddbee0", "text": "What is the maximum duration for which Yuva Nidhi unemployment assistance is payable to a beneficiary?", "options": [{"id": "opt_a", "label": "A", "text": "12 months (1 year)"}, {"id": "opt_b", "label": "B", "text": "24 months (2 years)"}, {"id": "opt_c", "label": "C", "text": "36 months (3 years)"}, {"id": "opt_d", "label": "D", "text": "Until age 35"}], "answer": "B", "answer_id": "opt_b", "explanation": "Yuva Nidhi is payable for a maximum tenure of 2 years (24 months) or until employment/self-employment is secured.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "P2-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-KA-007", "text_hash": "219323cfff427440", "text": "The Shakti scheme in Karnataka provides fare-free travel to domicile women across state transport buses, but EXCLUDES which bus service?", "options": [{"id": "opt_a", "label": "A", "text": "City bus services of BMTC"}, {"id": "opt_b", "label": "B", "text": "Ordinary express buses of KSRTC"}, {"id": "opt_c", "label": "C", "text": "Premium luxury buses like Airavat, Rajahamsa, and EV Power Plus"}, {"id": "opt_d", "label": "D", "text": "Mofussil buses of NWKRTC"}], "answer": "C", "answer_id": "opt_c", "explanation": "Shakti excludes luxury/interstate bus services such as Airavat Club Class, Rajahamsa, and EV Power Plus.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "P2-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-KA-008", "text_hash": "ab4341814e559d6e", "text": "Under the Anna Bhagya scheme, in lieu of the additional 5 kg rice procurement bottleneck, how much cash is transferred via DBT per person per month?", "options": [{"id": "opt_a", "label": "A", "text": "Rs. 100"}, {"id": "opt_b", "label": "B", "text": "Rs. 150"}, {"id": "opt_c", "label": "C", "text": "Rs. 170 (at Rs. 34/kg)"}, {"id": "opt_d", "label": "D", "text": "Rs. 200"}], "answer": "C", "answer_id": "opt_c", "explanation": "The Government of Karnataka credits Rs. 170 per person per month (5 kg at Rs. 34 per kg) via DBT for BPL/AAY cardholders.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "P2-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-KA-009", "text_hash": "1d3942114e2e35aa", "text": "The annual budgetary outlay allocated for the implementation of the Five Guarantees in the Karnataka Budget 2026-27 exceeds approximately:", "options": [{"id": "opt_a", "label": "A", "text": "Rs. 25,000 Crore"}, {"id": "opt_b", "label": "B", "text": "Rs. 35,000 Crore"}, {"id": "opt_c", "label": "C", "text": "Rs. 52,000 Crore"}, {"id": "opt_d", "label": "D", "text": "Rs. 75,000 Crore"}], "answer": "C", "answer_id": "opt_c", "explanation": "The annual budgetary allocation for the Five Guarantees exceeds Rs. 52,000 Crore (~14% of state budget).", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "P2-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-KA-010", "text_hash": "1589704a18531dc8", "text": "The 'Krishi Bhagya' scheme of the Government of Karnataka primarily focuses on which intervention in rainfed agricultural areas?", "options": [{"id": "opt_a", "label": "A", "text": "Distributing free tractors"}, {"id": "opt_b", "label": "B", "text": "Construction of farm ponds (Krishi Honda) and micro-irrigation systems"}, {"id": "opt_c", "label": "C", "text": "Providing 100% fertilizer subsidies"}, {"id": "opt_d", "label": "D", "text": "Establishing cold storage hubs"}], "answer": "B", "answer_id": "opt_b", "explanation": "Krishi Bhagya promotes farm ponds (Krishi Honda), polythene lining, diesel pumps, and micro-irrigation in dryland farming.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "P2-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-KA-011", "text_hash": "909e441ed96b92ce", "text": "Under the 'Ksheera Bhagya' scheme, how many days a week is milk distributed to children in government schools and Anganwadis in Karnataka?", "options": [{"id": "opt_a", "label": "A", "text": "2 days a week"}, {"id": "opt_b", "label": "B", "text": "3 days a week"}, {"id": "opt_c", "label": "C", "text": "5 days a week"}, {"id": "opt_d", "label": "D", "text": "Every day (7 days)"}], "answer": "C", "answer_id": "opt_c", "explanation": "Ksheera Bhagya provides 150 ml of milk 5 days a week to school and Anganwadi students.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "P2-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-KA-012", "text_hash": "61af386740224ab8", "text": "The 'Mathru Poorna' scheme in Karnataka provides which service to pregnant and lactating mothers?", "options": [{"id": "opt_a", "label": "A", "text": "Cash transfer of Rs. 6,000 in three tranches"}, {"id": "opt_b", "label": "B", "text": "One hot, nutritious cooked meal daily at Anganwadis for 15 months"}, {"id": "opt_c", "label": "C", "text": "Free private hospital delivery"}, {"id": "opt_d", "label": "D", "text": "Free neonatal baby kits"}], "answer": "B", "answer_id": "opt_b", "explanation": "Mathru Poorna delivers one wholesome hot cooked meal daily with milk and eggs at Anganwadi centers.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "P2-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-KA-013", "text_hash": "aa63ee21ad299414", "text": "The 'Raitha Siri' scheme provides financial incentive of Rs. 10,000 per hectare for farmers cultivating which crops in Karnataka?", "options": [{"id": "opt_a", "label": "A", "text": "Sugarcane and Paddy"}, {"id": "opt_b", "label": "B", "text": "Minor Millets (Siridhanya)"}, {"id": "opt_c", "label": "C", "text": "Coffee and Arecanut"}, {"id": "opt_d", "label": "D", "text": "BT Cotton and Tobacco"}], "answer": "B", "answer_id": "opt_b", "explanation": "Raitha Siri incentivizes minor millet (Siridhanya) cultivation with Rs. 10,000/ha direct financial aid.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "P2-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-KA-014", "text_hash": "97e4bd8135bdd90b", "text": "The Karnataka Platform-Based Gig Workers Bill, 2024 mandates which mechanism to fund social security welfare for gig delivery workers?", "options": [{"id": "opt_a", "label": "A", "text": "5% income tax deduction"}, {"id": "opt_b", "label": "B", "text": "Welfare fee of 1% to 2% levied on each customer transaction on aggregators"}, {"id": "opt_c", "label": "C", "text": "Fixed monthly cess on restaurants"}, {"id": "opt_d", "label": "D", "text": "Employer-only registration fees"}], "answer": "B", "answer_id": "opt_b", "explanation": "The bill levies a welfare fee of 1% to 2% on customer transactions processed by platform aggregators.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "P2-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-KA-015", "text_hash": "50d63adce43475fc", "text": "The Greater Bengaluru Governance Bill, 2024 proposes replacing BBMP with multiple corporations coordinated by which apex body?", "options": [{"id": "opt_a", "label": "A", "text": "Bengaluru Metropolitan Task Force (BMTF)"}, {"id": "opt_b", "label": "B", "text": "Greater Bengaluru Authority (GBA) chaired by Chief Minister"}, {"id": "opt_c", "label": "C", "text": "BDA Board"}, {"id": "opt_d", "label": "D", "text": "Karnataka Urban Development Directorate"}], "answer": "B", "answer_id": "opt_b", "explanation": "The Greater Bengaluru Authority (GBA) headed by the Chief Minister will oversee decentralized municipal corporations.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "P2-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-KA-016", "text_hash": "d2fbbb6c9c89859f", "text": "The Yettinahole Integrated Drinking Water Project lifts water from the catchment area in Sakaleshpura to supply drinking water to how many drought-prone districts?", "options": [{"id": "opt_a", "label": "A", "text": "3 districts"}, {"id": "opt_b", "label": "B", "text": "5 districts"}, {"id": "opt_c", "label": "C", "text": "7 districts (Chikkamagaluru, Hassan, Tumakuru, Chikkaballapura, Kolar, Bengaluru Rural, Ramanagara)"}, {"id": "opt_d", "label": "D", "text": "12 districts"}], "answer": "C", "answer_id": "opt_c", "explanation": "Yettinahole supplies 24 TMC drinking water to 29 taluks across 7 drought-affected eastern districts.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "P2-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-KA-017", "text_hash": "85196e7a04aaac7f", "text": "Which Hoysala temple complex was inscribed as part of the 'Sacred Ensembles of the Hoysalas' UNESCO World Heritage Site in September 2023?", "options": [{"id": "opt_a", "label": "A", "text": "Chennakeshava Temple at Belur, Hoysaleshwara Temple at Halebidu, and Keshava Temple at Somanathapura"}, {"id": "opt_b", "label": "B", "text": "Vidyashankara Temple at Sringeri"}, {"id": "opt_c", "label": "C", "text": "Veeranarayana Temple at Belavadi"}, {"id": "opt_d", "label": "D", "text": "Amruteshwara Temple at Annigeri"}], "answer": "A", "answer_id": "opt_a", "explanation": "The three inscribed Hoysala complexes are Belur Chennakeshava, Halebidu Hoysaleshwara, and Somanathapura Keshava temple.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "P2-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-KA-018", "text_hash": "5985ad1966d5afe4", "text": "The 87th Akhila Bharata Kannada Sahitya Sammelana held in 2024 was hosted at Mandya under the presidency of which eminent writer and folklorist?", "options": [{"id": "opt_a", "label": "A", "text": "Dr. Chandrashekhara Kambara"}, {"id": "opt_b", "label": "B", "text": "Go. Ru. Channabasappa"}, {"id": "opt_c", "label": "C", "text": "Dr. Doddarange Gowda"}, {"id": "opt_d", "label": "D", "text": "Prof. Baraguru Ramachandrappa"}], "answer": "B", "answer_id": "opt_b", "explanation": "Renowned folklorist Go. Ru. Channabasappa presided over the 87th Sahitya Sammelana at Mandya.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "P2-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-KA-019", "text_hash": "ad600a0354040aef", "text": "The 'Beyond Bengaluru' policy of the Department of Electronics, IT/Bt aims to build major technology and startup clusters in which cities?", "options": [{"id": "opt_a", "label": "A", "text": "Mysuru, Hubballi-Dharwad, and Mangaluru"}, {"id": "opt_b", "label": "B", "text": "Ballari, Raichur, and Koppal"}, {"id": "opt_c", "label": "C", "text": "Bidar, Bagalkote, and Yadgir"}, {"id": "opt_d", "label": "D", "text": "Chamarajanagar and Mandya"}], "answer": "A", "answer_id": "opt_a", "explanation": "Beyond Bengaluru focuses on Mysuru, Hubballi-Dharwad, and Mangaluru as Tier-2 tech growth engines.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "P2-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-KA-020", "text_hash": "07cdd7dc6a659ed4", "text": "Which estuary in Uttara Kannada district was officially declared as a Ramsar Site of International Importance in early 2024?", "options": [{"id": "opt_a", "label": "A", "text": "Sharavathi Estuary"}, {"id": "opt_b", "label": "B", "text": "Aghanashini Estuary"}, {"id": "opt_c", "label": "C", "text": "Kali Estuary"}, {"id": "opt_d", "label": "D", "text": "Gangavali Estuary"}], "answer": "B", "answer_id": "opt_b", "explanation": "Aghanashini Estuary in Kumta taluk, Uttara Kannada was declared a Ramsar wetland in 2024.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "P2-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-KA-021", "text_hash": "a8a08209eb8523cb", "text": "Which bird conservation reserve in Vijayanagara district was designated as a Ramsar site in 2024?", "options": [{"id": "opt_a", "label": "A", "text": "Ankasamudra Bird Conservation Reserve"}, {"id": "opt_b", "label": "B", "text": "Daroji Sloth Bear Sanctuary"}, {"id": "opt_c", "label": "C", "text": "Gudavi Bird Sanctuary"}, {"id": "opt_d", "label": "D", "text": "Attiveri Bird Sanctuary"}], "answer": "A", "answer_id": "opt_a", "explanation": "Ankasamudra Bird Conservation Reserve in Hagaribommanahalli taluk, Vijayanagara is a designated Ramsar site.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "P2-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-KA-022", "text_hash": "016bbf79517efbf8", "text": "Which conservation reserve in Gadag district, famous as a wintering habitat for Bar-headed Geese, was declared a Ramsar site in 2024?", "options": [{"id": "opt_a", "label": "A", "text": "Magadi Kere Conservation Reserve"}, {"id": "opt_b", "label": "B", "text": "Bonal Bird Sanctuary"}, {"id": "opt_c", "label": "C", "text": "Karanji Lake"}, {"id": "opt_d", "label": "D", "text": "Hesaraghatta Grasslands"}], "answer": "A", "answer_id": "opt_a", "explanation": "Magadi Kere in Shirahatti taluk, Gadag district was notified as a Ramsar site in 2024.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "P2-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-KA-023", "text_hash": "e4aba9f77a6fe341", "text": "The Pavagada Solar Park (Shakti Sthala), one of the world's largest operational solar parks with 2,050 MW capacity, is located in which district?", "options": [{"id": "opt_a", "label": "A", "text": "Koppal"}, {"id": "opt_b", "label": "B", "text": "Tumakuru"}, {"id": "opt_c", "label": "C", "text": "Chitradurga"}, {"id": "opt_d", "label": "D", "text": "Ballari"}], "answer": "B", "answer_id": "opt_b", "explanation": "Pavagada Solar Park is located in the dry Pavagada taluk of Tumakuru district.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "P2-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-KA-024", "text_hash": "19b740aa51239ade", "text": "Under the Chennai-Bengaluru Industrial Corridor (CBIC), which node in Karnataka is being developed as a major Smart Industrial City?", "options": [{"id": "opt_a", "label": "A", "text": "Vasanthanarasapura (Tumakuru)"}, {"id": "opt_b", "label": "B", "text": "Belagavi"}, {"id": "opt_c", "label": "C", "text": "Hubballi"}, {"id": "opt_d", "label": "D", "text": "Mysuru"}], "answer": "A", "answer_id": "opt_a", "explanation": "Tumakuru Industrial Township at Vasanthanarasapura is the premier integrated industrial node on CBIC in Karnataka.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "P2-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-KA-025", "text_hash": "19020603d80dbc27", "text": "The D. Devaraj Urs Land Reforms Act of 1974 in Karnataka is celebrated for which revolutionary agrarian principle?", "options": [{"id": "opt_a", "label": "A", "text": "Consolidation of agricultural holdings"}, {"id": "opt_b", "label": "B", "text": "Land to the Tiller ('Uluvavanige Bhoomi')"}, {"id": "opt_c", "label": "C", "text": "Free cooperative farming"}, {"id": "opt_d", "label": "D", "text": "Corporate agriculture leasing"}], "answer": "B", "answer_id": "opt_b", "explanation": "The 1974 amendment under D. Devaraj Urs abolished tenancy and transferred ownership to the cultivating tiller.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "P2-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-KA-026", "text_hash": "8281104e8a7cdd66", "text": "The 'Gokak Chaluvali' (Gokak Agitation) of 1982 in Karnataka was an agitation demanding:", "options": [{"id": "opt_a", "label": "A", "text": "Bilingual signboards in Bengaluru"}, {"id": "opt_b", "label": "B", "text": "First language status and primacy for Kannada in state school education"}, {"id": "opt_c", "label": "C", "text": "Creation of a separate North Karnataka state"}, {"id": "opt_d", "label": "D", "text": "Reservations for Kannada medium students in jobs"}], "answer": "B", "answer_id": "opt_b", "explanation": "The Gokak Agitation demanded implementation of the J. W. Gokak Committee report granting sole first language status to Kannada in high schools.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "P2-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-KA-027", "text_hash": "074558de039eceec", "text": "In which historic year was the state of 'Mysore' officially renamed as 'Karnataka' under Chief Minister D. Devaraj Urs?", "options": [{"id": "opt_a", "label": "A", "text": "1956"}, {"id": "opt_b", "label": "B", "text": "1971"}, {"id": "opt_c", "label": "C", "text": "1973 (November 1)"}, {"id": "opt_d", "label": "D", "text": "1977"}], "answer": "C", "answer_id": "opt_c", "explanation": "On 1 November 1973, Mysore State was officially renamed 'Karnataka' by Chief Minister D. Devaraj Urs.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "P2-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-KA-028", "text_hash": "63fa62baeb90f185", "text": "The States Reorganisation Commission (SRC) 1955 which created the unified Mysore State on 1 November 1956 was headed by:", "options": [{"id": "opt_a", "label": "A", "text": "Fazal Ali"}, {"id": "opt_b", "label": "B", "text": "K. M. Panikkar"}, {"id": "opt_c", "label": "C", "text": "H. N. Kunzru"}, {"id": "opt_d", "label": "D", "text": "Justice Dhar"}], "answer": "A", "answer_id": "opt_a", "explanation": "The Fazal Ali Commission (along with members Panikkar and Kunzru) recommended the unification of Kannada-speaking regions.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "P2-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-KA-029", "text_hash": "1372c32dd38c4985", "text": "Who is venerated as 'Kannada Kula Purohita' for spearheading the Karnataka Unification Movement through his book 'Karnataka Gathavaibhava'?", "options": [{"id": "opt_a", "label": "A", "text": "Alur Venkata Rao"}, {"id": "opt_b", "label": "B", "text": "B. M. Srikantaiah"}, {"id": "opt_c", "label": "C", "text": "Huilgol Narayana Rao"}, {"id": "opt_d", "label": "D", "text": "Gudur Krishna Rao"}], "answer": "A", "answer_id": "opt_a", "explanation": "Alur Venkata Rao wrote 'Karnataka Gathavaibhava' in 1912 and is revered as the Kannada Kula Purohita.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "P2-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-KA-030", "text_hash": "646a2c50aea27bf9", "text": "Which village in Shivamogga district declared itself an independent republic during the Quit India Movement in 1942 under the slogan 'Esuru Kottaru Isuru Kodevu'?", "options": [{"id": "opt_a", "label": "A", "text": "Vidurashwatha"}, {"id": "opt_b", "label": "B", "text": "Isur (Esuru)"}, {"id": "opt_c", "label": "C", "text": "Halagali"}, {"id": "opt_d", "label": "D", "text": "Keladi"}], "answer": "B", "answer_id": "opt_b", "explanation": "Isur village in Shikaripura taluk declared independence and established its own government during Quit India in 1942.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "P2-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-KA-031", "text_hash": "ce592c227d4aaa2b", "text": "Which e-governance project implemented in Karnataka revolutionized computerized land records management, winning the Commonwealth CAPAM award?", "options": [{"id": "opt_a", "label": "A", "text": "Khajane"}, {"id": "opt_b", "label": "B", "text": "Bhoomi"}, {"id": "opt_c", "label": "C", "text": "Seva Sindhu"}, {"id": "opt_d", "label": "D", "text": "Kaveri"}], "answer": "B", "answer_id": "opt_b", "explanation": "Bhoomi digitized RTC land titles across Karnataka, eliminating manual patwari monopolies.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "P2-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-KA-032", "text_hash": "54ba87d98d2451d5", "text": "Which unified digital delivery portal of the Government of Karnataka acts as the single gateway for citizen services including the Five Guarantees?", "options": [{"id": "opt_a", "label": "A", "text": "Mahiti Kanaja"}, {"id": "opt_b", "label": "B", "text": "Seva Sindhu"}, {"id": "opt_c", "label": "C", "text": "Janasevaka"}, {"id": "opt_d", "label": "D", "text": "Kaveri 2.0"}], "answer": "B", "answer_id": "opt_b", "explanation": "Seva Sindhu is the integrated state e-services delivery portal in Karnataka.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "P2-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-KA-033", "text_hash": "9405a76677ec92ca", "text": "The Karnataka Lokayukta Act was passed in 1984 under the chief ministership of:", "options": [{"id": "opt_a", "label": "A", "text": "D. Devaraj Urs"}, {"id": "opt_b", "label": "B", "text": "Ramakrishna Hegde"}, {"id": "opt_c", "label": "C", "text": "S. Nijalingappa"}, {"id": "opt_d", "label": "D", "text": "Veerendra Patil"}], "answer": "B", "answer_id": "opt_b", "explanation": "Ramakrishna Hegde's Janata government enacted the historic Karnataka Lokayukta Act in 1984.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "P2-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-KA-034", "text_hash": "8d4a8779711e580f", "text": "The 'Janasevaka' scheme launched in Bengaluru provides which citizen facility?", "options": [{"id": "opt_a", "label": "A", "text": "Free health checkup at municipal hospitals"}, {"id": "opt_b", "label": "B", "text": "Doorstep delivery of 50+ government services to citizens' homes"}, {"id": "opt_c", "label": "C", "text": "Subsidized auto-rickshaw rides"}, {"id": "opt_d", "label": "D", "text": "Free drinking water delivery"}], "answer": "B", "answer_id": "opt_b", "explanation": "Janasevaka provides doorstep delivery of government certificates and services via trained delivery executives.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "P2-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-KA-035", "text_hash": "896635e1d735e290", "text": "The Karnataka Rajya Raitha Sangha (KRRS) was founded in 1980 by which charismatic peasant leader who led the Malaprabha farmers' agitation?", "options": [{"id": "opt_a", "label": "A", "text": "Prof. M. D. Nanjundaswamy"}, {"id": "opt_b", "label": "B", "text": "K. S. Puttannaiah"}, {"id": "opt_c", "label": "C", "text": "B. S. Yediyurappa"}, {"id": "opt_d", "label": "D", "text": "Kadidal Manjappa"}], "answer": "A", "answer_id": "opt_a", "explanation": "Prof. M. D. Nanjundaswamy ('Hasiru Shalu') founded the KRRS following the 1980 Naragund-Navalgund farmers' rebellion.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "P2-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-KA-036", "text_hash": "62421b36d481f455", "text": "The Dalit Sangharsha Samiti (DSS) in Karnataka was established in 1974 under the intellectual leadership of which prominent writer and activist?", "options": [{"id": "opt_a", "label": "A", "text": "Dr. Siddalingaiah and B. Krishnappa"}, {"id": "opt_b", "label": "B", "text": "Devanur Mahadeva"}, {"id": "opt_c", "label": "C", "text": "L. G. Havanur"}, {"id": "opt_d", "label": "D", "text": "Basavalingappa"}], "answer": "A", "answer_id": "opt_a", "explanation": "Dalit poet Dr. Siddalingaiah and Prof. B. Krishnappa founded the DSS at Bhadravathi in 1974.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "P2-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-KA-037", "text_hash": "e97b49206b64083d", "text": "How many taluks were categorized as 'Backward' in Karnataka by the High-Power Committee headed by Dr. D. M. Nanjundappa in 2002?", "options": [{"id": "opt_a", "label": "A", "text": "80 taluks"}, {"id": "opt_b", "label": "B", "text": "100 taluks"}, {"id": "opt_c", "label": "C", "text": "114 taluks (out of 175 taluks)"}, {"id": "opt_d", "label": "D", "text": "135 taluks"}], "answer": "C", "answer_id": "opt_c", "explanation": "The Nanjundappa Committee identified 114 backward taluks (39 most backward, 40 more backward, 35 backward).", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "P2-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-KA-038", "text_hash": "8e8ec13a39d658d2", "text": "The nodal society functioning under the Department of Electronics, IT/Bt for managing tech parks, biotech incubation, and startups in Karnataka is:", "options": [{"id": "opt_a", "label": "A", "text": "KEONICS"}, {"id": "opt_b", "label": "B", "text": "KITS (Karnataka Innovation and Technology Society)"}, {"id": "opt_c", "label": "C", "text": "KINFRA"}, {"id": "opt_d", "label": "D", "text": "KSIIDC"}], "answer": "B", "answer_id": "opt_b", "explanation": "KITS implements the Startup Policy, K-Tech innovation hubs, and biotech initiatives in Karnataka.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "P2-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-KA-039", "text_hash": "8958b44f818809a5", "text": "Under the Karnataka Industrial Policy 2020-25, which zone comprises Bengaluru Urban and Rural with the lowest financial incentives to encourage regional dispersion?", "options": [{"id": "opt_a", "label": "A", "text": "Zone 1"}, {"id": "opt_b", "label": "B", "text": "Zone 2"}, {"id": "opt_c", "label": "C", "text": "Zone 3"}, {"id": "opt_d", "label": "D", "text": "Zone 4"}], "answer": "C", "answer_id": "opt_c", "explanation": "Zone 3 comprises Bengaluru Urban and Rural with minimal incentives, whereas backward taluks in Zone 1 receive maximum subsidies.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "P2-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-KA-040", "text_hash": "55e9bebe85327ef4", "text": "The Golden Chariot, a luxury tourist train showcasing South Indian heritage, is operated in partnership with which state corporation?", "options": [{"id": "opt_a", "label": "A", "text": "KSTDC (Karnataka State Tourism Development Corporation)"}, {"id": "opt_b", "label": "B", "text": "KSRTC"}, {"id": "opt_c", "label": "C", "text": "KINFRA"}, {"id": "opt_d", "label": "D", "text": "KIADB"}], "answer": "A", "answer_id": "opt_a", "explanation": "The Golden Chariot is operated by IRCTC in collaboration with KSTDC.", "statement_truths": "", "subject": "Karnataka Affairs", "paper": "Paper 2", "syllabus_id": "P2-S1.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-1"}, {"id": "KAS-P2-SCI-001", "text_hash": "4588424956745a43", "text": "The historic lunar landing site of ISRO's Chandrayaan-3 near the Moon's South Pole was officially named as:", "options": [{"id": "opt_a", "label": "A", "text": "Tiranga Point"}, {"id": "opt_b", "label": "B", "text": "Shiv Shakti Point"}, {"id": "opt_c", "label": "C", "text": "Atal Point"}, {"id": "opt_d", "label": "D", "text": "Jawahar Point"}], "answer": "B", "answer_id": "opt_b", "explanation": "The Chandrayaan-3 landing site was named 'Shiv Shakti Point'; August 23 was declared National Space Day.", "statement_truths": "", "subject": "Science and Environment", "paper": "Paper 2", "syllabus_id": "P2-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-2"}, {"id": "KAS-P2-SCI-002", "text_hash": "9d21735382f59639", "text": "Which heavy-lift launch vehicle of ISRO launched the Chandrayaan-3 and OneWeb satellite constellations into orbit?", "options": [{"id": "opt_a", "label": "A", "text": "PSLV-C56"}, {"id": "opt_b", "label": "B", "text": "GSLV Mk-II"}, {"id": "opt_c", "label": "C", "text": "LVM3 (Launch Vehicle Mark 3)"}, {"id": "opt_d", "label": "D", "text": "SSLV-D2"}], "answer": "C", "answer_id": "opt_c", "explanation": "LVM3 (formerly GSLV Mk-III) launched Chandrayaan-3 on 14 July 2023.", "statement_truths": "", "subject": "Science and Environment", "paper": "Paper 2", "syllabus_id": "P2-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-2"}, {"id": "KAS-P2-SCI-003", "text_hash": "e742bc449c42f638", "text": "ISRO's solar observatory Aditya-L1 was placed in a halo orbit around which Sun-Earth Lagrange Point located 1.5 million km from Earth?", "options": [{"id": "opt_a", "label": "A", "text": "L1"}, {"id": "opt_b", "label": "B", "text": "L2"}, {"id": "opt_c", "label": "C", "text": "L3"}, {"id": "opt_d", "label": "D", "text": "L4"}], "answer": "A", "answer_id": "opt_a", "explanation": "Aditya-L1 orbits Lagrange Point 1 (L1), providing uninterrupted 24x7 view of the Sun without eclipses.", "statement_truths": "", "subject": "Science and Environment", "paper": "Paper 2", "syllabus_id": "P2-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-2"}, {"id": "KAS-P2-SCI-004", "text_hash": "7d965456b5329e3e", "text": "What is the name of the female humanoid robot astronaut developed by ISRO for uncrewed test flights of the Gaganyaan mission?", "options": [{"id": "opt_a", "label": "A", "text": "Mitra"}, {"id": "opt_b", "label": "B", "text": "Vyommitra"}, {"id": "opt_c", "label": "C", "text": "Daksh"}, {"id": "opt_d", "label": "D", "text": "Kalam"}], "answer": "B", "answer_id": "opt_b", "explanation": "Vyommitra ('Friend in Space') was developed by ISRO Inertial Systems Unit and IISc Bengaluru.", "statement_truths": "", "subject": "Science and Environment", "paper": "Paper 2", "syllabus_id": "P2-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-2"}, {"id": "KAS-P2-SCI-005", "text_hash": "d2a04cb5e3e63465", "text": "The Polar Satellite Launch Vehicle (PSLV) has four stages using which alternate sequence of propulsion systems?", "options": [{"id": "opt_a", "label": "A", "text": "Liquid - Solid - Liquid - Solid"}, {"id": "opt_b", "label": "B", "text": "Solid - Liquid - Solid - Liquid"}, {"id": "opt_c", "label": "C", "text": "All four stages Solid"}, {"id": "opt_d", "label": "D", "text": "All four stages Cryogenic"}], "answer": "B", "answer_id": "opt_b", "explanation": "PSLV uses alternate solid-liquid stages: Stage 1 (Solid) -> Stage 2 (Liquid Vikas) -> Stage 3 (Solid) -> Stage 4 (Liquid).", "statement_truths": "", "subject": "Science and Environment", "paper": "Paper 2", "syllabus_id": "P2-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-2"}, {"id": "KAS-P2-SCI-006", "text_hash": "6944bcb369b46a87", "text": "Stage-2 of Homi Bhabha's three-stage nuclear power programme in India utilizes which reactor type?", "options": [{"id": "opt_a", "label": "A", "text": "Pressurised Heavy Water Reactor (PHWR)"}, {"id": "opt_b", "label": "B", "text": "Fast Breeder Reactor (FBR)"}, {"id": "opt_c", "label": "C", "text": "Advanced Heavy Water Reactor (AHWR)"}, {"id": "opt_d", "label": "D", "text": "Light Water Reactor (LWR)"}], "answer": "B", "answer_id": "opt_b", "explanation": "Stage 2 utilizes Fast Breeder Reactors (FBR) fueled by Plutonium-239 to breed U-233 from Thorium blankets.", "statement_truths": "", "subject": "Science and Environment", "paper": "Paper 2", "syllabus_id": "P2-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-2"}, {"id": "KAS-P2-SCI-007", "text_hash": "c5b25c7846147845", "text": "The Kaiga Atomic Power Station in Uttara Kannada district of Karnataka operates which type of nuclear reactors?", "options": [{"id": "opt_a", "label": "A", "text": "Pressurised Water Reactors (PWR)"}, {"id": "opt_b", "label": "B", "text": "Pressurised Heavy Water Reactors (PHWR)"}, {"id": "opt_c", "label": "C", "text": "Fast Breeder Reactors (FBR)"}, {"id": "opt_d", "label": "D", "text": "Boiling Water Reactors (BWR)"}], "answer": "B", "answer_id": "opt_b", "explanation": "Kaiga operates 4 indigenous 220 MWe PHWR units using natural uranium fuel and heavy water moderator.", "statement_truths": "", "subject": "Science and Environment", "paper": "Paper 2", "syllabus_id": "P2-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-2"}, {"id": "KAS-P2-SCI-008", "text_hash": "df75318d9df97b96", "text": "Which premier artificial intelligence and supercomputing mission was allocated Rs. 10,372 Crore by the Union Cabinet in 2024 to deploy 10,000 GPUs?", "options": [{"id": "opt_a", "label": "A", "text": "Digital India"}, {"id": "opt_b", "label": "B", "text": "IndiaAI Mission"}, {"id": "opt_c", "label": "C", "text": "PARAM Supercomputing Initiative"}, {"id": "opt_d", "label": "D", "text": "Cyber Swachhta Kendra"}], "answer": "B", "answer_id": "opt_b", "explanation": "The IndiaAI Mission was approved in March 2024 to establish high-compute GPU capacity for AI innovation.", "statement_truths": "", "subject": "Science and Environment", "paper": "Paper 2", "syllabus_id": "P2-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-2"}, {"id": "KAS-P2-SCI-009", "text_hash": "e7d5119972a78d7a", "text": "The pioneering 'Genome India Project' completed sequencing of how many reference human genomes across diverse Indian populations in 2024?", "options": [{"id": "opt_a", "label": "A", "text": "1,000 genomes"}, {"id": "opt_b", "label": "B", "text": "5,000 genomes"}, {"id": "opt_c", "label": "C", "text": "10,000 genomes"}, {"id": "opt_d", "label": "D", "text": "50,000 genomes"}], "answer": "C", "answer_id": "opt_c", "explanation": "The Department of Biotechnology sequenced 10,000 human genomes representative of Indian genetic diversity.", "statement_truths": "", "subject": "Science and Environment", "paper": "Paper 2", "syllabus_id": "P2-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-2"}, {"id": "KAS-P2-SCI-010", "text_hash": "2087659c023ec83f", "text": "Which indigenous Light Combat Helicopter (LCH) developed by HAL Bengaluru was inducted into the IAF and Indian Army under the name 'Prachand'?", "options": [{"id": "opt_a", "label": "A", "text": "LCA Tejas"}, {"id": "opt_b", "label": "B", "text": "LCH Prachand"}, {"id": "opt_c", "label": "C", "text": "ALH Dhruv"}, {"id": "opt_d", "label": "D", "text": "LUH Cheetah"}], "answer": "B", "answer_id": "opt_b", "explanation": "LCH Prachand is India's dedicated high-altitude attack helicopter manufactured by HAL.", "statement_truths": "", "subject": "Science and Environment", "paper": "Paper 2", "syllabus_id": "P2-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-2"}, {"id": "KAS-P2-SCI-011", "text_hash": "fd76101db6e993b6", "text": "Which of the following National Parks in Karnataka is part of the Nilgiri Biosphere Reserve and India's first Project Tiger reserve in the state?", "options": [{"id": "opt_a", "label": "A", "text": "Kudremukh National Park"}, {"id": "opt_b", "label": "B", "text": "Bandipur National Park"}, {"id": "opt_c", "label": "C", "text": "Anshi National Park"}, {"id": "opt_d", "label": "D", "text": "Bannerghatta National Park"}], "answer": "B", "answer_id": "opt_b", "explanation": "Bandipur National Park in Chamarajanagar was created in 1974 and was among the original 9 Project Tiger reserves (1973).", "statement_truths": "", "subject": "Science and Environment", "paper": "Paper 2", "syllabus_id": "P2-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-2"}, {"id": "KAS-P2-SCI-012", "text_hash": "76d8ed5505e75dfb", "text": "India's first dedicated Butterfly Park was inaugurated in 2006 inside which protected area near Bengaluru?", "options": [{"id": "opt_a", "label": "A", "text": "Nagarhole National Park"}, {"id": "opt_b", "label": "B", "text": "Bannerghatta National Park"}, {"id": "opt_c", "label": "C", "text": "Lalbagh Botanical Garden"}, {"id": "opt_d", "label": "D", "text": "Ranganathittu Bird Sanctuary"}], "answer": "B", "answer_id": "opt_b", "explanation": "Bannerghatta Biological Park hosts India's first butterfly conservatory opened in 2006.", "statement_truths": "", "subject": "Science and Environment", "paper": "Paper 2", "syllabus_id": "P2-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-2"}, {"id": "KAS-P2-SCI-013", "text_hash": "8127bbaaed2b5ac0", "text": "The rare and endangered primate 'Lion-tailed Macaque' (Macaca silenus) is endemic to which ecosystem in Karnataka?", "options": [{"id": "opt_a", "label": "A", "text": "Dry deciduous thorn scrub of Deccan Maidan"}, {"id": "opt_b", "label": "B", "text": "Tropical evergreen rainforests of Western Ghats"}, {"id": "opt_c", "label": "C", "text": "Mangrove swamps of Karwar"}, {"id": "opt_d", "label": "D", "text": "Sub-tropical grasslands of Biligiriranga Hills"}], "answer": "B", "answer_id": "opt_b", "explanation": "The Lion-tailed Macaque is strictly endemic to the dense rainforest canopy of the Western Ghats (Sharavathi, Someshwara).", "statement_truths": "", "subject": "Science and Environment", "paper": "Paper 2", "syllabus_id": "P2-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-2"}, {"id": "KAS-P2-SCI-014", "text_hash": "8247e4262b7dae1b", "text": "Three rivers—Tunga, Bhadra, and Netravati—originate at Gangamoola inside which national park of Karnataka?", "options": [{"id": "opt_a", "label": "A", "text": "Bandipur National Park"}, {"id": "opt_b", "label": "B", "text": "Nagarhole National Park"}, {"id": "opt_c", "label": "C", "text": "Kudremukh National Park"}, {"id": "opt_d", "label": "D", "text": "Anshi National Park"}], "answer": "C", "answer_id": "opt_c", "explanation": "Gangamoola in Kudremukh is the sacred origin of east-flowing Tunga and Bhadra and west-flowing Netravati.", "statement_truths": "", "subject": "Science and Environment", "paper": "Paper 2", "syllabus_id": "P2-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-2"}, {"id": "KAS-P2-SCI-015", "text_hash": "1fb405daac6fd490", "text": "According to the All-India Tiger Estimation 2022, Karnataka holds which rank in tiger population in India with 563 tigers?", "options": [{"id": "opt_a", "label": "A", "text": "First (1st)"}, {"id": "opt_b", "label": "B", "text": "Second (2nd)"}, {"id": "opt_c", "label": "C", "text": "Third (3rd)"}, {"id": "opt_d", "label": "D", "text": "Fourth (4th)"}], "answer": "B", "answer_id": "opt_b", "explanation": "Karnataka ranks 2nd in tigers (563) behind Madhya Pradesh (785 tigers).", "statement_truths": "", "subject": "Science and Environment", "paper": "Paper 2", "syllabus_id": "P2-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-2"}, {"id": "KAS-P2-SCI-016", "text_hash": "59ea874c48592c66", "text": "The Western Ghats Ecology Expert Panel (WGEEP) which recommended declaring 100% of the Western Ghats as Eco-Sensitive Zones was chaired by:", "options": [{"id": "opt_a", "label": "A", "text": "Dr. K. Kasturirangan"}, {"id": "opt_b", "label": "B", "text": "Prof. Madhav Gadgil"}, {"id": "opt_c", "label": "C", "text": "Dr. M. S. Swaminathan"}, {"id": "opt_d", "label": "D", "text": "Sunita Narain"}], "answer": "B", "answer_id": "opt_b", "explanation": "Prof. Madhav Gadgil chaired WGEEP which submitted its report in 2011 proposing 3-tier ESZ protection.", "statement_truths": "", "subject": "Science and Environment", "paper": "Paper 2", "syllabus_id": "P2-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-2"}, {"id": "KAS-P2-SCI-017", "text_hash": "fda4a73535f52479", "text": "The High-Level Working Group (HLWG) chaired by Dr. K. Kasturirangan recommended that what percentage of the Western Ghats be declared Eco-Sensitive Area (ESA)?", "options": [{"id": "opt_a", "label": "A", "text": "100%"}, {"id": "opt_b", "label": "B", "text": "63%"}, {"id": "opt_c", "label": "C", "text": "37%"}, {"id": "opt_d", "label": "D", "text": "25%"}], "answer": "C", "answer_id": "opt_c", "explanation": "Kasturirangan Committee identified only the 37% Natural Landscape as ESA, excluding 63% Cultural Landscape.", "statement_truths": "", "subject": "Science and Environment", "paper": "Paper 2", "syllabus_id": "P2-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-2"}, {"id": "KAS-P2-SCI-018", "text_hash": "4a42c1f2ef75da44", "text": "Kyasanur Forest Disease (KFD / Monkey Fever) in Karnataka is transmitted to humans through the bite of which tick vector?", "options": [{"id": "opt_a", "label": "A", "text": "Aedes aegypti"}, {"id": "opt_b", "label": "B", "text": "Haemaphysalis spinigera"}, {"id": "opt_c", "label": "C", "text": "Anopheles stephensi"}, {"id": "opt_d", "label": "D", "text": "Culex quinquefasciatus"}], "answer": "B", "answer_id": "opt_b", "explanation": "KFD is transmitted by hard forest ticks *Haemaphysalis spinigera* commonly found on forest monkeys.", "statement_truths": "", "subject": "Science and Environment", "paper": "Paper 2", "syllabus_id": "P2-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-2"}, {"id": "KAS-P2-SCI-019", "text_hash": "224c6104f37bdac0", "text": "In an ecological food chain, why is the Pyramid of Energy ALWAYS upright without exception?", "options": [{"id": "opt_a", "label": "A", "text": "Biomass decreases down trophic levels"}, {"id": "opt_b", "label": "B", "text": "Energy transfer obeys the Second Law of Thermodynamics and 10% law with heat dissipation at each step"}, {"id": "opt_c", "label": "C", "text": "Top carnivores consume more energy than plants"}, {"id": "opt_d", "label": "D", "text": "Decomposers trap all solar energy"}], "answer": "B", "answer_id": "opt_b", "explanation": "Energy decreases at each successive trophic level due to metabolic respiration and thermodynamic entropy.", "statement_truths": "", "subject": "Science and Environment", "paper": "Paper 2", "syllabus_id": "P2-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-2"}, {"id": "KAS-P2-SCI-020", "text_hash": "813393d8844a8822", "text": "The transitional ecological zone between two distinct biological communities (e.g. between land and water) exhibiting high species richness is called:", "options": [{"id": "opt_a", "label": "A", "text": "Ecological Niche"}, {"id": "opt_b", "label": "B", "text": "Ecotone"}, {"id": "opt_c", "label": "C", "text": "Biome"}, {"id": "opt_d", "label": "D", "text": "Habitat"}], "answer": "B", "answer_id": "opt_b", "explanation": "An ecotone is the boundary zone between two ecosystems, exhibiting the 'Edge Effect' with rich biodiversity.", "statement_truths": "", "subject": "Science and Environment", "paper": "Paper 2", "syllabus_id": "P2-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-2"}, {"id": "KAS-P2-SCI-021", "text_hash": "18996ffa44aa0e00", "text": "The National Air Quality Index (AQI) in India monitors how many atmospheric criteria pollutants?", "options": [{"id": "opt_a", "label": "A", "text": "5 pollutants"}, {"id": "opt_b", "label": "B", "text": "8 pollutants"}, {"id": "opt_c", "label": "C", "text": "10 pollutants"}, {"id": "opt_d", "label": "D", "text": "12 pollutants"}], "answer": "B", "answer_id": "opt_b", "explanation": "AQI monitors 8 pollutants: PM10, PM2.5, NO2, SO2, CO, O3, NH3, and Pb (NAAQS monitors 12).", "statement_truths": "", "subject": "Science and Environment", "paper": "Paper 2", "syllabus_id": "P2-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-2"}, {"id": "KAS-P2-SCI-022", "text_hash": "c4e1c7c49ac76a45", "text": "Under the Montreal Protocol and its 2016 Kigali Amendment, which potent greenhouse gases are being globally phased down?", "options": [{"id": "opt_a", "label": "A", "text": "Carbon dioxide (CO2)"}, {"id": "opt_b", "label": "B", "text": "Hydrofluorocarbons (HFCs)"}, {"id": "opt_c", "label": "C", "text": "Methane (CH4)"}, {"id": "opt_d", "label": "D", "text": "Nitrous oxide (N2O)"}], "answer": "B", "answer_id": "opt_b", "explanation": "The Kigali Amendment mandates phasing down Hydrofluorocarbons (HFCs), which replaced ozone-depleting CFCs but act as potent GHGs.", "statement_truths": "", "subject": "Science and Environment", "paper": "Paper 2", "syllabus_id": "P2-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-2"}, {"id": "KAS-P2-SCI-023", "text_hash": "5977c51bcdf2997c", "text": "The Environment (Protection) Act, 1986 was enacted by Parliament under Article 253 of the Constitution following which major disaster?", "options": [{"id": "opt_a", "label": "A", "text": "Chernobyl Nuclear Disaster"}, {"id": "opt_b", "label": "B", "text": "Bhopal Gas Tragedy (1984)"}, {"id": "opt_c", "label": "C", "text": "Chasnala Mining Disaster"}, {"id": "opt_d", "label": "D", "text": "London Smog"}], "answer": "B", "answer_id": "opt_b", "explanation": "The EPA was enacted in the aftermath of the December 1984 Union Carbide Bhopal gas tragedy.", "statement_truths": "", "subject": "Science and Environment", "paper": "Paper 2", "syllabus_id": "P2-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-2"}, {"id": "KAS-P2-SCI-024", "text_hash": "9ef8b4dea1b38bcf", "text": "According to the National Family Health Survey-5 (NFHS-5), what is the Total Fertility Rate (TFR) in Karnataka?", "options": [{"id": "opt_a", "label": "A", "text": "2.1"}, {"id": "opt_b", "label": "B", "text": "1.9"}, {"id": "opt_c", "label": "C", "text": "1.7"}, {"id": "opt_d", "label": "D", "text": "1.5"}], "answer": "C", "answer_id": "opt_c", "explanation": "Karnataka's TFR is 1.7 children per woman, well below the demographic replacement level of 2.1.", "statement_truths": "", "subject": "Science and Environment", "paper": "Paper 2", "syllabus_id": "P2-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-2"}, {"id": "KAS-P2-SCI-025", "text_hash": "2d4fe454f29ecd22", "text": "Karnataka has achieved the Sustainable Development Goal (SDG) target for Maternal Mortality Ratio (MMR) with a ratio of:", "options": [{"id": "opt_a", "label": "A", "text": "69 per 1,00,000 live births"}, {"id": "opt_b", "label": "B", "text": "97 per 1,00,000 live births"}, {"id": "opt_c", "label": "C", "text": "110 per 1,00,000 live births"}, {"id": "opt_d", "label": "D", "text": "130 per 1,00,000 live births"}], "answer": "A", "answer_id": "opt_a", "explanation": "Karnataka's MMR dropped to 69 per 1 lakh live births, beating the SDG 2030 target of <70.", "statement_truths": "", "subject": "Science and Environment", "paper": "Paper 2", "syllabus_id": "P2-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-2"}, {"id": "KAS-P2-SCI-026", "text_hash": "7e580d67c93fc87a", "text": "The co-branded Universal Health Coverage scheme providing up to Rs. 5 Lakhs cashless treatment per BPL family in Karnataka is:", "options": [{"id": "opt_a", "label": "A", "text": "Arogya Sanjeevini"}, {"id": "opt_b", "label": "B", "text": "Ayushman Bharat - Arogya Karnataka (AB-ArK)"}, {"id": "opt_c", "label": "C", "text": "Yeshasvini Health Insurance"}, {"id": "opt_d", "label": "D", "text": "Vajpayee Arogyashree"}], "answer": "B", "answer_id": "opt_b", "explanation": "Ayushman Bharat - Arogya Karnataka provides Rs. 5 Lakh per year secondary/tertiary coverage for BPL families.", "statement_truths": "", "subject": "Science and Environment", "paper": "Paper 2", "syllabus_id": "P2-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-2"}, {"id": "KAS-P2-SCI-027", "text_hash": "4beb1bfe6f4af77e", "text": "Which biological invasion of an exotic woody shrub poses a severe threat to native herbivores in Bandipur and Nagarhole Tiger Reserves?", "options": [{"id": "opt_a", "label": "A", "text": "Parthenium hysterophorus"}, {"id": "opt_b", "label": "B", "text": "Lantana camara and Senna spectabilis"}, {"id": "opt_c", "label": "C", "text": "Eichhornia crassipes"}, {"id": "opt_d", "label": "D", "text": "Prosopis juliflora"}], "answer": "B", "answer_id": "opt_b", "explanation": "Lantana camara and Senna spectabilis aggressively colonize undergrowth, displacing indigenous fodder grasses.", "statement_truths": "", "subject": "Science and Environment", "paper": "Paper 2", "syllabus_id": "P2-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-2"}, {"id": "KAS-P2-SCI-028", "text_hash": "a550ff19a90ea2ce", "text": "The Basel, Rotterdam, and Stockholm Conventions (BRS Triad) deal respectively with which environmental hazards?", "options": [{"id": "opt_a", "label": "A", "text": "Hazardous waste transboundary movements, Prior Informed Consent for toxic chemicals, and Persistent Organic Pollutants (POPs)"}, {"id": "opt_b", "label": "B", "text": "Ozone depletion, climate change, and wetland conservation"}, {"id": "opt_c", "label": "C", "text": "Endangered trade, migratory birds, and desertification"}, {"id": "opt_d", "label": "D", "text": "Forestry, marine pollution, and carbon markets"}], "answer": "A", "answer_id": "opt_a", "explanation": "Basel = Hazardous waste movements; Rotterdam = PIC for hazardous chemicals; Stockholm = Eliminating POPs.", "statement_truths": "", "subject": "Science and Environment", "paper": "Paper 2", "syllabus_id": "P2-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-2"}, {"id": "KAS-P2-SCI-029", "text_hash": "bc1e9050a6299a55", "text": "Mission LiFE (Lifestyle for Environment) launched by India promotes which behavioral approach to environmental sustainability?", "options": [{"id": "opt_a", "label": "A", "text": "Mandatory industrial cap-and-trade only"}, {"id": "opt_b", "label": "B", "text": "Individual and community mindful consumer choices replacing mindless consumption"}, {"id": "opt_c", "label": "C", "text": "Exclusive focus on carbon capture technologies"}, {"id": "opt_d", "label": "D", "text": "Total ban on synthetic plastics"}], "answer": "B", "answer_id": "opt_b", "explanation": "Mission LiFE mobilizes individual climate-friendly actions (saving energy/water, eliminating single-use plastics).", "statement_truths": "", "subject": "Science and Environment", "paper": "Paper 2", "syllabus_id": "P2-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-2"}, {"id": "KAS-P2-SCI-030", "text_hash": "058f56d07cbb3e4d", "text": "Which apex environmental judicial tribunal was established in 2010 under Article 21 for expeditious disposal of environmental cases within 6 months?", "options": [{"id": "opt_a", "label": "A", "text": "Central Pollution Control Board"}, {"id": "opt_b", "label": "B", "text": "National Green Tribunal (NGT)"}, {"id": "opt_c", "label": "C", "text": "Supreme Court Green Bench"}, {"id": "opt_d", "label": "D", "text": "National Biodiversity Authority"}], "answer": "B", "answer_id": "opt_b", "explanation": "The National Green Tribunal (NGT) was established under the NGT Act, 2010.", "statement_truths": "", "subject": "Science and Environment", "paper": "Paper 2", "syllabus_id": "P2-S2.1", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-2"}, {"id": "KAS-P2-GMA-001", "text_hash": "f360dfd397d1d450", "text": "Read the statement: 'If a polygon has 8 sides, it is an octagon. Shape X is an octagon.' What can be concluded logically?", "options": [{"id": "opt_a", "label": "A", "text": "Shape X has 8 sides"}, {"id": "opt_b", "label": "B", "text": "Shape X is a regular octagon"}, {"id": "opt_c", "label": "C", "text": "Shape X has 6 sides"}, {"id": "opt_d", "label": "D", "text": "Shape X is a heptagon"}], "answer": "A", "answer_id": "opt_a", "explanation": "By definition of an octagon, Shape X must have 8 sides.", "statement_truths": "", "subject": "General Mental Ability", "paper": "Paper 2", "syllabus_id": "P2-S3.4", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-3"}, {"id": "KAS-P2-GMA-002", "text_hash": "e6d57bba55dab890", "text": "In a coded language, if 'DELHI' is coded as 'CCIDD', how will 'BOMBAY' be coded using the same decrement pattern?", "options": [{"id": "opt_a", "label": "A", "text": "AMJXVS"}, {"id": "opt_b", "label": "B", "text": "AMJZWS"}, {"id": "opt_c", "label": "C", "text": "ALJXVS"}, {"id": "opt_d", "label": "D", "text": "ZMIXVS"}], "answer": "A", "answer_id": "opt_a", "explanation": "Each letter rank decreases by 1, 2, 3, 4, 5, 6 respectively: B-1=A, O-2=M, M-3=J, B-4=X, A-5=V, Y-6=S.", "statement_truths": "", "subject": "General Mental Ability", "paper": "Paper 2", "syllabus_id": "P2-S3.4", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-3"}, {"id": "KAS-P2-GMA-003", "text_hash": "98411e736e293c35", "text": "A woman introduces a man as 'the son of the only daughter of the father of my maternal grandfather.' How is the man related to the woman?", "options": [{"id": "opt_a", "label": "A", "text": "Uncle"}, {"id": "opt_b", "label": "B", "text": "Brother"}, {"id": "opt_c", "label": "C", "text": "Cousin"}, {"id": "opt_d", "label": "D", "text": "Father"}], "answer": "B", "answer_id": "opt_b", "explanation": "The father of her maternal grandfather has an only daughter, who is her maternal grandmother. Her son is the woman's brother or maternal uncle; in direct lineage, Brother.", "statement_truths": "", "subject": "General Mental Ability", "paper": "Paper 2", "syllabus_id": "P2-S3.4", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-3"}, {"id": "KAS-P2-GMA-004", "text_hash": "abb0b6bf1cfdafd0", "text": "A person walks 10 meters North, turns right and walks 6 meters, then turns right and walks 10 meters. How far and in which direction is the person from the starting point?", "options": [{"id": "opt_a", "label": "A", "text": "6 meters East"}, {"id": "opt_b", "label": "B", "text": "6 meters West"}, {"id": "opt_c", "label": "C", "text": "10 meters East"}, {"id": "opt_d", "label": "D", "text": "16 meters South"}], "answer": "A", "answer_id": "opt_a", "explanation": "The 10m North and 10m South cancel out. The net displacement is 6 meters due East.", "statement_truths": "", "subject": "General Mental Ability", "paper": "Paper 2", "syllabus_id": "P2-S3.4", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-3"}, {"id": "KAS-P2-GMA-005", "text_hash": "dfd8cddc5fa3b81a", "text": "Statements: 1. All mangoes are golden. 2. No golden things are sour. Conclusions: I. All mangoes are not sour. II. Golden mangoes are sour. Which conclusion follows?", "options": [{"id": "opt_a", "label": "A", "text": "Only I follows"}, {"id": "opt_b", "label": "B", "text": "Only II follows"}, {"id": "opt_c", "label": "C", "text": "Both I and II follow"}, {"id": "opt_d", "label": "D", "text": "Neither I nor II follows"}], "answer": "A", "answer_id": "opt_a", "explanation": "Since all mangoes are golden and no golden thing is sour, it logically follows that no mango is sour (All mangoes are not sour).", "statement_truths": "", "subject": "General Mental Ability", "paper": "Paper 2", "syllabus_id": "P2-S3.4", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-3"}, {"id": "KAS-P2-GMA-006", "text_hash": "aa861a01e5403313", "text": "In a row of 40 students facing North, Ramesh is 18th from the left end. What is his position from the right end?", "options": [{"id": "opt_a", "label": "A", "text": "22nd"}, {"id": "opt_b", "label": "B", "text": "23rd"}, {"id": "opt_c", "label": "C", "text": "24th"}, {"id": "opt_d", "label": "D", "text": "21st"}], "answer": "B", "answer_id": "opt_b", "explanation": "Position from right $= \text{Total} - \text{Left} + 1 = 40 - 18 + 1 = 23\text{rd}$.", "statement_truths": "", "subject": "General Mental Ability", "paper": "Paper 2", "syllabus_id": "P2-S3.4", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-3"}, {"id": "KAS-P2-GMA-007", "text_hash": "b6fff5085c9bb10d", "text": "Five friends P, Q, R, S, T are sitting in a circle facing the center. S is to the immediate right of P. Q is sitting between R and P. Who is sitting to the immediate left of P?", "options": [{"id": "opt_a", "label": "A", "text": "Q"}, {"id": "opt_b", "label": "B", "text": "S"}, {"id": "opt_c", "label": "C", "text": "R"}, {"id": "opt_d", "label": "D", "text": "T"}], "answer": "A", "answer_id": "opt_a", "explanation": "Facing center: Q is between R and P, so Q is immediately adjacent to P on one side. Since S is to P's right, Q must be to P's left.", "statement_truths": "", "subject": "General Mental Ability", "paper": "Paper 2", "syllabus_id": "P2-S3.4", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-3"}, {"id": "KAS-P2-GMA-008", "text_hash": "4e1f10280ed03c4f", "text": "Find the missing number in the series: 3, 7, 15, 31, 63, ?", "options": [{"id": "opt_a", "label": "A", "text": "95"}, {"id": "opt_b", "label": "B", "text": "127"}, {"id": "opt_c", "label": "C", "text": "125"}, {"id": "opt_d", "label": "D", "text": "128"}], "answer": "B", "answer_id": "opt_b", "explanation": "Pattern: $\\times 2 + 1$. $3\\times 2+1=7$, $7\\times 2+1=15$, $15\\times 2+1=31$, $31\\times 2+1=63$, $63\\times 2+1=127$.", "statement_truths": "", "subject": "General Mental Ability", "paper": "Paper 2", "syllabus_id": "P2-S3.4", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-3"}, {"id": "KAS-P2-GMA-009", "text_hash": "a5bc728521b87ca5", "text": "Statement: 'A major highway landslide has blocked vehicular movement to Kodagu district.' Which course of action should the administration immediately take?", "options": [{"id": "opt_a", "label": "A", "text": "Wait for rain to cease completely before dispatching any teams"}, {"id": "opt_b", "label": "B", "text": "Immediately deploy earthmovers, divert traffic to alternate state highways, and issue emergency advisories"}, {"id": "opt_c", "label": "C", "text": "Permanently ban all tourist travel to the Western Ghats"}, {"id": "opt_d", "label": "D", "text": "Suspend all district officials in charge of highways"}], "answer": "B", "answer_id": "opt_b", "explanation": "Action must be proportionate and immediate: clear landslide, provide diversions, issue public advisories.", "statement_truths": "", "subject": "General Mental Ability", "paper": "Paper 2", "syllabus_id": "P2-S3.4", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-3"}, {"id": "KAS-P2-GMA-010", "text_hash": "143c4c11384592db", "text": "A confidential file detailing pending land acquisitions is requested informally by an MLA's aide over the phone. What should the Assistant Commissioner do?", "options": [{"id": "opt_a", "label": "A", "text": "Hand over the file immediately to avoid political friction"}, {"id": "opt_b", "label": "B", "text": "Politely decline and advise the requester to seek information through formal official channels or RTI"}, {"id": "opt_c", "label": "C", "text": "Leak the document secretly to the media"}, {"id": "opt_d", "label": "D", "text": "Destroy the file to prevent scrutiny"}], "answer": "B", "answer_id": "opt_b", "explanation": "Public officers must maintain confidentiality and direct requests to lawful statutory channels.", "statement_truths": "", "subject": "General Mental Ability", "paper": "Paper 2", "syllabus_id": "P2-S3.4", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-3"}, {"id": "KAS-P2-GMA-011", "text_hash": "dd8fbf609803d562", "text": "What is the HCF of two numbers if their product is 2,160 and their LCM is 360?", "options": [{"id": "opt_a", "label": "A", "text": "6"}, {"id": "opt_b", "label": "B", "text": "12"}, {"id": "opt_c", "label": "C", "text": "18"}, {"id": "opt_d", "label": "D", "text": "24"}], "answer": "A", "answer_id": "opt_a", "explanation": "$\\text{Product} = \\text{LCM} \\times \\text{HCF} \\implies \\text{HCF} = 2160 / 360 = 6$.", "statement_truths": "", "subject": "General Mental Ability", "paper": "Paper 2", "syllabus_id": "P2-S3.4", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-3"}, {"id": "KAS-P2-GMA-012", "text_hash": "28ca300cfc434f30", "text": "If 15 men can complete a civil drainage canal in 20 days, how many days will 25 men take to complete the same work?", "options": [{"id": "opt_a", "label": "A", "text": "10 days"}, {"id": "opt_b", "label": "B", "text": "12 days"}, {"id": "opt_c", "label": "C", "text": "15 days"}, {"id": "opt_d", "label": "D", "text": "18 days"}], "answer": "B", "answer_id": "opt_b", "explanation": "$M_1 D_1 = M_2 D_2 \\implies 15 \\times 20 = 25 \\times D_2 \\implies D_2 = 300 / 25 = 12\\text{ days}$.", "statement_truths": "", "subject": "General Mental Ability", "paper": "Paper 2", "syllabus_id": "P2-S3.4", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-3"}, {"id": "KAS-P2-GMA-013", "text_hash": "b542668af5462492", "text": "A shopkeeper marks an article 40% above its cost price and allows a discount of 20% on the marked price. What is his net profit percentage?", "options": [{"id": "opt_a", "label": "A", "text": "12%"}, {"id": "opt_b", "label": "B", "text": "16%"}, {"id": "opt_c", "label": "C", "text": "20%"}, {"id": "opt_d", "label": "D", "text": "24%"}], "answer": "A", "answer_id": "opt_a", "explanation": "Let $\\text{CP} = 100$. $\\text{MP} = 140$. $\\text{SP} = 140 \\times 0.80 = 112$. Profit $= 112 - 100 = 12\\%$.", "statement_truths": "", "subject": "General Mental Ability", "paper": "Paper 2", "syllabus_id": "P2-S3.4", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-3"}, {"id": "KAS-P2-GMA-014", "text_hash": "0b5a25e9e34bd55d", "text": "A sum of money doubles itself in 5 years at simple interest. In how many years will it become 4 times the principal at the same rate?", "options": [{"id": "opt_a", "label": "A", "text": "10 years"}, {"id": "opt_b", "label": "B", "text": "12 years"}, {"id": "opt_c", "label": "C", "text": "15 years"}, {"id": "opt_d", "label": "D", "text": "20 years"}], "answer": "C", "answer_id": "opt_c", "explanation": "Doubles $\\implies SI = P$ in 5 yrs. 4 times $\\implies SI = 3P$. Time $= 3 \\times 5 = 15\\text{ years}$.", "statement_truths": "", "subject": "General Mental Ability", "paper": "Paper 2", "syllabus_id": "P2-S3.4", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-3"}, {"id": "KAS-P2-GMA-015", "text_hash": "197331c973ea116b", "text": "The difference between compound interest (compounded annually) and simple interest on Rs. 20,000 at 5% per annum for 2 years is:", "options": [{"id": "opt_a", "label": "A", "text": "Rs. 25"}, {"id": "opt_b", "label": "B", "text": "Rs. 50"}, {"id": "opt_c", "label": "C", "text": "Rs. 75"}, {"id": "opt_d", "label": "D", "text": "Rs. 100"}], "answer": "B", "answer_id": "opt_b", "explanation": "$\\text{Diff} = P(R/100)^2 = 20,000 \\times (5/100)^2 = 20,000 \\times 25 / 10,000 = 50$.", "statement_truths": "", "subject": "General Mental Ability", "paper": "Paper 2", "syllabus_id": "P2-S3.4", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-3"}, {"id": "KAS-P2-GMA-016", "text_hash": "e85c6c79faa16919", "text": "A train 180 meters long is traveling at a speed of 54 km/hr. How much time will it take to pass an electric pole?", "options": [{"id": "opt_a", "label": "A", "text": "10 seconds"}, {"id": "opt_b", "label": "B", "text": "12 seconds"}, {"id": "opt_c", "label": "C", "text": "15 seconds"}, {"id": "opt_d", "label": "D", "text": "18 seconds"}], "answer": "B", "answer_id": "opt_b", "explanation": "$54\\text{ km/h} = 54 \\times 5/18 = 15\\text{ m/s}$. Time $= 180 / 15 = 12\\text{ seconds}$.", "statement_truths": "", "subject": "General Mental Ability", "paper": "Paper 2", "syllabus_id": "P2-S3.4", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-3"}, {"id": "KAS-P2-GMA-017", "text_hash": "9d72e343316cbc6d", "text": "The average age of 24 students in a classroom is 15 years. If the teacher's age is included, the average increases by 1 year. What is the teacher's age?", "options": [{"id": "opt_a", "label": "A", "text": "38 years"}, {"id": "opt_b", "label": "B", "text": "40 years"}, {"id": "opt_c", "label": "C", "text": "42 years"}, {"id": "opt_d", "label": "D", "text": "45 years"}], "answer": "B", "answer_id": "opt_b", "explanation": "Total age of 24 students $= 24 \\times 15 = 360$. Total age of 25 people $= 25 \\times 16 = 400$. Teacher $= 400 - 360 = 40\\text{ years}$.", "statement_truths": "", "subject": "General Mental Ability", "paper": "Paper 2", "syllabus_id": "P2-S3.4", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-3"}, {"id": "KAS-P2-GMA-018", "text_hash": "c6d92e1390ba02ec", "text": "If the ratio of two numbers is 3 : 5 and their sum is 240, what is the larger number?", "options": [{"id": "opt_a", "label": "A", "text": "90"}, {"id": "opt_b", "label": "B", "text": "120"}, {"id": "opt_c", "label": "C", "text": "150"}, {"id": "opt_d", "label": "D", "text": "180"}], "answer": "C", "answer_id": "opt_c", "explanation": "Parts $= 3 + 5 = 8$. One part $= 240 / 8 = 30$. Larger number $= 5 \\times 30 = 150$.", "statement_truths": "", "subject": "General Mental Ability", "paper": "Paper 2", "syllabus_id": "P2-S3.4", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-3"}, {"id": "KAS-P2-GMA-019", "text_hash": "fa766557c90d8bdb", "text": "A car covers first 60 km at 30 km/hr and the next 60 km at 60 km/hr. What is the average speed of the car for the entire 120 km trip?", "options": [{"id": "opt_a", "label": "A", "text": "40 km/hr"}, {"id": "opt_b", "label": "B", "text": "45 km/hr"}, {"id": "opt_c", "label": "C", "text": "50 km/hr"}, {"id": "opt_d", "label": "D", "text": "35 km/hr"}], "answer": "A", "answer_id": "opt_a", "explanation": "$\\text{Average speed} = \\frac{2uv}{u+v} = \\frac{2 \\times 30 \\times 60}{30 + 60} = \\frac{3600}{90} = 40\\text{ km/hr}$.", "statement_truths": "", "subject": "General Mental Ability", "paper": "Paper 2", "syllabus_id": "P2-S3.4", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-3"}, {"id": "KAS-P2-GMA-020", "text_hash": "2c822d69530a521d", "text": "In a village election between two candidates, the winner polled 65% of the total votes and won by a majority of 600 votes. How many total votes were polled?", "options": [{"id": "opt_a", "label": "A", "text": "1,500"}, {"id": "opt_b", "label": "B", "text": "2,000"}, {"id": "opt_c", "label": "C", "text": "2,500"}, {"id": "opt_d", "label": "D", "text": "3,000"}], "answer": "B", "answer_id": "opt_b", "explanation": "Winner $= 65\\%$, Loser $= 35\\%$. Majority $= 65 - 35 = 30\\%$. If $30\\% = 600$, Total $= 600 / 0.30 = 2,000$.", "statement_truths": "", "subject": "General Mental Ability", "paper": "Paper 2", "syllabus_id": "P2-S3.4", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-3"}, {"id": "KAS-P2-GMA-021", "text_hash": "06da0d2eb6c1cca7", "text": "In a circular pie chart representing a state budget expenditure, the sector for 'Education' has an angle of 72 degrees. What percentage of the budget is spent on Education?", "options": [{"id": "opt_a", "label": "A", "text": "15%"}, {"id": "opt_b", "label": "B", "text": "20%"}, {"id": "opt_c", "label": "C", "text": "25%"}, {"id": "opt_d", "label": "D", "text": "30%"}], "answer": "B", "answer_id": "opt_b", "explanation": "Percentage $= (72 / 360) \\times 100 = 20\\%$.", "statement_truths": "", "subject": "General Mental Ability", "paper": "Paper 2", "syllabus_id": "P2-S3.4", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-3"}, {"id": "KAS-P2-GMA-022", "text_hash": "b302a441eeb55824", "text": "If the Mean of a dataset is 28 and the Median is 30, what is the empirical Mode according to Karl Pearson's formula?", "options": [{"id": "opt_a", "label": "A", "text": "32"}, {"id": "opt_b", "label": "B", "text": "34"}, {"id": "opt_c", "label": "C", "text": "36"}, {"id": "opt_d", "label": "D", "text": "30"}], "answer": "B", "answer_id": "opt_b", "explanation": "$\\text{Mode} = 3(\\text{Median}) - 2(\\text{Mean}) = 3(30) - 2(28) = 90 - 56 = 34$.", "statement_truths": "", "subject": "General Mental Ability", "paper": "Paper 2", "syllabus_id": "P2-S3.4", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-3"}, {"id": "KAS-P2-GMA-023", "text_hash": "2b365940aea6032f", "text": "Which measure of central tendency is LEAST affected by extreme outlier values in a skewed income distribution?", "options": [{"id": "opt_a", "label": "A", "text": "Arithmetic Mean"}, {"id": "opt_b", "label": "B", "text": "Geometric Mean"}, {"id": "opt_c", "label": "C", "text": "Median"}, {"id": "opt_d", "label": "D", "text": "Range"}], "answer": "C", "answer_id": "opt_c", "explanation": "The Median represents the middle positional value and is robust against extreme outliers.", "statement_truths": "", "subject": "General Mental Ability", "paper": "Paper 2", "syllabus_id": "P2-S3.4", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-3"}, {"id": "KAS-P2-GMA-024", "text_hash": "8214ce212ddd5e0e", "text": "The Coefficient of Variation (CV) of two crop yield series A and B are 18% and 26% respectively. Which series exhibits greater consistency?", "options": [{"id": "opt_a", "label": "A", "text": "Series A"}, {"id": "opt_b", "label": "B", "text": "Series B"}, {"id": "opt_c", "label": "C", "text": "Both are equally consistent"}, {"id": "opt_d", "label": "D", "text": "Cannot be determined without knowing the sample size"}], "answer": "A", "answer_id": "opt_a", "explanation": "A lower Coefficient of Variation ($CV = \\sigma / \\bar{x} \\times 100$) indicates greater consistency and lower dispersion.", "statement_truths": "", "subject": "General Mental Ability", "paper": "Paper 2", "syllabus_id": "P2-S3.4", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-3"}, {"id": "KAS-P2-GMA-025", "text_hash": "44929f0017073966", "text": "In a bar chart comparing district pulses production, District A produces 120 tonnes in 2023 and 150 tonnes in 2024. What is the percentage increase in production?", "options": [{"id": "opt_a", "label": "A", "text": "20%"}, {"id": "opt_b", "label": "B", "text": "25%"}, {"id": "opt_c", "label": "C", "text": "30%"}, {"id": "opt_d", "label": "D", "text": "15%"}], "answer": "B", "answer_id": "opt_b", "explanation": "Increase $= \\frac{150 - 120}{120} \\times 100 = \\frac{30}{120} \\times 100 = 25\\%$.", "statement_truths": "", "subject": "General Mental Ability", "paper": "Paper 2", "syllabus_id": "P2-S3.4", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-3"}, {"id": "KAS-P2-GMA-026", "text_hash": "4f4f1ffe84c694cf", "text": "A bag contains 5 red balls, 4 blue balls, and 3 green balls. If one ball is drawn at random, what is the probability that it is blue?", "options": [{"id": "opt_a", "label": "A", "text": "1/4"}, {"id": "opt_b", "label": "B", "text": "1/3"}, {"id": "opt_c", "label": "C", "text": "1/2"}, {"id": "opt_d", "label": "D", "text": "5/12"}], "answer": "B", "answer_id": "opt_b", "explanation": "Total balls $= 5 + 4 + 3 = 12$. Blue balls $= 4$. Probability $= 4 / 12 = 1/3$.", "statement_truths": "", "subject": "General Mental Ability", "paper": "Paper 2", "syllabus_id": "P2-S3.4", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-3"}, {"id": "KAS-P2-GMA-027", "text_hash": "08bd706b4714aabc", "text": "What is the Standard Deviation of the set of numbers: 5, 5, 5, 5, 5?", "options": [{"id": "opt_a", "label": "A", "text": "0"}, {"id": "opt_b", "label": "B", "text": "1"}, {"id": "opt_c", "label": "C", "text": "5"}, {"id": "opt_d", "label": "D", "text": "25"}], "answer": "A", "answer_id": "opt_a", "explanation": "Since all values are identical to the mean, there is zero dispersion: $\\text{Standard Deviation} = 0$.", "statement_truths": "", "subject": "General Mental Ability", "paper": "Paper 2", "syllabus_id": "P2-S3.4", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-3"}, {"id": "KAS-P2-GMA-028", "text_hash": "33326e761124bc3e", "text": "What is the median of the following set of observations: 12, 7, 19, 4, 15, 9, 21?", "options": [{"id": "opt_a", "label": "A", "text": "9"}, {"id": "opt_b", "label": "B", "text": "12"}, {"id": "opt_c", "label": "C", "text": "15"}, {"id": "opt_d", "label": "D", "text": "14"}], "answer": "B", "answer_id": "opt_b", "explanation": "Arranged in ascending order: 4, 7, 9, 12, 15, 19, 21. Middle (4th) observation is 12.", "statement_truths": "", "subject": "General Mental Ability", "paper": "Paper 2", "syllabus_id": "P2-S3.4", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-3"}, {"id": "KAS-P2-GMA-029", "text_hash": "4c6e00f71f2e5f40", "text": "Which graphical representation is used to display continuous grouped frequency data where bars touch each other without gaps?", "options": [{"id": "opt_a", "label": "A", "text": "Simple Bar Chart"}, {"id": "opt_b", "label": "B", "text": "Histogram"}, {"id": "opt_c", "label": "C", "text": "Pie Chart"}, {"id": "opt_d", "label": "D", "text": "Line Diagram"}], "answer": "B", "answer_id": "opt_b", "explanation": "A histogram displays continuous class interval data with contiguous adjacent rectangles.", "statement_truths": "", "subject": "General Mental Ability", "paper": "Paper 2", "syllabus_id": "P2-S3.4", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-3"}, {"id": "KAS-P2-GMA-030", "text_hash": "07d605633bec0477", "text": "In a village survey of 500 households, 300 own cattle and 250 own sheep. If 100 households own both, how many households own NEITHER cattle nor sheep?", "options": [{"id": "opt_a", "label": "A", "text": "50"}, {"id": "opt_b", "label": "B", "text": "75"}, {"id": "opt_c", "label": "C", "text": "100"}, {"id": "opt_d", "label": "D", "text": "25"}], "answer": "A", "answer_id": "opt_a", "explanation": "$\\text{Total owning either} = 300 + 250 - 100 = 450$. Owning neither $= 500 - 450 = 50$.", "statement_truths": "", "subject": "General Mental Ability", "paper": "Paper 2", "syllabus_id": "P2-S3.4", "type": "multiple-choice", "difficulty": "standard", "sources": "https://kpsc.kar.nic.in", "linked_note": "", "origin_file": "CBT_Full_Prelims_P2_Mock1.html", "section_id": "SEC-P2-3"}]};
+
+// SIMULATION STATE
+const STATE = {
+  activeScreen: 'screen-instructions',
+  currentQuestionIndex: 0,
+  activeSectionId: 'ALL',
+  endTime: null,
+  durationMinutes: EXAM_DATA.duration_minutes || 120,
+  timerInterval: null,
+  answers: {}, // { [q.id]: { selectedOptionId: 'opt_b', status: 'answered'|'not-answered'|'marked'|'marked-answered'|'not-visited' } }
+  questionStatuses: {}, // { [q.id]: status }
+  storageKey: 'KPSC_CBT_R3_' + (EXAM_DATA.test_id || 'DEFAULT')
+};
+
+// THEME HANDLING
+function initTheme() {
+  let theme = 'light';
+  try {
+    theme = localStorage.getItem('cbt_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  } catch(e) {}
+  document.documentElement.setAttribute('data-theme', theme);
+}
+document.getElementById('theme-btn').addEventListener('click', () => {
+  const cur = document.documentElement.getAttribute('data-theme');
+  const next = cur === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  try { localStorage.setItem('cbt_theme', next); } catch(e) {}
+});
+
+// SWITCH SCREEN
+function showScreen(id) {
+  document.querySelectorAll('.screen-view').forEach(el => el.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  STATE.activeScreen = id;
+}
+
+// STORAGE
+function saveToStorage() {
+  try {
+    localStorage.setItem(STATE.storageKey, JSON.stringify({
+      endTime: STATE.endTime,
+      durationMinutes: STATE.durationMinutes,
+      answers: STATE.answers,
+      currentQuestionIndex: STATE.currentQuestionIndex,
+      activeSectionId: STATE.activeSectionId
+    }));
+  } catch(e) {}
+}
+
+function loadFromStorage() {
+  try {
+    const raw = localStorage.getItem(STATE.storageKey);
+    if (!raw) return false;
+    const data = JSON.parse(raw);
+    if (data.endTime && data.endTime > Date.now()) {
+      STATE.endTime = data.endTime;
+      STATE.durationMinutes = data.durationMinutes || STATE.durationMinutes;
+      STATE.answers = data.answers || {};
+      STATE.currentQuestionIndex = data.currentQuestionIndex || 0;
+      STATE.activeSectionId = data.activeSectionId || 'ALL';
+      return true;
+    }
+  } catch(e) {}
+  return false;
+}
+
+function clearStorage() {
+  try { localStorage.removeItem(STATE.storageKey); } catch(e) {}
+}
+
+// TIMER ENGINE
+function startWallClockTimer() {
+  if (STATE.timerInterval) clearInterval(STATE.timerInterval);
+
+  function tick() {
+    const res = CbtCore.computeRemainingTime(STATE.endTime);
+    document.getElementById('timer-display').textContent = res.formatted;
+
+    if (res.remainingSeconds <= 300) {
+      document.getElementById('timer-box').style.borderColor = '#ef4444';
+      document.getElementById('timer-display').style.color = '#ef4444';
+    } else {
+      document.getElementById('timer-box').style.borderColor = 'var(--border-color)';
+      document.getElementById('timer-display').style.color = 'var(--text-primary)';
+    }
+
+    if (res.isExpired) {
+      clearInterval(STATE.timerInterval);
+      alert('Time has expired! Your examination will now be submitted automatically.');
+      finalizeExamSubmission();
+    }
+  }
+
+  tick();
+  STATE.timerInterval = setInterval(tick, 1000);
+}
+
+// SECTION TABS
+function renderSectionTabs() {
+  const bar = document.getElementById('section-bar');
+  bar.innerHTML = '';
+
+  const allTab = document.createElement('div');
+  allTab.className = 'sec-tab' + (STATE.activeSectionId === 'ALL' ? ' active' : '');
+  allTab.textContent = `All Questions (${EXAM_DATA.questions.length})`;
+  allTab.addEventListener('click', () => {
+    STATE.activeSectionId = 'ALL';
+    renderSectionTabs();
+    renderPalette();
+  });
+  bar.appendChild(allTab);
+
+  (EXAM_DATA.sections || []).forEach(sec => {
+    const tab = document.createElement('div');
+    tab.className = 'sec-tab' + (STATE.activeSectionId === sec.id ? ' active' : '');
+    tab.textContent = `${sec.name} (${sec.q_count || 0})`;
+    tab.addEventListener('click', () => {
+      STATE.activeSectionId = sec.id;
+      renderSectionTabs();
+      renderPalette();
+      // Jump to first question of section
+      const firstQIdx = EXAM_DATA.questions.findIndex(q => q.section_id === sec.id);
+      if (firstQIdx >= 0) loadQuestion(firstQIdx);
+    });
+    bar.appendChild(tab);
+  });
+}
+
+// PALETTE
+function getFilteredQuestions() {
+  if (STATE.activeSectionId === 'ALL') {
+    return EXAM_DATA.questions.map((q, idx) => ({ q, idx }));
+  }
+  return EXAM_DATA.questions
+    .map((q, idx) => ({ q, idx }))
+    .filter(item => item.q.section_id === STATE.activeSectionId);
+}
+
+function renderPalette() {
+  const grid = document.getElementById('palette-grid');
+  grid.innerHTML = '';
+
+  let cAns = 0, cNotAns = 0, cNotVis = 0, cMark = 0, cMarkAns = 0;
+
+  EXAM_DATA.questions.forEach((q, idx) => {
+    const entry = STATE.answers[q.id];
+    const status = entry ? entry.status : 'not-visited';
+
+    if (status === 'answered') cAns++;
+    else if (status === 'not-answered') cNotAns++;
+    else if (status === 'marked') cMark++;
+    else if (status === 'marked-answered') cMarkAns++;
+    else cNotVis++;
+  });
+
+  document.getElementById('badge-count-ans').textContent = cAns;
+  document.getElementById('badge-count-not-ans').textContent = cNotAns;
+  document.getElementById('badge-count-not-vis').textContent = cNotVis;
+  document.getElementById('badge-count-marked').textContent = cMark;
+  document.getElementById('badge-count-marked-ans').textContent = cMarkAns;
+
+  const currentSec = (EXAM_DATA.sections || []).find(s => s.id === STATE.activeSectionId);
+  document.getElementById('pal-sec-name').textContent = currentSec ? currentSec.name : 'All Questions';
+
+  const items = getFilteredQuestions();
+  items.forEach(({ q, idx }) => {
+    const entry = STATE.answers[q.id];
+    const status = entry ? entry.status : 'not-visited';
+
+    const btn = document.createElement('button');
+    btn.className = `pal-btn st-${status}` + (idx === STATE.currentQuestionIndex ? ' active-q' : '');
+    btn.textContent = idx + 1;
+    btn.title = `Question ${idx + 1} (${q.subject || 'GS'})`;
+    btn.addEventListener('click', () => loadQuestion(idx));
+    grid.appendChild(btn);
+  });
+}
+
+// QUESTION RENDERING
+function loadQuestion(idx) {
+  if (idx < 0 || idx >= EXAM_DATA.questions.length) return;
+  STATE.currentQuestionIndex = idx;
+  const q = EXAM_DATA.questions[idx];
+
+  // If question was never visited, mark as not-answered upon arrival
+  if (!STATE.answers[q.id]) {
+    STATE.answers[q.id] = { selectedOptionId: null, status: 'not-answered' };
+  } else if (STATE.answers[q.id].status === 'not-visited') {
+    STATE.answers[q.id].status = 'not-answered';
+  }
+
+  document.getElementById('q-title-label').textContent = `Question No. ${idx + 1} [ID: ${q.id}]`;
+  document.getElementById('q-text-body').innerHTML = q.text.replace(/\n/g, '<br>');
+
+  const optContainer = document.getElementById('options-list');
+  optContainer.innerHTML = '';
+
+  const currentSelection = STATE.answers[q.id]?.selectedOptionId;
+
+  q.options.forEach(opt => {
+    const card = document.createElement('div');
+    card.className = 'option-card' + (currentSelection === opt.id || currentSelection === opt.label ? ' selected' : '');
+
+    const radio = document.createElement('input');
+    radio.type = 'radio';
+    radio.name = 'opt_radio_group';
+    radio.className = 'opt-radio';
+    radio.value = opt.id;
+    radio.checked = (currentSelection === opt.id || currentSelection === opt.label);
+
+    const pill = document.createElement('div');
+    pill.className = 'opt-pill';
+    pill.textContent = opt.label;
+
+    const txt = document.createElement('div');
+    txt.className = 'opt-text';
+    txt.textContent = opt.text;
+
+    card.appendChild(radio);
+    card.appendChild(pill);
+    card.appendChild(txt);
+
+    card.addEventListener('click', () => {
+      document.querySelectorAll('.option-card').forEach(c => c.classList.remove('selected'));
+      card.classList.add('selected');
+      radio.checked = true;
+      // Track selection in memory immediately
+      STATE.answers[q.id].selectedOptionId = opt.id;
+    });
+
+    optContainer.appendChild(card);
+  });
+
+  renderPalette();
+  saveToStorage();
+}
+
+function getSelectedRadioValue() {
+  const checked = document.querySelector('input[name="opt_radio_group"]:checked');
+  return checked ? checked.value : null;
+}
+
+// CONTROL ACTIONS
+document.getElementById('btn-save-next').addEventListener('click', () => {
+  const q = EXAM_DATA.questions[STATE.currentQuestionIndex];
+  const sel = getSelectedRadioValue();
+  if (sel) {
+    STATE.answers[q.id] = { selectedOptionId: sel, status: 'answered' };
+  } else {
+    STATE.answers[q.id] = { selectedOptionId: null, status: 'not-answered' };
+  }
+  if (STATE.currentQuestionIndex < EXAM_DATA.questions.length - 1) {
+    loadQuestion(STATE.currentQuestionIndex + 1);
+  } else {
+    renderPalette();
+  }
+});
+
+document.getElementById('btn-mark-review').addEventListener('click', () => {
+  const q = EXAM_DATA.questions[STATE.currentQuestionIndex];
+  const sel = getSelectedRadioValue();
+  if (sel) {
+    STATE.answers[q.id] = { selectedOptionId: sel, status: 'marked-answered' };
+  } else {
+    STATE.answers[q.id] = { selectedOptionId: null, status: 'marked' };
+  }
+  if (STATE.currentQuestionIndex < EXAM_DATA.questions.length - 1) {
+    loadQuestion(STATE.currentQuestionIndex + 1);
+  } else {
+    renderPalette();
+  }
+});
+
+document.getElementById('btn-clear-resp').addEventListener('click', () => {
+  const q = EXAM_DATA.questions[STATE.currentQuestionIndex];
+  STATE.answers[q.id] = { selectedOptionId: null, status: 'not-answered' };
+  document.querySelectorAll('.option-card').forEach(c => c.classList.remove('selected'));
+  document.querySelectorAll('input[name="opt_radio_group"]').forEach(r => r.checked = false);
+  renderPalette();
+  saveToStorage();
+});
+
+document.getElementById('btn-prev').addEventListener('click', () => {
+  if (STATE.currentQuestionIndex > 0) {
+    loadQuestion(STATE.currentQuestionIndex - 1);
+  }
+});
+
+// KEYBOARD SHORTCUTS
+window.addEventListener('keydown', (e) => {
+  if (STATE.activeScreen !== 'screen-exam') return;
+  if (e.altKey && e.key.toLowerCase() === 'n') {
+    e.preventDefault();
+    document.getElementById('btn-save-next').click();
+  } else if (e.altKey && e.key.toLowerCase() === 'p') {
+    e.preventDefault();
+    document.getElementById('btn-prev').click();
+  } else if (e.altKey && e.key.toLowerCase() === 'c') {
+    e.preventDefault();
+    document.getElementById('btn-clear-resp').click();
+  }
+});
+
+// SUBMIT FLOW & MODAL
+const submitModal = document.getElementById('modal-submit');
+document.getElementById('btn-trigger-submit').addEventListener('click', () => {
+  const tbody = document.getElementById('modal-table-body');
+  tbody.innerHTML = '';
+
+  const sectionsToReport = (EXAM_DATA.sections && EXAM_DATA.sections.length > 0)
+    ? EXAM_DATA.sections
+    : [{ id: 'ALL', name: 'General Studies', question_ids: EXAM_DATA.questions.map(q => q.id) }];
+
+  sectionsToReport.forEach(sec => {
+    let ans = 0, notAns = 0, marked = 0, notVis = 0;
+    const secQuestions = EXAM_DATA.questions.filter(q => sec.id === 'ALL' || q.section_id === sec.id);
+
+    secQuestions.forEach(q => {
+      const entry = STATE.answers[q.id];
+      const st = entry ? entry.status : 'not-visited';
+      if (st === 'answered' || st === 'marked-answered') ans++;
+      else if (st === 'not-answered') notAns++;
+      else if (st === 'marked') marked++;
+      else notVis++;
+    });
+
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td style="font-weight: 600; text-align: left;">${sec.name}</td>
+      <td>${secQuestions.length}</td>
+      <td style="color: var(--ans-green); font-weight: 700;">${ans}</td>
+      <td style="color: var(--not-ans-red); font-weight: 700;">${notAns}</td>
+      <td style="color: var(--marked-purple); font-weight: 700;">${marked}</td>
+      <td>${notVis}</td>
+    `;
+    tbody.appendChild(tr);
+  });
+
+  submitModal.classList.add('active');
+});
+
+document.getElementById('btn-modal-cancel').addEventListener('click', () => {
+  submitModal.classList.remove('active');
+});
+
+document.getElementById('btn-modal-confirm').addEventListener('click', () => {
+  submitModal.classList.remove('active');
+  finalizeExamSubmission();
+});
+
+// EVALUATION & RESULTS VIEW
+function finalizeExamSubmission() {
+  if (STATE.timerInterval) clearInterval(STATE.timerInterval);
+  clearStorage();
+
+  const markingScheme = { positiveMarks: 2.0, negativePenalty: 0.5 };
+  const res = CbtCore.scoreExam(STATE.answers, EXAM_DATA.questions, EXAM_DATA.sections, markingScheme);
+
+  // Render Scorecard
+  document.getElementById('res-net-score').textContent = res.netScore.toFixed(2);
+  document.getElementById('res-max-marks').textContent = (res.totalQuestions * 2.0).toFixed(1);
+  document.getElementById('res-accuracy').textContent = res.accuracy.toFixed(1) + '%';
+  document.getElementById('res-attempted').textContent = `${res.attemptedCount} / ${res.totalQuestions}`;
+  document.getElementById('res-pos-neg').textContent = `+${res.positiveMarks.toFixed(1)} / -${res.negativePenalty.toFixed(1)}`;
+
+  // Render Section Table
+  const secTbody = document.getElementById('res-section-body');
+  secTbody.innerHTML = '';
+  res.sectionBreakdown.forEach(s => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td style="font-weight: 600; text-align: left;">${s.name}</td>
+      <td>${s.total}</td>
+      <td>${s.attempted}</td>
+      <td style="color: var(--ans-green); font-weight: 700;">${s.correct}</td>
+      <td style="color: var(--not-ans-red); font-weight: 700;">${s.incorrect}</td>
+      <td style="font-weight: 800; color: ${s.netMarks >= 0 ? 'var(--accent-color)' : 'var(--not-ans-red)'};">${s.netMarks.toFixed(2)}</td>
+      <td>${s.accuracy.toFixed(1)}%</td>
+    `;
+    secTbody.appendChild(tr);
+  });
+
+  renderReviewList('all');
+  showScreen('screen-result');
+}
+
+function renderReviewList(filter = 'all') {
+  const container = document.getElementById('review-list');
+  container.innerHTML = '';
+
+  EXAM_DATA.questions.forEach((q, idx) => {
+    const entry = STATE.answers[q.id];
+    const userOptId = entry ? entry.selectedOptionId : null;
+    const correctOptId = q.answer_id || q.answer;
+    const isCorrect = userOptId && (userOptId === correctOptId || userOptId === q.answer);
+    const isAttempted = !!userOptId;
+
+    if (filter === 'flawed' && isCorrect) return;
+    if (filter === 'unattempted' && isAttempted) return;
+
+    let badgeClass = 'var(--text-secondary)';
+    let badgeText = 'Unattempted (0.00)';
+    if (isAttempted) {
+      if (isCorrect) {
+        badgeClass = 'var(--ans-green)';
+        badgeText = 'Correct (+2.00)';
+      } else {
+        badgeClass = 'var(--not-ans-red)';
+        badgeText = 'Incorrect (-0.50)';
+      }
+    }
+
+    const item = document.createElement('div');
+    item.className = 'review-item';
+
+    item.innerHTML = `
+      <div class="review-meta">
+        <span>Q${idx + 1}. [${q.subject || 'GS'}] ID: ${q.id}</span>
+        <span style="color: ${badgeClass}; font-weight: 700;">${badgeText}</span>
+      </div>
+      <div style="font-size: 1.05rem; font-weight: 500; margin-bottom: 16px;">
+        ${q.text.replace(/\n/g, '<br>')}
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 14px;">
+        ${q.options.map(opt => {
+          let bg = 'var(--bg-surface-secondary)';
+          let border = 'var(--border-color)';
+          if (opt.id === correctOptId || opt.label === q.answer) {
+            bg = 'var(--ans-green-bg)';
+            border = 'var(--ans-green)';
+          } else if (opt.id === userOptId || opt.label === userOptId) {
+            bg = 'var(--not-ans-red-bg)';
+            border = 'var(--not-ans-red)';
+          }
+          return `<div style="padding: 10px 14px; border-radius: 6px; border: 1.5px solid ${border}; background: ${bg}; font-size: 0.92rem;">
+            <strong>${opt.label}:</strong> ${opt.text}
+          </div>`;
+        }).join('')}
+      </div>
+      ${q.statement_truths ? `<div class="truth-box"><strong>Per-Statement Verification:</strong><br>${q.statement_truths}</div>` : ''}
+      <div class="explanation-box">
+        <strong>Official Pedagogical Explanation:</strong><br>
+        ${q.explanation || 'Detailed explanation verified against primary historical and syllabus sources.'}
+        ${q.linked_note ? `<br><small style="color: var(--accent-color); font-weight: 600;">Vault Reference: [[${q.linked_note}]]</small>` : ''}
+      </div>
+    `;
+
+    container.appendChild(item);
+  });
+}
+
+document.getElementById('btn-filter-all').addEventListener('click', () => renderReviewList('all'));
+document.getElementById('btn-filter-flawed').addEventListener('click', () => renderReviewList('flawed'));
+document.getElementById('btn-filter-unattempted').addEventListener('click', () => renderReviewList('unattempted'));
+
+document.getElementById('btn-retake').addEventListener('click', () => {
+  clearStorage();
+  window.location.reload();
+});
+
+// START EXAM FLOW
+document.getElementById('btn-start-exam').addEventListener('click', () => {
+  const agreed = document.getElementById('inst-agree-check').checked;
+  if (!agreed) {
+    alert('Please acknowledge that you have read the examination instructions.');
+    return;
+  }
+
+  const selectedMode = document.querySelector('input[name="sim-mode"]:checked').value;
+  let durationMins = EXAM_DATA.duration_minutes || 120;
+  if (selectedMode === 'quick') {
+    durationMins = 2; // 2 minutes for testing
+    document.getElementById('header-mode-badge').textContent = 'Quick Check (2m)';
+  } else {
+    document.getElementById('header-mode-badge').textContent = 'Exam Mode';
+  }
+
+  STATE.durationMinutes = durationMins;
+  STATE.endTime = Date.now() + (durationMins * 60 * 1000);
+
+  // Initialize all questions to not-visited
+  EXAM_DATA.questions.forEach(q => {
+    STATE.answers[q.id] = { selectedOptionId: null, status: 'not-visited' };
+  });
+
+  saveToStorage();
+  renderSectionTabs();
+  renderPalette();
+  loadQuestion(0);
+  startWallClockTimer();
+  showScreen('screen-exam');
+});
+
+// INIT ON LOAD
+window.addEventListener('DOMContentLoaded', () => {
+  initTheme();
+  document.getElementById('inst-q-count').textContent = EXAM_DATA.questions.length;
+  document.getElementById('inst-max-marks').textContent = (EXAM_DATA.questions.length * 2.0).toFixed(1);
+  const dur = EXAM_DATA.duration_minutes || 120;
+  document.getElementById('inst-duration').textContent = `${dur} Minutes`;
+  document.getElementById('mode-exam-mins').textContent = dur;
+
+  // Check if active test exists in storage
+  const hasCached = loadFromStorage();
+  if (hasCached) {
+    const resumeBtn = document.getElementById('btn-resume-cached');
+    resumeBtn.style.display = 'inline-block';
+    resumeBtn.addEventListener('click', () => {
+      renderSectionTabs();
+      renderPalette();
+      loadQuestion(STATE.currentQuestionIndex);
+      startWallClockTimer();
+      showScreen('screen-exam');
+    });
+  }
+});
+</script>
+</body>
+</html>

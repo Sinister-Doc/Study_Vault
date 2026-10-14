@@ -1,0 +1,1306 @@
+# -*- coding: utf-8 -*-
+"""
+Exhaustive Paper 2 Computer Science Core Questions Dataset.
+Contains:
+- Test 1: 150 questions (15 Questions per Unit across Units 1 to 10)
+- Test 2: 150 questions (15 Questions per Unit across Units 1 to 10)
+Total = 300 Questions.
+"""
+
+def get_paper2_test1():
+    qs = []
+    
+    # ----------------------------------------------------
+    # UNIT 1: FUNDAMENTALS OF COMPUTERS (15 QUESTIONS: Q1 to Q15)
+    # ----------------------------------------------------
+    u1 = [
+        {
+            "id": "P2-T1-U1-01", "paper": 2, "section_id": "U1", "subject": "Fundamentals of Computers", "syllabus_id": "P2-1.1",
+            "origin_tag": "PYQ - KPSC CST 2017", "difficulty": "easy",
+            "text": "The classical computer architecture based on the stored-program concept where instructions and data share the same physical memory is known as:",
+            "options": [{"label": "A", "text": "Harvard Architecture"}, {"label": "B", "text": "Von Neumann Architecture"}, {"label": "C", "text": "Turing Architecture"}, {"label": "D", "text": "Flynn Architecture"}],
+            "answer": "B",
+            "explanation": "Von Neumann architecture features a shared memory system for program instructions and data, communicating via a common bus."
+        },
+        {
+            "id": "P2-T1-U1-02", "paper": 2, "section_id": "U1", "subject": "Fundamentals of Computers", "syllabus_id": "P2-1.1",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "What is the key structural difference between Harvard Architecture and Von Neumann Architecture?",
+            "options": [{"label": "A", "text": "Harvard has separate physical memories and buses for instructions and data"}, {"label": "B", "text": "Harvard lacks an Arithmetic Logic Unit"}, {"label": "C", "text": "Von Neumann architecture has no Program Counter"}, {"label": "D", "text": "Von Neumann is purely analog"}],
+            "answer": "A",
+            "explanation": "Harvard architecture physically separates instruction storage and data storage, allowing simultaneous memory access."
+        },
+        {
+            "id": "P2-T1-U1-03", "paper": 2, "section_id": "U1", "subject": "Fundamentals of Computers", "syllabus_id": "P2-1.2",
+            "origin_tag": "PYQ - KPSC CST 2017", "difficulty": "medium",
+            "text": "What is the hexadecimal representation of the binary number (110101111011)2?",
+            "options": [{"label": "A", "text": "D7B"}, {"label": "B", "text": "C7B"}, {"label": "C", "text": "D6B"}, {"label": "D", "text": "E7B"}],
+            "answer": "A",
+            "explanation": "Grouping in 4-bit nibbles: 1101 = D (13), 0111 = 7, 1011 = B (11). Thus (D7B)16."
+        },
+        {
+            "id": "P2-T1-U1-04", "paper": 2, "section_id": "U1", "subject": "Fundamentals of Computers", "syllabus_id": "P2-1.2",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "What is the 2\'s complement representation of -25 in an 8-bit signed register?",
+            "options": [{"label": "A", "text": "11100111"}, {"label": "B", "text": "11100110"}, {"label": "C", "text": "11011001"}, {"label": "D", "text": "10011001"}],
+            "answer": "A",
+            "explanation": "+25 = 00011001. 1\'s complement = 11100110. Adding 1 gives 2\'s complement = 11100111."
+        },
+        {
+            "id": "P2-T1-U1-05", "paper": 2, "section_id": "U1", "subject": "Fundamentals of Computers", "syllabus_id": "P2-1.3",
+            "origin_tag": "Expected - High Yield", "difficulty": "hard",
+            "text": "In IEEE 754 Single-Precision Floating-Point standard (32 bits), how many bits are allocated for Sign, Exponent, and Mantissa respectively?",
+            "options": [{"label": "A", "text": "1 bit sign, 8 bits exponent, 23 bits mantissa"}, {"label": "B", "text": "1 bit sign, 11 bits exponent, 20 bits mantissa"}, {"label": "C", "text": "1 bit sign, 7 bits exponent, 24 bits mantissa"}, {"label": "D", "text": "2 bits sign, 8 bits exponent, 22 bits mantissa"}],
+            "answer": "A",
+            "explanation": "Single-precision (32-bit) IEEE 754 uses 1 sign bit, 8 exponent bits (bias 127), and 23 normalized fraction/mantissa bits."
+        },
+        {
+            "id": "P2-T1-U1-06", "paper": 2, "section_id": "U1", "subject": "Fundamentals of Computers", "syllabus_id": "P2-1.3",
+            "origin_tag": "Expected - High Yield", "difficulty": "hard",
+            "text": "A computer system has a cache access time of 2 ns and main memory access time of 50 ns. If the cache hit ratio is 0.95, what is the Average Memory Access Time (AMAT)?",
+            "options": [{"label": "A", "text": "4.5 ns"}, {"label": "B", "text": "4.4 ns"}, {"label": "C", "text": "5.0 ns"}, {"label": "D", "text": "3.5 ns"}],
+            "answer": "A",
+            "explanation": "In hierarchical memory where cache is checked first (hit time = 2 ns) and on miss main memory is accessed (miss penalty = 50 ns): AMAT = Hit Time + (Miss Rate * Miss Penalty) = 2 + (0.05 * 50) = 2 + 2.5 = 4.5 ns."
+        },
+        {
+            "id": "P2-T1-U1-07", "paper": 2, "section_id": "U1", "subject": "Fundamentals of Computers", "syllabus_id": "P2-1.1",
+            "origin_tag": "Expected - High Yield", "difficulty": "easy",
+            "text": "Which electronic component characterized Second Generation computers (1956–1963)?",
+            "options": [{"label": "A", "text": "Vacuum Tubes"}, {"label": "B", "text": "Transistors"}, {"label": "C", "text": "Integrated Circuits (ICs)"}, {"label": "D", "text": "Microprocessors"}],
+            "answer": "B",
+            "explanation": "1st Gen: Vacuum tubes; 2nd Gen: Transistors; 3rd Gen: ICs; 4th Gen: VLSI microprocessors; 5th Gen: AI/ULSI."
+        },
+        {
+            "id": "P2-T1-U1-08", "paper": 2, "section_id": "U1", "subject": "Fundamentals of Computers", "syllabus_id": "P2-1.1",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "What type of ROM can be erased by exposing it to ultraviolet (UV) light?",
+            "options": [{"label": "A", "text": "PROM"}, {"label": "B", "text": "EPROM"}, {"label": "C", "text": "EEPROM"}, {"label": "D", "text": "Flash Memory"}],
+            "answer": "B",
+            "explanation": "Erasable Programmable ROM (EPROM) features a quartz window through which UV light erases data."
+        },
+        {
+            "id": "P2-T1-U1-09", "paper": 2, "section_id": "U1", "subject": "Fundamentals of Computers", "syllabus_id": "P2-1.2",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "What is the decimal equivalent of the octal number (345)8?",
+            "options": [{"label": "A", "text": "225"}, {"label": "B", "text": "229"}, {"label": "C", "text": "235"}, {"label": "D", "text": "245"}],
+            "answer": "B",
+            "explanation": "3 * 8^2 + 4 * 8^1 + 5 * 8^0 = 3 * 64 + 4 * 8 + 5 = 192 + 32 + 5 = 229."
+        },
+        {
+            "id": "P2-T1-U1-10", "paper": 2, "section_id": "U1", "subject": "Fundamentals of Computers", "syllabus_id": "P2-1.3",
+            "origin_tag": "Expected - High Yield", "difficulty": "hard",
+            "text": "Which cache mapping scheme allows a block of main memory to be loaded into ANY cache line?",
+            "options": [{"label": "A", "text": "Direct Mapping"}, {"label": "B", "text": "Fully Associative Mapping"}, {"label": "C", "text": "Set-Associative Mapping"}, {"label": "D", "text": "Sector Mapping"}],
+            "answer": "B",
+            "explanation": "Fully Associative mapping permits placement into any free cache slot, eliminating conflict misses at the cost of associative hardware search."
+        },
+        {
+            "id": "P2-T1-U1-11", "paper": 2, "section_id": "U1", "subject": "Fundamentals of Computers", "syllabus_id": "P2-1.1",
+            "origin_tag": "Expected - High Yield", "difficulty": "easy",
+            "text": "Which of the following is considered system software?",
+            "options": [{"label": "A", "text": "Operating System"}, {"label": "B", "text": "Device Driver"}, {"label": "C", "text": "Linker and Loader"}, {"label": "D", "text": "All of the above"}],
+            "answer": "D",
+            "explanation": "Operating systems, device drivers, compilers, linkers, and loaders are all classifications of system software."
+        },
+        {
+            "id": "P2-T1-U1-12", "paper": 2, "section_id": "U1", "subject": "Fundamentals of Computers", "syllabus_id": "P2-1.2",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "Which code is an unweighted, non-reflective error-minimizing code where adjacent numbers differ by only a single bit?",
+            "options": [{"label": "A", "text": "BCD Code"}, {"label": "B", "text": "Gray Code"}, {"label": "C", "text": "Excess-3 Code"}, {"label": "D", "text": "ASCII Code"}],
+            "answer": "B",
+            "explanation": "Gray code (reflected binary code) changes only one bit between consecutive values, eliminating transition glitches in Karnaugh maps and encoders."
+        },
+        {
+            "id": "P2-T1-U1-13", "paper": 2, "section_id": "U1", "subject": "Fundamentals of Computers", "syllabus_id": "P2-1.3",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "Static RAM (SRAM) cells store binary bits using which circuit element?",
+            "options": [{"label": "A", "text": "Capacitors needing periodic refreshing"}, {"label": "B", "text": "Cross-coupled bistable flip-flops (transistor latches)"}, {"label": "C", "text": "Magnetic cores"}, {"label": "D", "text": "Optical laser pits"}],
+            "answer": "B",
+            "explanation": "SRAM uses cross-coupled inverters/flip-flops (typically 6 transistors per cell) and does not require periodic refresh, unlike DRAM."
+        },
+        {
+            "id": "P2-T1-U1-14", "paper": 2, "section_id": "U1", "subject": "Fundamentals of Computers", "syllabus_id": "P2-1.2",
+            "origin_tag": "Expected - High Yield", "difficulty": "hard",
+            "text": "What is the range of signed integers that can be represented using an 8-bit register in 2\'s complement format?",
+            "options": [{"label": "A", "text": "-128 to +127"}, {"label": "B", "text": "-127 to +128"}, {"label": "C", "text": "-127 to +127"}, {"label": "D", "text": "0 to 255"}],
+            "answer": "A",
+            "explanation": "For an n-bit 2\'s complement register, range is -2^(n-1) to +2^(n-1) - 1. For n=8: -128 to +127."
+        },
+        {
+            "id": "P2-T1-U1-15", "paper": 2, "section_id": "U1", "subject": "Fundamentals of Computers", "syllabus_id": "P2-1.3",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "What does RAID Level 1 accomplish in storage architecture?",
+            "options": [{"label": "A", "text": "Disk Striping without parity"}, {"label": "B", "text": "Disk Mirroring (100% redundancy)"}, {"label": "C", "text": "Block-level striping with distributed parity"}, {"label": "D", "text": "Bit-level striping with Hamming code"}],
+            "answer": "B",
+            "explanation": "RAID 1 provides redundancy by duplicating (mirroring) all data from one drive onto a secondary drive."
+        }
+    ]
+    qs.extend(u1)
+
+    # ----------------------------------------------------
+    # UNIT 2: DISCRETE STRUCTURES (15 QUESTIONS: Q16 to Q30)
+    # ----------------------------------------------------
+    u2 = [
+        {
+            "id": "P2-T1-U2-16", "paper": 2, "section_id": "U2", "subject": "Discrete Structures", "syllabus_id": "P2-2.1",
+            "origin_tag": "PYQ - KPSC CST 2017", "difficulty": "easy",
+            "text": "If a finite set A contains n elements, what is the cardinality of its Power Set P(A)?",
+            "options": [{"label": "A", "text": "2^n"}, {"label": "B", "text": "n^2"}, {"label": "C", "text": "2n"}, {"label": "D", "text": "n!"}],
+            "answer": "A",
+            "explanation": "The power set contains all possible subsets of A. If |A| = n, then |P(A)| = 2^n."
+        },
+        {
+            "id": "P2-T1-U2-17", "paper": 2, "section_id": "U2", "subject": "Discrete Structures", "syllabus_id": "P2-2.1",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "A binary relation R on set A is defined as an Equivalence Relation if and only if R satisfies which three properties?",
+            "options": [{"label": "A", "text": "Reflexive, Symmetric, and Transitive"}, {"label": "B", "text": "Reflexive, Anti-symmetric, and Transitive"}, {"label": "C", "text": "Irreflexive, Symmetric, and Transitive"}, {"label": "D", "text": "Symmetric, Asymmetric, and Functional"}],
+            "answer": "A",
+            "explanation": "An equivalence relation is Reflexive (aRa), Symmetric (aRb -> bRa), and Transitive (aRb & bRc -> aRc)."
+        },
+        {
+            "id": "P2-T1-U2-18", "paper": 2, "section_id": "U2", "subject": "Discrete Structures", "syllabus_id": "P2-2.2",
+            "origin_tag": "PYQ - KPSC CST 2017", "difficulty": "medium",
+            "text": "The compound proposition (P -> Q) is logically equivalent to which Boolean expression?",
+            "options": [{"label": "A", "text": "~P v Q"}, {"label": "B", "text": "P ^ ~Q"}, {"label": "C", "text": "~P ^ Q"}, {"label": "D", "text": "P v ~Q"}],
+            "answer": "A",
+            "explanation": "By truth table, P -> Q is false only when P is true and Q is false. Hence P -> Q == ~P v Q."
+        },
+        {
+            "id": "P2-T1-U2-19", "paper": 2, "section_id": "U2", "subject": "Discrete Structures", "syllabus_id": "P2-2.2",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "According to De Morgan\'s Laws in propositional logic, ~(P ^ Q) is equivalent to:",
+            "options": [{"label": "A", "text": "~P v ~Q"}, {"label": "B", "text": "~P ^ ~Q"}, {"label": "C", "text": "P v Q"}, {"label": "D", "text": "~P -> ~Q"}],
+            "answer": "A",
+            "explanation": "De Morgan\'s Law states: ~(P ^ Q) == ~P v ~Q, and ~(P v Q) == ~P ^ ~Q."
+        },
+        {
+            "id": "P2-T1-U2-20", "paper": 2, "section_id": "U2", "subject": "Discrete Structures", "syllabus_id": "P2-2.2",
+            "origin_tag": "Expected - High Yield", "difficulty": "easy",
+            "text": "A proposition that evaluates to TRUE under all possible truth assignments of its constituent variables is called a:",
+            "options": [{"label": "A", "text": "Tautology"}, {"label": "B", "text": "Contradiction (Fallacy)"}, {"label": "C", "text": "Contingency"}, {"label": "D", "text": "Predicate"}],
+            "answer": "A",
+            "explanation": "A statement that is universally true in all interpretations is a Tautology."
+        },
+        {
+            "id": "P2-T1-U2-21", "paper": 2, "section_id": "U2", "subject": "Discrete Structures", "syllabus_id": "P2-2.3",
+            "origin_tag": "PYQ - KPSC CST 2017", "difficulty": "medium",
+            "text": "According to the Handshaking Lemma in Graph Theory, the sum of degrees of all vertices in an undirected graph G = (V, E) equals:",
+            "options": [{"label": "A", "text": "2 * |E|"}, {"label": "B", "text": "|E|"}, {"label": "C", "text": "|V| * (|V| - 1) / 2"}, {"label": "D", "text": "2 * |V|"}],
+            "answer": "A",
+            "explanation": "Each edge contributes 1 to the degree of two endpoints, so sum(deg(v)) = 2 * |E|."
+        },
+        {
+            "id": "P2-T1-U2-22", "paper": 2, "section_id": "U2", "subject": "Discrete Structures", "syllabus_id": "P2-2.3",
+            "origin_tag": "Expected - High Yield", "difficulty": "hard",
+            "text": "A connected undirected graph contains an Eulerian Circuit if and only if:",
+            "options": [{"label": "A", "text": "Every vertex has an even degree"}, {"label": "B", "text": "Exactly two vertices have odd degree"}, {"label": "C", "text": "The graph is bipartite"}, {"label": "D", "text": "The graph is planar"}],
+            "answer": "A",
+            "explanation": "Euler\'s Theorem: A connected graph has an Euler circuit iff every vertex has an even degree."
+        },
+        {
+            "id": "P2-T1-U2-23", "paper": 2, "section_id": "U2", "subject": "Discrete Structures", "syllabus_id": "P2-2.3",
+            "origin_tag": "Expected - High Yield", "difficulty": "easy",
+            "text": "How many edges are present in a tree with n vertices?",
+            "options": [{"label": "A", "text": "n - 1"}, {"label": "B", "text": "n"}, {"label": "C", "text": "n + 1"}, {"label": "D", "text": "2n - 1"}],
+            "answer": "A",
+            "explanation": "A tree with n vertices is a minimally connected acyclic graph having exactly n - 1 edges."
+        },
+        {
+            "id": "P2-T1-U2-24", "paper": 2, "section_id": "U2", "subject": "Discrete Structures", "syllabus_id": "P2-2.3",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "How many edges exist in a Complete Graph Kn having n vertices?",
+            "options": [{"label": "A", "text": "n(n - 1) / 2"}, {"label": "B", "text": "n(n + 1) / 2"}, {"label": "C", "text": "n^2"}, {"label": "D", "text": "n - 1"}],
+            "answer": "A",
+            "explanation": "Every vertex connects to all other n-1 vertices: (n * (n - 1)) / 2 edges."
+        },
+        {
+            "id": "P2-T1-U2-25", "paper": 2, "section_id": "U2", "subject": "Discrete Structures", "syllabus_id": "P2-2.3",
+            "origin_tag": "Expected - High Yield", "difficulty": "hard",
+            "text": "According to the Pigeonhole Principle, if 13 people are present in a room, what is the minimum number of people who MUST share the same birth month?",
+            "options": [{"label": "A", "text": "1"}, {"label": "B", "text": "2"}, {"label": "C", "text": "3"}, {"label": "D", "text": "4"}],
+            "answer": "B",
+            "explanation": "With 13 pigeons and 12 pigeonholes (months), ceil(13 / 12) = 2 people must share a birth month."
+        },
+        {
+            "id": "P2-T1-U2-26", "paper": 2, "section_id": "U2", "subject": "Discrete Structures", "syllabus_id": "P2-2.1",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "A Partially Ordered Set (Poset) is defined by a relation that is:",
+            "options": [{"label": "A", "text": "Reflexive, Anti-symmetric, and Transitive"}, {"label": "B", "text": "Reflexive, Symmetric, and Transitive"}, {"label": "C", "text": "Irreflexive, Symmetric, and Transitive"}, {"label": "D", "text": "Asymmetric and Irreflexive"}],
+            "answer": "A",
+            "explanation": "A partial order is Reflexive, Anti-symmetric (if aRb and bRa then a = b), and Transitive."
+        },
+        {
+            "id": "P2-T1-U2-27", "paper": 2, "section_id": "U2", "subject": "Discrete Structures", "syllabus_id": "P2-2.3",
+            "origin_tag": "Expected - High Yield", "difficulty": "hard",
+            "text": "In Euler\'s formula for a planar connected graph G with V vertices, E edges, and R regions (faces), which relation holds?",
+            "options": [{"label": "A", "text": "V - E + R = 2"}, {"label": "B", "text": "V + E - R = 2"}, {"label": "C", "text": "V - E - R = 2"}, {"label": "D", "text": "V + E + R = 2"}],
+            "answer": "A",
+            "explanation": "Euler\'s planar graph formula states: V - E + R = 2."
+        },
+        {
+            "id": "P2-T1-U2-28", "paper": 2, "section_id": "U2", "subject": "Discrete Structures", "syllabus_id": "P2-2.2",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "What is the contrapositive of the conditional statement 'If it rains, then the ground is wet'?",
+            "options": [{"label": "A", "text": "If the ground is not wet, then it does not rain"}, {"label": "B", "text": "If it does not rain, then the ground is not wet"}, {"label": "C", "text": "If the ground is wet, then it rains"}, {"label": "D", "text": "It rains and the ground is not wet"}],
+            "answer": "A",
+            "explanation": "Contrapositive of P -> Q is ~Q -> ~P, which is logically equivalent to the original statement."
+        },
+        {
+            "id": "P2-T1-U2-29", "paper": 2, "section_id": "U2", "subject": "Discrete Structures", "syllabus_id": "P2-2.1",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "If set A has 3 elements and set B has 4 elements, how many distinct functions can be mapped from A to B?",
+            "options": [{"label": "A", "text": "3^4 = 81"}, {"label": "B", "text": "4^3 = 64"}, {"label": "C", "text": "12"}, {"label": "D", "text": "7"}],
+            "answer": "B",
+            "explanation": "The number of functions from set A (|A| = m) to set B (|B| = n) is n^m. Here 4^3 = 64."
+        },
+        {
+            "id": "P2-T1-U2-30", "paper": 2, "section_id": "U2", "subject": "Discrete Structures", "syllabus_id": "P2-2.3",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "What is the chromatic number of a bipartite graph with at least one edge?",
+            "options": [{"label": "A", "text": "1"}, {"label": "B", "text": "2"}, {"label": "C", "text": "3"}, {"label": "D", "text": "4"}],
+            "answer": "B",
+            "explanation": "A graph is bipartite if and only if its vertices can be partitioned into two independent sets, meaning its chromatic number is 2."
+        }
+    ]
+    qs.extend(u2)
+
+    # ----------------------------------------------------
+    # UNIT 3: COMPUTER ARCHITECTURE (15 QUESTIONS: Q31 to Q45)
+    # ----------------------------------------------------
+    u3 = [
+        {
+            "id": "P2-T1-U3-31", "paper": 2, "section_id": "U3", "subject": "Computer Architecture", "syllabus_id": "P2-3.1",
+            "origin_tag": "PYQ - KPSC CST 2017", "difficulty": "easy",
+            "text": "How many 2-input NAND gates are required to implement a 2-input XOR gate?",
+            "options": [{"label": "A", "text": "3"}, {"label": "B", "text": "4"}, {"label": "C", "text": "5"}, {"label": "D", "text": "6"}],
+            "answer": "B",
+            "explanation": "A 2-input XOR gate requires exactly 4 NAND gates (or 5 NOR gates)."
+        },
+        {
+            "id": "P2-T1-U3-32", "paper": 2, "section_id": "U3", "subject": "Computer Architecture", "syllabus_id": "P2-3.1",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "In a Karnaugh Map (K-Map), adjacent cells differ by only a single literal because the coordinates follow which code sequence?",
+            "options": [{"label": "A", "text": "Binary Coded Decimal (BCD)"}, {"label": "B", "text": "Gray Code (00, 01, 11, 10)"}, {"label": "C", "text": "Excess-3 Code"}, {"label": "D", "text": "ASCII Code"}],
+            "answer": "B",
+            "explanation": "K-maps use Gray code (00, 01, 11, 10) so adjacent horizontal and vertical cells differ by exactly 1 variable bit."
+        },
+        {
+            "id": "P2-T1-U3-33", "paper": 2, "section_id": "U3", "subject": "Computer Architecture", "syllabus_id": "P2-3.1",
+            "origin_tag": "PYQ - KPSC CST 2017", "difficulty": "medium",
+            "text": "What is the Boolean expression for the Carry Output (Cout) of a Full Adder with inputs A, B, and Cin?",
+            "options": [{"label": "A", "text": "AB + BCin + ACin"}, {"label": "B", "text": "A ^ B ^ Cin"}, {"label": "C", "text": "A\'B + B\'Cin"}, {"label": "D", "text": "AB + Cin"}],
+            "answer": "A",
+            "explanation": "Cout = AB + BCin + ACin (or AB + Cin(A ^ B))."
+        },
+        {
+            "id": "P2-T1-U3-34", "paper": 2, "section_id": "U3", "subject": "Computer Architecture", "syllabus_id": "P2-3.2",
+            "origin_tag": "Expected - High Yield", "difficulty": "hard",
+            "text": "In Morris Mano\'s Basic Computer architecture, what are the bit-widths of the Program Counter (PC) and the Address Register (AR) respectively?",
+            "options": [{"label": "A", "text": "12 bits and 12 bits"}, {"label": "B", "text": "16 bits and 12 bits"}, {"label": "C", "text": "16 bits and 16 bits"}, {"label": "D", "text": "8 bits and 12 bits"}],
+            "answer": "A",
+            "explanation": "The basic computer has a 4096-word memory (4096 = 2^12), requiring 12-bit addresses. Both PC and AR are 12 bits."
+        },
+        {
+            "id": "P2-T1-U3-35", "paper": 2, "section_id": "U3", "subject": "Computer Architecture", "syllabus_id": "P2-3.2",
+            "origin_tag": "Expected - High Yield", "difficulty": "hard",
+            "text": "In Morris Mano\'s instruction format, what does bit 15 (I) signify?",
+            "options": [{"label": "A", "text": "I = 0 indicates Direct Address; I = 1 indicates Indirect Address"}, {"label": "B", "text": "I = 0 indicates Indirect Address; I = 1 indicates Direct Address"}, {"label": "C", "text": "I indicates Interrupt enable bit"}, {"label": "D", "text": "I indicates arithmetic sign bit"}],
+            "answer": "A",
+            "explanation": "Bit 15 is the mode bit: I = 0 designates direct addressing, I = 1 designates indirect addressing."
+        },
+        {
+            "id": "P2-T1-U3-36", "paper": 2, "section_id": "U3", "subject": "Computer Architecture", "syllabus_id": "P2-3.2",
+            "origin_tag": "Expected - High Yield", "difficulty": "hard",
+            "text": "During which timing signal of the Morris Mano instruction cycle is the instruction fetched from memory into the Instruction Register (IR)?",
+            "options": [{"label": "A", "text": "T0"}, {"label": "B", "text": "T1 (IR <- M[AR], PC <- PC + 1)"}, {"label": "C", "text": "T2"}, {"label": "D", "text": "T3"}],
+            "answer": "B",
+            "explanation": "At T0: AR <- PC. At T1: IR <- M[AR], PC <- PC + 1 (Fetch phase)."
+        },
+        {
+            "id": "P2-T1-U3-37", "paper": 2, "section_id": "U3", "subject": "Computer Architecture", "syllabus_id": "P2-3.1",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "What is the condition that causes the Race-Around Condition in a level-triggered JK flip-flop?",
+            "options": [{"label": "A", "text": "J = 1, K = 1, and clock pulse duration tp > propagation delay delta_t"}, {"label": "B", "text": "J = 0, K = 0"}, {"label": "C", "text": "J = 1, K = 0"}, {"label": "D", "text": "Clock frequency is 0 Hz"}],
+            "answer": "A",
+            "explanation": "When J = 1, K = 1 and clock width exceeds flip-flop propagation delay, output continuously toggles unpredictably."
+        },
+        {
+            "id": "P2-T1-U3-38", "paper": 2, "section_id": "U3", "subject": "Computer Architecture", "syllabus_id": "P2-3.1",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "Which flip-flop configuration is standardly used to eliminate the JK race-around condition?",
+            "options": [{"label": "A", "text": "Master-Slave JK Flip-Flop"}, {"label": "B", "text": "SR Latch"}, {"label": "C", "text": "Unclocked T Flip-Flop"}, {"label": "D", "text": "Transparent D Latch"}],
+            "answer": "A",
+            "explanation": "Master-Slave flip-flop isolates input from output: master updates on clock pulse leading edge, slave transfers to output on trailing edge."
+        },
+        {
+            "id": "P2-T1-U3-39", "paper": 2, "section_id": "U3", "subject": "Computer Architecture", "syllabus_id": "P2-3.3",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "In which addressing mode is the operand address calculated as Effective Address = PC + Address Field Offset?",
+            "options": [{"label": "A", "text": "Direct Addressing"}, {"label": "B", "text": "Relative (PC-Relative) Addressing"}, {"label": "C", "text": "Indexed Addressing"}, {"label": "D", "text": "Register Indirect Addressing"}],
+            "answer": "B",
+            "explanation": "Relative addressing computes EA = PC + displacement, ideal for position-independent branching."
+        },
+        {
+            "id": "P2-T1-U3-40", "paper": 2, "section_id": "U3", "subject": "Computer Architecture", "syllabus_id": "P2-3.3",
+            "origin_tag": "Expected - High Yield", "difficulty": "hard",
+            "text": "What is the primary architectural advantage of a Microprogrammed Control Unit over a Hardwired Control Unit?",
+            "options": [{"label": "A", "text": "Higher operational clock speed"}, {"label": "B", "text": "High flexibility and ease of modifying instruction set via control memory microcode"}, {"label": "C", "text": "Zero hardware cost"}, {"label": "D", "text": "Exclusively used in RISC processors"}],
+            "answer": "B",
+            "explanation": "Microprogrammed units store control words in ROM; updating or adding instructions requires only updating microcode without hardware rewiring."
+        },
+        {
+            "id": "P2-T1-U3-41", "paper": 2, "section_id": "U3", "subject": "Computer Architecture", "syllabus_id": "P2-3.1",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "How many selection lines are required for a 16-to-1 Multiplexer?",
+            "options": [{"label": "A", "text": "2"}, {"label": "B", "text": "3"}, {"label": "C", "text": "4"}, {"label": "D", "text": "8"}],
+            "answer": "C",
+            "explanation": "A 2^n to 1 MUX requires n select lines. For 16 inputs: 2^4 = 16, so 4 select lines."
+        },
+        {
+            "id": "P2-T1-U3-42", "paper": 2, "section_id": "U3", "subject": "Computer Architecture", "syllabus_id": "P2-3.1",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "What is the characteristic equation of a T (Toggle) flip-flop?",
+            "options": [{"label": "A", "text": "Q(next) = T"}, {"label": "B", "text": "Q(next) = T XOR Q"}, {"label": "C", "text": "Q(next) = T AND Q"}, {"label": "D", "text": "Q(next) = T + Q"}],
+            "answer": "B",
+            "explanation": "Q(next) = T XOR Q. If T = 0, state stays unchanged (0 XOR Q = Q); if T = 1, state inverts (1 XOR Q = ~Q)."
+        },
+        {
+            "id": "P2-T1-U3-43", "paper": 2, "section_id": "U3", "subject": "Computer Architecture", "syllabus_id": "P2-3.2",
+            "origin_tag": "Expected - High Yield", "difficulty": "hard",
+            "text": "In an instruction pipeline with 5 stages (Fetch, Decode, Execute, Memory, Write-back), each having delay 10 ns, what is the theoretical maximum speedup over a non-pipelined processor for a large number of instructions?",
+            "options": [{"label": "A", "text": "5"}, {"label": "B", "text": "10"}, {"label": "C", "text": "2.5"}, {"label": "D", "text": "50"}],
+            "answer": "A",
+            "explanation": "For k stages, theoretical speedup S_k = k (as n -> infinity). For 5 stages, maximum speedup is 5."
+        },
+        {
+            "id": "P2-T1-U3-44", "paper": 2, "section_id": "U3", "subject": "Computer Architecture", "syllabus_id": "P2-3.1",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "A 3-to-8 line decoder with enable input can be directly used as a:",
+            "options": [{"label": "A", "text": "Demultiplexer (1-to-8 Demux)"}, {"label": "B", "text": "Priority Encoder"}, {"label": "C", "text": "Half Adder"}, {"label": "D", "text": "Digital Comparator"}],
+            "answer": "A",
+            "explanation": "A decoder with an enable line functions identically to a demultiplexer, routing the enable data signal to 1 of 8 output lines."
+        },
+        {
+            "id": "P2-T1-U3-45", "paper": 2, "section_id": "U3", "subject": "Computer Architecture", "syllabus_id": "P2-3.3",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "In a computer system, Direct Memory Access (DMA) controller transfers data between I/O peripherals and main memory by:",
+            "options": [{"label": "A", "text": "Routing every byte through the CPU accumulator"}, {"label": "B", "text": "Bypassing the CPU and taking temporary control of the system bus"}, {"label": "C", "text": "Disabling the memory chips"}, {"label": "D", "text": "Converting data into analog format"}],
+            "answer": "B",
+            "explanation": "DMA takes control of the memory bus from the CPU to perform high-speed block transfers directly between I/O and RAM."
+        }
+    ]
+    qs.extend(u3)
+
+    # ----------------------------------------------------
+    # UNIT 4: PROGRAMMING & GRAPHICS (15 QUESTIONS: Q46 to Q60)
+    # ----------------------------------------------------
+    u4 = [
+        {
+            "id": "P2-T1-U4-46", "paper": 2, "section_id": "U4", "subject": "Programming and Graphics", "syllabus_id": "P2-4.1",
+            "origin_tag": "PYQ - KPSC CST 2017", "difficulty": "medium",
+            "text": "What is the difference between malloc() and calloc() in standard C dynamic memory allocation?",
+            "options": [{"label": "A", "text": "calloc() allocates contiguous memory and initializes all bytes to zero; malloc() leaves bytes uninitialized (garbage)"}, {"label": "B", "text": "malloc() initializes to zero; calloc() leaves garbage"}, {"label": "C", "text": "malloc() is in C++, calloc() is in C"}, {"label": "D", "text": "malloc() can allocate stack memory"}],
+            "answer": "A",
+            "explanation": "calloc(n, size) initializes all allocated bytes to 0; malloc(size) allocates raw bytes containing indeterminate garbage values."
+        },
+        {
+            "id": "P2-T1-U4-47", "paper": 2, "section_id": "U4", "subject": "Programming and Graphics", "syllabus_id": "P2-4.1",
+            "origin_tag": "Expected - High Yield", "difficulty": "hard",
+            "text": "In C++, what mechanism enables runtime polymorphism (dynamic binding) when a virtual function is called through a base class pointer?",
+            "options": [{"label": "A", "text": "Template specialization"}, {"label": "B", "text": "Virtual Method Table (vtable) and virtual pointer (vptr)"}, {"label": "C", "text": "Static type casting"}, {"label": "D", "text": "Macro expansion"}],
+            "answer": "B",
+            "explanation": "The compiler creates a vtable of function pointers per class and embeds an invisible vptr inside each object pointing to its class vtable."
+        },
+        {
+            "id": "P2-T1-U4-48", "paper": 2, "section_id": "U4", "subject": "Programming and Graphics", "syllabus_id": "P2-4.1",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "In C++, a class that contains at least one 'Pure Virtual Function' (e.g., virtual void display() = 0;) is termed:",
+            "options": [{"label": "A", "text": "Static Class"}, {"label": "B", "text": "Abstract Class"}, {"label": "C", "text": "Virtual Base Class"}, {"label": "D", "text": "Sealed Class"}],
+            "answer": "B",
+            "explanation": "An abstract class contains at least one pure virtual function (= 0) and cannot be directly instantiated."
+        },
+        {
+            "id": "P2-T1-U4-49", "paper": 2, "section_id": "U4", "subject": "Programming and Graphics", "syllabus_id": "P2-4.1",
+            "origin_tag": "Expected - High Yield", "difficulty": "hard",
+            "text": "How is the 'Diamond Problem' in C++ multiple inheritance resolved to prevent duplicate base class instances in the derived object?",
+            "options": [{"label": "A", "text": "Using virtual inheritance (virtual base class)"}, {"label": "B", "text": "Declaring base class private"}, {"label": "C", "text": "Using friend functions"}, {"label": "D", "text": "Overloading the scope resolution operator"}],
+            "answer": "A",
+            "explanation": "Declaring intermediate classes with 'virtual public Base' ensures only a single shared instance of the grandparent base class is created."
+        },
+        {
+            "id": "P2-T1-U4-50", "paper": 2, "section_id": "U4", "subject": "Programming and Graphics", "syllabus_id": "P2-4.1",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "What happens if a pointer in C points to dynamically allocated memory that has already been deallocated using free(ptr)?",
+            "options": [{"label": "A", "text": "It becomes a Dangling Pointer"}, {"label": "B", "text": "It becomes a NULL Pointer"}, {"label": "C", "text": "It throws an immediate compile-time error"}, {"label": "D", "text": "It converts into a Wild Pointer"}],
+            "answer": "A",
+            "explanation": "A pointer referencing deallocated heap memory is a Dangling Pointer; accessing it causes undefined behavior."
+        },
+        {
+            "id": "P2-T1-U4-51", "paper": 2, "section_id": "U4", "subject": "Programming and Graphics", "syllabus_id": "P2-4.1",
+            "origin_tag": "Expected - High Yield", "difficulty": "easy",
+            "text": "Which segment of process memory stores local variables and function call activation frames?",
+            "options": [{"label": "A", "text": "Data Segment"}, {"label": "B", "text": "BSS Segment"}, {"label": "C", "text": "Stack"}, {"label": "D", "text": "Heap"}],
+            "answer": "C",
+            "explanation": "Local variables and return frames reside on the Stack (LIFO discipline)."
+        },
+        {
+            "id": "P2-T1-U4-52", "paper": 2, "section_id": "U4", "subject": "Programming and Graphics", "syllabus_id": "P2-4.2",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "In computer graphics, what is the key advantage of Bresenham\'s Line Drawing Algorithm over the DDA (Digital Differential Analyzer) algorithm?",
+            "options": [{"label": "A", "text": "It utilizes only fast integer addition and subtraction, avoiding floating-point arithmetic"}, {"label": "B", "text": "It can draw 3D curves directly"}, {"label": "C", "text": "It operates in frequency domain"}, {"label": "D", "text": "It does not require frame buffers"}],
+            "answer": "A",
+            "explanation": "Bresenham\'s algorithm avoids floating-point operations by formulating an integer decision parameter, making it vastly faster."
+        },
+        {
+            "id": "P2-T1-U4-53", "paper": 2, "section_id": "U4", "subject": "Programming and Graphics", "syllabus_id": "P2-4.2",
+            "origin_tag": "Expected - High Yield", "difficulty": "hard",
+            "text": "What is the 3x3 homogeneous transformation matrix for 2D Translation by vector (tx, ty)?",
+            "options": [{"label": "A", "text": "[[1, 0, tx], [0, 1, ty], [0, 0, 1]]"}, {"label": "B", "text": "[[tx, 0, 0], [0, ty, 0], [0, 0, 1]]"}, {"label": "C", "text": "[[cos, -sin, 0], [sin, cos, 0], [0, 0, 1]]"}, {"label": "D", "text": "[[1, 0, 0], [0, 1, 0], [tx, ty, 1]]"}],
+            "answer": "A",
+            "explanation": "In 3x3 homogeneous form: x\' = x + tx, y\' = y + ty, so row 1 is [1, 0, tx], row 2 is [0, 1, ty], row 3 is [0, 0, 1]."
+        },
+        {
+            "id": "P2-T1-U4-54", "paper": 2, "section_id": "U4", "subject": "Programming and Graphics", "syllabus_id": "P2-4.2",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "In a Raster Scan display with resolution 1024 x 768 and 24-bit True Color depth, what is the minimum Frame Buffer size required?",
+            "options": [{"label": "A", "text": "2.25 MB"}, {"label": "B", "text": "3.0 MB"}, {"label": "C", "text": "768 KB"}, {"label": "D", "text": "1.5 MB"}],
+            "answer": "A",
+            "explanation": "Pixels = 1024 * 768 = 786,432. At 24 bits (3 bytes) per pixel: 786,432 * 3 = 2,359,296 bytes = 2.25 MB."
+        },
+        {
+            "id": "P2-T1-U4-55", "paper": 2, "section_id": "U4", "subject": "Programming and Graphics", "syllabus_id": "P2-4.2",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "Which line clipping algorithm tests line endpoints against a 4-bit region code (TBRL - Top, Bottom, Right, Left) to determine trivial acceptance or rejection?",
+            "options": [{"label": "A", "text": "Cohen-Sutherland Algorithm"}, {"label": "B", "text": "Liang-Barsky Algorithm"}, {"label": "C", "text": "Sutherland-Hodgman Algorithm"}, {"label": "D", "text": "Weiler-Atherton Algorithm"}],
+            "answer": "A",
+            "explanation": "Cohen-Sutherland line clipping uses 4-bit outcodes for rectangular clipping window boundaries."
+        },
+        {
+            "id": "P2-T1-U4-56", "paper": 2, "section_id": "U4", "subject": "Programming and Graphics", "syllabus_id": "P2-4.1",
+            "origin_tag": "Expected - High Yield", "difficulty": "hard",
+            "text": "What does a 'Virtual Destructor' in a base class guarantee in C++?",
+            "options": [{"label": "A", "text": "Ensures derived class destructor executes first, followed by base class destructor when deleting through base pointer"}, {"label": "B", "text": "Prevents base class from being deleted"}, {"label": "C", "text": "Prevents creation of derived classes"}, {"label": "D", "text": "Automatically calls malloc()"}],
+            "answer": "A",
+            "explanation": "Without virtual destructors, deleting a derived object via a base pointer invokes only the base destructor, leaking derived resources."
+        },
+        {
+            "id": "P2-T1-U4-57", "paper": 2, "section_id": "U4", "subject": "Programming and Graphics", "syllabus_id": "P2-4.1",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "What is the output of the C expression: sizeof('a') on a 32-bit standard C compiler?",
+            "options": [{"label": "A", "text": "1 byte"}, {"label": "B", "text": "4 bytes (int)"}, {"label": "C", "text": "2 bytes"}, {"label": "D", "text": "8 bytes"}],
+            "answer": "B",
+            "explanation": "In C, character constants like 'a' are of type int (sizeof('a') == sizeof(int) == 4 bytes). In C++, they are of type char (1 byte)."
+        },
+        {
+            "id": "P2-T1-U4-58", "paper": 2, "section_id": "U4", "subject": "Programming and Graphics", "syllabus_id": "P2-4.2",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "What type of display architecture directs the electron beam ONLY along the lines of the picture to be drawn?",
+            "options": [{"label": "A", "text": "Raster Scan Display"}, {"label": "B", "text": "Random Scan / Vector Display"}, {"label": "C", "text": "Plasma Display"}, {"label": "D", "text": "Liquid Crystal Display"}],
+            "answer": "B",
+            "explanation": "Random scan (stroke/vector) displays draw line segments directly from point to point, eliminating aliasing jaggies."
+        },
+        {
+            "id": "P2-T1-U4-59", "paper": 2, "section_id": "U4", "subject": "Programming and Graphics", "syllabus_id": "P2-4.1",
+            "origin_tag": "Expected - High Yield", "difficulty": "hard",
+            "text": "In C++, which operator CANNOT be overloaded?",
+            "options": [{"label": "A", "text": "+ (Addition)"}, {"label": "B", "text": "[] (Subscript)"}, {"label": "C", "text": ":: (Scope Resolution)"}, {"label": "D", "text": "() (Function Call)"}],
+            "answer": "C",
+            "explanation": "Operators that cannot be overloaded in C++: Scope resolution (::), Member access (.), Pointer to member (.*), and Ternary conditional (?:)."
+        },
+        {
+            "id": "P2-T1-U4-60", "paper": 2, "section_id": "U4", "subject": "Programming and Graphics", "syllabus_id": "P2-4.2",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "In 2D transformations, reflection about the line y = 0 (X-axis) transforms point (x, y) into:",
+            "options": [{"label": "A", "text": "(x, -y)"}, {"label": "B", "text": "(-x, y)"}, {"label": "C", "text": "(-x, -y)"}, {"label": "D", "text": "(y, x)"}],
+            "answer": "A",
+            "explanation": "Reflecting across the X-axis leaves x unchanged while inverting the sign of y: (x, -y)."
+        }
+    ]
+    qs.extend(u4)
+
+    # ----------------------------------------------------
+    # UNIT 5: DATABASE MANAGEMENT SYSTEMS (15 QUESTIONS: Q61 to Q75)
+    # ----------------------------------------------------
+    u5 = [
+        {
+            "id": "P2-T1-U5-61", "paper": 2, "section_id": "U5", "subject": "DBMS", "syllabus_id": "P2-5.1",
+            "origin_tag": "PYQ - KPSC CST 2017", "difficulty": "easy",
+            "text": "Which relational integrity constraint mandates that primary key attributes cannot contain NULL values?",
+            "options": [{"label": "A", "text": "Referential Integrity"}, {"label": "B", "text": "Entity Integrity"}, {"label": "C", "text": "Domain Integrity"}, {"label": "D", "text": "User-Defined Integrity"}],
+            "answer": "B",
+            "explanation": "Entity integrity states that no primary key attribute may contain a NULL value because it uniquely identifies a relation tuple."
+        },
+        {
+            "id": "P2-T1-U5-62", "paper": 2, "section_id": "U5", "subject": "DBMS", "syllabus_id": "P2-5.1",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "A minimal super key containing no extraneous or redundant attributes is called a:",
+            "options": [{"label": "A", "text": "Primary Key"}, {"label": "B", "text": "Candidate Key"}, {"label": "C", "text": "Foreign Key"}, {"label": "D", "text": "Secondary Key"}],
+            "answer": "B",
+            "explanation": "A Candidate Key is by definition a minimal Super Key."
+        },
+        {
+            "id": "P2-T1-U5-63", "paper": 2, "section_id": "U5", "subject": "DBMS", "syllabus_id": "P2-5.2",
+            "origin_tag": "PYQ - KPSC CST 2017", "difficulty": "medium",
+            "text": "A relation is in Second Normal Form (2NF) if and only if it is in 1NF and satisfies which condition?",
+            "options": [{"label": "A", "text": "No non-prime attribute is partially dependent on any candidate key"}, {"label": "B", "text": "No transitive dependencies exist"}, {"label": "C", "text": "Every determinant is a super key"}, {"label": "D", "text": "All attributes are atomic"}],
+            "answer": "A",
+            "explanation": "2NF eliminates partial dependencies: every non-prime attribute must be fully functionally dependent on the entire primary/candidate key."
+        },
+        {
+            "id": "P2-T1-U5-64", "paper": 2, "section_id": "U5", "subject": "DBMS", "syllabus_id": "P2-5.2",
+            "origin_tag": "Expected - High Yield", "difficulty": "hard",
+            "text": "A relation R is in Third Normal Form (3NF) if for every non-trivial functional dependency X -> Y:",
+            "options": [{"label": "A", "text": "X is a Super Key OR Y is a Prime Attribute"}, {"label": "B", "text": "X must be a Super Key only"}, {"label": "C", "text": "Y must be a Super Key"}, {"label": "D", "text": "X and Y are both non-prime"}],
+            "answer": "A",
+            "explanation": "In 3NF, for every X -> Y: either X is a super key OR Y is a prime attribute (part of some candidate key)."
+        },
+        {
+            "id": "P2-T1-U5-65", "paper": 2, "section_id": "U5", "subject": "DBMS", "syllabus_id": "P2-5.2",
+            "origin_tag": "Expected - High Yield", "difficulty": "hard",
+            "text": "What is the distinguishing criterion between 3NF and Boyce-Codd Normal Form (BCNF)?",
+            "options": [{"label": "A", "text": "In BCNF, for every non-trivial X -> Y, X MUST strictly be a Super Key"}, {"label": "B", "text": "3NF is stricter than BCNF"}, {"label": "C", "text": "BCNF always preserves functional dependencies"}, {"label": "D", "text": "BCNF permits partial dependencies"}],
+            "answer": "A",
+            "explanation": "BCNF removes the second condition of 3NF: for every non-trivial X -> Y, X must strictly be a Super Key."
+        },
+        {
+            "id": "P2-T1-U5-66", "paper": 2, "section_id": "U5", "subject": "DBMS", "syllabus_id": "P2-5.2",
+            "origin_tag": "Expected - High Yield", "difficulty": "hard",
+            "text": "A decomposition of relation R into R1 and R2 is provably LOSSLESS if and only if:",
+            "options": [{"label": "A", "text": "(R1 intersect R2) -> R1 OR (R1 intersect R2) -> R2"}, {"label": "B", "text": "(R1 union R2) = R"}, {"label": "C", "text": "R1 and R2 share zero common attributes"}, {"label": "D", "text": "R1 is in 3NF and R2 is in BCNF"}],
+            "answer": "A",
+            "explanation": "Lossless join decomposition requires the common attributes to form a super key of at least one of the decomposed relations."
+        },
+        {
+            "id": "P2-T1-U5-67", "paper": 2, "section_id": "U5", "subject": "DBMS", "syllabus_id": "P2-5.3",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "Which ACID property guarantees that all database updates made by a committed transaction persist permanently on disk even during power failure?",
+            "options": [{"label": "A", "text": "Atomicity"}, {"label": "B", "text": "Consistency"}, {"label": "C", "text": "Isolation"}, {"label": "D", "text": "Durability"}],
+            "answer": "D",
+            "explanation": "Durability ensures committed transaction changes survive system crashes (enforced by Write-Ahead Logging / Redo logs)."
+        },
+        {
+            "id": "P2-T1-U5-68", "paper": 2, "section_id": "U5", "subject": "DBMS", "syllabus_id": "P2-5.3",
+            "origin_tag": "Expected - High Yield", "difficulty": "hard",
+            "text": "In Two-Phase Locking (2PL) protocol, what happens during the 'Growing Phase'?",
+            "options": [{"label": "A", "text": "The transaction may acquire locks, but cannot release any lock"}, {"label": "B", "text": "The transaction may release locks, but cannot acquire locks"}, {"label": "C", "text": "All operations are committed"}, {"label": "D", "text": "The database increases frame buffer size"}],
+            "answer": "A",
+            "explanation": "Phase 1 (Growing): locks acquired, none released. Phase 2 (Shrinking): locks released, none acquired."
+        },
+        {
+            "id": "P2-T1-U5-69", "paper": 2, "section_id": "U5", "subject": "DBMS", "syllabus_id": "P2-5.3",
+            "origin_tag": "Expected - High Yield", "difficulty": "hard",
+            "text": "What additional constraint makes 'Strict 2PL' immune to Cascading Aborts (cascadeless)?",
+            "options": [{"label": "A", "text": "All exclusive (X) locks held by the transaction are retained until it commits or aborts"}, {"label": "B", "text": "Zero locks are used"}, {"label": "C", "text": "It eliminates deadlocks completely"}, {"label": "D", "text": "It executes transactions serially"}],
+            "answer": "A",
+            "explanation": "Strict 2PL holds all Exclusive locks until commit/abort, ensuring uncommitted dirty data is never read by concurrent transactions."
+        },
+        {
+            "id": "P2-T1-U5-70", "paper": 2, "section_id": "U5", "subject": "DBMS", "syllabus_id": "P2-5.3",
+            "origin_tag": "Expected - High Yield", "difficulty": "hard",
+            "text": "A concurrent transaction schedule is Conflict Serializable if and only if its Precedence (Serialization) Graph contains:",
+            "options": [{"label": "A", "text": "At least one directed cycle"}, {"label": "B", "text": "NO directed cycles (Acyclic)"}, {"label": "C", "text": "An Euler path"}, {"label": "D", "text": "More edges than vertices"}],
+            "answer": "B",
+            "explanation": "Conflict serializability is guaranteed if and only if the precedence graph has no directed cycles (is acyclic)."
+        },
+        {
+            "id": "P2-T1-U5-71", "paper": 2, "section_id": "U5", "subject": "DBMS", "syllabus_id": "P2-5.1",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "In SQL, which aggregate function counts all rows in a table, including rows with NULL values?",
+            "options": [{"label": "A", "text": "COUNT(column_name)"}, {"label": "B", "text": "COUNT(*)"}, {"label": "C", "text": "SUM(column_name)"}, {"label": "D", "text": "COUNT(DISTINCT column_name)"}],
+            "answer": "B",
+            "explanation": "COUNT(*) counts total rows in the table; COUNT(column_name) ignores rows where that specific column contains NULL."
+        },
+        {
+            "id": "P2-T1-U5-72", "paper": 2, "section_id": "U5", "subject": "DBMS", "syllabus_id": "P2-5.1",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "Which clause in SQL is used to filter groups created by the GROUP BY statement?",
+            "options": [{"label": "A", "text": "WHERE"}, {"label": "B", "text": "HAVING"}, {"label": "C", "text": "ORDER BY"}, {"label": "D", "text": "LIMIT"}],
+            "answer": "B",
+            "explanation": "WHERE filters individual rows before grouping; HAVING filters aggregated groups."
+        },
+        {
+            "id": "P2-T1-U5-73", "paper": 2, "section_id": "U5", "subject": "DBMS", "syllabus_id": "P2-5.1",
+            "origin_tag": "Expected - High Yield", "difficulty": "hard",
+            "text": "Which Armstrong\'s Axiom states: If X -> Y and Y -> Z, then X -> Z?",
+            "options": [{"label": "A", "text": "Reflexivity"}, {"label": "B", "text": "Augmentation"}, {"label": "C", "text": "Transitivity"}, {"label": "D", "text": "Decomposition"}],
+            "answer": "C",
+            "explanation": "Transitivity rule: X -> Y and Y -> Z implies X -> Z."
+        },
+        {
+            "id": "P2-T1-U5-74", "paper": 2, "section_id": "U5", "subject": "DBMS", "syllabus_id": "P2-5.3",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "In the transaction state diagram, after the final statement of a transaction has executed, the transaction enters which state?",
+            "options": [{"label": "A", "text": "Active"}, {"label": "B", "text": "Partially Committed"}, {"label": "C", "text": "Committed"}, {"label": "D", "text": "Terminated"}],
+            "answer": "B",
+            "explanation": "When all operations complete but commit records are being flushed to log disk, it is in Partially Committed state."
+        },
+        {
+            "id": "P2-T1-U5-75", "paper": 2, "section_id": "U5", "subject": "DBMS", "syllabus_id": "P2-5.1",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "What type of join in relational algebra returns all matched rows plus unmatched rows from the left table with NULLs for right table columns?",
+            "options": [{"label": "A", "text": "Inner Join"}, {"label": "B", "text": "Left Outer Join"}, {"label": "C", "text": "Right Outer Join"}, {"label": "D", "text": "Cross Join"}],
+            "answer": "B",
+            "explanation": "Left Outer Join preserves all tuples from the left relation, padding right relation attributes with NULL when no match exists."
+        }
+    ]
+    qs.extend(u5)
+
+    # ----------------------------------------------------
+    # UNIT 6: OPERATING SYSTEMS (15 QUESTIONS: Q76 to Q90)
+    # ----------------------------------------------------
+    u6 = [
+        {
+            "id": "P2-T1-U6-76", "paper": 2, "section_id": "U6", "subject": "Operating Systems", "syllabus_id": "P2-6.1",
+            "origin_tag": "PYQ - KPSC CST 2017", "difficulty": "medium",
+            "text": "Which CPU scheduling algorithm is provably optimal for minimizing average waiting time among non-preemptive algorithms?",
+            "options": [{"label": "A", "text": "First-Come, First-Served (FCFS)"}, {"label": "B", "text": "Shortest Job First (SJF)"}, {"label": "C", "text": "Round Robin (RR)"}, {"label": "D", "text": "Priority Scheduling"}],
+            "answer": "B",
+            "explanation": "Non-preemptive SJF provably minimizes average waiting time because ordering short bursts ahead shortens the wait of subsequent processes."
+        },
+        {
+            "id": "P2-T1-U6-77", "paper": 2, "section_id": "U6", "subject": "Operating Systems", "syllabus_id": "P2-6.1",
+            "origin_tag": "Expected - High Yield", "difficulty": "hard",
+            "text": "Consider 3 processes arriving at time 0 with burst times P1=24 ms, P2=3 ms, P3=3 ms. What is the average waiting time under FCFS scheduling (order P1, P2, P3)?",
+            "options": [{"label": "A", "text": "17 ms"}, {"label": "B", "text": "27 ms"}, {"label": "C", "text": "3 ms"}, {"label": "D", "text": "12 ms"}],
+            "answer": "A",
+            "explanation": "P1 wait = 0; P2 wait = 24; P3 wait = 27. Average WT = (0 + 24 + 27) / 3 = 51 / 3 = 17 ms. (Example of Convoy Effect)."
+        },
+        {
+            "id": "P2-T1-U6-78", "paper": 2, "section_id": "U6", "subject": "Operating Systems", "syllabus_id": "P2-6.1",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "In Priority CPU scheduling, what technique is used to prevent starvation (indefinite blocking) of low-priority processes?",
+            "options": [{"label": "A", "text": "Aging (gradually increasing process priority over time)"}, {"label": "B", "text": "Reducing time quantum"}, {"label": "C", "text": "Context switching"}, {"label": "D", "text": "Spooling"}],
+            "answer": "A",
+            "explanation": "Aging gradually increments the priority of processes waiting in the ready queue, ensuring they eventually execute."
+        },
+        {
+            "id": "P2-T1-U6-79", "paper": 2, "section_id": "U6", "subject": "Operating Systems", "syllabus_id": "P2-6.2",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "Which of the following is NOT one of the four Coffman conditions necessary for Deadlock to occur?",
+            "options": [{"label": "A", "text": "Mutual Exclusion"}, {"label": "B", "text": "Hold and Wait"}, {"label": "C", "text": "Preemption allowed"}, {"label": "D", "text": "Circular Wait"}],
+            "answer": "C",
+            "explanation": "The condition is 'No Preemption' (resources cannot be forcibly taken). If preemption is allowed, deadlock cannot occur."
+        },
+        {
+            "id": "P2-T1-U6-80", "paper": 2, "section_id": "U6", "subject": "Operating Systems", "syllabus_id": "P2-6.2",
+            "origin_tag": "Expected - High Yield", "difficulty": "hard",
+            "text": "In a Resource Allocation Graph (RAG) where each resource type has exactly ONE single instance, a cycle in the graph is:",
+            "options": [{"label": "A", "text": "A necessary AND sufficient condition for Deadlock"}, {"label": "B", "text": "A necessary condition, but NOT sufficient"}, {"label": "C", "text": "A sign of starvation only"}, {"label": "D", "text": "Indicates optimal CPU utilization"}],
+            "answer": "A",
+            "explanation": "In single-instance resource systems, a cycle guarantees a deadlock (necessary and sufficient condition)."
+        },
+        {
+            "id": "P2-T1-U6-81", "paper": 2, "section_id": "U6", "subject": "Operating Systems", "syllabus_id": "P2-6.2",
+            "origin_tag": "Expected - High Yield", "difficulty": "hard",
+            "text": "In Dijkstra\'s Banker\'s Algorithm for deadlock avoidance, how is the Need Matrix calculated?",
+            "options": [{"label": "A", "text": "Need = Max - Allocation"}, {"label": "B", "text": "Need = Allocation - Available"}, {"label": "C", "text": "Need = Max + Available"}, {"label": "D", "text": "Need = Allocation - Max"}],
+            "answer": "A",
+            "explanation": "Need[i][j] = Max[i][j] - Allocation[i][j], representing remaining resources process i may request."
+        },
+        {
+            "id": "P2-T1-U6-82", "paper": 2, "section_id": "U6", "subject": "Operating Systems", "syllabus_id": "P2-6.3",
+            "origin_tag": "PYQ - KPSC CST 2017", "difficulty": "medium",
+            "text": "Which page replacement algorithm suffers from Belady\'s Anomaly, where allocating more physical page frames can lead to MORE page faults?",
+            "options": [{"label": "A", "text": "FIFO (First-In, First-Out)"}, {"label": "B", "text": "LRU (Least Recently Used)"}, {"label": "C", "text": "Optimal (OPT / MIN)"}, {"label": "D", "text": "LFU (Least Frequently Used)"}],
+            "answer": "A",
+            "explanation": "FIFO is susceptible to Belady\'s Anomaly because it is not a stack algorithm."
+        },
+        {
+            "id": "P2-T1-U6-83", "paper": 2, "section_id": "U6", "subject": "Operating Systems", "syllabus_id": "P2-6.3",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "What causes 'Thrashing' in virtual memory operating systems?",
+            "options": [{"label": "A", "text": "Processes spend more time paging in and out than executing instructions"}, {"label": "B", "text": "A deadlock in the disk controller"}, {"label": "C", "text": "Failure of the CPU cooling fan"}, {"label": "D", "text": "Corrupted BIOS firmware"}],
+            "answer": "A",
+            "explanation": "Thrashing occurs when the sum of process working sets exceeds physical RAM, causing continuous page faults and near-zero CPU throughput."
+        },
+        {
+            "id": "P2-T1-U6-84", "paper": 2, "section_id": "U6", "subject": "Operating Systems", "syllabus_id": "P2-6.1",
+            "origin_tag": "Expected - High Yield", "difficulty": "easy",
+            "text": "A lightweight unit of CPU utilization that shares code, data, and open files with peer units in the same process is called a:",
+            "options": [{"label": "A", "text": "Thread"}, {"label": "B", "text": "Process Control Block"}, {"label": "C", "text": "Semaphore"}, {"label": "D", "text": "Daemon"}],
+            "answer": "A",
+            "explanation": "Threads share process address space and file descriptors, but each possesses its own Program Counter, registers, and stack."
+        },
+        {
+            "id": "P2-T1-U6-85", "paper": 2, "section_id": "U6", "subject": "Operating Systems", "syllabus_id": "P2-6.1",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "What data structure maintains all execution context details (PID, registers, PC, memory limits) of an active process in the operating system kernel?",
+            "options": [{"label": "A", "text": "Process Control Block (PCB)"}, {"label": "B", "text": "Inode Table"}, {"label": "C", "text": "Page Directory"}, {"label": "D", "text": "Vector Table"}],
+            "answer": "A",
+            "explanation": "The PCB (task_struct in Linux) stores state, program counter, CPU registers, scheduling priority, and I/O pointers."
+        },
+        {
+            "id": "P2-T1-U6-86", "paper": 2, "section_id": "U6", "subject": "Operating Systems", "syllabus_id": "P2-6.3",
+            "origin_tag": "Expected - High Yield", "difficulty": "hard",
+            "text": "In a Paging memory system with 32-bit virtual addresses and a 4 KB page size, how many bits are used for the Page Offset?",
+            "options": [{"label": "A", "text": "12 bits"}, {"label": "B", "text": "20 bits"}, {"label": "C", "text": "10 bits"}, {"label": "D", "text": "16 bits"}],
+            "answer": "A",
+            "explanation": "Page size = 4 KB = 4 * 1024 bytes = 4096 = 2^12 bytes. Therefore, 12 bits are required for the page offset (and 32 - 12 = 20 bits for page number)."
+        },
+        {
+            "id": "P2-T1-U6-87", "paper": 2, "section_id": "U6", "subject": "Operating Systems", "syllabus_id": "P2-6.1",
+            "origin_tag": "Expected - High Yield", "difficulty": "hard",
+            "text": "Which classical synchronization primitive uses two atomic operations, wait() (P) and signal() (V), to coordinate access to critical sections?",
+            "options": [{"label": "A", "text": "Semaphore"}, {"label": "B", "text": "Spinlock"}, {"label": "C", "text": "Pipe"}, {"label": "D", "text": "Message Queue"}],
+            "answer": "A",
+            "explanation": "Dijkstra\'s Semaphore provides atomic wait() (decrements and blocks if <= 0) and signal() (increments and wakes blocked processes)."
+        },
+        {
+            "id": "P2-T1-U6-88", "paper": 2, "section_id": "U6", "subject": "Operating Systems", "syllabus_id": "P2-6.1",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "What type of OS scheduler selects processes from disk storage and loads them into main memory (controlling degree of multiprogramming)?",
+            "options": [{"label": "A", "text": "Long-Term Scheduler (Job Scheduler)"}, {"label": "B", "text": "Short-Term Scheduler (CPU Scheduler)"}, {"label": "C", "text": "Medium-Term Scheduler (Swapper)"}, {"label": "D", "text": "Dispatcher"}],
+            "answer": "A",
+            "explanation": "The Long-Term Scheduler regulates multiprogramming degree by deciding which jobs are admitted into RAM."
+        },
+        {
+            "id": "P2-T1-U6-89", "paper": 2, "section_id": "U6", "subject": "Operating Systems", "syllabus_id": "P2-6.3",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "What is the phenomenon where free memory space exists to satisfy a request, but the memory is fragmented into non-contiguous small holes?",
+            "options": [{"label": "A", "text": "External Fragmentation"}, {"label": "B", "text": "Internal Fragmentation"}, {"label": "C", "text": "Paging Overhead"}, {"label": "D", "text": "Thrashing"}],
+            "answer": "A",
+            "explanation": "External fragmentation occurs when total free space is sufficient, but storage is divided into non-contiguous fragments."
+        },
+        {
+            "id": "P2-T1-U6-90", "paper": 2, "section_id": "U6", "subject": "Operating Systems", "syllabus_id": "P2-6.2",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "Imposing a strict global linear ordering on all resource types and requiring processes to request resources in strictly ascending order prevents deadlock by eliminating:",
+            "options": [{"label": "A", "text": "Circular Wait"}, {"label": "B", "text": "Mutual Exclusion"}, {"label": "C", "text": "Hold and Wait"}, {"label": "D", "text": "Starvation"}],
+            "answer": "A",
+            "explanation": "Strict resource ordering makes circular wait topologically impossible, preventing deadlock."
+        }
+    ]
+    qs.extend(u6)
+
+    # ----------------------------------------------------
+    # UNIT 7: SOFTWARE ENGINEERING (15 QUESTIONS: Q91 to Q105)
+    # ----------------------------------------------------
+    u7 = [
+        {
+            "id": "P2-T1-U7-91", "paper": 2, "section_id": "U7", "subject": "Software Engineering", "syllabus_id": "P2-7.1",
+            "origin_tag": "PYQ - KPSC CST 2017", "difficulty": "easy",
+            "text": "Which Software Development Life Cycle (SDLC) model is strictly sequential and linear where each phase must finish before the next begins?",
+            "options": [{"label": "A", "text": "Classical Waterfall Model"}, {"label": "B", "text": "Spiral Model"}, {"label": "C", "text": "Agile Scrum"}, {"label": "D", "text": "RAD Model"}],
+            "answer": "A",
+            "explanation": "The Waterfall model proceeds through Requirements, Design, Implementation, Testing, Deployment, and Maintenance in linear order."
+        },
+        {
+            "id": "P2-T1-U7-92", "paper": 2, "section_id": "U7", "subject": "Software Engineering", "syllabus_id": "P2-7.1",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "Barry Boehm\'s Spiral Model incorporates which critical dimension not emphasized in earlier linear models?",
+            "options": [{"label": "A", "text": "Formal Risk Analysis and Mitigation in each cycle"}, {"label": "B", "text": "Zero documentation"}, {"label": "C", "text": "Strict prohibition of prototypes"}, {"label": "D", "text": "Exclusively for small projects"}],
+            "answer": "A",
+            "explanation": "The Spiral Model is risk-driven, combining iterative development with systematic risk assessment at every loop."
+        },
+        {
+            "id": "P2-T1-U7-93", "paper": 2, "section_id": "U7", "subject": "Software Engineering", "syllabus_id": "P2-7.1",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "In Agile Scrum methodology, what is a fixed time-boxed development iteration (typically 2 to 4 weeks) called?",
+            "options": [{"label": "A", "text": "Sprint"}, {"label": "B", "text": "Epic"}, {"label": "C", "text": "User Story"}, {"label": "D", "text": "Daily Standup"}],
+            "answer": "A",
+            "explanation": "A Sprint is a repeatable time-boxed phase where a usable increment of product is developed and tested."
+        },
+        {
+            "id": "P2-T1-U7-94", "paper": 2, "section_id": "U7", "subject": "Software Engineering", "syllabus_id": "P2-7.2",
+            "origin_tag": "Expected - High Yield", "difficulty": "hard",
+            "text": "In modular software design, what is the golden architectural principle regarding Cohesion and Coupling?",
+            "options": [{"label": "A", "text": "High Cohesion within modules and Low Coupling between modules"}, {"label": "B", "text": "Low Cohesion and High Coupling"}, {"label": "C", "text": "High Cohesion and High Coupling"}, {"label": "D", "text": "Low Cohesion and Low Coupling"}],
+            "answer": "A",
+            "explanation": "High Cohesion means all module internal elements are closely focused on a single task; Low Coupling minimizes dependencies between modules."
+        },
+        {
+            "id": "P2-T1-U7-95", "paper": 2, "section_id": "U7", "subject": "Software Engineering", "syllabus_id": "P2-7.3",
+            "origin_tag": "PYQ - KPSC CST 2017", "difficulty": "medium",
+            "text": "In White-Box Testing, Thomas McCabe\'s Cyclomatic Complexity V(G) of a control flow graph with E edges, N nodes, and P connected components is calculated as:",
+            "options": [{"label": "A", "text": "V(G) = E - N + 2P"}, {"label": "B", "text": "V(G) = E + N - P"}, {"label": "C", "text": "V(G) = N - E + 2"}, {"label": "D", "text": "V(G) = E * N"}],
+            "answer": "A",
+            "explanation": "McCabe\'s formula: V(G) = E - N + 2P (or V(G) = Predicate_Nodes + 1 for P=1)."
+        },
+        {
+            "id": "P2-T1-U7-96", "paper": 2, "section_id": "U7", "subject": "Software Engineering", "syllabus_id": "P2-7.3",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "Which testing methodology partitions the input domain into classes of equivalent data from which test cases are derived?",
+            "options": [{"label": "A", "text": "Equivalence Class Partitioning (Black-Box)"}, {"label": "B", "text": "Basis Path Testing"}, {"label": "C", "text": "Mutation Testing"}, {"label": "D", "text": "Condition Coverage"}],
+            "answer": "A",
+            "explanation": "Equivalence Partitioning divides input into valid and invalid partitions, testing representative values from each partition."
+        },
+        {
+            "id": "P2-T1-U7-97", "paper": 2, "section_id": "U7", "subject": "Software Engineering", "syllabus_id": "P2-7.3",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "Boundary Value Analysis (BVA) focuses testing on which input values?",
+            "options": [{"label": "A", "text": "Values strictly at, immediately below, and immediately above partition edges"}, {"label": "B", "text": "Values near the exact middle of the range"}, {"label": "C", "text": "Random arbitrary values"}, {"label": "D", "text": "Only invalid inputs"}],
+            "answer": "A",
+            "explanation": "BVA tests edge conditions (min, min+1, nom, max-1, max) because errors cluster heavily around boundaries."
+        },
+        {
+            "id": "P2-T1-U7-98", "paper": 2, "section_id": "U7", "subject": "Software Engineering", "syllabus_id": "P2-7.3",
+            "origin_tag": "Expected - High Yield", "difficulty": "easy",
+            "text": "Testing performed at the developer\'s site in a controlled environment by potential users before public release is known as:",
+            "options": [{"label": "A", "text": "Alpha Testing"}, {"label": "B", "text": "Beta Testing"}, {"label": "C", "text": "Unit Testing"}, {"label": "D", "text": "Stress Testing"}],
+            "answer": "A",
+            "explanation": "Alpha testing is done at the developer site; Beta testing is done at external user sites in live operating environments."
+        },
+        {
+            "id": "P2-T1-U7-99", "paper": 2, "section_id": "U7", "subject": "Software Engineering", "syllabus_id": "P2-7.3",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "What type of software maintenance modifies software to adapt it to changes in the external environment (such as an OS upgrade or new database version)?",
+            "options": [{"label": "A", "text": "Adaptive Maintenance"}, {"label": "B", "text": "Corrective Maintenance"}, {"label": "C", "text": "Perfective Maintenance"}, {"label": "D", "text": "Preventive Maintenance"}],
+            "answer": "A",
+            "explanation": "Adaptive maintenance modifies software to interface properly with changing external hardware or operating environments."
+        },
+        {
+            "id": "P2-T1-U7-100", "paper": 2, "section_id": "U7", "subject": "Software Engineering", "syllabus_id": "P2-7.2",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "Which IEEE standard outlines the recommended practice for Software Requirements Specifications (SRS)?",
+            "options": [{"label": "A", "text": "IEEE 830"}, {"label": "B", "text": "IEEE 802.3"}, {"label": "C", "text": "IEEE 754"}, {"label": "D", "text": "IEEE 1014"}],
+            "answer": "A",
+            "explanation": "IEEE 830 is the established standard specifying content, qualities, and structure of a Software Requirements Specification."
+        },
+        {
+            "id": "P2-T1-U7-101", "paper": 2, "section_id": "U7", "subject": "Software Engineering", "syllabus_id": "P2-7.3",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "Testing executed to verify that newly introduced code changes or bug fixes have NOT adversely broken existing working functionality is called:",
+            "options": [{"label": "A", "text": "Regression Testing"}, {"label": "B", "text": "Smoke Testing"}, {"label": "C", "text": "Load Testing"}, {"label": "D", "text": "Usability Testing"}],
+            "answer": "A",
+            "explanation": "Regression testing re-executes tests to confirm code modifications have not introduced unintended side effects."
+        },
+        {
+            "id": "P2-T1-U7-102", "paper": 2, "section_id": "U7", "subject": "Software Engineering", "syllabus_id": "P2-7.1",
+            "origin_tag": "Expected - High Yield", "difficulty": "hard",
+            "text": "In the Capability Maturity Model (CMM), what are the 5 maturity levels in ascending order?",
+            "options": [{"label": "A", "text": "Initial -> Repeatable -> Defined -> Managed -> Optimizing"}, {"label": "B", "text": "Initial -> Managed -> Defined -> Repeatable -> Optimizing"}, {"label": "C", "text": "Ad-hoc -> Standard -> Managed -> Agile -> Final"}, {"label": "D", "text": "Level 1 to Level 5 without distinct labels"}],
+            "answer": "A",
+            "explanation": "CMM levels: 1. Initial, 2. Repeatable, 3. Defined, 4. Managed, 5. Optimizing."
+        },
+        {
+            "id": "P2-T1-U7-103", "paper": 2, "section_id": "U7", "subject": "Software Engineering", "syllabus_id": "P2-7.2",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "What type of cohesion occurs when all operations within a module contribute to performing a single, well-defined mathematical or logical function?",
+            "options": [{"label": "A", "text": "Functional Cohesion (Strongest/Best)"}, {"label": "B", "text": "Coincidental Cohesion (Weakest)"}, {"label": "C", "text": "Logical Cohesion"}, {"label": "D", "text": "Temporal Cohesion"}],
+            "answer": "A",
+            "explanation": "Functional Cohesion is the highest and most desirable form of cohesion, where all module parts execute one task."
+        },
+        {
+            "id": "P2-T1-U7-104", "paper": 2, "section_id": "U7", "subject": "Software Engineering", "syllabus_id": "P2-7.3",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "What is the purpose of a 'Stub' in software integration testing?",
+            "options": [{"label": "A", "text": "A dummy subprogram simulating a lower-level module called by higher-level modules in Top-Down testing"}, {"label": "B", "text": "A driver calling a lower module"}, {"label": "C", "text": "A compiler optimization flag"}, {"label": "D", "text": "A database index"}],
+            "answer": "A",
+            "explanation": "In Top-Down integration testing, Stubs simulate lower-level child modules that have not yet been coded."
+        },
+        {
+            "id": "P2-T1-U7-105", "paper": 2, "section_id": "U7", "subject": "Software Engineering", "syllabus_id": "P2-7.1",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "In COCOMO cost estimation model, software projects characterized by small teams, experienced developers, and familiar in-house environments belong to which category?",
+            "options": [{"label": "A", "text": "Organic Mode"}, {"label": "B", "text": "Semi-detached Mode"}, {"label": "C", "text": "Embedded Mode"}, {"label": "D", "text": "Dynamic Mode"}],
+            "answer": "A",
+            "explanation": "COCOMO defines Organic mode (small, straightforward projects), Semi-detached (medium), and Embedded (tight hardware constraints)."
+        }
+    ]
+    qs.extend(u7)
+
+    # ----------------------------------------------------
+    # UNIT 8: DATA STRUCTURES & ALGORITHMS (15 QUESTIONS: Q106 to Q120)
+    # ----------------------------------------------------
+    u8 = [
+        {
+            "id": "P2-T1-U8-106", "paper": 2, "section_id": "U8", "subject": "Data Structures and Algorithms", "syllabus_id": "P2-8.1",
+            "origin_tag": "PYQ - KPSC CST 2017", "difficulty": "easy",
+            "text": "What is the worst-case time complexity of Quick Sort algorithm?",
+            "options": [{"label": "A", "text": "O(n log n)"}, {"label": "B", "text": "O(n^2)"}, {"label": "C", "text": "O(n)"}, {"label": "D", "text": "O(log n)"}],
+            "answer": "B",
+            "explanation": "QuickSort\'s average time is O(n log n), but worst-case is O(n^2) when the pivot chosen is always the extreme minimum or maximum element."
+        },
+        {
+            "id": "P2-T1-U8-107", "paper": 2, "section_id": "U8", "subject": "Data Structures and Algorithms", "syllabus_id": "P2-8.1",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "Which sorting algorithm is guaranteed to run in O(n log n) time in worst, average, and best cases, and is STABLE?",
+            "options": [{"label": "A", "text": "Merge Sort"}, {"label": "B", "text": "Quick Sort"}, {"label": "C", "text": "Heap Sort"}, {"label": "D", "text": "Selection Sort"}],
+            "answer": "A",
+            "explanation": "Merge Sort guarantees O(n log n) time in all cases and preserves relative order of duplicate elements (stable)."
+        },
+        {
+            "id": "P2-T1-U8-108", "paper": 2, "section_id": "U8", "subject": "Data Structures and Algorithms", "syllabus_id": "P2-8.2",
+            "origin_tag": "PYQ - KPSC CST 2017", "difficulty": "easy",
+            "text": "Which data structure follows the Last-In, First-Out (LIFO) operational principle?",
+            "options": [{"label": "A", "text": "Queue"}, {"label": "B", "text": "Stack"}, {"label": "C", "text": "Array"}, {"label": "D", "text": "Tree"}],
+            "answer": "B",
+            "explanation": "Stack enforces LIFO (Last-In, First-Out), utilized in recursion, parsing, and undo operations."
+        },
+        {
+            "id": "P2-T1-U8-109", "paper": 2, "section_id": "U8", "subject": "Data Structures and Algorithms", "syllabus_id": "P2-8.2",
+            "origin_tag": "Expected - High Yield", "difficulty": "hard",
+            "text": "In a Circular Queue implemented using an array of size N, what condition indicates that the queue is FULL?",
+            "options": [{"label": "A", "text": "(rear + 1) % N == front"}, {"label": "B", "text": "rear == front"}, {"label": "C", "text": "rear == N - 1"}, {"label": "D", "text": "front == -1"}],
+            "answer": "A",
+            "explanation": "In a circular queue with array of size N, full condition is (rear + 1) % N == front, while empty condition is front == rear."
+        },
+        {
+            "id": "P2-T1-U8-110", "paper": 2, "section_id": "U8", "subject": "Data Structures and Algorithms", "syllabus_id": "P2-8.2",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "In an Inorder traversal of a Binary Search Tree (BST), the nodes are visited in:",
+            "options": [{"label": "A", "text": "Ascending sorted order"}, {"label": "B", "text": "Descending order"}, {"label": "C", "text": "Level-by-level order"}, {"label": "D", "text": "Random order"}],
+            "answer": "A",
+            "explanation": "Inorder traversal (Left, Root, Right) of a BST outputs elements in monotonically increasing sorted order."
+        },
+        {
+            "id": "P2-T1-U8-111", "paper": 2, "section_id": "U8", "subject": "Data Structures and Algorithms", "syllabus_id": "P2-8.2",
+            "origin_tag": "Expected - High Yield", "difficulty": "hard",
+            "text": "In an AVL Tree, what are the permissible values for the Balance Factor (Height of Left Subtree - Height of Right Subtree) of any node?",
+            "options": [{"label": "A", "text": "-1, 0, or +1"}, {"label": "B", "text": "-2, 0, or +2"}, {"label": "C", "text": "0 only"}, {"label": "D", "text": "Any positive integer"}],
+            "answer": "A",
+            "explanation": "An AVL tree is a self-balancing BST where the balance factor of every node must be -1, 0, or +1."
+        },
+        {
+            "id": "P2-T1-U8-112", "paper": 2, "section_id": "U8", "subject": "Data Structures and Algorithms", "syllabus_id": "P2-8.3",
+            "origin_tag": "Expected - High Yield", "difficulty": "hard",
+            "text": "Dijkstra\'s Single-Source Shortest Path algorithm fails to produce correct results if the graph contains:",
+            "options": [{"label": "A", "text": "Cycles"}, {"label": "B", "text": "Negative edge weights"}, {"label": "C", "text": "Multiple connected components"}, {"label": "D", "text": "Directed edges"}],
+            "answer": "B",
+            "explanation": "Dijkstra assumes paths never decrease in cost once expanded; negative edge weights require the Bellman-Ford algorithm."
+        },
+        {
+            "id": "P2-T1-U8-113", "paper": 2, "section_id": "U8", "subject": "Data Structures and Algorithms", "syllabus_id": "P2-8.3",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "Which algorithmic paradigm is employed by Kruskal\'s and Prim\'s algorithms to find a Minimum Spanning Tree (MST)?",
+            "options": [{"label": "A", "text": "Greedy Paradigm"}, {"label": "B", "text": "Dynamic Programming"}, {"label": "C", "text": "Divide and Conquer"}, {"label": "D", "text": "Backtracking"}],
+            "answer": "A",
+            "explanation": "Both Prim\'s and Kruskal\'s algorithms make locally optimal choices at each step, utilizing the Greedy technique."
+        },
+        {
+            "id": "P2-T1-U8-114", "paper": 2, "section_id": "U8", "subject": "Data Structures and Algorithms", "syllabus_id": "P2-8.1",
+            "origin_tag": "Expected - High Yield", "difficulty": "hard",
+            "text": "Using Master Theorem, what is the asymptotic solution to the recurrence relation: T(n) = 2T(n/2) + O(n)?",
+            "options": [{"label": "A", "text": "O(n log n)"}, {"label": "B", "text": "O(n)"}, {"label": "C", "text": "O(n^2)"}, {"label": "D", "text": "O(log n)"}],
+            "answer": "A",
+            "explanation": "a = 2, b = 2, f(n) = n. Since n^(log_b a) = n^(log_2 2) = n^1 = f(n), by Case 2 of Master Theorem, T(n) = O(n log n)."
+        },
+        {
+            "id": "P2-T1-U8-115", "paper": 2, "section_id": "U8", "subject": "Data Structures and Algorithms", "syllabus_id": "P2-8.2",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "What is the result of evaluating the Postfix expression: 6 3 2 + * 5 - ?",
+            "options": [{"label": "A", "text": "25"}, {"label": "B", "text": "30"}, {"label": "C", "text": "35"}, {"label": "D", "text": "20"}],
+            "answer": "A",
+            "explanation": "3 2 + = 5. Then 6 * 5 = 30. Then 30 5 - = 25."
+        },
+        {
+            "id": "P2-T1-U8-116", "paper": 2, "section_id": "U8", "subject": "Data Structures and Algorithms", "syllabus_id": "P2-8.3",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "Which graph traversal uses a FIFO Queue and explores vertices level by level from the source?",
+            "options": [{"label": "A", "text": "Breadth-First Search (BFS)"}, {"label": "B", "text": "Depth-First Search (DFS)"}, {"label": "C", "text": "Topological Sort"}, {"label": "D", "text": "Dijkstra"}],
+            "answer": "A",
+            "explanation": "BFS uses a Queue to traverse graphs level by level; DFS uses a Stack (or recursion)."
+        },
+        {
+            "id": "P2-T1-U8-117", "paper": 2, "section_id": "U8", "subject": "Data Structures and Algorithms", "syllabus_id": "P2-8.1",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "What is the worst-case number of comparisons in Binary Search for an array of size n?",
+            "options": [{"label": "A", "text": "floor(log2 n) + 1"}, {"label": "B", "text": "n"}, {"label": "C", "text": "n / 2"}, {"label": "D", "text": "n^2"}],
+            "answer": "A",
+            "explanation": "Binary search divides the search space in half at each iteration, requiring at most floor(log2 n) + 1 comparisons."
+        },
+        {
+            "id": "P2-T1-U8-118", "paper": 2, "section_id": "U8", "subject": "Data Structures and Algorithms", "syllabus_id": "P2-8.2",
+            "origin_tag": "Expected - High Yield", "difficulty": "hard",
+            "text": "In a Max-Heap with n elements, what is the time complexity to insert a new element and restore the heap property?",
+            "options": [{"label": "A", "text": "O(log n)"}, {"label": "B", "text": "O(1)"}, {"label": "C", "text": "O(n)"}, {"label": "D", "text": "O(n log n)"}],
+            "answer": "A",
+            "explanation": "Inserting a node places it at the bottom array slot and bubbles up along tree height, taking O(log n) time."
+        },
+        {
+            "id": "P2-T1-U8-119", "paper": 2, "section_id": "U8", "subject": "Data Structures and Algorithms", "syllabus_id": "P2-8.2",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "What is the primary advantage of a Doubly Linked List over a Singly Linked List?",
+            "options": [{"label": "A", "text": "Bidirectional traversal and constant-time node deletion when pointer to node is given"}, {"label": "B", "text": "Requires half the memory"}, {"label": "C", "text": "Guarantees cache locality"}, {"label": "D", "text": "Supports direct O(1) index access"}],
+            "answer": "A",
+            "explanation": "Doubly linked lists store previous and next pointers, enabling backward traversal and O(1) deletion of an arbitrary node."
+        },
+        {
+            "id": "P2-T1-U8-120", "paper": 2, "section_id": "U8", "subject": "Data Structures and Algorithms", "syllabus_id": "P2-8.1",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "Which asymptotic notation describes a tight, asymptotically matching upper AND lower bound for an algorithm\'s running time?",
+            "options": [{"label": "A", "text": "Theta-notation (Theta)"}, {"label": "B", "text": "Big-O notation"}, {"label": "C", "text": "Omega-notation (Omega)"}, {"label": "D", "text": "Little-o notation"}],
+            "answer": "A",
+            "explanation": "Theta-notation indicates that a function is bounded from above and below within constant factors."
+        }
+    ]
+    qs.extend(u8)
+
+    # ----------------------------------------------------
+    # UNIT 9: COMPUTER NETWORKS (15 QUESTIONS: Q121 to Q135)
+    # ----------------------------------------------------
+    u9 = [
+        {
+            "id": "P2-T1-U9-121", "paper": 2, "section_id": "U9", "subject": "Computer Networks", "syllabus_id": "P2-9.1",
+            "origin_tag": "PYQ - KPSC CST 2017", "difficulty": "easy",
+            "text": "Which layer of the OSI 7-layer reference model is responsible for data compression and encryption/decryption?",
+            "options": [{"label": "A", "text": "Presentation Layer"}, {"label": "B", "text": "Session Layer"}, {"label": "C", "text": "Transport Layer"}, {"label": "D", "text": "Application Layer"}],
+            "answer": "A",
+            "explanation": "Layer 6 (Presentation) handles syntax translation, data compression, and encryption/decryption (SSL/TLS)."
+        },
+        {
+            "id": "P2-T1-U9-122", "paper": 2, "section_id": "U9", "subject": "Computer Networks", "syllabus_id": "P2-9.1",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "What is the Protocol Data Unit (PDU) at the Transport Layer of the OSI Model?",
+            "options": [{"label": "A", "text": "Bits"}, {"label": "B", "text": "Frame"}, {"label": "C", "text": "Packet"}, {"label": "D", "text": "Segment"}],
+            "answer": "D",
+            "explanation": "Physical: Bits, Data Link: Frames, Network: Packets, Transport: Segments, Application: Data."
+        },
+        {
+            "id": "P2-T1-U9-123", "paper": 2, "section_id": "U9", "subject": "Computer Networks", "syllabus_id": "P2-9.2",
+            "origin_tag": "Expected - High Yield", "difficulty": "hard",
+            "text": "What is the exact sequence of packets exchanged during the TCP 3-Way Handshake to establish a reliable connection?",
+            "options": [{"label": "A", "text": "SYN -> SYN-ACK -> ACK"}, {"label": "B", "text": "ACK -> SYN -> ACK"}, {"label": "C", "text": "SYN -> ACK -> DATA"}, {"label": "D", "text": "FIN -> ACK -> FIN"}],
+            "answer": "A",
+            "explanation": "Client sends SYN; Server responds with SYN-ACK; Client replies with ACK, entering ESTABLISHED state."
+        },
+        {
+            "id": "P2-T1-U9-124", "paper": 2, "section_id": "U9", "subject": "Computer Networks", "syllabus_id": "P2-9.2",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "What is the fixed size of the User Datagram Protocol (UDP) header?",
+            "options": [{"label": "A", "text": "8 Bytes"}, {"label": "B", "text": "20 Bytes"}, {"label": "C", "text": "32 Bytes"}, {"label": "D", "text": "16 Bytes"}],
+            "answer": "A",
+            "explanation": "A UDP header is exactly 8 bytes (Source Port 2B, Dest Port 2B, Length 2B, Checksum 2B)."
+        },
+        {
+            "id": "P2-T1-U9-125", "paper": 2, "section_id": "U9", "subject": "Computer Networks", "syllabus_id": "P2-9.3",
+            "origin_tag": "Expected - High Yield", "difficulty": "hard",
+            "text": "Given the CIDR subnet mask /26, how many usable host IP addresses are available per subnet?",
+            "options": [{"label": "A", "text": "62 usable hosts"}, {"label": "B", "text": "64 usable hosts"}, {"label": "C", "text": "126 usable hosts"}, {"label": "D", "text": "30 usable hosts"}],
+            "answer": "A",
+            "explanation": "H = 32 - 26 = 6 host bits. Total IPs = 2^6 = 64. Usable hosts = 2^6 - 2 = 62 (excluding network and broadcast IDs)."
+        },
+        {
+            "id": "P2-T1-U9-126", "paper": 2, "section_id": "U9", "subject": "Computer Networks", "syllabus_id": "P2-9.3",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "Which default subnet mask is associated with IPv4 Class B networks?",
+            "options": [{"label": "A", "text": "255.0.0.0"}, {"label": "B", "text": "255.255.0.0"}, {"label": "C", "text": "255.255.255.0"}, {"label": "D", "text": "255.255.255.192"}],
+            "answer": "B",
+            "explanation": "Class A is /8 (255.0.0.0), Class B is /16 (255.255.0.0), and Class C is /24 (255.255.255.0)."
+        },
+        {
+            "id": "P2-T1-U9-127", "paper": 2, "section_id": "U9", "subject": "Computer Networks", "syllabus_id": "P2-9.2",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "Which protocol is responsible for resolving a logical 32-bit IP address into a physical 48-bit MAC address on a local area network?",
+            "options": [{"label": "A", "text": "Address Resolution Protocol (ARP)"}, {"label": "B", "text": "Reverse ARP (RARP)"}, {"label": "C", "text": "DHCP"}, {"label": "D", "text": "ICMP"}],
+            "answer": "A",
+            "explanation": "ARP broadcasts on the local LAN to find the hardware MAC address matching an IP address."
+        },
+        {
+            "id": "P2-T1-U9-128", "paper": 2, "section_id": "U9", "subject": "Computer Networks", "syllabus_id": "P2-9.2",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "What is the standard port number used by the Domain Name System (DNS) protocol for lookups?",
+            "options": [{"label": "A", "text": "Port 53"}, {"label": "B", "text": "Port 80"}, {"label": "C", "text": "Port 443"}, {"label": "D", "text": "Port 25"}],
+            "answer": "A",
+            "explanation": "DNS runs on Port 53 (primarily UDP, TCP for zone transfers); HTTP is Port 80, HTTPS is Port 443, SMTP is Port 25."
+        },
+        {
+            "id": "P2-T1-U9-129", "paper": 2, "section_id": "U9", "subject": "Computer Networks", "syllabus_id": "P2-9.1",
+            "origin_tag": "Expected - High Yield", "difficulty": "easy",
+            "text": "A Network Switch operates primarily at which layer of the OSI model?",
+            "options": [{"label": "A", "text": "Data Link Layer (Layer 2)"}, {"label": "B", "text": "Physical Layer (Layer 1)"}, {"label": "C", "text": "Network Layer (Layer 3)"}, {"label": "D", "text": "Transport Layer (Layer 4)"}],
+            "answer": "A",
+            "explanation": "Standard network switches operate at Layer 2 (Data Link Layer) filtering and forwarding frames based on MAC addresses."
+        },
+        {
+            "id": "P2-T1-U9-130", "paper": 2, "section_id": "U9", "subject": "Computer Networks", "syllabus_id": "P2-9.3",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "Which IPv4 address range is designated as Class C private IP space under RFC 1918?",
+            "options": [{"label": "A", "text": "192.168.0.0 to 192.168.255.255 (/16)"}, {"label": "B", "text": "10.0.0.0 to 10.255.255.255 (/8)"}, {"label": "C", "text": "172.16.0.0 to 172.31.255.255 (/12)"}, {"label": "D", "text": "127.0.0.0 to 127.255.255.255"}],
+            "answer": "A",
+            "explanation": "Class C private space is 192.168.0.0/16. (10.0.0.0/8 is Class A private; 172.16.0.0/12 is Class B private)."
+        },
+        {
+            "id": "P2-T1-U9-131", "paper": 2, "section_id": "U9", "subject": "Computer Networks", "syllabus_id": "P2-9.2",
+            "origin_tag": "Expected - High Yield", "difficulty": "hard",
+            "text": "In Sliding Window flow control, if the sender window size is W in Go-Back-N protocol, what is the receiver window size?",
+            "options": [{"label": "A", "text": "1"}, {"label": "B", "text": "W"}, {"label": "C", "text": "W / 2"}, {"label": "D", "text": "2W"}],
+            "answer": "A",
+            "explanation": "In Go-Back-N, receiver window size is always 1 (it accepts only in-order packets). In Selective Repeat, receiver window is W."
+        },
+        {
+            "id": "P2-T1-U9-132", "paper": 2, "section_id": "U9", "subject": "Computer Networks", "syllabus_id": "P2-9.1",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "Which error detection mechanism appends a remainder calculated using binary polynomial modulo-2 division?",
+            "options": [{"label": "A", "text": "Cyclic Redundancy Check (CRC)"}, {"label": "B", "text": "Parity Bit"}, {"label": "C", "text": "Checksum"}, {"label": "D", "text": "Hamming Code"}],
+            "answer": "A",
+            "explanation": "CRC uses polynomial generator division over Galois Field GF(2) to produce an FCS checksum attached to frames."
+        },
+        {
+            "id": "P2-T1-U9-133", "paper": 2, "section_id": "U9", "subject": "Computer Networks", "syllabus_id": "P2-9.3",
+            "origin_tag": "Expected - High Yield", "difficulty": "easy",
+            "text": "What is the primary function of the Loopback IP address 127.0.0.1?",
+            "options": [{"label": "A", "text": "Localhost testing of network stack without sending packets over physical wire"}, {"label": "B", "text": "Assigning IP to default router gateway"}, {"label": "C", "text": "Multicast video transmission"}, {"label": "D", "text": "Public internet DNS lookup"}],
+            "answer": "A",
+            "explanation": "127.0.0.1 is reserved as the loopback address, routed internally by the OS kernel for diagnostic and IPC purposes."
+        },
+        {
+            "id": "P2-T1-U9-134", "paper": 2, "section_id": "U9", "subject": "Computer Networks", "syllabus_id": "P2-9.1",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "What physical transmission medium carries data signals as pulses of light through a glass core via Total Internal Reflection?",
+            "options": [{"label": "A", "text": "Fiber-Optic Cable"}, {"label": "B", "text": "Shielded Twisted Pair (STP)"}, {"label": "C", "text": "Coaxial Cable"}, {"label": "D", "text": "Infrared line-of-sight"}],
+            "answer": "A",
+            "explanation": "Fiber-optic cables transmit light pulses guided by total internal reflection, immune to electromagnetic interference."
+        },
+        {
+            "id": "P2-T1-U9-135", "paper": 2, "section_id": "U9", "subject": "Computer Networks", "syllabus_id": "P2-9.2",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "Which protocol dynamically assigns IP addresses, subnet masks, and default gateways to client devices joining a network?",
+            "options": [{"label": "A", "text": "Dynamic Host Configuration Protocol (DHCP)"}, {"label": "B", "text": "SNMP"}, {"label": "C", "text": "FTP"}, {"label": "D", "text": "ICMP"}],
+            "answer": "A",
+            "explanation": "DHCP automatically leases IP configurations to network hosts using the DORA (Discover, Offer, Request, Acknowledge) process."
+        }
+    ]
+    qs.extend(u9)
+
+    # ----------------------------------------------------
+    # UNIT 10: ARTIFICIAL INTELLIGENCE (15 QUESTIONS: Q136 to Q150)
+    # ----------------------------------------------------
+    u10 = [
+        {
+            "id": "P2-T1-U10-136", "paper": 2, "section_id": "U10", "subject": "Artificial Intelligence", "syllabus_id": "P2-10.1",
+            "origin_tag": "PYQ - KPSC CST 2017", "difficulty": "easy",
+            "text": "What was the seminal behavioral benchmark proposed by Alan Turing in 1950 to evaluate machine intelligence?",
+            "options": [{"label": "A", "text": "The Turing Test (Imitation Game)"}, {"label": "B", "text": "Chinese Room Argument"}, {"label": "C", "text": "Heuristic Evaluation"}, {"label": "D", "text": "CAPTCHA Test"}],
+            "answer": "A",
+            "explanation": "Alan Turing\'s Imitation Game assesses whether a computer can converse with a human interrogator indistinguishably from a human."
+        },
+        {
+            "id": "P2-T1-U10-137", "paper": 2, "section_id": "U10", "subject": "Artificial Intelligence", "syllabus_id": "P2-10.1",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "In AI search algorithms, what condition must a heuristic function h(n) satisfy to be classified as 'Admissible' in A* search?",
+            "options": [{"label": "A", "text": "h(n) must never overestimate the true cost to reach the nearest goal: h(n) <= h*(n)"}, {"label": "B", "text": "h(n) must always equal 0"}, {"label": "C", "text": "h(n) must overestimate the cost"}, {"label": "D", "text": "h(n) must equal the path cost g(n)"}],
+            "answer": "A",
+            "explanation": "An admissible heuristic never overestimates the actual minimal cost to reach a goal, guaranteeing that A* search finds an optimal solution."
+        },
+        {
+            "id": "P2-T1-U10-138", "paper": 2, "section_id": "U10", "subject": "Artificial Intelligence", "syllabus_id": "P2-10.1",
+            "origin_tag": "Expected - High Yield", "difficulty": "hard",
+            "text": "In A* search, what is the evaluation function f(n) defined as?",
+            "options": [{"label": "A", "text": "f(n) = g(n) + h(n)"}, {"label": "B", "text": "f(n) = g(n) - h(n)"}, {"label": "C", "text": "f(n) = g(n) * h(n)"}, {"label": "D", "text": "f(n) = max(g(n), h(n))"}],
+            "answer": "A",
+            "explanation": "f(n) = g(n) + h(n), where g(n) is the exact cost from start to node n, and h(n) is the estimated heuristic cost from n to goal."
+        },
+        {
+            "id": "P2-T1-U10-139", "paper": 2, "section_id": "U10", "subject": "Artificial Intelligence", "syllabus_id": "P2-10.2",
+            "origin_tag": "Expected - High Yield", "difficulty": "hard",
+            "text": "In adversarial game playing, what condition triggers a pruning cutoff in the Alpha-Beta Pruning algorithm?",
+            "options": [{"label": "A", "text": "alpha >= beta"}, {"label": "B", "text": "alpha < beta"}, {"label": "C", "text": "alpha == 0"}, {"label": "D", "text": "beta == infinity"}],
+            "answer": "A",
+            "explanation": "When alpha >= beta, the current position is worse for the opponent than a known alternative, allowing the branch to be pruned without changing Minimax outcome."
+        },
+        {
+            "id": "P2-T1-U10-140", "paper": 2, "section_id": "U10", "subject": "Artificial Intelligence", "syllabus_id": "P2-10.1",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "Which uninformed search algorithm is guaranteed to find the shallowest goal in an unweighted tree, having complete optimality?",
+            "options": [{"label": "A", "text": "Breadth-First Search (BFS)"}, {"label": "B", "text": "Depth-First Search (DFS)"}, {"label": "C", "text": "Depth-Limited Search"}, {"label": "D", "text": "Greedy Search"}],
+            "answer": "A",
+            "explanation": "BFS expands nodes level by level, ensuring that the first goal node reached has minimal path length."
+        },
+        {
+            "id": "P2-T1-U10-141", "paper": 2, "section_id": "U10", "subject": "Artificial Intelligence", "syllabus_id": "P2-10.1",
+            "origin_tag": "Expected - High Yield", "difficulty": "hard",
+            "text": "What is the primary memory advantage of Iterative Deepening Depth-First Search (IDDFS) over Breadth-First Search (BFS)?",
+            "options": [{"label": "A", "text": "IDDFS has linear space complexity O(bd), while BFS has exponential space complexity O(b^d)"}, {"label": "B", "text": "IDDFS uses zero memory"}, {"label": "C", "text": "BFS runs faster than any other search"}, {"label": "D", "text": "IDDFS requires a specialized heuristic function"}],
+            "answer": "A",
+            "explanation": "IDDFS combines the optimality and completeness of BFS with the linear space efficiency of DFS (O(bd))."
+        },
+        {
+            "id": "P2-T1-U10-142", "paper": 2, "section_id": "U10", "subject": "Artificial Intelligence", "syllabus_id": "P2-10.3",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "In First-Order Predicate Logic (FOPL), which quantifier asserts that a property holds for 'EVERY' member of the domain of discourse?",
+            "options": [{"label": "A", "text": "Universal Quantifier (for all: upside-down A)"}, {"label": "B", "text": "Existential Quantifier (there exists: backwards E)"}, {"label": "C", "text": "Modal Quantifier"}, {"label": "D", "text": "Boolean Conjunction"}],
+            "answer": "A",
+            "explanation": "The Universal Quantifier (forall) denotes that a statement is true for all individual values in the domain."
+        },
+        {
+            "id": "P2-T1-U10-143", "paper": 2, "section_id": "U10", "subject": "Artificial Intelligence", "syllabus_id": "P2-10.3",
+            "origin_tag": "Expected - High Yield", "difficulty": "hard",
+            "text": "The algorithmic process of finding a substitution that makes two different logical literals identical is known as:",
+            "options": [{"label": "A", "text": "Unification"}, {"label": "B", "text": "Skolemization"}, {"label": "C", "text": "Resolution"}, {"label": "D", "text": "Modus Tollens"}],
+            "answer": "A",
+            "explanation": "Unification finds a Most General Unifier (MGU) theta such that literal1 * theta == literal2 * theta."
+        },
+        {
+            "id": "P2-T1-U10-144", "paper": 2, "section_id": "U10", "subject": "Artificial Intelligence", "syllabus_id": "P2-10.1",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "What type of intelligent agent selects actions based purely on the current percept without maintaining an internal model of history?",
+            "options": [{"label": "A", "text": "Simple Reflex Agent"}, {"label": "B", "text": "Model-Based Reflex Agent"}, {"label": "C", "text": "Goal-Based Agent"}, {"label": "D", "text": "Utility-Based Agent"}],
+            "answer": "A",
+            "explanation": "Simple Reflex Agents operate on condition-action rules based entirely on current sensory percepts."
+        },
+        {
+            "id": "P2-T1-U10-145", "paper": 2, "section_id": "U10", "subject": "Artificial Intelligence", "syllabus_id": "P2-10.1",
+            "origin_tag": "Expected - High Yield", "difficulty": "hard",
+            "text": "In local search algorithms, what pathology occurs when Hill-Climbing search gets trapped at a state that is better than all its immediate neighbors, but worse than the global maximum?",
+            "options": [{"label": "A", "text": "Local Maximum"}, {"label": "B", "text": "Plateau"}, {"label": "C", "text": "Ridge"}, {"label": "D", "text": "Deadlock"}],
+            "answer": "A",
+            "explanation": "A local maximum is a peak higher than surrounding states, but lower than the optimal global maximum, trapping greedy search."
+        },
+        {
+            "id": "P2-T1-U10-146", "paper": 2, "section_id": "U10", "subject": "Artificial Intelligence", "syllabus_id": "P2-10.1",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "Which search algorithm escapes local maxima by probabilistically allowing 'downhill' moves governed by a decreasing Temperature parameter?",
+            "options": [{"label": "A", "text": "Simulated Annealing"}, {"label": "B", "text": "Depth-First Search"}, {"label": "C", "text": "Greedy Best-First Search"}, {"label": "D", "text": "Minimax"}],
+            "answer": "A",
+            "explanation": "Simulated Annealing models physical metallurgical cooling, accepting worse moves with probability e^(delta_E / T) to escape local peaks."
+        },
+        {
+            "id": "P2-T1-U10-147", "paper": 2, "section_id": "U10", "subject": "Artificial Intelligence", "syllabus_id": "P2-10.3",
+            "origin_tag": "Expected - High Yield", "difficulty": "hard",
+            "text": "The elimination of existential quantifiers in predicate calculus by substituting Skolem functions or Skolem constants is termed:",
+            "options": [{"label": "A", "text": "Skolemization"}, {"label": "B", "text": "Unification"}, {"label": "C", "text": "Horn Clause Transformation"}, {"label": "D", "text": "Forward Chaining"}],
+            "answer": "A",
+            "explanation": "Skolemization replaces existentially quantified variables with constants or functions of universally quantified variables."
+        },
+        {
+            "id": "P2-T1-U10-148", "paper": 2, "section_id": "U10", "subject": "Artificial Intelligence", "syllabus_id": "P2-10.3",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "An Expert System consists of two primary operational components:",
+            "options": [{"label": "A", "text": "Knowledge Base and Inference Engine"}, {"label": "B", "text": "Compiler and Linker"}, {"label": "C", "text": "Relational Table and Index"}, {"label": "D", "text": "ALU and Accumulator"}],
+            "answer": "A",
+            "explanation": "Expert systems separate domain rules/facts (Knowledge Base) from the reasoning algorithms that deduce conclusions (Inference Engine)."
+        },
+        {
+            "id": "P2-T1-U10-149", "paper": 2, "section_id": "U10", "subject": "Artificial Intelligence", "syllabus_id": "P2-10.3",
+            "origin_tag": "Expected - High Yield", "difficulty": "medium",
+            "text": "In automated theorem proving, a Horn Clause is a disjunction of literals containing at most:",
+            "options": [{"label": "A", "text": "ONE positive (unnegated) literal"}, {"label": "B", "text": "TWO positive literals"}, {"label": "C", "text": "Zero negative literals"}, {"label": "D", "text": "Infinite literals"}],
+            "answer": "A",
+            "explanation": "A Horn clause contains at most one positive literal (~P v ~Q v R is equivalent to P ^ Q -> R), enabling efficient linear chaining."
+        },
+        {
+            "id": "P2-T1-U10-150", "paper": 2, "section_id": "U10", "subject": "Artificial Intelligence", "syllabus_id": "P2-10.1",
+            "origin_tag": "Expected - High Yield", "difficulty": "easy",
+            "text": "Which programming language developed by John McCarthy in 1958 became historically foundational for Artificial Intelligence research?",
+            "options": [{"label": "A", "text": "LISP (List Processing)"}, {"label": "B", "text": "COBOL"}, {"label": "C", "text": "FORTRAN"}, {"label": "D", "text": "Pascal"}],
+            "answer": "A",
+            "explanation": "John McCarthy invented LISP at MIT in 1958, establishing symbolic computing and tree processing for early AI systems."
+        }
+    ]
+    qs.extend(u10)
+
+    return qs
+
+
+
+def get_paper2_test2():
+    """
+    Exhaustive, completely distinct 150 questions for Paper 2 Test 2.
+    """
+    import build_p2_test2
+    return build_p2_test2.get_paper2_test2_questions()
+
+def get_p2_sections():
+    return [
+        {"id": "U1", "name": "Fundamentals of Computers", "count": 15},
+        {"id": "U2", "name": "Digital Logic & Organization", "count": 15},
+        {"id": "U3", "name": "Programming with C & C++", "count": 15},
+        {"id": "U4", "name": "Data Structures & Algorithms", "count": 15},
+        {"id": "U5", "name": "Database Management Systems", "count": 15},
+        {"id": "U6", "name": "Operating Systems", "count": 15},
+        {"id": "U7", "name": "Computer Networks", "count": 15},
+        {"id": "U8", "name": "Software Engineering & OOAD", "count": 15},
+        {"id": "U9", "name": "Web Technologies", "count": 15},
+        {"id": "U10", "name": "Information Security & Emerging Trends", "count": 15}
+    ]
