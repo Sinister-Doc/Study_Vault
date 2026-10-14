@@ -1,0 +1,10 @@
+# Master Unattended PowerShell Runner for CST Research Pipeline
+$ErrorActionPreference = "Continue"
+
+$PythonExe = "D:\Softwares\pyenv\Scripts\python.exe"
+$RunnerPy = "D:\SUPREETH N\Program Files\ObsidianVaults\StudyPrep\_cst_scripts\run_pipeline.py"
+
+Write-Host "Executing CST Research Pipeline Unattended..." -ForegroundColor Cyan
+& $PythonExe $RunnerPy $args
+
+Write-Host "Pipeline Execution Completed. See _cst_scripts/pipeline_run.log" -ForegroundColor Green

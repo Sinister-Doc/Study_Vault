@@ -1,0 +1,1574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Karnataka GPT CST Exam 2026 - Paper 2 (CBT Mock Test 2)</title>
+<style>
+:root {
+  --bg-primary: #f0f2f5;
+  --bg-card: #ffffff;
+  --text-main: #1f2937;
+  --text-muted: #6b7280;
+  --primary-blue: #1e40af;
+  --primary-hover: #1d4ed8;
+  --cbt-header: #0f172a;
+  
+  /* CBT Palette Standard Colors */
+  --cbt-answered: #22c55e;        /* Green */
+  --cbt-not-answered: #ef4444;    /* Red */
+  --cbt-not-visited: #9ca3af;     /* Gray */
+  --cbt-marked: #a855f7;          /* Purple */
+  --cbt-ans-marked: #7e22ce;      /* Dark Purple */
+  --cbt-border: #e2e8f0;
+
+  /* Review Specific Colors */
+  --rev-correct: #16a34a;
+  --rev-incorrect: #dc2626;
+  --rev-unatt: #64748b;
+  --rev-marked: #9333ea;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+body { background-color: var(--bg-primary); color: var(--text-main); height: 100vh; display: flex; flex-direction: column; overflow: hidden; }
+
+/* Top Header */
+.cbt-header {
+  background: var(--cbt-header);
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid #3b82f6;
+  flex-shrink: 0;
+}
+.exam-title-box h1 { font-size: 1.15rem; font-weight: 700; color: #f8fafc; letter-spacing: 0.3px; }
+.exam-title-box p { font-size: 0.8rem; color: #94a3b8; margin-top: 2px; }
+
+.timer-candidate-box { display: flex; align-items: center; gap: 20px; }
+.timer-container {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 6px;
+  padding: 6px 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.timer-label { font-size: 0.75rem; text-transform: uppercase; color: #94a3b8; font-weight: 600; }
+.timer-display { font-family: "Courier New", Courier, monospace; font-size: 1.3rem; font-weight: 800; color: #38bdf8; }
+.timer-display.danger { color: #f87171; animation: pulse 1s infinite; }
+@keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
+
+.speed-toggle {
+  background: #334155;
+  color: #cbd5e1;
+  border: 1px solid #475569;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  padding: 4px 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.speed-toggle:hover { background: #475569; color: white; }
+
+.candidate-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #1e293b;
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid #334155;
+}
+.cand-avatar { width: 32px; height: 32px; border-radius: 50%; background: #3b82f6; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.8rem; }
+.cand-details { font-size: 0.75rem; line-height: 1.2; }
+.cand-name { font-weight: 600; color: #f1f5f9; }
+.cand-roll { color: #94a3b8; font-size: 0.7rem; }
+
+/* Section Bar */
+.section-nav-bar {
+  background: #ffffff;
+  border-bottom: 1px solid var(--cbt-border);
+  display: flex;
+  overflow-x: auto;
+  padding: 0 16px;
+  flex-shrink: 0;
+}
+.section-tab {
+  padding: 10px 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.15s ease-in-out;
+}
+.section-tab:hover { color: var(--primary-blue); background: #f8fafc; }
+.section-tab.active { color: var(--primary-blue); border-bottom-color: var(--primary-blue); background: #eff6ff; }
+.section-count-badge { background: #e2e8f0; color: #475569; padding: 2px 6px; border-radius: 10px; font-size: 0.72rem; }
+.section-tab.active .section-count-badge { background: #dbeafe; color: var(--primary-blue); }
+
+/* Main Layout Split */
+.cbt-body-wrapper {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  height: calc(100vh - 110px);
+}
+
+/* Left Question Panel */
+.question-pane {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border-right: 1px solid var(--cbt-border);
+  overflow: hidden;
+}
+
+.question-meta-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  background: #f8fafc;
+  border-bottom: 1px solid var(--cbt-border);
+  flex-shrink: 0;
+}
+.q-number-box { font-size: 1rem; font-weight: 700; color: var(--text-main); display: flex; align-items: center; gap: 8px; }
+.q-meta-tags { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.badge { padding: 3px 8px; border-radius: 4px; font-size: 0.72rem; font-weight: 600; text-transform: uppercase; }
+.badge-marks { background: #e0e7ff; color: #3730a3; }
+.badge-origin { background: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
+.badge-diff-easy { background: #dcfce7; color: #166534; }
+.badge-diff-med { background: #fef9c3; color: #854d0e; }
+.badge-diff-hard { background: #fee2e2; color: #991b1b; }
+.badge-reviewed { background: #f3e8ff; color: #6b21a8; border: 1px solid #d8b4fe; font-weight: 700; }
+
+.question-content-scroll {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+}
+
+.q-text-en { font-size: 1.05rem; line-height: 1.55; font-weight: 500; color: #0f172a; margin-bottom: 14px; }
+.q-text-alt { font-size: 0.98rem; line-height: 1.5; color: #334155; background: #f1f5f9; padding: 10px 14px; border-radius: 6px; border-left: 4px solid #3b82f6; margin-bottom: 20px; font-family: "Nirmala UI", "Tunga", sans-serif; }
+
+.options-container { display: flex; flex-direction: column; gap: 10px; margin-top: 10px; }
+.option-label-card {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+  background: #ffffff;
+}
+.option-label-card:hover { border-color: #93c5fd; background: #f8fafc; }
+.option-label-card.selected { border-color: var(--primary-blue); background: #eff6ff; box-shadow: 0 0 0 1px var(--primary-blue); }
+.option-radio { margin-right: 14px; width: 18px; height: 18px; accent-color: var(--primary-blue); }
+.option-label-letter { font-weight: 700; width: 24px; color: #475569; }
+.option-text { font-size: 0.95rem; line-height: 1.4; color: #1e293b; }
+
+/* Bottom Controls */
+.question-footer-controls {
+  padding: 12px 24px;
+  background: #f8fafc;
+  border-top: 1px solid var(--cbt-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+}
+.btn {
+  padding: 8px 18px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.btn-secondary { background: #e2e8f0; color: #334155; }
+.btn-secondary:hover { background: #cbd5e1; }
+.btn-warning { background: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
+.btn-warning:hover { background: #fde68a; }
+.btn-review { background: #f3e8ff; color: #6b21a8; border: 1px solid #e9d5ff; }
+.btn-review:hover { background: #e9d5ff; }
+.btn-primary { background: var(--primary-blue); color: #ffffff; }
+.btn-primary:hover { background: var(--primary-hover); }
+.btn-success { background: #16a34a; color: white; }
+.btn-success:hover { background: #15803d; }
+.btn-purple { background: #9333ea; color: white; }
+.btn-purple:hover { background: #7e22ce; }
+
+/* Right Sidebar: Palette */
+.palette-pane {
+  width: 340px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.palette-status-summary {
+  padding: 12px 14px;
+  background: #f8fafc;
+  border-bottom: 1px solid var(--cbt-border);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  font-size: 0.72rem;
+  flex-shrink: 0;
+}
+.legend-item { display: flex; align-items: center; gap: 6px; }
+.legend-badge {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 0.68rem;
+}
+.bg-ans { background: var(--cbt-answered); }
+.bg-not-ans { background: var(--cbt-not-answered); }
+.bg-not-vis { background: var(--cbt-not-visited); }
+.bg-marked { background: var(--cbt-marked); }
+.bg-ans-marked { background: var(--cbt-ans-marked); position: relative; }
+.bg-ans-marked::after { content: ''; position: absolute; bottom: 2px; right: 2px; width: 5px; height: 5px; background: #22c55e; border-radius: 50%; }
+
+.palette-grid-scroll {
+  flex: 1;
+  padding: 14px;
+  overflow-y: auto;
+}
+.palette-grid-title { font-size: 0.8rem; font-weight: 700; color: #64748b; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+.palette-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+.pal-btn {
+  aspect-ratio: 1;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  background: #f1f5f9;
+  color: #334155;
+  font-weight: 700;
+  font-size: 0.82rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.1s;
+  position: relative;
+}
+.pal-btn:hover { border-color: var(--primary-blue); transform: scale(1.04); }
+.pal-btn.current { box-shadow: 0 0 0 2.5px #2563eb !important; border-color: transparent !important; }
+
+/* Palette Status Applied */
+.pal-btn.not-visited { background: #f1f5f9; color: #64748b; }
+.pal-btn.not-answered { background: var(--cbt-not-answered); color: white; border-color: transparent; }
+.pal-btn.answered { background: var(--cbt-answered); color: white; border-color: transparent; }
+.pal-btn.marked { background: var(--cbt-marked); color: white; border-color: transparent; }
+.pal-btn.ans-marked { background: var(--cbt-ans-marked); color: white; border-color: transparent; }
+.pal-btn.ans-marked::after { content: ''; position: absolute; bottom: 3px; right: 3px; width: 6px; height: 6px; background: #22c55e; border-radius: 50%; }
+
+.palette-submit-bar {
+  padding: 14px;
+  background: #f8fafc;
+  border-top: 1px solid var(--cbt-border);
+  flex-shrink: 0;
+}
+.btn-submit-exam {
+  width: 100%;
+  padding: 10px;
+  background: #2563eb;
+  color: white;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.btn-submit-exam:hover { background: #1d4ed8; }
+
+/* Submit Modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.65);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(3px);
+}
+.modal-card {
+  background: white;
+  width: 480px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+.modal-header { background: #0f172a; color: white; padding: 16px 20px; font-size: 1rem; font-weight: 700; }
+.modal-body { padding: 20px; }
+.summary-table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 0.85rem; }
+.summary-table th, .summary-table td { border: 1px solid #e2e8f0; padding: 8px 12px; }
+.summary-table th { background: #f8fafc; text-align: left; }
+.modal-actions { padding: 14px 20px; background: #f8fafc; display: flex; justify-content: flex-end; gap: 10px; border-top: 1px solid var(--cbt-border); }
+
+/* =====================================================================
+   RESULTS PHASE 1: Executive Scorecard Dashboard
+===================================================================== */
+.results-dashboard {
+  position: fixed;
+  inset: 0;
+  background: #f8fafc;
+  display: none;
+  flex-direction: column;
+  z-index: 2000;
+  overflow-y: auto;
+}
+.dash-header {
+  background: #0f172a;
+  color: white;
+  padding: 16px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid #3b82f6;
+}
+.dash-content { max-width: 1120px; margin: 26px auto; padding: 0 20px; width: 100%; }
+.scorecard-banner {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+  margin-bottom: 22px;
+}
+.score-box {
+  background: white;
+  padding: 18px 14px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+.score-box-title { font-size: 0.75rem; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; }
+.score-box-val { font-size: 1.8rem; font-weight: 800; color: #0f172a; margin-top: 4px; }
+.score-box-val.score-green { color: #16a34a; }
+.score-box-val.score-blue { color: #2563eb; }
+.score-box-val.score-purple { color: #9333ea; }
+
+/* Action Hub on Results Dashboard */
+.action-hub-card {
+  background: white;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 18px 24px;
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+.action-hub-text h3 { font-size: 1.15rem; font-weight: 800; color: #0f172a; }
+.action-hub-text p { font-size: 0.85rem; color: #475569; margin-top: 3px; }
+.action-hub-buttons { display: flex; gap: 10px; flex-wrap: wrap; }
+
+.sec-breakdown-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 26px;
+}
+.sec-breakdown-table th, .sec-breakdown-table td { padding: 10px 14px; font-size: 0.85rem; border-bottom: 1px solid #f1f5f9; }
+.sec-breakdown-table th { background: #f8fafc; text-align: left; font-weight: 700; color: #475569; }
+
+/* =====================================================================
+   RESULTS PHASE 2: Interactive Question-by-Question CBT Review Mode
+===================================================================== */
+.review-mode-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--bg-primary);
+  display: none;
+  flex-direction: column;
+  z-index: 3000;
+  overflow: hidden;
+}
+
+.rev-header {
+  background: #0f172a;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid #10b981;
+  flex-shrink: 0;
+}
+.rev-header-left h2 { font-size: 1.1rem; font-weight: 800; color: #f8fafc; }
+.rev-header-left p { font-size: 0.78rem; color: #94a3b8; }
+
+.rev-filter-bar {
+  background: #ffffff;
+  border-bottom: 1px solid var(--cbt-border);
+  padding: 8px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-shrink: 0;
+}
+.rev-filters-group { display: flex; gap: 8px; align-items: center; overflow-x: auto; }
+.rev-filter-pill {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  border: 1px solid #cbd5e1;
+  background: white;
+  color: #334155;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.15s;
+}
+.rev-filter-pill:hover { background: #f8fafc; border-color: #94a3b8; }
+.rev-filter-pill.active { background: #0f172a; color: white; border-color: #0f172a; }
+.rev-filter-pill.pill-marked.active { background: #7e22ce; color: white; border-color: #7e22ce; }
+.rev-filter-pill.pill-correct.active { background: #16a34a; color: white; border-color: #16a34a; }
+.rev-filter-pill.pill-incorrect.active { background: #dc2626; color: white; border-color: #dc2626; }
+.pill-count {
+  background: rgba(0,0,0,0.1);
+  padding: 1px 6px;
+  border-radius: 10px;
+  font-size: 0.7rem;
+}
+.rev-filter-pill.active .pill-count { background: rgba(255,255,255,0.25); color: white; }
+
+/* Review Workspace Split (Identical to Test Phase) */
+.rev-body-wrapper {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  height: calc(100vh - 105px);
+}
+
+.rev-question-pane {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border-right: 1px solid var(--cbt-border);
+  overflow: hidden;
+}
+
+.rev-question-content {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+}
+
+/* Outcome Status Banner */
+.rev-status-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+.rev-status-banner.status-correct { background: #dcfce7; color: #166534; border: 1px solid #86efac; }
+.rev-status-banner.status-incorrect { background: #fee2e2; color: #991b1b; border: 1px solid #fca5a5; }
+.rev-status-banner.status-unattempted { background: #f1f5f9; color: #475569; border: 1px solid #cbd5e1; }
+
+/* Option Cards in Review Mode */
+.rev-option-card {
+  display: flex;
+  align-items: flex-start;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1.5px solid #e2e8f0;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  background: #ffffff;
+}
+.rev-option-card.is-official-correct {
+  background: #f0fdf4;
+  border-color: #22c55e;
+  box-shadow: 0 0 0 1px #22c55e;
+}
+.rev-option-card.is-user-incorrect {
+  background: #fef2f2;
+  border-color: #ef4444;
+  box-shadow: 0 0 0 1px #ef4444;
+}
+.rev-option-badge {
+  margin-left: auto;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+.badge-rev-correct { background: #22c55e; color: white; }
+.badge-rev-wrong { background: #ef4444; color: white; }
+.badge-rev-user { background: #3b82f6; color: white; }
+
+/* Explanation / Rationale Card */
+.rev-rationale-box {
+  margin-top: 20px;
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-left: 5px solid #2563eb;
+  border-radius: 8px;
+  padding: 16px 20px;
+}
+.rev-rationale-title {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #1e3a8a;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.rev-rationale-text {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #334155;
+}
+
+/* Review Palette Sidebar */
+.rev-palette-pane {
+  width: 340px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.rev-pal-legend {
+  padding: 12px 14px;
+  background: #f8fafc;
+  border-bottom: 1px solid var(--cbt-border);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  font-size: 0.72rem;
+  flex-shrink: 0;
+}
+.rev-pal-btn {
+  aspect-ratio: 1;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.82rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.1s;
+  position: relative;
+}
+.rev-pal-btn:hover { transform: scale(1.04); }
+.rev-pal-btn.current { box-shadow: 0 0 0 3px #0284c7 !important; }
+.rev-pal-btn.btn-rev-correct { background: var(--rev-correct); color: white; border-color: transparent; }
+.rev-pal-btn.btn-rev-incorrect { background: var(--rev-incorrect); color: white; border-color: transparent; }
+.rev-pal-btn.btn-rev-unatt { background: #e2e8f0; color: #475569; border-color: #cbd5e1; }
+.rev-pal-btn.was-marked::after {
+  content: '★';
+  position: absolute;
+  top: 1px;
+  right: 2px;
+  font-size: 0.65rem;
+  color: #fef08a;
+}
+.rev-pal-btn.is-dimmed { opacity: 0.25; filter: grayscale(50%); }
+
+/* Full List Review (Alternative Scrollable View) */
+.full-list-container { display: none; margin-top: 20px; }
+.list-q-card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+}
+.list-q-card.correct { border-left: 5px solid #22c55e; }
+.list-q-card.incorrect { border-left: 5px solid #ef4444; }
+.list-q-card.unattempted { border-left: 5px solid #9ca3af; }
+</style>
+</head>
+<body>
+
+<!-- ===================================================================
+     PHASE 1: LIVE TEST TAKING INTERFACE
+=================================================================== -->
+<header class="cbt-header">
+  <div class="exam-title-box">
+    <h1>Karnataka GPT CST Exam 2026 - Paper 2 (CBT Mock Test 2)</h1>
+    <p>Department of School Education Karnataka • GPT CST Recruitment Examination</p>
+  </div>
+  <div class="timer-candidate-box">
+    <div class="timer-container">
+      <span class="timer-label">Time Left</span>
+      <span class="timer-display" id="timeDisplay">150:00</span>
+      <button class="speed-toggle" id="btnSpeedToggle" title="Toggle 10x Speed for quick practice">1x Speed</button>
+    </div>
+    <div class="candidate-badge">
+      <div class="cand-avatar">ST</div>
+      <div class="cand-details">
+        <div class="cand-name">Candidate 2026</div>
+        <div class="cand-roll">Roll: CST-P2-MOCK2-8812</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Section Navigation Tabs -->
+<nav class="section-nav-bar" id="sectionTabsContainer"></nav>
+
+<!-- Main Test Body Wrapper -->
+<div class="cbt-body-wrapper" id="testTakingWorkspace">
+  <!-- Left: Question Workspace -->
+  <main class="question-pane">
+    <div class="question-meta-bar">
+      <div class="q-number-box">
+        <span id="qDisplayNum">Question No. 1</span>
+        <span class="badge badge-marks">+1.00 / -0.25</span>
+      </div>
+      <div class="q-meta-tags">
+        <span class="badge badge-origin" id="qOriginTag">Mock</span>
+        <span class="badge" id="qDiffTag">Medium</span>
+        <span class="badge" style="background:#f1f5f9; color:#475569;" id="qSyllabusTag">Ref</span>
+      </div>
+    </div>
+    <div class="question-content-scroll">
+      <div class="q-text-en" id="qTextEn">Loading Question...</div>
+      <div class="q-text-alt" id="qTextAlt" style="display:none;"></div>
+      <div class="options-container" id="optionsContainer"></div>
+    </div>
+    <footer class="question-footer-controls">
+      <div style="display:flex; gap:10px;">
+        <button class="btn btn-review" id="btnMarkReview">Mark for Review & Next</button>
+        <button class="btn btn-warning" id="btnClearResponse">Clear Response</button>
+      </div>
+      <div style="display:flex; gap:10px;">
+        <button class="btn btn-secondary" id="btnPrev">Previous</button>
+        <button class="btn btn-primary" id="btnSaveNext">Save & Next</button>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Right: Palette Sidebar -->
+  <aside class="palette-pane">
+    <div class="palette-status-summary">
+      <div class="legend-item"><div class="legend-badge bg-ans" id="badgeCountAns">0</div> Answered</div>
+      <div class="legend-item"><div class="legend-badge bg-not-ans" id="badgeCountNotAns">0</div> Not Answered</div>
+      <div class="legend-item"><div class="legend-badge bg-not-vis" id="badgeCountNotVis">0</div> Not Visited</div>
+      <div class="legend-item"><div class="legend-badge bg-marked" id="badgeCountMarked">0</div> Marked Review</div>
+      <div class="legend-item" style="grid-column: span 2;"><div class="legend-badge bg-ans-marked" id="badgeCountAnsMarked">0</div> Ans & Marked for Review</div>
+    </div>
+    <div class="palette-grid-scroll">
+      <div class="palette-grid-title" id="currentSectionTitle">SECTION: ALL</div>
+      <div class="palette-grid" id="paletteGrid"></div>
+    </div>
+    <div class="palette-submit-bar">
+      <button class="btn-submit-exam" id="btnOpenSubmitModal">Submit Test</button>
+    </div>
+  </aside>
+</div>
+
+<!-- Submit Confirmation Modal -->
+<div class="modal-overlay" id="submitModal">
+  <div class="modal-card">
+    <div class="modal-header">Confirm Exam Submission</div>
+    <div class="modal-body">
+      <p style="font-size:0.9rem; color:#475569; margin-bottom:12px;">Are you sure you want to end the test? Here is the summary of your session:</p>
+      <table class="summary-table">
+        <tr><th>Total Questions</th><td id="mTotalQs">150</td></tr>
+        <tr><th style="color:#16a34a;">Answered</th><td id="mAnsQs">0</td></tr>
+        <tr><th style="color:#dc2626;">Not Answered</th><td id="mNotAnsQs">0</td></tr>
+        <tr><th style="color:#7c3aed;">Marked for Review</th><td id="mMarkedQs">0</td></tr>
+        <tr><th style="color:#64748b;">Not Visited</th><td id="mNotVisQs">0</td></tr>
+      </table>
+      <p style="font-size:0.8rem; color:#94a3b8; margin-top:12px;">No further changes can be made after submitting.</p>
+    </div>
+    <div class="modal-actions">
+      <button class="btn btn-secondary" id="btnCancelModal">Resume Test</button>
+      <button class="btn btn-success" id="btnConfirmSubmit">Confirm & Submit</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===================================================================
+     POST-TEST PHASE 1: Executive Scorecard Dashboard
+=================================================================== -->
+<div class="results-dashboard" id="resultsDashboard">
+  <header class="dash-header">
+    <div>
+      <h2 style="font-size:1.3rem; font-weight:800;">Exam Performance & Solution Analytics</h2>
+      <p style="font-size:0.82rem; color:#94a3b8;">Karnataka GPT CST Exam 2026 - Paper 2 (CBT Mock Test 2)</p>
+    </div>
+    <div style="display:flex; gap:10px;">
+      <button class="btn btn-primary" id="btnStartInteractiveReviewTop">Start Interactive CBT Review</button>
+      <button class="btn btn-secondary" onclick="window.print()">Print / Save PDF</button>
+    </div>
+  </header>
+  <div class="dash-content">
+    <div class="scorecard-banner">
+      <div class="score-box">
+        <div class="score-box-title">Total Marks</div>
+        <div class="score-box-val score-green" id="dashTotalScore">0.00 / 150</div>
+      </div>
+      <div class="score-box">
+        <div class="score-box-title">Accuracy</div>
+        <div class="score-box-val score-blue" id="dashAccuracy">0%</div>
+      </div>
+      <div class="score-box">
+        <div class="score-box-title">Attempted</div>
+        <div class="score-box-val" id="dashAttempted">0 / 150</div>
+      </div>
+      <div class="score-box">
+        <div class="score-box-title">Marked for Review</div>
+        <div class="score-box-val score-purple" id="dashMarkedReview">0</div>
+      </div>
+      <div class="score-box">
+        <div class="score-box-title">Qualifying Status</div>
+        <div class="score-box-val" id="dashStatus" style="font-size:1.25rem; line-height:2.2;">QUALIFIED</div>
+      </div>
+    </div>
+
+    <!-- Action Hub Card: Launches interactive review by filter -->
+    <div class="action-hub-card">
+      <div class="action-hub-text">
+        <h3>Question-by-Question CBT Review Mode</h3>
+        <p>Review solutions in the authentic CBT interface with verified rationales, candidate response comparison, and instant palette jumps.</p>
+      </div>
+      <div class="action-hub-buttons">
+        <button class="btn btn-primary" id="btnStartInteractiveReview">Review All (150)</button>
+        <button class="btn btn-warning" id="btnReviewIncorrectOnly">Review Incorrect</button>
+        <button class="btn btn-purple" id="btnReviewMarkedOnly">Review Marked for Review</button>
+        <button class="btn btn-secondary" id="btnToggleListSolutions">Expand Full List</button>
+      </div>
+    </div>
+
+    <h3 style="font-size:1.05rem; font-weight:700; color:#1e293b; margin-bottom:12px;">Section-wise Performance Breakdown</h3>
+    <table class="sec-breakdown-table" id="dashSectionTable">
+      <thead>
+        <tr>
+          <th>Section</th>
+          <th>Total Qs</th>
+          <th>Attempted</th>
+          <th>Correct</th>
+          <th>Incorrect</th>
+          <th>Score</th>
+          <th>Accuracy</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <!-- Full scrollable solution list container (collapsible) -->
+    <div class="full-list-container" id="fullListSolutionsContainer">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+        <h3 style="font-size:1.05rem; font-weight:700; color:#1e293b;">Complete Solutions & Rationales List</h3>
+        <button class="btn btn-secondary" id="btnCloseListSolutions">Collapse List</button>
+      </div>
+      <div id="solutionReviewContainer"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================================================================
+     POST-TEST PHASE 2: Interactive Question-by-Question CBT Review
+=================================================================== -->
+<div class="review-mode-overlay" id="interactiveReviewMode">
+  <header class="rev-header">
+    <div class="rev-header-left">
+      <h2>CBT Solution Review • Karnataka GPT CST Exam 2026 - Paper 2 (CBT Mock Test 2)</h2>
+      <p id="revScoreSubtitle">Score: 0 / 150 | Accuracy: 0%</p>
+    </div>
+    <div style="display:flex; gap:10px;">
+      <button class="btn btn-secondary" id="btnBackToDashboard">Back to Score Summary</button>
+    </div>
+  </header>
+
+  <!-- Review Filter Bar -->
+  <nav class="rev-filter-bar">
+    <div class="rev-filters-group">
+      <span style="font-size:0.75rem; font-weight:700; color:#64748b; text-transform:uppercase;">Filter:</span>
+      <button class="rev-filter-pill active" data-rev-filter="all">All <span class="pill-count" id="revPillAll">150</span></button>
+      <button class="rev-filter-pill pill-correct" data-rev-filter="correct">Correct <span class="pill-count" id="revPillCorrect">0</span></button>
+      <button class="rev-filter-pill pill-incorrect" data-rev-filter="incorrect">Incorrect <span class="pill-count" id="revPillIncorrect">0</span></button>
+      <button class="rev-filter-pill" data-rev-filter="unattempted">Unattempted <span class="pill-count" id="revPillUnatt">0</span></button>
+      <button class="rev-filter-pill pill-marked" data-rev-filter="marked">Marked for Review <span class="pill-count" id="revPillMarked">0</span></button>
+    </div>
+    <div style="font-size:0.8rem; font-weight:600; color:#475569;" id="revFilterStatusInfo">Showing All 150 Questions</div>
+  </nav>
+
+  <!-- Review Body Split (Same CBT Layout) -->
+  <div class="rev-body-wrapper">
+    <!-- Left Review Pane -->
+    <main class="rev-question-pane">
+      <div class="question-meta-bar">
+        <div class="q-number-box">
+          <span id="revDisplayNum">Question No. 1</span>
+          <span id="revMarksBadge" class="badge badge-marks">+1.00 Marks</span>
+        </div>
+        <div class="q-meta-tags">
+          <span class="badge badge-origin" id="revOriginTag">PYQ</span>
+          <span class="badge" id="revDiffTag">Medium</span>
+          <span class="badge" style="background:#f1f5f9; color:#475569;" id="revSyllabusTag">Ref</span>
+          <span class="badge badge-reviewed" id="revMarkedBadge" style="display:none;">★ Marked for Review</span>
+        </div>
+      </div>
+
+      <div class="rev-question-content">
+        <!-- Result status banner (Correct / Incorrect / Unattempted) -->
+        <div class="rev-status-banner" id="revStatusBanner">
+          <span id="revStatusBannerText">Outcome</span>
+          <span id="revCandidateChoiceText">Your Choice: A | Key: A</span>
+        </div>
+
+        <div class="q-text-en" id="revTextEn">Loading Question...</div>
+        <div class="q-text-alt" id="revTextAlt" style="display:none;"></div>
+
+        <div class="options-container" id="revOptionsContainer"></div>
+
+        <!-- Verified Rationale Card -->
+        <div class="rev-rationale-box">
+          <div class="rev-rationale-title">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Verified Rationale & Core Concepts
+          </div>
+          <div class="rev-rationale-text" id="revRationaleText">Detailed explanation...</div>
+        </div>
+      </div>
+
+      <footer class="question-footer-controls">
+        <div style="display:flex; gap:10px;">
+          <button class="btn btn-secondary" id="btnRevPrev">Previous</button>
+          <button class="btn btn-primary" id="btnRevNext">Next</button>
+        </div>
+        <div style="display:flex; gap:10px;">
+          <button class="btn btn-secondary" id="btnRevJumpToSummary">Back to Scorecard</button>
+        </div>
+      </footer>
+    </main>
+
+    <!-- Right Review Palette Pane -->
+    <aside class="rev-palette-pane">
+      <div class="rev-pal-legend">
+        <div class="legend-item"><div class="legend-badge" style="background:var(--rev-correct);">✓</div> Correct</div>
+        <div class="legend-item"><div class="legend-badge" style="background:var(--rev-incorrect);">✗</div> Incorrect</div>
+        <div class="legend-item"><div class="legend-badge" style="background:var(--rev-unatt);">-</div> Unattempted</div>
+        <div class="legend-item"><div class="legend-badge" style="background:var(--rev-marked);">★</div> Was Marked</div>
+      </div>
+      <div class="palette-grid-scroll">
+        <div class="palette-grid-title" id="revPaletteTitle">SOLUTION PALETTE (ALL)</div>
+        <div class="palette-grid" id="revPaletteGrid"></div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<script>
+const QUESTIONS = [{"id": "P2-T2-U1-01", "paper": 2, "section_id": "U1", "subject": "Fundamentals of Computers", "syllabus_id": "P2-1.1", "origin_tag": "PYQ - KPSC CST 2017", "label": "PYQ", "difficulty": "easy", "text": "Which functional unit of the computer system coordinates and synchronizes all hardware operations by issuing timing and control signals?", "options": [{"label": "A", "text": "Control Unit (CU)"}, {"label": "B", "text": "Arithmetic Logic Unit (ALU)"}, {"label": "C", "text": "Memory Unit"}, {"label": "D", "text": "Input Interface"}], "answer": "A", "explanation": "The Control Unit acts as the supervisor of the CPU, decoding instructions and directing the data flow across registers, ALU, and buses.", "verbatim": true, "year": 2017, "source_url": "https://kpsc.kar.nic.in", "source_tier": 1}, {"id": "P2-T2-U1-02", "paper": 2, "section_id": "U1", "subject": "Fundamentals of Computers", "syllabus_id": "P2-1.2", "origin_tag": "PYQ - KPSC CST 2017", "label": "PYQ", "difficulty": "medium", "text": "Convert the decimal number (147)₁₀ into its equivalent binary number:", "options": [{"label": "A", "text": "(10010011)₂"}, {"label": "B", "text": "(10010111)₂"}, {"label": "C", "text": "(10110011)₂"}, {"label": "D", "text": "(11010011)₂"}], "answer": "A", "explanation": "147 = 128 + 16 + 2 + 1 = 2⁷ + 2⁴ + 2¹ + 2⁰ = (10010011)₂.", "verbatim": true, "year": 2017, "source_url": "https://kpsc.kar.nic.in", "source_tier": 1}, {"id": "P2-T2-U1-03", "paper": 2, "section_id": "U1", "subject": "Fundamentals of Computers", "syllabus_id": "P2-1.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "What is the 1's complement of the binary number (10110100)₂?", "options": [{"label": "A", "text": "01001011"}, {"label": "B", "text": "01001100"}, {"label": "C", "text": "11001011"}, {"label": "D", "text": "01101011"}], "answer": "A", "explanation": "1's complement is obtained by bitwise inversion: 1 becomes 0, and 0 becomes 1. Inverting 10110100 yields 01001011.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U1-04", "paper": 2, "section_id": "U1", "subject": "Fundamentals of Computers", "syllabus_id": "P2-1.3", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "hard", "text": "In IEEE 754 Double-Precision Floating-Point standard (64 bits), how many bits are allocated to the exponent, and what is the exponent bias?", "options": [{"label": "A", "text": "11 bits exponent, bias 1023"}, {"label": "B", "text": "8 bits exponent, bias 127"}, {"label": "C", "text": "12 bits exponent, bias 2047"}, {"label": "D", "text": "10 bits exponent, bias 511"}], "answer": "A", "explanation": "IEEE 754 double precision allocates 1 sign bit, 11 exponent bits (bias = 2¹⁰ - 1 = 1023), and 52 fraction/mantissa bits.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U1-05", "paper": 2, "section_id": "U1", "subject": "Fundamentals of Computers", "syllabus_id": "P2-1.3", "origin_tag": "Synthesized - Hard", "label": "expected", "difficulty": "hard", "text": "In a 2-level memory hierarchy, cache access time is 5 ns and main memory access time is 80 ns. What must be the minimum cache hit ratio to achieve an AMAT of at most 8 ns?", "options": [{"label": "A", "text": "0.9625 (96.25%)"}, {"label": "B", "text": "0.9000 (90%)"}, {"label": "C", "text": "0.9250 (92.5%)"}, {"label": "D", "text": "0.9500 (95%)"}], "answer": "A", "explanation": "AMAT = Hit Time + (1 - H) * Miss Penalty => 8 = 5 + (1 - H)*80 => 3 = 80*(1 - H) => 1 - H = 3/80 = 0.0375 => H = 0.9625 (96.25%).", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U1-06", "paper": 2, "section_id": "U1", "subject": "Fundamentals of Computers", "syllabus_id": "P2-1.1", "origin_tag": "PYQ - KPSC CST 2015", "label": "PYQ", "difficulty": "easy", "text": "The ENIAC (Electronic Numerical Integrator and Computer) developed by Mauchly and Eckert belongs to which generation of computers?", "options": [{"label": "A", "text": "First Generation (Vacuum Tubes)"}, {"label": "B", "text": "Second Generation"}, {"label": "C", "text": "Third Generation"}, {"label": "D", "text": "Fourth Generation"}], "answer": "A", "explanation": "ENIAC (1946) was a pioneering First Generation computer built with over 17,000 vacuum tubes.", "verbatim": true, "year": 2015, "source_url": "https://kpsc.kar.nic.in", "source_tier": 1}, {"id": "P2-T2-U1-07", "paper": 2, "section_id": "U1", "subject": "Fundamentals of Computers", "syllabus_id": "P2-1.3", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "Which type of semiconductor RAM requires periodic refresh cycles to maintain stored capacitive charge?", "options": [{"label": "A", "text": "Dynamic RAM (DRAM)"}, {"label": "B", "text": "Static RAM (SRAM)"}, {"label": "C", "text": "Mask ROM"}, {"label": "D", "text": "Flash EEPROM"}], "answer": "A", "explanation": "DRAM cells store data as charge in a tiny capacitor (1 transistor + 1 capacitor) which leaks charge, necessitating periodic refresh cycles.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U1-08", "paper": 2, "section_id": "U1", "subject": "Fundamentals of Computers", "syllabus_id": "P2-1.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "Convert the octal number (357)₈ into its equivalent hexadecimal representation:", "options": [{"label": "A", "text": "EF"}, {"label": "B", "text": "DF"}, {"label": "C", "text": "E7"}, {"label": "D", "text": "CF"}], "answer": "A", "explanation": "(357)₈ to binary: 3=011, 5=101, 7=111 => 011101111₂. Grouping in 4s from right: 1110 1111 = (EF)₁₆.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U1-09", "paper": 2, "section_id": "U1", "subject": "Fundamentals of Computers", "syllabus_id": "P2-1.3", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "What is the maximum signed integer value that can be represented using an 8-bit register in 2's complement notation?", "options": [{"label": "A", "text": "+127"}, {"label": "B", "text": "+128"}, {"label": "C", "text": "+255"}, {"label": "D", "text": "+63"}], "answer": "A", "explanation": "An n-bit 2's complement register represents numbers from -(2ⁿ⁻¹) to +(2ⁿ⁻¹ - 1). For n=8, the range is -128 to +127.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U1-10", "paper": 2, "section_id": "U1", "subject": "Fundamentals of Computers", "syllabus_id": "P2-1.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "easy", "text": "Which computer bus is unidirectional, carrying memory locations exclusively from the CPU to memory/IO devices?", "options": [{"label": "A", "text": "Address Bus"}, {"label": "B", "text": "Data Bus"}, {"label": "C", "text": "Control Bus"}, {"label": "D", "text": "Power Bus"}], "answer": "A", "explanation": "The Address Bus is unidirectional (CPU -> Memory/IO), while the Data Bus is bidirectional.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U1-11", "paper": 2, "section_id": "U1", "subject": "Fundamentals of Computers", "syllabus_id": "P2-1.3", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "In a direct-mapped cache, how many blocks of main memory map to a specific cache line?", "options": [{"label": "A", "text": "Multiple main memory blocks map to the same cache line via modulo indexing"}, {"label": "B", "text": "Only exactly one block per cache line"}, {"label": "C", "text": "Any block can map to any cache line"}, {"label": "D", "text": "Zero blocks"}], "answer": "A", "explanation": "In direct-mapped cache, Line = (Block Address) mod (Total Cache Lines). Multiple blocks share the same cache line, distinguished by Tag bits.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U1-12", "paper": 2, "section_id": "U1", "subject": "Fundamentals of Computers", "syllabus_id": "P2-1.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "What is the BCD (Binary Coded Decimal) representation of the decimal number 89?", "options": [{"label": "A", "text": "1000 1001"}, {"label": "B", "text": "0101 1001"}, {"label": "C", "text": "1000 1000"}, {"label": "D", "text": "1001 1000"}], "answer": "A", "explanation": "In BCD, each decimal digit is encoded in 4-bit binary: 8 = 1000 and 9 = 1001, giving 1000 1001.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U1-13", "paper": 2, "section_id": "U1", "subject": "Fundamentals of Computers", "syllabus_id": "P2-1.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "easy", "text": "Which magnetic storage device allows purely sequential (serial) access to stored records?", "options": [{"label": "A", "text": "Magnetic Tape"}, {"label": "B", "text": "Hard Disk Drive"}, {"label": "C", "text": "Floppy Disk"}, {"label": "D", "text": "CD-ROM"}], "answer": "A", "explanation": "Magnetic tape is a sequential access medium (must wind through preceding data); disks and SSDs provide direct/random access.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U1-14", "paper": 2, "section_id": "U1", "subject": "Fundamentals of Computers", "syllabus_id": "P2-1.3", "origin_tag": "Synthesized - Hard", "label": "expected", "difficulty": "hard", "text": "A byte-addressable computer system has a 32-bit physical address. If the cache size is 64 KB with 32-byte block size in a 4-way set associative cache, how many tag bits are required?", "options": [{"label": "A", "text": "18 bits"}, {"label": "B", "text": "19 bits"}, {"label": "C", "text": "14 bits"}, {"label": "D", "text": "16 bits"}], "answer": "A", "explanation": "Block offset = log2(32) = 5 bits. Cache lines = 64KB / 32B = 2048 lines. Sets = 2048 / 4 = 512 sets => Set index = log2(512) = 9 bits. Tag bits = 32 - (9 + 5) = 18 bits.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U1-15", "paper": 2, "section_id": "U1", "subject": "Fundamentals of Computers", "syllabus_id": "P2-1.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "easy", "text": "What is the ASCII character code value for uppercase letter 'A' in decimal?", "options": [{"label": "A", "text": "65"}, {"label": "B", "text": "97"}, {"label": "C", "text": "48"}, {"label": "D", "text": "66"}], "answer": "A", "explanation": "In 7-bit ASCII: 'A' = 65, 'Z' = 90, lowercase 'a' = 97, 'z' = 122, digit '0' = 48.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U2-16", "paper": 2, "section_id": "U2", "subject": "Digital Logic & Organization", "syllabus_id": "P2-2.1", "origin_tag": "PYQ - KPSC CST 2017", "label": "PYQ", "difficulty": "easy", "text": "Which logic gates are referred to as 'Universal Logic Gates' because any Boolean function can be implemented using them alone?", "options": [{"label": "A", "text": "NAND and NOR"}, {"label": "B", "text": "AND and OR"}, {"label": "C", "text": "XOR and XNOR"}, {"label": "D", "text": "NOT and AND"}], "answer": "A", "explanation": "NAND and NOR gates are universal gates capable of realizing NOT, AND, and OR operations independently.", "verbatim": true, "year": 2017, "source_url": "https://kpsc.kar.nic.in", "source_tier": 1}, {"id": "P2-T2-U2-17", "paper": 2, "section_id": "U2", "subject": "Digital Logic & Organization", "syllabus_id": "P2-2.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "According to De Morgan's Law, the Boolean expression (A + B)' is equivalent to:", "options": [{"label": "A", "text": "A' . B'"}, {"label": "B", "text": "A' + B'"}, {"label": "C", "text": "(A . B)'"}, {"label": "D", "text": "A + B'"}], "answer": "A", "explanation": "De Morgan's first theorem states: (A + B)' = A' . B'. De Morgan's second theorem states: (A . B)' = A' + B'.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U2-18", "paper": 2, "section_id": "U2", "subject": "Digital Logic & Organization", "syllabus_id": "P2-2.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "A Full Adder combinational circuit can be constructed using:", "options": [{"label": "A", "text": "Two Half Adders and One OR gate"}, {"label": "B", "text": "Two Half Adders and One AND gate"}, {"label": "C", "text": "One Half Adder and Two OR gates"}, {"label": "D", "text": "Three Half Adders"}], "answer": "A", "explanation": "A Full Adder adds 3 bits (A, B, Cin). It consists of two Half Adders (generating intermediate sums and carries) and an OR gate combining the carry outputs.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U2-19", "paper": 2, "section_id": "U2", "subject": "Digital Logic & Organization", "syllabus_id": "P2-2.2", "origin_tag": "PYQ - KPSC CST 2017", "label": "PYQ", "difficulty": "medium", "text": "In a JK Flip-Flop, what happens when both J and K inputs are set to logic HIGH (J=1, K=1) during a clock pulse?", "options": [{"label": "A", "text": "Toggle condition (Q(next) = Q')"}, {"label": "B", "text": "No change (Q(next) = Q)"}, {"label": "C", "text": "Reset to 0"}, {"label": "D", "text": "Undefined / Invalid state"}], "answer": "A", "explanation": "When J=1 and K=1, the JK flip-flop toggles its output state (solves the indeterminate state problem of the SR flip-flop).", "verbatim": true, "year": 2017, "source_url": "https://kpsc.kar.nic.in", "source_tier": 1}, {"id": "P2-T2-U2-20", "paper": 2, "section_id": "U2", "subject": "Digital Logic & Organization", "syllabus_id": "P2-2.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "How many select input lines are required for a 16-to-1 Multiplexer (MUX)?", "options": [{"label": "A", "text": "4 select lines"}, {"label": "B", "text": "3 select lines"}, {"label": "C", "text": "8 select lines"}, {"label": "D", "text": "16 select lines"}], "answer": "A", "explanation": "A multiplexer with 2ⁿ data inputs requires n select lines. Since 16 = 2⁴, 4 select lines are required.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U2-21", "paper": 2, "section_id": "U2", "subject": "Digital Logic & Organization", "syllabus_id": "P2-2.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "easy", "text": "Which flip-flop eliminates the race-around condition by ensuring the next state always equals the data input D?", "options": [{"label": "A", "text": "D Flip-Flop (Data / Delay Flip-Flop)"}, {"label": "B", "text": "SR Flip-Flop"}, {"label": "C", "text": "T Flip-Flop"}, {"label": "D", "text": "Master-Slave SR"}], "answer": "A", "explanation": "A D flip-flop transfers its D input directly to output Q on the clock trigger (Q(next) = D), widely used in shift registers.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U2-22", "paper": 2, "section_id": "U2", "subject": "Digital Logic & Organization", "syllabus_id": "P2-2.3", "origin_tag": "PYQ - KPSC CST 2017", "label": "PYQ", "difficulty": "hard", "text": "In Morris Mano's basic computer architecture, what are the four phases of the instruction cycle in order?", "options": [{"label": "A", "text": "Fetch Instruction $\\to$ Decode Instruction $\\to$ Read Effective Address $\\to$ Execute Instruction"}, {"label": "B", "text": "Decode $\\to$ Fetch $\\to$ Execute $\\to$ Interrupt"}, {"label": "C", "text": "Execute $\\to$ Decode $\\to$ Fetch $\\to$ Store"}, {"label": "D", "text": "Read $\\to$ Write $\\to$ Decode $\\to$ Reset"}], "answer": "A", "explanation": "The instruction cycle phases are: 1. Fetch instruction from memory into IR; 2. Decode instruction; 3. Read effective address (if indirect); 4. Execute.", "verbatim": true, "year": 2017, "source_url": "https://kpsc.kar.nic.in", "source_tier": 1}, {"id": "P2-T2-U2-23", "paper": 2, "section_id": "U2", "subject": "Digital Logic & Organization", "syllabus_id": "P2-2.3", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "Which addressing mode specifies the operand directly within the instruction itself (e.g., ADDI R1, #5)?", "options": [{"label": "A", "text": "Immediate Addressing Mode"}, {"label": "B", "text": "Direct Addressing Mode"}, {"label": "C", "text": "Indirect Addressing Mode"}, {"label": "D", "text": "Register Indirect Mode"}], "answer": "A", "explanation": "In Immediate addressing mode, the operand is part of the instruction itself, requiring no memory access to fetch the data.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U2-24", "paper": 2, "section_id": "U2", "subject": "Digital Logic & Organization", "syllabus_id": "P2-2.3", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "In Relative Addressing Mode, the effective address of the operand is calculated by adding the address field to the contents of:", "options": [{"label": "A", "text": "Program Counter (PC)"}, {"label": "B", "text": "Accumulator (AC)"}, {"label": "C", "text": "Index Register (XR)"}, {"label": "D", "text": "Stack Pointer (SP)"}], "answer": "A", "explanation": "Relative addressing computes Effective Address = PC + Address Offset, commonly used in branch and jump instructions.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U2-25", "paper": 2, "section_id": "U2", "subject": "Digital Logic & Organization", "syllabus_id": "P2-2.3", "origin_tag": "Synthesized - Hard", "label": "expected", "difficulty": "hard", "text": "A 5-stage non-pipelined processor executes an instruction in 50 ns. If a 5-stage pipelined version has a clock cycle of 11 ns (due to 1 ns latch delay), what is the speedup for executing 1000 instructions?", "options": [{"label": "A", "text": "~4.53"}, {"label": "B", "text": "~5.00"}, {"label": "C", "text": "~3.85"}, {"label": "D", "text": "~2.75"}], "answer": "A", "explanation": "Non-pipelined time = 1000 * 50 ns = 50,000 ns. Pipelined time = (k + n - 1) * cycle = (5 + 1000 - 1) * 11 ns = 1004 * 11 = 11,044 ns. Speedup = 50,000 / 11,044 ≈ 4.527.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U2-26", "paper": 2, "section_id": "U2", "subject": "Digital Logic & Organization", "syllabus_id": "P2-2.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "easy", "text": "The minimal Sum of Products (SOP) form of the Boolean expression F = A'B + AB is:", "options": [{"label": "A", "text": "B"}, {"label": "B", "text": "A"}, {"label": "C", "text": "A + B"}, {"label": "D", "text": "A'B'"}], "answer": "A", "explanation": "F = B(A' + A) = B(1) = B.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U2-27", "paper": 2, "section_id": "U2", "subject": "Digital Logic & Organization", "syllabus_id": "P2-2.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "How many 3-to-8 line decoders with enable inputs are needed to construct a 4-to-16 line decoder?", "options": [{"label": "A", "text": "Two 3-to-8 decoders (and one inverter for enable)"}, {"label": "B", "text": "Four decoders"}, {"label": "C", "text": "Three decoders"}, {"label": "D", "text": "Eight decoders"}], "answer": "A", "explanation": "Using the 4th bit to drive the active-high/active-low enable lines directly (with one inverter), two 3-to-8 decoders form a 4-to-16 decoder.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U2-28", "paper": 2, "section_id": "U2", "subject": "Digital Logic & Organization", "syllabus_id": "P2-2.3", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "Direct Memory Access (DMA) data transfer bypasses which component to achieve high-speed bulk data movement between disk and RAM?", "options": [{"label": "A", "text": "CPU (Microprocessor core)"}, {"label": "B", "text": "System Bus"}, {"label": "C", "text": "Main Memory"}, {"label": "D", "text": "Disk Controller"}], "answer": "A", "explanation": "DMA controllers transfer data directly between I/O peripherals and main memory without burdening the CPU with per-byte interrupts.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U2-29", "paper": 2, "section_id": "U2", "subject": "Digital Logic & Organization", "syllabus_id": "P2-2.3", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "An interrupt that cannot be masked or ignored by software instructions is called a:", "text_alt": "ಸಾಫ್ಟ್‌ವೇರ್ ಮೂಲಕ ನಿರ್ಲಕ್ಷಿಸಲು ಸಾಧ್ಯವಾಗದ ಅತ್ಯುನ್ನತ ಆದ್ಯತೆಯ ಇಂಟರಪ್ಟ್ ಯಾವುದು?", "options": [{"label": "A", "text": "Non-Maskable Interrupt (NMI)"}, {"label": "B", "text": "Vectored Maskable Interrupt"}, {"label": "C", "text": "Software Interrupt"}, {"label": "D", "text": "Polled Interrupt"}], "answer": "A", "explanation": "Non-Maskable Interrupts (like power failure, bus parity errors) have the highest priority and cannot be disabled by CLI instructions.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U2-30", "paper": 2, "section_id": "U2", "subject": "Digital Logic & Organization", "syllabus_id": "P2-2.1", "origin_tag": "Synthesized - Hard", "label": "expected", "difficulty": "hard", "text": "In a 4-variable Karnaugh Map (K-Map), grouping a block of 8 adjacent cells (an octet) eliminates how many variables?", "options": [{"label": "A", "text": "3 variables"}, {"label": "B", "text": "2 variables"}, {"label": "C", "text": "1 variable"}, {"label": "D", "text": "4 variables"}], "answer": "A", "explanation": "In a K-map, grouping 2ⁿ cells eliminates n variables. An octet has 2³ = 8 cells, so it eliminates 3 variables.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U3-31", "paper": 2, "section_id": "U3", "subject": "Programming with C & C++", "syllabus_id": "P2-3.1", "origin_tag": "PYQ - KPSC CST 2017", "label": "PYQ", "difficulty": "easy", "text": "What will be the output of the C expression: 5 + 3 * 2 - 8 / 4?", "options": [{"label": "A", "text": "9"}, {"label": "B", "text": "14"}, {"label": "C", "text": "12"}, {"label": "D", "text": "7"}], "answer": "A", "explanation": "Operator precedence: * and / have higher precedence than + and -: 3*2 = 6, 8/4 = 2. Then left-to-right: 5 + 6 - 2 = 11 - 2 = 9.", "verbatim": true, "year": 2017, "source_url": "https://kpsc.kar.nic.in", "source_tier": 1}, {"id": "P2-T2-U3-32", "paper": 2, "section_id": "U3", "subject": "Programming with C & C++", "syllabus_id": "P2-3.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "In C, what is the effect of declaring a variable with the 'static' storage class inside a function?", "options": [{"label": "A", "text": "The variable retains its value between function calls and has lifetime equal to program execution"}, {"label": "B", "text": "The variable becomes global and accessible across all files"}, {"label": "C", "text": "The variable is stored in CPU registers"}, {"label": "D", "text": "The variable cannot be modified (read-only)"}], "answer": "A", "explanation": "Static local variables are initialized once and reside in the data segment, retaining their values across successive function calls.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U3-33", "paper": 2, "section_id": "U3", "subject": "Programming with C & C++", "syllabus_id": "P2-3.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "hard", "text": "What does the declaration `int (*fp)(char, float);` signify in C?", "options": [{"label": "A", "text": "fp is a pointer to a function taking (char, float) arguments and returning int"}, {"label": "B", "text": "fp is a function returning a pointer to int"}, {"label": "C", "text": "fp is an array of function pointers"}, {"label": "D", "text": "Syntax error"}], "answer": "A", "explanation": "Parentheses around `*fp` bind the pointer to the identifier: `(*fp)` is a function pointer accepting `(char, float)` and returning `int`.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U3-34", "paper": 2, "section_id": "U3", "subject": "Programming with C & C++", "syllabus_id": "P2-3.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "What is the primary difference between `malloc()` and `calloc()` functions in standard C?", "options": [{"label": "A", "text": "calloc() initializes allocated memory bytes to zero; malloc() leaves memory uninitialized (garbage values)"}, {"label": "B", "text": "malloc() allocates from heap, calloc() allocates from stack"}, {"label": "C", "text": "malloc() takes two arguments, calloc() takes one"}, {"label": "D", "text": "calloc() cannot be freed using free()"}], "answer": "A", "explanation": "calloc(n, size) allocates contiguous memory and initializes all bits to zero; malloc(bytes) allocates uninitialized memory containing garbage.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U3-35", "paper": 2, "section_id": "U3", "subject": "Programming with C & C++", "syllabus_id": "P2-3.3", "origin_tag": "PYQ - KPSC CST 2017", "label": "PYQ", "difficulty": "medium", "text": "In C++, dynamic polymorphism (late binding) is achieved using which mechanism?", "options": [{"label": "A", "text": "Virtual functions and base class pointers/references"}, {"label": "B", "text": "Function overloading"}, {"label": "C", "text": "Template functions"}, {"label": "D", "text": "Friend functions"}], "answer": "A", "explanation": "Runtime polymorphism in C++ is implemented via virtual functions, where the compiler sets up a vtable and vptr to resolve calls at runtime.", "verbatim": true, "year": 2017, "source_url": "https://kpsc.kar.nic.in", "source_tier": 1}, {"id": "P2-T2-U3-36", "paper": 2, "section_id": "U3", "subject": "Programming with C & C++", "syllabus_id": "P2-3.3", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "A class containing at least one pure virtual function (e.g., `virtual void draw() = 0;`) is known as:", "options": [{"label": "A", "text": "Abstract Class"}, {"label": "B", "text": "Concrete Class"}, {"label": "C", "text": "Sealed Class"}, {"label": "D", "text": "Singleton Class"}], "answer": "A", "explanation": "An abstract class contains one or more pure virtual functions (`= 0`) and cannot be directly instantiated.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U3-37", "paper": 2, "section_id": "U3", "subject": "Programming with C & C++", "syllabus_id": "P2-3.3", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "hard", "text": "Why should a base class destructor always be declared as `virtual` when deleting derived objects via base pointers?", "options": [{"label": "A", "text": "To prevent memory leaks by ensuring the derived class destructor is invoked first"}, {"label": "B", "text": "To make the base class abstract"}, {"label": "C", "text": "To prevent object slicing"}, {"label": "D", "text": "C++ requires all destructors to be virtual"}], "answer": "A", "explanation": "If a base destructor is non-virtual, deleting a derived object via a base pointer causes undefined behavior (derived destructor never executes, leaking resources).", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U3-38", "paper": 2, "section_id": "U3", "subject": "Programming with C & C++", "syllabus_id": "P2-3.3", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "Which C++ feature solves the 'Diamond Problem' in multiple inheritance where a derived class inherits two copies of a common grandparent class?", "options": [{"label": "A", "text": "Virtual Base Classes (`virtual public Base`)"}, {"label": "B", "text": "Friend classes"}, {"label": "C", "text": "Namespace aliasing"}, {"label": "D", "text": "Inline functions"}], "answer": "A", "explanation": "Virtual base classes ensure that only one shared instance of the common ancestor sub-object is included in the most derived class.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U3-39", "paper": 2, "section_id": "U3", "subject": "Programming with C & C++", "syllabus_id": "P2-3.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "easy", "text": "What does a pointer variable contain in C?", "options": [{"label": "A", "text": "Memory address of another variable"}, {"label": "B", "text": "The data value directly"}, {"label": "C", "text": "A copy of CPU register contents"}, {"label": "D", "text": "Floating point constant"}], "answer": "A", "explanation": "A pointer is a variable that stores the hexadecimal/binary memory address of another variable.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U3-40", "paper": 2, "section_id": "U3", "subject": "Programming with C & C++", "syllabus_id": "P2-3.2", "origin_tag": "Synthesized - Hard", "label": "expected", "difficulty": "hard", "text": "What is the output of the following C code?\n```c\nint a[5] = {10, 20, 30, 40, 50};\nint *p = a;\nprintf(\"%d\", *(p + 3));\n```", "options": [{"label": "A", "text": "40"}, {"label": "B", "text": "30"}, {"label": "C", "text": "50"}, {"label": "D", "text": "Address of element"}], "answer": "A", "explanation": "`p` points to a[0] (10). Pointer arithmetic `p + 3` offsets 3 elements forward to &a[3]. Dereferencing `*(p + 3)` yields a[3] = 40.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U3-41", "paper": 2, "section_id": "U3", "subject": "Programming with C & C++", "syllabus_id": "P2-3.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "What happens when a dynamically allocated block of memory is lost without being released via `free()` or `delete`?", "options": [{"label": "A", "text": "Memory Leak"}, {"label": "B", "text": "Segmentation Fault"}, {"label": "C", "text": "Stack Overflow"}, {"label": "D", "text": "Dangling Pointer"}], "answer": "A", "explanation": "A memory leak occurs when heap memory is allocated but never deallocated and the pointer reference is lost.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U3-42", "paper": 2, "section_id": "U3", "subject": "Programming with C & C++", "syllabus_id": "P2-3.3", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "easy", "text": "Which constructor is invoked when a new object is initialized as a copy of an existing object of the same class (e.g., `Point p2 = p1;`)?", "options": [{"label": "A", "text": "Copy Constructor"}, {"label": "B", "text": "Default Constructor"}, {"label": "C", "text": "Parameterized Constructor"}, {"label": "D", "text": "Move Assignment Operator"}], "answer": "A", "explanation": "A copy constructor has the signature `ClassName(const ClassName &obj)` and initializes an object using an existing instance.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U3-43", "paper": 2, "section_id": "U3", "subject": "Programming with C & C++", "syllabus_id": "P2-3.3", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "In C++, which operator CANNOT be overloaded?", "options": [{"label": "A", "text": "Scope resolution operator (`::`)"}, {"label": "B", "text": "Addition operator (`+`)"}, {"label": "C", "text": "Array subscript operator (`[]`)"}, {"label": "D", "text": "Function call operator (`()`)"}], "answer": "A", "explanation": "Operators that cannot be overloaded in C++ include: scope resolution `::`, member selection `.`, pointer-to-member `.*`, and ternary `?:`.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U3-44", "paper": 2, "section_id": "U3", "subject": "Programming with C & C++", "syllabus_id": "P2-3.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "What is the size of a `union` in C?", "options": [{"label": "A", "text": "Equal to the size of its largest member"}, {"label": "B", "text": "Sum of sizes of all its members"}, {"label": "C", "text": "Size of its first member"}, {"label": "D", "text": "Always 4 bytes"}], "answer": "A", "explanation": "All members of a union share the same memory location; hence the union's size is determined by its largest data member.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U3-45", "paper": 2, "section_id": "U3", "subject": "Programming with C & C++", "syllabus_id": "P2-3.3", "origin_tag": "Synthesized - Hard", "label": "expected", "difficulty": "hard", "text": "In C++, when an exception is thrown inside a `try` block, what mechanism ensures that local stack objects are properly destructed in reverse order of construction?", "options": [{"label": "A", "text": "Stack Unwinding"}, {"label": "B", "text": "Garbage Collection"}, {"label": "C", "text": "Type Coercion"}, {"label": "D", "text": "Dynamic Casting"}], "answer": "A", "explanation": "Stack Unwinding is the runtime process that exits scopes and executes destructors of local automatic objects until an appropriate catch block is found.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U4-46", "paper": 2, "section_id": "U4", "subject": "Data Structures & Algorithms", "syllabus_id": "P2-4.1", "origin_tag": "PYQ - KPSC CST 2017", "label": "PYQ", "difficulty": "easy", "text": "Which data structure operates on the Last-In, First-Out (LIFO) operational principle?", "options": [{"label": "A", "text": "Stack"}, {"label": "B", "text": "Queue"}, {"label": "C", "text": "Linked List"}, {"label": "D", "text": "Binary Tree"}], "answer": "A", "explanation": "A Stack operates on LIFO (Last-In First-Out), where the last inserted element is the first removed (push/pop at top).", "verbatim": true, "year": 2017, "source_url": "https://kpsc.kar.nic.in", "source_tier": 1}, {"id": "P2-T2-U4-47", "paper": 2, "section_id": "U4", "subject": "Data Structures & Algorithms", "syllabus_id": "P2-4.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "What is the postfix evaluation result of the expression: `6 3 2 + * 5 -`?", "options": [{"label": "A", "text": "25"}, {"label": "B", "text": "15"}, {"label": "C", "text": "20"}, {"label": "D", "text": "30"}], "answer": "A", "explanation": "Evaluation: 3 2 + = 5. Then 6 * 5 = 30. Then 30 - 5 = 25.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U4-48", "paper": 2, "section_id": "U4", "subject": "Data Structures & Algorithms", "syllabus_id": "P2-4.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "In a Circular Queue of size N implemented using an array, what condition indicates that the queue is completely full?", "options": [{"label": "A", "text": "(rear + 1) % N == front"}, {"label": "B", "text": "rear == front"}, {"label": "C", "text": "front == 0"}, {"label": "D", "text": "rear == N - 1"}], "answer": "A", "explanation": "In a circular queue, full condition is `(rear + 1) % N == front`; empty condition is `front == rear` (or front == -1).", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U4-49", "paper": 2, "section_id": "U4", "subject": "Data Structures & Algorithms", "syllabus_id": "P2-4.2", "origin_tag": "PYQ - KPSC CST 2017", "label": "PYQ", "difficulty": "easy", "text": "What is the worst-case time complexity of QuickSort algorithm?", "options": [{"label": "A", "text": "O(n²)"}, {"label": "B", "text": "O(n log n)"}, {"label": "C", "text": "O(n)"}, {"label": "D", "text": "O(log n)"}], "answer": "A", "explanation": "QuickSort has average complexity O(n log n), but degrades to worst-case O(n²) when the partition is unbalanced (e.g. array already sorted).", "verbatim": true, "year": 2017, "source_url": "https://kpsc.kar.nic.in", "source_tier": 1}, {"id": "P2-T2-U4-50", "paper": 2, "section_id": "U4", "subject": "Data Structures & Algorithms", "syllabus_id": "P2-4.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "Which sorting algorithm guarantees O(n log n) time complexity in the worst case, best case, and average case, while requiring O(n) auxiliary space?", "options": [{"label": "A", "text": "Merge Sort"}, {"label": "B", "text": "Quick Sort"}, {"label": "C", "text": "Bubble Sort"}, {"label": "D", "text": "Insertion Sort"}], "answer": "A", "explanation": "Merge Sort consistently divides the array in half and merges, guaranteeing O(n log n) in all cases with O(n) auxiliary space.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U4-51", "paper": 2, "section_id": "U4", "subject": "Data Structures & Algorithms", "syllabus_id": "P2-4.3", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "In-order traversal of a valid Binary Search Tree (BST) produces keys in:", "options": [{"label": "A", "text": "Strictly ascending (sorted) order"}, {"label": "B", "text": "Strictly descending order"}, {"label": "C", "text": "Random order"}, {"label": "D", "text": "Breadth-first order"}], "answer": "A", "explanation": "In-order traversal visits (Left, Root, Right). In a BST, Left < Root < Right, so in-order produces sorted ascending keys.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U4-52", "paper": 2, "section_id": "U4", "subject": "Data Structures & Algorithms", "syllabus_id": "P2-4.3", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "hard", "text": "What is the defining balance factor property of an AVL tree for every node?", "options": [{"label": "A", "text": "Balance Factor ∈ {-1, 0, +1}"}, {"label": "B", "text": "Balance Factor == 0"}, {"label": "C", "text": "Balance Factor ≤ 2"}, {"label": "D", "text": "Balance Factor ≥ 0"}], "answer": "A", "explanation": "An AVL tree is a self-balancing BST where the balance factor (Height(Left) - Height(Right)) of every node must be -1, 0, or +1.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U4-53", "paper": 2, "section_id": "U4", "subject": "Data Structures & Algorithms", "syllabus_id": "P2-4.4", "origin_tag": "PYQ - KPSC CST 2017", "label": "PYQ", "difficulty": "medium", "text": "Dijkstra's Single-Source Shortest Path algorithm fails to produce correct results in graphs containing:", "options": [{"label": "A", "text": "Negative weight edges"}, {"label": "B", "text": "Cycles"}, {"label": "C", "text": "Disconnected components"}, {"label": "D", "text": "Zero weight edges"}], "answer": "A", "explanation": "Dijkstra's greedy choice assumes adding an edge never decreases path cost, so it fails on negative weight edges (Bellman-Ford is used instead).", "verbatim": true, "year": 2017, "source_url": "https://kpsc.kar.nic.in", "source_tier": 1}, {"id": "P2-T2-U4-54", "paper": 2, "section_id": "U4", "subject": "Data Structures & Algorithms", "syllabus_id": "P2-4.4", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "Which algorithmic design paradigm is used by Kruskal's algorithm to construct a Minimum Spanning Tree (MST)?", "options": [{"label": "A", "text": "Greedy Method"}, {"label": "B", "text": "Dynamic Programming"}, {"label": "C", "text": "Divide and Conquer"}, {"label": "D", "text": "Backtracking"}], "answer": "A", "explanation": "Kruskal's algorithm sorts edges by weight and greedily selects the minimum-weight edge that does not form a cycle (using Disjoint Set Union).", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U4-55", "paper": 2, "section_id": "U4", "subject": "Data Structures & Algorithms", "syllabus_id": "P2-4.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "easy", "text": "What is the time complexity to insert a new node at the beginning (head) of a Singly Linked List?", "options": [{"label": "A", "text": "O(1)"}, {"label": "B", "text": "O(n)"}, {"label": "C", "text": "O(log n)"}, {"label": "D", "text": "O(n²)"}], "answer": "A", "explanation": "Inserting at head requires allocating a node, setting `newNode->next = head`, and `head = newNode`, executing in O(1) constant time.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U4-56", "paper": 2, "section_id": "U4", "subject": "Data Structures & Algorithms", "syllabus_id": "P2-4.4", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "Breadth-First Search (BFS) graph traversal standardly uses which data structure?", "options": [{"label": "A", "text": "Queue"}, {"label": "B", "text": "Stack"}, {"label": "C", "text": "Priority Queue"}, {"label": "D", "text": "Binary Tree"}], "answer": "A", "explanation": "BFS explores level by level using a FIFO Queue; Depth-First Search (DFS) uses a LIFO Stack (or recursion).", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U4-57", "paper": 2, "section_id": "U4", "subject": "Data Structures & Algorithms", "syllabus_id": "P2-4.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "What is the maximum number of nodes in a binary tree of depth (height) h, where root is at level 0?", "options": [{"label": "A", "text": "2^(h+1) - 1"}, {"label": "B", "text": "2^h"}, {"label": "C", "text": "2^(h-1)"}, {"label": "D", "text": "2h + 1"}], "answer": "A", "explanation": "Max nodes = 2⁰ + 2¹ + ... + 2ʰ = 2^(h+1) - 1. For height h=3, max nodes = 2⁴ - 1 = 15.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U4-58", "paper": 2, "section_id": "U4", "subject": "Data Structures & Algorithms", "syllabus_id": "P2-4.1", "origin_tag": "Synthesized - Hard", "label": "expected", "difficulty": "hard", "text": "Floyd's Cycle-Finding algorithm (tortoise and hare) detects a loop in a linked list in:", "options": [{"label": "A", "text": "O(n) time and O(1) auxiliary space"}, {"label": "B", "text": "O(n²) time and O(n) space"}, {"label": "C", "text": "O(n log n) time and O(1) space"}, {"label": "D", "text": "O(1) time and O(n) space"}], "answer": "A", "explanation": "Floyd's algorithm advances slow pointer by 1 step and fast pointer by 2 steps; if they meet, a cycle exists, achieving O(n) time and O(1) space.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U4-59", "paper": 2, "section_id": "U4", "subject": "Data Structures & Algorithms", "syllabus_id": "P2-4.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "In a Max-Heap data structure with n elements, what is the time complexity to extract the maximum element?", "options": [{"label": "A", "text": "O(log n)"}, {"label": "B", "text": "O(1)"}, {"label": "C", "text": "O(n)"}, {"label": "D", "text": "O(n log n)"}], "answer": "A", "explanation": "Extract-Max removes root, places last element at root, and runs Max-Heapify to restore heap property in O(log n) time.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U4-60", "paper": 2, "section_id": "U4", "subject": "Data Structures & Algorithms", "syllabus_id": "P2-4.4", "origin_tag": "Synthesized - Hard", "label": "expected", "difficulty": "hard", "text": "The 0/1 Knapsack problem is standardly solved using Dynamic Programming in pseudo-polynomial time of:", "options": [{"label": "A", "text": "O(n * W), where n is items and W is capacity"}, {"label": "B", "text": "O(n log n)"}, {"label": "C", "text": "O(2^n)"}, {"label": "D", "text": "O(n + W)"}], "answer": "A", "explanation": "The 2D dynamic programming table `K[i][w]` requires `n` rows and `W` columns, yielding O(n * W) time complexity.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U5-61", "paper": 2, "section_id": "U5", "subject": "Database Management Systems", "syllabus_id": "P2-5.1", "origin_tag": "PYQ - KPSC CST 2017", "label": "PYQ", "difficulty": "easy", "text": "In relational database theory, what is a single row in a database table called?", "options": [{"label": "A", "text": "Tuple"}, {"label": "B", "text": "Attribute"}, {"label": "C", "text": "Domain"}, {"label": "D", "text": "Schema"}], "answer": "A", "explanation": "In relational model terminology: Table = Relation, Row = Tuple, Column = Attribute, Number of rows = Cardinality, Number of columns = Degree.", "verbatim": true, "year": 2017, "source_url": "https://kpsc.kar.nic.in", "source_tier": 1}, {"id": "P2-T2-U5-62", "paper": 2, "section_id": "U5", "subject": "Database Management Systems", "syllabus_id": "P2-5.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "What does Entity Integrity constraint state in the relational model?", "options": [{"label": "A", "text": "No primary key attribute can contain a NULL value"}, {"label": "B", "text": "Foreign keys must match valid primary keys"}, {"label": "C", "text": "Attribute values must be atomic"}, {"label": "D", "text": "Tables must be sorted"}], "answer": "A", "explanation": "Entity Integrity dictates that no component of a Primary Key can be NULL, ensuring every tuple can be uniquely identified.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U5-63", "paper": 2, "section_id": "U5", "subject": "Database Management Systems", "syllabus_id": "P2-5.2", "origin_tag": "PYQ - KPSC CST 2017", "label": "PYQ", "difficulty": "medium", "text": "A relation is in Second Normal Form (2NF) if and only if it is in 1NF and:", "options": [{"label": "A", "text": "Every non-prime attribute is fully functionally dependent on the entire primary key (no partial dependency)"}, {"label": "B", "text": "There are no transitive dependencies"}, {"label": "C", "text": "All multivalued dependencies are eliminated"}, {"label": "D", "text": "Every determinant is a candidate key"}], "answer": "A", "explanation": "2NF requires 1NF + elimination of partial functional dependencies (non-prime attributes cannot depend on a proper subset of a composite candidate key).", "verbatim": true, "year": 2017, "source_url": "https://kpsc.kar.nic.in", "source_tier": 1}, {"id": "P2-T2-U5-64", "paper": 2, "section_id": "U5", "subject": "Database Management Systems", "syllabus_id": "P2-5.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "A relation is in Third Normal Form (3NF) if for every non-trivial functional dependency X -> Y:", "options": [{"label": "A", "text": "Either X is a super key or Y is a prime attribute"}, {"label": "B", "text": "X must always be a candidate key"}, {"label": "C", "text": "Y must be a super key"}, {"label": "D", "text": "No attribute can be numeric"}], "answer": "A", "explanation": "3NF eliminates transitive dependencies: for X -> Y, either X is a superkey or Y is a prime attribute (part of a candidate key).", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U5-65", "paper": 2, "section_id": "U5", "subject": "Database Management Systems", "syllabus_id": "P2-5.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "hard", "text": "What makes Boyce-Codd Normal Form (BCNF) strictly stronger than Third Normal Form (3NF)?", "options": [{"label": "A", "text": "In BCNF, for every functional dependency X -> Y, X must be a super key (eliminating prime attribute exception)"}, {"label": "B", "text": "BCNF permits partial dependencies"}, {"label": "C", "text": "BCNF requires lossy decomposition"}, {"label": "D", "text": "BCNF applies only to non-relational databases"}], "answer": "A", "explanation": "BCNF removes the exception present in 3NF: in BCNF, every determinant X in non-trivial X -> Y must strictly be a superkey.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U5-66", "paper": 2, "section_id": "U5", "subject": "Database Management Systems", "syllabus_id": "P2-5.3", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "In SQL, which clause is used to filter aggregated group results produced by the `GROUP BY` clause?", "options": [{"label": "A", "text": "HAVING"}, {"label": "B", "text": "WHERE"}, {"label": "C", "text": "ORDER BY"}, {"label": "D", "text": "LIKE"}], "answer": "A", "explanation": "`WHERE` filters individual rows prior to grouping; `HAVING` filters aggregated groups after `GROUP BY`.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U5-67", "paper": 2, "section_id": "U5", "subject": "Database Management Systems", "syllabus_id": "P2-5.3", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "Which SQL JOIN returns all rows from the left table along with matching rows from the right table, and NULLs where no match exists?", "options": [{"label": "A", "text": "LEFT OUTER JOIN"}, {"label": "B", "text": "INNER JOIN"}, {"label": "C", "text": "RIGHT OUTER JOIN"}, {"label": "D", "text": "CROSS JOIN"}], "answer": "A", "explanation": "LEFT OUTER JOIN preserves all tuples from the left relation, padding right attributes with NULL when the join condition fails.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U5-68", "paper": 2, "section_id": "U5", "subject": "Database Management Systems", "syllabus_id": "P2-5.4", "origin_tag": "PYQ - KPSC CST 2017", "label": "PYQ", "difficulty": "easy", "text": "The ACID properties of database transactions ensure reliable processing. What does the 'I' in ACID stand for?", "options": [{"label": "A", "text": "Isolation"}, {"label": "B", "text": "Integrity"}, {"label": "C", "text": "Indexing"}, {"label": "D", "text": "Iteration"}], "answer": "A", "explanation": "ACID: Atomicity (all-or-nothing), Consistency (preserves constraints), Isolation (concurrent transactions execute independently), Durability (persists after commit).", "verbatim": true, "year": 2017, "source_url": "https://kpsc.kar.nic.in", "source_tier": 1}, {"id": "P2-T2-U5-69", "paper": 2, "section_id": "U5", "subject": "Database Management Systems", "syllabus_id": "P2-5.4", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "hard", "text": "In Two-Phase Locking (2PL) protocol, what rule guarantees serializability?", "options": [{"label": "A", "text": "Once a transaction releases a lock, it can never acquire any new locks (Shrinking phase)"}, {"label": "B", "text": "Transactions must acquire all locks before starting"}, {"label": "C", "text": "Only shared locks are permitted"}, {"label": "D", "text": "Locks are never released"}], "answer": "A", "explanation": "2PL consists of a Growing Phase (only lock acquisitions) and a Shrinking Phase (only lock releases). No lock can be acquired after any lock is released.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U5-70", "paper": 2, "section_id": "U5", "subject": "Database Management Systems", "syllabus_id": "P2-5.4", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "What type of schedule allows transactions to read only values written by committed transactions, preventing cascading rollbacks?", "options": [{"label": "A", "text": "Cascadeless Schedule"}, {"label": "B", "text": "Strict Schedule"}, {"label": "C", "text": "Recoverable Schedule"}, {"label": "D", "text": "View Serial Schedule"}], "answer": "A", "explanation": "In a Cascadeless schedule, each transaction reads only data committed by the writing transaction, avoiding cascading aborts.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U5-71", "paper": 2, "section_id": "U5", "subject": "Database Management Systems", "syllabus_id": "P2-5.3", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "easy", "text": "Which SQL command is a Data Definition Language (DDL) command?", "options": [{"label": "A", "text": "CREATE"}, {"label": "B", "text": "INSERT"}, {"label": "C", "text": "UPDATE"}, {"label": "D", "text": "SELECT"}], "answer": "A", "explanation": "DDL commands define schema structures: CREATE, ALTER, DROP, TRUNCATE. DML commands manipulate data: INSERT, UPDATE, DELETE, SELECT.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U5-72", "paper": 2, "section_id": "U5", "subject": "Database Management Systems", "syllabus_id": "P2-5.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "In an Entity-Relationship (ER) diagram, a Weak Entity Set is visually depicted by:", "options": [{"label": "A", "text": "Double Rectangle"}, {"label": "B", "text": "Double Diamond"}, {"label": "C", "text": "Dashed Ellipse"}, {"label": "D", "text": "Single Rectangle"}], "answer": "A", "explanation": "Weak entity sets (which lack a primary key of their own) are represented by Double Rectangles, and identifying relationships by Double Diamonds.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U5-73", "paper": 2, "section_id": "U5", "subject": "Database Management Systems", "syllabus_id": "P2-5.4", "origin_tag": "Synthesized - Hard", "label": "expected", "difficulty": "hard", "text": "In B+ Tree file indexing, how do leaf nodes differ from internal index nodes?", "options": [{"label": "A", "text": "Leaf nodes store all actual record pointers and are linked sequentially as a doubly linked list"}, {"label": "B", "text": "Internal nodes store all data records"}, {"label": "C", "text": "Leaf nodes have no pointers"}, {"label": "D", "text": "Leaf nodes cannot be searched in O(log n)"}], "answer": "A", "explanation": "In a B+ Tree, leaf nodes contain all keys and record pointers and are linked sequentially, providing efficient range queries and sequential scans.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U5-74", "paper": 2, "section_id": "U5", "subject": "Database Management Systems", "syllabus_id": "P2-5.3", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "What is the difference between `DELETE` and `TRUNCATE` statements in SQL?", "options": [{"label": "A", "text": "DELETE is a logged DML operation that can be rolled back; TRUNCATE is a DDL operation deallocating data pages"}, {"label": "B", "text": "TRUNCATE removes the table definition entirely"}, {"label": "C", "text": "DELETE cannot have a WHERE clause"}, {"label": "D", "text": "TRUNCATE fires row-level triggers"}], "answer": "A", "explanation": "DELETE logs row deletions and supports WHERE and ROLLBACK; TRUNCATE deallocates extents rapidly without per-row logging and resets identity.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U5-75", "paper": 2, "section_id": "U5", "subject": "Database Management Systems", "syllabus_id": "P2-5.4", "origin_tag": "Synthesized - Hard", "label": "expected", "difficulty": "hard", "text": "The Wait-Die deadlock prevention scheme for transactions is based on timestamp ordering. If older transaction T_old requests a lock held by younger transaction T_young:", "options": [{"label": "A", "text": "T_old is allowed to wait for T_young"}, {"label": "B", "text": "T_old dies"}, {"label": "C", "text": "T_young is aborted (wound)"}, {"label": "D", "text": "Both transactions abort"}], "answer": "A", "explanation": "In Wait-Die: If older requests lock held by younger, older is allowed to wait. If younger requests lock held by older, younger dies (aborts).", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U6-76", "paper": 2, "section_id": "U6", "subject": "Operating Systems", "syllabus_id": "P2-6.1", "origin_tag": "PYQ - KPSC CST 2017", "label": "PYQ", "difficulty": "easy", "text": "The data structure maintained by the Operating System to store all control attributes of an active process (state, PC, registers, memory limits) is:", "options": [{"label": "A", "text": "Process Control Block (PCB)"}, {"label": "B", "text": "File Allocation Table (FAT)"}, {"label": "C", "text": "Page Map Table"}, {"label": "D", "text": "Segment Table"}], "answer": "A", "explanation": "The PCB (Process Control Block / Task Descriptor) stores PID, state, CPU registers, program counter, CPU scheduling, and I/O status.", "verbatim": true, "year": 2017, "source_url": "https://kpsc.kar.nic.in", "source_tier": 1}, {"id": "P2-T2-U6-77", "paper": 2, "section_id": "U6", "subject": "Operating Systems", "syllabus_id": "P2-6.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "Which CPU scheduling algorithm gives the minimum theoretical average waiting time for a given set of stationary processes?", "options": [{"label": "A", "text": "Shortest Job First (SJF / SRTF)"}, {"label": "B", "text": "First-Come, First-Served (FCFS)"}, {"label": "C", "text": "Round Robin (RR)"}, {"label": "D", "text": "Priority Scheduling"}], "answer": "A", "explanation": "SJF is provably optimal because scheduling shorter jobs ahead reduces the cumulative waiting time for all subsequent processes.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U6-78", "paper": 2, "section_id": "U6", "subject": "Operating Systems", "syllabus_id": "P2-6.2", "origin_tag": "PYQ - KPSC CST 2017", "label": "PYQ", "difficulty": "medium", "text": "Which four Coffman conditions are simultaneously necessary and sufficient for a Deadlock to occur?", "options": [{"label": "A", "text": "Mutual Exclusion, Hold and Wait, No Preemption, Circular Wait"}, {"label": "B", "text": "Paging, Segmentation, Swapping, Thrashing"}, {"label": "C", "text": "Starvation, Deadlock, Aging, Inversion"}, {"label": "D", "text": "Race Condition, Critical Section, Mutex, Semaphore"}], "answer": "A", "explanation": "Coffman conditions for deadlock: 1. Mutual Exclusion; 2. Hold and Wait; 3. No Preemption; 4. Circular Wait.", "verbatim": true, "year": 2017, "source_url": "https://kpsc.kar.nic.in", "source_tier": 1}, {"id": "P2-T2-U6-79", "paper": 2, "section_id": "U6", "subject": "Operating Systems", "syllabus_id": "P2-6.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "hard", "text": "Banker's Algorithm for deadlock avoidance tests whether granting a resource request leaves the system in a:", "options": [{"label": "A", "text": "Safe State"}, {"label": "B", "text": "Preempted State"}, {"label": "C", "text": "Starvation State"}, {"label": "D", "text": "Deterministic State"}], "answer": "A", "explanation": "Banker's Algorithm simulates resource allocation to find a safe execution sequence where every process can satisfy maximum demand without deadlock.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U6-80", "paper": 2, "section_id": "U6", "subject": "Operating Systems", "syllabus_id": "P2-6.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "What happens when a process invokes the `wait()` (or `P()`) operation on a semaphore with value 0?", "options": [{"label": "A", "text": "The process is blocked (placed in the semaphore waiting queue)"}, {"label": "B", "text": "The semaphore value decrements to -1 and process continues"}, {"label": "C", "text": "The process terminates"}, {"label": "D", "text": "The OS crashes"}], "answer": "A", "explanation": "If semaphore value `S <= 0`, executing `wait(S)` blocks the calling process until another process calls `signal(S)`.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U6-81", "paper": 2, "section_id": "U6", "subject": "Operating Systems", "syllabus_id": "P2-6.3", "origin_tag": "PYQ - KPSC CST 2017", "label": "PYQ", "difficulty": "medium", "text": "What is the phenomenon where the system spends more time servicing page faults and swapping pages than executing instructions?", "options": [{"label": "A", "text": "Thrashing"}, {"label": "B", "text": "Belady's Anomaly"}, {"label": "C", "text": "Segmentation Fault"}, {"label": "D", "text": "Aging"}], "answer": "A", "explanation": "Thrashing occurs when the sum of working sets exceeds available physical memory frames, causing continuous disk paging and CPU collapse.", "verbatim": true, "year": 2017, "source_url": "https://kpsc.kar.nic.in", "source_tier": 1}, {"id": "P2-T2-U6-82", "paper": 2, "section_id": "U6", "subject": "Operating Systems", "syllabus_id": "P2-6.3", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "hard", "text": "Belady's Anomaly (where increasing the number of physical page frames results in an increased number of page faults) can occur in which algorithm?", "options": [{"label": "A", "text": "FIFO (First-In, First-Out)"}, {"label": "B", "text": "LRU (Least Recently Used)"}, {"label": "C", "text": "Optimal Page Replacement"}, {"label": "D", "text": "LFU"}], "answer": "A", "explanation": "FIFO does not satisfy the inclusion property (stack algorithms like LRU and Optimal are immune), hence it can exhibit Belady's Anomaly.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U6-83", "paper": 2, "section_id": "U6", "subject": "Operating Systems", "syllabus_id": "P2-6.3", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "In virtual memory paging, the hardware cache used by the Memory Management Unit (MMU) to accelerate virtual-to-physical address translation is:", "options": [{"label": "A", "text": "TLB (Translation Lookaside Buffer)"}, {"label": "B", "text": "Instruction Register"}, {"label": "C", "text": "Page Map Table"}, {"label": "D", "text": "Segment Descriptor"}], "answer": "A", "explanation": "The TLB is high-speed associative hardware cache storing recent page-table mappings to avoid multi-level memory lookups.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U6-84", "paper": 2, "section_id": "U6", "subject": "Operating Systems", "syllabus_id": "P2-6.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "A process that has finished execution but whose parent has not yet read its exit status via `wait()` system call is a:", "options": [{"label": "A", "text": "Zombie Process"}, {"label": "B", "text": "Orphan Process"}, {"label": "C", "text": "Daemon Process"}, {"label": "D", "text": "Foreground Process"}], "answer": "A", "explanation": "A terminated process remains a 'Zombie' in the process table holding its PID and exit code until reaped by its parent.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U6-85", "paper": 2, "section_id": "U6", "subject": "Operating Systems", "syllabus_id": "P2-6.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "easy", "text": "In Unix/Linux, which system call creates an exact duplicate child process of the calling parent process?", "options": [{"label": "A", "text": "fork()"}, {"label": "B", "text": "exec()"}, {"label": "C", "text": "spawn()"}, {"label": "D", "text": "clone()"}], "answer": "A", "explanation": "fork() duplicates the calling process, returning 0 to child and child's PID to parent. exec() replaces address space with a new program.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U6-86", "paper": 2, "section_id": "U6", "subject": "Operating Systems", "syllabus_id": "P2-6.4", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "In language processor tools, which tool translates assembly language mnemonics into machine code object files?", "options": [{"label": "A", "text": "Assembler"}, {"label": "B", "text": "Linker"}, {"label": "C", "text": "Loader"}, {"label": "D", "text": "Pre-processor"}], "answer": "A", "explanation": "Assembler translates assembly code to object code; Linker combines object files and libraries; Loader loads executable into RAM.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U6-87", "paper": 2, "section_id": "U6", "subject": "Operating Systems", "syllabus_id": "P2-6.4", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "In compiler construction, lexical analysis (Phase 1) converts high-level source text into a stream of:", "options": [{"label": "A", "text": "Tokens"}, {"label": "B", "text": "Parse Trees"}, {"label": "C", "text": "Three-Address Codes"}, {"label": "D", "text": "Assembly Op-codes"}], "answer": "A", "explanation": "Lexical Analysis (Scanning) groups character streams into meaningful atomic language units called Tokens.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U6-88", "paper": 2, "section_id": "U6", "subject": "Operating Systems", "syllabus_id": "P2-6.3", "origin_tag": "Synthesized - Hard", "label": "expected", "difficulty": "hard", "text": "Given page size = 4 KB, how many bits in a 32-bit virtual address represent the page offset, and how many represent the virtual page number?", "options": [{"label": "A", "text": "12 bits offset, 20 bits virtual page number"}, {"label": "B", "text": "10 bits offset, 22 bits virtual page number"}, {"label": "C", "text": "16 bits offset, 16 bits virtual page number"}, {"label": "D", "text": "14 bits offset, 18 bits virtual page number"}], "answer": "A", "explanation": "Page size 4 KB = 2¹² bytes => 12 bits for Page Offset. Virtual address = 32 bits => Page Number = 32 - 12 = 20 bits.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U6-89", "paper": 2, "section_id": "U6", "subject": "Operating Systems", "syllabus_id": "P2-6.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "Priority Inversion occurs when a high-priority task is indirectly blocked by a low-priority task holding a shared lock. It is resolved by:", "options": [{"label": "A", "text": "Priority Inheritance Protocol"}, {"label": "B", "text": "FCFS scheduling"}, {"label": "C", "text": "Killing the low-priority task"}, {"label": "D", "text": "Disabling interrupts"}], "answer": "A", "explanation": "Under Priority Inheritance, the low-priority task temporarily inherits the priority of the highest-priority task waiting on its lock.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U6-90", "paper": 2, "section_id": "U6", "subject": "Operating Systems", "syllabus_id": "P2-6.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "In Round Robin CPU scheduling, if the Time Quantum (q) is chosen to be extremely large (larger than the longest burst time), the algorithm degenerates into:", "options": [{"label": "A", "text": "First-Come, First-Served (FCFS)"}, {"label": "B", "text": "Shortest Remaining Time First"}, {"label": "C", "text": "Priority Scheduling"}, {"label": "D", "text": "Multilevel Feedback Queue"}], "answer": "A", "explanation": "When time quantum q -> ∞, each process runs to completion on its first dispatch, exactly matching FCFS scheduling.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U7-91", "paper": 2, "section_id": "U7", "subject": "Computer Networks", "syllabus_id": "P2-7.1", "origin_tag": "PYQ - KPSC CST 2017", "label": "PYQ", "difficulty": "easy", "text": "Which layer of the OSI 7-layer reference model is responsible for end-to-end process-to-process communication, error recovery, and flow control?", "options": [{"label": "A", "text": "Transport Layer"}, {"label": "B", "text": "Network Layer"}, {"label": "C", "text": "Data Link Layer"}, {"label": "D", "text": "Session Layer"}], "answer": "A", "explanation": "The Transport Layer (Layer 4) ensures end-to-end process-to-process delivery (ports, segmentation, flow control, reliability).", "verbatim": true, "year": 2017, "source_url": "https://kpsc.kar.nic.in", "source_tier": 1}, {"id": "P2-T2-U7-92", "paper": 2, "section_id": "U7", "subject": "Computer Networks", "syllabus_id": "P2-7.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "Routers operate primarily at which layer of the OSI model?", "options": [{"label": "A", "text": "Network Layer (Layer 3)"}, {"label": "B", "text": "Data Link Layer (Layer 2)"}, {"label": "C", "text": "Transport Layer (Layer 4)"}, {"label": "D", "text": "Physical Layer (Layer 1)"}], "answer": "A", "explanation": "Routers operate at Network Layer (Layer 3) inspecting IP packet headers; Switches operate at Layer 2 (MAC); Hubs at Layer 1.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U7-93", "paper": 2, "section_id": "U7", "subject": "Computer Networks", "syllabus_id": "P2-7.2", "origin_tag": "PYQ - KPSC CST 2017", "label": "PYQ", "difficulty": "medium", "text": "Cyclic Redundancy Check (CRC) is an error detection code standardly implemented in which network layer?", "options": [{"label": "A", "text": "Data Link Layer"}, {"label": "B", "text": "Application Layer"}, {"label": "C", "text": "Transport Layer"}, {"label": "D", "text": "Session Layer"}], "answer": "A", "explanation": "CRC operates at the Data Link Layer (Layer 2), appending a frame check sequence (FCS) using binary polynomial division.", "verbatim": true, "year": 2017, "source_url": "https://kpsc.kar.nic.in", "source_tier": 1}, {"id": "P2-T2-U7-94", "paper": 2, "section_id": "U7", "subject": "Computer Networks", "syllabus_id": "P2-7.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "hard", "text": "In CSMA/CD (Carrier Sense Multiple Access with Collision Detection) used in traditional Ethernet, what protocol resolves packet collisions?", "options": [{"label": "A", "text": "Binary Exponential Backoff Algorithm"}, {"label": "B", "text": "Token Ring Passing"}, {"label": "C", "text": "Sliding Window Protocol"}, {"label": "D", "text": "Bellman-Ford Relaxation"}], "answer": "A", "explanation": "When a collision is detected, stations jam the channel and wait for a random slot `r ∈ [0, 2^k - 1]` using Exponential Backoff.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U7-95", "paper": 2, "section_id": "U7", "subject": "Computer Networks", "syllabus_id": "P2-7.3", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "What is the broadcast address for the IPv4 subnet 192.168.10.0/24?", "options": [{"label": "A", "text": "192.168.10.255"}, {"label": "B", "text": "192.168.10.0"}, {"label": "C", "text": "192.168.10.1"}, {"label": "D", "text": "255.255.255.255"}], "answer": "A", "explanation": "In a /24 subnet (mask 255.255.255.0), the host bits are all 1s (255), giving the directed broadcast address 192.168.10.255.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U7-96", "paper": 2, "section_id": "U7", "subject": "Computer Networks", "syllabus_id": "P2-7.3", "origin_tag": "Synthesized - Hard", "label": "expected", "difficulty": "hard", "text": "An organization is assigned IP network 200.100.50.0/24. If they require 4 equal subnets, what is the new subnet mask and maximum usable hosts per subnet?", "options": [{"label": "A", "text": "Mask: 255.255.255.192 (/26), 62 usable hosts"}, {"label": "B", "text": "Mask: 255.255.255.224 (/27), 30 usable hosts"}, {"label": "C", "text": "Mask: 255.255.255.128 (/25), 126 usable hosts"}, {"label": "D", "text": "Mask: 255.255.255.240 (/28), 14 usable hosts"}], "answer": "A", "explanation": "4 subnets require borrowing 2 bits: /24 + 2 = /26 (mask 255.255.255.192). Host bits = 32 - 26 = 6 => Usable hosts = 2⁶ - 2 = 62 hosts.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U7-97", "paper": 2, "section_id": "U7", "subject": "Computer Networks", "syllabus_id": "P2-7.4", "origin_tag": "PYQ - KPSC CST 2017", "label": "PYQ", "difficulty": "medium", "text": "In TCP connection establishment, what is the correct 3-way handshake sequence exchanged between Client and Server?", "options": [{"label": "A", "text": "SYN -> SYN+ACK -> ACK"}, {"label": "B", "text": "ACK -> SYN -> SYN+ACK"}, {"label": "C", "text": "SYN -> ACK -> DATA"}, {"label": "D", "text": "FIN -> FIN+ACK -> ACK"}], "answer": "A", "explanation": "TCP 3-way handshake: Client sends SYN -> Server responds with SYN-ACK -> Client sends ACK. Connection is now ESTABLISHED.", "verbatim": true, "year": 2017, "source_url": "https://kpsc.kar.nic.in", "source_tier": 1}, {"id": "P2-T2-U7-98", "paper": 2, "section_id": "U7", "subject": "Computer Networks", "syllabus_id": "P2-7.4", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "easy", "text": "Which transport layer protocol is connectionless, unreliable (best-effort), and suitable for real-time video streaming and VoIP?", "options": [{"label": "A", "text": "UDP (User Datagram Protocol)"}, {"label": "B", "text": "TCP"}, {"label": "C", "text": "SCTP"}, {"label": "D", "text": "ICMP"}], "answer": "A", "explanation": "UDP has minimal 8-byte header overhead with no retransmissions or handshake, making it ideal for low-latency streaming and DNS.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U7-99", "paper": 2, "section_id": "U7", "subject": "Computer Networks", "syllabus_id": "P2-7.4", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "What protocol resolves an IP address into its corresponding physical hardware MAC address on a local area network?", "options": [{"label": "A", "text": "ARP (Address Resolution Protocol)"}, {"label": "B", "text": "RARP"}, {"label": "C", "text": "DHCP"}, {"label": "D", "text": "DNS"}], "answer": "A", "explanation": "ARP broadcasts an IP address to learn the target host's 48-bit MAC address; RARP resolves MAC to IP.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U7-100", "paper": 2, "section_id": "U7", "subject": "Computer Networks", "syllabus_id": "P2-7.3", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "The Count-to-Infinity problem is a known routing instability vulnerability associated with which routing algorithm?", "options": [{"label": "A", "text": "Distance Vector Routing (Bellman-Ford)"}, {"label": "B", "text": "Link State Routing (OSPF)"}, {"label": "C", "text": "Path Vector Routing (BGP)"}, {"label": "D", "text": "Flooding"}], "answer": "A", "explanation": "Distance Vector algorithms suffer from slow convergence upon link failure (Count-to-Infinity), mitigated by split horizon and poison reverse.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U7-101", "paper": 2, "section_id": "U7", "subject": "Computer Networks", "syllabus_id": "P2-7.4", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "easy", "text": "Which application layer protocol standardly uses well-known TCP Port 25 for sending emails across mail transfer agents?", "options": [{"label": "A", "text": "SMTP (Simple Mail Transfer Protocol)"}, {"label": "B", "text": "POP3"}, {"label": "C", "text": "IMAP"}, {"label": "D", "text": "SNMP"}], "answer": "A", "explanation": "SMTP uses Port 25 (or 587) for sending email; POP3 uses Port 110; IMAP uses Port 143.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U7-102", "paper": 2, "section_id": "U7", "subject": "Computer Networks", "syllabus_id": "P2-7.2", "origin_tag": "Synthesized - Hard", "label": "expected", "difficulty": "hard", "text": "In a Sliding Window protocol, if the sender window size is W, what is the maximum link utilization in Stop-and-Wait protocol where W = 1?", "options": [{"label": "A", "text": "1 / (1 + 2a), where a = Propagation Time / Transmission Time"}, {"label": "B", "text": "1 / (1 + a)"}, {"label": "C", "text": "W / (1 + 2a)"}, {"label": "D", "text": "100%"}], "answer": "A", "explanation": "Utilization $\\eta$ = Transmission Time / (Transmission Time + 2 * Propagation Time) = 1 / (1 + 2a), where a = $T_p / T_t$.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U7-103", "paper": 2, "section_id": "U7", "subject": "Computer Networks", "syllabus_id": "P2-7.3", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "easy", "text": "What is the loopback IPv4 address reserved for testing internal network protocol stacks on a local host?", "options": [{"label": "A", "text": "127.0.0.1"}, {"label": "B", "text": "192.168.0.1"}, {"label": "C", "text": "10.0.0.1"}, {"label": "D", "text": "0.0.0.0"}], "answer": "A", "explanation": "The entire 127.0.0.0/8 block is reserved for loopback; 127.0.0.1 standardly points to localhost.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U7-104", "paper": 2, "section_id": "U7", "subject": "Computer Networks", "syllabus_id": "P2-7.4", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "Which ICMP message type is returned by intermediate routers when an IP packet's Time-to-Live (TTL) field reaches zero?", "options": [{"label": "A", "text": "Time Exceeded (ICMP Type 11)"}, {"label": "B", "text": "Destination Unreachable"}, {"label": "C", "text": "Echo Reply"}, {"label": "D", "text": "Redirect"}], "answer": "A", "explanation": "When TTL decrements to 0, the router drops the packet and responds with an ICMP Time Exceeded message (basis for `traceroute`).", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U7-105", "paper": 2, "section_id": "U7", "subject": "Computer Networks", "syllabus_id": "P2-7.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "easy", "text": "Which transmission medium utilizes total internal reflection of light pulses through silica glass strands for ultra-high-speed data transmission?", "options": [{"label": "A", "text": "Fiber Optic Cable"}, {"label": "B", "text": "Coaxial Cable"}, {"label": "C", "text": "Shielded Twisted Pair (STP)"}, {"label": "D", "text": "Infrared"}], "answer": "A", "explanation": "Fiber optic cables transmit light modulated signals via total internal reflection across a silica glass core, offering immune EMI and gigabit speeds.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U8-106", "paper": 2, "section_id": "U8", "subject": "Software Engineering", "syllabus_id": "P2-8.1", "origin_tag": "PYQ - KPSC CST 2017", "label": "PYQ", "difficulty": "easy", "text": "Which classic Software Development Life Cycle (SDLC) model follows a strictly sequential phase-by-phase progression where each phase must finish before the next begins?", "options": [{"label": "A", "text": "Waterfall Model"}, {"label": "B", "text": "Agile Scrum"}, {"label": "C", "text": "Spiral Model"}, {"label": "D", "text": "RAD Model"}], "answer": "A", "explanation": "The Waterfall model (Winston Royce) is a linear-sequential lifecycle with distinct phases: Requirements -> Design -> Implementation -> Testing -> Maintenance.", "verbatim": true, "year": 2017, "source_url": "https://kpsc.kar.nic.in", "source_tier": 1}, {"id": "P2-T2-U8-107", "paper": 2, "section_id": "U8", "subject": "Software Engineering", "syllabus_id": "P2-8.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "Barry Boehm's Spiral Model is particularly suited for large, high-risk projects because every iteration explicitly incorporates:", "options": [{"label": "A", "text": "Risk Analysis and Mitigation"}, {"label": "B", "text": "Strictly no prototyping"}, {"label": "C", "text": "Elimination of documentation"}, {"label": "D", "text": "Automated code generation"}], "answer": "A", "explanation": "The Spiral Model is risk-driven, combining prototyping with iterative development; each spiral quadrant conducts explicit risk assessment.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U8-108", "paper": 2, "section_id": "U8", "subject": "Software Engineering", "syllabus_id": "P2-8.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "hard", "text": "In White-Box testing, McCabe's Cyclomatic Complexity V(G) for a control flow graph with E edges, N nodes, and P connected components is calculated as:", "options": [{"label": "A", "text": "V(G) = E - N + 2P"}, {"label": "B", "text": "V(G) = E + N - P"}, {"label": "C", "text": "V(G) = E - N - 2P"}, {"label": "D", "text": "V(G) = N - E + P"}], "answer": "A", "explanation": "McCabe's formula: V(G) = E - N + 2P (or Predicate Nodes + 1 for single component), giving the count of linearly independent basis paths.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U8-109", "paper": 2, "section_id": "U8", "subject": "Software Engineering", "syllabus_id": "P2-8.2", "origin_tag": "PYQ - KPSC CST 2017", "label": "PYQ", "difficulty": "medium", "text": "A testing technique where input domain values are divided into classes from which test test cases are derived assuming all values in a class behave identically is:", "options": [{"label": "A", "text": "Equivalence Partitioning"}, {"label": "B", "text": "Boundary Value Analysis"}, {"label": "C", "text": "Mutation Testing"}, {"label": "D", "text": "Stress Testing"}], "answer": "A", "explanation": "Equivalence Partitioning divides inputs into valid and invalid equivalence classes; Boundary Value Analysis focuses on boundary limits (min, max).", "verbatim": true, "year": 2017, "source_url": "https://kpsc.kar.nic.in", "source_tier": 1}, {"id": "P2-T2-U8-110", "paper": 2, "section_id": "U8", "subject": "Software Engineering", "syllabus_id": "P2-8.3", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "Which Gang of Four (GoF) design pattern ensures that a class has only one instance and provides a global point of access to it?", "options": [{"label": "A", "text": "Singleton Pattern"}, {"label": "B", "text": "Factory Method Pattern"}, {"label": "C", "text": "Observer Pattern"}, {"label": "D", "text": "Adapter Pattern"}], "answer": "A", "explanation": "Singleton restricts instantiation of a class to one single object, using a private constructor and a static instance getter method.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U8-111", "paper": 2, "section_id": "U8", "subject": "Software Engineering", "syllabus_id": "P2-8.3", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "The Observer design pattern establishes which type of dependency between objects?", "options": [{"label": "A", "text": "One-to-many dependency where state changes notify all dependents automatically"}, {"label": "B", "text": "One-to-one strictly bidirectional coupling"}, {"label": "C", "text": "Many-to-many random coupling"}, {"label": "D", "text": "No communication"}], "answer": "A", "explanation": "Observer defines a one-to-many subscription model: when the Subject changes state, all registered Observers are automatically notified.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U8-112", "paper": 2, "section_id": "U8", "subject": "Software Engineering", "syllabus_id": "P2-8.4", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "In UML class modeling, a solid line with a hollow diamond at the owner end represents which relationship?", "options": [{"label": "A", "text": "Aggregation ('has-a' weak ownership)"}, {"label": "B", "text": "Composition ('part-of' strong ownership)"}, {"label": "C", "text": "Generalization (Inheritance)"}, {"label": "D", "text": "Dependency"}], "answer": "A", "explanation": "Hollow diamond = Shared Aggregation (parts can exist without container); Filled black diamond = Composition (parts destroyed with container).", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U8-113", "paper": 2, "section_id": "U8", "subject": "Software Engineering", "syllabus_id": "P2-8.4", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "easy", "text": "Which UML diagram models the temporal sequence of messages exchanged between interacting lifeline objects over time?", "options": [{"label": "A", "text": "Sequence Diagram"}, {"label": "B", "text": "Use Case Diagram"}, {"label": "C", "text": "Deployment Diagram"}, {"label": "D", "text": "State Machine Diagram"}], "answer": "A", "explanation": "Sequence diagrams visualize dynamic runtime interactions, showing lifelines, activation bars, and chronological message flow.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U8-114", "paper": 2, "section_id": "U8", "subject": "Software Engineering", "syllabus_id": "P2-8.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "easy", "text": "In Agile Scrum methodology, what is the fixed time-boxed development cycle (typically 2 to 4 weeks) called?", "options": [{"label": "A", "text": "Sprint"}, {"label": "B", "text": "Epic"}, {"label": "C", "text": "Release Milestone"}, {"label": "D", "text": "Waterfall Wave"}], "answer": "A", "explanation": "A Sprint is a repeatable, time-boxed development period (usually 2–4 weeks) during which a Potentially Shippable Product Increment is built.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U8-115", "paper": 2, "section_id": "U8", "subject": "Software Engineering", "syllabus_id": "P2-8.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "Software architecture principles recommend designing system modules with:", "options": [{"label": "A", "text": "High Cohesion and Low Coupling"}, {"label": "B", "text": "Low Cohesion and High Coupling"}, {"label": "C", "text": "High Coupling and High Fan-out"}, {"label": "D", "text": "Zero Modularity"}], "answer": "A", "explanation": "Good software modularity mandates High Cohesion (elements within a module are closely focused) and Low Coupling (minimal inter-module dependency).", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U8-116", "paper": 2, "section_id": "U8", "subject": "Software Engineering", "syllabus_id": "P2-8.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "What type of maintenance is performed to adapt software to changes in external environments (new OS, new database, hardware upgrade)?", "options": [{"label": "A", "text": "Adaptive Maintenance"}, {"label": "B", "text": "Corrective Maintenance"}, {"label": "C", "text": "Perfective Maintenance"}, {"label": "D", "text": "Preventive Maintenance"}], "answer": "A", "explanation": "Adaptive maintenance modifies software to interface with changing environments; Corrective fixes bugs; Perfective enhances features.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U8-117", "paper": 2, "section_id": "U8", "subject": "Software Engineering", "syllabus_id": "P2-8.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "In the Capability Maturity Model (CMM), what is the highest process maturity level (Level 5)?", "options": [{"label": "A", "text": "Optimizing"}, {"label": "B", "text": "Defined"}, {"label": "C", "text": "Managed"}, {"label": "D", "text": "Repeatable"}], "answer": "A", "explanation": "CMM Levels: 1. Initial; 2. Repeatable; 3. Defined; 4. Managed; 5. Optimizing (continuous process improvement and innovation).", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U8-118", "paper": 2, "section_id": "U8", "subject": "Software Engineering", "syllabus_id": "P2-8.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "Regression Testing is executed after code modification primarily to:", "options": [{"label": "A", "text": "Ensure that code changes have not introduced new defects into existing working features"}, {"label": "B", "text": "Verify compiler syntax"}, {"label": "C", "text": "Benchmark maximum load"}, {"label": "D", "text": "Evaluate user documentation"}], "answer": "A", "explanation": "Regression testing re-runs previous test suites to verify that bug fixes or updates haven't broken existing functional capabilities.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U8-119", "paper": 2, "section_id": "U8", "subject": "Software Engineering", "syllabus_id": "P2-8.4", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "In UML Use Case diagrams, what relationship is used when a base use case unconditionally incorporates the behavior of another use case?", "options": [{"label": "A", "text": "<<include>> relationship"}, {"label": "B", "text": "<<extend>> relationship"}, {"label": "C", "text": "<<generalize>> relationship"}, {"label": "D", "text": "<<implements>> relationship"}], "answer": "A", "explanation": "`<<include>>` indicates mandatory inclusion of sub-behavior; `<<extend>>` indicates optional conditional extension behavior.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U8-120", "paper": 2, "section_id": "U8", "subject": "Software Engineering", "syllabus_id": "P2-8.3", "origin_tag": "Synthesized - Hard", "label": "expected", "difficulty": "hard", "text": "Which SOLID design principle states that software entities should be open for extension, but closed for modification?", "options": [{"label": "A", "text": "Open/Closed Principle (OCP)"}, {"label": "B", "text": "Single Responsibility Principle (SRP)"}, {"label": "C", "text": "Liskov Substitution Principle (LSP)"}, {"label": "D", "text": "Dependency Inversion Principle (DIP)"}], "answer": "A", "explanation": "Bertrand Meyer's Open/Closed Principle mandates that class behaviors should be extensible via inheritance or interfaces without altering source code.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U9-121", "paper": 2, "section_id": "U9", "subject": "Web Technologies", "syllabus_id": "P2-9.1", "origin_tag": "PYQ - KPSC CST 2017", "label": "PYQ", "difficulty": "easy", "text": "Which HTML5 semantic element is intended to encapsulate autonomous, self-contained content such as a blog post or news story?", "options": [{"label": "A", "text": "<article>"}, {"label": "B", "text": "<section>"}, {"label": "C", "text": "<div>"}, {"label": "D", "text": "<aside>"}], "answer": "A", "explanation": "HTML5 `<article>` represents independent, self-contained content distributable or reusable independently (e.g. forum post, news report).", "verbatim": true, "year": 2017, "source_url": "https://kpsc.kar.nic.in", "source_tier": 1}, {"id": "P2-T2-U9-122", "paper": 2, "section_id": "U9", "subject": "Web Technologies", "syllabus_id": "P2-9.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "In the standard CSS Box Model, what is the order of areas from innermost to outermost?", "options": [{"label": "A", "text": "Content -> Padding -> Border -> Margin"}, {"label": "B", "text": "Content -> Border -> Padding -> Margin"}, {"label": "C", "text": "Margin -> Border -> Padding -> Content"}, {"label": "D", "text": "Content -> Margin -> Padding -> Border"}], "answer": "A", "explanation": "Innermost is Content, enclosed by Padding (space inside border), then Border, and finally Margin (transparent space outside border).", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U9-123", "paper": 2, "section_id": "U9", "subject": "Web Technologies", "syllabus_id": "P2-9.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "When `box-sizing: border-box` is declared in CSS, what does an element's specified `width` include?", "options": [{"label": "A", "text": "Content + Padding + Border"}, {"label": "B", "text": "Content only"}, {"label": "C", "text": "Content + Margin"}, {"label": "D", "text": "Padding only"}], "answer": "A", "explanation": "`border-box` includes padding and borders in the element's total width and height calculation, preventing layout overflows.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U9-124", "paper": 2, "section_id": "U9", "subject": "Web Technologies", "syllabus_id": "P2-9.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "easy", "text": "In JavaScript (ES6), how do variables declared with `const` differ from those declared with `let`?", "options": [{"label": "A", "text": "const variables cannot be reassigned; let variables can be reassigned"}, {"label": "B", "text": "const has function scope; let has block scope"}, {"label": "C", "text": "const variables are hoisted with assignment"}, {"label": "D", "text": "const can only hold numbers"}], "answer": "A", "explanation": "Both `let` and `const` are block-scoped; `let` allows reassignment while `const` establishes an immutable variable identifier binding.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U9-125", "paper": 2, "section_id": "U9", "subject": "Web Technologies", "syllabus_id": "P2-9.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "What is the return value of the expression `typeof null` in standard JavaScript?", "options": [{"label": "A", "text": "\"object\""}, {"label": "B", "text": "\"null\""}, {"label": "C", "text": "\"undefined\""}, {"label": "D", "text": "\"boolean\""}], "answer": "A", "explanation": "Due to a historic bug in JS's initial implementation where object tags were 000, `typeof null` evaluates to the string `\"object\"`.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U9-126", "paper": 2, "section_id": "U9", "subject": "Web Technologies", "syllabus_id": "P2-9.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "What is the equality comparison result of `0 == '0'` and `0 === '0'` in JavaScript respectively?", "options": [{"label": "A", "text": "true and false"}, {"label": "B", "text": "false and true"}, {"label": "C", "text": "true and true"}, {"label": "D", "text": "false and false"}], "answer": "A", "explanation": "`==` performs type coercion converting string '0' to number 0 (true); `===` checks both type and value without coercion (number vs string = false).", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U9-127", "paper": 2, "section_id": "U9", "subject": "Web Technologies", "syllabus_id": "P2-9.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "hard", "text": "A JavaScript closure is created when:", "options": [{"label": "A", "text": "An inner function retains access to outer lexical environment variables even after outer function execution finishes"}, {"label": "B", "text": "A function is called asynchronously with setTimeout"}, {"label": "C", "text": "A class method is bound to this"}, {"label": "D", "text": "A promise rejects"}], "answer": "A", "explanation": "A closure is the combination of a function bundled together with references to its surrounding lexical state.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U9-128", "paper": 2, "section_id": "U9", "subject": "Web Technologies", "syllabus_id": "P2-9.3", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "easy", "text": "In RESTful API architectural design, which HTTP method is standardly used to modify an existing resource partially?", "options": [{"label": "A", "text": "PATCH"}, {"label": "B", "text": "PUT"}, {"label": "C", "text": "POST"}, {"label": "D", "text": "GET"}], "answer": "A", "explanation": "PUT replaces the entire resource representation; PATCH applies partial modifications to an existing resource.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U9-129", "paper": 2, "section_id": "U9", "subject": "Web Technologies", "syllabus_id": "P2-9.3", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "Which HTTP status code range indicates a client-side error (e.g., 404 Not Found, 401 Unauthorized)?", "options": [{"label": "A", "text": "4xx"}, {"label": "B", "text": "2xx"}, {"label": "C", "text": "3xx"}, {"label": "D", "text": "5xx"}], "answer": "A", "explanation": "1xx: Informational; 2xx: Success; 3xx: Redirection; 4xx: Client Error; 5xx: Server Error.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U9-130", "paper": 2, "section_id": "U9", "subject": "Web Technologies", "syllabus_id": "P2-9.3", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "easy", "text": "JSON (JavaScript Object Notation) data format does NOT natively support which data type?", "options": [{"label": "A", "text": "Date / Function objects"}, {"label": "B", "text": "Boolean"}, {"label": "C", "text": "Array"}, {"label": "D", "text": "Number"}], "answer": "A", "explanation": "JSON natively supports only: string, number, object, array, boolean, and null. Dates are represented as ISO strings; functions are unsupported.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U9-131", "paper": 2, "section_id": "U9", "subject": "Web Technologies", "syllabus_id": "P2-9.4", "origin_tag": "PYQ - KPSC CST 2017", "label": "PYQ", "difficulty": "medium", "text": "Cross-Site Scripting (XSS) web vulnerability is executed by:", "options": [{"label": "A", "text": "Injecting malicious client-side JavaScript scripts into web pages viewed by other users"}, {"label": "B", "text": "Manipulating backend SQL queries"}, {"label": "C", "text": "Overwhelming the server with traffic"}, {"label": "D", "text": "Guessing user passwords"}], "answer": "A", "explanation": "XSS occurs when unvalidated user input is rendered in the browser, executing malicious JavaScript to steal cookies and hijack sessions.", "verbatim": true, "year": 2017, "source_url": "https://kpsc.kar.nic.in", "source_tier": 1}, {"id": "P2-T2-U9-132", "paper": 2, "section_id": "U9", "subject": "Web Technologies", "syllabus_id": "P2-9.4", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "What is the primary countermeasure against SQL Injection attacks in web applications?", "options": [{"label": "A", "text": "Parameterized queries / Prepared Statements"}, {"label": "B", "text": "Client-side JavaScript regex validation"}, {"label": "C", "text": "HTTPS encryption"}, {"label": "D", "text": "Hiding database error messages"}], "answer": "A", "explanation": "Prepared Statements with parameterized queries ensure that user input is treated strictly as data literals, never executable SQL commands.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U9-133", "paper": 2, "section_id": "U9", "subject": "Web Technologies", "syllabus_id": "P2-9.4", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "Cross-Site Request Forgery (CSRF) attacks are standardly prevented by:", "options": [{"label": "A", "text": "Anti-CSRF synchronizer tokens and SameSite cookie attributes"}, {"label": "B", "text": "Base64 encoding passwords"}, {"label": "C", "text": "CSS styling"}, {"label": "D", "text": "Disabling JavaScript"}], "answer": "A", "explanation": "Anti-CSRF unique tokens validate that state-changing requests originated from the genuine application UI; SameSite cookies block third-party transmission.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U9-134", "paper": 2, "section_id": "U9", "subject": "Web Technologies", "syllabus_id": "P2-9.2", "origin_tag": "Synthesized - Hard", "label": "expected", "difficulty": "hard", "text": "In the JavaScript asynchronous event loop, in what order are execution queues serviced after call stack completion?", "options": [{"label": "A", "text": "Microtask Queue (Promises) -> Macrotask Queue (setTimeout/setInterval)"}, {"label": "B", "text": "Macrotask Queue -> Microtask Queue"}, {"label": "C", "text": "Random interleaving"}, {"label": "D", "text": "FIFO exclusively"}], "answer": "A", "explanation": "When the call stack empties, the event loop drains all pending Microtasks (Promise handlers, queueMicrotask) before picking the next Macrotask.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U9-135", "paper": 2, "section_id": "U9", "subject": "Web Technologies", "syllabus_id": "P2-9.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "easy", "text": "Which CSS property is used in Flexbox layout to align flex items along the main axis?", "options": [{"label": "A", "text": "justify-content"}, {"label": "B", "text": "align-items"}, {"label": "C", "text": "flex-direction"}, {"label": "D", "text": "align-content"}], "answer": "A", "explanation": "`justify-content` aligns items along the main axis (flex-start, center, space-between); `align-items` aligns along the cross axis.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U10-136", "paper": 2, "section_id": "U10", "subject": "Information Security", "syllabus_id": "P2-10.1", "origin_tag": "PYQ - KPSC CST 2017", "label": "PYQ", "difficulty": "easy", "text": "In Symmetric-Key Cryptography, how many secret keys are utilized for encryption and decryption?", "options": [{"label": "A", "text": "Single shared secret key"}, {"label": "B", "text": "Two mathematically paired keys (public and private)"}, {"label": "C", "text": "Four keys"}, {"label": "D", "text": "Zero keys"}], "answer": "A", "explanation": "Symmetric cryptography (e.g. AES, DES) uses one identical shared key for both encryption and decryption.", "verbatim": true, "year": 2017, "source_url": "https://kpsc.kar.nic.in", "source_tier": 1}, {"id": "P2-T2-U10-137", "paper": 2, "section_id": "U10", "subject": "Information Security", "syllabus_id": "P2-10.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "The RSA public-key cryptographic algorithm derives its mathematical security from the computational hardness of:", "options": [{"label": "A", "text": "Factoring large composite numbers into prime factors"}, {"label": "B", "text": "Discrete logarithm problem on elliptic curves"}, {"label": "C", "text": "Solving polynomial roots"}, {"label": "D", "text": "Traveling Salesperson problem"}], "answer": "A", "explanation": "RSA (Rivest-Shamir-Adleman) relies on the integer factorization problem: multiplying two large primes is easy, but factoring their product is computationally infeasible.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U10-138", "paper": 2, "section_id": "U10", "subject": "Information Security", "syllabus_id": "P2-10.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "What property of cryptographic hash functions (like SHA-256) guarantees that two different inputs cannot produce the identical hash digest?", "options": [{"label": "A", "text": "Collision Resistance"}, {"label": "B", "text": "Pre-image Resistance"}, {"label": "C", "text": "Reversibility"}, {"label": "D", "text": "Commutativity"}], "answer": "A", "explanation": "Collision Resistance ensures it is computationally infeasible to find any two distinct messages x and y such that hash(x) == hash(y).", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U10-139", "paper": 2, "section_id": "U10", "subject": "Information Security", "syllabus_id": "P2-10.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "To create an authentic Digital Signature for a message, the sender encrypts the document hash using:", "options": [{"label": "A", "text": "Sender's Private Key"}, {"label": "B", "text": "Sender's Public Key"}, {"label": "C", "text": "Recipient's Public Key"}, {"label": "D", "text": "Recipient's Private Key"}], "answer": "A", "explanation": "Digital signatures are generated using the Sender's Private Key (guaranteeing non-repudiation and authenticity), verified by anyone using Sender's Public Key.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U10-140", "paper": 2, "section_id": "U10", "subject": "Information Security", "syllabus_id": "P2-10.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "In Cloud Computing service models, Google Docs and Microsoft 365 are canonical examples of:", "options": [{"label": "A", "text": "SaaS (Software as a Service)"}, {"label": "B", "text": "PaaS (Platform as a Service)"}, {"label": "C", "text": "IaaS (Infrastructure as a Service)"}, {"label": "D", "text": "FaaS (Function as a Service)"}], "answer": "A", "explanation": "SaaS delivers fully operational end-user applications over the web; PaaS delivers runtime dev environments; IaaS delivers VMs, storage, and networks.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U10-141", "paper": 2, "section_id": "U10", "subject": "Information Security", "syllabus_id": "P2-10.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "How do OS-level Containers (e.g., Docker) differ fundamentally from traditional Hypervisor Virtual Machines (VMs)?", "options": [{"label": "A", "text": "Containers share the host OS kernel and package only user-space binaries and libraries"}, {"label": "B", "text": "Containers require a complete guest operating system"}, {"label": "C", "text": "VMs are lighter and boot faster than containers"}, {"label": "D", "text": "Containers emulate hardware CPU instructions"}], "answer": "A", "explanation": "Docker containers share the host kernel via cgroups and namespaces, making them lightweight and fast compared to VMs carrying full guest OS kernels.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U10-142", "paper": 2, "section_id": "U10", "subject": "Information Security", "syllabus_id": "P2-10.3", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "In Machine Learning, training a model on unlabelled data to discover hidden clusters and patterns without target output labels is called:", "options": [{"label": "A", "text": "Unsupervised Learning"}, {"label": "B", "text": "Supervised Learning"}, {"label": "C", "text": "Reinforcement Learning"}, {"label": "D", "text": "Supervised Classification"}], "answer": "A", "explanation": "Unsupervised learning (e.g., K-Means clustering, PCA) finds inherent groupings in unlabelled datasets; Supervised learning trains on labeled (X, y) pairs.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U10-143", "paper": 2, "section_id": "U10", "subject": "Information Security", "syllabus_id": "P2-10.3", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "In Artificial Neural Networks, the non-linear mathematical function that decides whether a neuron should fire is called an:", "options": [{"label": "A", "text": "Activation Function (e.g., ReLU, Sigmoid)"}, {"label": "B", "text": "Loss Function"}, {"label": "C", "text": "Optimizer"}, {"label": "D", "text": "Backpropagator"}], "answer": "A", "explanation": "Activation functions (ReLU, Sigmoid, Tanh) introduce non-linearity into neural networks, enabling them to learn complex non-linear decision boundaries.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U10-144", "paper": 2, "section_id": "U10", "subject": "Information Security", "syllabus_id": "P2-10.4", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "In Blockchain technology, how are blocks cryptographically chained together to make history tamper-evident?", "options": [{"label": "A", "text": "Each block contains the cryptographic hash of the previous block's header"}, {"label": "B", "text": "Blocks are linked via physical Ethernet cables"}, {"label": "C", "text": "A central database administrator signs all blocks"}, {"label": "D", "text": "Blocks are indexed by row count"}], "answer": "A", "explanation": "Every block references `Previous_Block_Hash`. Altering any past block invalidates all subsequent block hashes across the distributed ledger.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U10-145", "paper": 2, "section_id": "U10", "subject": "Information Security", "syllabus_id": "P2-10.4", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "In Internet of Things (IoT) ecosystems, which lightweight publish-subscribe messaging protocol designed for constrained low-bandwidth devices is standardly used?", "options": [{"label": "A", "text": "MQTT (Message Queuing Telemetry Transport)"}, {"label": "B", "text": "HTTP 1.1"}, {"label": "C", "text": "FTP"}, {"label": "D", "text": "Telnet"}], "answer": "A", "explanation": "MQTT is a minimal publish/subscribe protocol with tiny 2-byte packet headers, ideal for battery-operated IoT sensors over cellular/satellite links.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U10-146", "paper": 2, "section_id": "U10", "subject": "Information Security", "syllabus_id": "P2-10.1", "origin_tag": "PYQ - KPSC CST 2017", "label": "PYQ", "difficulty": "easy", "text": "The CIA Triad constitutes the foundational pillars of information security. What does CIA stand for?", "options": [{"label": "A", "text": "Confidentiality, Integrity, Availability"}, {"label": "B", "text": "Central Intelligence Agency"}, {"label": "C", "text": "Control, Identification, Authentication"}, {"label": "D", "text": "Cryptography, IP, Authorization"}], "answer": "A", "explanation": "Confidentiality (preventing unauthorized reading), Integrity (preventing unauthorized modification), and Availability (ensuring authorized access when needed).", "verbatim": true, "year": 2017, "source_url": "https://kpsc.kar.nic.in", "source_tier": 1}, {"id": "P2-T2-U10-147", "paper": 2, "section_id": "U10", "subject": "Information Security", "syllabus_id": "P2-10.1", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "What type of cryptographic attack precomputes millions of password hashes into indexed lookup tables to reverse password digests rapidly?", "options": [{"label": "A", "text": "Rainbow Table Attack"}, {"label": "B", "text": "Brute Force Attack"}, {"label": "C", "text": "Man-in-the-Middle Attack"}, {"label": "D", "text": "DNS Poisoning"}], "answer": "A", "explanation": "Rainbow tables trade space for time by storing precomputed hash chains; defended by adding unique random Salt to passwords before hashing.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U10-148", "paper": 2, "section_id": "U10", "subject": "Information Security", "syllabus_id": "P2-10.2", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "In Kubernetes container orchestration architecture, what is the smallest, basic deployable compute unit that encapsulates one or more containers?", "options": [{"label": "A", "text": "Pod"}, {"label": "B", "text": "Node"}, {"label": "C", "text": "Cluster"}, {"label": "D", "text": "Ingress"}], "answer": "A", "explanation": "A Pod represents a single instance of a running process in Kubernetes, sharing network namespace (IP) and storage volumes among its containers.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U10-149", "paper": 2, "section_id": "U10", "subject": "Information Security", "syllabus_id": "P2-10.3", "origin_tag": "Expected - High Yield", "label": "expected", "difficulty": "medium", "text": "In machine learning evaluation metrics, what is the harmonic mean of Precision and Recall called?", "options": [{"label": "A", "text": "F1-Score"}, {"label": "B", "text": "Accuracy"}, {"label": "C", "text": "ROC-AUC"}, {"label": "D", "text": "Root Mean Squared Error"}], "answer": "A", "explanation": "F1-Score = 2 * (Precision * Recall) / (Precision + Recall), providing an balanced evaluation metric especially on imbalanced datasets.", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}, {"id": "P2-T2-U10-150", "paper": 2, "section_id": "U10", "subject": "Information Security", "syllabus_id": "P2-10.1", "origin_tag": "Synthesized - Hard", "label": "expected", "difficulty": "hard", "text": "Diffie-Hellman Key Exchange allows two parties to establish a shared secret key over an insecure channel without transmitting the key. It is vulnerable to:", "options": [{"label": "A", "text": "Man-in-the-Middle (MitM) attack if unauthenticated"}, {"label": "B", "text": "SQL Injection"}, {"label": "C", "text": "Buffer Overflow"}, {"label": "D", "text": "Cross-Site Scripting"}], "answer": "A", "explanation": "Classic Diffie-Hellman does not authenticate the communicating parties; an active attacker can intercept and establish independent keys with both sides (MitM).", "source_url": "https://kpsc.kar.nic.in", "source_tier": 2}];
+const SECTIONS = [{"id": "U1", "name": "Fundamentals of Computers", "count": 15}, {"id": "U2", "name": "Digital Logic & Organization", "count": 15}, {"id": "U3", "name": "Programming with C & C++", "count": 15}, {"id": "U4", "name": "Data Structures & Algorithms", "count": 15}, {"id": "U5", "name": "Database Management Systems", "count": 15}, {"id": "U6", "name": "Operating Systems", "count": 15}, {"id": "U7", "name": "Computer Networks", "count": 15}, {"id": "U8", "name": "Software Engineering & OOAD", "count": 15}, {"id": "U9", "name": "Web Technologies", "count": 15}, {"id": "U10", "name": "Information Security & Emerging Trends", "count": 15}];
+const TOTAL_QS = QUESTIONS.length;
+const INITIAL_DURATION_SEC = 150 * 60;
+
+// Test Taking State
+let currentIndex = 0;
+let userAnswers = new Array(TOTAL_QS).fill(null); // 'A', 'B', 'C', 'D' or null
+let questionStatus = new Array(TOTAL_QS).fill('not-visited'); // 'not-visited','not-answered','answered','marked','ans-marked'
+let wasEverMarked = new Array(TOTAL_QS).fill(false); // boolean tracking if marked for review at any point
+let remainingSeconds = INITIAL_DURATION_SEC;
+let timerSpeedMultiplier = 1;
+let timerInterval = null;
+
+// Review Mode State
+let reviewCurrentIndex = 0;
+let activeReviewFilter = 'all'; // 'all', 'correct', 'incorrect', 'unattempted', 'marked'
+let reviewQuestionIndices = []; // indices matching current review filter
+
+// Initialize on load
+document.addEventListener("DOMContentLoaded", () => {
+  initSectionTabs();
+  initPaletteGrid();
+  loadQuestion(0);
+  startTimer();
+  setupTestEventListeners();
+  updatePaletteCounts();
+});
+
+function initSectionTabs() {
+  const container = document.getElementById("sectionTabsContainer");
+  container.innerHTML = "";
+  SECTIONS.forEach((sec, idx) => {
+    const tab = document.createElement("div");
+    tab.className = `section-tab ${idx === 0 ? 'active' : ''}`;
+    tab.id = `tab-${sec.id}`;
+    tab.innerHTML = `${sec.name} <span class="section-count-badge">${sec.count}</span>`;
+    tab.onclick = () => jumpToSection(sec.id);
+    container.appendChild(tab);
+  });
+}
+
+function initPaletteGrid() {
+  const grid = document.getElementById("paletteGrid");
+  grid.innerHTML = "";
+  for (let i = 0; i < TOTAL_QS; i++) {
+    const btn = document.createElement("button");
+    btn.className = "pal-btn not-visited";
+    btn.id = `pal-${i}`;
+    btn.innerText = i + 1;
+    btn.onclick = () => {
+      markCurrentStateBeforeLeave();
+      loadQuestion(i);
+    };
+    grid.appendChild(btn);
+  }
+}
+
+function loadQuestion(idx) {
+  currentIndex = idx;
+  const q = QUESTIONS[idx];
+  
+  if (questionStatus[idx] === 'not-visited') {
+    questionStatus[idx] = 'not-answered';
+  }
+
+  document.querySelectorAll(".pal-btn").forEach(b => b.classList.remove("current"));
+  const currentPal = document.getElementById(`pal-${idx}`);
+  if (currentPal) currentPal.classList.add("current");
+
+  document.getElementById("qDisplayNum").innerText = `Question No. ${idx + 1} of ${TOTAL_QS}`;
+  document.getElementById("qOriginTag").innerText = q.origin_tag || (q.label || "Mock");
+  
+  const diffTag = document.getElementById("qDiffTag");
+  diffTag.innerText = (q.difficulty || "medium").toUpperCase();
+  diffTag.className = `badge badge-diff-${(q.difficulty || "medium").toLowerCase().slice(0,4)}`;
+
+  document.getElementById("qSyllabusTag").innerText = q.syllabus_id || "";
+
+  document.getElementById("qTextEn").innerText = q.text;
+  const altBox = document.getElementById("qTextAlt");
+  if (q.text_alt) {
+    altBox.innerText = q.text_alt;
+    altBox.style.display = "block";
+  } else {
+    altBox.style.display = "none";
+  }
+
+  const optContainer = document.getElementById("optionsContainer");
+  optContainer.innerHTML = "";
+  const selectedAns = userAnswers[idx];
+
+  q.options.forEach(opt => {
+    const card = document.createElement("label");
+    card.className = `option-label-card ${selectedAns === opt.label ? 'selected' : ''}`;
+    card.innerHTML = `
+      <input type="radio" name="opt_choice" value="${opt.label}" class="option-radio" ${selectedAns === opt.label ? 'checked' : ''}>
+      <span class="option-label-letter">${opt.label}.</span>
+      <span class="option-text">${opt.text}</span>
+    `;
+    card.onclick = () => {
+      document.querySelectorAll(".option-label-card").forEach(c => c.classList.remove("selected"));
+      card.classList.add("selected");
+      card.querySelector("input").checked = true;
+    };
+    optContainer.appendChild(card);
+  });
+
+  const sec = SECTIONS.find(s => s.id === q.section_id) || SECTIONS[0];
+  document.querySelectorAll(".section-tab").forEach(t => t.classList.remove("active"));
+  const secTab = document.getElementById(`tab-${sec.id}`);
+  if (secTab) secTab.classList.add("active");
+  document.getElementById("currentSectionTitle").innerText = `SECTION: ${sec.name.toUpperCase()}`;
+
+  updatePaletteButton(idx);
+  updatePaletteCounts();
+}
+
+function markCurrentStateBeforeLeave() {
+  const selectedRadio = document.querySelector('input[name="opt_choice"]:checked');
+  if (selectedRadio) {
+    userAnswers[currentIndex] = selectedRadio.value;
+  }
+}
+
+function updatePaletteButton(idx) {
+  const btn = document.getElementById(`pal-${idx}`);
+  if (!btn) return;
+  btn.className = `pal-btn ${questionStatus[idx]} ${currentIndex === idx ? 'current' : ''}`;
+}
+
+function updatePaletteCounts() {
+  let ans = 0, notAns = 0, notVis = 0, marked = 0, ansMarked = 0;
+  for (let s of questionStatus) {
+    if (s === 'answered') ans++;
+    else if (s === 'not-answered') notAns++;
+    else if (s === 'not-visited') notVis++;
+    else if (s === 'marked') marked++;
+    else if (s === 'ans-marked') ansMarked++;
+  }
+  document.getElementById("badgeCountAns").innerText = ans;
+  document.getElementById("badgeCountNotAns").innerText = notAns;
+  document.getElementById("badgeCountNotVis").innerText = notVis;
+  document.getElementById("badgeCountMarked").innerText = marked;
+  document.getElementById("badgeCountAnsMarked").innerText = ansMarked;
+}
+
+function jumpToSection(secId) {
+  markCurrentStateBeforeLeave();
+  const firstIdx = QUESTIONS.findIndex(q => q.section_id === secId);
+  if (firstIdx !== -1) {
+    loadQuestion(firstIdx);
+  }
+}
+
+function setupTestEventListeners() {
+  document.getElementById("btnSaveNext").onclick = () => {
+    const selected = document.querySelector('input[name="opt_choice"]:checked');
+    if (selected) {
+      userAnswers[currentIndex] = selected.value;
+      questionStatus[currentIndex] = 'answered';
+    } else {
+      userAnswers[currentIndex] = null;
+      questionStatus[currentIndex] = 'not-answered';
+    }
+    updatePaletteButton(currentIndex);
+    if (currentIndex < TOTAL_QS - 1) {
+      loadQuestion(currentIndex + 1);
+    } else {
+      updatePaletteCounts();
+    }
+  };
+
+  document.getElementById("btnMarkReview").onclick = () => {
+    const selected = document.querySelector('input[name="opt_choice"]:checked');
+    wasEverMarked[currentIndex] = true;
+    if (selected) {
+      userAnswers[currentIndex] = selected.value;
+      questionStatus[currentIndex] = 'ans-marked';
+    } else {
+      userAnswers[currentIndex] = null;
+      questionStatus[currentIndex] = 'marked';
+    }
+    updatePaletteButton(currentIndex);
+    if (currentIndex < TOTAL_QS - 1) {
+      loadQuestion(currentIndex + 1);
+    } else {
+      updatePaletteCounts();
+    }
+  };
+
+  document.getElementById("btnClearResponse").onclick = () => {
+    userAnswers[currentIndex] = null;
+    questionStatus[currentIndex] = 'not-answered';
+    document.querySelectorAll(".option-label-card").forEach(c => c.classList.remove("selected"));
+    const checked = document.querySelector('input[name="opt_choice"]:checked');
+    if (checked) checked.checked = false;
+    updatePaletteButton(currentIndex);
+    updatePaletteCounts();
+  };
+
+  document.getElementById("btnPrev").onclick = () => {
+    markCurrentStateBeforeLeave();
+    if (currentIndex > 0) loadQuestion(currentIndex - 1);
+  };
+
+  document.getElementById("btnSpeedToggle").onclick = (e) => {
+    if (timerSpeedMultiplier === 1) {
+      timerSpeedMultiplier = 10;
+      e.target.innerText = "10x Fast";
+      e.target.style.background = "#0284c7";
+    } else {
+      timerSpeedMultiplier = 1;
+      e.target.innerText = "1x Speed";
+      e.target.style.background = "#334155";
+    }
+  };
+
+  document.getElementById("btnOpenSubmitModal").onclick = () => openSubmitModal();
+  document.getElementById("btnCancelModal").onclick = () => document.getElementById("submitModal").style.display = "none";
+  document.getElementById("btnConfirmSubmit").onclick = () => {
+    document.getElementById("submitModal").style.display = "none";
+    finishExam();
+  };
+}
+
+function openSubmitModal() {
+  markCurrentStateBeforeLeave();
+  let ans = 0, notAns = 0, marked = 0, notVis = 0;
+  for (let i = 0; i < TOTAL_QS; i++) {
+    if (userAnswers[i] !== null) ans++;
+    else if (questionStatus[i] === 'not-visited') notVis++;
+    else if (questionStatus[i] === 'marked') marked++;
+    else notAns++;
+  }
+  document.getElementById("mTotalQs").innerText = TOTAL_QS;
+  document.getElementById("mAnsQs").innerText = ans;
+  document.getElementById("mNotAnsQs").innerText = notAns;
+  document.getElementById("mMarkedQs").innerText = marked;
+  document.getElementById("mNotVisQs").innerText = notVis;
+  document.getElementById("submitModal").style.display = "flex";
+}
+
+function startTimer() {
+  const disp = document.getElementById("timeDisplay");
+  timerInterval = setInterval(() => {
+    remainingSeconds -= timerSpeedMultiplier;
+    if (remainingSeconds <= 0) {
+      remainingSeconds = 0;
+      clearInterval(timerInterval);
+      disp.innerText = "00:00";
+      alert("Time is up! Submitting exam automatically.");
+      finishExam();
+      return;
+    }
+    const m = Math.floor(remainingSeconds / 60);
+    const s = remainingSeconds % 60;
+    disp.innerText = `${m < 10 ? '0' : ''}${m}:${s < 10 ? '0' : ''}${s}`;
+    if (remainingSeconds <= 300) disp.classList.add("danger");
+  }, 1000);
+}
+
+/* =====================================================================
+   FINISH EXAM & LAUNCH RESULTS
+===================================================================== */
+function finishExam() {
+  clearInterval(timerInterval);
+  markCurrentStateBeforeLeave();
+
+  let correctCount = 0;
+  let incorrectCount = 0;
+  let unattemptedCount = 0;
+  let markedCount = 0;
+  let secStats = {};
+  SECTIONS.forEach(s => { secStats[s.id] = { name: s.name, total: 0, attempted: 0, correct: 0, incorrect: 0 }; });
+
+  QUESTIONS.forEach((q, idx) => {
+    const secId = q.section_id || SECTIONS[0].id;
+    if (!secStats[secId]) secStats[secId] = { name: secId, total: 0, attempted: 0, correct: 0, incorrect: 0 };
+    secStats[secId].total++;
+
+    if (wasEverMarked[idx] || questionStatus[idx] === 'marked' || questionStatus[idx] === 'ans-marked') {
+      wasEverMarked[idx] = true;
+      markedCount++;
+    }
+
+    const userAns = userAnswers[idx];
+    if (userAns === null) {
+      unattemptedCount++;
+    } else if (userAns === q.answer) {
+      correctCount++;
+      secStats[secId].attempted++;
+      secStats[secId].correct++;
+    } else {
+      incorrectCount++;
+      secStats[secId].attempted++;
+      secStats[secId].incorrect++;
+    }
+  });
+
+  const totalScore = (correctCount * 1.0) - (incorrectCount * 0.25);
+  const attemptedTotal = correctCount + incorrectCount;
+  const accuracy = attemptedTotal > 0 ? ((correctCount / attemptedTotal) * 100).toFixed(1) : 0;
+  const percentage = ((Math.max(0, totalScore) / TOTAL_QS) * 100).toFixed(1);
+
+  // Populate Dashboard Banner
+  document.getElementById("dashTotalScore").innerText = `${totalScore.toFixed(2)} / ${TOTAL_QS} (${percentage}%)`;
+  document.getElementById("dashAccuracy").innerText = `${accuracy}%`;
+  document.getElementById("dashAttempted").innerText = `${attemptedTotal} / ${TOTAL_QS} (${unattemptedCount} Unattempted)`;
+  document.getElementById("dashMarkedReview").innerText = markedCount;
+  
+  const statusElem = document.getElementById("dashStatus");
+  if (totalScore >= (TOTAL_QS * 0.50)) {
+    statusElem.innerText = "QUALIFIED (≥50%)";
+    statusElem.style.color = "#16a34a";
+  } else {
+    statusElem.innerText = "NEEDS REVISION (<50%)";
+    statusElem.style.color = "#dc2626";
+  }
+
+  // Subtitle in Review Mode
+  document.getElementById("revScoreSubtitle").innerText = `Score: ${totalScore.toFixed(2)} / ${TOTAL_QS} | Accuracy: ${accuracy}% | Attempted: ${attemptedTotal}/${TOTAL_QS}`;
+
+  // Populate Review Filter Counts
+  document.getElementById("revPillAll").innerText = TOTAL_QS;
+  document.getElementById("revPillCorrect").innerText = correctCount;
+  document.getElementById("revPillIncorrect").innerText = incorrectCount;
+  document.getElementById("revPillUnatt").innerText = unattemptedCount;
+  document.getElementById("revPillMarked").innerText = markedCount;
+
+  // Populate Section Table
+  const tbody = document.querySelector("#dashSectionTable tbody");
+  tbody.innerHTML = "";
+  Object.values(secStats).forEach(s => {
+    const sScore = (s.correct * 1.0) - (s.incorrect * 0.25);
+    const sAcc = s.attempted > 0 ? ((s.correct / s.attempted) * 100).toFixed(1) + "%" : "0%";
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td><strong>${s.name}</strong></td>
+      <td>${s.total}</td>
+      <td>${s.attempted}</td>
+      <td style="color:#16a34a; font-weight:700;">${s.correct}</td>
+      <td style="color:#dc2626;">${s.incorrect}</td>
+      <td><strong>${sScore.toFixed(2)}</strong></td>
+      <td>${sAcc}</td>
+    `;
+    tbody.appendChild(tr);
+  });
+
+  // Render Full Solution List (for optional scrollable view)
+  renderFullListSolutions();
+
+  // Setup Result Dashboard Button Actions
+  document.getElementById("btnStartInteractiveReview").onclick = () => openInteractiveReview("all");
+  document.getElementById("btnStartInteractiveReviewTop").onclick = () => openInteractiveReview("all");
+  document.getElementById("btnReviewIncorrectOnly").onclick = () => openInteractiveReview("incorrect");
+  document.getElementById("btnReviewMarkedOnly").onclick = () => openInteractiveReview("marked");
+
+  const listContainer = document.getElementById("fullListSolutionsContainer");
+  document.getElementById("btnToggleListSolutions").onclick = () => {
+    listContainer.style.display = listContainer.style.display === "block" ? "none" : "block";
+  };
+  document.getElementById("btnCloseListSolutions").onclick = () => {
+    listContainer.style.display = "none";
+  };
+
+  // Show Dashboard
+  document.getElementById("resultsDashboard").style.display = "flex";
+}
+
+/* =====================================================================
+   INTERACTIVE REVIEW MODE ENGINE
+===================================================================== */
+function openInteractiveReview(filter = "all") {
+  document.getElementById("resultsDashboard").style.display = "none";
+  document.getElementById("interactiveReviewMode").style.display = "flex";
+  
+  setupReviewEventListeners();
+  initReviewPalette();
+  setReviewFilter(filter);
+}
+
+function setupReviewEventListeners() {
+  document.getElementById("btnBackToDashboard").onclick = () => {
+    document.getElementById("interactiveReviewMode").style.display = "none";
+    document.getElementById("resultsDashboard").style.display = "flex";
+  };
+  document.getElementById("btnRevJumpToSummary").onclick = () => {
+    document.getElementById("interactiveReviewMode").style.display = "none";
+    document.getElementById("resultsDashboard").style.display = "flex";
+  };
+
+  // Filter Pills click handlers
+  document.querySelectorAll(".rev-filter-pill").forEach(pill => {
+    pill.onclick = () => {
+      setReviewFilter(pill.dataset.revFilter);
+    };
+  });
+
+  // Prev / Next in Review Mode
+  document.getElementById("btnRevPrev").onclick = () => {
+    const pos = reviewQuestionIndices.indexOf(reviewCurrentIndex);
+    if (pos > 0) {
+      loadReviewQuestion(reviewQuestionIndices[pos - 1]);
+    }
+  };
+
+  document.getElementById("btnRevNext").onclick = () => {
+    const pos = reviewQuestionIndices.indexOf(reviewCurrentIndex);
+    if (pos !== -1 && pos < reviewQuestionIndices.length - 1) {
+      loadReviewQuestion(reviewQuestionIndices[pos + 1]);
+    }
+  };
+}
+
+function initReviewPalette() {
+  const grid = document.getElementById("revPaletteGrid");
+  grid.innerHTML = "";
+  for (let i = 0; i < TOTAL_QS; i++) {
+    const q = QUESTIONS[i];
+    const uAns = userAnswers[i];
+    const btn = document.createElement("button");
+    btn.className = "rev-pal-btn";
+    btn.id = `rev-pal-${i}`;
+    btn.innerText = i + 1;
+
+    if (uAns === null) {
+      btn.classList.add("btn-rev-unatt");
+    } else if (uAns === q.answer) {
+      btn.classList.add("btn-rev-correct");
+    } else {
+      btn.classList.add("btn-rev-incorrect");
+    }
+
+    if (wasEverMarked[i]) {
+      btn.classList.add("was-marked");
+    }
+
+    btn.onclick = () => loadReviewQuestion(i);
+    grid.appendChild(btn);
+  }
+}
+
+function setReviewFilter(filter) {
+  activeReviewFilter = filter;
+  
+  // Highlight active pill
+  document.querySelectorAll(".rev-filter-pill").forEach(pill => {
+    if (pill.dataset.revFilter === filter) {
+      pill.classList.add("active");
+    } else {
+      pill.classList.remove("active");
+    }
+  });
+
+  // Compute matching indices
+  reviewQuestionIndices = [];
+  QUESTIONS.forEach((q, idx) => {
+    const uAns = userAnswers[idx];
+    const isCorrect = uAns === q.answer;
+    const isUnatt = uAns === null;
+    const isMarked = wasEverMarked[idx];
+
+    let match = false;
+    if (filter === "all") match = true;
+    else if (filter === "correct" && isCorrect) match = true;
+    else if (filter === "incorrect" && (!isCorrect && !isUnatt)) match = true;
+    else if (filter === "unattempted" && isUnatt) match = true;
+    else if (filter === "marked" && isMarked) match = true;
+
+    if (match) reviewQuestionIndices.push(idx);
+
+    // Dim non-matching buttons in review palette
+    const palBtn = document.getElementById(`rev-pal-${idx}`);
+    if (palBtn) {
+      if (match) palBtn.classList.remove("is-dimmed");
+      else palBtn.classList.add("is-dimmed");
+    }
+  });
+
+  // Update Status text
+  const filterNames = {
+    all: "All Questions",
+    correct: "Correct Answers",
+    incorrect: "Incorrect Answers",
+    unattempted: "Unattempted Questions",
+    marked: "Marked for Review"
+  };
+  document.getElementById("revFilterStatusInfo").innerText = 
+    `Filter: ${filterNames[filter]} (${reviewQuestionIndices.length} of ${TOTAL_QS} questions)`;
+  document.getElementById("revPaletteTitle").innerText = `PALETTE: ${filterNames[filter].toUpperCase()}`;
+
+  // Load first matching question
+  if (reviewQuestionIndices.length > 0) {
+    const targetIdx = reviewQuestionIndices.includes(reviewCurrentIndex) ? reviewCurrentIndex : reviewQuestionIndices[0];
+    loadReviewQuestion(targetIdx);
+  } else {
+    alert(`No questions found under filter: "${filterNames[filter]}"`);
+    setReviewFilter("all");
+  }
+}
+
+function loadReviewQuestion(idx) {
+  reviewCurrentIndex = idx;
+  const q = QUESTIONS[idx];
+  const uAns = userAnswers[idx];
+  const isCorrect = uAns === q.answer;
+  const isUnatt = uAns === null;
+  const isMarked = wasEverMarked[idx];
+
+  // Palette current highlight
+  document.querySelectorAll(".rev-pal-btn").forEach(b => b.classList.remove("current"));
+  const curBtn = document.getElementById(`rev-pal-${idx}`);
+  if (curBtn) curBtn.classList.add("current");
+
+  // Meta bar
+  document.getElementById("revDisplayNum").innerText = `Question No. ${idx + 1} of ${TOTAL_QS}`;
+  document.getElementById("revOriginTag").innerText = q.origin_tag || (q.label || "Mock");
+  
+  const diffTag = document.getElementById("revDiffTag");
+  diffTag.innerText = (q.difficulty || "medium").toUpperCase();
+  diffTag.className = `badge badge-diff-${(q.difficulty || "medium").toLowerCase().slice(0,4)}`;
+
+  document.getElementById("revSyllabusTag").innerText = q.syllabus_id || "";
+
+  const markedBadge = document.getElementById("revMarkedBadge");
+  if (isMarked) {
+    markedBadge.style.display = "inline-block";
+  } else {
+    markedBadge.style.display = "none";
+  }
+
+  // Status Banner
+  const banner = document.getElementById("revStatusBanner");
+  const bannerText = document.getElementById("revStatusBannerText");
+  const choiceText = document.getElementById("revCandidateChoiceText");
+  const marksBadge = document.getElementById("revMarksBadge");
+
+  if (isCorrect) {
+    banner.className = "rev-status-banner status-correct";
+    bannerText.innerHTML = "✓ Correct Answer (+1.00 Marks)";
+    marksBadge.innerText = "+1.00 Marks";
+    marksBadge.style.background = "#dcfce7";
+    marksBadge.style.color = "#166534";
+  } else if (isUnatt) {
+    banner.className = "rev-status-banner status-unattempted";
+    bannerText.innerHTML = "○ Unattempted (0.00 Marks)";
+    marksBadge.innerText = "0.00 Marks";
+    marksBadge.style.background = "#f1f5f9";
+    marksBadge.style.color = "#475569";
+  } else {
+    banner.className = "rev-status-banner status-incorrect";
+    bannerText.innerHTML = "✗ Incorrect Answer (-0.25 Negative Marking)";
+    marksBadge.innerText = "-0.25 Marks";
+    marksBadge.style.background = "#fee2e2";
+    marksBadge.style.color = "#991b1b";
+  }
+
+  choiceText.innerHTML = `Your Choice: <strong>${uAns ? uAns : 'None'}</strong> | Official Key: <strong>${q.answer}</strong>`;
+
+  // Question statements
+  document.getElementById("revTextEn").innerText = q.text;
+  const altBox = document.getElementById("revTextAlt");
+  if (q.text_alt) {
+    altBox.innerText = q.text_alt;
+    altBox.style.display = "block";
+  } else {
+    altBox.style.display = "none";
+  }
+
+  // Option Cards rendering with clear badges
+  const optContainer = document.getElementById("revOptionsContainer");
+  optContainer.innerHTML = "";
+
+  q.options.forEach(opt => {
+    const isThisOfficial = opt.label === q.answer;
+    const isThisUserChoice = opt.label === uAns;
+
+    const card = document.createElement("div");
+    card.className = "rev-option-card";
+
+    let badgeHtml = "";
+    if (isThisOfficial && isThisUserChoice) {
+      card.classList.add("is-official-correct");
+      badgeHtml = `<span class="rev-option-badge badge-rev-correct">✓ Your Choice (Correct Key)</span>`;
+    } else if (isThisOfficial) {
+      card.classList.add("is-official-correct");
+      badgeHtml = `<span class="rev-option-badge badge-rev-correct">✓ Official Key</span>`;
+    } else if (isThisUserChoice) {
+      card.classList.add("is-user-incorrect");
+      badgeHtml = `<span class="rev-option-badge badge-rev-wrong">✗ Your Choice (Incorrect)</span>`;
+    }
+
+    card.innerHTML = `
+      <span class="option-label-letter" style="font-weight:700; width:28px;">${opt.label}.</span>
+      <span class="option-text" style="flex:1;">${opt.text}</span>
+      ${badgeHtml}
+    `;
+    optContainer.appendChild(card);
+  });
+
+  // Rationale box
+  document.getElementById("revRationaleText").innerHTML = q.explanation || "No explanation provided.";
+
+  // Update Prev / Next button states
+  const pos = reviewQuestionIndices.indexOf(idx);
+  document.getElementById("btnRevPrev").disabled = (pos <= 0);
+  document.getElementById("btnRevNext").disabled = (pos >= reviewQuestionIndices.length - 1);
+}
+
+/* =====================================================================
+   FULL PRINTABLE SOLUTION LIST
+===================================================================== */
+function renderFullListSolutions() {
+  const container = document.getElementById("solutionReviewContainer");
+  container.innerHTML = "";
+
+  QUESTIONS.forEach((q, idx) => {
+    const userAns = userAnswers[idx];
+    const isCorrect = userAns === q.answer;
+    const isUnattempted = userAns === null;
+    const isMarked = wasEverMarked[idx];
+
+    const card = document.createElement("div");
+    card.className = `list-q-card ${isCorrect ? 'correct' : (isUnattempted ? 'unattempted' : 'incorrect')}`;
+    
+    let optHtml = "";
+    q.options.forEach(o => {
+      let style = "padding:6px 12px; margin:4px 0; border-radius:4px; font-size:0.88rem;";
+      if (o.label === q.answer && o.label === userAns) {
+        style += " background:#dcfce7; color:#166534; font-weight:700; border:1.5px solid #22c55e;";
+      } else if (o.label === q.answer) {
+        style += " background:#dcfce7; color:#166534; font-weight:700; border:1px solid #86efac;";
+      } else if (o.label === userAns) {
+        style += " background:#fee2e2; color:#991b1b; font-weight:700; border:1px solid #fca5a5;";
+      } else {
+        style += " background:#f8fafc; color:#475569;";
+      }
+      optHtml += `<div style="${style}">${o.label}. ${o.text}</div>`;
+    });
+
+    card.innerHTML = `
+      <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+        <span style="font-weight:700; font-size:0.95rem;">Q${idx + 1}. (${q.subject || ''})</span>
+        <div>
+          ${isMarked ? '<span class="badge badge-reviewed" style="margin-right:6px;">★ Marked Review</span>' : ''}
+          <span class="badge badge-origin">${q.origin_tag || (q.label || 'Mock')}</span>
+        </div>
+      </div>
+      <div style="font-size:0.98rem; font-weight:600; margin-bottom:8px; color:#0f172a;">${q.text}</div>
+      ${q.text_alt ? `<div style="font-size:0.88rem; color:#475569; margin-bottom:10px;">${q.text_alt}</div>` : ''}
+      <div style="margin:10px 0;">${optHtml}</div>
+      <div style="font-size:0.84rem; margin-top:8px;">
+        <strong>Your Choice:</strong> ${userAns ? userAns : '<span style="color:#64748b;">Not Attempted</span>'} |
+        <strong style="color:#16a34a;">Official Key:</strong> ${q.answer}
+      </div>
+      <div class="rev-rationale-box" style="margin-top:10px;">
+        <div class="rev-rationale-title">Verified Explanation</div>
+        <div class="rev-rationale-text">${q.explanation || 'No detailed explanation provided.'}</div>
+      </div>
+    `;
+    container.appendChild(card);
+  });
+}
+</script>
+</body>
+</html>
